@@ -1,6 +1,13 @@
-Portfolio của Trần Hồ Hoàng Vũ
-Đây là portfolio cá nhân của Trần Hồ Hoàng Vũ, sinh viên ngành Computer Science tại Đại học Tôn Đức Thắng. Portfolio này showcase các dự án, kỹ năng lập trình, và bài viết blog kỹ thuật.
-Cấu trúc thư mục
+# 🌐 Portfolio của **Trần Hồ Hoàng Vũ**
+
+> 🎓 *Sinh viên ngành Computer Science tại Đại học Tôn Đức Thắng (TDTU)*  
+> 💼 *Portfolio cá nhân showcase các dự án, kỹ năng lập trình và bài viết kỹ thuật.*
+
+---
+
+## 🗂️ Cấu trúc thư mục
+
+```bash
 portfolio/
 ├── index.html
 ├── css/
@@ -20,46 +27,59 @@ portfolio/
 │   └── og-image.jpg
 ├── .gitignore
 └── README.md
+⚙️ Công nghệ sử dụng
+Công nghệ	Mục đích sử dụng
+🧱 HTML5, CSS3, JavaScript	Xây dựng giao diện và logic chính
+🎨 Tailwind CSS	Thiết kế giao diện hiện đại, responsive
+🔤 Google Fonts (Poppins)	Font chữ chính của toàn trang
+🧭 GitHub API	Hiển thị thống kê commits và dự án
+📬 Formspree	Xử lý biểu mẫu liên hệ qua email
 
-Công nghệ sử dụng
+🚀 Cách triển khai
+1️⃣ Chuẩn bị
+Thay thế các placeholder mặc định bằng thông tin thật (đã được điền sẵn trong repo này).
 
-HTML5, CSS3, JavaScript
-Tailwind CSS cho giao diện
-Google Fonts (Poppins)
-GitHub API để hiển thị commits
-Formspree cho biểu mẫu liên hệ
+Tải hình ảnh thật (ảnh đại diện, dự án, blog, v.v.) vào thư mục /assets/.
 
-Cách triển khai
+2️⃣ Triển khai với GitHub Pages
+Tạo repository mới trên GitHub, ví dụ: hoangvu04.github.io
 
-Chuẩn bị:
+Đẩy toàn bộ mã nguồn lên repository:
 
-Thay thế các placeholder (yourusername, your.email@example.com, your-form-id) bằng thông tin thực tế.
-Tải lên hình ảnh thực tế vào thư mục assets/.
+bash
+Sao chép mã
+git add .
+git commit -m "Initial commit - Portfolio by Tran Ho Hoang Vu"
+git push origin main
+Trong Settings → Pages, bật GitHub Pages và chọn branch main.
 
+📍 URL truy cập sẽ là:
+https://hoangvu04.github.io/
 
-Triển khai với GitHub Pages:
+3️⃣ Triển khai với Netlify
+Đăng nhập vào Netlify
 
-Tạo repository trên GitHub (ví dụ: yourusername.github.io).
-Đẩy toàn bộ mã nguồn lên repository.
-Trong cài đặt repository, bật GitHub Pages và chọn branch main.
+Kết nối repository GitHub: hoangvu04/portfolio
 
+Cấu hình:
 
-Triển khai với Netlify:
+Build command: none
 
-Kết nối repository GitHub với Netlify.
-Cấu hình build command (none) và thư mục publish (/).
-Netlify sẽ cung cấp URL public.
+Publish directory: /
 
+Netlify sẽ tự động build và cấp URL public.
 
+🧠 Tối ưu hóa
+✅ Kiểm tra hiệu suất và SEO bằng Lighthouse
+🗜️ Nén hình ảnh bằng TinyPNG, ImageOptim, hoặc Squoosh
+📈 Thêm Google Analytics để theo dõi lượt truy cập
+🌙 Cân nhắc thêm Dark mode / Light mode toggle để cải thiện trải nghiệm người dùng
 
-Tối ưu hóa
+📫 Liên hệ
+Thông tin	Liên kết
+✉️ Email	tranhohoangvu04@gmail.com
+🐙 GitHub	github.com/hoangvu04
+💼 LinkedIn	linkedin.com/in/tranhohoangvu
 
-Sử dụng Lighthouse để kiểm tra hiệu suất và SEO.
-Nén hình ảnh bằng công cụ như ImageOptim hoặc Squoosh.
-Thêm Google Analytics để theo dõi lưu lượng truy cập.
-
-Liên hệ
-
-Email: your.email@example.com
-GitHub: github.com/yourusername
-LinkedIn: linkedin.com/in/yourusername
+© 2025 Trần Hồ Hoàng Vũ — All rights reserved.
+Made with ❤️ using HTML, CSS, JavaScript, and Tailwind CSS.
