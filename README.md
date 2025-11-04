@@ -1,6 +1,25 @@
-Portfolio của Trần Hồ Hoàng Vũ
-Đây là portfolio cá nhân của Trần Hồ Hoàng Vũ, sinh viên ngành Computer Science tại Đại học Tôn Đức Thắng. Portfolio này showcase các dự án, kỹ năng lập trình, và bài viết blog kỹ thuật.
-Cấu trúc thư mục
+# 🌐 Portfolio của **Trần Hồ Hoàng Vũ**
+
+> 🎓 *Sinh viên ngành Computer Science tại Đại học Tôn Đức Thắng (TDTU)*  
+> 💼 *Portfolio cá nhân showcase các dự án, kỹ năng lập trình và bài viết kỹ thuật.*
+
+---
+
+## 🏗️ Giới thiệu
+
+Đây là **portfolio cá nhân** của **Trần Hồ Hoàng Vũ**, sinh viên ngành *Computer Science* tại *Đại học Tôn Đức Thắng*.  
+Website này được tạo ra để **giới thiệu bản thân, showcase các dự án, kỹ năng, và chia sẻ bài viết blog kỹ thuật**.  
+
+Mục tiêu của portfolio:
+- 🧠 Thể hiện năng lực lập trình và tư duy kỹ thuật.
+- 💻 Giới thiệu các dự án học tập, nghiên cứu, và cá nhân.
+- 📚 Ghi lại quá trình học và chia sẻ kiến thức công nghệ.
+
+---
+
+## 🗂️ Cấu trúc thư mục
+
+```bash
 portfolio/
 ├── index.html
 ├── css/
@@ -20,46 +39,138 @@ portfolio/
 │   └── og-image.jpg
 ├── .gitignore
 └── README.md
+```
 
-Công nghệ sử dụng
+---
 
-HTML5, CSS3, JavaScript
-Tailwind CSS cho giao diện
-Google Fonts (Poppins)
-GitHub API để hiển thị commits
-Formspree cho biểu mẫu liên hệ
+## ⚙️ Công nghệ sử dụng
 
-Cách triển khai
+| 🧩 Công nghệ | 💡 Mục đích sử dụng |
+|--------------|----------------------|
+| **HTML5, CSS3, JavaScript** | Xây dựng giao diện và logic chính |
+| **Tailwind CSS** | Thiết kế UI nhanh, hiện đại và responsive |
+| **Google Fonts (Poppins)** | Font chữ chính, mang phong cách hiện đại |
+| **GitHub API** | Lấy thông tin commits, hoạt động GitHub |
+| **Formspree** | Xử lý biểu mẫu liên hệ qua email (không cần backend) |
 
-Chuẩn bị:
+---
 
-Thay thế các placeholder (yourusername, your.email@example.com, your-form-id) bằng thông tin thực tế.
-Tải lên hình ảnh thực tế vào thư mục assets/.
+## 🚀 Cách triển khai
 
+### 🧱 Chuẩn bị
 
-Triển khai với GitHub Pages:
+- Thay thế các placeholder (nếu còn) bằng thông tin thật:
+  - `yourusername` → `hoangvu04`
+  - `your.email@example.com` → `tranhohoangvu04@gmail.com`
+  - `your-form-id` → Form ID thực tế từ Formspree
+- Tải ảnh đại diện, ảnh dự án, blog, và CV thật vào thư mục `/assets/`.
 
-Tạo repository trên GitHub (ví dụ: yourusername.github.io).
-Đẩy toàn bộ mã nguồn lên repository.
-Trong cài đặt repository, bật GitHub Pages và chọn branch main.
+---
 
+### 🌍 Triển khai với GitHub Pages
 
-Triển khai với Netlify:
+1. Tạo repository mới trên GitHub, ví dụ: `hoangvu04.github.io`
+2. Đẩy toàn bộ mã nguồn lên repository:
+   ```bash
+   git add .
+   git commit -m "Initial commit - Portfolio by Tran Ho Hoang Vu"
+   git push origin main
+   ```
+3. Vào **Settings → Pages**, chọn branch `main` và folder `/ (root)`.
 
-Kết nối repository GitHub với Netlify.
-Cấu hình build command (none) và thư mục publish (/).
-Netlify sẽ cung cấp URL public.
+📍 **Kết quả:**  
+Trang web của bạn sẽ hiển thị tại:  
+👉 [https://hoangvu04.github.io/](https://hoangvu04.github.io/)
 
+---
 
+### ⚡ Triển khai với Netlify
 
-Tối ưu hóa
+1. Đăng nhập vào [Netlify](https://www.netlify.com/)
+2. Kết nối với repository GitHub của bạn (`hoangvu04/portfolio`)
+3. Cấu hình:
+   - **Build command:** `none`
+   - **Publish directory:** `/`
+4. Netlify sẽ tự động build và cung cấp link public ví dụ như:  
+   👉 `https://hoangvu-portfolio.netlify.app`
 
-Sử dụng Lighthouse để kiểm tra hiệu suất và SEO.
-Nén hình ảnh bằng công cụ như ImageOptim hoặc Squoosh.
-Thêm Google Analytics để theo dõi lưu lượng truy cập.
+---
 
-Liên hệ
+## 🧠 Tối ưu hóa
 
-Email: your.email@example.com
-GitHub: github.com/yourusername
-LinkedIn: linkedin.com/in/yourusername
+| Hạng mục | Mục tiêu cải thiện |
+|-----------|--------------------|
+| ⚡ **Hiệu suất** | Dùng Lighthouse để phân tích tốc độ tải trang |
+| 🗜️ **Hình ảnh** | Nén ảnh bằng **TinyPNG**, **ImageOptim**, hoặc **Squoosh** |
+| 🔍 **SEO** | Thêm meta tags, tiêu đề rõ ràng và ảnh preview `og-image.jpg` |
+| 📈 **Phân tích truy cập** | Tích hợp **Google Analytics** |
+| 🌙 **Giao diện** | Thêm **Dark mode / Light mode toggle** để tăng trải nghiệm người dùng |
+
+---
+
+## 🧾 Cách cập nhật nội dung
+
+Để cập nhật nội dung cho portfolio:
+
+1. Mở file `index.html`  
+2. Cập nhật thông tin cá nhân, dự án hoặc bài viết blog trong các section tương ứng  
+3. Sửa file `scripts.js` nếu muốn thay đổi hành vi tương tác  
+4. Chạy lệnh build Tailwind (nếu có):
+   ```bash
+   npx tailwindcss -i ./css/styles.css -o ./dist/styles.min.css --minify
+   ```
+5. Commit và push lại lên GitHub:
+   ```bash
+   git add .
+   git commit -m "Update content and styles"
+   git push origin main
+   ```
+
+---
+
+## 💡 Mẹo & Lưu ý
+
+- ✅ Đặt tên ảnh có ý nghĩa (vd: `project-ecommerce.jpg`, `profile-vu.jpg`)  
+- 🧭 Thêm favicon để hiển thị biểu tượng trên tab trình duyệt  
+- 🧱 Nếu dùng framework khác (Next.js / React), giữ nguyên cấu trúc thư mục `/assets`  
+- 🧑‍💻 Kiểm tra giao diện trên nhiều thiết bị: desktop, tablet, mobile  
+
+---
+
+## 📫 Liên hệ
+
+| Thông tin | Liên kết |
+|------------|-----------|
+| ✉️ **Email** | [tranhohoangvu04@gmail.com](mailto:tranhohoangvu04@gmail.com) |
+| 🐙 **GitHub** | [github.com/hoangvu04](https://github.com/hoangvu04) |
+| 💼 **LinkedIn** | [linkedin.com/in/tranhohoangvu](https://linkedin.com/in/tranhohoangvu) |
+| 🧾 **CV PDF** | [Xem tại đây](./assets/cv.pdf) |
+
+---
+
+## 🏁 Giấy phép & Bản quyền
+
+> © 2025 **Trần Hồ Hoàng Vũ** — All rights reserved.  
+> Made with ❤️ using **HTML**, **CSS**, **JavaScript**, and **Tailwind CSS**.  
+>  
+> 📜 Nếu bạn tham khảo hoặc sử dụng phần code này, vui lòng ghi nguồn:  
+> “Portfolio Template by Trần Hồ Hoàng Vũ – TDTU”.
+
+---
+
+## 🖼️ Gợi ý banner (tuỳ chọn)
+
+Nếu bạn muốn thêm **banner đầu trang** để nhìn nổi bật hơn khi mở README:
+
+```html
+<p align="center">
+  <img src="assets/og-image.jpg" alt="Portfolio – Tran Ho Hoang Vu" width="800" style="border-radius:12px;">
+</p>
+```
+
+> Banner nên có tông màu trầm (đen, xám, trắng) với dòng chữ:  
+> **"Trần Hồ Hoàng Vũ — Portfolio"**
+
+---
+
+> 📍 *Last updated: November 2025*
