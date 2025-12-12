@@ -1,0 +1,61 @@
+# =========================
+# Dependencies / package managers
+# =========================
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/
+.yarn-cache/
+.yarn-integrity/
+
+# =========================
+# Logs
+# =========================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# =========================
+# Tailwind / build caches
+# =========================
+.tailwindcss/
+.cache/
+.tmp/
+.temp/
+
+# =========================
+# Env (nếu có)
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Python cache (bạn có file .py)
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# =========================
+# Optional: local build outputs (nếu sau này có)
+# =========================
+dist/
+build/
+out/
