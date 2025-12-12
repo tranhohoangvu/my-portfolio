@@ -1,50 +1,122 @@
-import re
+import json
+import os
 import sys
-import urllib.request
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.request import Request, urlopen
 
-LIGHT_STYLE = """
-<style>
-  svg { width: 100%; height: auto; }
-  rect[data-level="0"] { fill: #ebedf0; }
-  rect[data-level="1"] { fill: #9be9a8; }
-  rect[data-level="2"] { fill: #40c463; }
-  rect[data-level="3"] { fill: #30a14e; }
-  rect[data-level="4"] { fill: #216e39; }
-  text { fill: #94a3b8; font-size: 10px; }
-</style>
+LIGHT = ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"]
+DARK  = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]
+
+QUERY = """
+query($login: String!, $from: DateTime!, $to: DateTime!) {
+  user(login: $login) {
+    contributionsCollection(from: $from, to: $to) {
+      contributionCalendar {
+        weeks {
+          contributionDays {
+            contributionCount
+            date
+            weekday
+          }
+        }
+        months {
+          name
+          firstDay
+          totalWeeks
+        }
+        totalContributions
+      }
+    }
+  }
+}
 """
 
-DARK_STYLE = """
-<style>
-  svg { width: 100%; height: auto; }
-  rect[data-level="0"] { fill: #161b22; }
-  rect[data-level="1"] { fill: #0e4429; }
-  rect[data-level="2"] { fill: #006d32; }
-  rect[data-level="3"] { fill: #26a641; }
-  rect[data-level="4"] { fill: #39d353; }
-  text { fill: #94a3b8; font-size: 10px; }
-</style>
+def gql(token: str, variables: dict) -> dict:
+  req = Request(
+    "https://api.github.com/graphql",
+    data=json.dumps({"query": QUERY, "variables": variables}).encode("utf-8"),
+    headers={
+      "Authorization": f"Bearer {token}",
+      "Content-Type": "application/json",
+      "User-Agent": "github-actions-contrib-svg",
+      "Accept": "application/json",
+    }
+  )
+  with urlopen(req, timeout=30) as r:
+    payload = json.loads(r.read().decode("utf-8"))
+  if "errors" in payload:
+    raise RuntimeError(f"GraphQL errors: {payload['errors']}")
+  return payload["data"]
+
+def level_from_count(count: int, max_count: int) -> int:
+  if count <= 0:
+    return 0
+  if max_count <= 0:
+    return 1
+  ratio = count / max_count
+  if ratio <= 0.25:
+    return 1
+  if ratio <= 0.50:
+    return 2
+  if ratio <= 0.75:
+    return 3
+  return 4
+
+def render_svg(weeks, months, palette, title: str) -> str:
+  # layout tương tự GitHub
+  cell = 10
+  gap = 2
+  step = cell + gap
+
+  x0 = 30   # chừa chỗ label bên trái (để nhìn “github-ish”)
+  y0 = 20
+
+  weeks_count = len(weeks)
+  width  = x0 + weeks_count * step + 10
+  height = y0 + 7 * step + 20
+
+  # map date -> week index
+  date_to_week = {}
+  all_days = []
+  for wi, w in enumerate(weeks):
+    for d in w["contributionDays"]:
+      date_to_week[d["date"]] = wi
+      all_days.append(d)
+
+  max_count = max((d["contributionCount"] for d in all_days), default=0)
+
+  # month labels
+  month_texts = []
+  for m in months:
+    first = m["firstDay"]
+    wi = date_to_week.get(first)
+    if wi is None:
+      continue
+    mx = x0 + wi * step
+    month_texts.append(
+      f'<text x="{mx}" y="12" font-size="10" fill="#94a3b8">{m["name"]}</text>'
+    )
+
+  rects = []
+  for wi, w in enumerate(weeks):
+    for di, d in enumerate(w["contributionDays"]):
+      lv = level_from_count(d["contributionCount"], max_count)
+      x = x0 + wi * step
+      y = y0 + di * step
+      fill = palette[lv]
+      rects.append(
+        f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2" ry="2" fill="{fill}">'
+        f'<title>{d["date"]}: {d["contributionCount"]} contributions</title>'
+        f'</rect>'
+      )
+
+  return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" role="img" aria-label="{title}">
+  <title>{title}</title>
+  {"".join(month_texts)}
+  {"".join(rects)}
+</svg>
 """
-
-def fetch_html(url: str) -> str:
-  req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-  with urllib.request.urlopen(req, timeout=30) as r:
-    return r.read().decode("utf-8", errors="ignore")
-
-def extract_svg(html: str) -> str:
-  # Contributions endpoint trả về HTML snippet có chứa <svg>...</svg>
-  m = re.search(r"(<svg[^>]*>.*?</svg>)", html, flags=re.DOTALL)
-  if not m:
-    raise RuntimeError("Không tìm thấy SVG contributions trong response.")
-  return m.group(1)
-
-def inject_style(svg: str, style: str) -> str:
-  # Nhét style ngay sau thẻ <svg ...>
-  svg = re.sub(r"(<svg[^>]*>)", r"\1" + style, svg, count=1, flags=re.DOTALL)
-  # Xóa width/height cứng nếu có để responsive
-  svg = re.sub(r'\s(width|height)="[^"]*"', "", svg)
-  return svg
 
 def main():
   if len(sys.argv) < 3:
@@ -55,14 +127,32 @@ def main():
   out_dir = Path(sys.argv[2].strip())
   out_dir.mkdir(parents=True, exist_ok=True)
 
-  url = f"https://github.com/users/{username}/contributions"
-  html = fetch_html(url)
-  svg = extract_svg(html)
+  token = os.environ.get("GITHUB_TOKEN")
+  if not token:
+    raise RuntimeError("Missing GITHUB_TOKEN. Set env GITHUB_TOKEN in workflow step.")
 
-  (out_dir / "github-contrib-light.svg").write_text(inject_style(svg, LIGHT_STYLE), encoding="utf-8")
-  (out_dir / "github-contrib-dark.svg").write_text(inject_style(svg, DARK_STYLE), encoding="utf-8")
+  now = datetime.now(timezone.utc)
+  to_dt = now
+  from_dt = now - timedelta(days=370)  # ~53 tuần
 
-  print("Generated:", out_dir / "github-contrib-light.svg", "and", out_dir / "github-contrib-dark.svg")
+  data = gql(token, {
+    "login": username,
+    "from": from_dt.isoformat(),
+    "to": to_dt.isoformat(),
+  })
+
+  cal = data["user"]["contributionsCollection"]["contributionCalendar"]
+  weeks = cal["weeks"]
+  months = cal["months"]
+
+  light_svg = render_svg(weeks, months, LIGHT, f"{username} GitHub Contributions (Light)")
+  dark_svg  = render_svg(weeks, months, DARK,  f"{username} GitHub Contributions (Dark)")
+
+  (out_dir / "github-contrib-light.svg").write_text(light_svg, encoding="utf-8")
+  (out_dir / "github-contrib-dark.svg").write_text(dark_svg, encoding="utf-8")
+
+  print("Generated:", out_dir / "github-contrib-light.svg")
+  print("Generated:", out_dir / "github-contrib-dark.svg")
 
 if __name__ == "__main__":
   main()

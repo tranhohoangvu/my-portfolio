@@ -20,6 +20,8 @@ jobs:
           python-version: "3.11"
 
       - name: Generate SVGs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           python js/build_github_contrib_svgs.py tranhohoangvu assets
 
