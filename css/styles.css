@@ -172,9 +172,11 @@ textarea:focus ~ .ripple::after {
 
 #particles-js {
   position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
@@ -213,4 +215,106 @@ textarea:focus ~ .ripple::after {
     flex: 0 0 80%;
     scroll-snap-align: center;
   }
+}
+
+/* =========================
+   HERO HOME (works in light & dark)
+   ========================= */
+.hero-home{
+  /* nền xanh đen giống ảnh dark */
+  background:
+    radial-gradient(900px circle at 50% 30%, rgba(99,102,241,.18), transparent 55%),
+    linear-gradient(180deg, #0b1220 0%, #07101c 45%, #050814 100%);
+}
+
+.hero-home #particles-js{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-content{
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+.hero-actions{
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 26px;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+}
+
+/* primary: nổi bật nhưng vẫn hợp nền */
+.btn-primary{
+  background: rgba(59,130,246,.18);
+  border: 1px solid rgba(59,130,246,.40);
+  color: #eaf2ff;
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+}
+.btn-primary:hover{
+  background: rgba(59,130,246,.28);
+  border-color: rgba(59,130,246,.55);
+}
+
+/* secondary: kiểu glass */
+.btn-secondary{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.22);
+  color: #ffffff;
+}
+.btn-secondary:hover{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.32);
+}
+
+/* Fix chữ có đuôi (g, y, p, q) bị cắt do typing effect */
+#home h1 {
+  line-height: 1 !important;
+  padding-bottom: 0.1em;
+}
+
+/* Nếu text đang bị clip bởi span typing */
+#home .animate-type {
+  line-height: 1 !important;
+  padding-bottom: 0.1em;   
+  box-sizing: content-box; 
+}
+
+.progress-track{
+  margin-top: 14px;
+  height: 8px;
+  width: 100%;
+  border-radius: 999px;
+  background: rgba(255,255,255,.10); /* nền mờ */
+  overflow: hidden;
+}
+
+.progress-fill{
+  height: 100%;
+  width: 0; /* sẽ set bằng inline style trong HTML */
+  border-radius: 999px;
+  background: linear-gradient(90deg, #38bdf8, #6366f1); /* sky -> indigo */
+  box-shadow: 0 0 18px rgba(56,189,248,.25);
+  transition: width .8s ease;
 }

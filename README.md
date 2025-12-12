@@ -80,7 +80,7 @@ portfolio/
 
 📍 **Kết quả:**  
 Trang web của bạn sẽ hiển thị tại:  
-👉 [https://tranhohoangvu.github.io/my-porfolio/](https://tranhohoangvu.github.io/my-porfolio/)
+👉 [https://tranhohoangvu.github.io/my-portfolio/](https://tranhohoangvu.github.io/my-portfolio/)
 
 ---
 

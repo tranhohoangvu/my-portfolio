@@ -211,7 +211,7 @@ if (contactForm && formMessage) {
     if (submitButton) {
       submitButton.disabled = true;
       submitButton.innerHTML =
-        '<span class="relative z-10">Đang gửi...</span><span class="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-30 animate-pulse"></span>';
+        '<span class="relative z-10">Đang gửi...</span><span class="absolute inset-0 bg-linear-to-r from-indigo-600 to-purple-600 opacity-30 animate-pulse"></span>';
     }
 
     try {
@@ -238,7 +238,7 @@ if (contactForm && formMessage) {
       if (submitButton) {
         submitButton.disabled = false;
         submitButton.innerHTML =
-          '<span class="relative z-10">Gửi tin nhắn</span><span class="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></span>';
+          '<span class="relative z-10">Gửi tin nhắn</span><span class="absolute inset-0 bg-linear-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></span>';
       }
     }
   });

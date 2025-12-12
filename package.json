@@ -8,16 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tranhohoangvu/my-porfolio.git"
+    "url": "git+https://github.com/tranhohoangvu/my-portfolio.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/tranhohoangvu/my-porfolio/issues"
+    "url": "https://github.com/tranhohoangvu/my-portfolio/issues"
   },
-  "homepage": "https://github.com/tranhohoangvu/my-porfolio#readme",
+  "homepage": "https://github.com/tranhohoangvu/my-portfolio#readme",
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.18",
     "tailwindcss": "^4.1.18"
