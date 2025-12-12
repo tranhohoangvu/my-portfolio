@@ -1,3 +1,5 @@
+print("USING GRAPHQL VERSION")
+
 import json
 import os
 import sys
