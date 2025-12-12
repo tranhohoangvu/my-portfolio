@@ -1,0 +1,31 @@
+name: Update GitHub Contributions SVG
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"   # mỗi ngày 00:00 UTC
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate SVGs
+        run: |
+          python js/build_github_contrib_svgs.py tranhohoangvu assets
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/github-contrib-*.svg
+          git diff --cached --quiet || (git commit -m "chore: update github contributions svg" && git push)
