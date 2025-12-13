@@ -43,8 +43,29 @@ body {
   border-image: linear-gradient(to right, #4f46e5, #7c3aed) 1;
 }
 
-#back-to-top {
-  display: none;
+#back-to-top{
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(17,24,39,0.18);
+  color: rgba(17,24,39,0.92);
+  backdrop-filter: blur(8px);
+}
+
+#back-to-top:hover{
+  background: #fff;
+}
+
+.dark #back-to-top{
+  background: rgba(17,24,39,0.90);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #fff;
+}
+
+.dark #back-to-top:hover{
+  background: rgba(17,24,39,0.98);
+}
+
+#back-to-top svg{
+  stroke: currentColor;
 }
 
 .animate-typing {
@@ -318,3 +339,155 @@ textarea:focus ~ .ripple::after {
   box-shadow: 0 0 18px rgba(56,189,248,.25);
   transition: width .8s ease;
 }
+
+.project-thumb {
+  width: 100%;
+  height: 190px; /* 170–220 tuỳ bạn */
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tag-pill{
+  display:inline-flex;
+  align-items:center;
+  padding:.22rem .6rem;
+  border-radius:999px;
+  font-size:12px;
+  line-height:1.2;
+  white-space: nowrap;
+
+  /* LIGHT mode (mặc định) */
+  color: rgba(17,24,39,0.85);              /* text-gray-900 */
+  background: rgba(99,102,241,0.10);       /* indigo nhẹ */
+  border: 1px solid rgba(99,102,241,0.25);
+}
+
+/* DARK mode */
+.dark .tag-pill{
+  color: rgba(255,255,255,0.90);
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.16);
+}
+
+.project-tags{
+  display:flex;
+  flex-wrap:wrap;          /* tags xuống dòng theo cụm */
+  gap:8px;
+  margin-bottom: 18px;
+}
+
+/* ===== LIGHT MODE (default): card trắng, viền đen, chữ đen ===== */
+.skills-card--dark{
+  background: #ffffff;
+  border: 1.5px solid rgba(17,24,39,0.85); /* viền đen */
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.skills-title{
+  font-size: 18px;
+  font-weight: 800;
+  color: rgba(17,24,39,0.92);
+  margin-bottom: 16px;
+}
+
+.skills-note{
+  margin-top: 14px;
+  font-size: 14px;
+  color: rgba(17,24,39,0.65);
+}
+
+/* Grid icon */
+.skill-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+  gap: 12px;
+  align-content: start;
+}
+
+/* tile icon: nền trắng nhẹ + viền đen mờ */
+.skill-icon{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  height: 86px;
+  padding:10px 8px;
+  border-radius:14px;
+
+  background: rgba(17,24,39,0.03);
+  border: 1px solid rgba(17,24,39,0.18);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.skill-icon:hover{
+  transform: translateY(-2px);
+  background: rgba(17,24,39,0.05);
+  border-color: rgba(17,24,39,0.26);
+}
+
+.skill-icon i{
+  font-size: 34px;
+  line-height: 1;
+}
+
+.skill-icon span{
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(17,24,39,0.88); /* chữ đen */
+  text-align:center;
+  line-height: 1.1;
+}
+
+/* DevOps: căn giữa + đủ rộng 1 hàng */
+.devops-row{
+  display:flex;
+  justify-content:center;
+}
+
+.devops-card{
+  width: 100%;
+  max-width: 980px;
+}
+
+
+/* ===== DARK MODE: giống Projects (card tối, chữ trắng) ===== */
+.dark .skills-card--dark{
+  background: rgba(31, 41, 55, 0.65);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+.dark .skills-title{
+  color: rgba(255,255,255,0.95);
+}
+
+.dark .skills-note{
+  color: rgba(255,255,255,0.70);
+}
+
+.dark .skill-icon{
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+}
+
+.dark .skill-icon:hover{
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.20);
+}
+
+.dark .skill-icon span{
+  color: rgba(255,255,255,0.88);
+}
+

@@ -15,6 +15,7 @@
 
   <title>Trần Hồ Hoàng Vũ - Portfolio</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tailwind.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -159,7 +160,7 @@
 
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">Xem dự án</a>
-        <a href="assets/TranHoHoangVu_CV.pdf" download class="btn btn-secondary">Tải CV</a>
+        <a href="assets/cv.pdf" download class="btn btn-secondary">Tải CV</a>
       </div>
     </div>
   </section>
@@ -206,107 +207,168 @@
   <section id="projects" class="py-24 bg-gray-50 dark:bg-gray-900 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in">Dự án</h2>
+
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-500 hover:rotate-y-10">
-          <div class="relative overflow-hidden">
-            <img src="assets/project1.jpg" alt="Ứng dụng quản lý công việc" class="w-full h-48 object-cover transform transition-transform duration-1000 hover:scale-110">
-            <div class="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Ứng dụng quản lý công việc</h3>
-            <div class="flex gap-2 mb-4">
-              <span class="text-xs bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 px-2 py-1 rounded-full animate-pulse">React</span>
-              <span class="text-xs bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 px-2 py-1 rounded-full animate-pulse">Tailwind CSS</span>
-              <span class="text-xs bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 px-2 py-1 rounded-full animate-pulse">Firebase</span>
-            </div>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Một ứng dụng web giúp người dùng quản lý công việc hàng ngày.</p>
-            <a href="https://github.com/tranhohoangvu/project1" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Xem trên GitHub</a>
-          </div>
-        </div>
 
-        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-500 hover:rotate-y-10">
-          <div class="relative overflow-hidden">
-            <img src="assets/project2.jpg" alt="Trò chơi Tetris" class="w-full h-48 object-cover transform transition-transform duration-1000 hover:scale-110">
-            <div class="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Trò chơi Tetris</h3>
-            <div class="flex gap-2 mb-4">
-              <span class="text-xs bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 px-2 py-1 rounded-full animate-pulse">JavaScript</span>
-              <span class="text-xs bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 px-2 py-1 rounded-full animate-pulse">HTML5 Canvas</span>
-              <span class="text-xs bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 px-2 py-1 rounded-full animate-pulse">p5.js</span>
+        <!-- Project 1 -->
+        <article class="project-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-200/70 dark:border-gray-700/70 transition-transform duration-500 hover:-translate-y-1">
+          <div class="h-40 bg-linear-to-r from-indigo-600 to-purple-600 flex items-center justify-center">
+            <div class="mt-4 text-center px-6">
+              <p class="text-white/90 text-sm font-medium">Sep 2025 – Dec 2025 • Course Project</p>
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1">E-commerce Platform</h3>
             </div>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Một phiên bản Tetris tương tác.</p>
-            <a href="https://github.com/tranhohoangvu/project2" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Xem trên GitHub</a>
           </div>
-        </div>
 
-        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-500 hover:rotate-y-10">
-          <div class="relative overflow-hidden">
-            <img src="assets/project3.jpg" alt="Chatbot AI" class="w-full h-48 object-cover transform transition-transform duration-1000 hover:scale-110">
-            <div class="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-          </div>
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Chatbot AI</h3>
-            <div class="flex gap-2 mb-4">
-              <span class="text-xs bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 px-2 py-1 rounded-full animate-pulse">Python</span>
-              <span class="text-xs bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 px-2 py-1 rounded-full animate-pulse">NLP</span>
-              <span class="text-xs bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 px-2 py-1 rounded-full animate-pulse">TensorFlow</span>
+            <div class="project-thumb mb-4">
+              <img src="assets/projects/ecommerce.png" alt="Ảnh dự án E-commerce Platform" loading="lazy">
             </div>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Chatbot sử dụng NLP để trả lời các câu hỏi cơ bản.</p>
-            <a href="https://github.com/tranhohoangvu/project3" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Xem trên GitHub</a>
+
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Nền tảng thương mại điện tử full-stack, tập trung backend: REST API, xác thực người dùng và luồng giỏ hàng/đơn hàng.
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-7">
+              <span class="text-xs tag-pill">Node.js</span>
+              <span class="text-xs tag-pill">Express</span>
+              <span class="text-xs tag-pill">MongoDB</span>
+              <span class="text-xs tag-pill">Docker</span>
+            </div>
+
+            <a href="https://github.com/tranhohoangvu/E-Commerce-Website" target="_blank" rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+              Xem trên GitHub →
+            </a>
           </div>
-        </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-200/70 dark:border-gray-700/70 transition-transform duration-500 hover:-translate-y-1">
+          <div class="h-40 bg-linear-to-r from-sky-600 to-indigo-600 flex items-center justify-center">
+            <div class="mt-4 text-center px-6">
+              <p class="text-white/90 text-sm font-medium">Sep 2024 – Dec 2024 • Course Project</p>
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1">WarehouseMA</h3>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <div class="project-thumb mb-4">
+              <img src="assets/projects/warehouse.png" alt="Ảnh dự án WarehouseMA" loading="lazy">
+            </div>
+
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Phần mềm quản lý kho tòa nhà: theo dõi tồn kho, nhập/xuất và báo cáo vận hành.
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-7">
+              <span class="text-xs tag-pill">Tồn kho</span>
+              <span class="text-xs tag-pill">Nhập/Xuất</span>
+              <span class="text-xs tag-pill">Báo cáo</span>
+              <span class="text-xs tag-pill">Tài liệu</span>
+            </div>
+
+            <a href="https://github.com/tranhohoangvu/WarehouseMA" target="_blank" rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+              Xem trên GitHub →
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-200/70 dark:border-gray-700/70 transition-transform duration-500 hover:-translate-y-1">
+          <div class="h-40 bg-linear-to-r from-emerald-600 to-sky-600 flex items-center justify-center">
+            <div class="mt-4 text-center px-6">
+              <p class="text-white/90 text-sm font-medium">Jan 2024 – May 2024 • Course Project</p>
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1">Store.com POS System</h3>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <div class="project-thumb mb-4">
+              <img src="assets/projects/pos.png" alt="Ảnh dự án Store.com POS System" loading="lazy">
+            </div>
+
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Hệ thống POS nội bộ cho cửa hàng điện thoại: bán hàng/checkout, quản lý kho và xuất hóa đơn PDF.
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-7">
+              <span class="text-xs tag-pill">Laravel 10</span>
+              <span class="text-xs tag-pill">PHP</span>
+              <span class="text-xs tag-pill">MySQL</span>
+              <span class="text-xs tag-pill">Xuất hóa đơn</span>
+            </div>
+
+            <a href="https://github.com/tranhohoangvu/Web-Programming-and-Applications" target="_blank" rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+              Xem trên GitHub →
+            </a>
+          </div>
+        </article>
       </div>
+    </div>
+    <!-- View all projects -->
+    <div class="mt-10 text-center">
+      <a href="https://github.com/tranhohoangvu?tab=repositories" target="_blank" rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">
+        Xem tất cả trên GitHub →
+      </a>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="py-24 bg-white dark:bg-gray-800 relative">
+  <section id="skills" class="py-24 bg-gray-50 dark:bg-gray-900 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in">Kỹ năng</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 skills-carousel">
-        <div class="text-center bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-sm transform hover:scale-105 transition-transform duration-300">
-          <svg class="w-12 h-12 mx-auto mb-4 text-indigo-600 dark:text-indigo-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-          </svg>
-          <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">Lập trình</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-2">Python, JavaScript, Java, C++</p>
-          <div class="progress-track">
-            <div class="progress-fill" style="width: 80%"></div>
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in">
+        Kỹ năng
+      </h2>
+
+      <!-- Row 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Languages & Frontend -->
+        <div class="skills-card skills-card--dark">
+          <h3 class="skills-title">Ngôn ngữ & Frontend</h3>
+          <div class="skill-grid">
+            <div class="skill-icon" title="C"><i class="devicon-c-plain colored"></i><span>C</span></div>
+            <div class="skill-icon" title="C#"><i class="devicon-csharp-plain colored"></i><span>C#</span></div>
+            <div class="skill-icon" title="Java"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+            <div class="skill-icon" title="Python"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+            <div class="skill-icon" title="JavaScript"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+            <div class="skill-icon" title="HTML"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
+            <div class="skill-icon" title="CSS"><i class="devicon-css3-plain colored"></i><span>CSS</span></div>
+            <div class="skill-icon" title="Bootstrap"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+            <div class="skill-icon" title="React"><i class="devicon-react-original colored"></i><span>React</span></div>
           </div>
         </div>
 
-        <div class="text-center bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-sm transform hover:scale-105 transition-transform duration-300">
-          <svg class="w-12 h-12 mx-auto mb-4 text-indigo-600 dark:text-indigo-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 4H3v16h18V4zM12 18h.01M8 21h8"></path>
-          </svg>
-          <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">Web Development</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-2">HTML, CSS, React, Node.js</p>
-          <div class="progress-track">
-            <div class="progress-fill" style="width: 80%"></div>
+        <!-- Backend & Database -->
+        <div class="skills-card skills-card--dark">
+          <h3 class="skills-title">Backend & Database</h3>
+          <div class="skill-grid">
+            <div class="skill-icon" title="Node.js"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+            <div class="skill-icon" title="Express"><i class="devicon-express-original colored"></i><span>Express</span></div>
+            <div class="skill-icon" title="PHP"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
+            <div class="skill-icon" title="Laravel"><i class="devicon-laravel-plain colored"></i><span>Laravel</span></div>
+            <div class="skill-icon" title="MySQL"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+            <div class="skill-icon" title="MongoDB"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></div>
+            <div class="skill-icon" title="SQL Server"><i class="devicon-microsoftsqlserver-plain colored"></i><span>SQL Server</span></div>
+            <div class="skill-icon" title="REST API"><i class="devicon-postman-plain colored"></i><span>REST API</span></div>
           </div>
         </div>
+      </div>
 
-        <div class="text-center bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-sm transform hover:scale-105 transition-transform duration-300">
-          <svg class="w-12 h-12 mx-auto mb-4 text-indigo-600 dark:text-indigo-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
-          </svg>
-          <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">Database</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-2">SQL, MongoDB, Firebase</p>
-          <div class="progress-track">
-            <div class="progress-fill" style="width: 80%"></div>
-          </div>
-        </div>
-
-        <div class="text-center bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-sm transform hover:scale-105 transition-transform duration-300">
-          <svg class="w-12 h-12 mx-auto mb-4 text-indigo-600 dark:text-indigo-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
-          </svg>
-          <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">Công cụ</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-2">Git, Docker, VS Code, Figma</p>
-          <div class="progress-track">
-            <div class="progress-fill" style="width: 80%"></div>
+      <!-- Row 2: DevOps centered -->
+      <div class="mt-8 devops-row">
+        <div class="skills-card skills-card--dark devops-card">
+          <h3 class="skills-title">DevOps / Tools</h3>
+          <div class="skill-grid">
+            <div class="skill-icon" title="Docker"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+            <div class="skill-icon" title="Docker Compose"><i class="devicon-docker-plain colored"></i><span>Compose</span></div>
+            <div class="skill-icon" title="Nginx"><i class="devicon-nginx-original colored"></i><span>Nginx</span></div>
+            <div class="skill-icon" title="Git"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+            <div class="skill-icon" title="GitHub"><i class="devicon-github-original colored"></i><span>GitHub</span></div>
+            <div class="skill-icon" title="Postman"><i class="devicon-postman-plain colored"></i><span>Postman</span></div>
+            <div class="skill-icon" title="Figma"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
           </div>
         </div>
       </div>
