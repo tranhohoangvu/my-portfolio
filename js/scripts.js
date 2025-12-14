@@ -544,3 +544,14 @@ if (typeof particlesJS !== "undefined") {
 // init navbar state (also ensures correct on load)
 updateNavbarBackground();
 setGitHubActivityImages();
+
+// Brand click: scroll to top without changing URL/hash
+document.addEventListener("DOMContentLoaded", () => {
+  const brand = document.getElementById("brand-home");
+  if (!brand) return;
+
+  brand.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
