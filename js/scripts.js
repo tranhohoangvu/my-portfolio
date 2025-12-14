@@ -190,6 +190,12 @@ const I18N = {
     skills_devops: "DevOps / Tools",
     skills_note_auth: "(Auth/Phân quyền: mức cơ bản)",
 
+    nav_certs: "Chứng chỉ",
+    certs_title: "Chứng chỉ",
+    certs_view: "Xem chứng chỉ →",
+    cert_score_label: "Điểm",
+    cert_tag_language: "English",
+
     github_title: "Hoạt động GitHub",
     github_contrib: "Tổng quan đóng góp",
     github_contrib_tip: "Dữ liệu đóng góp được tạo tự động từ dữ liệu GitHub GraphQL (Actions) và được cập nhật định kỳ.",
@@ -268,6 +274,12 @@ const I18N = {
     skills_backend_db: "Backend & Database",
     skills_devops: "DevOps / Tools",
     skills_note_auth: "(Auth/Authorization: basic)",
+
+    nav_certs: "Certificates",
+    certs_title: "Certificates",
+    certs_view: "View certificate →",
+    cert_score_label: "Score",
+    cert_tag_language: "English",
 
     github_title: "GitHub Activity",
     github_contrib: "Contributions",
