@@ -491,3 +491,61 @@ textarea:focus ~ .ripple::after {
   color: rgba(255,255,255,0.88);
 }
 
+/* =========================
+   Skills: 5 icons / row like your screenshot
+   ========================= */
+.skill-grid--5{
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+@media (max-width: 767px){
+  .skill-grid--5{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* DevOps card: centered under 2 cards, width like 1 column */
+.devops-card{
+  width: 100%;
+  max-width: 640px; /* gần bằng 1 cột ở layout md */
+}
+
+#lang-toggle {
+  min-width: 44px;
+  text-align: center;
+}
+
+/* Language toggle pill (EN/VI) */
+.lang-pill{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(209,213,219,0.9); /* gray-300 */
+  background: transparent;
+  color: rgb(55,65,81); /* gray-700 */
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+}
+
+.lang-pill:hover{
+  background: rgba(0,0,0,0.05);
+}
+
+.dark .lang-pill{
+  border-color: rgba(75,85,99,0.9); /* gray-600 */
+  color: rgb(229,231,235); /* gray-200 */
+}
+
+.dark .lang-pill:hover{
+  background: rgba(255,255,255,0.10);
+}
+
+.lang-pill:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.35); /* indigo focus ring */
+}
