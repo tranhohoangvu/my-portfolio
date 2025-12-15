@@ -1,21 +1,421 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 - Không tìm thấy trang</title>
-  <link rel="stylesheet" href="css/tailwind.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta name="robots" content="noindex" />
+  <title>404</title>
+
+  <!-- Favicon (giống index.html) -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+
+  <style>
+    :root{
+      --bg1:#060814;
+      --bg2:#0b1220;
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+
+      --c1:#4f46e5;   /* indigo */
+      --c2:#7c3aed;   /* purple */
+      --c3:#06b6d4;   /* cyan */
+      --c4:#22c55e;   /* green-ish */
+      --c5:#ff2d92;   /* pink-ish */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      display:grid;
+      place-items:center;
+      padding:24px;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px circle at 20% 25%, rgba(99,102,241,.20), transparent 55%),
+        radial-gradient(800px circle at 85% 75%, rgba(14,165,233,.18), transparent 55%),
+        linear-gradient(180deg, var(--bg2) 0%, var(--bg1) 100%);
+      overflow:hidden;
+    }
+
+    /* subtle stars/dust */
+    .dust{
+      position:fixed; inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(1px 1px at 15% 30%, rgba(255,255,255,.20), transparent 60%),
+        radial-gradient(1px 1px at 55% 20%, rgba(255,255,255,.18), transparent 60%),
+        radial-gradient(1px 1px at 78% 64%, rgba(255,255,255,.16), transparent 60%),
+        radial-gradient(1px 1px at 22% 76%, rgba(255,255,255,.14), transparent 60%),
+        radial-gradient(1px 1px at 88% 40%, rgba(255,255,255,.12), transparent 60%);
+      opacity:.55;
+      filter: blur(.2px);
+    }
+
+    /* scanlines */
+    .scanlines{
+      position:fixed; inset:0;
+      pointer-events:none;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,.035) 0px,
+        rgba(255,255,255,.035) 2px,
+        rgba(0,0,0,0) 6px,
+        rgba(0,0,0,0) 10px
+      );
+      mix-blend-mode: overlay;
+      opacity:.25;
+    }
+
+    .wrap{
+      width:min(880px,100%);
+      display:grid;
+      place-items:center;
+      position:relative;
+      z-index:1;
+    }
+
+    /* center stage */
+    .stage{
+      position:relative;
+      width:min(860px,100%);
+      padding: 34px 18px 28px;
+      display:grid;
+      place-items:center;
+      text-align:center;
+    }
+
+    /* neon ring */
+    .ring{
+      position:relative;
+      width:min(640px, 86vw);
+      aspect-ratio: 1/1;
+      border-radius:999px;
+      display:grid;
+      place-items:center;
+      filter: drop-shadow(0 18px 60px rgba(0,0,0,.55));
+    }
+    .ring::before{
+      content:"";
+      position:absolute; inset: 22px;
+      border-radius:999px;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,.06), rgba(255,255,255,0) 55%);
+      border: 1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(10px);
+    }
+    .ring::after{
+      content:"";
+      position:absolute;
+      inset: 0;
+      border-radius:999px;
+      padding: 14px;
+      background:
+        conic-gradient(from 180deg,
+          var(--c3),
+          var(--c5),
+          var(--c2),
+          var(--c1),
+          var(--c4),
+          var(--c3)
+        );
+      -webkit-mask:
+        radial-gradient(circle, transparent 55%, #000 56%);
+      mask:
+        radial-gradient(circle, transparent 55%, #000 56%);
+      opacity:.92;
+      animation: spin 10s linear infinite;
+    }
+    @keyframes spin{ to{ transform: rotate(360deg);} }
+
+    /* glitch blocks around ring */
+    .glitch-sparks{
+      position:absolute; inset:-18px;
+      border-radius:999px;
+      pointer-events:none;
+      overflow:visible;
+      opacity:.9;
+      filter: drop-shadow(0 10px 24px rgba(0,0,0,.45));
+    }
+    .spark{
+      position:absolute;
+      width: 48px; height: 10px;
+      background: rgba(255,255,255,.08);
+      border-radius: 6px;
+      transform: translate(-50%,-50%);
+      animation: spark 2.4s steps(2,end) infinite;
+    }
+    .spark.cyan{ background: rgba(6,182,212,.85); }
+    .spark.pink{ background: rgba(255,45,146,.85); }
+    .spark.green{ background: rgba(34,197,94,.80); }
+    .spark.dim{ background: rgba(255,255,255,.10); }
+
+    .spark.s1{ left: 12%; top: 24%; animation-delay:.1s; }
+    .spark.s2{ left: 18%; top: 56%; width:64px; animation-delay:.7s; }
+    .spark.s3{ left: 28%; top: 70%; width:36px; animation-delay:1.1s; }
+    .spark.s4{ left: 78%; top: 30%; width:62px; animation-delay:.3s; }
+    .spark.s5{ left: 88%; top: 60%; width:44px; animation-delay:1.4s; }
+    .spark.s6{ left: 70%; top: 78%; width:30px; animation-delay:.9s; }
+
+    @keyframes spark{
+      0%, 100% { opacity:.2; transform: translate(-50%,-50%) translateX(0) scaleX(1); }
+      20% { opacity:.95; transform: translate(-50%,-50%) translateX(10px) scaleX(1.15); }
+      40% { opacity:.35; transform: translate(-50%,-50%) translateX(-8px) scaleX(.9); }
+      60% { opacity:.85; transform: translate(-50%,-50%) translateX(14px) scaleX(1.2); }
+      80% { opacity:.25; transform: translate(-50%,-50%) translateX(-6px) scaleX(.95); }
+    }
+
+    /* big 404 glitch text */
+    .code{
+      position:relative;
+      font-weight: 900;
+      font-size: clamp(64px, 10vw, 120px);
+      letter-spacing:-0.04em;
+      line-height:1;
+      margin: 0;
+      text-transform: none;
+      color: rgba(255,255,255,.92);
+      filter: drop-shadow(0 10px 30px rgba(79,70,229,.18));
+    }
+
+    .code::before,
+    .code::after{
+      content: attr(data-text);
+      position:absolute; inset:0;
+      mix-blend-mode: screen;
+      opacity:.85;
+      pointer-events:none;
+    }
+    .code::before{
+      color: rgba(6,182,212,.85);
+      transform: translateX(-2px);
+      clip-path: inset(0 0 0 0);
+      animation: glitchA 2.2s infinite linear;
+    }
+    .code::after{
+      color: rgba(255,45,146,.85);
+      transform: translateX(2px);
+      animation: glitchB 1.9s infinite linear;
+    }
+
+    @keyframes glitchA{
+      0%{ clip-path: inset(0 0 92% 0); }
+      8%{ clip-path: inset(34% 0 55% 0); }
+      16%{ clip-path: inset(72% 0 12% 0); }
+      24%{ clip-path: inset(12% 0 72% 0); }
+      32%{ clip-path: inset(0 0 92% 0); }
+      40%{ clip-path: inset(58% 0 24% 0); }
+      48%{ clip-path: inset(18% 0 62% 0); }
+      56%{ clip-path: inset(66% 0 14% 0); }
+      64%{ clip-path: inset(0 0 92% 0); }
+      100%{ clip-path: inset(0 0 92% 0); }
+    }
+    @keyframes glitchB{
+      0%{ clip-path: inset(80% 0 10% 0); }
+      10%{ clip-path: inset(10% 0 78% 0); }
+      20%{ clip-path: inset(56% 0 28% 0); }
+      30%{ clip-path: inset(24% 0 56% 0); }
+      40%{ clip-path: inset(76% 0 12% 0); }
+      50%{ clip-path: inset(14% 0 72% 0); }
+      60%{ clip-path: inset(62% 0 20% 0); }
+      70%{ clip-path: inset(30% 0 52% 0); }
+      80%{ clip-path: inset(84% 0 8% 0); }
+      100%{ clip-path: inset(80% 0 10% 0); }
+    }
+
+    .title{
+      margin: 10px 0 0;
+      font-size: clamp(18px, 2.6vw, 26px);
+      font-weight: 800;
+      letter-spacing: .01em;
+      text-transform: none;
+      color: rgba(255,255,255,.88);
+    }
+
+    /* action button */
+    .btn{
+      margin-top: 18px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width: 230px;
+      padding: 14px 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.18);
+      text-decoration:none;
+      font-weight: 800;
+      color: rgba(255,255,255,.92);
+      background: rgba(0,0,0,.18);
+      position:relative;
+      overflow:hidden;
+      box-shadow:
+        0 18px 60px rgba(0,0,0,.45),
+        0 0 0 1px rgba(255,255,255,.06) inset;
+      transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: linear-gradient(90deg, var(--c3), var(--c5), var(--c2), var(--c1), var(--c4));
+      opacity:.85;
+      filter: blur(10px);
+      transform: translateX(-40%);
+      transition: transform .35s ease;
+    }
+    .btn::after{
+      content:"";
+      position:absolute; inset:1px;
+      border-radius: 14px;
+      background: rgba(7,16,28,.72);
+      opacity:1;
+    }
+    .btn span{ position:relative; z-index:1; letter-spacing:.08em; }
+
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow:
+        0 22px 75px rgba(0,0,0,.55),
+        0 0 0 1px rgba(255,255,255,.08) inset;
+    }
+    .btn:hover::before{ transform: translateX(0%); }
+    .btn:active{ transform: translateY(0px); opacity:.96; }
+
+    /* small responsive tweaks */
+    @media (max-width: 520px){
+      .btn{ width: 100%; min-width: unset; }
+    }
+
+    /* reduce motion */
+    @media (prefers-reduced-motion: reduce){
+      .ring::after, .spark, .code::before, .code::after { animation: none !important; }
+      .btn, .btn::before { transition: none !important; }
+    }
+
+    /* Pixel blocks floating + glitch */
+    .pixels{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:0; /* dưới ring, trên background */
+      opacity:.95;
+    }
+
+    .px{
+      position:absolute;
+      width: 14px;
+      height: 10px;
+      border-radius: 3px;
+      background: rgba(255,255,255,.10);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      filter: saturate(1.15);
+      animation: pxFloat 6.5s steps(2,end) infinite;
+    }
+
+    .px::before,
+    .px::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius: inherit;
+      opacity:.9;
+      mix-blend-mode: screen;
+      pointer-events:none;
+    }
+    .px::before{ background: rgba(6,182,212,.85); transform: translateX(-2px); }
+    .px::after { background: rgba(255,45,146,.80); transform: translateX(2px); }
+
+    @keyframes pxFloat{
+      0%   { transform: translate3d(0,0,0) scale(1); opacity:.15; }
+      12%  { transform: translate3d(10px,-8px,0) scale(1.2); opacity:.95; }
+      28%  { transform: translate3d(-8px,12px,0) scale(.95); opacity:.35; }
+      44%  { transform: translate3d(14px,6px,0) scale(1.15); opacity:.85; }
+      60%  { transform: translate3d(-10px,-6px,0) scale(.9); opacity:.25; }
+      76%  { transform: translate3d(8px,10px,0) scale(1.05); opacity:.75; }
+      100% { transform: translate3d(0,0,0) scale(1); opacity:.15; }
+    }
+
+    /* positions + sizes + delays (tùy biến) */
+    .px.a{ left: 8%;  top: 22%; width: 18px; animation-delay: .2s; }
+    .px.b{ left: 14%; top: 62%; width: 26px; height: 12px; animation-delay: 1.1s; }
+    .px.c{ left: 24%; top: 78%; width: 12px; height: 12px; animation-delay: .6s; }
+    .px.d{ left: 30%; top: 35%; width: 22px; animation-delay: 1.6s; }
+
+    .px.e{ left: 42%; top: 14%; width: 16px; animation-delay: .9s; }
+    .px.f{ left: 48%; top: 86%; width: 34px; height: 12px; animation-delay: 2.1s; }
+    .px.g{ left: 55%; top: 28%; width: 10px; height: 10px; animation-delay: 1.3s; }
+    .px.h{ left: 60%; top: 70%; width: 20px; animation-delay: .4s; }
+
+    .px.i{ left: 72%; top: 18%; width: 28px; height: 12px; animation-delay: 2.4s; }
+    .px.j{ left: 78%; top: 52%; width: 14px; height: 14px; animation-delay: 1.8s; }
+    .px.k{ left: 84%; top: 74%; width: 24px; animation-delay: .7s; }
+    .px.l{ left: 90%; top: 34%; width: 12px; animation-delay: 2.9s; }
+
+    .px.m{ left: 6%;  top: 84%; width: 12px; height: 12px; animation-delay: 2.6s; }
+    .px.n{ left: 36%; top: 54%; width: 18px; animation-delay: 3.2s; }
+    .px.o{ left: 66%; top: 90%; width: 30px; height: 12px; animation-delay: 3.6s; }
+    .px.p{ left: 92%; top: 12%; width: 18px; animation-delay: 4.1s; }
+
+    /* reduce motion */
+    @media (prefers-reduced-motion: reduce){
+      .px{ animation: none !important; }
+    }
+
+    .note{
+      margin: 14px auto 0;
+      max-width: 56ch;          /* giới hạn chiều rộng cho cân */
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.75;        /* thoáng hơn */
+      color: rgba(255,255,255,.62);
+      padding: 0 14px;          /* tránh sát mép trên mobile */
+      text-wrap: balance;       /* cân dòng (trình duyệt mới) */
+    }
+
+    @supports not (text-wrap: balance){
+      .note{ max-width: 52ch; } /* fallback */
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
-  <main class="min-h-screen flex items-center justify-center px-6">
-    <div class="max-w-lg text-center p-8 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200/70 dark:border-gray-700/70 shadow-lg">
-      <h1 class="text-4xl font-bold mb-3">404</h1>
-      <p class="text-gray-600 dark:text-gray-300 mb-6">
-        Trang bạn tìm không tồn tại hoặc đã được di chuyển.
-      </p>
-      <a class="btn btn-primary" href="./#home">Về trang chủ</a>
-    </div>
-  </main>
+
+<body>
+  <div class="dust" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+    <!-- Pixel blocks -->
+  <div class="pixels" aria-hidden="true">
+    <span class="px a"></span><span class="px b"></span><span class="px c"></span><span class="px d"></span>
+    <span class="px e"></span><span class="px f"></span><span class="px g"></span><span class="px h"></span>
+    <span class="px i"></span><span class="px j"></span><span class="px k"></span><span class="px l"></span>
+    <span class="px m"></span><span class="px n"></span><span class="px o"></span><span class="px p"></span>
+  </div>
+
+  <div class="wrap">
+    <main class="stage" role="main" aria-label="404 Not Found">
+      <div class="ring" aria-hidden="true">
+        <div class="glitch-sparks" aria-hidden="true">
+          <div class="spark cyan s1"></div>
+          <div class="spark green s2"></div>
+          <div class="spark dim s3"></div>
+          <div class="spark pink s4"></div>
+          <div class="spark cyan s5"></div>
+          <div class="spark dim s6"></div>
+        </div>
+
+        <div>
+          <div class="code" data-text="404">404</div>
+          <div class="title">Oops! Page not found</div>
+          <div class="note">Sorry, but the page you are looking for is not found. Please make sure you have typed the correct URL.</div>
+        </div>
+      </div>
+      <div>
+        <a class="btn" href="./"><span>BACK TO HOME</span></a>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
