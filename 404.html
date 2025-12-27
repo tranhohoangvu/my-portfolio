@@ -382,6 +382,16 @@
   </style>
 </head>
 
+<script>
+  (function () {
+    // /my-portfolio/assets/xxx -> base = /my-portfolio/
+    const parts = window.location.pathname.split("/").filter(Boolean);
+    const base = parts.length ? `/${parts[0]}/` : "/";
+    const homeLink = document.getElementById("homeLink");
+    if (homeLink) homeLink.href = base;
+  })();
+</script>
+
 <body>
   <div class="dust" aria-hidden="true"></div>
   <div class="scanlines" aria-hidden="true"></div>
@@ -413,7 +423,7 @@
         </div>
       </div>
       <div>
-        <a class="btn" href="./"><span>BACK TO HOME</span></a>
+        <a class="btn" id="homeLink" href="#"><span>BACK TO HOME</span></a>
       </div>
     </main>
   </div>
