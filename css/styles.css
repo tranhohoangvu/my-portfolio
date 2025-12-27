@@ -340,7 +340,7 @@ textarea:focus ~ .ripple::after {
   position: absolute;
   right: 0;
   top: calc(100% + 10px);
-  min-width: 240px;
+  min-width: 160px;
   padding: 8px;
   border-radius: 18px;
   background: rgba(255,255,255,.08);
