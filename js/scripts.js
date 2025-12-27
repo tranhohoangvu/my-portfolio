@@ -564,3 +564,49 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
+
+(() => {
+  const wrap = document.getElementById("cvDropdown");
+  const btn = document.getElementById("cvDropdownBtn");
+  const menu = document.getElementById("cvDropdownMenu");
+
+  if (!wrap || !btn || !menu) return;
+
+  const openMenu = () => {
+    menu.classList.add("cv-menu--open");
+    btn.setAttribute("aria-expanded", "true");
+  };
+
+  const closeMenu = () => {
+    menu.classList.remove("cv-menu--open");
+    btn.setAttribute("aria-expanded", "false");
+  };
+
+  const toggleMenu = () => {
+    const isOpen = menu.classList.contains("cv-menu--open");
+    if (!isOpen) openMenu();
+    else closeMenu();
+  };
+
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  // Click outside -> close
+  document.addEventListener("click", (e) => {
+    if (!wrap.contains(e.target)) closeMenu();
+  });
+
+  // ESC -> close
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  // Click an option -> close (vẫn mở tab mới vì là <a target="_blank">)
+  menu.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (a) closeMenu();
+  });
+})();
