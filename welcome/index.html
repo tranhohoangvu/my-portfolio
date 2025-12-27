@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Welcome</title>
+
+  <!-- Fonts (match main site) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <!-- Reuse site CSS -->
+  <link rel="stylesheet" href="../css/tailwind.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
+</head>
+
+<body class="welcome-body">
+  <main class="welcome-wrap" aria-label="Welcome intro">
+    <div class="welcome-icons" aria-hidden="true">
+      <div class="welcome-icon">
+        <!-- code icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 17L5 12l5-5" />
+          <path d="M14 7l5 5-5 5" />
+          <path d="M13 6l-2 12" />
+        </svg>
+      </div>
+
+      <div class="welcome-icon">
+        <!-- user icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 21a8 8 0 0 0-16 0" />
+          <circle cx="12" cy="8" r="4" />
+        </svg>
+      </div>
+
+      <div class="welcome-icon">
+        <!-- github-ish icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 19c-4 1.5-4-2.5-6-3" />
+          <path d="M15 22v-3.5c0-1 .1-1.4-.5-2 3-.3 6-1.5 6-7a5.5 5.5 0 0 0-1.5-3.8 5 5 0 0 0-.1-3.8S17.6 1.7 15 3.4a13 13 0 0 0-6 0C6.4 1.7 5.1 2.2 5.1 2.2a5 5 0 0 0-.1 3.8A5.5 5.5 0 0 0 3.5 9.8c0 5.5 3 6.7 6 7-.6.6-.6 1.2-.5 2V22" />
+        </svg>
+      </div>
+    </div>
+
+    <h1 class="welcome-title">
+      <span class="welcome-title__top">Welcome To</span>
+      <span class="welcome-title__bottom">Portfolio Website</span>
+    </h1>
+
+    <p class="welcome-sub">Loading your experience…</p>
+
+    <button id="welcome-skip" class="welcome-skip" type="button">Skip</button>
+  </main>
+
+  <script>
+    (() => {
+      const KEY_SEEN = "welcomeSeen";
+      const KEY_RETURN = "welcomeReturn";
+
+      const fromStore = () => {
+        try { return sessionStorage.getItem(KEY_RETURN); } catch (e) { return null; }
+      };
+
+      const computeBase = () => {
+        // /my-portfolio/welcome/ => /my-portfolio/
+        return window.location.pathname.replace(/\/welcome\/?$/, "/");
+      };
+
+      const goBack = () => {
+        let target = fromStore();
+        if (!target) target = computeBase();
+
+        try {
+          sessionStorage.setItem(KEY_SEEN, "1");
+          sessionStorage.removeItem(KEY_RETURN);
+        } catch (e) {}
+
+        window.location.replace(target);
+      };
+
+      const timer = window.setTimeout(goBack, 1600);
+
+      document.getElementById("welcome-skip")?.addEventListener("click", () => {
+        window.clearTimeout(timer);
+        goBack();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
+          window.clearTimeout(timer);
+          goBack();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

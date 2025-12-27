@@ -58,6 +58,31 @@
   <meta name="theme-color" content="#6366f1" />
   <link rel="manifest" href="site.webmanifest" />
   <link rel="apple-touch-icon" href="assets/pwa-192.png" />
+
+  <!-- Welcome intro redirect (per-tab) -->
+<script>
+  (() => {
+    const KEY_SEEN = "welcomeSeen";
+    const KEY_RETURN = "welcomeReturn";
+
+    try {
+      if (!sessionStorage.getItem(KEY_SEEN)) {
+        // lưu URL hiện tại (có cả #hash nếu vào thẳng section)
+        sessionStorage.setItem(KEY_RETURN, window.location.href);
+
+        // /my-portfolio/ hoặc /my-portfolio/index.html => /my-portfolio/
+        const basePath = window.location.pathname.endsWith("/")
+          ? window.location.pathname
+          : window.location.pathname.replace(/[^\/]+$/, "");
+
+        window.location.replace(basePath + "welcome/");
+      }
+    } catch (e) {
+      // sessionStorage bị chặn thì thôi, không redirect
+    }
+  })();
+</script>
+
 </head>
 
 <body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
