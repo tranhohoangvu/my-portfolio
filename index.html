@@ -279,11 +279,28 @@
         data-i18n="about_title">Giới thiệu</h2>
 
       <div class="flex flex-col md:flex-row items-center justify-center gap-12 max-w-6xl mx-auto">
-        <div class="relative group shrink-0 animate-zoom-in">
-          <img src="assets/profile.jpg"
-               alt="Ảnh cá nhân của Trần Hồ Hoàng Vũ"
-               class="w-64 h-64 rounded-full object-cover shadow-xl transition-transform duration-500 group-hover:animate-pulse border-4 border-indigo-200 dark:border-indigo-900">
-          <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-indigo-400 transition-all duration-300"></div>
+        <div class="relative shrink-0 animate-zoom-in">
+          <!-- Flip container -->
+          <div class="profile-flip group w-64 h-64">
+            <div class="profile-flip__inner">
+              <!-- Front -->
+              <img
+                src="assets/profile1.jpg"
+                alt="Ảnh cá nhân của Trần Hồ Hoàng Vũ"
+                class="profile-flip__face w-64 h-64 rounded-full object-cover shadow-xl border-4 border-indigo-200 dark:border-indigo-900"
+              />
+
+              <!-- Back -->
+              <img
+                src="assets/profile2.png"
+                alt="Ảnh profile khác của Trần Hồ Hoàng Vũ"
+                class="profile-flip__face profile-flip__back w-64 h-64 rounded-full object-cover shadow-xl border-4 border-indigo-200 dark:border-indigo-900"
+              />
+            </div>
+
+            <!-- hover ring -->
+            <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-indigo-400 transition-all duration-300"></div>
+          </div>
         </div>
 
         <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed text-justify flex-1 animate-slide-in-right max-w-2xl"

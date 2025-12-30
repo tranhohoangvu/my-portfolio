@@ -1206,3 +1206,32 @@ footer p:last-child{
 @media (max-width: 420px){
   #cv .cv-actions{ flex-direction: column; }
 }
+
+/* Profile flip (hover to show profile2.jpg) */
+.profile-flip{
+  perspective: 1000px;
+}
+
+.profile-flip__inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 700ms cubic-bezier(.2,.8,.2,1);
+}
+
+.profile-flip:hover .profile-flip__inner{
+  transform: rotateY(180deg);
+}
+
+.profile-flip__face{
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0); /* avoid flicker on some browsers */
+}
+
+.profile-flip__back{
+  transform: rotateY(180deg);
+}
