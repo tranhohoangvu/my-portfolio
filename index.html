@@ -115,6 +115,11 @@
           <span data-i18n="nav_about">Giới thiệu</span>
           <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-sky-600 dark:bg-sky-300 transition-all duration-300 group-hover:w-full"></span>
         </a>
+        <a href="#cv"
+          class="group relative text-gray-900 dark:text-gray-100 hover:text-indigo-400 dark:hover:text-indigo-400 transition-colors duration-300">
+          <span data-i18n="nav_cv">CV</span>
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-sky-600 dark:bg-sky-300 transition-all duration-300 group-hover:w-full"></span>
+        </a>
 
         <a href="#projects"
           class="group relative text-gray-900 dark:text-gray-100 hover:text-indigo-400 dark:hover:text-indigo-400 transition-colors duration-300">
@@ -205,6 +210,9 @@
         <a href="#about"
           class="text-gray-900 dark:text-gray-100 hover:text-indigo-400 dark:hover:text-indigo-400 transition-colors duration-300"
           data-i18n="nav_about">Giới thiệu</a>
+        <a href="#cv"
+          class="text-gray-900 dark:text-gray-100 hover:text-indigo-400 dark:hover:text-indigo-400 transition-colors duration-300"
+          data-i18n="nav_cv">CV</a>
         <a href="#projects"
           class="text-gray-900 dark:text-gray-100 hover:text-indigo-400 dark:hover:text-indigo-400 transition-colors duration-300"
           data-i18n="nav_projects">Dự án</a>
@@ -244,11 +252,19 @@
             <span data-i18n="hero_btn_cv">Tải CV</span>
           </button>
           <div id="cvDropdownMenu" class="cv-menu" role="menu" aria-labelledby="cvDropdownBtn">
-            <a href="assets/TranHoHoangVu_CV_LaTeX.pdf" target="_blank" rel="noopener noreferrer" class="cv-item" role="menuitem">
-              <span class="cv-item__title">CV (LaTeX)</span>
+            <a href="assets/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer" class="cv-item" role="menuitem">
+              <span class="cv-item__title" data-i18n="cv_menu_ai_title">AI Engineer Intern (PDF)</span>
+              <span class="cv-item__meta" data-i18n="cv_menu_ai_meta">TranHoHoangVu_AI.pdf</span>
             </a>
-            <a href="assets/TranHoHoangVu_CV.pdf" target="_blank" rel="noopener noreferrer" class="cv-item" role="menuitem">
-              <span class="cv-item__title">CV (Basic)</span>
+
+            <a href="assets/TranHoHoangVu_SE.pdf" target="_blank" rel="noopener noreferrer" class="cv-item" role="menuitem">
+              <span class="cv-item__title" data-i18n="cv_menu_se_latex_title">Software Engineer Intern (PDF • LaTeX)</span>
+              <span class="cv-item__meta" data-i18n="cv_menu_se_latex_meta">TranHoHoangVu_SE.pdf</span>
+            </a>
+
+            <a href="assets/TranHoHoangVu_General.pdf" target="_blank" rel="noopener noreferrer" class="cv-item" role="menuitem">
+              <span class="cv-item__title" data-i18n="cv_menu_se_general_title">Software Engineer Intern (PDF • General)</span>
+              <span class="cv-item__meta" data-i18n="cv_menu_se_general_meta">TranHoHoangVu_General.pdf</span>
             </a>
           </div>
         </div>
@@ -330,8 +346,94 @@
     </div>
   </section>
 
+  <!-- CV Section (xen kẽ: GRAY) -->
+  <section id="cv" class="py-24 bg-gray-50 dark:bg-gray-900 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
+      <div class="text-center">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 tracking-tight" data-i18n="cv_title">
+          CV
+        </h2>
+        <p class="mt-4 mb-4 text-base md:text-lg text-gray-600 dark:text-gray-300" data-i18n="cv_subtitle">
+          Chọn phiên bản CV phù hợp với vị trí bạn đang ứng tuyển.
+        </p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <!-- AI Engineer Intern (PDF) -->
+        <article class="cv-card cv-card--ai">
+          <div class="cv-top">
+            <div class="cv-icon" aria-hidden="true">
+              <svg class="cv-icon__svg" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2l1.2 4.6L18 8l-4.8 1.4L12 14l-1.2-4.6L6 8l4.8-1.4L12 2z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M5 13l.7 2.7L8.4 16l-2.7.8L5 19.5l-.7-2.7L1.6 16l2.7-.8L5 13z" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+            </div>
+            <span class="cv-pill">PDF</span>
+          </div>
+
+          <h3 class="cv-title" data-i18n="cv_ai_title">AI Engineer Intern (PDF)</h3>
+          <p class="cv-desc" data-i18n="cv_ai_desc">Applied AI (ML/DL, NLP/CV) • deployable pipelines.</p>
+
+          <div class="cv-actions">
+            <a href="assets/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer"
+              class="cv-action cv-action--primary" data-i18n="cv_btn_view">View</a>
+            <a href="assets/TranHoHoangVu_AI.pdf" download
+              class="cv-action cv-action--ghost" data-i18n="cv_btn_download">Download</a>
+          </div>
+        </article>
+
+        <!-- Software Engineer Intern (PDF • LaTeX) -->
+        <article class="cv-card cv-card--latex">
+          <div class="cv-top">
+            <div class="cv-icon" aria-hidden="true">
+              <svg class="cv-icon__svg" viewBox="0 0 24 24" fill="none">
+                <path d="M9 18l-6-6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="cv-pill">PDF</span>
+          </div>
+
+          <h3 class="cv-title" data-i18n="cv_se_latex_title">Software Engineer Intern (PDF • SE)</h3>
+          <p class="cv-desc" data-i18n="cv_se_latex_desc">Backend-focused: APIs, databases, clean & maintainable code.</p>
+
+          <div class="cv-actions">
+            <a href="assets/TranHoHoangVu_SE.pdf" target="_blank" rel="noopener noreferrer"
+              class="cv-action cv-action--primary" data-i18n="cv_btn_view">View</a>
+            <a href="assets/TranHoHoangVu_SE.pdf" download
+              class="cv-action cv-action--ghost" data-i18n="cv_btn_download">Download</a>
+          </div>
+        </article>
+
+        <!-- Software Engineer Intern (PDF • General) -->
+        <article class="cv-card cv-card--general">
+          <div class="cv-top">
+            <div class="cv-icon" aria-hidden="true">
+              <svg class="cv-icon__svg" viewBox="0 0 24 24" fill="none">
+                <path d="M7 3h7l3 3v15a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M14 3v4h4" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M8 12h8M8 16h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="cv-pill">PDF</span>
+          </div>
+
+          <h3 class="cv-title" data-i18n="cv_se_general_title">Software Engineer Intern (PDF • General)</h3>
+          <p class="cv-desc" data-i18n="cv_se_general_desc">General-purpose CV for most Software Engineer Intern roles.</p>
+
+          <div class="cv-actions">
+            <a href="assets/TranHoHoangVu_General.pdf" target="_blank" rel="noopener noreferrer"
+              class="cv-action cv-action--primary" data-i18n="cv_btn_view">View</a>
+            <a href="assets/TranHoHoangVu_General.pdf" download
+              class="cv-action cv-action--ghost" data-i18n="cv_btn_download">Download</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- Projects Section (xen kẽ: GRAY) -->
-  <section id="projects" class="py-24 bg-gray-50 dark:bg-gray-900 relative">
+  <section id="projects" class="py-24 bg-white dark:bg-gray-800 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in"
           data-i18n="projects_title">Dự án</h2>
@@ -447,7 +549,7 @@
   </section>
 
   <!-- Skills Section (xen kẽ: WHITE) -->
-  <section id="skills" class="py-24 bg-white dark:bg-gray-800 relative">
+  <section id="skills" class="py-24 bg-gray-50 dark:bg-gray-900 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in"
           data-i18n="skills_title">Kỹ năng</h2>
@@ -507,7 +609,7 @@
   </section>
 
   <!-- Certificates Section (xen kẽ: GRAY) -->
-  <section id="certificates" class="py-24 bg-gray-50 dark:bg-gray-900 relative">
+  <section id="certificates" class="py-24 bg-white dark:bg-gray-800 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in"
         data-i18n="certs_title">Chứng chỉ</h2>
@@ -540,7 +642,7 @@
   </section>
 
   <!-- GitHub Section (xen kẽ: WHITE) -->
-  <section id="github" class="py-24 bg-white dark:bg-gray-800 relative">
+  <section id="github" class="py-24 bg-gray-50 dark:bg-gray-900 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in"
           data-i18n="github_title">Hoạt động GitHub</h2>
@@ -637,7 +739,7 @@
   </section>
 
   <!-- Contact Section (xen kẽ: GRAY) -->
-  <section id="contact" class="py-24 bg-gray-50 dark:bg-gray-900 relative">
+  <section id="contact" class="py-24 bg-white dark:bg-gray-800 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in"
           data-i18n="contact_title">Liên hệ</h2>
