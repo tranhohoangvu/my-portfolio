@@ -3,13 +3,21 @@
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Open-success)](https://tranhohoangvu.github.io/my-portfolio/)
 
 > 🎓 Final-year Computer Science student at Ton Duc Thang University (TDTU)  
-> 💼 Personal portfolio showcasing projects, skills, and GitHub activity (and optionally technical blog posts).
+> 💼 Personal portfolio showcasing projects, skills, certificates, GitHub activity — and multiple CV versions.
 
 A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, featuring **Dark/Light mode** and **VI/EN** language toggle.
 
-- 🔗 **Live site:** [https://tranhohoangvu.github.io/my-portfolio/](https://tranhohoangvu.github.io/my-portfolio/)
-- 📄 **CV (PDF):** [`assets/TranHoHoangVu_CV.pdf`](./assets/TranHoHoangVu_CV.pdf)
-- 📄 **CV (Online):** [https://tranhohoangvu.github.io/my-portfolio/assets/TranHoHoangVu_CV.pdf](https://tranhohoangvu.github.io/my-portfolio/assets/TranHoHoangVu_CV.pdf)
+- 🔗 **Live site:** https://tranhohoangvu.github.io/my-portfolio/
+- 📄 **CVs (PDF) in repo:** `assets/`
+  - `assets/TranHoHoangVu_AI.pdf`
+  - `assets/TranHoHoangVu_SE.pdf`
+  - `assets/TranHoHoangVu_General.pdf`
+- 📄 **CVs (direct links):**
+  - `.../assets/TranHoHoangVu_AI.pdf`
+  - `.../assets/TranHoHoangVu_SE.pdf`
+  - `.../assets/TranHoHoangVu_General.pdf`
+
+> Vietnamese version: `README_VI.md`
 
 ---
 
@@ -17,6 +25,7 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
 
 - [✨ Highlights](#-highlights)
 - [🧰 Tech Stack](#-tech-stack)
+- [📄 CV Versions](#-cv-versions)
 - [📁 Project Structure](#-project-structure)
 - [🚀 Run Locally](#-run-locally)
 - [⚙️ Quick Customize](#️-quick-customize)
@@ -26,7 +35,6 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
 - [🧠 Performance & SEO Tips](#-performance--seo-tips)
 - [🛠️ Updating Content](#️-updating-content)
 - [📫 Contact](#-contact)
-- [📄 License](#-license)
 
 ---
 
@@ -37,12 +45,14 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
 - VI / EN i18n via `data-i18n` (saved in `localStorage.lang`, includes page metadata)
 - Projects showcase with images and quick links
 - Skills & Certificates sections
+- **CV section with 3 PDF versions + “View / Download” buttons**
+- **Hero “Download CV” dropdown** to pick the CV version
 - GitHub section
   - Contributions heatmap SVG auto-generated (Light/Dark) and auto-committed by GitHub Actions
   - Activity Graph rendered via `github-readme-activity-graph`
 - Contact form via Formspree (no backend required)
 - Smooth scroll + section reveal animations + back-to-top button
-- SEO essentials: meta tags + OG image (`assets/og-image.png`), plus `robots.txt`, `sitemap.xml`, and a custom `404.html`
+- SEO essentials: meta tags + OG image, plus `robots.txt`, `sitemap.xml`, and a custom `404.html`
 
 ---
 
@@ -58,6 +68,37 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
 
 ---
 
+## 📄 CV Versions
+
+This portfolio includes **three PDF CV variants** (both in the CV section and the dropdown):
+
+1) **AI Engineer Intern (PDF)**  
+   - File: `assets/TranHoHoangVu_AI.pdf`  
+   - Use when applying for AI/ML/DL/NLP/CV roles
+
+2) **Software Engineer Intern — LaTeX version (PDF)**  
+   - File: `assets/TranHoHoangVu_SE.pdf`  
+   - Use when applying for Software Engineer Intern roles (LaTeX-styled format)
+
+3) **Software Engineer Intern — General (PDF)**  
+   - File: `assets/TranHoHoangVu_General.pdf`  
+   - General-purpose version for most SE intern job descriptions
+
+### i18n keys used (JS)
+
+The CV section + dropdown text is controlled by `data-i18n` keys in `js/scripts.js`, typically:
+
+- Card titles/descriptions:  
+  `cv_ai_title`, `cv_ai_desc`  
+  `cv_se_latex_title`, `cv_se_latex_desc`  
+  `cv_se_general_title`, `cv_se_general_desc`
+- Dropdown labels:  
+  `cv_menu_ai_title`, `cv_menu_ai_meta`  
+  `cv_menu_se_latex_title`, `cv_menu_se_latex_meta`  
+  `cv_menu_se_general_title`, `cv_menu_se_general_meta`
+
+---
+
 ## 📁 Project Structure
 
 ```txt
@@ -68,7 +109,9 @@ my-portfolio/
 │  ├─ github-contrib-light.svg
 │  ├─ github-contrib-dark.svg
 │  ├─ profile.jpg
-│  ├─ TranHoHoangVu_CV.pdf
+│  ├─ TranHoHoangVu_AI.pdf
+│  ├─ TranHoHoangVu_SE.pdf
+│  ├─ TranHoHoangVu_General.pdf
 │  ├─ og-image.jpg
 │  └─ favicon.*
 ├─ css/
@@ -116,11 +159,13 @@ In `index.html`, update:
 <form action="https://formspree.io/f/xxxxxxx" method="POST">
 ```
 
-### 3) Social links / content
-Edit directly in `index.html` and the i18n content inside `js/scripts.js`.
+### 3) CV files / labels
+- Replace PDFs under `assets/` (keep filenames to avoid changing HTML)
+- Update dropdown links in `index.html` (CV menu)
+- Update i18n text in `js/scripts.js` (I18N object)
 
-### 4) Assets
-Replace images/CV in `assets/` (keep filenames if you don’t want to edit HTML).
+### 4) Social links / content
+Edit directly in `index.html` and translations in `js/scripts.js`.
 
 ---
 
@@ -166,19 +211,17 @@ Deployment is handled by `.github/workflows/static.yml` (GitHub Pages official w
 4. After the workflow completes, your site is live at:
    - `https://<username>.github.io/<repo>/`
 
-✅ **This repo is currently deployed here:** [https://tranhohoangvu.github.io/my-portfolio/](https://tranhohoangvu.github.io/my-portfolio/)
-
-> 📄 CV (online): [https://tranhohoangvu.github.io/my-portfolio/assets/TranHoHoangVu_CV.pdf](https://tranhohoangvu.github.io/my-portfolio/assets/TranHoHoangVu_CV.pdf)
+✅ Live: https://tranhohoangvu.github.io/my-portfolio/
 
 ---
 
 ## 🧠 Performance & SEO Tips
 
-- Compress images (e.g., Squoosh/TinyPNG) and prefer modern formats when possible
+- Compress images (Squoosh/TinyPNG) and prefer modern formats when possible
 - Keep hero images under ~300–500KB
 - Make sure `og-image.jpg` exists and is referenced in meta tags
 - Run Lighthouse to check performance/SEO/accessibility
-- (Optional) Add analytics (e.g., Google Analytics) if you want traffic insights
+- (Optional) Add analytics if you want traffic insights
 
 ---
 
@@ -186,12 +229,12 @@ Deployment is handled by `.github/workflows/static.yml` (GitHub Pages official w
 
 1. Edit `index.html` for text/sections/projects
 2. Update translations in `js/scripts.js` (I18N object + `data-i18n` keys)
-3. Replace images/CV under `assets/`
+3. Replace images/CVs under `assets/`
 4. (Optional) rebuild Tailwind
 5. Commit & push:
 ```bash
 git add .
-git commit -m "Update content"
+git commit -m "feat(cv): update CV files, section content, dropdown and i18n"
 git push origin main
 ```
 
@@ -199,18 +242,8 @@ git push origin main
 
 ## 📫 Contact
 
-- 🐙 GitHub: [https://github.com/tranhohoangvu](https://github.com/tranhohoangvu)
-- 💼 LinkedIn: [https://linkedin.com/in/tranhohoangvu/](https://linkedin.com/in/tranhohoangvu/)
-- 🌐 Live site: [https://tranhohoangvu.github.io/my-portfolio/](https://tranhohoangvu.github.io/my-portfolio/)
-- 📄 CV (online): [https://tranhohoangvu.github.io/my-portfolio/assets/TranHoHoangVu_CV.pdf](https://tranhohoangvu.github.io/my-portfolio/assets/TranHoHoangVu_CV.pdf)
-- 📄 CV (repo): `./assets/TranHoHoangVu_CV.pdf`
-
----
-
-## 📄 License
-
-Personal portfolio project.  
-If you reuse the template, please keep attribution or link back to the original repo.
+- 🐙 GitHub: https://github.com/tranhohoangvu
+- 🌐 Live site: https://tranhohoangvu.github.io/my-portfolio/
 
 ---
 

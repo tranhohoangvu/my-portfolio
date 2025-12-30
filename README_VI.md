@@ -1,64 +1,105 @@
-# 🌐 Portfolio của **Trần Hồ Hoàng Vũ**
+# 🌐 Portfolio cá nhân — Trần Hồ Hoàng Vũ
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Open-success)](https://tranhohoangvu.github.io/my-portfolio/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-M%E1%BB%9F-success)](https://tranhohoangvu.github.io/my-portfolio/)
 
 > 🎓 Sinh viên năm cuối ngành Computer Science tại Đại học Tôn Đức Thắng (TDTU)  
-> 💼 Portfolio cá nhân showcase dự án, kỹ năng và hoạt động GitHub (có thể mở rộng sang blog kỹ thuật).
+> 💼 Portfolio giới thiệu dự án, kỹ năng, chứng chỉ, GitHub activity — và nhiều phiên bản CV.
 
-Đây là website **static** được xây dựng bằng **HTML + Tailwind CSS + Vanilla JS**, có **Dark/Light mode** và chuyển ngôn ngữ **VI/EN**.
+Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + Vanilla JS**, có **Dark/Light mode** và chuyển ngôn ngữ **VI/EN**.
 
-- 🔗 **Website:** [https://tranhohoangvu.github.io/my-portfolio/](https://tranhohoangvu.github.io/my-portfolio/)
-- 📄 **CV (PDF):** [`assets/TranHoHoangVu_CV.pdf`](./assets/TranHoHoangVu_CV.pdf)
-- 📄 **CV (Online):** [https://tranhohoangvu.github.io/my-portfolio/assets/TranHoHoangVu_CV.pdf](https://tranhohoangvu.github.io/my-portfolio/assets/TranHoHoangVu_CV.pdf)
+- 🔗 **Website:** https://tranhohoangvu.github.io/my-portfolio/
+- 📄 **CV (PDF) trong repo:** `assets/`
+  - `assets/TranHoHoangVu_AI.pdf`
+  - `assets/TranHoHoangVu_SE.pdf`
+  - `assets/TranHoHoangVu_General.pdf`
+- 📄 **Link trực tiếp (sau khi deploy):**
+  - `.../assets/TranHoHoangVu_AI.pdf`
+  - `.../assets/TranHoHoangVu_SE.pdf`
+  - `.../assets/TranHoHoangVu_General.pdf`
+
+> English version: `README.md`
 
 ---
 
 ## 📌 Mục lục
 
-- [✨ Tính năng nổi bật](#-tính-năng-nổi-bật)
-- [⚙️ Công nghệ sử dụng](#️-công-nghệ-sử-dụng)
-- [🗂️ Cấu trúc thư mục](#️-cấu-trúc-thư-mục)
+- [✨ Điểm nổi bật](#-điểm-nổi-bật)
+- [🧰 Công nghệ](#-công-nghệ)
+- [📄 Các phiên bản CV](#-các-phiên-bản-cv)
+- [📁 Cấu trúc thư mục](#-cấu-trúc-thư-mục)
 - [🚀 Chạy local](#-chạy-local)
-- [✅ Quick Customize](#-quick-customize)
-- [🎨 Build Tailwind](#-build-tailwind-tuỳ-chọn)
-- [🤖 Auto cập nhật GitHub Contributions SVG](#-auto-cập-nhật-github-contributions-svg)
+- [⚙️ Tùy biến nhanh](#️-tùy-biến-nhanh)
+- [🎨 Build Tailwind](#-build-tailwind-tùy-chọn)
+- [🤖 SVG GitHub Contributions](#-svg-github-contributions-tự-động-cập-nhật)
 - [🌍 Deploy lên GitHub Pages](#-deploy-lên-github-pages)
-- [🧠 Tối ưu hoá](#-tối-ưu-hoá-performance--seo)
-- [🛠️ Cách cập nhật nội dung](#️-cách-cập-nhật-nội-dung)
+- [🧠 Gợi ý hiệu năng & SEO](#-gợi-ý-hiệu-năng--seo)
+- [🛠️ Cập nhật nội dung](#️-cập-nhật-nội-dung)
 - [📫 Liên hệ](#-liên-hệ)
-- [📄 Bản quyền](#-bản-quyền)
 
 ---
 
-## ✨ Tính năng nổi bật
+## ✨ Điểm nổi bật
 
 - Giao diện responsive (mobile-first)
-- Chế độ Dark / Light (lưu trong `localStorage`, tự fallback theo tuỳ chọn hệ điều hành)
-- Đa ngôn ngữ VI / EN qua `data-i18n` (lưu trong `localStorage.lang`, bao gồm cả metadata của trang)
-- Showcase dự án kèm hình ảnh và liên kết nhanh
-- Các mục Kỹ năng & Chứng chỉ
-- Khu vực GitHub
-  - SVG heatmap contributions tự động tạo cho Light/Dark và tự động commit bằng GitHub Actions
+- Dark / Light mode (lưu trong `localStorage`, fallback theo OS)
+- i18n VI / EN qua `data-i18n` (lưu trong `localStorage.lang`, có cả metadata)
+- Showcase Projects (ảnh + link nhanh)
+- Skills & Certificates
+- **Section CV với 3 bản PDF + nút “View / Download”**
+- **Dropdown “Download CV” ở hero** để chọn đúng phiên bản CV
+- GitHub section
+  - SVG contributions heatmap auto-generate (Light/Dark) và auto-commit bằng GitHub Actions
   - Activity Graph hiển thị bằng `github-readme-activity-graph`
-- Form liên hệ dùng Formspree (không cần backend)
-- Cuộn mượt + hiệu ứng hiện section + nút back-to-top
-- SEO cơ bản: meta tags + ảnh OG (`assets/og-image.png`), kèm `robots.txt`, `sitemap.xml`, và trang `404.html` tùy chỉnh
+- Contact form qua Formspree (không cần backend)
+- Smooth scroll + reveal animation + back-to-top button
+- SEO cơ bản: meta tags + OG, kèm `robots.txt`, `sitemap.xml`, và `404.html`
 
 ---
 
-## ⚙️ Công nghệ sử dụng
+## 🧰 Công nghệ
 
-| 🧩 Công nghệ | 💡 Mục đích sử dụng |
+| Công nghệ | Mục đích |
 |---|---|
-| HTML5 | Cấu trúc nội dung |
-| Tailwind CSS (CLI) | Styling + responsive layout |
+| HTML5 | Cấu trúc trang |
+| Tailwind CSS (CLI) | Styling + responsive |
 | Vanilla JavaScript | Tương tác, theme toggle, i18n |
-| GitHub Actions | Deploy GitHub Pages + cập nhật SVG hằng ngày |
+| GitHub Actions | Deploy Pages + update SVG hằng ngày |
 | Formspree | Xử lý form liên hệ |
 
 ---
 
-## 🗂️ Cấu trúc thư mục
+## 📄 Các phiên bản CV
+
+Portfolio có **3 phiên bản CV dạng PDF** (hiển thị ở section CV và dropdown):
+
+1) **AI Engineer Intern (PDF)**  
+   - File: `assets/TranHoHoangVu_AI.pdf`  
+   - Dùng khi ứng tuyển AI/ML/DL/NLP/CV
+
+2) **Software Engineer Intern — bản LaTeX (PDF)**  
+   - File: `assets/TranHoHoangVu_SE.pdf`  
+   - Dùng khi ứng tuyển Software Engineer Intern (format gọn, kiểu LaTeX)
+
+3) **Software Engineer Intern — bản General (PDF)**  
+   - File: `assets/TranHoHoangVu_General.pdf`  
+   - Bản tổng quan, phù hợp đa số JD SE intern
+
+### Key i18n đang dùng (JS)
+
+Text của section CV + dropdown được điều khiển qua `data-i18n` trong `js/scripts.js`, thường gồm:
+
+- Title/desc của card:  
+  `cv_ai_title`, `cv_ai_desc`  
+  `cv_se_latex_title`, `cv_se_latex_desc`  
+  `cv_se_general_title`, `cv_se_general_desc`
+- Label của dropdown:  
+  `cv_menu_ai_title`, `cv_menu_ai_meta`  
+  `cv_menu_se_latex_title`, `cv_menu_se_latex_meta`  
+  `cv_menu_se_general_title`, `cv_menu_se_general_meta`
+
+---
+
+## 📁 Cấu trúc thư mục
 
 ```txt
 my-portfolio/
@@ -68,7 +109,9 @@ my-portfolio/
 │  ├─ github-contrib-light.svg
 │  ├─ github-contrib-dark.svg
 │  ├─ profile.jpg
-│  ├─ TranHoHoangVu_CV.pdf
+│  ├─ TranHoHoangVu_AI.pdf
+│  ├─ TranHoHoangVu_SE.pdf
+│  ├─ TranHoHoangVu_General.pdf
 │  ├─ og-image.jpg
 │  └─ favicon.*
 ├─ css/
@@ -92,17 +135,17 @@ my-portfolio/
 ### Cách 1: Mở trực tiếp
 Mở `index.html` bằng trình duyệt.
 
-### Cách 2: Chạy local server (khuyên dùng)
+### Cách 2: Dùng local server (khuyến nghị)
 ```bash
 python -m http.server 5500
 ```
 Truy cập: `http://localhost:5500`
 
-> Gợi ý: dùng VS Code extension **Live Server** cũng OK.
+> Gợi ý: VS Code **Live Server** cũng rất tiện.
 
 ---
 
-## ✅ Quick Customize
+## ⚙️ Tùy biến nhanh
 
 ### 1) GitHub username
 Sửa trong `js/scripts.js`:
@@ -110,23 +153,25 @@ Sửa trong `js/scripts.js`:
 const GITHUB_USERNAME = "tranhohoangvu";
 ```
 
-### 2) Endpoint Formspree
-Trong `index.html`, sửa:
+### 2) Contact form (Formspree)
+Sửa trong `index.html`:
 ```html
 <form action="https://formspree.io/f/xxxxxxx" method="POST">
 ```
 
-### 3) Link MXH / nội dung
-Chỉnh trong `index.html` và phần i18n trong `js/scripts.js`.
+### 3) CV / nhãn hiển thị
+- Thay PDF trong `assets/` (giữ tên file để khỏi phải sửa HTML)
+- Update link dropdown trong `index.html` (CV menu)
+- Update i18n trong `js/scripts.js` (object I18N)
 
-### 4) Assets
-Thay ảnh/CV trong `assets/` (giữ nguyên tên file nếu không muốn sửa HTML).
+### 4) Social links / nội dung khác
+Sửa trực tiếp trong `index.html` và phần dịch trong `js/scripts.js`.
 
 ---
 
-## 🎨 Build Tailwind (Tuỳ chọn)
+## 🎨 Build Tailwind (Tùy chọn)
 
-Repo đã có sẵn CSS đã build ở `css/tailwind.css`.
+File CSS build sẵn ở `css/tailwind.css`.
 
 Build lại:
 ```bash
@@ -141,57 +186,55 @@ npx @tailwindcss/cli -i ./css/tailwind-input.css -o ./css/tailwind.css --watch
 
 ---
 
-## 🤖 Auto cập nhật GitHub Contributions SVG
+## 🤖 SVG GitHub Contributions (Tự động cập nhật)
 
 Workflow: `.github/workflows/update-github-contrib.yml`
 
-- Chạy mỗi ngày (00:00 UTC)
-- Gọi GitHub GraphQL API trong `js/build_github_contrib_svgs.py`
+- Chạy hằng ngày (00:00 UTC)
+- Dùng GitHub GraphQL API trong `js/build_github_contrib_svgs.py`
 - Cập nhật:
   - `assets/github-contrib-light.svg`
   - `assets/github-contrib-dark.svg`
-- Tự commit thay đổi vào repo
+- Auto commit lại vào repo
 
-Nếu bạn fork/clone, hãy bật GitHub Actions và đảm bảo workflow có quyền write contents.
+Nếu bạn fork/clone, nhớ bật Actions và cấp quyền workflow ghi vào repo.
 
 ---
 
 ## 🌍 Deploy lên GitHub Pages
 
-Deploy được xử lý bởi `.github/workflows/static.yml` (workflow GitHub Pages).
+Deploy bằng `.github/workflows/static.yml` (workflow chính thức của GitHub Pages).
 
 1. Push lên nhánh `main`
 2. Vào **Settings → Pages**
-3. Chọn deploy từ **GitHub Actions**
-4. Khi workflow chạy xong, trang sẽ lên tại:
+3. Chọn deploy bằng **GitHub Actions**
+4. Sau khi workflow chạy xong, site sẽ ở:
    - `https://<username>.github.io/<repo>/`
 
-✅ **Website hiện đang chạy tại:** [https://tranhohoangvu.github.io/my-portfolio/](https://tranhohoangvu.github.io/my-portfolio/)
-
-> 📄 CV (online): [https://tranhohoangvu.github.io/my-portfolio/assets/TranHoHoangVu_CV.pdf](https://tranhohoangvu.github.io/my-portfolio/assets/TranHoHoangVu_CV.pdf)
+✅ Site: https://tranhohoangvu.github.io/my-portfolio/
 
 ---
 
-## 🧠 Tối ưu hoá (Performance & SEO)
+## 🧠 Gợi ý hiệu năng & SEO
 
-- Nén ảnh (Squoosh/TinyPNG) để tải nhanh hơn
-- Ảnh hero nên dưới ~300–500KB nếu có thể
-- Đảm bảo `og-image.jpg` tồn tại và được khai báo trong meta tags
-- Dùng Lighthouse để kiểm tra performance/SEO/accessibility
-- (Tuỳ chọn) tích hợp Google Analytics nếu muốn theo dõi truy cập
+- Nén ảnh (Squoosh/TinyPNG) và ưu tiên định dạng hiện đại nếu có
+- Ảnh hero nên < ~300–500KB
+- Đảm bảo có `og-image.jpg` và meta tags trỏ đúng
+- Dùng Lighthouse để check performance/SEO/accessibility
+- (Tùy chọn) thêm analytics nếu muốn theo dõi traffic
 
 ---
 
-## 🛠️ Cách cập nhật nội dung
+## 🛠️ Cập nhật nội dung
 
-1. Sửa `index.html` để cập nhật thông tin, project, section
-2. Update translation trong `js/scripts.js` (I18N object + `data-i18n` keys)
+1. Sửa `index.html` (text/sections/projects)
+2. Sửa phần dịch trong `js/scripts.js` (I18N + `data-i18n`)
 3. Thay ảnh/CV trong `assets/`
-4. (Tuỳ chọn) build lại Tailwind
-5. Commit và push:
+4. (Tùy chọn) build lại Tailwind
+5. Commit & push:
 ```bash
 git add .
-git commit -m "Update content"
+git commit -m "feat(cv): update CV files, section content, dropdown and i18n"
 git push origin main
 ```
 
@@ -199,19 +242,9 @@ git push origin main
 
 ## 📫 Liên hệ
 
-- 🐙 GitHub: [https://github.com/tranhohoangvu](https://github.com/tranhohoangvu)
-- 💼 LinkedIn: [https://linkedin.com/in/tranhohoangvu/](https://linkedin.com/in/tranhohoangvu/)
-- 🌐 Website: [https://tranhohoangvu.github.io/my-portfolio/](https://tranhohoangvu.github.io/my-portfolio/)
-- 📄 CV (online): [https://tranhohoangvu.github.io/my-portfolio/assets/TranHoHoangVu_CV.pdf](https://tranhohoangvu.github.io/my-portfolio/assets/TranHoHoangVu_CV.pdf)
-- 📄 CV (repo): `./assets/TranHoHoangVu_CV.pdf`
+- 🐙 GitHub: https://github.com/tranhohoangvu
+- 🌐 Website: https://tranhohoangvu.github.io/my-portfolio/
 
 ---
 
-## 📄 Bản quyền
-
-Dự án portfolio cá nhân.  
-Nếu bạn tham khảo hoặc reuse template, vui lòng giữ attribution hoặc link về repo gốc.
-
----
-
-> Last updated: 12/2025
+> Cập nhật: Tháng 12/2025

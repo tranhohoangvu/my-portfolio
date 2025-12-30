@@ -1119,6 +1119,17 @@ footer p:last-child{
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(255,255,255,.06);
   color: rgba(255,255,255,.90);
+  /* light mode defaults */
+  color: rgba(17,24,39,.85);
+  background: rgba(15,23,42,.06);
+  border: 1px solid rgba(15,23,42,.12);
+}
+
+/* keep dark mode style */
+.dark #cv .cv-pill{
+  color: rgba(255,255,255,.90);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
 }
 
 #cv .cv-title{
