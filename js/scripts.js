@@ -269,7 +269,7 @@ const I18N = {
     nav_cv: "CV",
 
     hero_name: "Tran Ho Hoang Vu",
-    hero_subtitle: "Computer Science Student | Software Engineering & AI",
+    hero_subtitle: "Computer Science Student | Software & AI Engineer",
     hero_btn_projects: "View projects",
     hero_btn_cv: "Download CV",
     cv_title: "CV",
@@ -416,6 +416,8 @@ function applyLanguage(lang, persist = true) {
   if (mobileBtn) mobileBtn.textContent = nextLabel;
 
   if (persist) localStorage.setItem("lang", currentLang);
+
+  window.restartHeroTypewriter?.();
 }
 
 function toggleLanguage() {
@@ -656,4 +658,70 @@ document.addEventListener("DOMContentLoaded", () => {
     const a = e.target.closest("a");
     if (a) closeMenu();
   });
+})();
+
+(() => {
+  const el = document.getElementById("heroTypewriter");
+  if (!el) return;
+
+  // Respect reduced motion
+  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+  if (reduceMotion) return;
+
+  const TYPE_SPEED = 55;
+  const DELETE_SPEED = 35;
+  const HOLD_AFTER_TYPE = 1400;
+  const HOLD_AFTER_DELETE = 250;
+
+  let i = 0;
+  let deleting = false;
+  let timer = null;
+
+  function stop() {
+    if (timer) clearTimeout(timer);
+    timer = null;
+  }
+
+  function start() {
+    stop();
+
+    // get the latest translated text (after i18n applied)
+    const text = (el.textContent || "").trim();
+    if (!text) return;
+
+    // reset
+    i = 0;
+    deleting = false;
+    el.textContent = "";
+
+    function tick() {
+      if (!deleting) {
+        i++;
+        el.textContent = text.slice(0, i);
+        if (i >= text.length) {
+          deleting = true;
+          timer = setTimeout(tick, HOLD_AFTER_TYPE);
+          return;
+        }
+        timer = setTimeout(tick, TYPE_SPEED);
+      } else {
+        i--;
+        el.textContent = text.slice(0, Math.max(0, i));
+        if (i <= 0) {
+          deleting = false;
+          timer = setTimeout(tick, HOLD_AFTER_DELETE);
+          return;
+        }
+        timer = setTimeout(tick, DELETE_SPEED);
+      }
+    }
+
+    tick();
+  }
+
+  // Start once on load
+  start();
+
+  // If your language toggle re-runs i18n, call this after switching language:
+  window.restartHeroTypewriter = start;
 })();

@@ -1235,3 +1235,20 @@ footer p:last-child{
 .profile-flip__back{
   transform: rotateY(180deg);
 }
+
+.tw-caret{
+  display:inline-block;
+  width: 2px;          /* độ dày */
+  height: 1em;         /* QUAN TRỌNG: có height thì mới thấy */
+  margin-left: 6px;
+  vertical-align: -0.15em;
+  background: rgba(255,255,255,.85); /* dùng background thay vì border-right cho chắc */
+  animation: twBlink 1s step-end infinite;
+}
+
+@keyframes twBlink{ 50%{ opacity: 0; } }
+
+/* light mode */
+html:not(.dark) .tw-caret{
+  background: rgba(17,24,39,.65);
+}
