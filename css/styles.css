@@ -1252,3 +1252,100 @@ footer p:last-child{
 html:not(.dark) .tw-caret{
   background: rgba(17,24,39,.65);
 }
+
+/* About social icons — clean + premium */
+.about-social{
+  margin-top: 28px;
+  display:flex;
+  justify-content:center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.social-btn{
+  --c1: #6366f1; /* default accent */
+  --c2: #06b6d4;
+
+  width: 52px;
+  height: 52px;
+  border-radius: 9999px;
+  display: grid;
+  place-items: center;
+
+  color: var(--c1);
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(15,23,42,.12);
+  box-shadow: 0 12px 30px rgba(0,0,0,.10);
+  position: relative;
+  overflow: hidden;
+
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+}
+
+.dark .social-btn{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.16);
+  box-shadow: 0 16px 42px rgba(0,0,0,.45);
+}
+
+.social-btn svg{
+  width: 22px;
+  height: 22px;
+}
+
+.social-btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(90deg, var(--c1), var(--c2));
+  opacity: 0;
+  pointer-events:none;
+
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  transition: opacity .22s ease;
+}
+
+.social-btn::after{
+  content:"";
+  position:absolute;
+  inset:-40% -30%;
+  background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,.45) 50%, transparent 65%);
+  transform: translateX(-50%) rotate(10deg);
+  opacity: 0;
+  transition: opacity .22s ease, transform .45s ease;
+  pointer-events:none;
+}
+
+.social-btn:hover{
+  transform: translateY(-3px);
+  border-color: rgba(99,102,241,.35);
+  box-shadow: 0 18px 55px rgba(0,0,0,.16);
+}
+
+.dark .social-btn:hover{
+  box-shadow: 0 22px 70px rgba(0,0,0,.55);
+}
+
+.social-btn:hover::before{ opacity: 1; }
+.social-btn:hover::after{
+  opacity: .9;
+  transform: translateX(35%) rotate(10deg);
+}
+
+.social-btn:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99,102,241,.35), 0 18px 55px rgba(0,0,0,.16);
+}
+
+/* brand accents */
+.social-btn.is-fb{ --c1:#3b82f6; --c2:#06b6d4; }
+.social-btn.is-ig{ --c1:#ec4899; --c2:#f97316; }
+.social-btn.is-gh{ --c1:#94a3b8; --c2:#6366f1; }
+.social-btn.is-in{ --c1:#38bdf8; --c2:#6366f1; }
+.social-btn.is-yt{ --c1:#ef4444; --c2:#f97316; }
+.social-btn.is-mail{ --c1:#a855f7; --c2:#6366f1; }
