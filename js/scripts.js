@@ -481,6 +481,41 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 // =======================
+// =======================
+// Active Underline Navbar (ScrollSpy)
+// =======================
+// Active underline navbar (click + scroll)
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.getElementById("nav-links");
+  if (!nav) return;
+
+  const links = Array.from(nav.querySelectorAll('a[href^="#"]'))
+    .filter(a => (a.getAttribute("href") || "").length > 1);
+
+  const sections = links
+    .map(a => document.querySelector(a.getAttribute("href")))
+    .filter(Boolean);
+
+  const setActive = (hash) => {
+    links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === hash));
+  };
+
+  links.forEach(a => a.addEventListener("click", () => setActive(a.getAttribute("href"))));
+
+  if (sections.length) {
+    const io = new IntersectionObserver((entries) => {
+      const v = entries.filter(e => e.isIntersecting)
+        .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (v?.target?.id) setActive(`#${v.target.id}`);
+    }, { rootMargin: "-40% 0px -55% 0px", threshold: [0, .25, .5, .75, 1] });
+
+    sections.forEach(s => io.observe(s));
+  }
+
+  setActive(location.hash || links[0].getAttribute("href"));
+});
+
+
 // Scroll Animation
 // =======================
 const sections = document.querySelectorAll(".section-hidden");
@@ -741,3 +776,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // If your language toggle re-runs i18n, call this after switching language:
   window.restartHeroTypewriter = start;
 })();
+// =======================
+// Scroll Progress Bar (added)
+// =======================
+document.addEventListener("DOMContentLoaded", () => {
+  const progress = document.getElementById("scroll-progress");
+  if (!progress) return;
+
+  const update = () => {
+    const d = document.documentElement;
+    const max = d.scrollHeight - d.clientHeight;
+    const p = max > 0 ? d.scrollTop / max : 0;
+    progress.style.transform = `scaleX(${p})`;
+  };
+
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update, { passive: true });
+  update();
+});

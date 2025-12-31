@@ -1643,3 +1643,24 @@ html:not(.dark) #about .about-stat:hover{
   box-shadow: 0 20px 55px rgba(0,0,0,.12);
 }
 
+
+/* Navbar: active underline (added) */
+#nav-links a.active span:last-child{
+  width: 100% !important;
+  opacity: 1 !important;
+}
+
+/* Scroll progress bar (added) */
+#scroll-progress{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: linear-gradient(90deg, #6366f1, #38bdf8);
+  z-index: 9999;
+}
+
+#nav-links a > span.absolute{ display:block; }
