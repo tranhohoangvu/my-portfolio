@@ -1643,10 +1643,31 @@ html:not(.dark) #about .about-stat:hover{
   box-shadow: 0 20px 55px rgba(0,0,0,.12);
 }
 
+/* Active: đổi màu + underline chữ luôn */
+#nav-links a.active{
+  color: rgb(99,102,241);              /* indigo-500 */
+  text-decoration: underline;          /* underline sau khi click */
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
 
-/* Navbar: active underline (added) */
-#nav-links a.active span:last-child{
-  width: 100% !important;
+/* Dark mode: vẫn indigo */
+.dark #nav-links a.active{
+  color: rgb(99,102,241);
+}
+
+/* Hover: (tuỳ chọn) giữ underline dày hơn một chút khi hover */
+#nav-links a:hover{
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+/* Nếu bạn vẫn muốn “underline bar” phía dưới hiện khi active */
+#nav-links a.active > span.absolute{
+  left: 0;
+  right: 0;
+  width: auto !important;
   opacity: 1 !important;
 }
 
@@ -1662,5 +1683,3 @@ html:not(.dark) #about .about-stat:hover{
   background: linear-gradient(90deg, #6366f1, #38bdf8);
   z-index: 9999;
 }
-
-#nav-links a > span.absolute{ display:block; }

@@ -476,15 +476,16 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     e.preventDefault();
     target.scrollIntoView({ behavior: "smooth" });
 
+    // cập nhật hash để scrollspy + active underline hoạt động chắc chắn
+    try { history.replaceState(null, "", href); } catch {}
+
     if (mobileMenu) mobileMenu.classList.remove("active");
   });
 });
 
 // =======================
+// Active Underline Navbar (ScrollSpy - stable)
 // =======================
-// Active Underline Navbar (ScrollSpy)
-// =======================
-// Active underline navbar (click + scroll)
 document.addEventListener("DOMContentLoaded", () => {
   const nav = document.getElementById("nav-links");
   if (!nav) return;
@@ -496,26 +497,43 @@ document.addEventListener("DOMContentLoaded", () => {
     .map(a => document.querySelector(a.getAttribute("href")))
     .filter(Boolean);
 
+  const navbarEl = document.getElementById("navbar");
+
   const setActive = (hash) => {
     links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === hash));
   };
 
-  links.forEach(a => a.addEventListener("click", () => setActive(a.getAttribute("href"))));
+  const getOffset = () => (navbarEl ? navbarEl.offsetHeight + 16 : 80);
 
-  if (sections.length) {
-    const io = new IntersectionObserver((entries) => {
-      const v = entries.filter(e => e.isIntersecting)
-        .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (v?.target?.id) setActive(`#${v.target.id}`);
-    }, { rootMargin: "-40% 0px -55% 0px", threshold: [0, .25, .5, .75, 1] });
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
 
-    sections.forEach(s => io.observe(s));
-  }
+    requestAnimationFrame(() => {
+      const y = window.scrollY + getOffset();
 
-  setActive(location.hash || links[0].getAttribute("href"));
+      // chọn section gần nhất phía trên
+      let current = sections[0];
+      for (const s of sections) {
+        if (s.offsetTop <= y) current = s;
+      }
+
+      if (current?.id) setActive(`#${current.id}`);
+      ticking = false;
+    });
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  window.addEventListener("hashchange", () => setActive(location.hash), { passive: true });
+
+  // init
+  setActive(location.hash || links[0]?.getAttribute("href"));
+  onScroll();
 });
 
-
+// =======================
 // Scroll Animation
 // =======================
 const sections = document.querySelectorAll(".section-hidden");
