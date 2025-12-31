@@ -190,8 +190,16 @@ const I18N = {
     cv_menu_se_general_meta: "TranHoHoangVu_General.pdf",
 
     about_title: "Giới thiệu",
-    about_text:
-      "Tôi là Trần Hồ Hoàng Vũ, sinh viên năm cuối ngành Khoa học Máy tính tại Đại học Tôn Đức Thắng, định hướng phát triển trở thành Software Engineer theo hướng backend. Tôi thích biến ý tưởng thành những giải pháp rõ ràng, thực tế và liên tục cải thiện chúng qua từng lần làm. Trong thời gian tới, tôi muốn củng cố nền tảng kỹ thuật, rèn tư duy giải quyết vấn đề và xây dựng tư duy làm việc chuyên nghiệp—tập trung vào chất lượng, khả năng phối hợp và học hỏi không ngừng.",
+    about_description:
+      "Mình là Trần Hồ Hoàng Vũ, sinh viên năm cuối ngành Khoa học Máy tính tại Đại học Tôn Đức Thắng. Mình định hướng trở thành Software Engineer theo hướng backend, đồng thời quan tâm Applied AI. Mình thích biến ý tưởng thành giải pháp rõ ràng, thực tế—từ thiết kế API, làm việc với cơ sở dữ liệu đến xây các pipeline AI có thể triển khai. Trong thời gian tới, mình muốn củng cố nền tảng kỹ thuật, rèn tư duy giải quyết vấn đề và nâng “engineering mindset”: ưu tiên chất lượng, khả năng bảo trì, phối hợp tốt và học hỏi không ngừng.",
+    about_kicker: "Thiên về Backend • Software & AI",
+    about_headline: "Mình xây backend sạch và pipeline AI thực dụng, triển khai được.",
+    about_chip_1: "Backend APIs",
+    about_chip_2: "Cơ sở dữ liệu",
+    about_chip_3: "AI ứng dụng • NLP/CV",
+    about_stat_1: "Dự án AI/ML",
+    about_stat_2: "Dự án Backend",
+    about_stat_3: "Sẵn sàng thực tập",
 
     projects_title: "Dự án",
     projects_view_all: "Xem tất cả trên GitHub →",
@@ -295,8 +303,16 @@ const I18N = {
     cv_menu_se_general_meta: "TranHoHoangVu_General.pdf",
 
     about_title: "About",
-    about_text:
-      "My name is Tran Ho Hoang Vu. I’m a final-year Computer Science student at Ton Duc Thang University, working toward becoming a backend-focused software engineer. I enjoy turning ideas into clear, practical solutions and improving them through iteration. In the future, I want to strengthen my engineering fundamentals, sharpen my problem-solving skills, and build reliable systems with a professional mindset—focusing on quality, collaboration, and continuous learning.",
+    about_description:
+      "My name is Tran Ho Hoang Vu. I’m a final-year Computer Science student at Ton Duc Thang University, working toward becoming a backend-focused software engineer while also exploring applied AI. I enjoy turning ideas into clear, practical solutions—designing APIs, working with databases, and building deployment-ready AI pipelines. Going forward, I aim to strengthen my engineering fundamentals, sharpen problem-solving, and grow a strong engineering mindset: quality-first, maintainable systems, great collaboration, and continuous learning.",
+    about_kicker: "Backend-focused • Software & AI",
+    about_headline: "I build clean backend services and practical, deployable AI pipelines.",
+    about_chip_1: "Backend APIs",
+    about_chip_2: "Databases",
+    about_chip_3: "Applied AI • NLP/CV",
+    about_stat_1: "AI/ML Projects",
+    about_stat_2: "Backend Projects",
+    about_stat_3: "Intern-ready",
 
     projects_title: "Projects",
     projects_view_all: "View all on GitHub →",
