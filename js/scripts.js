@@ -463,7 +463,7 @@ if (mobileMenuToggle && mobileMenu) {
 }
 
 // =======================
-// Smooth Scroll for Nav Links
+// Scroll for Nav Links (clean URL - no #hash)
 // =======================
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
@@ -474,10 +474,21 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     if (!target) return;
 
     e.preventDefault();
-    target.scrollIntoView({ behavior: "smooth" });
 
-    // cập nhật hash để scrollspy + active underline hoạt động chắc chắn
-    try { history.replaceState(null, "", href); } catch {}
+    // scroll có offset để không bị navbar che
+    const navbarEl = document.getElementById("navbar");
+    const offset = navbarEl ? navbarEl.offsetHeight + 16 : 80;
+    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+
+    window.scrollTo({ top, behavior: "smooth" });
+
+    // active underline ngay lập tức (cả desktop + mobile)
+    document
+      .querySelectorAll('#nav-links a[href^="#"], #mobile-menu a[href^="#"]')
+      .forEach((a) => a.classList.toggle("active", a.getAttribute("href") === href));
+
+    // giữ URL sạch (không hiện #home/#about...)
+    try { history.replaceState(null, "", window.location.pathname + window.location.search); } catch {}
 
     if (mobileMenu) mobileMenu.classList.remove("active");
   });
@@ -531,6 +542,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // init
   setActive(location.hash || links[0]?.getAttribute("href"));
   onScroll();
+
+  // nếu người ta vào bằng /#about thì vẫn cho scroll đúng, rồi xoá hash để URL sạch
+  if (location.hash) {
+    try { history.replaceState(null, "", window.location.pathname + window.location.search); } catch {}
+  }
 });
 
 // =======================
