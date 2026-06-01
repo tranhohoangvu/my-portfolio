@@ -3,7 +3,7 @@
 // =======================
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js").catch(() => {});
+    navigator.serviceWorker.register("./sw.js").catch(() => { });
   });
 }
 
@@ -164,12 +164,12 @@ const I18N = {
     nav_cv: "CV",
 
     hero_name: "Trần Hồ Hoàng Vũ",
-    hero_subtitle: "Sinh viên ngành Computer Science | Chuyên về phát triển phần mềm & AI",
+    hero_subtitle: "Backend Developer & Data Engineer",
     hero_btn_projects: "Xem dự án",
     hero_btn_cv: "Tải CV",
     cv_title: "CV",
     cv_subtitle: "Chọn phiên bản CV phù hợp với vị trí bạn quan tâm.",
-    
+
     cv_ai_title: "AI Engineer Intern (Latex)",
     cv_ai_desc: "CV nhắm tới AI Engineer Intern: ML/DL, NLP/CV, dự án AI và kỹ năng triển khai.",
 
@@ -178,7 +178,7 @@ const I18N = {
 
     cv_se_general_title: "Software Engineer Intern (General)",
     cv_se_general_desc: "CV Software Engineer Intern tổng quan: cân bằng kỹ năng & dự án, phù hợp đa số JD.",
-    
+
     cv_btn_view: "Xem",
     cv_btn_download: "Tải xuống",
 
@@ -277,12 +277,12 @@ const I18N = {
     nav_cv: "CV",
 
     hero_name: "Tran Ho Hoang Vu",
-    hero_subtitle: "Computer Science Student | Software & AI Engineer",
+    hero_subtitle: "Backend Developer & Data Engineer",
     hero_btn_projects: "View projects",
     hero_btn_cv: "Download CV",
     cv_title: "CV",
     cv_subtitle: "Pick the CV version that fits the role you're applying for.",
-    
+
     cv_ai_title: "AI Engineer Intern (Latex)",
     cv_ai_desc: "Targeted for AI Engineer Intern roles: ML/DL, NLP/CV, AI projects, and deployment-oriented skills.",
 
@@ -488,7 +488,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       .forEach((a) => a.classList.toggle("active", a.getAttribute("href") === href));
 
     // giữ URL sạch (không hiện #home/#about...)
-    try { history.replaceState(null, "", window.location.pathname + window.location.search); } catch {}
+    try { history.replaceState(null, "", window.location.pathname + window.location.search); } catch { }
 
     if (mobileMenu) mobileMenu.classList.remove("active");
   });
@@ -545,7 +545,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // nếu người ta vào bằng /#about thì vẫn cho scroll đúng, rồi xoá hash để URL sạch
   if (location.hash) {
-    try { history.replaceState(null, "", window.location.pathname + window.location.search); } catch {}
+    try { history.replaceState(null, "", window.location.pathname + window.location.search); } catch { }
   }
 });
 
