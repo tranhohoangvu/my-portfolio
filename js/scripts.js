@@ -264,7 +264,7 @@ const I18N = {
     form_btn_sending: "Đang gửi...",
 
     footer_tagline: "Tạo giá trị qua mã nguồn - Trần Hồ Hoàng Vũ",
-    footer_rights: "© 2025 Bản quyền thuộc về Trần Hồ Hoàng Vũ.",
+    footer_rights: "© 2026 Bản quyền thuộc về Trần Hồ Hoàng Vũ.",
   },
 
   en: {
@@ -375,7 +375,7 @@ const I18N = {
     form_btn_sending: "Sending...",
 
     footer_tagline: "Building value through code - Tran Ho Hoang Vu",
-    footer_rights: "© 2025 Tran Ho Hoang Vu. All rights reserved.",
+    footer_rights: "© 2026 Tran Ho Hoang Vu. All rights reserved.",
   },
 };
 
