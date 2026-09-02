@@ -25,10 +25,15 @@ function setGitHubActivityImages() {
     ? `assets/github-contrib-dark.svg?v=${v}`
     : `assets/github-contrib-light.svg?v=${v}`;
 
-  // Activity Graph
-  const graphTheme = isDark ? "github-dark" : "github-compact";
+  // Activity Graph (sử dụng mirror ổn định và fallback tự động)
+  const graphTheme = isDark ? "github-dark" : "github-light";
   activityImg.src =
-    `https://github-readme-activity-graph.vercel.app/graph?username=${GITHUB_USERNAME}&theme=${graphTheme}&hide_border=true`;
+    `https://github-activity-chart.vercel.app/graph?username=${GITHUB_USERNAME}&theme=${graphTheme}&hide_border=true`;
+
+  activityImg.onerror = () => {
+    const streakTheme = isDark ? "dark" : "default";
+    activityImg.src = `https://streak-stats.demolab.com/?user=${GITHUB_USERNAME}&theme=${streakTheme}&hide_border=true`;
+  };
 }
 
 // =======================
@@ -451,10 +456,31 @@ if (langToggleMobile) langToggleMobile.addEventListener("click", toggleLanguage)
 // =======================
 const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
 const mobileMenu = document.getElementById("mobile-menu");
+const menuOpenIcon = document.getElementById("menu-open-icon");
+const menuCloseIcon = document.getElementById("menu-close-icon");
+
+function toggleMobileMenu(forceState) {
+  if (!mobileMenu) return;
+  const isOpening = forceState !== undefined ? forceState : !mobileMenu.classList.contains("active");
+  mobileMenu.classList.toggle("active", isOpening);
+  if (mobileMenuToggle) {
+    mobileMenuToggle.setAttribute("aria-expanded", String(isOpening));
+  }
+  if (menuOpenIcon) menuOpenIcon.classList.toggle("hidden", isOpening);
+  if (menuCloseIcon) menuCloseIcon.classList.toggle("hidden", !isOpening);
+}
 
 if (mobileMenuToggle && mobileMenu) {
-  mobileMenuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
+  mobileMenuToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleMobileMenu();
+  });
+
+  // Đóng khi click ngoài menu
+  document.addEventListener("click", (e) => {
+    if (mobileMenu.classList.contains("active") && !mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+      toggleMobileMenu(false);
+    }
   });
 }
 
@@ -486,7 +512,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     // giữ URL sạch (không hiện #home/#about...)
     try { history.replaceState(null, "", window.location.pathname + window.location.search); } catch { }
 
-    if (mobileMenu) mobileMenu.classList.remove("active");
+    toggleMobileMenu(false);
   });
 });
 

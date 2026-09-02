@@ -221,14 +221,58 @@ textarea:focus ~ .ripple::after {
   pointer-events: none;
 }
 
+/* ==========================================================================
+   Mobile Menu & Responsive Navbar
+   ========================================================================== */
+#mobile-menu {
+  display: none;
+  max-height: calc(100dvh - 72px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  border-top: 1px solid rgba(229, 231, 235, 0.6);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.dark #mobile-menu {
+  border-top-color: rgba(31, 41, 55, 0.8);
+  background: rgba(17, 24, 39, 0.96);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+}
+
+#mobile-menu.active {
+  display: block !important;
+}
+
+#mobile-menu a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 12px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#mobile-menu a:hover,
+#mobile-menu a.active {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+}
+
+.dark #mobile-menu a:hover,
+.dark #mobile-menu a.active {
+  background-color: rgba(99, 102, 241, 0.18);
+  color: #818cf8;
+}
+
 @media (max-width: 768px) {
   #nav-links {
     display: none;
   }
-  #mobile-menu.active {
-    display: block;
-    transform: translateY(0);
-  } 
   #home h1 {
     font-size: 3rem;
   }

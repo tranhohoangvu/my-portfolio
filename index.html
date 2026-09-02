@@ -184,22 +184,24 @@
 
       <!-- Mobile toggle -->
       <button id="mobile-menu-toggle"
-        class="md:hidden p-2 rounded-full hover:bg-sky-600/15 dark:hover:bg-sky-300/10 transition-colors duration-300"
-        aria-label="Mở menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        class="md:hidden p-2 rounded-xl text-gray-700 dark:text-gray-200 hover:bg-black/5 dark:hover:bg-white/10 transition-colors duration-200 focus:outline-none"
+        aria-label="Mở menu" aria-expanded="false">
+        <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
 
     </div>
 
     <!-- Mobile menu -->
-    <div id="mobile-menu"
-      class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg transform -translate-y-full transition-transform duration-500">
-      <div class="flex flex-col items-center space-y-4 py-4">
-
-        <div class="flex items-center gap-3">
-          <!-- Language toggle mobile (PILL) -->
+    <div id="mobile-menu" class="hidden md:hidden">
+      <div class="flex flex-col items-center space-y-2 px-4 py-5 max-w-sm mx-auto">
+        <!-- Toggles row -->
+        <div
+          class="flex items-center justify-center gap-4 pb-3 mb-1 border-b border-gray-200 dark:border-gray-700/60 w-full">
           <button id="lang-toggle-mobile" type="button" aria-label="Chuyển ngôn ngữ / Switch language"
             class="lang-pill">
             EN
@@ -208,34 +210,18 @@
           <button id="theme-toggle-mobile" type="button"
             class="p-2 rounded-full hover:bg-sky-600/15 dark:hover:bg-sky-300/10 transition-colors duration-300"
             aria-label="Chuyển đổi chế độ sáng/tối">
-            <span class="text-sm font-semibold">🌓</span>
+            <span class="text-base font-semibold">🌓</span>
           </button>
         </div>
 
-        <a href="#home"
-          class="text-gray-900 dark:text-gray-100 hover:text-indigo-400 dark:hover:text-indigo-400 transition-colors duration-300"
-          data-i18n="nav_home">Trang chủ</a>
-        <a href="#about"
-          class="text-gray-900 dark:text-gray-100 hover:text-indigo-400 dark:hover:text-indigo-400 transition-colors duration-300"
-          data-i18n="nav_about">Giới thiệu</a>
-        <a href="#cv"
-          class="text-gray-900 dark:text-gray-100 hover:text-indigo-400 dark:hover:text-indigo-400 transition-colors duration-300"
-          data-i18n="nav_cv">CV</a>
-        <a href="#projects"
-          class="text-gray-900 dark:text-gray-100 hover:text-indigo-400 dark:hover:text-indigo-400 transition-colors duration-300"
-          data-i18n="nav_projects">Dự án</a>
-        <a href="#skills"
-          class="text-gray-900 dark:text-gray-100 hover:text-indigo-400 dark:hover:text-indigo-400 transition-colors duration-300"
-          data-i18n="nav_skills">Kỹ năng</a>
-        <a href="#certificates"
-          class="text-gray-900 dark:text-gray-100 hover:text-indigo-400 dark:hover:text-indigo-400 transition-colors duration-300"
-          data-i18n="nav_certs">Chứng chỉ</a>
-        <a href="#github"
-          class="text-gray-900 dark:text-gray-100 hover:text-indigo-400 dark:hover:text-indigo-400 transition-colors duration-300"
-          data-i18n="nav_github">GitHub</a>
-        <a href="#contact"
-          class="text-gray-900 dark:text-gray-100 hover:text-indigo-400 dark:hover:text-indigo-400 transition-colors duration-300"
-          data-i18n="nav_contact">Liên hệ</a>
+        <a href="#home" data-i18n="nav_home">Trang chủ</a>
+        <a href="#about" data-i18n="nav_about">Giới thiệu</a>
+        <a href="#cv" data-i18n="nav_cv">CV</a>
+        <a href="#projects" data-i18n="nav_projects">Dự án</a>
+        <a href="#skills" data-i18n="nav_skills">Kỹ năng</a>
+        <a href="#certificates" data-i18n="nav_certs">Chứng chỉ</a>
+        <a href="#github" data-i18n="nav_github">GitHub</a>
+        <a href="#contact" data-i18n="nav_contact">Liên hệ</a>
       </div>
     </div>
   </nav>
