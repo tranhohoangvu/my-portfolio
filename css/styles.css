@@ -1189,13 +1189,15 @@ footer p:last-child{
 .dark #cv .cv-action--ghost:hover{ background: rgba(255,255,255,.08); }
 
 /* variant accents */
-#cv .cv-card--ai .cv-icon{
-  background: rgba(99,102,241,.14);
-  color: rgba(99,102,241,1);
-}
+#cv .cv-card--backend .cv-icon,
+#cv .cv-card--be .cv-icon,
 #cv .cv-card--latex .cv-icon{
   background: rgba(16,185,129,.12);
   color: rgba(16,185,129,1);
+}
+#cv .cv-card--ai .cv-icon{
+  background: rgba(99,102,241,.14);
+  color: rgba(99,102,241,1);
 }
 #cv .cv-card--general .cv-icon{
   background: rgba(56,189,248,.12);

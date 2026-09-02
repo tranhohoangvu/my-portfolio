@@ -3,19 +3,17 @@
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-M%E1%BB%9F-success)](https://tranhohoangvu.github.io/my-portfolio/)
 
 > 🎓 Sinh viên năm cuối ngành Computer Science tại Đại học Tôn Đức Thắng (TDTU)  
-> 💼 Portfolio giới thiệu dự án, kỹ năng, chứng chỉ, GitHub activity — và nhiều phiên bản CV.
+> 💼 Portfolio giới thiệu dự án, kỹ năng, chứng chỉ, GitHub activity — và các phiên bản CV.
 
 Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + Vanilla JS**, có **Dark/Light mode** và chuyển ngôn ngữ **VI/EN**.
 
 - 🔗 **Website:** https://tranhohoangvu.github.io/my-portfolio/
 - 📄 **CV (PDF) trong repo:** `assets/`
+  - `assets/TranHoHoangVu_BE.pdf`
   - `assets/TranHoHoangVu_AI.pdf`
-  - `assets/TranHoHoangVu_SE.pdf`
-  - `assets/TranHoHoangVu_General.pdf`
 - 📄 **Link trực tiếp (sau khi deploy):**
+  - `.../assets/TranHoHoangVu_BE.pdf`
   - `.../assets/TranHoHoangVu_AI.pdf`
-  - `.../assets/TranHoHoangVu_SE.pdf`
-  - `.../assets/TranHoHoangVu_General.pdf`
 
 > English version: `README.md`
 
@@ -45,7 +43,7 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
 - i18n VI / EN qua `data-i18n` (lưu trong `localStorage.lang`, có cả metadata)
 - Showcase Projects (ảnh + link nhanh)
 - Skills & Certificates
-- **Section CV với 3 bản PDF + nút “View / Download”**
+- **Section CV với 2 bản PDF + nút “View / Download”**
 - **Dropdown “Download CV” ở hero** để chọn đúng phiên bản CV
 - GitHub section
   - SVG contributions heatmap auto-generate (Light/Dark) và auto-commit bằng GitHub Actions
@@ -61,7 +59,7 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
 | Công nghệ | Mục đích |
 |---|---|
 | HTML5 | Cấu trúc trang |
-| Tailwind CSS (CLI) | Styling + responsive |
+| Tailwind CSS (CLI) & Vanilla CSS | Styling + responsive |
 | Vanilla JavaScript | Tương tác, theme toggle, i18n |
 | GitHub Actions | Deploy Pages + update SVG hằng ngày |
 | Formspree | Xử lý form liên hệ |
@@ -70,32 +68,26 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
 
 ## 📄 Các phiên bản CV
 
-Portfolio có **3 phiên bản CV dạng PDF** (hiển thị ở section CV và dropdown):
+Portfolio có **2 phiên bản CV dạng PDF** (hiển thị ở section CV và dropdown):
 
-1) **AI Engineer Intern (PDF)**  
+1) **Backend Developer Intern (PDF)**  
+   - File: `assets/TranHoHoangVu_BE.pdf`  
+   - Dùng khi ứng tuyển Backend Developer / Software Engineer Intern (REST APIs, databases, kiến trúc hệ thống)
+
+2) **AI Engineer Intern (PDF)**  
    - File: `assets/TranHoHoangVu_AI.pdf`  
-   - Dùng khi ứng tuyển AI/ML/DL/NLP/CV
-
-2) **Software Engineer Intern — bản LaTeX (PDF)**  
-   - File: `assets/TranHoHoangVu_SE.pdf`  
-   - Dùng khi ứng tuyển Software Engineer Intern (format gọn, kiểu LaTeX)
-
-3) **Software Engineer Intern — bản General (PDF)**  
-   - File: `assets/TranHoHoangVu_General.pdf`  
-   - Bản tổng quan, phù hợp đa số JD SE intern
+   - Dùng khi ứng tuyển AI Engineer Intern (ML/DL, NLP/CV, AI pipelines)
 
 ### Key i18n đang dùng (JS)
 
-Text của section CV + dropdown được điều khiển qua `data-i18n` trong `js/scripts.js`, thường gồm:
+Text của section CV + dropdown được điều khiển qua `data-i18n` trong `js/scripts.js`:
 
 - Title/desc của card:  
+  `cv_be_title`, `cv_be_desc`  
   `cv_ai_title`, `cv_ai_desc`  
-  `cv_se_latex_title`, `cv_se_latex_desc`  
-  `cv_se_general_title`, `cv_se_general_desc`
 - Label của dropdown:  
+  `cv_menu_be_title`, `cv_menu_be_meta`  
   `cv_menu_ai_title`, `cv_menu_ai_meta`  
-  `cv_menu_se_latex_title`, `cv_menu_se_latex_meta`  
-  `cv_menu_se_general_title`, `cv_menu_se_general_meta`
 
 ---
 
@@ -108,11 +100,11 @@ my-portfolio/
 │  ├─ projects/
 │  ├─ github-contrib-light.svg
 │  ├─ github-contrib-dark.svg
-│  ├─ profile.jpg
+│  ├─ profile1.jpg
+│  ├─ profile2.png
+│  ├─ TranHoHoangVu_BE.pdf
 │  ├─ TranHoHoangVu_AI.pdf
-│  ├─ TranHoHoangVu_SE.pdf
-│  ├─ TranHoHoangVu_General.pdf
-│  ├─ og-image.jpg
+│  ├─ og-image-v2.png
 │  └─ favicon.*
 ├─ css/
 │  ├─ tailwind-input.css
@@ -219,7 +211,7 @@ Deploy bằng `.github/workflows/static.yml` (workflow chính thức của GitHu
 
 - Nén ảnh (Squoosh/TinyPNG) và ưu tiên định dạng hiện đại nếu có
 - Ảnh hero nên < ~300–500KB
-- Đảm bảo có `og-image.jpg` và meta tags trỏ đúng
+- Đảm bảo có `og-image-v2.png` và meta tags trỏ đúng
 - Dùng Lighthouse để check performance/SEO/accessibility
 - (Tùy chọn) thêm analytics nếu muốn theo dõi traffic
 
@@ -234,7 +226,7 @@ Deploy bằng `.github/workflows/static.yml` (workflow chính thức của GitHu
 5. Commit & push:
 ```bash
 git add .
-git commit -m "feat(cv): update CV files, section content, dropdown and i18n"
+git commit -m "feat(cv): update to 2 CVs (Backend and AI)"
 git push origin main
 ```
 
@@ -247,4 +239,4 @@ git push origin main
 
 ---
 
-> Cập nhật: Tháng 12/2025
+> Cập nhật: 2026

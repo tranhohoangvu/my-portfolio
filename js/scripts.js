@@ -170,24 +170,19 @@ const I18N = {
     cv_title: "CV",
     cv_subtitle: "Chọn phiên bản CV phù hợp với vị trí bạn quan tâm.",
 
-    cv_ai_title: "AI Engineer Intern (Latex)",
+    cv_be_title: "Backend Developer Intern (PDF)",
+    cv_be_desc: "CV nhắm tới Backend Developer Intern: REST APIs, database, kiến trúc hệ thống & clean code.",
+
+    cv_ai_title: "AI Engineer Intern (PDF)",
     cv_ai_desc: "CV nhắm tới AI Engineer Intern: ML/DL, NLP/CV, dự án AI và kỹ năng triển khai.",
-
-    cv_se_latex_title: "Software Engineer Intern (Latex)",
-    cv_se_latex_desc: "CV nhắm tới Software Engineer Intern: backend/API, database, clean code (bản trình bày LaTeX).",
-
-    cv_se_general_title: "Software Engineer Intern (General)",
-    cv_se_general_desc: "CV Software Engineer Intern tổng quan: cân bằng kỹ năng & dự án, phù hợp đa số JD.",
 
     cv_btn_view: "Xem",
     cv_btn_download: "Tải xuống",
 
-    cv_menu_ai_title: "AI Engineer Intern (Latex)",
+    cv_menu_be_title: "Backend Developer Intern (PDF)",
+    cv_menu_be_meta: "TranHoHoangVu_BE.pdf",
+    cv_menu_ai_title: "AI Engineer Intern (PDF)",
     cv_menu_ai_meta: "TranHoHoangVu_AI.pdf",
-    cv_menu_se_latex_title: "SE Intern (Latex)",
-    cv_menu_se_latex_meta: "TranHoHoangVu_SE.pdf",
-    cv_menu_se_general_title: "SE Intern (General)",
-    cv_menu_se_general_meta: "TranHoHoangVu_General.pdf",
 
     about_title: "Giới thiệu",
     about_description:
@@ -283,24 +278,19 @@ const I18N = {
     cv_title: "CV",
     cv_subtitle: "Pick the CV version that fits the role you're applying for.",
 
-    cv_ai_title: "AI Engineer Intern (Latex)",
+    cv_be_title: "Backend Developer Intern (PDF)",
+    cv_be_desc: "Targeted for Backend Developer Intern roles: REST APIs, databases, architecture & clean code.",
+
+    cv_ai_title: "AI Engineer Intern (PDF)",
     cv_ai_desc: "Targeted for AI Engineer Intern roles: ML/DL, NLP/CV, AI projects, and deployment-oriented skills.",
-
-    cv_se_latex_title: "Software Engineer Intern (Latex)",
-    cv_se_latex_desc: "Targeted for Software Engineer Intern roles: backend/APIs, databases, and clean code (LaTeX-formatted).",
-
-    cv_se_general_title: "Software Engineer Intern (General)",
-    cv_se_general_desc: "General Software Engineer Intern CV: balanced skills and projects for most job descriptions.",
 
     cv_btn_view: "View",
     cv_btn_download: "Download",
 
-    cv_menu_ai_title: "AI Engineer Intern (Latex)",
+    cv_menu_be_title: "Backend Developer Intern (PDF)",
+    cv_menu_be_meta: "TranHoHoangVu_BE.pdf",
+    cv_menu_ai_title: "AI Engineer Intern (PDF)",
     cv_menu_ai_meta: "TranHoHoangVu_AI.pdf",
-    cv_menu_se_latex_title: "SE Intern (Latex)",
-    cv_menu_se_latex_meta: "TranHoHoangVu_SE.pdf",
-    cv_menu_se_general_title: "SE Intern (General)",
-    cv_menu_se_general_meta: "TranHoHoangVu_General.pdf",
 
     about_title: "About",
     about_description:

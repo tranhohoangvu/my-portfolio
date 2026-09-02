@@ -12,7 +12,12 @@
     <priority>0.1</priority>
   </url>
   <url>
-    <loc>https://tranhohoangvu.github.io/my-portfolio/assets/TranHoHoangVu_CV.pdf</loc>
+    <loc>https://tranhohoangvu.github.io/my-portfolio/assets/TranHoHoangVu_BE.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tranhohoangvu.github.io/my-portfolio/assets/TranHoHoangVu_AI.pdf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

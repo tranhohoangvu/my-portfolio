@@ -3,19 +3,17 @@
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Open-success)](https://tranhohoangvu.github.io/my-portfolio/)
 
 > 🎓 Final-year Computer Science student at Ton Duc Thang University (TDTU)  
-> 💼 Personal portfolio showcasing projects, skills, certificates, GitHub activity — and multiple CV versions.
+> 💼 Personal portfolio showcasing projects, skills, certificates, GitHub activity — and CVs.
 
 A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, featuring **Dark/Light mode** and **VI/EN** language toggle.
 
 - 🔗 **Live site:** https://tranhohoangvu.github.io/my-portfolio/
 - 📄 **CVs (PDF) in repo:** `assets/`
+  - `assets/TranHoHoangVu_BE.pdf`
   - `assets/TranHoHoangVu_AI.pdf`
-  - `assets/TranHoHoangVu_SE.pdf`
-  - `assets/TranHoHoangVu_General.pdf`
 - 📄 **CVs (direct links):**
+  - `.../assets/TranHoHoangVu_BE.pdf`
   - `.../assets/TranHoHoangVu_AI.pdf`
-  - `.../assets/TranHoHoangVu_SE.pdf`
-  - `.../assets/TranHoHoangVu_General.pdf`
 
 > Vietnamese version: `README_VI.md`
 
@@ -45,7 +43,7 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
 - VI / EN i18n via `data-i18n` (saved in `localStorage.lang`, includes page metadata)
 - Projects showcase with images and quick links
 - Skills & Certificates sections
-- **CV section with 3 PDF versions + “View / Download” buttons**
+- **CV section with 2 PDF versions + “View / Download” buttons**
 - **Hero “Download CV” dropdown** to pick the CV version
 - GitHub section
   - Contributions heatmap SVG auto-generated (Light/Dark) and auto-committed by GitHub Actions
@@ -61,7 +59,7 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
 | Tech | Usage |
 |---|---|
 | HTML5 | Page structure |
-| Tailwind CSS (CLI) | Styling + responsive layout |
+| Tailwind CSS (CLI) & Vanilla CSS | Styling + responsive layout |
 | Vanilla JavaScript | Interactions, theme toggle, i18n |
 | GitHub Actions | GitHub Pages deploy + daily SVG updates |
 | Formspree | Contact form handling |
@@ -70,32 +68,26 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
 
 ## 📄 CV Versions
 
-This portfolio includes **three PDF CV variants** (both in the CV section and the dropdown):
+This portfolio includes **two PDF CV variants** (both in the CV section and the dropdown):
 
-1) **AI Engineer Intern (PDF)**  
+1) **Backend Developer Intern (PDF)**  
+   - File: `assets/TranHoHoangVu_BE.pdf`  
+   - Targeted for Backend Developer / Software Engineer Intern roles (REST APIs, databases, architecture)
+
+2) **AI Engineer Intern (PDF)**  
    - File: `assets/TranHoHoangVu_AI.pdf`  
-   - Use when applying for AI/ML/DL/NLP/CV roles
-
-2) **Software Engineer Intern — LaTeX version (PDF)**  
-   - File: `assets/TranHoHoangVu_SE.pdf`  
-   - Use when applying for Software Engineer Intern roles (LaTeX-styled format)
-
-3) **Software Engineer Intern — General (PDF)**  
-   - File: `assets/TranHoHoangVu_General.pdf`  
-   - General-purpose version for most SE intern job descriptions
+   - Targeted for AI Engineer Intern roles (ML/DL, NLP/CV, AI pipelines)
 
 ### i18n keys used (JS)
 
-The CV section + dropdown text is controlled by `data-i18n` keys in `js/scripts.js`, typically:
+The CV section + dropdown text is controlled by `data-i18n` keys in `js/scripts.js`:
 
 - Card titles/descriptions:  
+  `cv_be_title`, `cv_be_desc`  
   `cv_ai_title`, `cv_ai_desc`  
-  `cv_se_latex_title`, `cv_se_latex_desc`  
-  `cv_se_general_title`, `cv_se_general_desc`
 - Dropdown labels:  
+  `cv_menu_be_title`, `cv_menu_be_meta`  
   `cv_menu_ai_title`, `cv_menu_ai_meta`  
-  `cv_menu_se_latex_title`, `cv_menu_se_latex_meta`  
-  `cv_menu_se_general_title`, `cv_menu_se_general_meta`
 
 ---
 
@@ -108,11 +100,11 @@ my-portfolio/
 │  ├─ projects/
 │  ├─ github-contrib-light.svg
 │  ├─ github-contrib-dark.svg
-│  ├─ profile.jpg
+│  ├─ profile1.jpg
+│  ├─ profile2.png
+│  ├─ TranHoHoangVu_BE.pdf
 │  ├─ TranHoHoangVu_AI.pdf
-│  ├─ TranHoHoangVu_SE.pdf
-│  ├─ TranHoHoangVu_General.pdf
-│  ├─ og-image.jpg
+│  ├─ og-image-v2.png
 │  └─ favicon.*
 ├─ css/
 │  ├─ tailwind-input.css
@@ -141,52 +133,52 @@ python -m http.server 5500
 ```
 Visit: `http://localhost:5500`
 
-> Tip: VS Code **Live Server** also works well.
+> Tip: VS Code **Live Server** extension works great too.
 
 ---
 
 ## ⚙️ Quick Customize
 
 ### 1) GitHub username
-Update in `js/scripts.js`:
+Edit in `js/scripts.js`:
 ```js
 const GITHUB_USERNAME = "tranhohoangvu";
 ```
 
 ### 2) Contact form (Formspree)
-In `index.html`, update:
+Edit in `index.html`:
 ```html
 <form action="https://formspree.io/f/xxxxxxx" method="POST">
 ```
 
-### 3) CV files / labels
-- Replace PDFs under `assets/` (keep filenames to avoid changing HTML)
+### 3) CV / displayed labels
+- Replace PDFs under `assets/`
 - Update dropdown links in `index.html` (CV menu)
-- Update i18n text in `js/scripts.js` (I18N object)
+- Update i18n in `js/scripts.js` (I18N object)
 
-### 4) Social links / content
+### 4) Social links / other content
 Edit directly in `index.html` and translations in `js/scripts.js`.
 
 ---
 
 ## 🎨 Tailwind Build (Optional)
 
-Compiled CSS is already committed at `css/tailwind.css`.
+CSS is pre-built at `css/tailwind.css`.
 
-Rebuild:
+To rebuild:
 ```bash
 npm install
 npx @tailwindcss/cli -i ./css/tailwind-input.css -o ./css/tailwind.css --minify
 ```
 
-Watch:
+Watch mode:
 ```bash
 npx @tailwindcss/cli -i ./css/tailwind-input.css -o ./css/tailwind.css --watch
 ```
 
 ---
 
-## 🤖 GitHub Contributions SVG (Auto Update)
+## 🤖 GitHub Contributions SVG (Auto-update)
 
 Workflow: `.github/workflows/update-github-contrib.yml`
 
@@ -195,20 +187,20 @@ Workflow: `.github/workflows/update-github-contrib.yml`
 - Updates:
   - `assets/github-contrib-light.svg`
   - `assets/github-contrib-dark.svg`
-- Commits changes back to the repo automatically
+- Automatically commits back to repository
 
-If you fork/clone, ensure Actions are enabled and workflows have permission to write contents.
+If you fork/clone, enable Actions and grant workflow write permissions.
 
 ---
 
 ## 🌍 Deploy to GitHub Pages
 
-Deployment is handled by `.github/workflows/static.yml` (GitHub Pages official workflow).
+Deploy via `.github/workflows/static.yml` (official GitHub Pages workflow).
 
-1. Push to branch `main`
+1. Push to `main` branch
 2. Go to **Settings → Pages**
-3. Set Pages to deploy from **GitHub Actions**
-4. After the workflow completes, your site is live at:
+3. Select build and deployment source: **GitHub Actions**
+4. Once workflow completes, site is live at:
    - `https://<username>.github.io/<repo>/`
 
 ✅ Live: https://tranhohoangvu.github.io/my-portfolio/
@@ -217,24 +209,24 @@ Deployment is handled by `.github/workflows/static.yml` (GitHub Pages official w
 
 ## 🧠 Performance & SEO Tips
 
-- Compress images (Squoosh/TinyPNG) and prefer modern formats when possible
+- Compress images (Squoosh/TinyPNG) and prefer modern formats
 - Keep hero images under ~300–500KB
-- Make sure `og-image.jpg` exists and is referenced in meta tags
-- Run Lighthouse to check performance/SEO/accessibility
-- (Optional) Add analytics if you want traffic insights
+- Verify `og-image-v2.png` and meta tag links
+- Run Lighthouse to audit performance, SEO, accessibility
+- (Optional) Add analytics for traffic tracking
 
 ---
 
 ## 🛠️ Updating Content
 
-1. Edit `index.html` for text/sections/projects
-2. Update translations in `js/scripts.js` (I18N object + `data-i18n` keys)
-3. Replace images/CVs under `assets/`
-4. (Optional) rebuild Tailwind
+1. Edit `index.html` (text/sections/projects)
+2. Update translations in `js/scripts.js` (I18N + `data-i18n`)
+3. Update assets/CVs in `assets/`
+4. (Optional) Rebuild Tailwind
 5. Commit & push:
 ```bash
 git add .
-git commit -m "feat(cv): update CV files, section content, dropdown and i18n"
+git commit -m "feat(cv): update to 2 CVs (Backend and AI)"
 git push origin main
 ```
 
@@ -243,8 +235,8 @@ git push origin main
 ## 📫 Contact
 
 - 🐙 GitHub: https://github.com/tranhohoangvu
-- 🌐 Live site: https://tranhohoangvu.github.io/my-portfolio/
+- 🌐 Website: https://tranhohoangvu.github.io/my-portfolio/
 
 ---
 
-> Last updated: December 2025
+> Updated: 2026
