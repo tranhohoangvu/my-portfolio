@@ -437,11 +437,16 @@ textarea:focus ~ .ripple::after {
 
 .project-thumb {
   width: 100%;
-  height: 190px; /* 170–220 tuỳ bạn */
+  height: 190px;
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.dark .project-thumb {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .project-thumb img {
@@ -1645,32 +1650,18 @@ html:not(.dark) #about .about-stat:hover{
   box-shadow: 0 20px 55px rgba(0,0,0,.12);
 }
 
-/* Active: đổi màu + underline chữ luôn */
-#nav-links a.active{
-  color: rgb(99,102,241);              /* indigo-500 */
-  text-decoration: underline;          /* underline sau khi click */
-  text-underline-offset: 6px;
-  text-decoration-thickness: 2px;
+/* Active: đổi màu chữ + chỉ 1 gạch chân thanh bar bên dưới */
+#nav-links a.active {
+  color: #4f46e5; /* indigo-600 */
 }
 
-/* Dark mode: vẫn indigo */
-.dark #nav-links a.active{
-  color: rgb(99,102,241);
+.dark #nav-links a.active {
+  color: #818cf8; /* indigo-400 */
 }
 
-/* Hover: (tuỳ chọn) giữ underline dày hơn một chút khi hover */
-#nav-links a:hover{
-  text-decoration: underline;
-  text-underline-offset: 6px;
-  text-decoration-thickness: 2px;
-}
-
-/* Nếu bạn vẫn muốn “underline bar” phía dưới hiện khi active */
-#nav-links a.active > span.absolute{
-  left: 0;
-  right: 0;
-  width: auto !important;
-  opacity: 1 !important;
+/* Kích hoạt thanh gạch chân khi link active (1 gạch chân duy nhất) */
+#nav-links a.active > span.absolute {
+  width: 100% !important;
 }
 
 /* Scroll progress bar (added) */
