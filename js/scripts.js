@@ -208,6 +208,15 @@ const I18N = {
     projects_title: "Dự án",
     projects_view_all: "Xem tất cả trên GitHub →",
     view_on_github: "Xem trên GitHub →",
+    live_demo: "Demo trực tiếp →",
+    projects_prev_btn: "Dự án trước",
+    projects_next_btn: "Dự án kế tiếp",
+    p_badge_latest: "Mới nhất",
+
+    p4_meta: "Tháng 2, 2026 – Tháng 3, 2026 • Dự án Full-Stack",
+    p4_desc:
+      "Hệ thống Quản lý Học tập (LMS) full-stack: xác thực JWT & phân quyền RBAC, tối ưu raw SQL (PostgreSQL), RESTful APIs và kiến trúc MVC mô-đun.",
+    p4_title: "CourseHub LMS",
 
     p1_meta: "Tháng 9, 2025 – Tháng 12, 2025 • Dự án môn học",
     p1_desc:
@@ -319,6 +328,15 @@ const I18N = {
     projects_title: "Projects",
     projects_view_all: "View all on GitHub →",
     view_on_github: "View on GitHub →",
+    live_demo: "Live Demo →",
+    projects_prev_btn: "Previous project",
+    projects_next_btn: "Next project",
+    p_badge_latest: "Latest",
+
+    p4_meta: "Feb 2026 – Mar 2026 • Full-Stack Project",
+    p4_desc:
+      "Full-stack Learning Management System (LMS): JWT authentication & RBAC authorization, optimized raw PostgreSQL queries, RESTful APIs, and modular MVC architecture.",
+    p4_title: "CourseHub LMS",
 
     p1_meta: "Sep 2025 – Dec 2025 • Course project",
     p1_desc:
@@ -854,3 +872,116 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", update, { passive: true });
   update();
 });
+
+// =======================
+// Projects Carousel (True Infinite Circular Carousel)
+// =======================
+function initProjectsCarousel() {
+  const track = document.getElementById("projects-track");
+  const prevBtn = document.getElementById("projects-prev-btn");
+  const nextBtn = document.getElementById("projects-next-btn");
+
+  if (!track || !prevBtn || !nextBtn) return;
+
+  let isAnimating = false;
+
+  function getStepWidth() {
+    const firstCard = track.querySelector(".project-card");
+    if (!firstCard) return 0;
+    const gap = parseFloat(window.getComputedStyle(track).gap) || 24;
+    return firstCard.getBoundingClientRect().width + gap;
+  }
+
+  function slideNext() {
+    if (isAnimating) return;
+    const cards = track.querySelectorAll(".project-card");
+    if (cards.length <= 1) return;
+
+    isAnimating = true;
+    const step = getStepWidth();
+
+    track.classList.add("is-animating");
+    track.style.transform = `translateX(-${step}px)`;
+
+    function onTransitionEnd(e) {
+      if (e.target !== track || e.propertyName !== "transform") return;
+      track.removeEventListener("transitionend", onTransitionEnd);
+      track.classList.remove("is-animating");
+      track.style.transform = "translateX(0)";
+      if (track.firstElementChild) {
+        track.appendChild(track.firstElementChild);
+      }
+      isAnimating = false;
+    }
+
+    track.addEventListener("transitionend", onTransitionEnd);
+  }
+
+  function slidePrev() {
+    if (isAnimating) return;
+    const cards = track.querySelectorAll(".project-card");
+    if (cards.length <= 1) return;
+
+    isAnimating = true;
+    const step = getStepWidth();
+
+    // Instantly move last card to first position before animating
+    track.classList.remove("is-animating");
+    if (track.lastElementChild) {
+      track.prepend(track.lastElementChild);
+    }
+    track.style.transform = `translateX(-${step}px)`;
+
+    // Force browser reflow to apply the initial transform position
+    void track.offsetWidth;
+
+    // Smoothly animate to 0
+    track.classList.add("is-animating");
+    track.style.transform = "translateX(0)";
+
+    function onTransitionEnd(e) {
+      if (e.target !== track || e.propertyName !== "transform") return;
+      track.removeEventListener("transitionend", onTransitionEnd);
+      track.classList.remove("is-animating");
+      isAnimating = false;
+    }
+
+    track.addEventListener("transitionend", onTransitionEnd);
+  }
+
+  nextBtn.addEventListener("click", slideNext);
+  prevBtn.addEventListener("click", slidePrev);
+
+  // Touch swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  track.addEventListener(
+    "touchstart",
+    (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    },
+    { passive: true }
+  );
+
+  track.addEventListener(
+    "touchend",
+    (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 45) {
+        if (diff > 0) slideNext();
+        else slidePrev();
+      }
+    },
+    { passive: true }
+  );
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initProjectsCarousel);
+} else {
+  initProjectsCarousel();
+}
+
+

@@ -471,114 +471,209 @@
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in"
         data-i18n="projects_title">Dự án</h2>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Projects Carousel Wrapper -->
+      <div class="projects-carousel-wrapper relative">
+        <!-- Left Navigation Arrow -->
+        <button id="projects-prev-btn" class="projects-nav-btn projects-nav-btn--prev" aria-label="Dự án trước"
+          title="Dự án trước" type="button">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
 
-        <!-- Project 1 -->
-        <article
-          class="project-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200/70 dark:border-gray-700/70 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1">
-          <div>
-            <div class="text-center mb-4">
-              <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p1_meta">Sep 2025 – Dec 2025 •
-                Dự án môn học</p>
-              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p1_title">E-commerce Platform
-              </h3>
-            </div>
+        <!-- Carousel Viewport -->
+        <div class="projects-viewport">
+          <!-- Projects Track (Horizontal Row) -->
+          <div id="projects-track" class="projects-track">
 
-            <div class="project-thumb mb-4">
-              <img src="assets/projects/ecommerce.png" alt="Ảnh dự án E-commerce Platform" loading="lazy">
-            </div>
+            <!-- Project 1: CourseHub LMS -->
+            <article
+              class="project-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200/70 dark:border-gray-700/70 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1">
+              <div>
+                <div class="project-card-header">
+                  <span class="project-num">#01</span>
+                  <span class="project-badge-latest">
+                    <span class="badge-dot animate-pulse"></span>
+                    <span data-i18n="p_badge_latest">Mới nhất</span>
+                  </span>
+                </div>
 
-            <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p1_desc">
-              Nền tảng thương mại điện tử full-stack, tập trung backend: REST API, xác thực người dùng và luồng giỏ
-              hàng/đơn hàng.
-            </p>
+                <div class="text-center mb-4">
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p4_meta">Feb 2026 – Mar
+                    2026
+                    •
+                    Dự án Full-Stack</p>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p4_title">CourseHub LMS
+                  </h3>
+                </div>
 
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="text-xs tag-pill">Node.js</span>
-              <span class="text-xs tag-pill">Express</span>
-              <span class="text-xs tag-pill">MongoDB</span>
-              <span class="text-xs tag-pill">Docker</span>
-            </div>
+                <div class="project-thumb mb-4">
+                  <img src="assets/projects/coursehub.png" alt="Ảnh dự án CourseHub LMS" loading="lazy">
+                </div>
+
+                <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p4_desc">
+                  Hệ thống Quản lý Học tập (LMS) full-stack: xác thực JWT & phân quyền RBAC, tối ưu raw SQL
+                  (PostgreSQL),
+                  RESTful APIs và kiến trúc MVC mô-đun.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span class="text-xs tag-pill">Node.js</span>
+                  <span class="text-xs tag-pill">Express</span>
+                  <span class="text-xs tag-pill">PostgreSQL</span>
+                  <span class="text-xs tag-pill">React</span>
+                  <span class="text-xs tag-pill">JWT RBAC</span>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between gap-3 pt-2">
+                <a href="https://github.com/tranhohoangvu/coursehub-lms" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-sm">
+                  <span data-i18n="view_on_github">Xem trên GitHub →</span>
+                </a>
+                <a href="https://coursehub-lms-eight.vercel.app" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 text-sky-600 dark:text-sky-400 hover:underline font-medium text-sm">
+                  <span data-i18n="live_demo">Demo trực tiếp →</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 2: E-commerce Platform -->
+            <article
+              class="project-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200/70 dark:border-gray-700/70 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1">
+              <div>
+                <div class="project-card-header">
+                  <span class="project-num">#02</span>
+                </div>
+
+                <div class="text-center mb-4">
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p1_meta">Sep 2025 – Dec
+                    2025
+                    •
+                    Dự án môn học</p>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p1_title">E-commerce
+                    Platform
+                  </h3>
+                </div>
+
+                <div class="project-thumb mb-4">
+                  <img src="assets/projects/ecommerce.png" alt="Ảnh dự án E-commerce Platform" loading="lazy">
+                </div>
+
+                <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p1_desc">
+                  Nền tảng thương mại điện tử full-stack, tập trung backend: REST API, xác thực người dùng và luồng giỏ
+                  hàng/đơn hàng.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span class="text-xs tag-pill">Node.js</span>
+                  <span class="text-xs tag-pill">Express</span>
+                  <span class="text-xs tag-pill">MongoDB</span>
+                  <span class="text-xs tag-pill">Docker</span>
+                </div>
+              </div>
+
+              <div>
+                <a href="https://github.com/tranhohoangvu/E-Commerce-Website" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-sm">
+                  <span data-i18n="view_on_github">Xem trên GitHub →</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 3: WarehouseMA -->
+            <article
+              class="project-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200/70 dark:border-gray-700/70 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1">
+              <div>
+                <div class="project-card-header">
+                  <span class="project-num">#03</span>
+                </div>
+
+                <div class="text-center mb-4">
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p2_meta">Sep 2024 – Dec
+                    2024
+                    •
+                    Dự án môn học</p>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p2_title">WarehouseMA
+                  </h3>
+                </div>
+
+                <div class="project-thumb mb-4">
+                  <img src="assets/projects/warehouse.png" alt="Ảnh dự án WarehouseMA" loading="lazy">
+                </div>
+
+                <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p2_desc">
+                  Phần mềm quản lý kho tòa nhà: theo dõi tồn kho, nhập/xuất và báo cáo vận hành.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span class="text-xs tag-pill" data-i18n="p2_tag1">Tồn kho</span>
+                  <span class="text-xs tag-pill" data-i18n="p2_tag2">Nhập/Xuất</span>
+                  <span class="text-xs tag-pill" data-i18n="p2_tag3">Báo cáo</span>
+                  <span class="text-xs tag-pill" data-i18n="p2_tag4">Tài liệu</span>
+                </div>
+              </div>
+
+              <div>
+                <a href="https://github.com/tranhohoangvu/WarehouseMA" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-sm">
+                  <span data-i18n="view_on_github">Xem trên GitHub →</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 4: Store.com POS System -->
+            <article
+              class="project-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200/70 dark:border-gray-700/70 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1">
+              <div>
+                <div class="project-card-header">
+                  <span class="project-num">#04</span>
+                </div>
+
+                <div class="text-center mb-4">
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p3_meta">Jan 2024 – May
+                    2024
+                    •
+                    Dự án môn học</p>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p3_title">Store.com POS
+                    System</h3>
+                </div>
+
+                <div class="project-thumb mb-4">
+                  <img src="assets/projects/pos.png" alt="Ảnh dự án Store.com POS System" loading="lazy">
+                </div>
+
+                <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p3_desc">
+                  Hệ thống POS nội bộ cho cửa hàng điện thoại: bán hàng/checkout, quản lý kho và xuất hóa đơn PDF.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span class="text-xs tag-pill">Laravel 10</span>
+                  <span class="text-xs tag-pill">PHP</span>
+                  <span class="text-xs tag-pill">MySQL</span>
+                  <span class="text-xs tag-pill" data-i18n="p3_tag4">Xuất hóa đơn</span>
+                </div>
+              </div>
+
+              <div>
+                <a href="https://github.com/tranhohoangvu/Web-Programming-and-Applications" target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-sm">
+                  <span data-i18n="view_on_github">Xem trên GitHub →</span>
+                </a>
+              </div>
+            </article>
+
           </div>
+        </div>
 
-          <div>
-            <a href="https://github.com/tranhohoangvu/E-Commerce-Website" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
-              <span data-i18n="view_on_github">Xem trên GitHub →</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Project 2 -->
-        <article
-          class="project-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200/70 dark:border-gray-700/70 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1">
-          <div>
-            <div class="text-center mb-4">
-              <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p2_meta">Sep 2024 – Dec 2024 •
-                Dự án môn học</p>
-              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p2_title">WarehouseMA</h3>
-            </div>
-
-            <div class="project-thumb mb-4">
-              <img src="assets/projects/warehouse.png" alt="Ảnh dự án WarehouseMA" loading="lazy">
-            </div>
-
-            <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p2_desc">
-              Phần mềm quản lý kho tòa nhà: theo dõi tồn kho, nhập/xuất và báo cáo vận hành.
-            </p>
-
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="text-xs tag-pill" data-i18n="p2_tag1">Tồn kho</span>
-              <span class="text-xs tag-pill" data-i18n="p2_tag2">Nhập/Xuất</span>
-              <span class="text-xs tag-pill" data-i18n="p2_tag3">Báo cáo</span>
-              <span class="text-xs tag-pill" data-i18n="p2_tag4">Tài liệu</span>
-            </div>
-          </div>
-
-          <div>
-            <a href="https://github.com/tranhohoangvu/WarehouseMA" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
-              <span data-i18n="view_on_github">Xem trên GitHub →</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Project 3 -->
-        <article
-          class="project-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200/70 dark:border-gray-700/70 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1">
-          <div>
-            <div class="text-center mb-4">
-              <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p3_meta">Jan 2024 – May 2024 •
-                Dự án môn học</p>
-              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p3_title">Store.com POS
-                System</h3>
-            </div>
-
-            <div class="project-thumb mb-4">
-              <img src="assets/projects/pos.png" alt="Ảnh dự án Store.com POS System" loading="lazy">
-            </div>
-
-            <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p3_desc">
-              Hệ thống POS nội bộ cho cửa hàng điện thoại: bán hàng/checkout, quản lý kho và xuất hóa đơn PDF.
-            </p>
-
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="text-xs tag-pill">Laravel 10</span>
-              <span class="text-xs tag-pill">PHP</span>
-              <span class="text-xs tag-pill">MySQL</span>
-              <span class="text-xs tag-pill" data-i18n="p3_tag4">Xuất hóa đơn</span>
-            </div>
-          </div>
-
-          <div>
-            <a href="https://github.com/tranhohoangvu/Web-Programming-and-Applications" target="_blank"
-              rel="noopener noreferrer"
-              class="mt-4 inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
-              <span data-i18n="view_on_github">Xem trên GitHub →</span>
-            </a>
-          </div>
-        </article>
-
+        <!-- Right Navigation Arrow -->
+        <button id="projects-next-btn" class="projects-nav-btn projects-nav-btn--next" aria-label="Dự án kế tiếp"
+          title="Dự án kế tiếp" type="button">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
       </div>
     </div>
 
