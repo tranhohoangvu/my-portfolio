@@ -25,14 +25,18 @@ function setGitHubActivityImages() {
     ? `assets/github-contrib-dark.svg?v=${v}`
     : `assets/github-contrib-light.svg?v=${v}`;
 
-  // Activity Graph (sử dụng mirror ổn định và fallback tự động)
-  const graphTheme = isDark ? "github-dark" : "github-light";
-  activityImg.src =
-    `https://github-activity-chart.vercel.app/graph?username=${GITHUB_USERNAME}&theme=${graphTheme}&hide_border=true`;
+  // Activity Graph: local SVG do GitHub Actions tự động sinh (fallback sang online mirror)
+  const activitySvg = isDark
+    ? `assets/github-activity-dark.svg?v=${v}`
+    : `assets/github-activity-light.svg?v=${v}`;
+
+  activityImg.src = activitySvg;
 
   activityImg.onerror = () => {
-    const streakTheme = isDark ? "dark" : "default";
-    activityImg.src = `https://streak-stats.demolab.com/?user=${GITHUB_USERNAME}&theme=${streakTheme}&hide_border=true`;
+    // Fallback sang online mirror nếu local SVG chưa được tải
+    const graphTheme = isDark ? "github-dark" : "github-light";
+    activityImg.src =
+      `https://github-activity-chart.vercel.app/graph?username=${GITHUB_USERNAME}&theme=${graphTheme}&hide_border=true`;
   };
 }
 

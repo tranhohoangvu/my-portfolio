@@ -1,9 +1,15 @@
-name: Update GitHub Contributions SVG
+name: Update GitHub Stats SVGs
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'assets/github-contrib-*.svg'
+      - 'assets/github-activity-*.svg'
   schedule:
-    - cron: "0 0 * * *"   # mỗi ngày 00:00 UTC
+    - cron: "0 */3 * * *"   # Tự động cập nhật mỗi 3 tiếng
 
 permissions:
   contents: write
@@ -29,5 +35,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/github-contrib-*.svg
-          git diff --cached --quiet || (git commit -m "chore: update github contributions svg" && git push)
+          git add assets/github-contrib-*.svg assets/github-activity-*.svg
+          git diff --cached --quiet || (git commit -m "chore: update github stats svgs" && git push)

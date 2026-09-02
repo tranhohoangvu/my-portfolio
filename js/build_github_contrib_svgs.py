@@ -160,5 +160,24 @@ def main():
   print("Generated:", out_dir / "github-contrib-light.svg")
   print("Generated:", out_dir / "github-contrib-dark.svg")
 
+  # Generate Activity Graph SVGs
+  fetch_activity_graphs(username, out_dir)
+
+def fetch_activity_graphs(username: str, out_dir: Path):
+  urls = {
+    "github-activity-light.svg": f"https://github-activity-chart.vercel.app/graph?username={username}&theme=github-light&hide_border=true",
+    "github-activity-dark.svg": f"https://github-activity-chart.vercel.app/graph?username={username}&theme=github-dark&hide_border=true",
+  }
+  for filename, url in urls.items():
+    try:
+      req = Request(url, headers={"User-Agent": "github-actions-activity-svg"})
+      with urlopen(req, timeout=20) as resp:
+        content = resp.read().decode("utf-8")
+        if "<svg" in content:
+          (out_dir / filename).write_text(content, encoding="utf-8")
+          print(f"Generated: {out_dir / filename}")
+    except Exception as e:
+      print(f"Warning: Failed to fetch {url}: {e}")
+
 if __name__ == "__main__":
   main()
