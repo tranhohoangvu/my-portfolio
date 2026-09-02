@@ -170,16 +170,16 @@ const I18N = {
     cv_title: "CV",
     cv_subtitle: "Chọn phiên bản CV phù hợp với vị trí bạn quan tâm.",
 
-    cv_be_title: "Backend Developer Intern (PDF)",
-    cv_be_desc: "CV nhắm tới Backend Developer Intern: REST APIs, database, kiến trúc hệ thống & clean code.",
+    cv_be_title: "Fresher Backend Developer (PDF)",
+    cv_be_desc: "Định hướng Backend: RESTful APIs, database, tự động hóa quy trình (Jira API/OpenClaw) & clean code.",
 
     cv_ai_title: "AI Engineer Intern (PDF)",
-    cv_ai_desc: "CV nhắm tới AI Engineer Intern: ML/DL, NLP/CV, dự án AI và kỹ năng triển khai.",
+    cv_ai_desc: "Định hướng AI: ML/DL, NLP (Transformer MT), Computer Vision (Vietnamese OCR) & deployment pipelines.",
 
     cv_btn_view: "Xem",
     cv_btn_download: "Tải xuống",
 
-    cv_menu_be_title: "Backend Developer Intern (PDF)",
+    cv_menu_be_title: "Fresher Backend Developer (PDF)",
     cv_menu_be_meta: "TranHoHoangVu_BE.pdf",
     cv_menu_ai_title: "AI Engineer Intern (PDF)",
     cv_menu_ai_meta: "TranHoHoangVu_AI.pdf",
@@ -213,7 +213,7 @@ const I18N = {
     p2_tag3: "Báo cáo",
     p2_tag4: "Tài liệu",
 
-    p3_meta: "Tháng 1, 2024 – Tháng 12, 2024 • Dự án môn học",
+    p3_meta: "Tháng 1, 2024 – Tháng 5, 2024 • Dự án môn học",
     p3_desc: "Hệ thống POS nội bộ cho cửa hàng điện thoại: bán hàng/checkout, quản lý kho và xuất hóa đơn PDF.",
     p3_title: "Hệ thống POS Store.com",
     p3_tag4: "Xuất hóa đơn",
@@ -229,6 +229,9 @@ const I18N = {
     certs_view: "Xem chứng chỉ →",
     cert_score_label: "Điểm",
     cert_tag_language: "English",
+    cert_tag_software: "Agile / Scrum",
+    cert_agile_title: "Khóa học Agile & Scrum Framework 2024",
+    cert_agile_desc: "Cấp bởi Techbase Viet Nam tại Đại học Tôn Đức Thắng (10/2024).",
 
     github_title: "Hoạt động GitHub",
     github_contrib: "Tổng quan đóng góp",
@@ -278,16 +281,16 @@ const I18N = {
     cv_title: "CV",
     cv_subtitle: "Pick the CV version that fits the role you're applying for.",
 
-    cv_be_title: "Backend Developer Intern (PDF)",
-    cv_be_desc: "Targeted for Backend Developer Intern roles: REST APIs, databases, architecture & clean code.",
+    cv_be_title: "Fresher Backend Developer (PDF)",
+    cv_be_desc: "Targeted for Backend Developer roles: REST APIs, databases, workflow automation (Jira API/OpenClaw) & clean code.",
 
     cv_ai_title: "AI Engineer Intern (PDF)",
-    cv_ai_desc: "Targeted for AI Engineer Intern roles: ML/DL, NLP/CV, AI projects, and deployment-oriented skills.",
+    cv_ai_desc: "Targeted for AI Engineer Intern roles: ML/DL, NLP (Transformer MT), Computer Vision (OCR) & deployment pipelines.",
 
     cv_btn_view: "View",
     cv_btn_download: "Download",
 
-    cv_menu_be_title: "Backend Developer Intern (PDF)",
+    cv_menu_be_title: "Fresher Backend Developer (PDF)",
     cv_menu_be_meta: "TranHoHoangVu_BE.pdf",
     cv_menu_ai_title: "AI Engineer Intern (PDF)",
     cv_menu_ai_meta: "TranHoHoangVu_AI.pdf",
@@ -337,6 +340,9 @@ const I18N = {
     certs_view: "View certificate →",
     cert_score_label: "Score",
     cert_tag_language: "English",
+    cert_tag_software: "Agile / Scrum",
+    cert_agile_title: "Agile Development & Scrum Framework Course 2024",
+    cert_agile_desc: "Issued by Techbase Viet Nam at Ton Duc Thang University (Oct 2024).",
 
     github_title: "GitHub Activity",
     github_contrib: "Contributions",
