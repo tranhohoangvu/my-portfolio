@@ -173,6 +173,7 @@ const I18N = {
     nav_cv: "CV",
 
     hero_name: "Trần Hồ Hoàng Vũ",
+    hero_status_badge: "Sẵn sàng nhận việc • Fresher Backend / AI Engineer",
     hero_subtitle: "Backend Developer & Data Engineer",
     hero_btn_projects: "Xem dự án",
     hero_btn_cv: "Tải CV",
@@ -302,6 +303,7 @@ const I18N = {
     nav_cv: "CV",
 
     hero_name: "Tran Ho Hoang Vu",
+    hero_status_badge: "Available for Hire • Fresher Backend / AI Engineer",
     hero_subtitle: "Backend Developer & Data Engineer",
     hero_btn_projects: "View projects",
     hero_btn_cv: "Download CV",
@@ -1012,10 +1014,14 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
     initProjectsCarousel();
     initFloatingActions();
+    initHeroInteractions();
+    initCounterAnimations();
   });
 } else {
   initProjectsCarousel();
   initFloatingActions();
+  initHeroInteractions();
+  initCounterAnimations();
 }
 
 // =======================
@@ -1198,5 +1204,79 @@ function initFloatingActions() {
   });
 }
 
+// =======================
+// Dynamic Interactive Micro-Interactions & Animations
+// =======================
+function initHeroInteractions() {
+  const hero = document.getElementById("home");
+  if (!hero) return;
 
+  // Respect reduced motion
+  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+  if (reduceMotion) return;
 
+  let ticking = false;
+  hero.addEventListener("mousemove", (e) => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const rect = hero.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      hero.style.setProperty("--mouse-x", `${x}px`);
+      hero.style.setProperty("--mouse-y", `${y}px`);
+      ticking = false;
+    });
+  });
+}
+
+function initCounterAnimations() {
+  const counters = document.querySelectorAll(".about-stat__num[data-counter-target]");
+  if (!counters.length) return;
+
+  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const el = entry.target;
+        observer.unobserve(el);
+
+        const target = parseInt(el.getAttribute("data-counter-target"), 10);
+        const start = parseInt(el.getAttribute("data-counter-start"), 10) || 0;
+        const suffix = el.getAttribute("data-counter-suffix") ?? "+";
+        const duration = 1600; // ms
+
+        if (reduceMotion || isNaN(target)) {
+          el.textContent = `${target}${suffix}`;
+          return;
+        }
+
+        const startTime = performance.now();
+
+        function updateCounter(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // smooth easeOutExpo
+          const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+          const current = Math.floor(start + (target - start) * ease);
+
+          el.textContent = `${current}${suffix}`;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            el.textContent = `${target}${suffix}`;
+          }
+        }
+
+        requestAnimationFrame(updateCounter);
+      });
+    },
+    { threshold: 0.35 }
+  );
+
+  counters.forEach((counter) => observer.observe(counter));
+}

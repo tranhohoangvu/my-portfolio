@@ -1,2 +1,19 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-obsidian-950: #050811;
+  --color-obsidian-900: #070b14;
+  --color-obsidian-850: #0b101d;
+  --color-obsidian-800: #0f172a;
+  --color-obsidian-750: #131c31;
+  --color-obsidian-700: #1e293b;
+  --color-obsidian-600: #334155;
+
+  --color-neon-indigo: #6366f1;
+  --color-neon-indigo-light: #818cf8;
+  --color-neon-cyan: #06b6d4;
+  --color-neon-cyan-light: #22d3ee;
+  --color-neon-emerald: #10b981;
+  --color-neon-emerald-light: #34d399;
+}
