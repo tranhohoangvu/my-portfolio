@@ -207,12 +207,19 @@ const I18N = {
     about_stat_3: "Fresher & Sẵn sàng làm việc",
 
     projects_title: "Dự án",
+    projects_tab_all: "Tất cả",
+    projects_tab_fullstack: "Full-Stack",
+    projects_tab_frontend: "Frontend",
+    projects_tab_backend: "Backend",
+    projects_tab_ai: "AI",
     projects_view_all: "Xem tất cả trên GitHub →",
     view_on_github: "Xem trên GitHub →",
     live_demo: "Demo trực tiếp →",
     projects_prev_btn: "Dự án trước",
     projects_next_btn: "Dự án kế tiếp",
     p_badge_latest: "Mới nhất",
+    p_badge_ai: "AI Spotlight",
+    projects_no_matches: "Chưa có dự án nào thuộc danh mục này.",
 
     p4_meta: "Tháng 2, 2026 – Tháng 3, 2026 • Dự án Full-Stack",
     p4_desc:
@@ -223,6 +230,21 @@ const I18N = {
     p1_desc:
       "Nền tảng thương mại điện tử full-stack, tập trung backend: REST API, xác thực người dùng và luồng giỏ hàng/đơn hàng.",
     p1_title: "Nền tảng E-commerce",
+
+    p_ocr_meta: "Tháng 1, 2025 – Tháng 5, 2025 • Deep Learning Project",
+    p_ocr_desc:
+      "Chuẩn bị tập dữ liệu MCOCR (phân tích nhãn đa giác, cắt ảnh từ và lọc mẫu hợp lệ). Huấn luyện mô hình PyTorch OCR (CNN + Transformer attention), đánh giá exact-match và BLEU kèm demo suy luận.",
+    p_ocr_title: "Vietnamese OCR (Deep Learning)",
+
+    p_mt_meta: "Tháng 1, 2025 – Tháng 5, 2025 • NLP Project",
+    p_mt_desc:
+      "Quy trình tiền xử lý tập dữ liệu IWSLT15 EN–VI (làm sạch, tokenization, subword) và huấn luyện mô hình dịch máy Transformer. Đạt sentence BLEU (~17.87) kèm script dịch suy luận và detokenize.",
+    p_mt_title: "EN–VI Machine Translation (NLP)",
+
+    p_stock_meta: "Tháng 9, 2024 – Tháng 12, 2024 • Machine Learning Project",
+    p_stock_desc:
+      "Pipeline dự báo chuỗi thời gian chứng khoán (OHLCV + GDP): tiền xử lý, trích xuất đặc trưng và đánh giá MSE/R². Benchmark so sánh tốc độ hội tụ các thuật toán tối ưu (GD/SGD/Adam) trên Boston Housing.",
+    p_stock_title: "Stock Forecasting & Benchmark (ML)",
 
     p2_meta: "Tháng 9, 2024 – Tháng 12, 2024 • Dự án môn học",
     p2_desc: "Phần mềm quản lý kho tòa nhà: theo dõi tồn kho, nhập/xuất và báo cáo vận hành.",
@@ -337,12 +359,19 @@ const I18N = {
     about_stat_3: "Fresher & Intern Ready",
 
     projects_title: "Projects",
+    projects_tab_all: "All",
+    projects_tab_fullstack: "Full-Stack",
+    projects_tab_frontend: "Frontend",
+    projects_tab_backend: "Backend",
+    projects_tab_ai: "AI",
     projects_view_all: "View all on GitHub →",
     view_on_github: "View on GitHub →",
     live_demo: "Live Demo →",
     projects_prev_btn: "Previous project",
     projects_next_btn: "Next project",
     p_badge_latest: "Latest",
+    p_badge_ai: "AI Spotlight",
+    projects_no_matches: "No projects found in this category.",
 
     p4_meta: "Feb 2026 – Mar 2026 • Full-Stack Project",
     p4_desc:
@@ -353,6 +382,21 @@ const I18N = {
     p1_desc:
       "Full-stack e-commerce platform with backend focus: REST APIs, user authentication, and cart/order flows.",
     p1_title: "E-commerce Platform",
+
+    p_ocr_meta: "Jan 2025 – May 2025 • Deep Learning Project",
+    p_ocr_desc:
+      "Prepared an OCR dataset from MCOCR by parsing polygon annotations and generating cropped word images with validation. Trained PyTorch OCR models (CNN + Transformer attention), evaluated with exact-match and BLEU scores, and delivered an inference demo.",
+    p_ocr_title: "Vietnamese OCR (Deep Learning)",
+
+    p_mt_meta: "Jan 2025 – May 2025 • NLP Project",
+    p_mt_desc:
+      "Built preprocessing for IWSLT15 EN–VI (cleaning, tokenization, subword) and trained Transformer-based machine translation models. Evaluated with sentence BLEU (~17.87) and delivered an inference script.",
+    p_mt_title: "EN–VI Machine Translation (NLP)",
+
+    p_stock_meta: "Sep 2024 – Dec 2024 • Machine Learning Project",
+    p_stock_desc:
+      "Built a stock time-series forecasting workflow (OHLCV + GDP): cleaned data, engineered features, and trained baseline models with MSE/R² reporting. Benchmarked regression optimizers (GD/SGD/Adam-family) on Boston Housing.",
+    p_stock_title: "Stock Forecasting & Benchmark (ML)",
 
     p2_meta: "Sep 2024 – Dec 2024 • Course project",
     p2_desc: "Building warehouse management: inventory tracking, inbound/outbound, and operational reporting.",
@@ -918,7 +962,7 @@ function initProjectsCarousel() {
   let isAnimating = false;
 
   function getStepWidth() {
-    const firstCard = track.querySelector(".project-card");
+    const firstCard = track.querySelector(".project-card:not(.is-filtered-out)");
     if (!firstCard) return 0;
     const gap = parseFloat(window.getComputedStyle(track).gap) || 24;
     return firstCard.getBoundingClientRect().width + gap;
@@ -926,7 +970,7 @@ function initProjectsCarousel() {
 
   function slideNext() {
     if (isAnimating) return;
-    const cards = track.querySelectorAll(".project-card");
+    const cards = Array.from(track.querySelectorAll(".project-card:not(.is-filtered-out)"));
     if (cards.length <= 1) return;
 
     isAnimating = true;
@@ -940,8 +984,8 @@ function initProjectsCarousel() {
       track.removeEventListener("transitionend", onTransitionEnd);
       track.classList.remove("is-animating");
       track.style.transform = "translateX(0)";
-      if (track.firstElementChild) {
-        track.appendChild(track.firstElementChild);
+      if (cards[0]) {
+        track.appendChild(cards[0]);
       }
       isAnimating = false;
     }
@@ -951,16 +995,17 @@ function initProjectsCarousel() {
 
   function slidePrev() {
     if (isAnimating) return;
-    const cards = track.querySelectorAll(".project-card");
+    const cards = Array.from(track.querySelectorAll(".project-card:not(.is-filtered-out)"));
     if (cards.length <= 1) return;
 
     isAnimating = true;
     const step = getStepWidth();
 
-    // Instantly move last card to first position before animating
+    // Instantly move last visible card to first position before animating
     track.classList.remove("is-animating");
-    if (track.lastElementChild) {
-      track.prepend(track.lastElementChild);
+    const lastCard = cards[cards.length - 1];
+    if (lastCard) {
+      track.prepend(lastCard);
     }
     track.style.transform = `translateX(-${step}px)`;
 
@@ -1010,15 +1055,101 @@ function initProjectsCarousel() {
   );
 }
 
+// =======================
+// Projects Category Filter Tabs
+// =======================
+function initProjectsFilter() {
+  const filterTabs = document.querySelectorAll(".projects-filter-tab");
+  const track = document.getElementById("projects-track");
+  const emptyState = document.getElementById("projects-empty-state");
+  const prevBtn = document.getElementById("projects-prev-btn");
+  const nextBtn = document.getElementById("projects-next-btn");
+
+  if (!filterTabs.length || !track) return;
+
+  const allCards = Array.from(track.querySelectorAll(".project-card"));
+
+  function updateArrowVisibility(visibleCount) {
+    if (!prevBtn || !nextBtn) return;
+    if (visibleCount <= 1) {
+      prevBtn.style.opacity = "0";
+      prevBtn.style.pointerEvents = "none";
+      nextBtn.style.opacity = "0";
+      nextBtn.style.pointerEvents = "none";
+    } else {
+      prevBtn.style.opacity = "";
+      prevBtn.style.pointerEvents = "";
+      nextBtn.style.opacity = "";
+      nextBtn.style.pointerEvents = "";
+    }
+  }
+
+  function applyFilter(category) {
+    let matchCount = 0;
+
+    track.style.transform = "translateX(0)";
+
+    allCards.forEach((card) => {
+      const cardCategories = (card.getAttribute("data-category") || "").toLowerCase().split(/\s+/);
+      const isMatch = category === "all" || cardCategories.includes(category.toLowerCase());
+
+      if (isMatch) {
+        card.classList.remove("is-filtered-out");
+        card.classList.remove("is-fade-in");
+        void card.offsetWidth; // force reflow for smooth animation
+        card.classList.add("is-fade-in");
+        matchCount++;
+      } else {
+        card.classList.add("is-filtered-out");
+        card.classList.remove("is-fade-in");
+      }
+    });
+
+    if (emptyState) {
+      if (matchCount === 0) {
+        emptyState.classList.remove("hidden");
+        track.style.display = "none";
+      } else {
+        emptyState.classList.add("hidden");
+        track.style.display = "flex";
+      }
+    }
+
+    updateArrowVisibility(matchCount);
+  }
+
+  filterTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      filterTabs.forEach((t) => {
+        t.classList.remove("is-active");
+        t.setAttribute("aria-selected", "false");
+      });
+
+      tab.classList.add("is-active");
+      tab.setAttribute("aria-selected", "true");
+
+      const filter = tab.getAttribute("data-filter") || "all";
+      applyFilter(filter);
+    });
+  });
+
+  // Initial check
+  const activeTab = document.querySelector(".projects-filter-tab.is-active");
+  const initialFilter = activeTab ? activeTab.getAttribute("data-filter") : "all";
+  applyFilter(initialFilter);
+}
+
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
     initProjectsCarousel();
+    initProjectsFilter();
     initFloatingActions();
     initHeroInteractions();
     initCounterAnimations();
   });
 } else {
   initProjectsCarousel();
+  initProjectsFilter();
   initFloatingActions();
   initHeroInteractions();
   initCounterAnimations();

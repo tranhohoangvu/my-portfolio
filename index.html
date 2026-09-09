@@ -462,8 +462,34 @@
   <!-- Projects Section (xen kẽ: WHITE / OBSIDIAN ELEVATED) -->
   <section id="projects" class="py-24 bg-white dark:bg-[#0b101d] relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in"
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900 dark:text-gray-100 animate-slide-in"
         data-i18n="projects_title">Dự án</h2>
+
+      <!-- Category Filter Tabs (All / Backend / AI / Full-Stack) -->
+      <div class="projects-filter-wrapper mb-10 flex justify-center">
+        <div class="projects-filter-bar" role="tablist" aria-label="Bộ lọc danh mục dự án">
+          <button type="button" role="tab" aria-selected="true" class="projects-filter-tab is-active" data-filter="all">
+            <span data-i18n="projects_tab_all">Tất cả</span>
+            <span class="projects-tab-count">7</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" class="projects-filter-tab" data-filter="fullstack">
+            <span data-i18n="projects_tab_fullstack">Full-Stack</span>
+            <span class="projects-tab-count">2</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" class="projects-filter-tab" data-filter="frontend">
+            <span data-i18n="projects_tab_frontend">Frontend</span>
+            <span class="projects-tab-count">0</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" class="projects-filter-tab" data-filter="backend">
+            <span data-i18n="projects_tab_backend">Backend</span>
+            <span class="projects-tab-count">4</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" class="projects-filter-tab" data-filter="ai">
+            <span data-i18n="projects_tab_ai">AI</span>
+            <span class="projects-tab-count">3</span>
+          </button>
+        </div>
+      </div>
 
       <!-- Projects Carousel Wrapper -->
       <div class="projects-carousel-wrapper relative">
@@ -480,9 +506,10 @@
           <!-- Projects Track (Horizontal Row) -->
           <div id="projects-track" class="projects-track">
 
-            <!-- Project 1: CourseHub LMS -->
+            <!-- Project 1: CourseHub LMS (Feb 2026 – Mar 2026) -->
             <article
-              class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1">
+              class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1"
+              data-category="backend fullstack">
               <div>
                 <div class="project-card-header">
                   <span class="project-num">#01</span>
@@ -493,12 +520,8 @@
                 </div>
 
                 <div class="text-center mb-4">
-                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p4_meta">Feb 2026 – Mar
-                    2026
-                    •
-                    Dự án Full-Stack</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p4_title">CourseHub LMS
-                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p4_meta">Feb 2026 – Mar 2026 • Dự án Full-Stack</p>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p4_title">CourseHub LMS</h3>
                 </div>
 
                 <div class="project-thumb mb-4">
@@ -506,9 +529,7 @@
                 </div>
 
                 <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p4_desc">
-                  Hệ thống Quản lý Học tập (LMS) full-stack: xác thực JWT & phân quyền RBAC, tối ưu raw SQL
-                  (PostgreSQL),
-                  RESTful APIs và kiến trúc MVC mô-đun.
+                  Hệ thống Quản lý Học tập (LMS) full-stack: xác thực JWT &amp; phân quyền RBAC, tối ưu raw SQL (PostgreSQL), RESTful APIs và kiến trúc MVC mô-đun.
                 </p>
 
                 <div class="flex flex-wrap gap-2 mb-6">
@@ -532,22 +553,18 @@
               </div>
             </article>
 
-            <!-- Project 2: E-commerce Platform -->
+            <!-- Project 2: E-commerce Platform (Sep 2025 – Dec 2025) -->
             <article
-              class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1">
+              class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1"
+              data-category="backend fullstack">
               <div>
                 <div class="project-card-header">
                   <span class="project-num">#02</span>
                 </div>
 
                 <div class="text-center mb-4">
-                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p1_meta">Sep 2025 – Dec
-                    2025
-                    •
-                    Dự án môn học</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p1_title">E-commerce
-                    Platform
-                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p1_meta">Sep 2025 – Dec 2025 • Dự án môn học</p>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p1_title">E-commerce Platform</h3>
                 </div>
 
                 <div class="project-thumb mb-4">
@@ -555,8 +572,7 @@
                 </div>
 
                 <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p1_desc">
-                  Nền tảng thương mại điện tử full-stack, tập trung backend: REST API, xác thực người dùng và luồng giỏ
-                  hàng/đơn hàng.
+                  Nền tảng thương mại điện tử full-stack, tập trung backend: REST API, xác thực người dùng và luồng giỏ hàng/đơn hàng.
                 </p>
 
                 <div class="flex flex-wrap gap-2 mb-6">
@@ -575,21 +591,139 @@
               </div>
             </article>
 
-            <!-- Project 3: WarehouseMA -->
+            <!-- Project 3: Deep Learning Projects (Vietnamese OCR) (Jan 2025 – May 2025) -->
             <article
-              class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1">
+              class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1"
+              data-category="ai">
               <div>
                 <div class="project-card-header">
                   <span class="project-num">#03</span>
+                  <span class="project-badge-latest" style="background: rgba(6, 182, 212, 0.15); border-color: rgba(6, 182, 212, 0.45); color: #22d3ee;">
+                    <span class="badge-dot" style="background-color: #22d3ee;"></span>
+                    <span data-i18n="p_badge_ai">AI Spotlight</span>
+                  </span>
                 </div>
 
                 <div class="text-center mb-4">
-                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p2_meta">Sep 2024 – Dec
-                    2024
-                    •
-                    Dự án môn học</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p2_title">WarehouseMA
-                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p_ocr_meta">Jan 2025 – May 2025 • Deep Learning Project</p>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p_ocr_title">Vietnamese OCR (Deep Learning)</h3>
+                </div>
+
+                <div class="project-thumb mb-4">
+                  <img src="assets/projects/vietnamese-ocr.png" alt="Ảnh dự án Vietnamese OCR" loading="lazy">
+                </div>
+
+                <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p_ocr_desc">
+                  Chuẩn bị tập dữ liệu MCOCR (phân tích nhãn đa giác, cắt ảnh từ và lọc mẫu hợp lệ). Huấn luyện mô hình PyTorch OCR (CNN + Transformer attention), đánh giá exact-match và BLEU kèm demo suy luận.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span class="text-xs tag-pill">Python</span>
+                  <span class="text-xs tag-pill">PyTorch</span>
+                  <span class="text-xs tag-pill">CNN</span>
+                  <span class="text-xs tag-pill">Transformer</span>
+                  <span class="text-xs tag-pill">MCOCR</span>
+                </div>
+              </div>
+
+              <div>
+                <a href="https://github.com/tranhohoangvu/Deep-Learning" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-sm">
+                  <span data-i18n="view_on_github">Xem trên GitHub →</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 4: Natural Language Processing (EN–VI MT) (Jan 2025 – May 2025) -->
+            <article
+              class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1"
+              data-category="ai">
+              <div>
+                <div class="project-card-header">
+                  <span class="project-num">#04</span>
+                </div>
+
+                <div class="text-center mb-4">
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p_mt_meta">Jan 2025 – May 2025 • NLP Project</p>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p_mt_title">EN–VI Machine Translation (NLP)</h3>
+                </div>
+
+                <div class="project-thumb mb-4">
+                  <img src="assets/projects/nlp-translation.png" alt="Ảnh dự án EN-VI Machine Translation" loading="lazy">
+                </div>
+
+                <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p_mt_desc">
+                  Quy trình tiền xử lý tập dữ liệu IWSLT15 EN–VI (làm sạch, tokenization, subword) và huấn luyện mô hình dịch máy Transformer. Đạt sentence BLEU (~17.87) kèm script dịch suy luận và detokenize.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span class="text-xs tag-pill">Python</span>
+                  <span class="text-xs tag-pill">PyTorch</span>
+                  <span class="text-xs tag-pill">Transformer</span>
+                  <span class="text-xs tag-pill">NLP</span>
+                  <span class="text-xs tag-pill">IWSLT15</span>
+                </div>
+              </div>
+
+              <div>
+                <a href="https://github.com/tranhohoangvu/Natural-Language-Processing" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-sm">
+                  <span data-i18n="view_on_github">Xem trên GitHub →</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 5: Machine Learning (Stock Forecasting & Benchmark) (Sep 2024 – Dec 2024) -->
+            <article
+              class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1"
+              data-category="ai">
+              <div>
+                <div class="project-card-header">
+                  <span class="project-num">#05</span>
+                </div>
+
+                <div class="text-center mb-4">
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p_stock_meta">Sep 2024 – Dec 2024 • Machine Learning Project</p>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p_stock_title">Stock Forecasting &amp; Benchmark (ML)</h3>
+                </div>
+
+                <div class="project-thumb mb-4">
+                  <img src="assets/projects/stock-ml.png" alt="Ảnh dự án Stock Forecasting & Benchmark" loading="lazy">
+                </div>
+
+                <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p_stock_desc">
+                  Pipeline dự báo chuỗi thời gian chứng khoán (OHLCV + GDP): tiền xử lý, trích xuất đặc trưng và đánh giá MSE/R². Benchmark so sánh tốc độ hội tụ các thuật toán tối ưu (GD/SGD/Adam) trên Boston Housing.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span class="text-xs tag-pill">Python</span>
+                  <span class="text-xs tag-pill">scikit-learn</span>
+                  <span class="text-xs tag-pill">NumPy</span>
+                  <span class="text-xs tag-pill">pandas</span>
+                  <span class="text-xs tag-pill">Time-Series</span>
+                </div>
+              </div>
+
+              <div>
+                <a href="https://github.com/tranhohoangvu/Machine-Learning" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-sm">
+                  <span data-i18n="view_on_github">Xem trên GitHub →</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 6: WarehouseMA (Sep 2024 – Dec 2024) -->
+            <article
+              class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1"
+              data-category="backend">
+              <div>
+                <div class="project-card-header">
+                  <span class="project-num">#06</span>
+                </div>
+
+                <div class="text-center mb-4">
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p2_meta">Sep 2024 – Dec 2024 • Dự án môn học</p>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p2_title">WarehouseMA</h3>
                 </div>
 
                 <div class="project-thumb mb-4">
@@ -616,21 +750,18 @@
               </div>
             </article>
 
-            <!-- Project 4: Store.com POS System -->
+            <!-- Project 7: Store.com POS System (Jan 2024 – May 2024) -->
             <article
-              class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1">
+              class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1"
+              data-category="backend">
               <div>
                 <div class="project-card-header">
-                  <span class="project-num">#04</span>
+                  <span class="project-num">#07</span>
                 </div>
 
                 <div class="text-center mb-4">
-                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p3_meta">Jan 2024 – May
-                    2024
-                    •
-                    Dự án môn học</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p3_title">Store.com POS
-                    System</h3>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p3_meta">Jan 2024 – May 2024 • Dự án môn học</p>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p3_title">Store.com POS System</h3>
                 </div>
 
                 <div class="project-thumb mb-4">
@@ -658,6 +789,16 @@
               </div>
             </article>
 
+          </div>
+
+          <!-- Empty State (when no cards match filter) -->
+          <div id="projects-empty-state" class="projects-empty-state hidden py-12 text-center">
+            <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-indigo-500/10 text-indigo-400 mb-3">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+              </svg>
+            </div>
+            <p class="text-gray-400 text-base" data-i18n="projects_no_matches">Chưa có dự án nào thuộc danh mục này.</p>
           </div>
         </div>
 
