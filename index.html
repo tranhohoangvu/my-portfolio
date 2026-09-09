@@ -509,7 +509,7 @@
             <!-- Project 1: CourseHub LMS (Feb 2026 – Mar 2026) -->
             <article
               class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1"
-              data-category="backend fullstack">
+              data-category="backend fullstack" data-project-id="coursehub">
               <div>
                 <div class="project-card-header">
                   <span class="project-num">#01</span>
@@ -521,11 +521,17 @@
 
                 <div class="text-center mb-4">
                   <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p4_meta">Feb 2026 – Mar 2026 • Dự án Full-Stack</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p4_title">CourseHub LMS</h3>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors" data-i18n="p4_title" data-project-trigger="coursehub">CourseHub LMS</h3>
                 </div>
 
-                <div class="project-thumb mb-4">
+                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="coursehub" title="Xem chi tiết">
                   <img src="assets/projects/coursehub.png" alt="Ảnh dự án CourseHub LMS" loading="lazy">
+                  <div class="project-thumb-overlay">
+                    <span class="project-thumb-hint">
+                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                      <span data-i18n="p_btn_details">Chi tiết</span>
+                    </span>
+                  </div>
                 </div>
 
                 <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p4_desc">
@@ -533,30 +539,34 @@
                 </p>
 
                 <div class="flex flex-wrap gap-2 mb-6">
-                  <span class="text-xs tag-pill">Node.js</span>
-                  <span class="text-xs tag-pill">Express</span>
-                  <span class="text-xs tag-pill">PostgreSQL</span>
                   <span class="text-xs tag-pill">React</span>
-                  <span class="text-xs tag-pill">JWT RBAC</span>
+                  <span class="text-xs tag-pill">Node.js</span>
+                  <span class="text-xs tag-pill">PostgreSQL</span>
                 </div>
               </div>
 
-              <div class="flex items-center justify-between gap-3 pt-2">
-                <a href="https://github.com/tranhohoangvu/coursehub-lms" target="_blank" rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1.5 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-sm">
-                  <span data-i18n="view_on_github">Xem trên GitHub →</span>
-                </a>
-                <a href="https://coursehub-lms-eight.vercel.app" target="_blank" rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1.5 text-cyan-600 dark:text-cyan-400 hover:underline font-medium text-sm">
-                  <span data-i18n="live_demo">Demo trực tiếp →</span>
-                </a>
+              <div class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
+                <button type="button" class="btn-project-details" data-project-id="coursehub">
+                  <span data-i18n="p_btn_details">Chi tiết</span>
+                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </button>
+                <div class="flex items-center gap-3">
+                  <a href="https://github.com/tranhohoangvu/coursehub-lms" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-xs sm:text-sm">
+                    <span>GitHub →</span>
+                  </a>
+                  <a href="https://coursehub-lms-eight.vercel.app" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 text-cyan-600 dark:text-cyan-400 hover:underline font-medium text-xs sm:text-sm">
+                    <span>Demo →</span>
+                  </a>
+                </div>
               </div>
             </article>
 
             <!-- Project 2: E-commerce Platform (Sep 2025 – Dec 2025) -->
             <article
               class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1"
-              data-category="backend fullstack">
+              data-category="backend fullstack" data-project-id="ecommerce">
               <div>
                 <div class="project-card-header">
                   <span class="project-num">#02</span>
@@ -564,11 +574,17 @@
 
                 <div class="text-center mb-4">
                   <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p1_meta">Sep 2025 – Dec 2025 • Dự án môn học</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p1_title">E-commerce Platform</h3>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors" data-i18n="p1_title" data-project-trigger="ecommerce">E-commerce Platform</h3>
                 </div>
 
-                <div class="project-thumb mb-4">
+                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="ecommerce" title="Xem chi tiết">
                   <img src="assets/projects/ecommerce.png" alt="Ảnh dự án E-commerce Platform" loading="lazy">
+                  <div class="project-thumb-overlay">
+                    <span class="project-thumb-hint">
+                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                      <span data-i18n="p_btn_details">Chi tiết</span>
+                    </span>
+                  </div>
                 </div>
 
                 <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p1_desc">
@@ -576,17 +592,20 @@
                 </p>
 
                 <div class="flex flex-wrap gap-2 mb-6">
+                  <span class="text-xs tag-pill">React</span>
                   <span class="text-xs tag-pill">Node.js</span>
-                  <span class="text-xs tag-pill">Express</span>
                   <span class="text-xs tag-pill">MongoDB</span>
-                  <span class="text-xs tag-pill">Docker</span>
                 </div>
               </div>
 
-              <div>
+              <div class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
+                <button type="button" class="btn-project-details" data-project-id="ecommerce">
+                  <span data-i18n="p_btn_details">Chi tiết</span>
+                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </button>
                 <a href="https://github.com/tranhohoangvu/E-Commerce-Website" target="_blank" rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-sm">
-                  <span data-i18n="view_on_github">Xem trên GitHub →</span>
+                  class="inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-xs sm:text-sm">
+                  <span>GitHub →</span>
                 </a>
               </div>
             </article>
@@ -594,23 +613,25 @@
             <!-- Project 3: Deep Learning Projects (Vietnamese OCR) (Jan 2025 – May 2025) -->
             <article
               class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1"
-              data-category="ai">
+              data-category="ai" data-project-id="vietnamese-ocr">
               <div>
                 <div class="project-card-header">
                   <span class="project-num">#03</span>
-                  <span class="project-badge-latest" style="background: rgba(6, 182, 212, 0.15); border-color: rgba(6, 182, 212, 0.45); color: #22d3ee;">
-                    <span class="badge-dot" style="background-color: #22d3ee;"></span>
-                    <span data-i18n="p_badge_ai">AI Spotlight</span>
-                  </span>
                 </div>
 
                 <div class="text-center mb-4">
                   <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p_ocr_meta">Jan 2025 – May 2025 • Deep Learning Project</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p_ocr_title">Vietnamese OCR (Deep Learning)</h3>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors" data-i18n="p_ocr_title" data-project-trigger="vietnamese-ocr">Vietnamese OCR (Deep Learning)</h3>
                 </div>
 
-                <div class="project-thumb mb-4">
+                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="vietnamese-ocr" title="Xem chi tiết">
                   <img src="assets/projects/vietnamese-ocr.png" alt="Ảnh dự án Vietnamese OCR" loading="lazy">
+                  <div class="project-thumb-overlay">
+                    <span class="project-thumb-hint">
+                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                      <span data-i18n="p_btn_details">Chi tiết</span>
+                    </span>
+                  </div>
                 </div>
 
                 <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p_ocr_desc">
@@ -620,16 +641,18 @@
                 <div class="flex flex-wrap gap-2 mb-6">
                   <span class="text-xs tag-pill">Python</span>
                   <span class="text-xs tag-pill">PyTorch</span>
-                  <span class="text-xs tag-pill">CNN</span>
-                  <span class="text-xs tag-pill">Transformer</span>
-                  <span class="text-xs tag-pill">MCOCR</span>
+                  <span class="text-xs tag-pill">CNN-Transformer</span>
                 </div>
               </div>
 
-              <div>
+              <div class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
+                <button type="button" class="btn-project-details" data-project-id="vietnamese-ocr">
+                  <span data-i18n="p_btn_details">Chi tiết</span>
+                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </button>
                 <a href="https://github.com/tranhohoangvu/Deep-Learning" target="_blank" rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-sm">
-                  <span data-i18n="view_on_github">Xem trên GitHub →</span>
+                  class="inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-xs sm:text-sm">
+                  <span>GitHub →</span>
                 </a>
               </div>
             </article>
@@ -637,7 +660,7 @@
             <!-- Project 4: Natural Language Processing (EN–VI MT) (Jan 2025 – May 2025) -->
             <article
               class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1"
-              data-category="ai">
+              data-category="ai" data-project-id="nlp-translation">
               <div>
                 <div class="project-card-header">
                   <span class="project-num">#04</span>
@@ -645,11 +668,17 @@
 
                 <div class="text-center mb-4">
                   <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p_mt_meta">Jan 2025 – May 2025 • NLP Project</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p_mt_title">EN–VI Machine Translation (NLP)</h3>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors" data-i18n="p_mt_title" data-project-trigger="nlp-translation">EN–VI Machine Translation (NLP)</h3>
                 </div>
 
-                <div class="project-thumb mb-4">
+                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="nlp-translation" title="Xem chi tiết">
                   <img src="assets/projects/nlp-translation.png" alt="Ảnh dự án EN-VI Machine Translation" loading="lazy">
+                  <div class="project-thumb-overlay">
+                    <span class="project-thumb-hint">
+                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                      <span data-i18n="p_btn_details">Chi tiết</span>
+                    </span>
+                  </div>
                 </div>
 
                 <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p_mt_desc">
@@ -660,15 +689,17 @@
                   <span class="text-xs tag-pill">Python</span>
                   <span class="text-xs tag-pill">PyTorch</span>
                   <span class="text-xs tag-pill">Transformer</span>
-                  <span class="text-xs tag-pill">NLP</span>
-                  <span class="text-xs tag-pill">IWSLT15</span>
                 </div>
               </div>
 
-              <div>
+              <div class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
+                <button type="button" class="btn-project-details" data-project-id="nlp-translation">
+                  <span data-i18n="p_btn_details">Chi tiết</span>
+                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </button>
                 <a href="https://github.com/tranhohoangvu/Natural-Language-Processing" target="_blank" rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-sm">
-                  <span data-i18n="view_on_github">Xem trên GitHub →</span>
+                  class="inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-xs sm:text-sm">
+                  <span>GitHub →</span>
                 </a>
               </div>
             </article>
@@ -676,7 +707,7 @@
             <!-- Project 5: Machine Learning (Stock Forecasting & Benchmark) (Sep 2024 – Dec 2024) -->
             <article
               class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1"
-              data-category="ai">
+              data-category="ai" data-project-id="stock-ml">
               <div>
                 <div class="project-card-header">
                   <span class="project-num">#05</span>
@@ -684,11 +715,17 @@
 
                 <div class="text-center mb-4">
                   <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p_stock_meta">Sep 2024 – Dec 2024 • Machine Learning Project</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p_stock_title">Stock Forecasting &amp; Benchmark (ML)</h3>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors" data-i18n="p_stock_title" data-project-trigger="stock-ml">Stock Forecasting &amp; Benchmark (ML)</h3>
                 </div>
 
-                <div class="project-thumb mb-4">
+                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="stock-ml" title="Xem chi tiết">
                   <img src="assets/projects/stock-ml.png" alt="Ảnh dự án Stock Forecasting & Benchmark" loading="lazy">
+                  <div class="project-thumb-overlay">
+                    <span class="project-thumb-hint">
+                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                      <span data-i18n="p_btn_details">Chi tiết</span>
+                    </span>
+                  </div>
                 </div>
 
                 <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p_stock_desc">
@@ -697,17 +734,19 @@
 
                 <div class="flex flex-wrap gap-2 mb-6">
                   <span class="text-xs tag-pill">Python</span>
-                  <span class="text-xs tag-pill">scikit-learn</span>
-                  <span class="text-xs tag-pill">NumPy</span>
-                  <span class="text-xs tag-pill">pandas</span>
-                  <span class="text-xs tag-pill">Time-Series</span>
+                  <span class="text-xs tag-pill">TensorFlow</span>
+                  <span class="text-xs tag-pill">LSTM / Time-Series</span>
                 </div>
               </div>
 
-              <div>
+              <div class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
+                <button type="button" class="btn-project-details" data-project-id="stock-ml">
+                  <span data-i18n="p_btn_details">Chi tiết</span>
+                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </button>
                 <a href="https://github.com/tranhohoangvu/Machine-Learning" target="_blank" rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-sm">
-                  <span data-i18n="view_on_github">Xem trên GitHub →</span>
+                  class="inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-xs sm:text-sm">
+                  <span>GitHub →</span>
                 </a>
               </div>
             </article>
@@ -715,7 +754,7 @@
             <!-- Project 6: WarehouseMA (Sep 2024 – Dec 2024) -->
             <article
               class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1"
-              data-category="backend">
+              data-category="backend" data-project-id="warehouse">
               <div>
                 <div class="project-card-header">
                   <span class="project-num">#06</span>
@@ -723,11 +762,17 @@
 
                 <div class="text-center mb-4">
                   <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p2_meta">Sep 2024 – Dec 2024 • Dự án môn học</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p2_title">WarehouseMA</h3>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors" data-i18n="p2_title" data-project-trigger="warehouse">WarehouseMA</h3>
                 </div>
 
-                <div class="project-thumb mb-4">
+                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="warehouse" title="Xem chi tiết">
                   <img src="assets/projects/warehouse.png" alt="Ảnh dự án WarehouseMA" loading="lazy">
+                  <div class="project-thumb-overlay">
+                    <span class="project-thumb-hint">
+                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                      <span data-i18n="p_btn_details">Chi tiết</span>
+                    </span>
+                  </div>
                 </div>
 
                 <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p2_desc">
@@ -735,25 +780,28 @@
                 </p>
 
                 <div class="flex flex-wrap gap-2 mb-6">
-                  <span class="text-xs tag-pill" data-i18n="p2_tag1">Tồn kho</span>
-                  <span class="text-xs tag-pill" data-i18n="p2_tag2">Nhập/Xuất</span>
-                  <span class="text-xs tag-pill" data-i18n="p2_tag3">Báo cáo</span>
-                  <span class="text-xs tag-pill" data-i18n="p2_tag4">Tài liệu</span>
+                  <span class="text-xs tag-pill">C#</span>
+                  <span class="text-xs tag-pill">.NET WinForms</span>
+                  <span class="text-xs tag-pill">MySQL</span>
                 </div>
               </div>
 
-              <div>
+              <div class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
+                <button type="button" class="btn-project-details" data-project-id="warehouse">
+                  <span data-i18n="p_btn_details">Chi tiết</span>
+                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </button>
                 <a href="https://github.com/tranhohoangvu/WarehouseMA" target="_blank" rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-sm">
-                  <span data-i18n="view_on_github">Xem trên GitHub →</span>
+                  class="inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-xs sm:text-sm">
+                  <span>GitHub →</span>
                 </a>
               </div>
             </article>
 
-            <!-- Project 7: Store.com POS System (Jan 2024 – May 2024) -->
+            <!-- Project 7: An Khang Store POS System (Jan 2024 – May 2024) -->
             <article
               class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1"
-              data-category="backend">
+              data-category="backend" data-project-id="pos">
               <div>
                 <div class="project-card-header">
                   <span class="project-num">#07</span>
@@ -761,11 +809,17 @@
 
                 <div class="text-center mb-4">
                   <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p3_meta">Jan 2024 – May 2024 • Dự án môn học</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1" data-i18n="p3_title">Store.com POS System</h3>
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors" data-i18n="p3_title" data-project-trigger="pos">An Khang Store POS</h3>
                 </div>
 
-                <div class="project-thumb mb-4">
-                  <img src="assets/projects/pos.png" alt="Ảnh dự án Store.com POS System" loading="lazy">
+                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="pos" title="Xem chi tiết">
+                  <img src="assets/projects/pos.png" alt="Ảnh dự án An Khang Store POS" loading="lazy">
+                  <div class="project-thumb-overlay">
+                    <span class="project-thumb-hint">
+                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                      <span data-i18n="p_btn_details">Chi tiết</span>
+                    </span>
+                  </div>
                 </div>
 
                 <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p3_desc">
@@ -774,18 +828,27 @@
 
                 <div class="flex flex-wrap gap-2 mb-6">
                   <span class="text-xs tag-pill">Laravel 10</span>
-                  <span class="text-xs tag-pill">PHP</span>
+                  <span class="text-xs tag-pill">Livewire</span>
                   <span class="text-xs tag-pill">MySQL</span>
-                  <span class="text-xs tag-pill" data-i18n="p3_tag4">Xuất hóa đơn</span>
                 </div>
               </div>
 
-              <div>
-                <a href="https://github.com/tranhohoangvu/Web-Programming-and-Applications" target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-sm">
-                  <span data-i18n="view_on_github">Xem trên GitHub →</span>
-                </a>
+              <div class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
+                <button type="button" class="btn-project-details" data-project-id="pos">
+                  <span data-i18n="p_btn_details">Chi tiết</span>
+                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </button>
+                <div class="flex items-center gap-3">
+                  <a href="https://github.com/tranhohoangvu/Web-Programming-and-Applications" target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-xs sm:text-sm">
+                    <span>GitHub →</span>
+                  </a>
+                  <a href="https://youtu.be/XLwuIJpsN-M" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 text-cyan-600 dark:text-cyan-400 hover:underline font-medium text-xs sm:text-sm">
+                    <span>Demo →</span>
+                  </a>
+                </div>
               </div>
             </article>
 
@@ -810,6 +873,9 @@
           </svg>
         </button>
       </div>
+
+      <!-- Pagination Indicators / Dots -->
+      <div id="projects-indicators" class="projects-dots" aria-label="Chỉ số dự án"></div>
     </div>
 
     <!-- View all projects -->
@@ -1222,6 +1288,93 @@
   </button>
 
   <!-- Toast Notification Container -->
+  <!-- ==========================================================================
+       Project Deep-Dive Technical Modal (Item 7)
+       ========================================================================== -->
+  <div id="project-detail-modal" class="project-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-project-title" aria-hidden="true">
+    <div class="project-modal-overlay" data-close-modal></div>
+    <div class="project-modal-container">
+      <!-- Modal Header -->
+      <div class="project-modal-header">
+        <div class="flex items-center gap-3">
+          <span id="modal-project-num" class="text-xs font-mono px-2.5 py-1 rounded-md bg-indigo-500/10 dark:bg-indigo-400/15 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 font-bold">#01</span>
+          <div>
+            <h3 id="modal-project-title" class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white leading-tight">Project Title</h3>
+            <p id="modal-project-subtitle" class="text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-0.5 font-medium">Timeline • Category</p>
+          </div>
+        </div>
+        <button type="button" class="project-modal-close" data-close-modal aria-label="Đóng cửa sổ chi tiết">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="project-modal-body custom-scrollbar">
+        <!-- Showcase Image -->
+        <div class="project-modal-img-wrapper mb-6">
+          <img id="modal-project-img" src="" alt="" class="w-full h-auto max-h-[340px] object-cover rounded-xl border border-slate-200/80 dark:border-white/10 shadow-sm" loading="lazy">
+        </div>
+
+        <!-- Overview Description -->
+        <div class="mb-6">
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-2" data-i18n="modal_tab_overview">Tổng quan dự án</h4>
+          <p id="modal-project-desc" class="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed"></p>
+        </div>
+
+        <!-- Technical Indicators & Architecture Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div class="modal-spec-card">
+            <div class="modal-spec-header">
+              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+              </svg>
+              <h4 class="font-semibold text-sm text-gray-900 dark:text-white" data-i18n="modal_tab_arch">Kiến trúc Hệ thống</h4>
+            </div>
+            <p id="modal-spec-arch" class="text-xs md:text-sm text-gray-600 dark:text-gray-300 leading-relaxed"></p>
+          </div>
+
+          <div class="modal-spec-card">
+            <div class="modal-spec-header">
+              <svg class="w-4 h-4 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+              </svg>
+              <h4 class="font-semibold text-sm text-gray-900 dark:text-white" data-i18n="modal_tab_data">Dữ liệu & Cơ sở dữ liệu</h4>
+            </div>
+            <p id="modal-spec-data" class="text-xs md:text-sm text-gray-600 dark:text-gray-300 leading-relaxed"></p>
+          </div>
+        </div>
+
+        <!-- Key Engineering Challenges & Solutions -->
+        <div class="modal-challenges-section mb-6">
+          <div class="flex items-center gap-2 mb-3">
+            <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+            <h4 class="font-semibold text-sm text-gray-900 dark:text-white" data-i18n="modal_tab_challenges">Thách thức Kỹ thuật & Giải pháp cốt lõi</h4>
+          </div>
+          <div id="modal-spec-challenges" class="space-y-3">
+            <!-- Dynamically populated challenge cards -->
+          </div>
+        </div>
+
+        <!-- Tech Stack Tags -->
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2.5" data-i18n="modal_tab_techstack">Công nghệ & Công cụ</h4>
+          <div id="modal-spec-tags" class="flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="project-modal-footer">
+        <div id="modal-actions" class="flex items-center gap-3 w-full justify-end">
+          <!-- Dynamically populated links -->
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
 
   <!-- Floating Action Bar (FAB) & Quick Contact -->
