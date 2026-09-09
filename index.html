@@ -48,7 +48,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/tailwind.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css?v=7" />
 
   <!-- Favicon (prefer SVG) -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -60,29 +60,6 @@
   <link rel="manifest" href="site.webmanifest" />
   <link rel="apple-touch-icon" href="assets/pwa-192.png" />
 
-  <!-- Welcome intro redirect (per-tab) -->
-  <script>
-    (() => {
-      const KEY_SEEN = "welcomeSeen";
-      const KEY_RETURN = "welcomeReturn";
-
-      try {
-        if (!sessionStorage.getItem(KEY_SEEN)) {
-          // lưu URL hiện tại (có cả #hash nếu vào thẳng section)
-          sessionStorage.setItem(KEY_RETURN, window.location.href);
-
-          // /my-portfolio/ hoặc /my-portfolio/index.html => /my-portfolio/
-          const basePath = window.location.pathname.endsWith("/")
-            ? window.location.pathname
-            : window.location.pathname.replace(/[^\/]+$/, "");
-
-          window.location.replace(basePath + "welcome/");
-        }
-      } catch (e) {
-        // sessionStorage bị chặn thì thôi, không redirect
-      }
-    })();
-  </script>
 
 </head>
 
@@ -1019,7 +996,7 @@
 
         <div class="md:w-1/2">
           <!-- Card wrapper để form nổi trên nền GRAY -->
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200/70 dark:border-gray-700/70">
+          <div class="contact-form-panel p-6 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200/70 dark:border-gray-700/70">
             <form action="https://formspree.io/f/mrbnrrgd" method="POST" class="space-y-6" id="contact-form">
 
               <div class="relative">
@@ -1078,17 +1055,112 @@
     <p class="mt-2" data-i18n="footer_rights">© 2026 Bản quyền thuộc về Trần Hồ Hoàng Vũ.</p>
   </footer>
 
-  <!-- Back to Top Button (giữ class gradient, CSS sẽ override để không cần sửa HTML) -->
+  <!-- Back to Top Button -->
   <button id="back-to-top" aria-label="Quay lại đầu trang"
-    class="bg-linear-to-r from-indigo-600 to-purple-600 text-white p-4 rounded-full shadow-lg hover:scale-110 transition transform fixed bottom-20 right-20 z-50">
+    class="rounded-full shadow-lg hover:scale-110 transition transform z-50">
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
     </svg>
   </button>
 
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Floating Action Bar (FAB) & Quick Contact -->
+  <aside id="fab-container" class="fab-container" aria-label="Tương tác nhanh">
+    <!-- Quick Actions Menu -->
+    <div id="fab-menu" class="fab-menu" role="menu" aria-hidden="true">
+      <!-- 1-Click Copy Email -->
+      <button type="button" class="fab-item fab-item--email" id="fab-copy-email" role="menuitem"
+        data-i18n-tooltip="fab_copy_email_tip" title="Sao chép email hoangvu2k4cmg@gmail.com">
+        <span class="fab-item__icon">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </span>
+        <span class="fab-item__label" data-i18n="fab_copy_email">Sao chép Email</span>
+      </button>
+
+      <!-- Quick CV Dropdown/Submenu -->
+      <div class="fab-cv-group relative">
+        <button type="button" class="fab-item fab-item--cv" id="fab-cv-toggle" role="menuitem"
+          data-i18n-tooltip="fab_view_cv_tip" aria-expanded="false" title="Xem & Tải CV">
+          <span class="fab-item__icon">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </span>
+          <span class="fab-item__label" data-i18n="fab_view_cv">Xem / Tải CV</span>
+        </button>
+
+        <!-- Submenu for CV options -->
+        <div id="fab-cv-submenu" class="fab-cv-submenu" role="menu" aria-hidden="true">
+          <a href="assets/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer" class="fab-cv-link" role="menuitem">
+            <span class="fab-cv-badge">BE</span>
+            <div class="fab-cv-info">
+              <span class="fab-cv-title" data-i18n="cv_menu_be_title">Fresher Backend (PDF)</span>
+              <span class="fab-cv-hint">Mở file</span>
+            </div>
+          </a>
+          <a href="assets/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer" class="fab-cv-link" role="menuitem">
+            <span class="fab-cv-badge fab-cv-badge--ai">AI</span>
+            <div class="fab-cv-info">
+              <span class="fab-cv-title" data-i18n="cv_menu_ai_title">AI Engineer (PDF)</span>
+              <span class="fab-cv-hint">Mở file</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- LinkedIn Link -->
+      <a href="https://linkedin.com/in/tranhohoangvu/" target="_blank" rel="noopener noreferrer"
+        class="fab-item fab-item--linkedin" role="menuitem" data-i18n-tooltip="fab_linkedin_tip" title="LinkedIn Profile">
+        <span class="fab-item__icon">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5S.02 4.88.02 3.5C.02 2.12 1.13 1 2.5 1s2.48 1.12 2.48 2.5ZM0 8h5v16H0V8Zm7.5 0H12v2.2h.07c.62-1.17 2.14-2.4 4.41-2.4 4.72 0 5.59 3.11 5.59 7.15V24h-5v-7.99c0-1.9-.03-4.34-2.65-4.34-2.65 0-3.06 2.07-3.06 4.2V24h-5V8Z" />
+          </svg>
+        </span>
+        <span class="fab-item__label">LinkedIn</span>
+      </a>
+
+      <!-- GitHub Link -->
+      <a href="https://github.com/tranhohoangvu" target="_blank" rel="noopener noreferrer"
+        class="fab-item fab-item--github" role="menuitem" data-i18n-tooltip="fab_github_tip" title="GitHub Profile">
+        <span class="fab-item__icon">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 2C6.48 2 2 6.64 2 12.29c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.63-3.37-1.4-3.37-1.4-.45-1.18-1.1-1.49-1.1-1.49-.9-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.58 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.37-2.22-.26-4.56-1.16-4.56-5.17 0-1.14.39-2.08 1.03-2.82-.1-.25-.45-1.29.1-2.7 0 0 .84-.28 2.75 1.07a9.21 9.21 0 0 1 5 0c1.91-1.35 2.75-1.07 2.75-1.07.55 1.41.2 2.45.1 2.7.64.74 1.03 1.68 1.03 2.82 0 4.02-2.34 4.9-4.57 5.15.36.32.68.95.68 1.91 0 1.38-.01 2.5-.01 2.84 0 .27.18.59.69.48A10.29 10.29 0 0 0 22 12.29C22 6.64 17.52 2 12 2Z" />
+          </svg>
+        </span>
+        <span class="fab-item__label">GitHub</span>
+      </a>
+    </div>
+
+    <!-- Main FAB Trigger Button -->
+    <button type="button" id="fab-trigger" class="fab-trigger" aria-label="Mở menu tương tác nhanh"
+      aria-expanded="false" aria-haspopup="true">
+      <span class="fab-trigger__pulse" aria-hidden="true"></span>
+      <span class="fab-trigger__icon fab-trigger__icon--open">
+        <!-- Message / Quick connect icon -->
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+      </span>
+      <span class="fab-trigger__icon fab-trigger__icon--close">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </span>
+    </button>
+  </aside>
+
   <!-- Scripts (đúng thứ tự) -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="js/scripts.js"></script>
+  <script src="js/scripts.js?v=7"></script>
 </body>
 
 </html>

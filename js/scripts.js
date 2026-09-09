@@ -274,6 +274,15 @@ const I18N = {
 
     footer_tagline: "Tạo giá trị qua mã nguồn - Trần Hồ Hoàng Vũ",
     footer_rights: "© 2026 Bản quyền thuộc về Trần Hồ Hoàng Vũ.",
+
+    toast_email_copied: "Đã sao chép email (hoangvu2k4cmg@gmail.com) vào clipboard!",
+    toast_email_copy_err: "Không thể sao chép email. Vui lòng copy thủ công!",
+    fab_copy_email: "Sao chép Email",
+    fab_copy_email_tip: "Sao chép email vào clipboard",
+    fab_view_cv: "Xem / Tải CV",
+    fab_view_cv_tip: "Xem & Tải CV",
+    fab_linkedin_tip: "Xem trang cá nhân LinkedIn",
+    fab_github_tip: "Xem trang cá nhân GitHub",
   },
 
   en: {
@@ -394,6 +403,15 @@ const I18N = {
 
     footer_tagline: "Building value through code - Tran Ho Hoang Vu",
     footer_rights: "© 2026 Tran Ho Hoang Vu. All rights reserved.",
+
+    toast_email_copied: "Email copied to clipboard (hoangvu2k4cmg@gmail.com)!",
+    toast_email_copy_err: "Failed to copy email. Please copy manually!",
+    fab_copy_email: "Copy Email",
+    fab_copy_email_tip: "Copy email to clipboard",
+    fab_view_cv: "View / Download CV",
+    fab_view_cv_tip: "View & Download CV",
+    fab_linkedin_tip: "View LinkedIn profile",
+    fab_github_tip: "View GitHub profile",
   },
 };
 
@@ -432,6 +450,15 @@ function applyLanguage(lang, persist = true) {
       // force reflow
       void heroNameEl.offsetWidth;
       heroNameEl.classList.add("animate-type");
+    }
+  });
+
+  // update tooltips
+  document.querySelectorAll("[data-i18n-tooltip]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-tooltip");
+    const value = t(key);
+    if (value != null) {
+      el.setAttribute("title", value);
     }
   });
 
@@ -634,7 +661,7 @@ const backToTop = document.getElementById("back-to-top");
 
 if (backToTop) {
   const toggleBackToTop = () => {
-    if (window.scrollY > 300) backToTop.classList.add("is-visible");
+    if (window.scrollY > 100) backToTop.classList.add("is-visible");
     else backToTop.classList.remove("is-visible");
   };
 
@@ -680,17 +707,20 @@ if (contactForm && formMessage) {
 
       if (response.ok) {
         formMessage.textContent = t("form_success");
+        showToast({ message: t("form_success"), type: "success" });
         contactForm.reset();
         setTimeout(() => formMessage.classList.add("hidden"), 3000);
       } else {
         formMessage.classList.remove("text-green-600", "dark:text-green-400");
         formMessage.classList.add("text-red-600", "dark:text-red-400");
         formMessage.textContent = t("form_error");
+        showToast({ message: t("form_error"), type: "error" });
       }
     } catch (error) {
       formMessage.classList.remove("text-green-600", "dark:text-green-400");
       formMessage.classList.add("text-red-600", "dark:text-red-400");
       formMessage.textContent = t("form_network_error");
+      showToast({ message: t("form_network_error"), type: "error" });
     } finally {
       if (submitButton) {
         submitButton.disabled = false;
@@ -979,9 +1009,194 @@ function initProjectsCarousel() {
 }
 
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initProjectsCarousel);
+  document.addEventListener("DOMContentLoaded", () => {
+    initProjectsCarousel();
+    initFloatingActions();
+  });
 } else {
   initProjectsCarousel();
+  initFloatingActions();
 }
+
+// =======================
+// Toast Notification System
+// =======================
+function showToast({ message, type = "info", duration = 3200 }) {
+  const container = document.getElementById("toast-container");
+  if (!container) return;
+
+  const toast = document.createElement("div");
+  toast.className = `toast toast--${type}`;
+  toast.setAttribute("role", "alert");
+
+  let iconSvg = "";
+  if (type === "success") {
+    iconSvg = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+    </svg>`;
+  } else if (type === "error") {
+    iconSvg = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+    </svg>`;
+  } else {
+    iconSvg = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+    </svg>`;
+  }
+
+  toast.innerHTML = `
+    <span class="toast__icon">${iconSvg}</span>
+    <span class="toast__content">${message}</span>
+    <button type="button" class="toast__close" aria-label="Đóng thông báo">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="toast__progress"></div>
+  `;
+
+  container.appendChild(toast);
+
+  // Trigger smooth entrance
+  requestAnimationFrame(() => {
+    toast.classList.add("toast--visible");
+    const prog = toast.querySelector(".toast__progress");
+    if (prog) {
+      prog.style.transition = `transform ${duration}ms linear`;
+      prog.style.transform = "scaleX(0)";
+    }
+  });
+
+  let dismissTimer = null;
+  const dismiss = () => {
+    if (dismissTimer) clearTimeout(dismissTimer);
+    toast.classList.remove("toast--visible");
+    toast.classList.add("toast--hiding");
+    setTimeout(() => {
+      toast.remove();
+    }, 300);
+  };
+
+  dismissTimer = setTimeout(dismiss, duration);
+
+  const closeBtn = toast.querySelector(".toast__close");
+  if (closeBtn) closeBtn.addEventListener("click", dismiss);
+}
+
+window.showToast = showToast;
+
+// =======================
+// Floating Action Bar (FAB) & Quick Actions
+// =======================
+function initFloatingActions() {
+  const container = document.getElementById("fab-container");
+  const trigger = document.getElementById("fab-trigger");
+  const menu = document.getElementById("fab-menu");
+  const copyEmailBtn = document.getElementById("fab-copy-email");
+  const cvToggleBtn = document.getElementById("fab-cv-toggle");
+  const cvSubmenu = document.getElementById("fab-cv-submenu");
+
+  if (!container || !trigger) return;
+
+  const EMAIL_ADDRESS = "hoangvu2k4cmg@gmail.com";
+
+  function closeAll() {
+    container.classList.remove("fab-container--active");
+    trigger.setAttribute("aria-expanded", "false");
+    if (menu) menu.setAttribute("aria-hidden", "true");
+    if (cvSubmenu) {
+      cvSubmenu.classList.remove("fab-cv-submenu--open");
+      if (cvToggleBtn) cvToggleBtn.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  function toggleMenu() {
+    const isOpen = container.classList.contains("fab-container--active");
+    if (isOpen) {
+      closeAll();
+    } else {
+      container.classList.add("fab-container--active");
+      trigger.setAttribute("aria-expanded", "true");
+      if (menu) menu.setAttribute("aria-hidden", "false");
+    }
+  }
+
+  trigger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  // Toggle CV Submenu
+  if (cvToggleBtn && cvSubmenu) {
+    cvToggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isSubOpen = cvSubmenu.classList.contains("fab-cv-submenu--open");
+      cvSubmenu.classList.toggle("fab-cv-submenu--open", !isSubOpen);
+      cvToggleBtn.setAttribute("aria-expanded", String(!isSubOpen));
+    });
+  }
+
+  // 1-Click Copy Email to Clipboard + Show Toast
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener("click", async (e) => {
+      e.stopPropagation();
+      let copied = false;
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(EMAIL_ADDRESS);
+          copied = true;
+        }
+      } catch (err) {
+        // Fallback below
+      }
+
+      if (!copied) {
+        try {
+          const ta = document.createElement("textarea");
+          ta.value = EMAIL_ADDRESS;
+          ta.style.position = "fixed";
+          ta.style.left = "-9999px";
+          ta.style.top = "0";
+          document.body.appendChild(ta);
+          ta.focus();
+          ta.select();
+          copied = document.execCommand("copy");
+          ta.remove();
+        } catch (fallbackErr) {
+          copied = false;
+        }
+      }
+
+      if (copied) {
+        showToast({
+          message: t("toast_email_copied"),
+          type: "success",
+          duration: 3500,
+        });
+      } else {
+        showToast({
+          message: t("toast_email_copy_err"),
+          type: "error",
+          duration: 3500,
+        });
+      }
+    });
+  }
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    if (container.classList.contains("fab-container--active") && !container.contains(e.target)) {
+      closeAll();
+    }
+  });
+
+  // Close on ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && container.classList.contains("fab-container--active")) {
+      closeAll();
+    }
+  });
+}
+
 
 
