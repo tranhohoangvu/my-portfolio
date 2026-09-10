@@ -48,7 +48,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/tailwind.css" />
-  <link rel="stylesheet" href="css/styles.css?v=7" />
+  <link rel="stylesheet" href="css/styles.css?v=13" />
 
   <!-- Favicon (prefer SVG) -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -130,6 +130,13 @@
             class="nav-link-underline absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"></span>
         </a>
 
+        <a href="#console"
+          class="group relative text-slate-900 dark:text-slate-100 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors duration-300">
+          <span data-i18n="nav_console">Console</span>
+          <span
+            class="nav-link-underline absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+
         <a href="#contact"
           class="group relative text-slate-900 dark:text-slate-100 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors duration-300">
           <span data-i18n="nav_contact">Liên hệ</span>
@@ -198,6 +205,7 @@
         <a href="#skills" data-i18n="nav_skills">Kỹ năng</a>
         <a href="#certificates" data-i18n="nav_certs">Chứng chỉ</a>
         <a href="#github" data-i18n="nav_github">GitHub</a>
+        <a href="#console" data-i18n="nav_console">Console</a>
         <a href="#contact" data-i18n="nav_contact">Liên hệ</a>
       </div>
     </div>
@@ -1233,8 +1241,174 @@
     </div>
   </section>
 
-  <!-- Contact Section (xen kẽ: WHITE / OBSIDIAN ELEVATED) -->
-  <section id="contact" class="py-24 bg-white dark:bg-[#0b101d] relative">
+  <!-- Interactive Terminal & API Console Section (xen kẽ: WHITE / OBSIDIAN ELEVATED) -->
+  <section id="console" class="py-24 bg-white dark:bg-[#0b101d] relative overflow-hidden">
+    <!-- Ambient glow decorative backdrop -->
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[320px] bg-gradient-to-tr from-indigo-500/10 via-cyan-500/10 to-transparent blur-3xl pointer-events-none rounded-full" aria-hidden="true"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 section-hidden">
+      <!-- Section Header -->
+      <div class="text-center mb-7">
+        <div class="console-kicker animate-slide-in">
+          <span data-i18n="console_kicker">Backend &amp; AI Playground</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 tracking-tight animate-slide-in"
+          data-i18n="console_title">Interactive Terminal &amp; API Console</h2>
+        <p class="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-3 leading-relaxed animate-slide-in"
+          data-i18n="console_subtitle">
+          Khám phá portfolio qua giao diện dòng lệnh Linux hoặc mô phỏng gọi RESTful API endpoints.
+        </p>
+      </div>
+
+      <!-- Quick Command Chips for Fast 1-Click Interaction (1 Hàng duy nhất) -->
+      <div class="terminal-quick-chips-bar" id="terminal-quick-chips">
+        <span class="terminal-chips-label">
+          <svg class="w-3.5 h-3.5 text-indigo-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+          <span data-i18n="console_chips_label">Lệnh nhanh:</span>
+        </span>
+        <button type="button" class="terminal-chip" data-cmd="vu --help">vu --help</button>
+        <button type="button" class="terminal-chip" data-cmd="vu --bio">vu --bio</button>
+        <button type="button" class="terminal-chip" data-cmd="vu --skills">vu --skills</button>
+        <button type="button" class="terminal-chip" data-cmd="vu --fetch-projects">vu --fetch-projects</button>
+        <button type="button" class="terminal-chip" data-cmd="curl /api/v1/health">curl /api/v1/health</button>
+        <button type="button" class="terminal-chip" data-cmd="vu --contact">vu --contact</button>
+        <button type="button" class="terminal-chip" data-cmd="vu --cv">vu --cv</button>
+        <button type="button" class="terminal-chip terminal-chip--clear" data-cmd="clear">clear</button>
+      </div>
+
+      <!-- Main Terminal / Console Window -->
+      <div class="terminal-window" id="terminal-window-container">
+        <!-- Window Top Bar -->
+        <div class="terminal-header">
+          <!-- Window Controls (macOS circles) -->
+          <div class="terminal-window-controls">
+            <button type="button" class="window-dot window-dot--close" id="term-btn-close" aria-label="Xóa màn hình" data-i18n-tooltip="term_tip_close" title="Xóa màn hình console"></button>
+            <button type="button" class="window-dot window-dot--minimize" id="term-btn-reset" aria-label="Khởi tạo lại" data-i18n-tooltip="term_tip_reset" title="Khởi tạo lại màn hình ban đầu"></button>
+            <button type="button" class="window-dot window-dot--expand" id="term-btn-fullscreen" aria-label="Phóng to" data-i18n-tooltip="term_tip_fullscreen" title="Bật/tắt toàn màn hình"></button>
+          </div>
+
+          <!-- Mode Tabs -->
+          <div class="terminal-tabs" role="tablist">
+            <button type="button" class="terminal-tab active" id="tab-cli-mode" role="tab" aria-selected="true" data-tab="cli">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              <span>vu-cli (v2.4)</span>
+            </button>
+            <button type="button" class="terminal-tab" id="tab-api-mode" role="tab" aria-selected="false" data-tab="api">
+              <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+              <span>REST API Explorer</span>
+            </button>
+          </div>
+
+          <!-- Server Status & Actions -->
+          <div class="terminal-header-meta">
+            <span class="terminal-status-indicator" title="Mock Server online on client">
+              <span class="status-dot"></span>
+              <span class="status-text hidden sm:inline" data-i18n="console_server_status">API Mock Server 200 OK</span>
+            </span>
+            <button type="button" class="terminal-copy-btn" id="terminal-copy-output" aria-label="Sao chép nội dung" data-i18n-tooltip="term_tip_copy" title="Sao chép toàn bộ nội dung">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- View 1: CLI Terminal -->
+        <div class="terminal-view active" id="terminal-view-cli">
+          <!-- Terminal Output Screen -->
+          <div class="terminal-screen custom-scrollbar" id="terminal-output" tabindex="0" role="log" aria-live="polite">
+            <!-- Initial MOTD dynamically rendered -->
+          </div>
+
+          <!-- Terminal Input Row -->
+          <div class="terminal-input-bar">
+            <label for="terminal-cli-input" class="terminal-prompt" aria-hidden="true">
+              <span class="term-user">guest@hoangvu</span><span class="term-colon">:</span><span class="term-path">~/portfolio</span><span class="term-dollar">$</span>
+            </label>
+            <div class="terminal-input-wrapper">
+              <input type="text" id="terminal-cli-input" class="terminal-input" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" aria-label="Terminal command input" data-i18n-placeholder="console_input_placeholder" placeholder="Gõ lệnh (ví dụ: vu --help) hoặc bấm Tab để gợi ý..." />
+            </div>
+            <button type="button" id="terminal-cli-submit" class="terminal-send-btn" aria-label="Thực thi lệnh">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Bottom hint bar -->
+          <div class="terminal-footer-hints">
+            <span><kbd>Tab</kbd> <span data-i18n="console_hint_tab">Tự động hoàn thành</span></span>
+            <span><kbd>↑</kbd><kbd>↓</kbd> <span data-i18n="console_hint_history">Lịch sử lệnh</span></span>
+            <span><kbd>Enter</kbd> <span data-i18n="console_hint_exec">Thực thi</span></span>
+            <span><kbd>clear</kbd> <span data-i18n="console_hint_clear">Xóa màn hình</span></span>
+          </div>
+        </div>
+
+        <!-- View 2: REST API Explorer -->
+        <div class="terminal-view hidden" id="terminal-view-api">
+          <!-- API Explorer Request Bar -->
+          <div class="api-request-bar">
+            <div class="api-method-badge" id="api-method-badge">GET</div>
+            <div class="api-url-wrapper">
+              <span class="api-base-url hidden sm:inline">https://hoangvu.dev</span>
+              <select id="api-endpoint-select" class="api-endpoint-select" aria-label="Chọn API endpoint">
+                <option value="/api/v1/profile" data-i18n="api_opt_profile">/api/v1/profile (Thông tin cá nhân &amp; học vấn)</option>
+                <option value="/api/v1/skills" data-i18n="api_opt_skills">/api/v1/skills (Danh sách kỹ năng 4 trụ cột)</option>
+                <option value="/api/v1/projects" data-i18n="api_opt_projects">/api/v1/projects (Toàn bộ 7 dự án kỹ thuật)</option>
+                <option value="/api/v1/projects?category=backend" data-i18n="api_opt_projects_be">/api/v1/projects?category=backend (Lọc Backend)</option>
+                <option value="/api/v1/projects?category=ai" data-i18n="api_opt_projects_ai">/api/v1/projects?category=ai (Lọc AI / Deep Learning)</option>
+                <option value="/api/v1/health" data-i18n="api_opt_health">/api/v1/health (Trạng thái hệ thống &amp; uptime)</option>
+                <option value="/api/v1/contact" data-i18n="api_opt_contact">POST /api/v1/contact (Mô phỏng gửi tin nhắn liên hệ)</option>
+              </select>
+            </div>
+            <button type="button" id="api-send-btn" class="api-send-btn">
+              <span class="api-btn-spinner hidden"></span>
+              <span class="api-btn-text" data-i18n="api_btn_send">Gửi Request</span>
+            </button>
+          </div>
+
+          <!-- API Request Payload (only shown for POST) -->
+          <div id="api-payload-section" class="api-payload-section hidden">
+            <div class="api-section-title" data-i18n="api_request_payload">Request Payload (JSON Body):</div>
+            <pre class="api-payload-code"><code>{
+  "name": "Tech Lead / Recruiter",
+  "email": "lead@company.com",
+  "message": "Interested in Fresher Backend &amp; AI Engineer position"
+}</code></pre>
+          </div>
+
+          <!-- API Response Meta Panel -->
+          <div class="api-response-meta">
+            <div class="api-meta-left">
+              <span class="api-badge-status" id="api-res-status">Status: 200 OK</span>
+              <span class="api-badge-time" id="api-res-time">Time: 42ms</span>
+              <span class="api-badge-size" id="api-res-size">Size: 1.4 KB</span>
+            </div>
+            <button type="button" class="api-copy-json-btn" id="api-copy-json-btn">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+              <span data-i18n="api_copy_json">Sao chép JSON</span>
+            </button>
+          </div>
+
+          <!-- API Response Viewer -->
+          <div class="api-response-viewer custom-scrollbar" id="api-response-body">
+            <!-- JSON output dynamically formatted -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section (xen kẽ: SLATE / DEEP OBSIDIAN) -->
+  <section id="contact" class="py-24 bg-slate-50 dark:bg-[#070b14] relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in"
         data-i18n="contact_title">Liên hệ</h2>
@@ -1586,6 +1760,18 @@
         </span>
         <span class="fab-item__label">GitHub</span>
       </a>
+
+      <!-- Terminal Console Link -->
+      <a href="#console" class="fab-item fab-item--terminal" id="fab-terminal-link" role="menuitem"
+        data-i18n-tooltip="fab_terminal_tip" title="Mở Interactive Terminal">
+        <span class="fab-item__icon">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </span>
+        <span class="fab-item__label" data-i18n="fab_terminal">Terminal CLI</span>
+      </a>
     </div>
 
     <!-- Main FAB Trigger Button -->
@@ -1609,7 +1795,7 @@
 
   <!-- Scripts (đúng thứ tự) -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="js/scripts.js?v=7"></script>
+  <script src="js/scripts.js?v=13"></script>
 </body>
 
 </html>

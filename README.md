@@ -39,6 +39,10 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
 ## ✨ Highlights
 
 - **Modern Software Engineer Aesthetic**: Deep Obsidian dark theme (`#070b14`), glassmorphism with subtle borders, and ambient moving aurora mesh.
+- **Interactive Terminal & REST API Console Widget (Signature Feature)**:
+  - **CLI Terminal (`vu-cli v2.4`)**: Linux/macOS shell supporting <kbd>Tab</kbd> auto-completion, command history (<kbd>↑</kbd>/<kbd>↓</kbd>), and 1-click quick command chips for mobile users. Full command set: `vu --help`, `vu --bio`, `vu --skills [--json]`, `vu --fetch-projects [--cat=X] [--id=Y]`, `vu --contact`, `vu --cv`, `curl <endpoint>`, `theme`, `lang`, `clear`, `history`, `date`, `matrix`, `sudo`.
+  - **REST API Explorer**: Visual Swagger/Postman-style endpoint tester (`GET /api/v1/profile`, `/skills`, `/projects`, `/health`, `POST /contact`) displaying simulated `200 OK` status, latency timer, payload byte size, and syntax-highlighted JSON with 1-click copy.
+  - **macOS Window Controls**: Minimize, clear, fullscreen/maximize overlay, and complete output copy.
 - **Interactive Skill ↔ Project Linking (2-Way)**:
   - **Skill ➔ Project**: Click any badged skill in the Skills section to smoothly scroll up, display the **Active Skill Filter Banner**, highlight applied projects with an electric glow ring, and automatically slide the Carousel to the matching project.
   - **Project ➔ Skill**: Click any interactive tech tag on project cards or within the details modal to jump directly down to the Skills section with a focused pulsing highlight animation.

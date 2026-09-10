@@ -39,6 +39,10 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
 ## ✨ Điểm nổi bật
 
 - **Thẩm mỹ Kỹ sư Phần mềm Hiện đại**: Nền tối Deep Obsidian sang trọng (`#070b14`), kính mờ glassmorphism với viền kim loại mảnh, và hiệu ứng quầng sáng aurora chuyển động sống động.
+- **Interactive Terminal & REST API Console Widget (Signature Feature)**:
+  - **CLI Terminal (`vu-cli v2.4`)**: Shell dòng lệnh phong cách Linux/macOS hỗ trợ tự động hoàn thành (<kbd>Tab</kbd>), duyệt lịch sử lệnh (<kbd>↑</kbd>/<kbd>↓</kbd>), và cụm chip lệnh nhanh 1-click tiện lợi cho người dùng mobile. Hỗ trợ đầy đủ các lệnh: `vu --help`, `vu --bio`, `vu --skills [--json]`, `vu --fetch-projects [--cat=X] [--id=Y]`, `vu --contact`, `vu --cv`, `curl <endpoint>`, `theme`, `lang`, `clear`, `history`, `date`, `matrix`, `sudo`.
+  - **REST API Explorer**: Trình khám phá và kiểm thử endpoint trực quan phong cách Postman/Swagger (`GET /api/v1/profile`, `/skills`, `/projects`, `/health`, `POST /contact`), hiển thị HTTP status `200 OK`, thời gian phản hồi (latency), kích thước payload và JSON syntax highlighting kèm nút sao chép JSON.
+  - **Điều khiển cửa sổ macOS**: Thu nhỏ, xóa màn hình, phóng to toàn màn hình (Fullscreen) và sao chép toàn bộ output.
 - **Tương tác liên kết Kỹ năng ↔ Dự án 2 chiều (Interactive Skill Linking)**:
   - **Kỹ năng ➔ Dự án**: Click vào bất kỳ kỹ năng nào có huy hiệu trong mục Kỹ năng sẽ tự động cuộn lên Dự án, hiển thị thanh **Active Skill Filter Banner**, làm sáng viền các dự án áp dụng công nghệ đó (`.is-skill-matched`) và tự động trượt Carousel đến đúng dự án.
   - **Dự án ➔ Kỹ năng**: Click vào các tag công nghệ trên thẻ dự án hoặc trong modal chi tiết sẽ cuộn ngay xuống Kỹ năng và kích hoạt hiệu ứng nhấp nháy phát sáng (**Pulsing Focus Highlight**) để định vị tức thì.
