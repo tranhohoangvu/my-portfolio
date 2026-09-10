@@ -109,20 +109,25 @@ The CV section + dropdown text is controlled by `data-i18n` keys in `js/scripts.
 ```txt
 my-portfolio/
 ├─ index.html                     # Main single-page application entry
+├─ data/                          # Machine-readable JSON data stores
+│  ├─ projects.json               # Projects dataset (bilingual VI/EN, architecture, challenges)
+│  └─ skills.json                 # Technical skills & project mapping dataset
 ├─ assets/
 │  ├─ projects/                   # Screenshots for 7 portfolio projects
-│  ├─ github-contrib-light.svg    # Auto-generated daily contribution map (light)
-│  ├─ github-contrib-dark.svg     # Auto-generated daily contribution map (dark)
-│  ├─ TranHoHoangVu_BE.pdf        # Backend Developer CV
-│  ├─ TranHoHoangVu_AI.pdf        # AI Engineer CV
-│  ├─ og-image-v2.png             # Open Graph preview image
-│  └─ favicon.*
+│  ├─ cv/                         # Career CVs (Backend Developer & AI Engineer PDFs)
+│  ├─ profile/                    # Personal avatar & profile photos
+│  ├─ icons/                      # Favicons (SVG, PNG) & PWA app icons
+│  ├─ github/                     # Auto-generated daily contribution & activity graph SVGs
+│  └─ og-image-v2.png             # Open Graph social preview banner
 ├─ css/
 │  ├─ tailwind-input.css          # Tailwind CLI input config
 │  ├─ tailwind.css                # Compiled Tailwind CSS
-│  └─ styles.css                  # Custom theme, animations, carousel, modal, skills
+│  └─ styles.css                  # Custom theme, animations, carousel, modal, skills, terminal
 ├─ js/
-│  ├─ scripts.js                  # App controller, i18n, carousel, modal, 2-way skill linking
+│  ├─ data/                       # Independent client data modules
+│  │  ├─ projects.data.js         # Window.PROJECTS_DATA store & filter helpers
+│  │  └─ skills.data.js           # Window.SKILLS_DATA store & 2-way linking helpers
+│  ├─ scripts.js                  # Main app controller, i18n, carousel, modal, terminal CLI
 │  └─ build_github_contrib_svgs.py # Python script for GitHub GraphQL contribution SVG
 ├─ projects-docs/                 # Comprehensive documentation for 7 projects
 │  ├─ 01-coursehub-lms.md
@@ -138,6 +143,9 @@ my-portfolio/
 ├─ UI_UX_ANALYSIS.md              # UI/UX improvement report and feature roadmap
 ├─ README.md                      # English documentation
 ├─ README_VI.md                   # Vietnamese documentation
+├─ site.webmanifest               # PWA configuration
+├─ sitemap.xml                    # SEO sitemap
+├─ sw.js                          # Offline Service Worker cache controller
 ├─ package.json
 └─ package-lock.json
 ```

@@ -109,20 +109,25 @@ Text của section CV + dropdown được điều khiển qua `data-i18n` trong 
 ```txt
 my-portfolio/
 ├─ index.html                     # Trang chính giao diện Single-Page Application
+├─ data/                          # Thư mục dữ liệu chuẩn định dạng JSON máy đọc
+│  ├─ projects.json               # Dữ liệu 7 dự án (song ngữ VI/EN, kiến trúc, database, thách thức)
+│  └─ skills.json                 # Dữ liệu 4 nhóm kỹ năng & bảng liên kết kỹ năng ↔ dự án
 ├─ assets/
 │  ├─ projects/                   # Ảnh chụp màn hình 7 dự án portfolio
-│  ├─ github-contrib-light.svg    # Bản đồ đóng góp GitHub tự động (giao diện sáng)
-│  ├─ github-contrib-dark.svg     # Bản đồ đóng góp GitHub tự động (giao diện tối)
-│  ├─ TranHoHoangVu_BE.pdf        # File CV Fresher Backend Developer
-│  ├─ TranHoHoangVu_AI.pdf        # File CV AI Engineer Intern
-│  ├─ og-image-v2.png             # Ảnh xem trước Open Graph khi chia sẻ mạng xã hội
-│  └─ favicon.*
+│  ├─ cv/                         # Hồ sơ ứng tuyển (CV Fresher Backend & AI Engineer PDF)
+│  ├─ profile/                    # Ảnh đại diện cá nhân (profile1.jpg, profile2.png)
+│  ├─ icons/                      # Biểu tượng favicon (SVG, PNG) & App icon PWA
+│  ├─ github/                     # Bản đồ đóng góp & đồ thị hoạt động GitHub tự động (SVG)
+│  └─ og-image-v2.png             # Ảnh xem trước Open Graph khi chia sẻ mạng xã hội
 ├─ css/
 │  ├─ tailwind-input.css          # File cấu hình Tailwind CLI input
 │  ├─ tailwind.css                # File CSS Tailwind đã biên dịch
-│  └─ styles.css                  # Toàn bộ styles tùy biến, animation, carousel, modal, skills
+│  └─ styles.css                  # Toàn bộ styles tùy biến, animation, carousel, modal, skills, terminal
 ├─ js/
-│  ├─ scripts.js                  # Controller chính, i18n, carousel slider, modal, liên kết kỹ năng
+│  ├─ data/                       # Module dữ liệu phía client chạy độc lập
+│  │  ├─ projects.data.js         # Kho dữ liệu window.PROJECTS_DATA & hàm tra cứu/lọc
+│  │  └─ skills.data.js           # Kho dữ liệu window.SKILLS_DATA & hàm liên kết 2 chiều
+│  ├─ scripts.js                  # Controller chính, i18n, carousel slider, modal, terminal CLI
 │  └─ build_github_contrib_svgs.py # Script Python tạo SVG heatmap từ GitHub GraphQL API
 ├─ projects-docs/                 # Tài liệu kỹ thuật chi tiết cho 7 dự án
 │  ├─ 01-coursehub-lms.md
@@ -138,6 +143,9 @@ my-portfolio/
 ├─ UI_UX_ANALYSIS.md              # Báo cáo phân tích UI/UX & lộ trình nâng cấp tính năng
 ├─ README.md                      # Tài liệu tiếng Anh
 ├─ README_VI.md                   # Tài liệu tiếng Việt
+├─ site.webmanifest               # Cấu hình PWA
+├─ sitemap.xml                    # Sơ đồ trang web SEO
+├─ sw.js                          # Trình quản lý bộ nhớ đệm offline Service Worker
 ├─ package.json
 └─ package-lock.json
 ```
