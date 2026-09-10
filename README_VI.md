@@ -123,12 +123,19 @@ my-portfolio/
 │  ├─ tailwind-input.css          # File cấu hình Tailwind CLI input
 │  ├─ tailwind.css                # File CSS Tailwind đã biên dịch
 │  └─ styles.css                  # Toàn bộ styles tùy biến, animation, carousel, modal, skills, terminal
+├─ scripts/                       # Thư mục chứa automation & build scripts
+│  └─ build_github_contrib_svgs.py # Script Python tạo SVG heatmap từ GitHub GraphQL API
 ├─ js/
 │  ├─ data/                       # Module dữ liệu phía client chạy độc lập
 │  │  ├─ projects.data.js         # Kho dữ liệu window.PROJECTS_DATA & hàm tra cứu/lọc
 │  │  └─ skills.data.js           # Kho dữ liệu window.SKILLS_DATA & hàm liên kết 2 chiều
-│  ├─ scripts.js                  # Controller chính, i18n, carousel slider, modal, terminal CLI
-│  └─ build_github_contrib_svgs.py # Script Python tạo SVG heatmap từ GitHub GraphQL API
+│  ├─ modules/                    # Các module tính năng giao diện độc lập
+│  │  ├─ carousel.js              # Projects carousel slider & bộ lọc danh mục
+│  │  ├─ modal.js                 # Project deep-dive details modal & các tab kiến trúc
+│  │  ├─ skill-linking.js         # Liên kết tương tác 2 chiều Kỹ năng ↔ Dự án
+│  │  ├─ terminal.js              # Widget Interactive Terminal CLI & REST API Console
+│  │  └─ fab.js                   # Floating Action Bar (FAB) & hệ thống Toast
+│  └─ scripts.js                  # Điều phối ứng dụng (i18n, theme, navbar, hero)
 ├─ projects-docs/                 # Tài liệu kỹ thuật chi tiết cho 7 dự án
 │  ├─ 01-coursehub-lms.md
 │  ├─ 02-ecommerce-platform.md
@@ -213,7 +220,7 @@ npx @tailwindcss/cli -i ./css/tailwind-input.css -o ./css/tailwind.css --watch
 Workflow: `.github/workflows/update-github-contrib.yml`
 
 - Chạy hằng ngày (00:00 UTC)
-- Dùng GitHub GraphQL API trong `js/build_github_contrib_svgs.py`
+- Dùng GitHub GraphQL API trong `scripts/build_github_contrib_svgs.py`
 - Cập nhật:
   - `assets/github/github-contrib-light.svg`
   - `assets/github/github-contrib-dark.svg`

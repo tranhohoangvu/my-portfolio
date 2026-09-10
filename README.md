@@ -123,12 +123,19 @@ my-portfolio/
 │  ├─ tailwind-input.css          # Tailwind CLI input config
 │  ├─ tailwind.css                # Compiled Tailwind CSS
 │  └─ styles.css                  # Custom theme, animations, carousel, modal, skills, terminal
+├─ scripts/                       # Automation & build scripts
+│  └─ build_github_contrib_svgs.py # Python script for GitHub GraphQL contribution SVG
 ├─ js/
 │  ├─ data/                       # Independent client data modules
 │  │  ├─ projects.data.js         # Window.PROJECTS_DATA store & filter helpers
 │  │  └─ skills.data.js           # Window.SKILLS_DATA store & 2-way linking helpers
-│  ├─ scripts.js                  # Main app controller, i18n, carousel, modal, terminal CLI
-│  └─ build_github_contrib_svgs.py # Python script for GitHub GraphQL contribution SVG
+│  ├─ modules/                    # Modular feature controllers
+│  │  ├─ carousel.js              # Projects carousel slider & category filter
+│  │  ├─ modal.js                 # Project deep-dive details modal & architecture tabs
+│  │  ├─ skill-linking.js         # 2-way interactive Skill ↔ Project linking
+│  │  ├─ terminal.js              # Interactive Terminal CLI & REST API Console
+│  │  └─ fab.js                   # Floating Action Bar (FAB) & Toast notifications
+│  └─ scripts.js                  # Lean app coordinator (i18n, theme, navbar, hero)
 ├─ projects-docs/                 # Comprehensive documentation for 7 projects
 │  ├─ 01-coursehub-lms.md
 │  ├─ 02-ecommerce-platform.md
@@ -213,7 +220,7 @@ npx @tailwindcss/cli -i ./css/tailwind-input.css -o ./css/tailwind.css --watch
 Workflow: `.github/workflows/update-github-contrib.yml`
 
 - Runs daily (00:00 UTC)
-- Uses GitHub GraphQL API in `js/build_github_contrib_svgs.py`
+- Uses GitHub GraphQL API in `scripts/build_github_contrib_svgs.py`
 - Updates:
   - `assets/github/github-contrib-light.svg`
   - `assets/github/github-contrib-dark.svg`

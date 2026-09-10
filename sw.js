@@ -1,5 +1,5 @@
 /* SW: precache only .css .js .jpg .png .svg */
-const VERSION = "v9";
+const VERSION = "v10";
 const CACHE_NAME = `portfolio-${VERSION}`;
 
 const PRECACHE = [
@@ -13,9 +13,14 @@ const PRECACHE = [
   "./css/styles.welcome.css",
   "./css/tailwind-input.css",
 
-  // JS (data modules & scripts)
+  // JS (data modules, feature modules & coordinator)
   "./js/data/projects.data.js",
   "./js/data/skills.data.js",
+  "./js/modules/carousel.js",
+  "./js/modules/modal.js",
+  "./js/modules/skill-linking.js",
+  "./js/modules/terminal.js",
+  "./js/modules/fab.js",
   "./js/scripts.js",
 
   // JSON Data (Mục 10: Tách dữ liệu độc lập)
