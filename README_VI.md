@@ -122,7 +122,25 @@ my-portfolio/
 ├─ css/
 │  ├─ tailwind-input.css          # File cấu hình Tailwind CLI input
 │  ├─ tailwind.css                # File CSS Tailwind đã biên dịch
-│  └─ styles.css                  # Toàn bộ styles tùy biến, animation, carousel, modal, skills, terminal
+│  ├─ styles.css                  # Entry point — chỉ chứa @import (không có styles)
+│  ├─ base/
+│  │  ├─ tokens.css               # Design tokens, CSS variables, body, back-to-top
+│  │  └─ animations.css           # Các class animation & keyframes toàn cục
+│  ├─ layout/
+│  │  ├─ navbar.css               # Navbar, mobile menu, responsive breakpoints
+│  │  └─ nav-rail.css             # Thanh điều hướng section nổi (desktop)
+│  ├─ sections/
+│  │  ├─ hero.css                 # Hero section, aurora orbs, buttons, CV dropdown
+│  │  ├─ projects.css             # Filter tabs, carousel, cards, modal, skill linking
+│  │  ├─ skills.css               # Skills cards, dark mode, lang toggle, certificates
+│  │  ├─ contact.css              # Contact cards, email copy badge, footer
+│  │  ├─ cv.css                   # CV section cards & actions
+│  │  ├─ about.css                # Avatar aura, about content, social buttons
+│  │  └─ terminal.css             # Interactive terminal & REST API console widget
+│  └─ components/
+│     ├─ shared-cards.css         # Hiệu ứng hover thống nhất (projects, skills, github)
+│     ├─ toast.css                # Hệ thống toast notification glassmorphic
+│     └─ fab.css                  # Floating Action Bar & quick contact cluster
 ├─ scripts/                       # Thư mục chứa automation & build scripts
 │  └─ build_github_contrib_svgs.py # Script Python tạo SVG heatmap từ GitHub GraphQL API
 ├─ js/

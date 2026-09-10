@@ -122,7 +122,25 @@ my-portfolio/
 ├─ css/
 │  ├─ tailwind-input.css          # Tailwind CLI input config
 │  ├─ tailwind.css                # Compiled Tailwind CSS
-│  └─ styles.css                  # Custom theme, animations, carousel, modal, skills, terminal
+│  ├─ styles.css                  # Entry point — @import only (no styles here)
+│  ├─ base/
+│  │  ├─ tokens.css               # Design tokens, CSS variables, body, back-to-top
+│  │  └─ animations.css           # Global animation classes & keyframes
+│  ├─ layout/
+│  │  ├─ navbar.css               # Navbar, mobile menu, responsive breakpoints
+│  │  └─ nav-rail.css             # Floating section navigation rail (desktop)
+│  ├─ sections/
+│  │  ├─ hero.css                 # Hero section, aurora orbs, buttons, CV dropdown
+│  │  ├─ projects.css             # Filter tabs, carousel, cards, modal, skill linking
+│  │  ├─ skills.css               # Skills cards, dark mode, lang toggle, certificates
+│  │  ├─ contact.css              # Contact cards, email copy badge, footer
+│  │  ├─ cv.css                   # CV section cards & actions
+│  │  ├─ about.css                # Avatar aura, about content, social buttons
+│  │  └─ terminal.css             # Interactive terminal & REST API console widget
+│  └─ components/
+│     ├─ shared-cards.css         # Unified hover effect (projects, skills, github cards)
+│     ├─ toast.css                # Glassmorphic toast notification system
+│     └─ fab.css                  # Floating Action Bar & quick contact cluster
 ├─ scripts/                       # Automation & build scripts
 │  └─ build_github_contrib_svgs.py # Python script for GitHub GraphQL contribution SVG
 ├─ js/
