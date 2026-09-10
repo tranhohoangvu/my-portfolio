@@ -111,11 +111,20 @@
       track.classList.add("is-animating");
       track.style.transform = `translateX(-${targetOffset}px)`;
 
-      function onTransitionEnd(e) {
-        if (e.target !== track || e.propertyName !== "transform") return;
-        track.removeEventListener("transitionend", onTransitionEnd);
+      // Safety timeout: reset isAnimating if transitionend never fires
+      let safetyTimer = setTimeout(() => {
         track.classList.remove("is-animating");
         isAnimating = false;
+        updateControls();
+      }, 600);
+
+      function onTransitionEnd(e) {
+        if (e.target !== track) return;
+        track.removeEventListener("transitionend", onTransitionEnd);
+        clearTimeout(safetyTimer);
+        track.classList.remove("is-animating");
+        isAnimating = false;
+        updateControls();
       }
 
       track.addEventListener("transitionend", onTransitionEnd);

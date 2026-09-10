@@ -1,5 +1,5 @@
 /* SW: precache only .css .js .jpg .png .svg */
-const VERSION = "v11";
+const VERSION = "v13";
 const CACHE_NAME = `portfolio-${VERSION}`;
 
 const PRECACHE = [
@@ -21,6 +21,7 @@ const PRECACHE = [
   "./js/modules/skill-linking.js",
   "./js/modules/terminal.js",
   "./js/modules/fab.js",
+  "./js/modules/section-nav.js",
   "./js/scripts.js",
 
   // JSON Data (Mục 10: Tách dữ liệu độc lập)

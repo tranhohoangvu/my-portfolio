@@ -331,6 +331,15 @@ const I18N = {
     contact_email_tip: "Nhấp để sao chép email (hoangvu2k4cmg@gmail.com)",
     contact_copy_btn: "Sao chép",
     contact_copied_btn: "Đã sao chép!",
+    sec_nav_home: "Trang chủ",
+    sec_nav_about: "Giới thiệu",
+    sec_nav_cv: "Hồ sơ CV",
+    sec_nav_projects: "Dự án",
+    sec_nav_skills: "Kỹ năng",
+    sec_nav_certs: "Chứng chỉ",
+    sec_nav_github: "GitHub",
+    sec_nav_console: "Console",
+    sec_nav_contact: "Liên hệ",
     fab_copy_email: "Sao chép Email",
     fab_copy_email_tip: "Sao chép email vào clipboard",
     fab_view_cv: "Xem / Tải CV",
@@ -540,6 +549,15 @@ const I18N = {
     contact_email_tip: "Click to copy email (hoangvu2k4cmg@gmail.com)",
     contact_copy_btn: "Copy",
     contact_copied_btn: "Copied!",
+    sec_nav_home: "Home",
+    sec_nav_about: "About",
+    sec_nav_cv: "CV Resume",
+    sec_nav_projects: "Projects",
+    sec_nav_skills: "Skills",
+    sec_nav_certs: "Certificates",
+    sec_nav_github: "GitHub",
+    sec_nav_console: "Console",
+    sec_nav_contact: "Contact",
     fab_copy_email: "Copy Email",
     fab_copy_email_tip: "Copy email to clipboard",
     fab_view_cv: "View / Download CV",
@@ -725,6 +743,7 @@ function applyLanguage(lang, persist = true) {
   window.refreshProjectModalIfOpen?.();
   window.refreshActiveSkillBanner?.();
   window.refreshTerminalLang?.();
+  window.refreshSectionNavLang?.();
 }
 
 function toggleLanguage() {
@@ -756,10 +775,10 @@ if (langToggleMobile) langToggleMobile.addEventListener("click", toggleLanguage)
 // =======================
 // Mobile Menu Toggle
 // =======================
-const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+const mobileMenuToggle = document.getElementById("nav-toggle");
 const mobileMenu = document.getElementById("mobile-menu");
-const menuOpenIcon = document.getElementById("menu-open-icon");
-const menuCloseIcon = document.getElementById("menu-close-icon");
+const menuOpenIcon = document.getElementById("icon-menu");
+const menuCloseIcon = document.getElementById("icon-close");
 
 function toggleMobileMenu(forceState) {
   if (!mobileMenu) return;
@@ -1426,6 +1445,7 @@ function initAppModules() {
   window.initSkillProjectLinking?.();
   window.initTerminalConsole?.();
   window.initFloatingActions?.();
+  window.initSectionNav?.();
   initEmailCopyActions?.();
   initHeroInteractions?.();
   initCounterAnimations?.();
