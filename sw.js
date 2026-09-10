@@ -1,5 +1,5 @@
 /* SW: precache only .css .js .jpg .png .svg */
-const VERSION = "v7";
+const VERSION = "v8";
 const CACHE_NAME = `portfolio-${VERSION}`;
 
 const PRECACHE = [
@@ -13,8 +13,14 @@ const PRECACHE = [
   "./css/styles.welcome.css",
   "./css/tailwind-input.css",
 
-  // JS (only .js)
+  // JS (data modules & scripts)
+  "./js/data/projects.data.js",
+  "./js/data/skills.data.js",
   "./js/scripts.js",
+
+  // JSON Data (Mục 10: Tách dữ liệu độc lập)
+  "./data/projects.json",
+  "./data/skills.json",
 
   // Assets (images only)
   "./assets/favicon.svg",

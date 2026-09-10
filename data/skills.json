@@ -1,0 +1,121 @@
+{
+  "categories": [
+    {
+      "id": "core_languages",
+      "vi": {
+        "title": "Ngôn ngữ cốt lõi",
+        "meta": "Nền tảng lập trình & tư duy thuật toán"
+      },
+      "en": {
+        "title": "Core Languages",
+        "meta": "Programming foundations & algorithmic problem solving"
+      },
+      "skills": [
+        { "id": "c", "name": "C", "devicon": "devicon-c-plain colored", "level": "Academic Core", "projectIds": [] },
+        { "id": "csharp", "name": "C#", "devicon": "devicon-csharp-plain colored", "framework": ".NET WinForms", "projectIds": ["warehouse"] },
+        { "id": "java", "name": "Java", "devicon": "devicon-java-plain colored", "level": "OOP Foundation", "projectIds": [] },
+        { "id": "python", "name": "Python", "devicon": "devicon-python-plain colored", "frameworks": ["PyTorch", "TensorFlow", "scikit-learn", "Hugging Face"], "projectIds": ["vietnamese-ocr", "nlp-translation", "stock-ml"] },
+        { "id": "javascript", "name": "JavaScript", "devicon": "devicon-javascript-plain colored", "frameworks": ["Node.js", "Express.js", "React"], "projectIds": ["coursehub", "ecommerce"] },
+        { "id": "php", "name": "PHP", "devicon": "devicon-php-plain colored", "framework": "Laravel", "projectIds": ["pos"] }
+      ]
+    },
+    {
+      "id": "backend_architecture",
+      "vi": {
+        "title": "Kiến trúc Backend & API",
+        "meta": "RESTful API, MVC, JWT RBAC & Microservices"
+      },
+      "en": {
+        "title": "Backend Architecture & APIs",
+        "meta": "RESTful API, MVC, JWT RBAC & Microservices"
+      },
+      "skills": [
+        { "id": "nodejs", "name": "Node.js", "devicon": "devicon-nodejs-plain colored", "projectIds": ["coursehub", "ecommerce"] },
+        { "id": "express", "name": "Express.js", "devicon": "devicon-express-original colored", "projectIds": ["coursehub", "ecommerce"] },
+        { "id": "laravel", "name": "Laravel", "devicon": "devicon-laravel-plain colored", "projectIds": ["pos"] },
+        { "id": "restapi", "name": "RESTful API", "devicon": "devicon-postman-plain colored", "projectIds": ["coursehub", "ecommerce"] },
+        { "id": "dotnet", "name": ".NET WinForms", "devicon": "devicon-dot-net-plain colored", "projectIds": ["warehouse"] },
+        { "id": "react", "name": "React", "devicon": "devicon-react-original colored", "projectIds": ["coursehub", "ecommerce"] }
+      ]
+    },
+    {
+      "id": "databases_and_optimization",
+      "vi": {
+        "title": "Cơ sở dữ liệu & Tối ưu",
+        "meta": "Raw SQL, Indexing, Transactions & Schema Design"
+      },
+      "en": {
+        "title": "Databases & Storage",
+        "meta": "Raw SQL, Indexing, Transactions & Schema Design"
+      },
+      "skills": [
+        { "id": "postgresql", "name": "PostgreSQL", "devicon": "devicon-postgresql-plain colored", "projectIds": ["coursehub"] },
+        { "id": "mysql", "name": "MySQL", "devicon": "devicon-mysql-plain colored", "projectIds": ["warehouse", "pos"] },
+        { "id": "mongodb", "name": "MongoDB", "devicon": "devicon-mongodb-plain colored", "projectIds": ["ecommerce"] },
+        { "id": "sqlserver", "name": "SQL Server", "devicon": "devicon-microsoftsqlserver-plain colored", "projectIds": ["warehouse"] },
+        { "id": "rawsql", "name": "Raw SQL", "devicon": "devicon-postgresql-plain colored", "projectIds": ["coursehub"] }
+      ]
+    },
+    {
+      "id": "ai_devops_and_tools",
+      "vi": {
+        "title": "AI, DevOps & Công cụ",
+        "meta": "Mô hình Học sâu, Container hóa & CI/CD Pipeline"
+      },
+      "en": {
+        "title": "AI, DevOps & Tools",
+        "meta": "Deep Learning, Containerization & CI/CD Pipelines"
+      },
+      "skills": [
+        { "id": "pytorch", "name": "PyTorch", "devicon": "devicon-pytorch-original colored", "projectIds": ["vietnamese-ocr", "nlp-translation"] },
+        { "id": "tensorflow", "name": "TensorFlow", "devicon": "devicon-tensorflow-original colored", "projectIds": ["stock-ml"] },
+        { "id": "docker", "name": "Docker", "devicon": "devicon-docker-plain colored", "projectIds": ["ecommerce"] },
+        { "id": "compose", "name": "Docker Compose", "devicon": "devicon-docker-plain colored", "projectIds": ["ecommerce"] },
+        { "id": "nginx", "name": "Nginx", "devicon": "devicon-nginx-original colored", "projectIds": ["ecommerce"] },
+        { "id": "git", "name": "Git", "devicon": "devicon-git-plain colored", "projectIds": ["coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos"] },
+        { "id": "github", "name": "GitHub", "devicon": "devicon-github-original colored", "projectIds": ["coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos"] },
+        { "id": "postman", "name": "Postman", "devicon": "devicon-postman-plain colored", "projectIds": ["coursehub", "ecommerce"] },
+        { "id": "linux", "name": "Linux", "devicon": "devicon-linux-plain colored", "projectIds": [] }
+      ]
+    }
+  ],
+  "tagToSkillAliases": {
+    "postgres": "postgresql",
+    "postgresql": "postgresql",
+    "mongo": "mongodb",
+    "mongodb": "mongodb",
+    "mysql": "mysql",
+    "sql server": "sqlserver",
+    "raw sql": "rawsql",
+    "native pg (no orm)": "rawsql",
+    "node": "nodejs",
+    "node.js": "nodejs",
+    "express": "express",
+    "express.js": "express",
+    "react": "react",
+    "react 18": "react",
+    "pytorch": "pytorch",
+    "tensorflow": "tensorflow",
+    "tensorflow / keras": "tensorflow",
+    "docker compose": "compose",
+    "compose": "compose",
+    "docker": "docker",
+    "nginx": "nginx",
+    "laravel": "laravel",
+    "laravel 10": "laravel",
+    "livewire": "php",
+    "php": "php",
+    "c#": "csharp",
+    "csharp": "csharp",
+    ".net": "dotnet",
+    ".net winforms": "dotnet",
+    "winform": "dotnet",
+    "python": "python",
+    "rest": "restapi",
+    "restful api": "restapi",
+    "api": "restapi",
+    "postman": "postman",
+    "git": "git",
+    "github": "github"
+  }
+}
