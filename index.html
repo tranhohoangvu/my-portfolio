@@ -331,7 +331,8 @@
               <div class="about-stat__label" data-i18n="about_stat_2">Mini Features</div>
             </div>
             <div class="about-stat">
-              <div class="about-stat__num" data-counter-target="2026" data-counter-start="2000" data-counter-suffix="">2000</div>
+              <div class="about-stat__num" data-counter-target="2026" data-counter-start="2000" data-counter-suffix="">
+                2000</div>
               <div class="about-stat__label" data-i18n="about_stat_3">Fresher & Intern Ready</div>
             </div>
           </div>
@@ -343,20 +344,16 @@
 
       <div class="about-social" aria-label="Social links">
         <!-- Mail -->
-        <a class="social-btn is-mail" href="mailto:hoangvu2k4cmg@gmail.com"
-          id="about-email-btn"
-          role="button"
-          tabindex="0"
-          data-email="hoangvu2k4cmg@gmail.com"
-          data-i18n-tooltip="contact_email_tip"
-          title="Nhấp để sao chép email (hoangvu2k4cmg@gmail.com)"
-          aria-label="Sao chép email hoangvu2k4cmg@gmail.com">
+        <a class="social-btn is-mail" href="mailto:hoangvu2k4cmg@gmail.com" id="about-email-btn" role="button"
+          tabindex="0" data-email="hoangvu2k4cmg@gmail.com" data-i18n-tooltip="contact_email_tip"
+          title="Nhấp để sao chép email (hoangvu2k4cmg@gmail.com)" aria-label="Sao chép email hoangvu2k4cmg@gmail.com">
           <svg class="mail-default-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path
               d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 0 1-2 2H4c-1.1 0-2-.9-2-2V6a2 2 0 0 1 2-2Zm8 7 8-5H4l8 5Zm0 2.5-8-5V18h16v-9.5l-8 5Z" />
           </svg>
-          <svg class="mail-check-icon hidden w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          <svg class="mail-check-icon hidden w-5 h-5 text-emerald-400" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </a>
 
@@ -412,15 +409,28 @@
   <section id="cv" class="py-24 bg-slate-50 dark:bg-[#070b14] relative">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
       <div class="text-center">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 tracking-tight" data-i18n="cv_title">
-          CV
+        <!-- Kicker badge -->
+        <div class="flex justify-center mb-8">
+          <span class="cv-section-kicker">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+            <span data-i18n="cv_kicker">Open to Opportunities</span>
+          </span>
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 tracking-tight mt-4"
+          data-i18n="cv_headline">
+          Two CVs. One mission.
         </h2>
         <p class="mt-4 mb-4 text-base md:text-lg text-gray-600 dark:text-gray-300" data-i18n="cv_subtitle">
-          Chọn phiên bản CV phù hợp với vị trí bạn đang ứng tuyển.
+          Pick the CV version that fits the role you're applying for.
         </p>
       </div>
 
-      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
         <!-- Backend Developer Intern (PDF) -->
         <article class="cv-card cv-card--backend">
           <div class="cv-top">
@@ -521,7 +531,8 @@
           <span id="active-skill-name" class="active-skill-badge">PostgreSQL</span>
           <span id="active-skill-count" class="active-skill-count">(1 dự án)</span>
         </div>
-        <button type="button" id="clear-skill-filter-btn" class="active-skill-clear-btn" aria-label="Bỏ lọc kỹ năng" title="Bỏ lọc kỹ năng">
+        <button type="button" id="clear-skill-filter-btn" class="active-skill-clear-btn" aria-label="Bỏ lọc kỹ năng"
+          title="Bỏ lọc kỹ năng">
           <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
@@ -558,35 +569,52 @@
                 </div>
 
                 <div class="text-center mb-4">
-                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p4_meta">Feb 2026 – Mar 2026 • Dự án Full-Stack</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors" data-i18n="p4_title" data-project-trigger="coursehub">CourseHub LMS</h3>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p4_meta">Feb 2026 – Mar
+                    2026 • Dự án Full-Stack</p>
+                  <h3
+                    class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
+                    data-i18n="p4_title" data-project-trigger="coursehub">CourseHub LMS</h3>
                 </div>
 
-                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="coursehub" title="Xem chi tiết">
+                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="coursehub"
+                  title="Xem chi tiết">
                   <img src="assets/projects/coursehub.png" alt="Ảnh dự án CourseHub LMS" loading="lazy">
                   <div class="project-thumb-overlay">
                     <span class="project-thumb-hint">
-                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
                       <span data-i18n="p_btn_details">Chi tiết</span>
                     </span>
                   </div>
                 </div>
 
                 <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p4_desc">
-                  Hệ thống Quản lý Học tập (LMS) full-stack: xác thực JWT &amp; phân quyền RBAC, tối ưu raw SQL (PostgreSQL), RESTful APIs và kiến trúc MVC mô-đun.
+                  Hệ thống Quản lý Học tập (LMS) full-stack: xác thực JWT &amp; phân quyền RBAC, tối ưu raw SQL
+                  (PostgreSQL), RESTful APIs và kiến trúc MVC mô-đun.
                 </p>
 
                 <div class="flex flex-wrap gap-2 mb-6 project-tech-list">
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="react" title="Xem kỹ năng React">React</span>
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="nodejs" title="Xem kỹ năng Node.js">Node.js</span>
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="postgresql" title="Xem kỹ năng PostgreSQL">PostgreSQL</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="react"
+                    title="Xem kỹ năng React">React</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="nodejs"
+                    title="Xem kỹ năng Node.js">Node.js</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="postgresql"
+                    title="Xem kỹ năng PostgreSQL">PostgreSQL</span>
                 </div>
               </div>
 
-              <div class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
+              <div
+                class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
                 <button type="button" class="btn-project-details" data-project-id="coursehub">
                   <span data-i18n="p_btn_details">Chi tiết</span>
-                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
                 </button>
                 <div class="flex items-center gap-3">
                   <a href="https://github.com/tranhohoangvu/coursehub-lms" target="_blank" rel="noopener noreferrer"
@@ -611,35 +639,52 @@
                 </div>
 
                 <div class="text-center mb-4">
-                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p1_meta">Sep 2025 – Dec 2025 • Dự án môn học</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors" data-i18n="p1_title" data-project-trigger="ecommerce">E-commerce Platform</h3>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p1_meta">Sep 2025 – Dec
+                    2025 • Dự án môn học</p>
+                  <h3
+                    class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
+                    data-i18n="p1_title" data-project-trigger="ecommerce">E-commerce Platform</h3>
                 </div>
 
-                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="ecommerce" title="Xem chi tiết">
+                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="ecommerce"
+                  title="Xem chi tiết">
                   <img src="assets/projects/ecommerce.png" alt="Ảnh dự án E-commerce Platform" loading="lazy">
                   <div class="project-thumb-overlay">
                     <span class="project-thumb-hint">
-                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
                       <span data-i18n="p_btn_details">Chi tiết</span>
                     </span>
                   </div>
                 </div>
 
                 <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p1_desc">
-                  Nền tảng thương mại điện tử full-stack, tập trung backend: REST API, xác thực người dùng và luồng giỏ hàng/đơn hàng.
+                  Nền tảng thương mại điện tử full-stack, tập trung backend: REST API, xác thực người dùng và luồng giỏ
+                  hàng/đơn hàng.
                 </p>
 
                 <div class="flex flex-wrap gap-2 mb-6 project-tech-list">
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="react" title="Xem kỹ năng React">React</span>
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="nodejs" title="Xem kỹ năng Node.js">Node.js</span>
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="mongodb" title="Xem kỹ năng MongoDB">MongoDB</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="react"
+                    title="Xem kỹ năng React">React</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="nodejs"
+                    title="Xem kỹ năng Node.js">Node.js</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="mongodb"
+                    title="Xem kỹ năng MongoDB">MongoDB</span>
                 </div>
               </div>
 
-              <div class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
+              <div
+                class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
                 <button type="button" class="btn-project-details" data-project-id="ecommerce">
                   <span data-i18n="p_btn_details">Chi tiết</span>
-                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
                 </button>
                 <a href="https://github.com/tranhohoangvu/E-Commerce-Website" target="_blank" rel="noopener noreferrer"
                   class="inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-xs sm:text-sm">
@@ -658,35 +703,52 @@
                 </div>
 
                 <div class="text-center mb-4">
-                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p_ocr_meta">Jan 2025 – May 2025 • Deep Learning Project</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors" data-i18n="p_ocr_title" data-project-trigger="vietnamese-ocr">Vietnamese OCR (Deep Learning)</h3>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p_ocr_meta">Jan 2025 – May
+                    2025 • Deep Learning Project</p>
+                  <h3
+                    class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
+                    data-i18n="p_ocr_title" data-project-trigger="vietnamese-ocr">Vietnamese OCR (Deep Learning)</h3>
                 </div>
 
-                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="vietnamese-ocr" title="Xem chi tiết">
+                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="vietnamese-ocr"
+                  title="Xem chi tiết">
                   <img src="assets/projects/vietnamese-ocr.png" alt="Ảnh dự án Vietnamese OCR" loading="lazy">
                   <div class="project-thumb-overlay">
                     <span class="project-thumb-hint">
-                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
                       <span data-i18n="p_btn_details">Chi tiết</span>
                     </span>
                   </div>
                 </div>
 
                 <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p_ocr_desc">
-                  Chuẩn bị tập dữ liệu MCOCR (phân tích nhãn đa giác, cắt ảnh từ và lọc mẫu hợp lệ). Huấn luyện mô hình PyTorch OCR (CNN + Transformer attention), đánh giá exact-match và BLEU kèm demo suy luận.
+                  Chuẩn bị tập dữ liệu MCOCR (phân tích nhãn đa giác, cắt ảnh từ và lọc mẫu hợp lệ). Huấn luyện mô hình
+                  PyTorch OCR (CNN + Transformer attention), đánh giá exact-match và BLEU kèm demo suy luận.
                 </p>
 
                 <div class="flex flex-wrap gap-2 mb-6 project-tech-list">
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="python" title="Xem kỹ năng Python">Python</span>
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="pytorch" title="Xem kỹ năng PyTorch">PyTorch</span>
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="pytorch" title="CNN-Transformer Attention">CNN-Transformer</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="python"
+                    title="Xem kỹ năng Python">Python</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="pytorch"
+                    title="Xem kỹ năng PyTorch">PyTorch</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="pytorch"
+                    title="CNN-Transformer Attention">CNN-Transformer</span>
                 </div>
               </div>
 
-              <div class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
+              <div
+                class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
                 <button type="button" class="btn-project-details" data-project-id="vietnamese-ocr">
                   <span data-i18n="p_btn_details">Chi tiết</span>
-                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
                 </button>
                 <a href="https://github.com/tranhohoangvu/Deep-Learning" target="_blank" rel="noopener noreferrer"
                   class="inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-xs sm:text-sm">
@@ -705,37 +767,56 @@
                 </div>
 
                 <div class="text-center mb-4">
-                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p_mt_meta">Jan 2025 – May 2025 • NLP Project</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors" data-i18n="p_mt_title" data-project-trigger="nlp-translation">EN–VI Machine Translation (NLP)</h3>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p_mt_meta">Jan 2025 – May
+                    2025 • NLP Project</p>
+                  <h3
+                    class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
+                    data-i18n="p_mt_title" data-project-trigger="nlp-translation">EN–VI Machine Translation (NLP)</h3>
                 </div>
 
-                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="nlp-translation" title="Xem chi tiết">
-                  <img src="assets/projects/nlp-translation.png" alt="Ảnh dự án EN-VI Machine Translation" loading="lazy">
+                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="nlp-translation"
+                  title="Xem chi tiết">
+                  <img src="assets/projects/nlp-translation.png" alt="Ảnh dự án EN-VI Machine Translation"
+                    loading="lazy">
                   <div class="project-thumb-overlay">
                     <span class="project-thumb-hint">
-                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
                       <span data-i18n="p_btn_details">Chi tiết</span>
                     </span>
                   </div>
                 </div>
 
                 <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p_mt_desc">
-                  Quy trình tiền xử lý tập dữ liệu IWSLT15 EN–VI (làm sạch, tokenization, subword) và huấn luyện mô hình dịch máy Transformer. Đạt sentence BLEU (~17.87) kèm script dịch suy luận và detokenize.
+                  Quy trình tiền xử lý tập dữ liệu IWSLT15 EN–VI (làm sạch, tokenization, subword) và huấn luyện mô hình
+                  dịch máy Transformer. Đạt sentence BLEU (~17.87) kèm script dịch suy luận và detokenize.
                 </p>
 
                 <div class="flex flex-wrap gap-2 mb-6 project-tech-list">
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="python" title="Xem kỹ năng Python">Python</span>
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="pytorch" title="Xem kỹ năng PyTorch">PyTorch</span>
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="pytorch" title="Transformer Attention">Transformer</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="python"
+                    title="Xem kỹ năng Python">Python</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="pytorch"
+                    title="Xem kỹ năng PyTorch">PyTorch</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="pytorch"
+                    title="Transformer Attention">Transformer</span>
                 </div>
               </div>
 
-              <div class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
+              <div
+                class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
                 <button type="button" class="btn-project-details" data-project-id="nlp-translation">
                   <span data-i18n="p_btn_details">Chi tiết</span>
-                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
                 </button>
-                <a href="https://github.com/tranhohoangvu/Natural-Language-Processing" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/tranhohoangvu/Natural-Language-Processing" target="_blank"
+                  rel="noopener noreferrer"
                   class="inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-xs sm:text-sm">
                   <span>GitHub →</span>
                 </a>
@@ -752,35 +833,53 @@
                 </div>
 
                 <div class="text-center mb-4">
-                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p_stock_meta">Sep 2024 – Dec 2024 • Machine Learning Project</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors" data-i18n="p_stock_title" data-project-trigger="stock-ml">Stock Forecasting &amp; Benchmark (ML)</h3>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p_stock_meta">Sep 2024 –
+                    Dec 2024 • Machine Learning Project</p>
+                  <h3
+                    class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
+                    data-i18n="p_stock_title" data-project-trigger="stock-ml">Stock Forecasting &amp; Benchmark (ML)
+                  </h3>
                 </div>
 
-                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="stock-ml" title="Xem chi tiết">
+                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="stock-ml"
+                  title="Xem chi tiết">
                   <img src="assets/projects/stock-ml.png" alt="Ảnh dự án Stock Forecasting & Benchmark" loading="lazy">
                   <div class="project-thumb-overlay">
                     <span class="project-thumb-hint">
-                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
                       <span data-i18n="p_btn_details">Chi tiết</span>
                     </span>
                   </div>
                 </div>
 
                 <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="p_stock_desc">
-                  Pipeline dự báo chuỗi thời gian chứng khoán (OHLCV + GDP): tiền xử lý, trích xuất đặc trưng và đánh giá MSE/R². Benchmark so sánh tốc độ hội tụ các thuật toán tối ưu (GD/SGD/Adam) trên Boston Housing.
+                  Pipeline dự báo chuỗi thời gian chứng khoán (OHLCV + GDP): tiền xử lý, trích xuất đặc trưng và đánh
+                  giá MSE/R². Benchmark so sánh tốc độ hội tụ các thuật toán tối ưu (GD/SGD/Adam) trên Boston Housing.
                 </p>
 
                 <div class="flex flex-wrap gap-2 mb-6 project-tech-list">
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="python" title="Xem kỹ năng Python">Python</span>
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="tensorflow" title="Xem kỹ năng TensorFlow">TensorFlow</span>
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="python" title="LSTM / Time-Series">LSTM / Time-Series</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="python"
+                    title="Xem kỹ năng Python">Python</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="tensorflow"
+                    title="Xem kỹ năng TensorFlow">TensorFlow</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="python"
+                    title="LSTM / Time-Series">LSTM / Time-Series</span>
                 </div>
               </div>
 
-              <div class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
+              <div
+                class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
                 <button type="button" class="btn-project-details" data-project-id="stock-ml">
                   <span data-i18n="p_btn_details">Chi tiết</span>
-                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
                 </button>
                 <a href="https://github.com/tranhohoangvu/Machine-Learning" target="_blank" rel="noopener noreferrer"
                   class="inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-xs sm:text-sm">
@@ -799,15 +898,24 @@
                 </div>
 
                 <div class="text-center mb-4">
-                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p2_meta">Sep 2024 – Dec 2024 • Dự án môn học</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors" data-i18n="p2_title" data-project-trigger="warehouse">WarehouseMA</h3>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p2_meta">Sep 2024 – Dec
+                    2024 • Dự án môn học</p>
+                  <h3
+                    class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
+                    data-i18n="p2_title" data-project-trigger="warehouse">WarehouseMA</h3>
                 </div>
 
-                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="warehouse" title="Xem chi tiết">
+                <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="warehouse"
+                  title="Xem chi tiết">
                   <img src="assets/projects/warehouse.png" alt="Ảnh dự án WarehouseMA" loading="lazy">
                   <div class="project-thumb-overlay">
                     <span class="project-thumb-hint">
-                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
                       <span data-i18n="p_btn_details">Chi tiết</span>
                     </span>
                   </div>
@@ -818,16 +926,23 @@
                 </p>
 
                 <div class="flex flex-wrap gap-2 mb-6 project-tech-list">
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="csharp" title="Xem kỹ năng C#">C#</span>
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="dotnet" title="Xem kỹ năng .NET">.NET WinForms</span>
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="mysql" title="Xem kỹ năng MySQL">MySQL</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="csharp"
+                    title="Xem kỹ năng C#">C#</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="dotnet"
+                    title="Xem kỹ năng .NET">.NET WinForms</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="mysql"
+                    title="Xem kỹ năng MySQL">MySQL</span>
                 </div>
               </div>
 
-              <div class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
+              <div
+                class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
                 <button type="button" class="btn-project-details" data-project-id="warehouse">
                   <span data-i18n="p_btn_details">Chi tiết</span>
-                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
                 </button>
                 <a href="https://github.com/tranhohoangvu/WarehouseMA" target="_blank" rel="noopener noreferrer"
                   class="inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 hover:underline font-medium text-xs sm:text-sm">
@@ -846,15 +961,23 @@
                 </div>
 
                 <div class="text-center mb-4">
-                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p3_meta">Jan 2024 – May 2024 • Dự án môn học</p>
-                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors" data-i18n="p3_title" data-project-trigger="pos">An Khang Store POS</h3>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="p3_meta">Jan 2024 – May
+                    2024 • Dự án môn học</p>
+                  <h3
+                    class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
+                    data-i18n="p3_title" data-project-trigger="pos">An Khang Store POS</h3>
                 </div>
 
                 <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="pos" title="Xem chi tiết">
                   <img src="assets/projects/pos.png" alt="Ảnh dự án An Khang Store POS" loading="lazy">
                   <div class="project-thumb-overlay">
                     <span class="project-thumb-hint">
-                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                      <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
                       <span data-i18n="p_btn_details">Chi tiết</span>
                     </span>
                   </div>
@@ -865,16 +988,23 @@
                 </p>
 
                 <div class="flex flex-wrap gap-2 mb-6 project-tech-list">
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="laravel" title="Xem kỹ năng Laravel">Laravel 10</span>
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="php" title="Xem kỹ năng PHP / Livewire">Livewire</span>
-                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="mysql" title="Xem kỹ năng MySQL">MySQL</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="laravel"
+                    title="Xem kỹ năng Laravel">Laravel 10</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="php"
+                    title="Xem kỹ năng PHP / Livewire">Livewire</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="mysql"
+                    title="Xem kỹ năng MySQL">MySQL</span>
                 </div>
               </div>
 
-              <div class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
+              <div
+                class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">
                 <button type="button" class="btn-project-details" data-project-id="pos">
                   <span data-i18n="p_btn_details">Chi tiết</span>
-                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
                 </button>
                 <div class="flex items-center gap-3">
                   <a href="https://github.com/tranhohoangvu/Web-Programming-and-Applications" target="_blank"
@@ -894,9 +1024,11 @@
 
           <!-- Empty State (when no cards match filter) -->
           <div id="projects-empty-state" class="projects-empty-state hidden py-12 text-center">
-            <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-indigo-500/10 text-indigo-400 mb-3">
+            <div
+              class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-indigo-500/10 text-indigo-400 mb-3">
               <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
               </svg>
             </div>
             <p class="text-gray-400 text-base" data-i18n="projects_no_matches">Chưa có dự án nào thuộc danh mục này.</p>
@@ -943,34 +1075,40 @@
           <div class="skills-card-header">
             <div class="skills-card-icon-wrap">
               <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               </svg>
             </div>
             <div>
               <h3 class="skills-title" data-i18n="skills_core_lang">Ngôn ngữ cốt lõi</h3>
-              <p class="skills-subtitle-meta" data-i18n="skills_core_lang_meta">Nền tảng lập trình &amp; tư duy thuật toán</p>
+              <p class="skills-subtitle-meta" data-i18n="skills_core_lang_meta">Nền tảng lập trình &amp; tư duy thuật
+                toán</p>
             </div>
           </div>
           <div class="skill-grid skill-grid--compact">
             <div class="skill-icon" data-skill-id="c" tabindex="0" role="button" aria-label="C" title="C">
               <i class="devicon-c-plain colored"></i><span>C</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="csharp" tabindex="0" role="button" aria-label="C# - 1 dự án" title="C# • Ứng dụng trong 1 dự án">
+            <div class="skill-icon is-linked" data-skill-id="csharp" tabindex="0" role="button"
+              aria-label="C# - 1 dự án" title="C# • Ứng dụng trong 1 dự án">
               <span class="skill-count-badge" data-count="1">1 DA</span>
               <i class="devicon-csharp-plain colored"></i><span>C#</span>
             </div>
             <div class="skill-icon" data-skill-id="java" tabindex="0" role="button" aria-label="Java" title="Java">
               <i class="devicon-java-plain colored"></i><span>Java</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="python" tabindex="0" role="button" aria-label="Python - 3 dự án" title="Python • Ứng dụng trong 3 dự án">
+            <div class="skill-icon is-linked" data-skill-id="python" tabindex="0" role="button"
+              aria-label="Python - 3 dự án" title="Python • Ứng dụng trong 3 dự án">
               <span class="skill-count-badge" data-count="3">3 DA</span>
               <i class="devicon-python-plain colored"></i><span>Python</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="javascript" tabindex="0" role="button" aria-label="JavaScript - 2 dự án" title="JavaScript • Ứng dụng trong 2 dự án">
+            <div class="skill-icon is-linked" data-skill-id="javascript" tabindex="0" role="button"
+              aria-label="JavaScript - 2 dự án" title="JavaScript • Ứng dụng trong 2 dự án">
               <span class="skill-count-badge" data-count="2">2 DA</span>
               <i class="devicon-javascript-plain colored"></i><span>JavaScript</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="php" tabindex="0" role="button" aria-label="PHP - 1 dự án" title="PHP • Ứng dụng trong 1 dự án">
+            <div class="skill-icon is-linked" data-skill-id="php" tabindex="0" role="button" aria-label="PHP - 1 dự án"
+              title="PHP • Ứng dụng trong 1 dự án">
               <span class="skill-count-badge" data-count="1">1 DA</span>
               <i class="devicon-php-plain colored"></i><span>PHP</span>
             </div>
@@ -982,36 +1120,44 @@
           <div class="skills-card-header">
             <div class="skills-card-icon-wrap">
               <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
               </svg>
             </div>
             <div>
               <h3 class="skills-title" data-i18n="skills_backend_arch">Kiến trúc Backend &amp; API</h3>
-              <p class="skills-subtitle-meta" data-i18n="skills_backend_arch_meta">RESTful API, MVC, JWT RBAC &amp; Microservices</p>
+              <p class="skills-subtitle-meta" data-i18n="skills_backend_arch_meta">RESTful API, MVC, JWT RBAC &amp;
+                Microservices</p>
             </div>
           </div>
           <div class="skill-grid skill-grid--compact">
-            <div class="skill-icon is-linked" data-skill-id="nodejs" tabindex="0" role="button" aria-label="Node.js - 2 dự án" title="Node.js • Ứng dụng trong 2 dự án">
+            <div class="skill-icon is-linked" data-skill-id="nodejs" tabindex="0" role="button"
+              aria-label="Node.js - 2 dự án" title="Node.js • Ứng dụng trong 2 dự án">
               <span class="skill-count-badge" data-count="2">2 DA</span>
               <i class="devicon-nodejs-plain colored"></i><span>Node.js</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="express" tabindex="0" role="button" aria-label="Express.js - 2 dự án" title="Express.js • Ứng dụng trong 2 dự án">
+            <div class="skill-icon is-linked" data-skill-id="express" tabindex="0" role="button"
+              aria-label="Express.js - 2 dự án" title="Express.js • Ứng dụng trong 2 dự án">
               <span class="skill-count-badge" data-count="2">2 DA</span>
               <i class="devicon-express-original colored"></i><span>Express</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="laravel" tabindex="0" role="button" aria-label="Laravel - 1 dự án" title="Laravel • Ứng dụng trong 1 dự án">
+            <div class="skill-icon is-linked" data-skill-id="laravel" tabindex="0" role="button"
+              aria-label="Laravel - 1 dự án" title="Laravel • Ứng dụng trong 1 dự án">
               <span class="skill-count-badge" data-count="1">1 DA</span>
               <i class="devicon-laravel-plain colored"></i><span>Laravel</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="restapi" tabindex="0" role="button" aria-label="RESTful API - 2 dự án" title="RESTful API • Ứng dụng trong 2 dự án">
+            <div class="skill-icon is-linked" data-skill-id="restapi" tabindex="0" role="button"
+              aria-label="RESTful API - 2 dự án" title="RESTful API • Ứng dụng trong 2 dự án">
               <span class="skill-count-badge" data-count="2">2 DA</span>
               <i class="devicon-postman-plain colored"></i><span>REST API</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="dotnet" tabindex="0" role="button" aria-label=".NET WinForms - 1 dự án" title=".NET WinForms • Ứng dụng trong 1 dự án">
+            <div class="skill-icon is-linked" data-skill-id="dotnet" tabindex="0" role="button"
+              aria-label=".NET WinForms - 1 dự án" title=".NET WinForms • Ứng dụng trong 1 dự án">
               <span class="skill-count-badge" data-count="1">1 DA</span>
               <i class="devicon-dot-net-plain colored"></i><span>.NET</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="react" tabindex="0" role="button" aria-label="React - 2 dự án" title="React • Ứng dụng trong 2 dự án">
+            <div class="skill-icon is-linked" data-skill-id="react" tabindex="0" role="button"
+              aria-label="React - 2 dự án" title="React • Ứng dụng trong 2 dự án">
               <span class="skill-count-badge" data-count="2">2 DA</span>
               <i class="devicon-react-original colored"></i><span>React</span>
             </div>
@@ -1023,34 +1169,42 @@
           <div class="skills-card-header">
             <div class="skills-card-icon-wrap">
               <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
               </svg>
             </div>
             <div>
               <h3 class="skills-title" data-i18n="skills_db_opt">Cơ sở dữ liệu &amp; Tối ưu</h3>
-              <p class="skills-subtitle-meta" data-i18n="skills_db_opt_meta">Raw SQL, Indexing, Transactions &amp; Schema Design</p>
+              <p class="skills-subtitle-meta" data-i18n="skills_db_opt_meta">Raw SQL, Indexing, Transactions &amp;
+                Schema Design</p>
             </div>
           </div>
           <div class="skill-grid skill-grid--compact">
-            <div class="skill-icon is-linked" data-skill-id="postgresql" tabindex="0" role="button" aria-label="PostgreSQL - 1 dự án" title="PostgreSQL • Ứng dụng trong 1 dự án">
+            <div class="skill-icon is-linked" data-skill-id="postgresql" tabindex="0" role="button"
+              aria-label="PostgreSQL - 1 dự án" title="PostgreSQL • Ứng dụng trong 1 dự án">
               <span class="skill-count-badge" data-count="1">1 DA</span>
               <i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="mysql" tabindex="0" role="button" aria-label="MySQL - 2 dự án" title="MySQL • Ứng dụng trong 2 dự án">
+            <div class="skill-icon is-linked" data-skill-id="mysql" tabindex="0" role="button"
+              aria-label="MySQL - 2 dự án" title="MySQL • Ứng dụng trong 2 dự án">
               <span class="skill-count-badge" data-count="2">2 DA</span>
               <i class="devicon-mysql-plain colored"></i><span>MySQL</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="mongodb" tabindex="0" role="button" aria-label="MongoDB - 1 dự án" title="MongoDB • Ứng dụng trong 1 dự án">
+            <div class="skill-icon is-linked" data-skill-id="mongodb" tabindex="0" role="button"
+              aria-label="MongoDB - 1 dự án" title="MongoDB • Ứng dụng trong 1 dự án">
               <span class="skill-count-badge" data-count="1">1 DA</span>
               <i class="devicon-mongodb-plain colored"></i><span>MongoDB</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="sqlserver" tabindex="0" role="button" aria-label="SQL Server - 1 dự án" title="SQL Server • Ứng dụng trong 1 dự án">
+            <div class="skill-icon is-linked" data-skill-id="sqlserver" tabindex="0" role="button"
+              aria-label="SQL Server - 1 dự án" title="SQL Server • Ứng dụng trong 1 dự án">
               <span class="skill-count-badge" data-count="1">1 DA</span>
               <i class="devicon-microsoftsqlserver-plain colored"></i><span>SQL Server</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="rawsql" tabindex="0" role="button" aria-label="Raw SQL - 1 dự án" title="Raw SQL • Ứng dụng trong 1 dự án">
+            <div class="skill-icon is-linked" data-skill-id="rawsql" tabindex="0" role="button"
+              aria-label="Raw SQL - 1 dự án" title="Raw SQL • Ứng dụng trong 1 dự án">
               <span class="skill-count-badge" data-count="1">1 DA</span>
-              <svg width="32" height="32" class="w-8 h-8 text-indigo-500 dark:text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <svg width="32" height="32" class="w-8 h-8 text-indigo-500 dark:text-indigo-400" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                 <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
                 <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
                 <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
@@ -1065,44 +1219,54 @@
           <div class="skills-card-header">
             <div class="skills-card-icon-wrap">
               <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
               </svg>
             </div>
             <div>
               <h3 class="skills-title" data-i18n="skills_ai_devops">AI, DevOps &amp; Công cụ</h3>
-              <p class="skills-subtitle-meta" data-i18n="skills_ai_devops_meta">Mô hình Học sâu, Container hóa &amp; CI/CD Pipeline</p>
+              <p class="skills-subtitle-meta" data-i18n="skills_ai_devops_meta">Mô hình Học sâu, Container hóa &amp;
+                CI/CD Pipeline</p>
             </div>
           </div>
           <div class="skill-grid skill-grid--compact">
-            <div class="skill-icon is-linked" data-skill-id="pytorch" tabindex="0" role="button" aria-label="PyTorch - 2 dự án" title="PyTorch • Ứng dụng trong 2 dự án">
+            <div class="skill-icon is-linked" data-skill-id="pytorch" tabindex="0" role="button"
+              aria-label="PyTorch - 2 dự án" title="PyTorch • Ứng dụng trong 2 dự án">
               <span class="skill-count-badge" data-count="2">2 DA</span>
               <i class="devicon-pytorch-original colored"></i><span>PyTorch</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="tensorflow" tabindex="0" role="button" aria-label="TensorFlow - 1 dự án" title="TensorFlow • Ứng dụng trong 1 dự án">
+            <div class="skill-icon is-linked" data-skill-id="tensorflow" tabindex="0" role="button"
+              aria-label="TensorFlow - 1 dự án" title="TensorFlow • Ứng dụng trong 1 dự án">
               <span class="skill-count-badge" data-count="1">1 DA</span>
               <i class="devicon-tensorflow-original colored"></i><span>TensorFlow</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="docker" tabindex="0" role="button" aria-label="Docker - 1 dự án" title="Docker • Ứng dụng trong 1 dự án">
+            <div class="skill-icon is-linked" data-skill-id="docker" tabindex="0" role="button"
+              aria-label="Docker - 1 dự án" title="Docker • Ứng dụng trong 1 dự án">
               <span class="skill-count-badge" data-count="1">1 DA</span>
               <i class="devicon-docker-plain colored"></i><span>Docker</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="compose" tabindex="0" role="button" aria-label="Docker Compose - 1 dự án" title="Docker Compose • Ứng dụng trong 1 dự án">
+            <div class="skill-icon is-linked" data-skill-id="compose" tabindex="0" role="button"
+              aria-label="Docker Compose - 1 dự án" title="Docker Compose • Ứng dụng trong 1 dự án">
               <span class="skill-count-badge" data-count="1">1 DA</span>
               <i class="devicon-docker-plain colored"></i><span>Compose</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="nginx" tabindex="0" role="button" aria-label="Nginx - 1 dự án" title="Nginx • Ứng dụng trong 1 dự án">
+            <div class="skill-icon is-linked" data-skill-id="nginx" tabindex="0" role="button"
+              aria-label="Nginx - 1 dự án" title="Nginx • Ứng dụng trong 1 dự án">
               <span class="skill-count-badge" data-count="1">1 DA</span>
               <i class="devicon-nginx-original colored"></i><span>Nginx</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="git" tabindex="0" role="button" aria-label="Git - 7 dự án" title="Git • Quản lý phiên bản mã nguồn">
+            <div class="skill-icon is-linked" data-skill-id="git" tabindex="0" role="button" aria-label="Git - 7 dự án"
+              title="Git • Quản lý phiên bản mã nguồn">
               <span class="skill-count-badge" data-count="7">7 DA</span>
               <i class="devicon-git-plain colored"></i><span>Git</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="github" tabindex="0" role="button" aria-label="GitHub - 7 dự án" title="GitHub • Lưu trữ &amp; CI/CD">
+            <div class="skill-icon is-linked" data-skill-id="github" tabindex="0" role="button"
+              aria-label="GitHub - 7 dự án" title="GitHub • Lưu trữ &amp; CI/CD">
               <span class="skill-count-badge" data-count="7">7 DA</span>
               <i class="devicon-github-original colored"></i><span>GitHub</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="postman" tabindex="0" role="button" aria-label="Postman - 2 dự án" title="Postman • Kiểm thử API">
+            <div class="skill-icon is-linked" data-skill-id="postman" tabindex="0" role="button"
+              aria-label="Postman - 2 dự án" title="Postman • Kiểm thử API">
               <span class="skill-count-badge" data-count="2">2 DA</span>
               <i class="devicon-postman-plain colored"></i><span>Postman</span>
             </div>
@@ -1254,7 +1418,9 @@
   <!-- Interactive Terminal & API Console Section (xen kẽ: WHITE / OBSIDIAN ELEVATED) -->
   <section id="console" class="py-24 bg-white dark:bg-[#0b101d] relative overflow-hidden">
     <!-- Ambient glow decorative backdrop -->
-    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[320px] bg-gradient-to-tr from-indigo-500/10 via-cyan-500/10 to-transparent blur-3xl pointer-events-none rounded-full" aria-hidden="true"></div>
+    <div
+      class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[320px] bg-gradient-to-tr from-indigo-500/10 via-cyan-500/10 to-transparent blur-3xl pointer-events-none rounded-full"
+      aria-hidden="true"></div>
 
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 section-hidden">
       <!-- Section Header -->
@@ -1262,7 +1428,8 @@
         <div class="console-kicker animate-slide-in">
           <span data-i18n="console_kicker">Backend &amp; AI Playground</span>
         </div>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 tracking-tight animate-slide-in"
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 tracking-tight animate-slide-in"
           data-i18n="console_title">Interactive Terminal &amp; API Console</h2>
         <p class="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-3 leading-relaxed animate-slide-in"
           data-i18n="console_subtitle">
@@ -1274,7 +1441,7 @@
       <div class="terminal-quick-chips-bar" id="terminal-quick-chips">
         <span class="terminal-chips-label">
           <svg class="w-3.5 h-3.5 text-indigo-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
           <span data-i18n="console_chips_label">Lệnh nhanh:</span>
         </span>
@@ -1294,22 +1461,29 @@
         <div class="terminal-header">
           <!-- Window Controls (macOS circles) -->
           <div class="terminal-window-controls">
-            <button type="button" class="window-dot window-dot--close" id="term-btn-close" aria-label="Xóa màn hình" data-i18n-tooltip="term_tip_close" title="Xóa màn hình console"></button>
-            <button type="button" class="window-dot window-dot--minimize" id="term-btn-reset" aria-label="Khởi tạo lại" data-i18n-tooltip="term_tip_reset" title="Khởi tạo lại màn hình ban đầu"></button>
-            <button type="button" class="window-dot window-dot--expand" id="term-btn-fullscreen" aria-label="Phóng to" data-i18n-tooltip="term_tip_fullscreen" title="Bật/tắt toàn màn hình"></button>
+            <button type="button" class="window-dot window-dot--close" id="term-btn-close" aria-label="Xóa màn hình"
+              data-i18n-tooltip="term_tip_close" title="Xóa màn hình console"></button>
+            <button type="button" class="window-dot window-dot--minimize" id="term-btn-reset" aria-label="Khởi tạo lại"
+              data-i18n-tooltip="term_tip_reset" title="Khởi tạo lại màn hình ban đầu"></button>
+            <button type="button" class="window-dot window-dot--expand" id="term-btn-fullscreen" aria-label="Phóng to"
+              data-i18n-tooltip="term_tip_fullscreen" title="Bật/tắt toàn màn hình"></button>
           </div>
 
           <!-- Mode Tabs -->
           <div class="terminal-tabs" role="tablist">
-            <button type="button" class="terminal-tab active" id="tab-cli-mode" role="tab" aria-selected="true" data-tab="cli">
+            <button type="button" class="terminal-tab active" id="tab-cli-mode" role="tab" aria-selected="true"
+              data-tab="cli">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               <span>vu-cli (v2.4)</span>
             </button>
-            <button type="button" class="terminal-tab" id="tab-api-mode" role="tab" aria-selected="false" data-tab="api">
-              <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            <button type="button" class="terminal-tab" id="tab-api-mode" role="tab" aria-selected="false"
+              data-tab="api">
+              <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                stroke-width="2.2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
               <span>REST API Explorer</span>
             </button>
@@ -1321,9 +1495,11 @@
               <span class="status-dot"></span>
               <span class="status-text hidden sm:inline" data-i18n="console_server_status">API Mock Server 200 OK</span>
             </span>
-            <button type="button" class="terminal-copy-btn" id="terminal-copy-output" aria-label="Sao chép nội dung" data-i18n-tooltip="term_tip_copy" title="Sao chép toàn bộ nội dung">
+            <button type="button" class="terminal-copy-btn" id="terminal-copy-output" aria-label="Sao chép nội dung"
+              data-i18n-tooltip="term_tip_copy" title="Sao chép toàn bộ nội dung">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
               </svg>
             </button>
           </div>
@@ -1339,14 +1515,18 @@
           <!-- Terminal Input Row -->
           <div class="terminal-input-bar">
             <label for="terminal-cli-input" class="terminal-prompt" aria-hidden="true">
-              <span class="term-user">guest@hoangvu</span><span class="term-colon">:</span><span class="term-path">~/portfolio</span><span class="term-dollar">$</span>
+              <span class="term-user">guest@hoangvu</span><span class="term-colon">:</span><span
+                class="term-path">~/portfolio</span><span class="term-dollar">$</span>
             </label>
             <div class="terminal-input-wrapper">
-              <input type="text" id="terminal-cli-input" class="terminal-input" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" aria-label="Terminal command input" data-i18n-placeholder="console_input_placeholder" placeholder="Gõ lệnh (ví dụ: vu --help) hoặc bấm Tab để gợi ý..." />
+              <input type="text" id="terminal-cli-input" class="terminal-input" autocomplete="off" spellcheck="false"
+                autocorrect="off" autocapitalize="off" aria-label="Terminal command input"
+                data-i18n-placeholder="console_input_placeholder"
+                placeholder="Gõ lệnh (ví dụ: vu --help) hoặc bấm Tab để gợi ý..." />
             </div>
             <button type="button" id="terminal-cli-submit" class="terminal-send-btn" aria-label="Thực thi lệnh">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </button>
           </div>
@@ -1368,13 +1548,20 @@
             <div class="api-url-wrapper">
               <span class="api-base-url hidden sm:inline">https://hoangvu.dev</span>
               <select id="api-endpoint-select" class="api-endpoint-select" aria-label="Chọn API endpoint">
-                <option value="/api/v1/profile" data-i18n="api_opt_profile">/api/v1/profile (Thông tin cá nhân &amp; học vấn)</option>
-                <option value="/api/v1/skills" data-i18n="api_opt_skills">/api/v1/skills (Danh sách kỹ năng 4 trụ cột)</option>
-                <option value="/api/v1/projects" data-i18n="api_opt_projects">/api/v1/projects (Toàn bộ 7 dự án kỹ thuật)</option>
-                <option value="/api/v1/projects?category=backend" data-i18n="api_opt_projects_be">/api/v1/projects?category=backend (Lọc Backend)</option>
-                <option value="/api/v1/projects?category=ai" data-i18n="api_opt_projects_ai">/api/v1/projects?category=ai (Lọc AI / Deep Learning)</option>
-                <option value="/api/v1/health" data-i18n="api_opt_health">/api/v1/health (Trạng thái hệ thống &amp; uptime)</option>
-                <option value="/api/v1/contact" data-i18n="api_opt_contact">POST /api/v1/contact (Mô phỏng gửi tin nhắn liên hệ)</option>
+                <option value="/api/v1/profile" data-i18n="api_opt_profile">/api/v1/profile (Thông tin cá nhân &amp; học
+                  vấn)</option>
+                <option value="/api/v1/skills" data-i18n="api_opt_skills">/api/v1/skills (Danh sách kỹ năng 4 trụ cột)
+                </option>
+                <option value="/api/v1/projects" data-i18n="api_opt_projects">/api/v1/projects (Toàn bộ 7 dự án kỹ
+                  thuật)</option>
+                <option value="/api/v1/projects?category=backend" data-i18n="api_opt_projects_be">
+                  /api/v1/projects?category=backend (Lọc Backend)</option>
+                <option value="/api/v1/projects?category=ai" data-i18n="api_opt_projects_ai">
+                  /api/v1/projects?category=ai (Lọc AI / Deep Learning)</option>
+                <option value="/api/v1/health" data-i18n="api_opt_health">/api/v1/health (Trạng thái hệ thống &amp;
+                  uptime)</option>
+                <option value="/api/v1/contact" data-i18n="api_opt_contact">POST /api/v1/contact (Mô phỏng gửi tin nhắn
+                  liên hệ)</option>
               </select>
             </div>
             <button type="button" id="api-send-btn" class="api-send-btn">
@@ -1402,7 +1589,8 @@
             </div>
             <button type="button" class="api-copy-json-btn" id="api-copy-json-btn">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
               </svg>
               <span data-i18n="api_copy_json">Sao chép JSON</span>
             </button>
@@ -1447,12 +1635,8 @@
 
             <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <!-- Email (full width, click to copy) -->
-              <a href="mailto:hoangvu2k4cmg@gmail.com" class="contact-link-card sm:col-span-2"
-                id="contact-email-link"
-                role="button"
-                tabindex="0"
-                data-email="hoangvu2k4cmg@gmail.com"
-                data-i18n-tooltip="contact_email_tip"
+              <a href="mailto:hoangvu2k4cmg@gmail.com" class="contact-link-card sm:col-span-2" id="contact-email-link"
+                role="button" tabindex="0" data-email="hoangvu2k4cmg@gmail.com" data-i18n-tooltip="contact_email_tip"
                 title="Nhấp để sao chép email (hoangvu2k4cmg@gmail.com)"
                 aria-label="Sao chép email hoangvu2k4cmg@gmail.com">
                 <span class="contact-link-icon">
@@ -1465,13 +1649,16 @@
                   <span class="contact-link-title">Email</span>
                   <span class="contact-link-sub">hoangvu2k4cmg@gmail.com</span>
                 </span>
-                <span class="contact-link-badge ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold select-none">
+                <span
+                  class="contact-link-badge ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold select-none">
                   <span class="contact-link-badge-icon flex items-center">
-                    <svg class="w-3.5 h-3.5 contact-copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+                    <svg class="w-3.5 h-3.5 contact-copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                      stroke-width="2" aria-hidden="true">
                       <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                       <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                     </svg>
-                    <svg class="w-3.5 h-3.5 contact-check-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true">
+                    <svg class="w-3.5 h-3.5 contact-check-icon hidden" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
                     </svg>
                   </span>
@@ -1560,7 +1747,8 @@
 
         <div class="md:w-1/2">
           <!-- Card wrapper để form nổi trên nền SLATE / OBSIDIAN -->
-          <div class="contact-form-panel p-6 rounded-2xl bg-white dark:bg-[#0f172a]/75 border border-slate-200/80 dark:border-white/10 shadow-lg">
+          <div
+            class="contact-form-panel p-6 rounded-2xl bg-white dark:bg-[#0f172a]/75 border border-slate-200/80 dark:border-white/10 shadow-lg">
             <form action="https://formspree.io/f/mrbnrrgd" method="POST" class="space-y-6" id="contact-form">
 
               <div class="relative">
@@ -1612,7 +1800,8 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-slate-900 dark:bg-[#050811] text-white py-12 text-center relative border-t border-slate-800 dark:border-white/10">
+  <footer
+    class="bg-slate-900 dark:bg-[#050811] text-white py-12 text-center relative border-t border-slate-800 dark:border-white/10">
     <p class="text-lg relative inline-block">
       <span class="sparkle" data-i18n="footer_tagline">Tạo giá trị qua mã nguồn - Trần Hồ Hoàng Vũ</span>
     </p>
@@ -1631,21 +1820,25 @@
   <!-- ==========================================================================
        Project Deep-Dive Technical Modal (Item 7)
        ========================================================================== -->
-  <div id="project-detail-modal" class="project-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-project-title" aria-hidden="true">
+  <div id="project-detail-modal" class="project-modal-backdrop" role="dialog" aria-modal="true"
+    aria-labelledby="modal-project-title" aria-hidden="true">
     <div class="project-modal-overlay" data-close-modal></div>
     <div class="project-modal-container">
       <!-- Modal Header -->
       <div class="project-modal-header">
         <div class="flex items-center gap-3">
-          <span id="modal-project-num" class="text-xs font-mono px-2.5 py-1 rounded-md bg-indigo-500/10 dark:bg-indigo-400/15 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 font-bold">#01</span>
+          <span id="modal-project-num"
+            class="text-xs font-mono px-2.5 py-1 rounded-md bg-indigo-500/10 dark:bg-indigo-400/15 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 font-bold">#01</span>
           <div>
-            <h3 id="modal-project-title" class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white leading-tight">Project Title</h3>
-            <p id="modal-project-subtitle" class="text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-0.5 font-medium">Timeline • Category</p>
+            <h3 id="modal-project-title"
+              class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white leading-tight">Project Title</h3>
+            <p id="modal-project-subtitle"
+              class="text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-0.5 font-medium">Timeline • Category</p>
           </div>
         </div>
         <button type="button" class="project-modal-close" data-close-modal aria-label="Đóng cửa sổ chi tiết">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
@@ -1654,12 +1847,15 @@
       <div class="project-modal-body custom-scrollbar">
         <!-- Showcase Image -->
         <div class="project-modal-img-wrapper mb-6">
-          <img id="modal-project-img" src="" alt="" class="w-full h-auto max-h-[340px] object-cover rounded-xl border border-slate-200/80 dark:border-white/10 shadow-sm" loading="lazy">
+          <img id="modal-project-img" src="" alt=""
+            class="w-full h-auto max-h-[340px] object-cover rounded-xl border border-slate-200/80 dark:border-white/10 shadow-sm"
+            loading="lazy">
         </div>
 
         <!-- Overview Description -->
         <div class="mb-6">
-          <h4 class="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-2" data-i18n="modal_tab_overview">Tổng quan dự án</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-2"
+            data-i18n="modal_tab_overview">Tổng quan dự án</h4>
           <p id="modal-project-desc" class="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed"></p>
         </div>
 
@@ -1668,9 +1864,11 @@
           <div class="modal-spec-card">
             <div class="modal-spec-header">
               <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
               </svg>
-              <h4 class="font-semibold text-sm text-gray-900 dark:text-white" data-i18n="modal_tab_arch">Kiến trúc Hệ thống</h4>
+              <h4 class="font-semibold text-sm text-gray-900 dark:text-white" data-i18n="modal_tab_arch">Kiến trúc Hệ
+                thống</h4>
             </div>
             <p id="modal-spec-arch" class="text-xs md:text-sm text-gray-600 dark:text-gray-300 leading-relaxed"></p>
           </div>
@@ -1678,9 +1876,11 @@
           <div class="modal-spec-card">
             <div class="modal-spec-header">
               <svg class="w-4 h-4 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
               </svg>
-              <h4 class="font-semibold text-sm text-gray-900 dark:text-white" data-i18n="modal_tab_data">Dữ liệu & Cơ sở dữ liệu</h4>
+              <h4 class="font-semibold text-sm text-gray-900 dark:text-white" data-i18n="modal_tab_data">Dữ liệu & Cơ sở
+                dữ liệu</h4>
             </div>
             <p id="modal-spec-data" class="text-xs md:text-sm text-gray-600 dark:text-gray-300 leading-relaxed"></p>
           </div>
@@ -1690,9 +1890,10 @@
         <div class="modal-challenges-section mb-6">
           <div class="flex items-center gap-2 mb-3">
             <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
-            <h4 class="font-semibold text-sm text-gray-900 dark:text-white" data-i18n="modal_tab_challenges">Thách thức Kỹ thuật & Giải pháp cốt lõi</h4>
+            <h4 class="font-semibold text-sm text-gray-900 dark:text-white" data-i18n="modal_tab_challenges">Thách thức
+              Kỹ thuật & Giải pháp cốt lõi</h4>
           </div>
           <div id="modal-spec-challenges" class="space-y-3">
             <!-- Dynamically populated challenge cards -->
@@ -1701,7 +1902,8 @@
 
         <!-- Tech Stack Tags -->
         <div>
-          <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2.5" data-i18n="modal_tab_techstack">Công nghệ & Công cụ</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2.5"
+            data-i18n="modal_tab_techstack">Công nghệ & Công cụ</h4>
           <div id="modal-spec-tags" class="flex flex-wrap gap-2"></div>
         </div>
       </div>
@@ -1720,11 +1922,13 @@
   <!-- Floating Section Navigation Rail (Mini ScrollSpy) -->
   <nav id="section-nav-rail" class="section-nav-rail" aria-label="Điều hướng nhanh trang web">
     <div class="section-nav-inner">
-      <a href="#home" class="section-nav-item is-active" data-section-id="home" role="button" tabindex="0" aria-label="Trang chủ">
+      <a href="#home" class="section-nav-item is-active" data-section-id="home" role="button" tabindex="0"
+        aria-label="Trang chủ">
         <span class="section-nav-label" data-i18n="sec_nav_home">Trang chủ</span>
         <span class="section-nav-dash" aria-hidden="true"></span>
       </a>
-      <a href="#about" class="section-nav-item" data-section-id="about" role="button" tabindex="0" aria-label="Giới thiệu">
+      <a href="#about" class="section-nav-item" data-section-id="about" role="button" tabindex="0"
+        aria-label="Giới thiệu">
         <span class="section-nav-label" data-i18n="sec_nav_about">Giới thiệu</span>
         <span class="section-nav-dash" aria-hidden="true"></span>
       </a>
@@ -1732,27 +1936,33 @@
         <span class="section-nav-label" data-i18n="sec_nav_cv">Hồ sơ CV</span>
         <span class="section-nav-dash" aria-hidden="true"></span>
       </a>
-      <a href="#projects" class="section-nav-item" data-section-id="projects" role="button" tabindex="0" aria-label="Dự án">
+      <a href="#projects" class="section-nav-item" data-section-id="projects" role="button" tabindex="0"
+        aria-label="Dự án">
         <span class="section-nav-label" data-i18n="sec_nav_projects">Dự án</span>
         <span class="section-nav-dash" aria-hidden="true"></span>
       </a>
-      <a href="#skills" class="section-nav-item" data-section-id="skills" role="button" tabindex="0" aria-label="Kỹ năng">
+      <a href="#skills" class="section-nav-item" data-section-id="skills" role="button" tabindex="0"
+        aria-label="Kỹ năng">
         <span class="section-nav-label" data-i18n="sec_nav_skills">Kỹ năng</span>
         <span class="section-nav-dash" aria-hidden="true"></span>
       </a>
-      <a href="#certificates" class="section-nav-item" data-section-id="certificates" role="button" tabindex="0" aria-label="Chứng chỉ">
+      <a href="#certificates" class="section-nav-item" data-section-id="certificates" role="button" tabindex="0"
+        aria-label="Chứng chỉ">
         <span class="section-nav-label" data-i18n="sec_nav_certs">Chứng chỉ</span>
         <span class="section-nav-dash" aria-hidden="true"></span>
       </a>
-      <a href="#github" class="section-nav-item" data-section-id="github" role="button" tabindex="0" aria-label="Hoạt động GitHub">
+      <a href="#github" class="section-nav-item" data-section-id="github" role="button" tabindex="0"
+        aria-label="Hoạt động GitHub">
         <span class="section-nav-label" data-i18n="sec_nav_github">GitHub</span>
         <span class="section-nav-dash" aria-hidden="true"></span>
       </a>
-      <a href="#console" class="section-nav-item" data-section-id="console" role="button" tabindex="0" aria-label="Terminal & API Console">
+      <a href="#console" class="section-nav-item" data-section-id="console" role="button" tabindex="0"
+        aria-label="Terminal & API Console">
         <span class="section-nav-label" data-i18n="sec_nav_console">Console</span>
         <span class="section-nav-dash" aria-hidden="true"></span>
       </a>
-      <a href="#contact" class="section-nav-item" data-section-id="contact" role="button" tabindex="0" aria-label="Liên hệ">
+      <a href="#contact" class="section-nav-item" data-section-id="contact" role="button" tabindex="0"
+        aria-label="Liên hệ">
         <span class="section-nav-label" data-i18n="sec_nav_contact">Liên hệ</span>
         <span class="section-nav-dash" aria-hidden="true"></span>
       </a>
@@ -1790,14 +2000,16 @@
 
         <!-- Submenu for CV options -->
         <div id="fab-cv-submenu" class="fab-cv-submenu" role="menu" aria-hidden="true">
-          <a href="assets/cv/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer" class="fab-cv-link" role="menuitem">
+          <a href="assets/cv/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer" class="fab-cv-link"
+            role="menuitem">
             <span class="fab-cv-badge">BE</span>
             <div class="fab-cv-info">
               <span class="fab-cv-title" data-i18n="cv_menu_be_title">Fresher Backend (PDF)</span>
               <span class="fab-cv-hint">Mở file</span>
             </div>
           </a>
-          <a href="assets/cv/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer" class="fab-cv-link" role="menuitem">
+          <a href="assets/cv/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer" class="fab-cv-link"
+            role="menuitem">
             <span class="fab-cv-badge fab-cv-badge--ai">AI</span>
             <div class="fab-cv-info">
               <span class="fab-cv-title" data-i18n="cv_menu_ai_title">AI Engineer (PDF)</span>
@@ -1809,7 +2021,8 @@
 
       <!-- LinkedIn Link -->
       <a href="https://linkedin.com/in/tranhohoangvu/" target="_blank" rel="noopener noreferrer"
-        class="fab-item fab-item--linkedin" role="menuitem" data-i18n-tooltip="fab_linkedin_tip" title="LinkedIn Profile">
+        class="fab-item fab-item--linkedin" role="menuitem" data-i18n-tooltip="fab_linkedin_tip"
+        title="LinkedIn Profile">
         <span class="fab-item__icon">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
             <path

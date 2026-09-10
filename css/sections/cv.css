@@ -1,6 +1,44 @@
-﻿/* =========================
+/* =========================
    CV — clean cards (override old CV polish)
    ========================= */
+
+/* Section kicker badge */
+.cv-section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #4f46e5;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.22);
+  box-shadow: 0 2px 10px rgba(99, 102, 241, 0.08);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  cursor: default;
+  user-select: none;
+}
+
+.cv-section-kicker:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.14);
+}
+
+.dark .cv-section-kicker {
+  color: #a5b4fc;
+  background: rgba(99, 102, 241, 0.14);
+  border-color: rgba(129, 140, 248, 0.3);
+  box-shadow: 0 2px 10px rgba(99, 102, 241, 0.12);
+}
+
+.dark .cv-section-kicker:hover {
+  border-color: rgba(129, 140, 248, 0.5);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.22);
+}
+
 
 #cv::before {
   content: none !important;

@@ -181,6 +181,8 @@ const I18N = {
     hero_subtitle: "Backend Developer & Data Engineer",
     hero_btn_projects: "Xem dự án",
     hero_btn_cv: "Tải CV",
+    cv_kicker: "Sẵn sàng ứng tuyển",
+    cv_headline: "Hai hướng. Một mục tiêu.",
     cv_title: "CV",
     cv_subtitle: "Chọn phiên bản CV phù hợp với vị trí bạn quan tâm.",
 
@@ -399,6 +401,8 @@ const I18N = {
     hero_subtitle: "Backend Developer & Data Engineer",
     hero_btn_projects: "View projects",
     hero_btn_cv: "Download CV",
+    cv_kicker: "Open to Opportunities",
+    cv_headline: "Two CVs. One mission.",
     cv_title: "CV",
     cv_subtitle: "Pick the CV version that fits the role you're applying for.",
 
