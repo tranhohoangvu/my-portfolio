@@ -343,10 +343,20 @@
 
       <div class="about-social" aria-label="Social links">
         <!-- Mail -->
-        <a class="social-btn is-mail" href="mailto:hoangvu2k4cmg@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <a class="social-btn is-mail" href="mailto:hoangvu2k4cmg@gmail.com"
+          id="about-email-btn"
+          role="button"
+          tabindex="0"
+          data-email="hoangvu2k4cmg@gmail.com"
+          data-i18n-tooltip="contact_email_tip"
+          title="Nhấp để sao chép email (hoangvu2k4cmg@gmail.com)"
+          aria-label="Sao chép email hoangvu2k4cmg@gmail.com">
+          <svg class="mail-default-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path
               d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 0 1-2 2H4c-1.1 0-2-.9-2-2V6a2 2 0 0 1 2-2Zm8 7 8-5H4l8 5Zm0 2.5-8-5V18h16v-9.5l-8 5Z" />
+          </svg>
+          <svg class="mail-check-icon hidden w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
           </svg>
         </a>
 
@@ -1436,9 +1446,15 @@
             </h3>
 
             <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <!-- Email (full width) -->
+              <!-- Email (full width, click to copy) -->
               <a href="mailto:hoangvu2k4cmg@gmail.com" class="contact-link-card sm:col-span-2"
-                aria-label="Gửi email cho Trần Hồ Hoàng Vũ">
+                id="contact-email-link"
+                role="button"
+                tabindex="0"
+                data-email="hoangvu2k4cmg@gmail.com"
+                data-i18n-tooltip="contact_email_tip"
+                title="Nhấp để sao chép email (hoangvu2k4cmg@gmail.com)"
+                aria-label="Sao chép email hoangvu2k4cmg@gmail.com">
                 <span class="contact-link-icon">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
@@ -1448,6 +1464,18 @@
                 <span class="contact-link-text">
                   <span class="contact-link-title">Email</span>
                   <span class="contact-link-sub">hoangvu2k4cmg@gmail.com</span>
+                </span>
+                <span class="contact-link-badge ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold select-none">
+                  <span class="contact-link-badge-icon flex items-center">
+                    <svg class="w-3.5 h-3.5 contact-copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <svg class="w-3.5 h-3.5 contact-check-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </span>
+                  <span class="contact-link-badge-text" data-i18n="contact_copy_btn">Sao chép</span>
                 </span>
               </a>
 
@@ -1805,7 +1833,7 @@
   <script src="js/modules/terminal.js"></script>
   <script src="js/modules/fab.js"></script>
   <!-- Main Application Coordinator -->
-  <script src="js/scripts.js?v=15"></script>
+  <script src="js/scripts.js?v=16"></script>
 </body>
 
 </html>
