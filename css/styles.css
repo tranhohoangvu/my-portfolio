@@ -3070,7 +3070,7 @@ html:not(.dark) #about .about-stat:hover {
 }
 
 .fab-trigger:focus-visible {
-  ring: 3px solid rgba(99, 102, 241, 0.6);
+  outline: 3px solid rgba(99, 102, 241, 0.6);
   outline-offset: 3px;
 }
 
