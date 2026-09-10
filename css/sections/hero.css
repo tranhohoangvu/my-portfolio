@@ -1,0 +1,384 @@
+﻿/* =========================
+   HERO HOME (Modern Software Engineer Aesthetic)
+   ========================= */
+/* =========================
+   HERO HOME (Modern Software Engineer Aesthetic)
+   ========================= */
+.hero-home {
+  position: relative;
+  background:
+    radial-gradient(850px circle at 50% 25%, rgba(99, 102, 241, 0.22), transparent 60%),
+    radial-gradient(650px circle at 85% 45%, rgba(6, 182, 212, 0.14), transparent 55%),
+    linear-gradient(180deg, #070b14 0%, #0b101d 45%, #070b14 100%);
+  overflow: hidden;
+}
+
+/* Dynamic Interactive Mouse Spotlight Glow */
+.hero-home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(650px circle at var(--mouse-x, 50%) var(--mouse-y, 40%), rgba(99, 102, 241, 0.14), transparent 45%);
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Ambient Moving Aurora Mesh Orbs */
+.hero-aurora-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(85px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+  will-change: transform;
+}
+
+.hero-aurora-orb--1 {
+  width: 500px;
+  height: 500px;
+  top: 10%;
+  left: 15%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.38) 0%, transparent 70%);
+  animation: heroAuroraDrift1 14s ease-in-out infinite alternate;
+}
+
+.hero-aurora-orb--2 {
+  width: 440px;
+  height: 440px;
+  bottom: 15%;
+  right: 15%;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.28) 0%, transparent 70%);
+  animation: heroAuroraDrift2 11s ease-in-out infinite alternate;
+}
+
+@keyframes heroAuroraDrift1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(70px, 35px) scale(1.18);
+  }
+  100% {
+    transform: translate(-35px, 55px) scale(0.92);
+  }
+}
+
+@keyframes heroAuroraDrift2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-55px, -45px) scale(1.15);
+  }
+  100% {
+    transform: translate(45px, -25px) scale(0.95);
+  }
+}
+
+.hero-home #particles-js {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Live Status Badge on Hero (with float and light beam) */
+.hero-status-badge {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.42rem 1.05rem;
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  color: #f1f5f9;
+  font-size: 0.825rem;
+  font-weight: 500;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 16px rgba(16, 185, 129, 0.2);
+  animation: heroBadgeFloat 3.8s ease-in-out infinite;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+@keyframes heroBadgeFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Light sweep reflection across the status badge */
+.hero-status-badge::after {
+  content: "";
+  position: absolute;
+  inset: -50% -50%;
+  background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.25) 50%, transparent 60%);
+  transform: translateX(-100%);
+  animation: badgeLightBeam 4.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes badgeLightBeam {
+  0%, 45% {
+    transform: translateX(-100%);
+  }
+  75%, 100% {
+    transform: translateX(100%);
+  }
+}
+
+.hero-status-badge:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: rgba(16, 185, 129, 0.8);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5), 0 0 24px rgba(16, 185, 129, 0.35);
+}
+
+.hero-status-badge__dot-ring {
+  position: relative;
+  display: flex;
+  height: 0.65rem;
+  width: 0.65rem;
+}
+
+.hero-status-badge__dot-ping {
+  position: absolute;
+  display: inline-flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 9999px;
+  background-color: #34d399;
+  opacity: 0.85;
+  animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.hero-status-badge__dot-core {
+  position: relative;
+  display: inline-flex;
+  border-radius: 9999px;
+  height: 0.65rem;
+  width: 0.65rem;
+  background-color: #10b981;
+  box-shadow: 0 0 10px #10b981, 0 0 18px rgba(16, 185, 129, 0.6);
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+.hero-actions {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 26px;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* primary: gradient công nghệ Electric Indigo + Neon Cyan */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  box-shadow: 0 10px 25px -4px rgba(99, 102, 241, 0.4), 0 0 16px rgba(6, 182, 212, 0.25);
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, transparent 40%, rgba(255, 255, 255, 0.3) 50%, transparent 60%);
+  transform: rotate(25deg) translateY(-100%);
+  animation: btnLightSweep 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes btnLightSweep {
+  0%, 35% {
+    transform: rotate(25deg) translateY(-100%);
+  }
+  65%, 100% {
+    transform: rotate(25deg) translateY(100%);
+  }
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #0891b2 100%);
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 14px 30px -3px rgba(99, 102, 241, 0.6), 0 0 24px rgba(6, 182, 212, 0.45);
+}
+
+/* secondary: kiểu glassmorphism Deep Slate */
+.btn-secondary {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #f1f5f9;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.btn-secondary:hover {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.25);
+}
+
+
+/* =========================
+   CV DROPDOWN (match hero glass buttons)
+   ========================= */
+#cvDropdown {
+  position: relative;
+}
+
+.cv-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  min-width: 220px;
+  padding: 8px;
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6), 0 0 20px rgba(99, 102, 241, 0.15);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  z-index: 60;
+
+  opacity: 0;
+  transform: translateY(8px) scale(.98);
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity .18s ease, transform .18s ease, visibility 0s linear .18s;
+}
+
+.cv-menu.cv-menu--open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  visibility: visible;
+  transition: opacity .18s ease, transform .18s ease, visibility 0s;
+}
+
+.cv-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, .92) !important;
+  transition: background .18s ease, transform .18s ease;
+}
+
+.cv-item:hover {
+  background: rgba(255, 255, 255, .10);
+  transform: translateY(-1px);
+}
+
+.cv-item__title {
+  font-weight: 650;
+  font-size: 14px;
+  line-height: 1.15;
+}
+
+.cv-item__meta {
+  font-size: 12px;
+  opacity: .75;
+}
+
+.cv-menu .cv-item+.cv-item {
+  margin-top: 6px;
+}
+
+@media (max-width: 420px) {
+  .cv-menu {
+    left: 0;
+    right: auto;
+    min-width: 220px;
+  }
+}
+
+/* Fix chữ có đuôi (g, y, p, q) bị cắt do typing effect */
+#home h1 {
+  line-height: 1 !important;
+  padding-bottom: 0.1em;
+}
+
+/* Nếu text đang bị clip bởi span typing */
+#home .animate-type {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  line-height: 1.15 !important;
+  padding-bottom: 0.1em;
+  box-sizing: content-box;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 40%, #818cf8 68%, #22d3ee 88%, #ffffff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: typing 2.2s steps(35, end) both, heroTitleShimmer 8s ease-in-out infinite alternate;
+}
+
+@keyframes heroTitleShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.progress-track {
+  margin-top: 14px;
+  height: 8px;
+  width: 100%;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .10);
+  /* nền mờ */
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  /* sẽ set bằng inline style trong HTML */
+  border-radius: 999px;
+  background: linear-gradient(90deg, #38bdf8, #6366f1);
+  /* sky -> indigo */
+  box-shadow: 0 0 18px rgba(56, 189, 248, .25);
+  transition: width .8s ease;
+}
+

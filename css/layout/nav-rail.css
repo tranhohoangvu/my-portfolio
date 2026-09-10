@@ -1,0 +1,153 @@
+﻿/* ==========================================================================
+   Floating Section Navigation Rail (Mini ScrollSpy)
+   Minimalist vertical dash indicators pinned to right screen edge.
+   Expands on hover to show table of contents with smooth scroll & active glow.
+   ========================================================================== */
+.section-nav-rail {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 45;
+  display: none; /* hidden on small screens */
+  pointer-events: auto;
+  user-select: none;
+}
+
+@media (min-width: 1024px) {
+  .section-nav-rail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+.section-nav-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding: 14px 10px 14px 14px;
+  border-radius: 20px 0 0 20px;
+  background: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: none;
+  box-shadow: -4px 0 22px rgba(0, 0, 0, 0.2);
+  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-nav-rail:hover .section-nav-inner {
+  background: rgba(15, 23, 42, 0.88);
+  border-color: rgba(99, 102, 241, 0.28);
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.45);
+  padding-left: 20px;
+  padding-right: 14px;
+}
+
+/* Items */
+.section-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 2px 0;
+  outline: none;
+  transition: transform 0.2s ease;
+}
+
+.section-nav-item:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.section-nav-label {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: rgba(148, 163, 184, 0.72);
+  white-space: nowrap;
+  opacity: 0;
+  max-width: 0;
+  transform: translateX(10px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: opacity 0.25s ease, transform 0.25s ease, max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+  pointer-events: none;
+}
+
+.section-nav-rail:hover .section-nav-label {
+  opacity: 1;
+  max-width: 140px;
+  transform: translateX(0);
+}
+
+/* Dash indicator */
+.section-nav-dash {
+  display: block;
+  width: 14px;
+  height: 2.5px;
+  border-radius: 9999px;
+  background: rgba(148, 163, 184, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+/* Hover state */
+.section-nav-item:hover .section-nav-dash {
+  background: #93c5fd;
+  width: 20px;
+}
+
+.section-nav-item:hover .section-nav-label {
+  color: #f1f5f9;
+}
+
+/* Active state (matching user image with blue glow) */
+.section-nav-item.is-active .section-nav-dash {
+  width: 24px;
+  background: #60a5fa;
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.75);
+}
+
+.section-nav-item.is-active .section-nav-label {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Light mode adjustments */
+html:not(.dark) .section-nav-inner {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: -4px 0 18px rgba(0, 0, 0, 0.06);
+}
+
+html:not(.dark) .section-nav-rail:hover .section-nav-inner {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(99, 102, 241, 0.25);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.12);
+}
+
+html:not(.dark) .section-nav-label {
+  color: #64748b;
+}
+
+html:not(.dark) .section-nav-item:hover .section-nav-label {
+  color: #1e293b;
+}
+
+html:not(.dark) .section-nav-item.is-active .section-nav-label {
+  color: #0f172a;
+}
+
+html:not(.dark) .section-nav-dash {
+  background: rgba(100, 116, 139, 0.35);
+}
+
+html:not(.dark) .section-nav-item.is-active .section-nav-dash {
+  background: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
+

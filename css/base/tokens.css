@@ -1,0 +1,202 @@
+﻿/* ==========================================================================
+   DESIGN TOKENS & SEMANTIC COLOR SYSTEM
+   Theme: Modern Software Engineer (Deep Slate + Obsidian + Neon Indigo/Cyan)
+   ========================================================================== */
+:root {
+  /* Surface & Background */
+  --bg-app: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --bg-glass: rgba(255, 255, 255, 0.88);
+  --border-glass: rgba(15, 23, 42, 0.08);
+  --border-glass-hover: rgba(99, 102, 241, 0.4);
+
+  /* Typography */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  /* Brand Accents */
+  --accent-indigo: #6366f1;
+  --accent-indigo-hover: #4f46e5;
+  --accent-cyan: #06b6d4;
+  --accent-cyan-light: #22d3ee;
+  --accent-emerald: #10b981;
+  --gradient-brand: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+  --glow-brand: 0 0 24px rgba(99, 102, 241, 0.25);
+}
+
+.dark {
+  /* Deep Obsidian & Slate Theme */
+  --bg-app: #070b14;
+  --bg-surface: #0b101d;
+  --bg-surface-elevated: #0f172a;
+  --bg-glass: rgba(15, 23, 42, 0.75);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-glass-hover: rgba(99, 102, 241, 0.5);
+
+  /* Typography */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  /* Brand Accents */
+  --accent-indigo: #818cf8;
+  --accent-indigo-hover: #6366f1;
+  --accent-cyan: #22d3ee;
+  --accent-cyan-light: #67e8f9;
+  --accent-emerald: #34d399;
+  --gradient-brand: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+  --glow-brand: 0 0 30px rgba(99, 102, 241, 0.35);
+}
+
+body {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section-hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card {
+  perspective: 1000px;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+.project-card img {
+  transition: transform 1s ease;
+}
+
+#github-commits {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#github-commits>div {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+#github-commits>div:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border: 1px solid transparent;
+  border-image: linear-gradient(to right, #4f46e5, #7c3aed) 1;
+}
+
+#back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.75rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  border: none;
+  color: rgba(17, 24, 39, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1), 0 0 10px rgba(99, 102, 241, 0.25);
+
+  /* Hide by default */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px) scale(0.98);
+  transition:
+    opacity .18s ease,
+    transform .18s ease,
+    box-shadow .2s ease,
+    background .2s ease,
+    visibility 0s linear .18s;
+}
+
+#back-to-top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.95), rgba(124, 58, 237, 0.9), rgba(6, 182, 212, 0.95));
+  opacity: 0.85;
+  pointer-events: none;
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  transition: opacity 0.2s ease;
+}
+
+#back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity .18s ease,
+    transform .18s ease,
+    box-shadow .2s ease,
+    background .2s ease,
+    visibility 0s;
+}
+
+#back-to-top:hover {
+  background: #ffffff;
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35), 0 0 14px rgba(6, 182, 212, 0.4);
+}
+
+#back-to-top:hover::before {
+  opacity: 1;
+}
+
+.dark #back-to-top {
+  background: rgba(17, 24, 39, 0.92);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35), 0 0 12px rgba(6, 182, 212, 0.25);
+}
+
+.dark #back-to-top:hover {
+  background: rgba(17, 24, 39, 0.98);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 18px rgba(6, 182, 212, 0.45);
+}
+
+#back-to-top svg {
+  position: relative;
+  z-index: 1;
+  stroke: currentColor;
+}
+
+@media (max-width: 640px) {
+  #back-to-top {
+    bottom: 1.15rem;
+    right: 1.35rem;
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
