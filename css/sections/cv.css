@@ -171,6 +171,79 @@
   color: rgba(229, 231, 235, .86);
 }
 
+/* Tech Stack Chips */
+#cv .cv-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+#cv .cv-skill-chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  color: rgba(79, 70, 229, 0.95);
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+  cursor: default;
+  user-select: none;
+}
+
+#cv .cv-skill-chip:hover {
+  transform: translateY(-1px);
+  background: rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+/* AI card chip accent */
+#cv .cv-card--ai .cv-skill-chip {
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.08);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+/* Backend card chip accent */
+#cv .cv-card--backend .cv-skill-chip {
+  color: #059669;
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.22);
+}
+
+#cv .cv-card--backend .cv-skill-chip:hover {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+/* Dark mode chip styling */
+.dark #cv .cv-card--backend .cv-skill-chip {
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.28);
+}
+
+.dark #cv .cv-card--backend .cv-skill-chip:hover {
+  background: rgba(16, 185, 129, 0.22);
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+.dark #cv .cv-card--ai .cv-skill-chip {
+  color: #a5b4fc;
+  background: rgba(99, 102, 241, 0.14);
+  border-color: rgba(129, 140, 248, 0.28);
+}
+
+.dark #cv .cv-card--ai .cv-skill-chip:hover {
+  background: rgba(99, 102, 241, 0.24);
+  border-color: rgba(129, 140, 248, 0.5);
+}
+
 #cv .cv-actions {
   margin-top: auto;
   display: flex;
