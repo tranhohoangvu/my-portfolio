@@ -9,11 +9,11 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
 
 - 🔗 **Website:** https://tranhohoangvu.github.io/my-portfolio/
 - 📄 **CV (PDF) trong repo:** `assets/`
-  - `assets/TranHoHoangVu_BE.pdf`
-  - `assets/TranHoHoangVu_AI.pdf`
+  - `assets/cv/TranHoHoangVu_BE.pdf`
+  - `assets/cv/TranHoHoangVu_AI.pdf`
 - 📄 **Link trực tiếp (sau khi deploy):**
-  - `.../assets/TranHoHoangVu_BE.pdf`
-  - `.../assets/TranHoHoangVu_AI.pdf`
+  - `.../assets/cv/TranHoHoangVu_BE.pdf`
+  - `.../assets/cv/TranHoHoangVu_AI.pdf`
 
 > English version: `README.md`
 
@@ -56,8 +56,8 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
 - Dark / Light mode (lưu trong `localStorage`, fallback theo hệ điều hành).
 - i18n VI / EN qua `data-i18n` (lưu trong `localStorage.lang`, cập nhật cả metadata và title).
 - **Section CV với 2 bản PDF chuyên biệt + nút “View / Download”**:
-  - *Fresher Backend Developer* (`assets/TranHoHoangVu_BE.pdf`)
-  - *AI Engineer Intern* (`assets/TranHoHoangVu_AI.pdf`)
+  - *Fresher Backend Developer* (`assets/cv/TranHoHoangVu_BE.pdf`)
+  - *AI Engineer Intern* (`assets/cv/TranHoHoangVu_AI.pdf`)
 - **Dropdown “Download CV” ở Hero** để tải nhanh phiên bản CV mong muốn.
 - **GitHub section**:
   - SVG contributions heatmap auto-generate (Light/Dark) và tự động commit hằng ngày qua GitHub Actions.
@@ -84,11 +84,11 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
 Portfolio có **2 phiên bản CV dạng PDF** (hiển thị ở section CV và dropdown):
 
 1) **Fresher Backend Developer (PDF)**  
-   - File: `assets/TranHoHoangVu_BE.pdf`  
+   - File: `assets/cv/TranHoHoangVu_BE.pdf`  
    - Dùng khi ứng tuyển Backend Developer / Software Engineer (Node.js, Express, Laravel, PostgreSQL raw SQL, RESTful APIs, JWT RBAC).
 
 2) **AI Engineer Intern (PDF)**  
-   - File: `assets/TranHoHoangVu_AI.pdf`  
+   - File: `assets/cv/TranHoHoangVu_AI.pdf`  
    - Dùng khi ứng tuyển AI / Data / Machine Learning (PyTorch, Deep Learning OCR, Transformers, dịch máy NLP, dự báo chuỗi thời gian).
 
 ### Key i18n đang dùng (JS)
@@ -207,8 +207,8 @@ Workflow: `.github/workflows/update-github-contrib.yml`
 - Chạy hằng ngày (00:00 UTC)
 - Dùng GitHub GraphQL API trong `js/build_github_contrib_svgs.py`
 - Cập nhật:
-  - `assets/github-contrib-light.svg`
-  - `assets/github-contrib-dark.svg`
+  - `assets/github/github-contrib-light.svg`
+  - `assets/github/github-contrib-dark.svg`
 - Auto commit lại vào repo
 
 Nếu bạn fork/clone, nhớ bật Actions và cấp quyền workflow ghi vào repo.

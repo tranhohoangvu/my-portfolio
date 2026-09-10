@@ -9,11 +9,11 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
 
 - 🔗 **Live site:** https://tranhohoangvu.github.io/my-portfolio/
 - 📄 **CVs (PDF) in repo:** `assets/`
-  - `assets/TranHoHoangVu_BE.pdf`
-  - `assets/TranHoHoangVu_AI.pdf`
+  - `assets/cv/TranHoHoangVu_BE.pdf`
+  - `assets/cv/TranHoHoangVu_AI.pdf`
 - 📄 **CVs (direct links):**
-  - `.../assets/TranHoHoangVu_BE.pdf`
-  - `.../assets/TranHoHoangVu_AI.pdf`
+  - `.../assets/cv/TranHoHoangVu_BE.pdf`
+  - `.../assets/cv/TranHoHoangVu_AI.pdf`
 
 > Vietnamese version: `README_VI.md`
 
@@ -56,8 +56,8 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
 - Dark / Light mode (persisted in `localStorage`, falls back to OS preference).
 - VI / EN i18n via `data-i18n` (saved in `localStorage.lang`, includes page metadata).
 - **CV section with 2 targeted PDF versions + “View / Download” buttons**:
-  - *Fresher Backend Developer* (`assets/TranHoHoangVu_BE.pdf`)
-  - *AI Engineer Intern* (`assets/TranHoHoangVu_AI.pdf`)
+  - *Fresher Backend Developer* (`assets/cv/TranHoHoangVu_BE.pdf`)
+  - *AI Engineer Intern* (`assets/cv/TranHoHoangVu_AI.pdf`)
 - **Hero “Download CV” dropdown** to pick the CV version directly.
 - **GitHub Activity Section**:
   - Auto-generated contributions heatmap SVG (Light/Dark) committed daily via GitHub Actions.
@@ -84,11 +84,11 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
 This portfolio includes **two PDF CV variants** (both in the CV section and the dropdown):
 
 1) **Fresher Backend Developer (PDF)**  
-   - File: `assets/TranHoHoangVu_BE.pdf`  
+   - File: `assets/cv/TranHoHoangVu_BE.pdf`  
    - Targeted for Backend Developer / Software Engineer roles (Node.js, Express, Laravel, PostgreSQL raw SQL, RESTful APIs, JWT RBAC).
 
 2) **AI Engineer Intern (PDF)**  
-   - File: `assets/TranHoHoangVu_AI.pdf`  
+   - File: `assets/cv/TranHoHoangVu_AI.pdf`  
    - Targeted for AI / Data / Machine Learning roles (PyTorch, Deep Learning OCR, Transformers, NLP translation, time-series forecasting).
 
 ### i18n keys used (JS)
@@ -207,8 +207,8 @@ Workflow: `.github/workflows/update-github-contrib.yml`
 - Runs daily (00:00 UTC)
 - Uses GitHub GraphQL API in `js/build_github_contrib_svgs.py`
 - Updates:
-  - `assets/github-contrib-light.svg`
-  - `assets/github-contrib-dark.svg`
+  - `assets/github/github-contrib-light.svg`
+  - `assets/github/github-contrib-dark.svg`
 - Automatically commits back to repository
 
 If you fork/clone, enable Actions and grant workflow write permissions.

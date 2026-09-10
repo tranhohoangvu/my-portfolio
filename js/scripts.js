@@ -22,13 +22,13 @@ function setGitHubActivityImages() {
 
   // Contributions: local svg do GitHub Actions sinh ra
   contribImg.src = isDark
-    ? `assets/github-contrib-dark.svg?v=${v}`
-    : `assets/github-contrib-light.svg?v=${v}`;
+    ? `assets/github/github-contrib-dark.svg?v=${v}`
+    : `assets/github/github-contrib-light.svg?v=${v}`;
 
   // Activity Graph: local SVG do GitHub Actions tự động sinh (fallback sang online mirror)
   const activitySvg = isDark
-    ? `assets/github-activity-dark.svg?v=${v}`
-    : `assets/github-activity-light.svg?v=${v}`;
+    ? `assets/github/github-activity-dark.svg?v=${v}`
+    : `assets/github/github-activity-light.svg?v=${v}`;
 
   activityImg.src = activitySvg;
 
@@ -2323,7 +2323,7 @@ ${cardsHtml}
         <div class="font-bold text-slate-200">1. Fresher Backend Developer (PDF)</div>
         <div class="text-xs term-dim">RESTful APIs, PostgreSQL raw SQL, Node.js, Express, Docker</div>
       </div>
-      <a href="assets/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer" class="term-link font-semibold text-xs py-1 px-3 rounded bg-indigo-500/20 border border-indigo-500/30">
+      <a href="assets/cv/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer" class="term-link font-semibold text-xs py-1 px-3 rounded bg-indigo-500/20 border border-indigo-500/30">
         ${isEn ? "View / Download →" : "Xem / Tải file →"}
       </a>
     </div>
@@ -2332,7 +2332,7 @@ ${cardsHtml}
         <div class="font-bold text-slate-200">2. AI Engineer Intern (PDF)</div>
         <div class="text-xs term-dim">PyTorch, Transformer Decoder OCR, RLHF PPO, Time-Series ML</div>
       </div>
-      <a href="assets/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer" class="term-link font-semibold text-xs py-1 px-3 rounded bg-cyan-500/20 border border-cyan-500/30">
+      <a href="assets/cv/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer" class="term-link font-semibold text-xs py-1 px-3 rounded bg-cyan-500/20 border border-cyan-500/30">
         ${isEn ? "View / Download →" : "Xem / Tải file →"}
       </a>
     </div>

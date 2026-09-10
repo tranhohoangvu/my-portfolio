@@ -51,14 +51,14 @@
   <link rel="stylesheet" href="css/styles.css?v=13" />
 
   <!-- Favicon (prefer SVG) -->
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png" />
 
   <!-- PWA -->
   <meta name="theme-color" content="#070b14" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="apple-touch-icon" href="assets/pwa-192.png" />
+  <link rel="apple-touch-icon" href="assets/icons/pwa-192.png" />
 
 
 </head>
@@ -75,7 +75,7 @@
       <a href="#home" id="brand-home"
         class="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-slate-100 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors duration-300"
         aria-label="Về đầu trang">
-        <img src="assets/favicon-32.png" alt="Logo" class="w-7 h-7" />
+        <img src="assets/icons/favicon-32.png" alt="Logo" class="w-7 h-7" />
         <span>Portfolio</span>
       </a>
 
@@ -248,13 +248,13 @@
             <span data-i18n="hero_btn_cv">Tải CV</span>
           </button>
           <div id="cvDropdownMenu" class="cv-menu" role="menu" aria-labelledby="cvDropdownBtn">
-            <a href="assets/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer" class="cv-item"
+            <a href="assets/cv/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer" class="cv-item"
               role="menuitem">
               <span class="cv-item__title" data-i18n="cv_menu_be_title">Fresher Backend Developer (PDF)</span>
               <span class="cv-item__meta" data-i18n="cv_menu_be_meta">TranHoHoangVu_BE.pdf</span>
             </a>
 
-            <a href="assets/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer" class="cv-item"
+            <a href="assets/cv/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer" class="cv-item"
               role="menuitem">
               <span class="cv-item__title" data-i18n="cv_menu_ai_title">AI Engineer Intern (PDF)</span>
               <span class="cv-item__meta" data-i18n="cv_menu_ai_meta">TranHoHoangVu_AI.pdf</span>
@@ -282,11 +282,11 @@
             <div class="profile-flip group w-64 h-64">
               <div class="profile-flip__inner">
                 <!-- Front -->
-                <img src="assets/profile1.jpg" alt="Ảnh cá nhân của Trần Hồ Hoàng Vũ"
+                <img src="assets/profile/profile1.jpg" alt="Ảnh cá nhân của Trần Hồ Hoàng Vũ"
                   class="profile-flip__face w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-indigo-200 dark:border-indigo-500/40" />
 
                 <!-- Back -->
-                <img src="assets/profile2.png" alt="Ảnh profile khác của Trần Hồ Hoàng Vũ"
+                <img src="assets/profile/profile2.png" alt="Ảnh profile khác của Trần Hồ Hoàng Vũ"
                   class="profile-flip__face profile-flip__back w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-indigo-200 dark:border-indigo-500/40" />
               </div>
 
@@ -431,9 +431,9 @@
             (Jira API/OpenClaw) & clean code.</p>
 
           <div class="cv-actions">
-            <a href="assets/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer"
+            <a href="assets/cv/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer"
               class="cv-action cv-action--primary" data-i18n="cv_btn_view">View</a>
-            <a href="assets/TranHoHoangVu_BE.pdf" download class="cv-action cv-action--ghost"
+            <a href="assets/cv/TranHoHoangVu_BE.pdf" download class="cv-action cv-action--ghost"
               data-i18n="cv_btn_download">Download</a>
           </div>
         </article>
@@ -457,9 +457,9 @@
             (Vietnamese OCR) & deployment pipelines.</p>
 
           <div class="cv-actions">
-            <a href="assets/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer"
+            <a href="assets/cv/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer"
               class="cv-action cv-action--primary" data-i18n="cv_btn_view">View</a>
-            <a href="assets/TranHoHoangVu_AI.pdf" download class="cv-action cv-action--ghost"
+            <a href="assets/cv/TranHoHoangVu_AI.pdf" download class="cv-action cv-action--ghost"
               data-i18n="cv_btn_download">Download</a>
           </div>
         </article>
@@ -1720,14 +1720,14 @@
 
         <!-- Submenu for CV options -->
         <div id="fab-cv-submenu" class="fab-cv-submenu" role="menu" aria-hidden="true">
-          <a href="assets/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer" class="fab-cv-link" role="menuitem">
+          <a href="assets/cv/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer" class="fab-cv-link" role="menuitem">
             <span class="fab-cv-badge">BE</span>
             <div class="fab-cv-info">
               <span class="fab-cv-title" data-i18n="cv_menu_be_title">Fresher Backend (PDF)</span>
               <span class="fab-cv-hint">Mở file</span>
             </div>
           </a>
-          <a href="assets/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer" class="fab-cv-link" role="menuitem">
+          <a href="assets/cv/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer" class="fab-cv-link" role="menuitem">
             <span class="fab-cv-badge fab-cv-badge--ai">AI</span>
             <div class="fab-cv-info">
               <span class="fab-cv-title" data-i18n="cv_menu_ai_title">AI Engineer (PDF)</span>

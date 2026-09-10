@@ -1,5 +1,5 @@
 /* SW: precache only .css .js .jpg .png .svg */
-const VERSION = "v8";
+const VERSION = "v9";
 const CACHE_NAME = `portfolio-${VERSION}`;
 
 const PRECACHE = [
@@ -22,22 +22,36 @@ const PRECACHE = [
   "./data/projects.json",
   "./data/skills.json",
 
-  // Assets (images only)
-  "./assets/favicon.svg",
-  "./assets/favicon-16.png",
-  "./assets/favicon-32.png",
-  "./assets/github-contrib-dark.svg",
-  "./assets/github-contrib-light.svg",
+  // Assets (Icons & PWA)
+  "./assets/icons/favicon.svg",
+  "./assets/icons/favicon-16.png",
+  "./assets/icons/favicon-32.png",
+  "./assets/icons/pwa-192.png",
+  "./assets/icons/pwa-512.png",
+
+  // GitHub stats SVGs
+  "./assets/github/github-contrib-dark.svg",
+  "./assets/github/github-contrib-light.svg",
+  "./assets/github/github-activity-dark.svg",
+  "./assets/github/github-activity-light.svg",
+
+  // Profile & Social Media
+  "./assets/profile/profile1.jpg",
+  "./assets/profile/profile2.png",
   "./assets/og-image-v2.png",
-  "./assets/profile1.jpg",
-  "./assets/profile2.png",
-  "./assets/pwa-192.png",
-  "./assets/pwa-512.png",
+
+  // CV PDFs
+  "./assets/cv/TranHoHoangVu_BE.pdf",
+  "./assets/cv/TranHoHoangVu_AI.pdf",
 
   // Project images
+  "./assets/projects/coursehub.png",
   "./assets/projects/ecommerce.png",
-  "./assets/projects/pos.png",
+  "./assets/projects/vietnamese-ocr.png",
+  "./assets/projects/nlp-translation.png",
+  "./assets/projects/stock-ml.png",
   "./assets/projects/warehouse.png",
+  "./assets/projects/pos.png",
 ];
 
 self.addEventListener("install", (event) => {
