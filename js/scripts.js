@@ -185,6 +185,8 @@ const I18N = {
     cv_headline: "Hai hướng. Một mục tiêu.",
     cv_title: "CV",
     cv_subtitle: "Chọn phiên bản CV phù hợp với vị trí bạn quan tâm.",
+    cv_updated_be: "Cập nhật T8/2026",
+    cv_updated_ai: "Cập nhật T3/2026",
 
     cv_be_title: "Fresher Backend Developer (PDF)",
     cv_be_desc: "Định hướng Backend: RESTful APIs, database, tự động hóa quy trình (Jira API/OpenClaw) & clean code.",
@@ -194,6 +196,14 @@ const I18N = {
 
     cv_btn_view: "Xem",
     cv_btn_download: "Tải xuống",
+    cv_preview_hover: "Xem trước",
+    cv_stat_versions: "2 Định dạng chuyên sâu",
+    cv_stat_roles: "Đúng trọng tâm vai trò",
+    cv_stat_updated: "Cập nhật mới 2026",
+    cv_badge_primary: "Định hướng chính",
+    cv_badge_specialized: "Chuyên sâu AI",
+    cv_downloads_be: "52 lượt tải",
+    cv_downloads_ai: "38 lượt tải",
 
     cv_menu_be_title: "Fresher Backend Developer (PDF)",
     cv_menu_be_meta: "TranHoHoangVu_BE.pdf",
@@ -405,6 +415,8 @@ const I18N = {
     cv_headline: "Two CVs. One mission.",
     cv_title: "CV",
     cv_subtitle: "Pick the CV version that fits the role you're applying for.",
+    cv_updated_be: "Updated Aug 2026",
+    cv_updated_ai: "Updated Mar 2026",
 
     cv_be_title: "Fresher Backend Developer (PDF)",
     cv_be_desc: "Targeted for Backend Developer roles: REST APIs, databases, workflow automation (Jira API/OpenClaw) & clean code.",
@@ -414,6 +426,14 @@ const I18N = {
 
     cv_btn_view: "View",
     cv_btn_download: "Download",
+    cv_preview_hover: "Preview",
+    cv_stat_versions: "2 Specialized Versions",
+    cv_stat_roles: "Targeted Roles",
+    cv_stat_updated: "Updated 2026",
+    cv_badge_primary: "Primary Focus",
+    cv_badge_specialized: "Specialized AI",
+    cv_downloads_be: "52 downloads",
+    cv_downloads_ai: "38 downloads",
 
     cv_menu_be_title: "Fresher Backend Developer (PDF)",
     cv_menu_be_meta: "TranHoHoangVu_BE.pdf",
@@ -1434,6 +1454,102 @@ function initEmailCopyActions() {
 window.initEmailCopyActions = initEmailCopyActions;
 
 // ==========================================================================
+// Interactive CV View & Download Counters with LocalStorage Persistence
+// ==========================================================================
+function initCvDownloadCounter() {
+  const BASE_DOWNLOADS = { be: 52, ai: 38 };
+  const BASE_VIEWS = { be: 128, ai: 95 };
+
+  // Load Download counts
+  let storedDownloads = null;
+  try {
+    const raw = localStorage.getItem("cv_download_counts");
+    if (raw) storedDownloads = JSON.parse(raw);
+  } catch (e) {
+    storedDownloads = null;
+  }
+  if (!storedDownloads || typeof storedDownloads !== "object") {
+    storedDownloads = { ...BASE_DOWNLOADS };
+    try {
+      localStorage.setItem("cv_download_counts", JSON.stringify(storedDownloads));
+    } catch (e) {}
+  }
+
+  // Load View counts
+  let storedViews = null;
+  try {
+    const rawViews = localStorage.getItem("cv_view_counts");
+    if (rawViews) storedViews = JSON.parse(rawViews);
+  } catch (e) {
+    storedViews = null;
+  }
+  if (!storedViews || typeof storedViews !== "object") {
+    storedViews = { ...BASE_VIEWS };
+    try {
+      localStorage.setItem("cv_view_counts", JSON.stringify(storedViews));
+    } catch (e) {}
+  }
+
+  // Update DOM displays
+  function updateDisplays() {
+    const beDlEl = document.getElementById("cv-dl-count-be");
+    const aiDlEl = document.getElementById("cv-dl-count-ai");
+    if (beDlEl && storedDownloads.be != null) beDlEl.textContent = storedDownloads.be;
+    if (aiDlEl && storedDownloads.ai != null) aiDlEl.textContent = storedDownloads.ai;
+
+    const beViewEl = document.getElementById("cv-view-count-be");
+    const aiViewEl = document.getElementById("cv-view-count-ai");
+    if (beViewEl && storedViews.be != null) beViewEl.textContent = storedViews.be;
+    if (aiViewEl && storedViews.ai != null) aiViewEl.textContent = storedViews.ai;
+  }
+
+  updateDisplays();
+
+  // Attach click listeners to download buttons
+  document.querySelectorAll(".cv-download-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const type = btn.getAttribute("data-cv-type");
+      if (type && storedDownloads[type] != null) {
+        storedDownloads[type] += 1;
+        try {
+          localStorage.setItem("cv_download_counts", JSON.stringify(storedDownloads));
+        } catch (e) {}
+        updateDisplays();
+
+        if (typeof triggerToast === "function") {
+          const roleName = type === "be" ? "Fresher Backend" : "AI Engineer";
+          triggerToast({
+            message: `Đang tải CV ${roleName}...`,
+            type: "success",
+            duration: 2500,
+          });
+        }
+      }
+    });
+  });
+
+  // Attach click listeners to view buttons & preview thumbnail links
+  document.querySelectorAll(".cv-view-btn, .cv-preview-link").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      let type = btn.getAttribute("data-cv-type");
+      if (!type) {
+        const href = btn.getAttribute("href") || "";
+        if (href.includes("BE")) type = "be";
+        else if (href.includes("AI")) type = "ai";
+      }
+      if (type && storedViews[type] != null) {
+        storedViews[type] += 1;
+        try {
+          localStorage.setItem("cv_view_counts", JSON.stringify(storedViews));
+        } catch (e) {}
+        updateDisplays();
+      }
+    });
+  });
+}
+window.initCvDownloadCounter = initCvDownloadCounter;
+
+// ==========================================================================
 // Application Bootstrap & Feature Modules Orchestration
 // Các module tính năng độc lập được nạp từ js/modules/:
 // - js/modules/carousel.js      (Projects Carousel slider & category filter)
@@ -1453,6 +1569,7 @@ function initAppModules() {
   initEmailCopyActions?.();
   initHeroInteractions?.();
   initCounterAnimations?.();
+  initCvDownloadCounter?.();
 }
 
 if (document.readyState === "loading") {

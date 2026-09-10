@@ -40,8 +40,46 @@
 }
 
 
-#cv::before {
-  content: none !important;
+/* =========================
+   Ambient Moving Aurora Orbs
+   ========================= */
+.cv-aurora-orb {
+  /* Alias to global .section-aurora-orb */
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(85px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.55;
+  will-change: transform;
+}
+
+.cv-aurora-orb--1 {
+  width: 520px;
+  height: 520px;
+  top: -10%;
+  left: -8%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.16) 0%, transparent 70%);
+  animation: sectionAuroraDrift1 15s ease-in-out infinite alternate;
+}
+
+.cv-aurora-orb--2 {
+  width: 480px;
+  height: 480px;
+  bottom: -10%;
+  right: -8%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.14) 0%, transparent 70%);
+  animation: sectionAuroraDrift2 12s ease-in-out infinite alternate;
+}
+
+.dark .cv-aurora-orb--1 {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, transparent 70%);
+  opacity: 0.65;
+}
+
+.dark .cv-aurora-orb--2 {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, transparent 70%);
+  opacity: 0.65;
 }
 
 /* kill old glow layer */
@@ -106,6 +144,73 @@
   opacity: 1;
 }
 
+/* Featured Card Accent & Ribbon (Task G) */
+#cv .cv-card--featured {
+  border-color: rgba(16, 185, 129, 0.35) !important;
+  box-shadow: 0 20px 48px rgba(16, 185, 129, 0.09) !important;
+}
+
+.dark #cv .cv-card--featured {
+  border-color: rgba(16, 185, 129, 0.32) !important;
+  box-shadow: 0 24px 64px rgba(16, 185, 129, 0.14) !important;
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.05) 0%, rgba(255, 255, 255, 0.04) 35%) !important;
+}
+
+#cv .cv-card--featured::before {
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.9), rgba(6, 182, 212, 0.8), rgba(99, 102, 241, 0.75));
+  opacity: 0.55;
+}
+
+#cv .cv-card--featured:hover {
+  border-color: rgba(16, 185, 129, 0.6) !important;
+  box-shadow: 0 26px 75px rgba(16, 185, 129, 0.18) !important;
+}
+
+.dark #cv .cv-card--featured:hover {
+  box-shadow: 0 28px 85px rgba(16, 185, 129, 0.24) !important;
+}
+
+#cv .cv-featured-flag {
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #065f46;
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+  z-index: 2;
+  user-select: none;
+}
+
+.dark #cv .cv-featured-flag {
+  color: #ecfdf5;
+  background: linear-gradient(135deg, #059669, #047857);
+  border-color: rgba(110, 231, 183, 0.45);
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.4);
+}
+
+#cv .cv-featured-flag--ai {
+  color: #3730a3;
+  background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+.dark #cv .cv-featured-flag--ai {
+  color: #eef2ff;
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  border-color: rgba(165, 180, 252, 0.4);
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+}
+
 #cv .cv-top {
   display: flex;
   align-items: center;
@@ -148,6 +253,57 @@
   color: rgba(255, 255, 255, .90);
   background: rgba(255, 255, 255, .06);
   border: 1px solid rgba(255, 255, 255, .14);
+}
+
+/* Badge group (PDF + Updated) */
+#cv .cv-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+#cv .cv-updated-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 5px 11px;
+  border-radius: 999px;
+  color: #047857;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  box-shadow: 0 1px 4px rgba(16, 185, 129, 0.06);
+  user-select: none;
+  cursor: default;
+  transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+}
+
+#cv .cv-updated-badge svg {
+  width: 12px !important;
+  height: 12px !important;
+  flex-shrink: 0;
+}
+
+#cv .cv-updated-badge:hover {
+  transform: translateY(-1px);
+  background: rgba(16, 185, 129, 0.13);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.dark #cv .cv-updated-badge {
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 1px 6px rgba(16, 185, 129, 0.1);
+}
+
+.dark #cv .cv-updated-badge:hover {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: rgba(16, 185, 129, 0.5);
 }
 
 #cv .cv-title {
@@ -244,6 +400,97 @@
   border-color: rgba(129, 140, 248, 0.5);
 }
 
+/* =========================
+   CV Preview Thumbnail on Hover (Task E)
+   ========================= */
+#cv .cv-preview-wrap {
+  margin: 6px 0 10px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(15, 23, 42, 0.02);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.dark #cv .cv-preview-wrap {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+#cv .cv-preview-link {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 145px;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#cv .cv-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.38s ease, filter 0.38s ease;
+  filter: contrast(0.96) brightness(0.98);
+}
+
+#cv .cv-preview-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 11, 20, 0.1) 0%, rgba(7, 11, 20, 0.65) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  backdrop-filter: blur(1.5px);
+}
+
+#cv .cv-preview-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(79, 70, 229, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+  transform: translateY(6px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover effects */
+#cv .cv-card:hover .cv-preview-wrap {
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.dark #cv .cv-card:hover .cv-preview-wrap {
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+#cv .cv-preview-link:hover .cv-preview-img,
+#cv .cv-card:hover .cv-preview-img {
+  transform: scale(1.04);
+}
+
+#cv .cv-preview-link:hover .cv-preview-overlay,
+#cv .cv-card:hover .cv-preview-overlay {
+  opacity: 1;
+}
+
+#cv .cv-preview-link:hover .cv-preview-badge,
+#cv .cv-card:hover .cv-preview-badge {
+  transform: translateY(0);
+}
+
 #cv .cv-actions {
   margin-top: auto;
   display: flex;
@@ -296,6 +543,64 @@
   background: rgba(255, 255, 255, .08);
 }
 
+/* View & Download Counter Badges inside CV Actions */
+#cv .cv-dl-count,
+#cv .cv-view-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: 6px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+/* Primary Button (View) Badge */
+#cv .cv-view-count {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#cv .cv-action--primary:hover .cv-view-count {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+/* Ghost Button (Download) Badge */
+#cv .cv-dl-count {
+  color: #4b5563;
+  background: rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+#cv .cv-action--ghost:hover .cv-dl-count {
+  color: #4338ca;
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.25);
+}
+
+.dark #cv .cv-dl-count {
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark #cv .cv-action--ghost:hover .cv-dl-count {
+  color: #c7d2fe;
+  background: rgba(99, 102, 241, 0.22);
+  border-color: rgba(129, 140, 248, 0.35);
+}
+
+#cv .cv-dl-count svg,
+#cv .cv-view-count svg {
+  width: 10px !important;
+  height: 10px !important;
+  flex-shrink: 0;
+}
+
 /* variant accents */
 #cv .cv-card--backend .cv-icon,
 #cv .cv-card--be .cv-icon,
@@ -318,6 +623,87 @@
 @media (max-width: 420px) {
   #cv .cv-actions {
     flex-direction: column;
+  }
+}
+
+/* =========================
+   Highlights / Stats Row (Task F)
+   ========================= */
+#cv .cv-stats-row {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  user-select: none;
+}
+
+#cv .cv-stat-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4b5563;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  cursor: default;
+}
+
+#cv .cv-stat-item:hover {
+  transform: translateY(-1px);
+  color: #1f2937;
+  background: rgba(99, 102, 241, 0.08);
+  border-color: rgba(99, 102, 241, 0.25);
+}
+
+.dark #cv .cv-stat-item {
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dark #cv .cv-stat-item:hover {
+  color: #f1f5f9;
+  background: rgba(99, 102, 241, 0.15);
+  border-color: rgba(129, 140, 248, 0.35);
+}
+
+#cv .cv-stat-icon {
+  width: 15px !important;
+  height: 15px !important;
+  color: #6366f1;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.dark #cv .cv-stat-icon {
+  color: #818cf8;
+}
+
+#cv .cv-stat-item:hover .cv-stat-icon {
+  transform: scale(1.15);
+}
+
+#cv .cv-stat-divider {
+  color: rgba(156, 163, 175, 0.6);
+  font-size: 14px;
+}
+
+.dark #cv .cv-stat-divider {
+  color: rgba(148, 163, 184, 0.35);
+}
+
+@media (max-width: 640px) {
+  #cv .cv-stat-divider {
+    display: none;
+  }
+  #cv .cv-stats-row {
+    gap: 10px;
   }
 }
 

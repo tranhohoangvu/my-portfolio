@@ -266,8 +266,12 @@
   </section>
 
   <!-- About Section (xen kẽ: WHITE / OBSIDIAN ELEVATED) -->
-  <section id="about" class="py-24 bg-white dark:bg-[#0b101d] relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
+  <section id="about" class="py-24 bg-white dark:bg-[#0b101d] relative overflow-hidden">
+    <!-- Ambient Moving Aurora Mesh Orbs -->
+    <div class="section-aurora-orb section-aurora-orb--1 section-aurora-orb--cyan" aria-hidden="true"></div>
+    <div class="section-aurora-orb section-aurora-orb--2 section-aurora-orb--violet" aria-hidden="true"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden relative z-10">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in"
         data-i18n="about_title">Giới thiệu</h2>
 
@@ -406,8 +410,12 @@
   </section>
 
   <!-- CV Section (xen kẽ: SLATE / DEEP OBSIDIAN) -->
-  <section id="cv" class="py-24 bg-slate-50 dark:bg-[#070b14] relative">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
+  <section id="cv" class="py-24 bg-slate-50 dark:bg-[#070b14] relative overflow-hidden">
+    <!-- Ambient Moving Aurora Mesh Orbs (Task D) -->
+    <div class="cv-aurora-orb cv-aurora-orb--1" aria-hidden="true"></div>
+    <div class="cv-aurora-orb cv-aurora-orb--2" aria-hidden="true"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden relative z-10">
       <div class="text-center">
         <!-- Kicker badge -->
         <div class="flex justify-center mb-8">
@@ -430,9 +438,16 @@
         </p>
       </div>
 
-      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
-        <!-- Backend Developer Intern (PDF) -->
-        <article class="cv-card cv-card--backend">
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto cv-cards-grid">
+        <!-- Backend Developer Intern (PDF) - Featured Card -->
+        <article class="cv-card cv-card--backend cv-card--featured">
+          <div class="cv-featured-flag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            <span data-i18n="cv_badge_primary">Định hướng chính</span>
+          </div>
+
           <div class="cv-top">
             <div class="cv-icon" aria-hidden="true">
               <svg class="cv-icon__svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
@@ -443,7 +458,15 @@
                 <line x1="6" y1="18" x2="6.01" y2="18"></line>
               </svg>
             </div>
-            <span class="cv-pill">PDF</span>
+            <div class="cv-badge-group">
+              <span class="cv-pill">PDF</span>
+              <span class="cv-updated-badge">
+                <svg width="12" height="12" class="text-emerald-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span data-i18n="cv_updated_be">Cập nhật T8/2026</span>
+              </span>
+            </div>
           </div>
 
           <h3 class="cv-title" data-i18n="cv_be_title">Fresher Backend Developer (PDF)</h3>
@@ -459,16 +482,57 @@
             <span class="cv-skill-chip">RESTful API</span>
           </div>
 
+          <!-- CV Preview Thumbnail (Task E) -->
+          <div class="cv-preview-wrap">
+            <a href="assets/cv/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer" class="cv-preview-link" title="Xem trước CV">
+              <img src="assets/cv/TranHoHoangVu_BE_preview.png" alt="Xem trước CV Fresher Backend Developer" loading="lazy" class="cv-preview-img" />
+              <div class="cv-preview-overlay">
+                <span class="cv-preview-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <span data-i18n="cv_preview_hover">Xem trước</span>
+                </span>
+              </div>
+            </a>
+          </div>
+
           <div class="cv-actions">
             <a href="assets/cv/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer"
-              class="cv-action cv-action--primary" data-i18n="cv_btn_view">View</a>
-            <a href="assets/cv/TranHoHoangVu_BE.pdf" download class="cv-action cv-action--ghost"
-              data-i18n="cv_btn_download">Download</a>
+              class="cv-action cv-action--primary cv-view-btn" data-cv-type="be" title="Xem CV Backend">
+              <span data-i18n="cv_btn_view">View</span>
+              <span class="cv-view-count">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span class="cv-view-number" id="cv-view-count-be">128</span>
+              </span>
+            </a>
+            <a href="assets/cv/TranHoHoangVu_BE.pdf" download class="cv-action cv-action--ghost cv-download-btn" data-cv-type="be" title="Tải CV Backend">
+              <span data-i18n="cv_btn_download">Download</span>
+              <span class="cv-dl-count">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span class="cv-dl-number" id="cv-dl-count-be">52</span>
+              </span>
+            </a>
           </div>
         </article>
 
         <!-- AI Engineer Intern (PDF) -->
         <article class="cv-card cv-card--ai">
+          <div class="cv-featured-flag cv-featured-flag--ai">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l1.2 4.6L18 8l-4.8 1.4L12 14l-1.2-4.6L6 8l4.8-1.4L12 2z"></path>
+            </svg>
+            <span data-i18n="cv_badge_specialized">Chuyên sâu AI</span>
+          </div>
+
           <div class="cv-top">
             <div class="cv-icon" aria-hidden="true">
               <svg class="cv-icon__svg" viewBox="0 0 24 24" fill="none">
@@ -478,7 +542,15 @@
                   stroke-width="1.6" />
               </svg>
             </div>
-            <span class="cv-pill">PDF</span>
+            <div class="cv-badge-group">
+              <span class="cv-pill">PDF</span>
+              <span class="cv-updated-badge">
+                <svg width="12" height="12" class="text-emerald-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span data-i18n="cv_updated_ai">Cập nhật T3/2026</span>
+              </span>
+            </div>
           </div>
 
           <h3 class="cv-title" data-i18n="cv_ai_title">AI Engineer Intern (PDF)</h3>
@@ -494,20 +566,92 @@
             <span class="cv-skill-chip">FastAPI / Flask</span>
           </div>
 
+          <!-- CV Preview Thumbnail (Task E) -->
+          <div class="cv-preview-wrap">
+            <a href="assets/cv/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer" class="cv-preview-link" title="Xem trước CV">
+              <img src="assets/cv/TranHoHoangVu_AI_preview.png" alt="Xem trước CV AI Engineer Intern" loading="lazy" class="cv-preview-img" />
+              <div class="cv-preview-overlay">
+                <span class="cv-preview-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <span data-i18n="cv_preview_hover">Xem trước</span>
+                </span>
+              </div>
+            </a>
+          </div>
+
           <div class="cv-actions">
             <a href="assets/cv/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer"
-              class="cv-action cv-action--primary" data-i18n="cv_btn_view">View</a>
-            <a href="assets/cv/TranHoHoangVu_AI.pdf" download class="cv-action cv-action--ghost"
-              data-i18n="cv_btn_download">Download</a>
+              class="cv-action cv-action--primary cv-view-btn" data-cv-type="ai" title="Xem CV AI">
+              <span data-i18n="cv_btn_view">View</span>
+              <span class="cv-view-count">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span class="cv-view-number" id="cv-view-count-ai">95</span>
+              </span>
+            </a>
+            <a href="assets/cv/TranHoHoangVu_AI.pdf" download class="cv-action cv-action--ghost cv-download-btn" data-cv-type="ai" title="Tải CV AI">
+              <span data-i18n="cv_btn_download">Download</span>
+              <span class="cv-dl-count">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span class="cv-dl-number" id="cv-dl-count-ai">38</span>
+              </span>
+            </a>
           </div>
         </article>
+      </div>
+
+      <!-- Highlights / Stats Row (Task F) -->
+      <div class="cv-stats-row">
+        <div class="cv-stat-item">
+          <svg class="cv-stat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          <span data-i18n="cv_stat_versions">2 Định dạng chuyên sâu</span>
+        </div>
+
+        <div class="cv-stat-divider" aria-hidden="true">•</div>
+
+        <div class="cv-stat-item">
+          <svg class="cv-stat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="12" r="6"></circle>
+            <circle cx="12" cy="12" r="2"></circle>
+          </svg>
+          <span data-i18n="cv_stat_roles">Đúng trọng tâm vai trò</span>
+        </div>
+
+        <div class="cv-stat-divider" aria-hidden="true">•</div>
+
+        <div class="cv-stat-item">
+          <svg class="cv-stat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+          </svg>
+          <span data-i18n="cv_stat_updated">Cập nhật mới 2026</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Projects Section (xen kẽ: WHITE / OBSIDIAN ELEVATED) -->
-  <section id="projects" class="py-24 bg-white dark:bg-[#0b101d] relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
+  <section id="projects" class="py-24 bg-white dark:bg-[#0b101d] relative overflow-hidden">
+    <!-- Ambient Moving Aurora Mesh Orbs -->
+    <div class="section-aurora-orb section-aurora-orb--1 section-aurora-orb--cyan" aria-hidden="true"></div>
+    <div class="section-aurora-orb section-aurora-orb--2 section-aurora-orb--violet" aria-hidden="true"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden relative z-10">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900 dark:text-gray-100 animate-slide-in"
         data-i18n="projects_title">Dự án</h2>
 
@@ -1076,8 +1220,12 @@
   </section>
 
   <!-- Skills Section (xen kẽ: SLATE / DEEP OBSIDIAN) -->
-  <section id="skills" class="py-24 bg-slate-50 dark:bg-[#070b14] relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
+  <section id="skills" class="py-24 bg-slate-50 dark:bg-[#070b14] relative overflow-hidden">
+    <!-- Ambient Moving Aurora Mesh Orbs -->
+    <div class="section-aurora-orb section-aurora-orb--1" aria-hidden="true"></div>
+    <div class="section-aurora-orb section-aurora-orb--2" aria-hidden="true"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden relative z-10">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-3 text-gray-900 dark:text-gray-100 animate-slide-in"
         data-i18n="skills_title">Kỹ năng</h2>
       <p class="text-center text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 animate-fade-in"
@@ -1297,8 +1445,12 @@
   </section>
 
   <!-- Certificates Section (xen kẽ: WHITE / OBSIDIAN ELEVATED) -->
-  <section id="certificates" class="py-24 bg-white dark:bg-[#0b101d] relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
+  <section id="certificates" class="py-24 bg-white dark:bg-[#0b101d] relative overflow-hidden">
+    <!-- Ambient Moving Aurora Mesh Orbs -->
+    <div class="section-aurora-orb section-aurora-orb--1 section-aurora-orb--cyan" aria-hidden="true"></div>
+    <div class="section-aurora-orb section-aurora-orb--2 section-aurora-orb--violet" aria-hidden="true"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden relative z-10">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in"
         data-i18n="certs_title">Chứng chỉ</h2>
 
@@ -1341,8 +1493,12 @@
   </section>
 
   <!-- GitHub Section (xen kẽ: SLATE / DEEP OBSIDIAN) -->
-  <section id="github" class="py-24 bg-slate-50 dark:bg-[#070b14] relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
+  <section id="github" class="py-24 bg-slate-50 dark:bg-[#070b14] relative overflow-hidden">
+    <!-- Ambient Moving Aurora Mesh Orbs -->
+    <div class="section-aurora-orb section-aurora-orb--1" aria-hidden="true"></div>
+    <div class="section-aurora-orb section-aurora-orb--2" aria-hidden="true"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden relative z-10">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in"
         data-i18n="github_title">Hoạt động GitHub</h2>
 
@@ -1624,8 +1780,12 @@
   </section>
 
   <!-- Contact Section (xen kẽ: SLATE / DEEP OBSIDIAN) -->
-  <section id="contact" class="py-24 bg-slate-50 dark:bg-[#070b14] relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
+  <section id="contact" class="py-24 bg-slate-50 dark:bg-[#070b14] relative overflow-hidden">
+    <!-- Ambient Moving Aurora Mesh Orbs -->
+    <div class="section-aurora-orb section-aurora-orb--1" aria-hidden="true"></div>
+    <div class="section-aurora-orb section-aurora-orb--2" aria-hidden="true"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden relative z-10">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in"
         data-i18n="contact_title">Liên hệ</h2>
 

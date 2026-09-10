@@ -1,4 +1,4 @@
-﻿.animate-typing {
+.animate-typing {
   animation: fadeIn 1s ease-out;
 }
 
@@ -160,5 +160,89 @@ input:focus~.ripple::after,
 textarea:focus~.ripple::after {
   width: 200px;
   height: 200px;
+}
+
+/* ==========================================================================
+   Ambient Moving Aurora Mesh Orbs (Global Section Utility)
+   ========================================================================== */
+.section-aurora-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(85px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.55;
+  will-change: transform;
+}
+
+.section-aurora-orb--1 {
+  width: 520px;
+  height: 520px;
+  top: -10%;
+  left: -8%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.16) 0%, transparent 70%);
+  animation: sectionAuroraDrift1 15s ease-in-out infinite alternate;
+}
+
+.section-aurora-orb--2 {
+  width: 480px;
+  height: 480px;
+  bottom: -10%;
+  right: -8%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.14) 0%, transparent 70%);
+  animation: sectionAuroraDrift2 12s ease-in-out infinite alternate;
+}
+
+/* Variant for White/Obsidian sections: Cyan + Violet tones */
+.section-aurora-orb--cyan {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.14) 0%, transparent 70%);
+}
+
+.section-aurora-orb--violet {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+}
+
+.dark .section-aurora-orb--1 {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, transparent 70%);
+  opacity: 0.65;
+}
+
+.dark .section-aurora-orb--2 {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, transparent 70%);
+  opacity: 0.65;
+}
+
+.dark .section-aurora-orb--cyan {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.20) 0%, transparent 70%);
+  opacity: 0.65;
+}
+
+.dark .section-aurora-orb--violet {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.22) 0%, transparent 70%);
+  opacity: 0.65;
+}
+
+@keyframes sectionAuroraDrift1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(60px, 40px) scale(1.15);
+  }
+  100% {
+    transform: translate(-30px, 50px) scale(0.92);
+  }
+}
+
+@keyframes sectionAuroraDrift2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-50px, -40px) scale(1.18);
+  }
+  100% {
+    transform: translate(40px, -30px) scale(0.95);
+  }
 }
 
