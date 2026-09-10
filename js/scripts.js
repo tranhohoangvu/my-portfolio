@@ -273,10 +273,21 @@ const I18N = {
     p3_tag4: "DOMPDF",
 
     skills_title: "Kỹ năng",
+    skills_subtitle: "Nhấp vào kỹ năng có huy hiệu để xem các dự án thực tế đã ứng dụng công nghệ tương ứng.",
+    skills_core_lang: "Ngôn ngữ cốt lõi",
+    skills_core_lang_meta: "Nền tảng lập trình & tư duy thuật toán",
+    skills_backend_arch: "Kiến trúc Backend & API",
+    skills_backend_arch_meta: "RESTful API, MVC, JWT RBAC & Microservices",
+    skills_db_opt: "Cơ sở dữ liệu & Tối ưu",
+    skills_db_opt_meta: "Raw SQL, Indexing, Transactions & Schema Design",
+    skills_ai_devops: "AI, DevOps & Công cụ",
+    skills_ai_devops_meta: "Mô hình Học sâu, Container hóa & CI/CD Pipeline",
     skills_lang_front: "Ngôn ngữ & Frontend",
     skills_backend_db: "Backend & Database",
     skills_devops: "DevOps / Tools",
     skills_note_auth: "(Auth/Phân quyền: mức cơ bản)",
+    skill_filtering_label: "Đang lọc dự án theo kỹ năng:",
+    skill_clear_btn: "Bỏ lọc",
 
     nav_certs: "Chứng chỉ",
     certs_title: "Chứng chỉ",
@@ -438,10 +449,21 @@ const I18N = {
     p3_tag4: "DOMPDF",
 
     skills_title: "Skills",
+    skills_subtitle: "Click on any badged skill to highlight the real-world projects applying that technology.",
+    skills_core_lang: "Core Languages",
+    skills_core_lang_meta: "Programming foundations & algorithmic problem solving",
+    skills_backend_arch: "Backend Architecture & APIs",
+    skills_backend_arch_meta: "RESTful API, MVC, JWT RBAC & Microservices",
+    skills_db_opt: "Databases & Storage",
+    skills_db_opt_meta: "Raw SQL, Indexing, Transactions & Schema Design",
+    skills_ai_devops: "AI, DevOps & Tools",
+    skills_ai_devops_meta: "Deep Learning, Containerization & CI/CD Pipelines",
     skills_lang_front: "Languages & Frontend",
     skills_backend_db: "Backend & Database",
     skills_devops: "DevOps / Tools",
     skills_note_auth: "(Auth/Authorization: basic)",
+    skill_filtering_label: "Highlighting projects by skill:",
+    skill_clear_btn: "Clear filter",
 
     nav_certs: "Certificates",
     certs_title: "Certificates",
@@ -557,6 +579,7 @@ function applyLanguage(lang, persist = true) {
 
   window.restartHeroTypewriter?.();
   window.refreshProjectModalIfOpen?.();
+  window.refreshActiveSkillBanner?.();
 }
 
 function toggleLanguage() {
@@ -1161,6 +1184,10 @@ function initProjectsCarousel() {
     renderDots(m);
     updateControls();
   };
+
+  window.slideProjectsCarouselToIndex = (targetIndex) => {
+    slideTo(targetIndex);
+  };
 }
 
 // =======================
@@ -1179,6 +1206,10 @@ function initProjectsFilter() {
     let matchCount = 0;
 
     allCards.forEach((card) => {
+      // Clear any temporary skill highlight/dim
+      card.classList.remove("is-skill-matched");
+      card.classList.remove("is-skill-dimmed");
+
       const cardCategories = (card.getAttribute("data-category") || "").toLowerCase().split(/\s+/);
       const isMatch = category === "all" || cardCategories.includes(category.toLowerCase());
 
@@ -1211,6 +1242,11 @@ function initProjectsFilter() {
 
   filterTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
+      // Clear active skill filter if any
+      if (window.clearSkillFilter) {
+        window.clearSkillFilter(false);
+      }
+
       filterTabs.forEach((t) => {
         t.classList.remove("is-active");
         t.setAttribute("aria-selected", "false");
@@ -1641,12 +1677,25 @@ function initProjectDetailsModal() {
       });
     }
 
-    // Tech Tags
+    // Tech Tags (Item 8: Interactive Skill Linking)
     if (tagsContainer) {
       tagsContainer.innerHTML = "";
       (data.tags || []).forEach((tag) => {
         const pill = document.createElement("span");
-        pill.className = "text-xs tag-pill";
+        const sId = typeof normalizeTagToSkillId === "function" ? normalizeTagToSkillId(tag) : null;
+        if (sId && SKILL_PROJECT_MAPPING[sId]) {
+          pill.className = "text-xs tag-pill tag-pill--interactive";
+          pill.setAttribute("data-tech-skill", sId);
+          pill.title = currentLang === "en" ? `View skill: ${SKILL_PROJECT_MAPPING[sId].name}` : `Xem kỹ năng: ${SKILL_PROJECT_MAPPING[sId].name}`;
+          pill.addEventListener("click", () => {
+            closeModal();
+            if (window.highlightSkillTile) {
+              window.highlightSkillTile(sId);
+            }
+          });
+        } else {
+          pill.className = "text-xs tag-pill";
+        }
         pill.textContent = tag;
         tagsContainer.appendChild(pill);
       });
@@ -1731,11 +1780,306 @@ function initProjectDetailsModal() {
   });
 }
 
+// ==========================================================================
+// Item 8: Interactive Skill ↔ Project Linking (2-Way Bidirectional)
+// ==========================================================================
+const SKILL_PROJECT_MAPPING = {
+  // Core Languages
+  c: { name: "C", projects: [] },
+  csharp: { name: "C#", projects: ["warehouse"] },
+  java: { name: "Java", projects: [] },
+  python: { name: "Python", projects: ["vietnamese-ocr", "nlp-translation", "stock-ml"] },
+  javascript: { name: "JavaScript", projects: ["coursehub", "ecommerce"] },
+  php: { name: "PHP", projects: ["pos"] },
+
+  // Backend Architecture & Frameworks
+  nodejs: { name: "Node.js", projects: ["coursehub", "ecommerce"] },
+  express: { name: "Express.js", projects: ["coursehub", "ecommerce"] },
+  laravel: { name: "Laravel", projects: ["pos"] },
+  restapi: { name: "RESTful API", projects: ["coursehub", "ecommerce"] },
+  dotnet: { name: ".NET WinForms", projects: ["warehouse"] },
+  react: { name: "React", projects: ["coursehub", "ecommerce"] },
+
+  // Databases & Storage
+  postgresql: { name: "PostgreSQL", projects: ["coursehub"] },
+  mysql: { name: "MySQL", projects: ["warehouse", "pos"] },
+  mongodb: { name: "MongoDB", projects: ["ecommerce"] },
+  sqlserver: { name: "SQL Server", projects: ["warehouse"] },
+  rawsql: { name: "Raw SQL", projects: ["coursehub"] },
+
+  // AI, DevOps & Tools
+  pytorch: { name: "PyTorch", projects: ["vietnamese-ocr", "nlp-translation"] },
+  tensorflow: { name: "TensorFlow", projects: ["stock-ml"] },
+  docker: { name: "Docker", projects: ["ecommerce"] },
+  compose: { name: "Docker Compose", projects: ["ecommerce"] },
+  nginx: { name: "Nginx", projects: ["ecommerce"] },
+  git: { name: "Git", projects: ["coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos"] },
+  github: { name: "GitHub", projects: ["coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos"] },
+  postman: { name: "Postman", projects: ["coursehub", "ecommerce"] },
+  linux: { name: "Linux", projects: [] }
+};
+
+function normalizeTagToSkillId(tagStr) {
+  if (!tagStr) return null;
+  const s = tagStr.toLowerCase().trim();
+  if (s.includes("postgres")) return "postgresql";
+  if (s.includes("mongo")) return "mongodb";
+  if (s.includes("mysql")) return "mysql";
+  if (s.includes("sql server")) return "sqlserver";
+  if (s.includes("raw sql") || s === "native pg (no orm)") return "rawsql";
+  if (s.includes("node")) return "nodejs";
+  if (s.includes("express")) return "express";
+  if (s.includes("react")) return "react";
+  if (s.includes("pytorch")) return "pytorch";
+  if (s.includes("tensorflow")) return "tensorflow";
+  if (s.includes("docker compose") || s.includes("compose")) return "compose";
+  if (s.includes("docker")) return "docker";
+  if (s.includes("nginx")) return "nginx";
+  if (s.includes("laravel")) return "laravel";
+  if (s.includes("livewire") || s.includes("php")) return "php";
+  if (s.includes("c#") || s.includes("csharp")) return "csharp";
+  if (s.includes(".net") || s.includes("winform")) return "dotnet";
+  if (s.includes("python")) return "python";
+  if (s.includes("rest") || s.includes("api")) return "restapi";
+  if (s.includes("postman")) return "postman";
+  if (s.includes("git")) return "git";
+  return null;
+}
+
+function initSkillProjectLinking() {
+  const skillIcons = document.querySelectorAll(".skill-icon[data-skill-id]");
+  const banner = document.getElementById("active-skill-banner");
+  const bannerName = document.getElementById("active-skill-name");
+  const bannerCount = document.getElementById("active-skill-count");
+  const clearBtn = document.getElementById("clear-skill-filter-btn");
+  const track = document.getElementById("projects-track");
+  const allCards = track ? Array.from(track.querySelectorAll(".project-card")) : [];
+
+  let activeSkillId = null;
+
+  function filterProjectsBySkill(skillId, shouldScroll = true) {
+    const skillData = SKILL_PROJECT_MAPPING[skillId];
+    if (!skillData || !skillData.projects || skillData.projects.length === 0) return;
+
+    activeSkillId = skillId;
+
+    // 1. Update skill icon active states in #skills
+    skillIcons.forEach((icon) => {
+      const id = icon.getAttribute("data-skill-id");
+      icon.classList.toggle("is-active", id === skillId);
+    });
+
+    // 2. Show active banner
+    if (banner && bannerName && bannerCount) {
+      banner.classList.remove("hidden");
+      bannerName.textContent = skillData.name;
+      const count = skillData.projects.length;
+      const suffix = currentLang === "en" ? (count > 1 ? "projects" : "project") : "dự án";
+      bannerCount.textContent = `(${count} ${suffix})`;
+    }
+
+    // 3. Highlight matching cards and dim non-matching cards
+    let firstMatchedIndex = -1;
+    let matchedCount = 0;
+
+    allCards.forEach((card, idx) => {
+      const pId = card.getAttribute("data-project-id");
+      const isMatched = skillData.projects.includes(pId);
+
+      // Unhide card regardless of previous category filter
+      card.classList.remove("is-filtered-out");
+
+      if (isMatched) {
+        card.classList.remove("is-skill-dimmed");
+        card.classList.add("is-skill-matched");
+        matchedCount++;
+        if (firstMatchedIndex === -1) {
+          firstMatchedIndex = idx;
+        }
+      } else {
+        card.classList.remove("is-skill-matched");
+        card.classList.add("is-skill-dimmed");
+      }
+    });
+
+    // 4. Update empty state if applicable
+    const emptyState = document.getElementById("projects-empty-state");
+    if (emptyState && track) {
+      if (matchedCount === 0) {
+        emptyState.classList.remove("hidden");
+        track.style.display = "none";
+      } else {
+        emptyState.classList.add("hidden");
+        track.style.display = "flex";
+      }
+    }
+
+    // 5. Slide carousel to the first matched project
+    if (firstMatchedIndex !== -1 && window.slideProjectsCarouselToIndex) {
+      window.slideProjectsCarouselToIndex(firstMatchedIndex);
+    }
+
+    // 6. Smooth scroll to projects section
+    if (shouldScroll) {
+      const projectsSection = document.getElementById("projects");
+      if (projectsSection) {
+        const navHeight = 70;
+        const targetPos = projectsSection.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        window.scrollTo({ top: targetPos, behavior: "smooth" });
+      }
+    }
+
+    // 7. Feedback toast
+    const msg = currentLang === "en"
+      ? `Highlighting ${matchedCount} project(s) applying ${skillData.name}`
+      : `Đang làm nổi bật ${matchedCount} dự án ứng dụng công nghệ ${skillData.name}`;
+    if (typeof showToast === "function") {
+      showToast({ message: msg, type: "info" });
+    }
+  }
+
+  function clearSkillFilter(reapplyCategory = true) {
+    if (!activeSkillId && (!banner || banner.classList.contains("hidden"))) return;
+    activeSkillId = null;
+
+    if (banner) {
+      banner.classList.add("hidden");
+    }
+
+    skillIcons.forEach((icon) => icon.classList.remove("is-active"));
+
+    allCards.forEach((card) => {
+      card.classList.remove("is-skill-matched");
+      card.classList.remove("is-skill-dimmed");
+    });
+
+    if (reapplyCategory) {
+      const activeTab = document.querySelector(".projects-filter-tab.is-active");
+      const cat = activeTab ? activeTab.getAttribute("data-filter") || "all" : "all";
+      let matchCount = 0;
+      allCards.forEach((card) => {
+        const cardCategories = (card.getAttribute("data-category") || "").toLowerCase().split(/\s+/);
+        const isMatch = cat === "all" || cardCategories.includes(cat.toLowerCase());
+        card.classList.toggle("is-filtered-out", !isMatch);
+        if (isMatch) matchCount++;
+      });
+      const emptyState = document.getElementById("projects-empty-state");
+      if (emptyState && track) {
+        if (matchCount === 0) {
+          emptyState.classList.remove("hidden");
+          track.style.display = "none";
+        } else {
+          emptyState.classList.add("hidden");
+          track.style.display = "flex";
+        }
+      }
+    }
+
+    if (window.resetProjectsCarousel) {
+      window.resetProjectsCarousel();
+    }
+  }
+
+  window.clearSkillFilter = clearSkillFilter;
+  window.filterProjectsBySkill = filterProjectsBySkill;
+
+  // Clear button click
+  if (clearBtn) {
+    clearBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      clearSkillFilter(true);
+    });
+  }
+
+  // Skill icons click in #skills
+  skillIcons.forEach((icon) => {
+    const skillId = icon.getAttribute("data-skill-id");
+    const mapping = SKILL_PROJECT_MAPPING[skillId];
+
+    if (mapping && mapping.projects && mapping.projects.length > 0) {
+      icon.addEventListener("click", () => {
+        if (activeSkillId === skillId) {
+          clearSkillFilter(true);
+        } else {
+          filterProjectsBySkill(skillId, true);
+        }
+      });
+
+      // Keyboard accessible
+      icon.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          icon.click();
+        }
+      });
+    }
+  });
+
+  // Reverse Linking: Project Card Tag Click -> Highlight Skill in #skills
+  function highlightSkillTile(skillId) {
+    const targetIcon = document.querySelector(`.skill-icon[data-skill-id="${skillId}"]`);
+    const skillData = SKILL_PROJECT_MAPPING[skillId];
+    const skillName = skillData ? skillData.name : skillId;
+
+    if (targetIcon) {
+      const skillsSec = document.getElementById("skills");
+      if (skillsSec) {
+        const navHeight = 70;
+        const targetPos = skillsSec.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        window.scrollTo({ top: targetPos, behavior: "smooth" });
+      }
+
+      targetIcon.classList.remove("is-highlighted");
+      void targetIcon.offsetWidth; // force reflow
+      targetIcon.classList.add("is-highlighted");
+
+      setTimeout(() => {
+        targetIcon.classList.remove("is-highlighted");
+      }, 3600);
+
+      const msg = currentLang === "en"
+        ? `Skill: ${skillName} • Located in Skills section`
+        : `Kỹ năng: ${skillName} • Đã định vị trong mục Kỹ năng`;
+      if (typeof showToast === "function") {
+        showToast({ message: msg, type: "info" });
+      }
+    }
+  }
+
+  window.highlightSkillTile = highlightSkillTile;
+
+  // Attach event listeners to [data-tech-skill] pills in project cards
+  document.querySelectorAll(".tag-pill--interactive[data-tech-skill]").forEach((tag) => {
+    tag.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const sId = tag.getAttribute("data-tech-skill");
+      if (sId) {
+        highlightSkillTile(sId);
+      }
+    });
+  });
+
+  // Language update hook
+  window.refreshActiveSkillBanner = () => {
+    document.querySelectorAll(".skill-count-badge[data-count]").forEach((b) => {
+      const c = b.getAttribute("data-count");
+      b.textContent = currentLang === "en" ? `${c} Prj` : `${c} DA`;
+    });
+    if (activeSkillId && SKILL_PROJECT_MAPPING[activeSkillId]) {
+      const skillData = SKILL_PROJECT_MAPPING[activeSkillId];
+      const count = skillData.projects.length;
+      const suffix = currentLang === "en" ? (count > 1 ? "projects" : "project") : "dự án";
+      if (bannerCount) bannerCount.textContent = `(${count} ${suffix})`;
+    }
+  };
+}
+
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
     initProjectsCarousel();
     initProjectsFilter();
     initProjectDetailsModal();
+    initSkillProjectLinking();
     initFloatingActions();
     initHeroInteractions();
     initCounterAnimations();
@@ -1744,6 +2088,7 @@ if (document.readyState === "loading") {
   initProjectsCarousel();
   initProjectsFilter();
   initProjectDetailsModal();
+  initSkillProjectLinking();
   initFloatingActions();
   initHeroInteractions();
   initCounterAnimations();

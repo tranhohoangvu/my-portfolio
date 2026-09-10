@@ -1283,132 +1283,233 @@ html:not(.dark) .projects-filter-tab:hover {
   margin-bottom: 18px;
 }
 
-/* ===== LIGHT MODE (default): card trắng, viền đen, chữ đen ===== */
+/* ===== SKILLS CARDS: Modern Software Engineer Aesthetic ===== */
 .skills-card--dark {
   background: #ffffff;
-  border: 1.5px solid rgba(17, 24, 39, 0.85);
-  /* viền đen */
-  border-radius: 16px;
+  border: 1px solid rgba(17, 24, 39, 0.15);
+  border-radius: 20px;
   padding: 24px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-card--dark:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 14px 30px rgba(99, 102, 241, 0.08);
+}
+
+.skills-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+}
+
+.skills-card-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+  flex-shrink: 0;
 }
 
 .skills-title {
   font-size: 18px;
   font-weight: 800;
   color: rgba(17, 24, 39, 0.92);
-  margin-bottom: 16px;
+  line-height: 1.2;
 }
 
-.skills-note {
-  margin-top: 14px;
-  font-size: 14px;
-  color: rgba(17, 24, 39, 0.65);
+.skills-subtitle-meta {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 3px;
+  line-height: 1.3;
 }
 
-/* Grid icon */
-.skill-grid {
+/* Compact responsive grid for 4-pillar skills */
+.skill-grid--compact {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
-  align-content: start;
 }
 
-/* tile icon: nền trắng nhẹ + viền đen mờ */
+@media (min-width: 480px) and (max-width: 639px) {
+  .skill-grid--compact {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .skill-grid--compact {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+/* Skill icon tile */
 .skill-icon {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  height: 86px;
-  padding: 10px 8px;
+  height: 88px;
+  padding: 12px 6px;
   border-radius: 14px;
-
-  background: rgba(17, 24, 39, 0.03);
-  border: 1px solid rgba(17, 24, 39, 0.18);
-  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+  background: rgba(17, 24, 39, 0.025);
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  user-select: none;
 }
 
-.skill-icon:hover {
-  transform: translateY(-2px);
-  background: rgba(17, 24, 39, 0.05);
-  border-color: rgba(17, 24, 39, 0.26);
+.skill-icon.is-linked {
+  cursor: pointer;
+}
+
+.skill-icon.is-linked:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: rgba(99, 102, 241, 0.08);
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.12);
+}
+
+.skill-icon.is-active {
+  transform: translateY(-2px) scale(1.03);
+  background: rgba(99, 102, 241, 0.15) !important;
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4), 0 8px 22px rgba(99, 102, 241, 0.25) !important;
+}
+
+/* Skill count badge (Indicator that projects are linked) */
+.skill-count-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 5px;
+  border-radius: 9999px;
+  background: rgba(99, 102, 241, 0.12);
+  color: #4f46e5;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.skill-icon:hover .skill-count-badge {
+  background: #6366f1;
+  color: #ffffff;
+  border-color: #6366f1;
+  transform: scale(1.05);
 }
 
 .skill-icon i {
-  font-size: 34px;
+  font-size: 32px;
   line-height: 1;
 }
 
-.skill-icon span {
-  font-size: 12px;
+.skill-icon span:not(.skill-count-badge) {
+  font-size: 11.5px;
   font-weight: 700;
   color: rgba(17, 24, 39, 0.88);
-  /* chữ đen */
   text-align: center;
   line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
-/* DevOps: căn giữa + đủ rộng 1 hàng */
-.devops-row {
-  display: flex;
-  justify-content: center;
+/* Pulse highlight animation when navigating from project tag to skill */
+@keyframes skillPulseFocus {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.6);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 8px rgba(99, 102, 241, 0);
+    border-color: #6366f1;
+  }
 }
 
-.devops-card {
-  width: 100%;
-  max-width: 980px;
+.skill-icon.is-highlighted {
+  animation: skillPulseFocus 1.2s ease-in-out 3;
+  border-color: #6366f1 !important;
+  background: rgba(99, 102, 241, 0.18) !important;
 }
 
-
-/* ===== DARK MODE: giống Projects (card tối, chữ trắng) ===== */
+/* ===== DARK MODE ===== */
 .dark .skills-card--dark {
-  background: rgba(31, 41, 55, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+}
+
+.dark .skills-card--dark:hover {
+  border-color: rgba(129, 140, 248, 0.4);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35), 0 0 20px rgba(99, 102, 241, 0.15);
+}
+
+.dark .skills-card-header {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .skills-card-icon-wrap {
+  background: rgba(99, 102, 241, 0.18);
+  color: #a5b4fc;
 }
 
 .dark .skills-title {
   color: rgba(255, 255, 255, 0.95);
 }
 
-.dark .skills-note {
-  color: rgba(255, 255, 255, 0.70);
+.dark .skills-subtitle-meta {
+  color: #94a3b8;
 }
 
 .dark .skill-icon {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.dark .skill-icon:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.20);
+.dark .skill-icon.is-linked:hover {
+  background: rgba(99, 102, 241, 0.16);
+  border-color: rgba(129, 140, 248, 0.5);
+  box-shadow: 0 8px 22px rgba(99, 102, 241, 0.25);
 }
 
-.dark .skill-icon span {
+.dark .skill-icon.is-active {
+  background: rgba(99, 102, 241, 0.25) !important;
+  border-color: #818cf8 !important;
+  box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.5), 0 8px 25px rgba(99, 102, 241, 0.4) !important;
+}
+
+.dark .skill-count-badge {
+  background: rgba(99, 102, 241, 0.25);
+  color: #c7d2fe;
+  border-color: rgba(129, 140, 248, 0.35);
+}
+
+.dark .skill-icon:hover .skill-count-badge {
+  background: #818cf8;
+  color: #070b14;
+  border-color: #818cf8;
+}
+
+.dark .skill-icon span:not(.skill-count-badge) {
   color: rgba(255, 255, 255, 0.88);
-}
-
-/* =========================
-   Skills: 5 icons / row like your screenshot
-   ========================= */
-.skill-grid--5 {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-}
-
-@media (max-width: 767px) {
-  .skill-grid--5 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-/* DevOps card: centered under 2 cards, width like 1 column */
-.devops-card {
-  width: 100%;
-  max-width: 640px;
-  /* gần bằng 1 cột ở layout md */
 }
 
 #lang-toggle {
@@ -3650,4 +3751,170 @@ body.modal-open {
   .project-modal-body {
     padding: 1.25rem;
   }
+}
+
+/* ==========================================================================
+   Item 8: Interactive Skill ↔ Project Linking Styles
+   ========================================================================== */
+
+/* Active Skill Filter Banner in Projects Section */
+.active-skill-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 680px;
+  margin: 0 auto 28px auto;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1.5px solid rgba(99, 102, 241, 0.35);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.12);
+  backdrop-filter: blur(10px);
+  animation: fadeInDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dark .active-skill-banner {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(129, 140, 248, 0.45);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(99, 102, 241, 0.2);
+}
+
+.active-skill-banner.hidden {
+  display: none !important;
+}
+
+.active-skill-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.active-skill-icon {
+  display: flex;
+  align-items: center;
+}
+
+.active-skill-label {
+  color: #475569;
+  font-weight: 500;
+}
+
+.dark .active-skill-label {
+  color: #94a3b8;
+}
+
+.active-skill-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.35);
+}
+
+.active-skill-count {
+  font-size: 12px;
+  color: #6366f1;
+  font-weight: 600;
+}
+
+.dark .active-skill-count {
+  color: #a5b4fc;
+}
+
+.active-skill-clear-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  background: rgba(100, 116, 139, 0.1);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(100, 116, 139, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.active-skill-clear-btn:hover {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.35);
+  transform: scale(1.02);
+}
+
+.dark .active-skill-clear-btn {
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark .active-skill-clear-btn:hover {
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.45);
+}
+
+/* Project Card Highlight & Dim States for Skill Linking */
+.project-card.is-skill-matched {
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.6), 0 16px 36px rgba(99, 102, 241, 0.28) !important;
+  transform: translateY(-5px);
+  opacity: 1 !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .project-card.is-skill-matched {
+  border-color: #818cf8 !important;
+  box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.7), 0 16px 40px rgba(99, 102, 241, 0.38) !important;
+}
+
+.project-card.is-skill-dimmed {
+  opacity: 0.35;
+  filter: grayscale(40%);
+  transition: opacity 0.35s ease, filter 0.35s ease, transform 0.35s ease;
+}
+
+.project-card.is-skill-dimmed:hover {
+  opacity: 0.85;
+  filter: grayscale(0%);
+}
+
+/* Interactive Tech Pills on Project Cards */
+.tag-pill--interactive {
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.tag-pill--interactive:hover {
+  background: rgba(99, 102, 241, 0.22) !important;
+  border-color: rgba(99, 102, 241, 0.5) !important;
+  color: #4f46e5 !important;
+  transform: translateY(-1px);
+}
+
+.dark .tag-pill--interactive:hover {
+  background: rgba(99, 102, 241, 0.32) !important;
+  border-color: rgba(129, 140, 248, 0.6) !important;
+  color: #c7d2fe !important;
 }

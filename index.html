@@ -491,6 +491,26 @@
         </div>
       </div>
 
+      <!-- Active Skill Filter Banner (Item 8: Interactive Skill Linking) -->
+      <div id="active-skill-banner" class="active-skill-banner hidden" aria-live="polite">
+        <div class="active-skill-content">
+          <span class="active-skill-icon">
+            <svg class="w-4 h-4 text-indigo-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </span>
+          <span class="active-skill-label" data-i18n="skill_filtering_label">Đang lọc dự án theo kỹ năng:</span>
+          <span id="active-skill-name" class="active-skill-badge">PostgreSQL</span>
+          <span id="active-skill-count" class="active-skill-count">(1 dự án)</span>
+        </div>
+        <button type="button" id="clear-skill-filter-btn" class="active-skill-clear-btn" aria-label="Bỏ lọc kỹ năng" title="Bỏ lọc kỹ năng">
+          <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+          <span data-i18n="skill_clear_btn">Bỏ lọc</span>
+        </button>
+      </div>
+
       <!-- Projects Carousel Wrapper -->
       <div class="projects-carousel-wrapper relative">
         <!-- Left Navigation Arrow -->
@@ -538,10 +558,10 @@
                   Hệ thống Quản lý Học tập (LMS) full-stack: xác thực JWT &amp; phân quyền RBAC, tối ưu raw SQL (PostgreSQL), RESTful APIs và kiến trúc MVC mô-đun.
                 </p>
 
-                <div class="flex flex-wrap gap-2 mb-6">
-                  <span class="text-xs tag-pill">React</span>
-                  <span class="text-xs tag-pill">Node.js</span>
-                  <span class="text-xs tag-pill">PostgreSQL</span>
+                <div class="flex flex-wrap gap-2 mb-6 project-tech-list">
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="react" title="Xem kỹ năng React">React</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="nodejs" title="Xem kỹ năng Node.js">Node.js</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="postgresql" title="Xem kỹ năng PostgreSQL">PostgreSQL</span>
                 </div>
               </div>
 
@@ -591,10 +611,10 @@
                   Nền tảng thương mại điện tử full-stack, tập trung backend: REST API, xác thực người dùng và luồng giỏ hàng/đơn hàng.
                 </p>
 
-                <div class="flex flex-wrap gap-2 mb-6">
-                  <span class="text-xs tag-pill">React</span>
-                  <span class="text-xs tag-pill">Node.js</span>
-                  <span class="text-xs tag-pill">MongoDB</span>
+                <div class="flex flex-wrap gap-2 mb-6 project-tech-list">
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="react" title="Xem kỹ năng React">React</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="nodejs" title="Xem kỹ năng Node.js">Node.js</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="mongodb" title="Xem kỹ năng MongoDB">MongoDB</span>
                 </div>
               </div>
 
@@ -638,10 +658,10 @@
                   Chuẩn bị tập dữ liệu MCOCR (phân tích nhãn đa giác, cắt ảnh từ và lọc mẫu hợp lệ). Huấn luyện mô hình PyTorch OCR (CNN + Transformer attention), đánh giá exact-match và BLEU kèm demo suy luận.
                 </p>
 
-                <div class="flex flex-wrap gap-2 mb-6">
-                  <span class="text-xs tag-pill">Python</span>
-                  <span class="text-xs tag-pill">PyTorch</span>
-                  <span class="text-xs tag-pill">CNN-Transformer</span>
+                <div class="flex flex-wrap gap-2 mb-6 project-tech-list">
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="python" title="Xem kỹ năng Python">Python</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="pytorch" title="Xem kỹ năng PyTorch">PyTorch</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="pytorch" title="CNN-Transformer Attention">CNN-Transformer</span>
                 </div>
               </div>
 
@@ -685,10 +705,10 @@
                   Quy trình tiền xử lý tập dữ liệu IWSLT15 EN–VI (làm sạch, tokenization, subword) và huấn luyện mô hình dịch máy Transformer. Đạt sentence BLEU (~17.87) kèm script dịch suy luận và detokenize.
                 </p>
 
-                <div class="flex flex-wrap gap-2 mb-6">
-                  <span class="text-xs tag-pill">Python</span>
-                  <span class="text-xs tag-pill">PyTorch</span>
-                  <span class="text-xs tag-pill">Transformer</span>
+                <div class="flex flex-wrap gap-2 mb-6 project-tech-list">
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="python" title="Xem kỹ năng Python">Python</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="pytorch" title="Xem kỹ năng PyTorch">PyTorch</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="pytorch" title="Transformer Attention">Transformer</span>
                 </div>
               </div>
 
@@ -732,10 +752,10 @@
                   Pipeline dự báo chuỗi thời gian chứng khoán (OHLCV + GDP): tiền xử lý, trích xuất đặc trưng và đánh giá MSE/R². Benchmark so sánh tốc độ hội tụ các thuật toán tối ưu (GD/SGD/Adam) trên Boston Housing.
                 </p>
 
-                <div class="flex flex-wrap gap-2 mb-6">
-                  <span class="text-xs tag-pill">Python</span>
-                  <span class="text-xs tag-pill">TensorFlow</span>
-                  <span class="text-xs tag-pill">LSTM / Time-Series</span>
+                <div class="flex flex-wrap gap-2 mb-6 project-tech-list">
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="python" title="Xem kỹ năng Python">Python</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="tensorflow" title="Xem kỹ năng TensorFlow">TensorFlow</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="python" title="LSTM / Time-Series">LSTM / Time-Series</span>
                 </div>
               </div>
 
@@ -779,10 +799,10 @@
                   Phần mềm quản lý kho tòa nhà: theo dõi tồn kho, nhập/xuất và báo cáo vận hành.
                 </p>
 
-                <div class="flex flex-wrap gap-2 mb-6">
-                  <span class="text-xs tag-pill">C#</span>
-                  <span class="text-xs tag-pill">.NET WinForms</span>
-                  <span class="text-xs tag-pill">MySQL</span>
+                <div class="flex flex-wrap gap-2 mb-6 project-tech-list">
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="csharp" title="Xem kỹ năng C#">C#</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="dotnet" title="Xem kỹ năng .NET">.NET WinForms</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="mysql" title="Xem kỹ năng MySQL">MySQL</span>
                 </div>
               </div>
 
@@ -826,10 +846,10 @@
                   Hệ thống POS nội bộ cho cửa hàng điện thoại: bán hàng/checkout, quản lý kho và xuất hóa đơn PDF.
                 </p>
 
-                <div class="flex flex-wrap gap-2 mb-6">
-                  <span class="text-xs tag-pill">Laravel 10</span>
-                  <span class="text-xs tag-pill">Livewire</span>
-                  <span class="text-xs tag-pill">MySQL</span>
+                <div class="flex flex-wrap gap-2 mb-6 project-tech-list">
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="laravel" title="Xem kỹ năng Laravel">Laravel 10</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="php" title="Xem kỹ năng PHP / Livewire">Livewire</span>
+                  <span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="mysql" title="Xem kỹ năng MySQL">MySQL</span>
                 </div>
               </div>
 
@@ -890,69 +910,187 @@
   <!-- Skills Section (xen kẽ: SLATE / DEEP OBSIDIAN) -->
   <section id="skills" class="py-24 bg-slate-50 dark:bg-[#070b14] relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in"
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-3 text-gray-900 dark:text-gray-100 animate-slide-in"
         data-i18n="skills_title">Kỹ năng</h2>
+      <p class="text-center text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 animate-fade-in"
+        data-i18n="skills_subtitle">
+        Nhấp vào kỹ năng có huy hiệu để xem các dự án thực tế đã ứng dụng công nghệ tương ứng.
+      </p>
 
-      <!-- Row 1 -->
+      <!-- 4 Technical Pillar Groups (2x2 Grid) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        <!-- Languages & Frontend -->
+        <!-- Group 1: Core Languages -->
         <div class="skills-card skills-card--dark">
-          <h3 class="skills-title" data-i18n="skills_lang_front">Ngôn ngữ & Frontend</h3>
-          <div class="skill-grid skill-grid--5">
-            <div class="skill-icon" title="C"><i class="devicon-c-plain colored"></i><span>C</span></div>
-            <div class="skill-icon" title="C#"><i class="devicon-csharp-plain colored"></i><span>C#</span></div>
-            <div class="skill-icon" title="Java"><i class="devicon-java-plain colored"></i><span>Java</span></div>
-            <div class="skill-icon" title="Python"><i class="devicon-python-plain colored"></i><span>Python</span></div>
-            <div class="skill-icon" title="JavaScript"><i
-                class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
-            <div class="skill-icon" title="HTML"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
-            <div class="skill-icon" title="CSS"><i class="devicon-css3-plain colored"></i><span>CSS</span></div>
-            <div class="skill-icon" title="Bootstrap"><i
-                class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
-            <div class="skill-icon" title="React"><i class="devicon-react-original colored"></i><span>React</span></div>
+          <div class="skills-card-header">
+            <div class="skills-card-icon-wrap">
+              <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="skills-title" data-i18n="skills_core_lang">Ngôn ngữ cốt lõi</h3>
+              <p class="skills-subtitle-meta" data-i18n="skills_core_lang_meta">Nền tảng lập trình &amp; tư duy thuật toán</p>
+            </div>
+          </div>
+          <div class="skill-grid skill-grid--compact">
+            <div class="skill-icon" data-skill-id="c" tabindex="0" role="button" aria-label="C" title="C">
+              <i class="devicon-c-plain colored"></i><span>C</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="csharp" tabindex="0" role="button" aria-label="C# - 1 dự án" title="C# • Ứng dụng trong 1 dự án">
+              <span class="skill-count-badge" data-count="1">1 DA</span>
+              <i class="devicon-csharp-plain colored"></i><span>C#</span>
+            </div>
+            <div class="skill-icon" data-skill-id="java" tabindex="0" role="button" aria-label="Java" title="Java">
+              <i class="devicon-java-plain colored"></i><span>Java</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="python" tabindex="0" role="button" aria-label="Python - 3 dự án" title="Python • Ứng dụng trong 3 dự án">
+              <span class="skill-count-badge" data-count="3">3 DA</span>
+              <i class="devicon-python-plain colored"></i><span>Python</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="javascript" tabindex="0" role="button" aria-label="JavaScript - 2 dự án" title="JavaScript • Ứng dụng trong 2 dự án">
+              <span class="skill-count-badge" data-count="2">2 DA</span>
+              <i class="devicon-javascript-plain colored"></i><span>JavaScript</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="php" tabindex="0" role="button" aria-label="PHP - 1 dự án" title="PHP • Ứng dụng trong 1 dự án">
+              <span class="skill-count-badge" data-count="1">1 DA</span>
+              <i class="devicon-php-plain colored"></i><span>PHP</span>
+            </div>
           </div>
         </div>
 
-        <!-- Backend & Database -->
+        <!-- Group 2: Backend Architecture & APIs -->
         <div class="skills-card skills-card--dark">
-          <h3 class="skills-title" data-i18n="skills_backend_db">Backend & Database</h3>
-          <div class="skill-grid skill-grid--5">
-            <div class="skill-icon" title="Node.js"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span>
+          <div class="skills-card-header">
+            <div class="skills-card-icon-wrap">
+              <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+              </svg>
             </div>
-            <div class="skill-icon" title="Express"><i class="devicon-express-original colored"></i><span>Express</span>
+            <div>
+              <h3 class="skills-title" data-i18n="skills_backend_arch">Kiến trúc Backend &amp; API</h3>
+              <p class="skills-subtitle-meta" data-i18n="skills_backend_arch_meta">RESTful API, MVC, JWT RBAC &amp; Microservices</p>
             </div>
-            <div class="skill-icon" title="PHP"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
-            <div class="skill-icon" title="Laravel"><i class="devicon-laravel-plain colored"></i><span>Laravel</span>
+          </div>
+          <div class="skill-grid skill-grid--compact">
+            <div class="skill-icon is-linked" data-skill-id="nodejs" tabindex="0" role="button" aria-label="Node.js - 2 dự án" title="Node.js • Ứng dụng trong 2 dự án">
+              <span class="skill-count-badge" data-count="2">2 DA</span>
+              <i class="devicon-nodejs-plain colored"></i><span>Node.js</span>
             </div>
-            <div class="skill-icon" title="MySQL"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
-            <div class="skill-icon" title="MongoDB"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span>
+            <div class="skill-icon is-linked" data-skill-id="express" tabindex="0" role="button" aria-label="Express.js - 2 dự án" title="Express.js • Ứng dụng trong 2 dự án">
+              <span class="skill-count-badge" data-count="2">2 DA</span>
+              <i class="devicon-express-original colored"></i><span>Express</span>
             </div>
-            <div class="skill-icon" title="SQL Server"><i class="devicon-microsoftsqlserver-plain colored"></i><span>SQL
-                Server</span></div>
-            <div class="skill-icon" title="REST API"><i class="devicon-postman-plain colored"></i><span>REST API</span>
+            <div class="skill-icon is-linked" data-skill-id="laravel" tabindex="0" role="button" aria-label="Laravel - 1 dự án" title="Laravel • Ứng dụng trong 1 dự án">
+              <span class="skill-count-badge" data-count="1">1 DA</span>
+              <i class="devicon-laravel-plain colored"></i><span>Laravel</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="restapi" tabindex="0" role="button" aria-label="RESTful API - 2 dự án" title="RESTful API • Ứng dụng trong 2 dự án">
+              <span class="skill-count-badge" data-count="2">2 DA</span>
+              <i class="devicon-postman-plain colored"></i><span>REST API</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="dotnet" tabindex="0" role="button" aria-label=".NET WinForms - 1 dự án" title=".NET WinForms • Ứng dụng trong 1 dự án">
+              <span class="skill-count-badge" data-count="1">1 DA</span>
+              <i class="devicon-dot-net-plain colored"></i><span>.NET</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="react" tabindex="0" role="button" aria-label="React - 2 dự án" title="React • Ứng dụng trong 2 dự án">
+              <span class="skill-count-badge" data-count="2">2 DA</span>
+              <i class="devicon-react-original colored"></i><span>React</span>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Row 2: DevOps centered -->
-      <div class="mt-8 devops-row">
-        <div class="skills-card skills-card--dark devops-card">
-          <h3 class="skills-title" data-i18n="skills_devops">DevOps / Tools</h3>
-          <div class="skill-grid skill-grid--5">
-            <div class="skill-icon" title="Docker"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
-            <div class="skill-icon" title="Docker Compose"><i
-                class="devicon-docker-plain colored"></i><span>Compose</span></div>
-            <div class="skill-icon" title="Nginx"><i class="devicon-nginx-original colored"></i><span>Nginx</span></div>
-            <div class="skill-icon" title="Git"><i class="devicon-git-plain colored"></i><span>Git</span></div>
-            <div class="skill-icon" title="GitHub"><i class="devicon-github-original colored"></i><span>GitHub</span>
+        <!-- Group 3: Databases & Storage -->
+        <div class="skills-card skills-card--dark">
+          <div class="skills-card-header">
+            <div class="skills-card-icon-wrap">
+              <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+              </svg>
             </div>
-            <div class="skill-icon" title="Postman"><i class="devicon-postman-plain colored"></i><span>Postman</span>
+            <div>
+              <h3 class="skills-title" data-i18n="skills_db_opt">Cơ sở dữ liệu &amp; Tối ưu</h3>
+              <p class="skills-subtitle-meta" data-i18n="skills_db_opt_meta">Raw SQL, Indexing, Transactions &amp; Schema Design</p>
             </div>
-            <div class="skill-icon" title="Figma"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
+          </div>
+          <div class="skill-grid skill-grid--compact">
+            <div class="skill-icon is-linked" data-skill-id="postgresql" tabindex="0" role="button" aria-label="PostgreSQL - 1 dự án" title="PostgreSQL • Ứng dụng trong 1 dự án">
+              <span class="skill-count-badge" data-count="1">1 DA</span>
+              <i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="mysql" tabindex="0" role="button" aria-label="MySQL - 2 dự án" title="MySQL • Ứng dụng trong 2 dự án">
+              <span class="skill-count-badge" data-count="2">2 DA</span>
+              <i class="devicon-mysql-plain colored"></i><span>MySQL</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="mongodb" tabindex="0" role="button" aria-label="MongoDB - 1 dự án" title="MongoDB • Ứng dụng trong 1 dự án">
+              <span class="skill-count-badge" data-count="1">1 DA</span>
+              <i class="devicon-mongodb-plain colored"></i><span>MongoDB</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="sqlserver" tabindex="0" role="button" aria-label="SQL Server - 1 dự án" title="SQL Server • Ứng dụng trong 1 dự án">
+              <span class="skill-count-badge" data-count="1">1 DA</span>
+              <i class="devicon-microsoftsqlserver-plain colored"></i><span>SQL Server</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="rawsql" tabindex="0" role="button" aria-label="Raw SQL - 1 dự án" title="Raw SQL • Ứng dụng trong 1 dự án">
+              <span class="skill-count-badge" data-count="1">1 DA</span>
+              <svg class="w-8 h-8 text-indigo-500 dark:text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+              <span>Raw SQL</span>
+            </div>
           </div>
         </div>
+
+        <!-- Group 4: AI, DevOps & Tools -->
+        <div class="skills-card skills-card--dark">
+          <div class="skills-card-header">
+            <div class="skills-card-icon-wrap">
+              <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="skills-title" data-i18n="skills_ai_devops">AI, DevOps &amp; Công cụ</h3>
+              <p class="skills-subtitle-meta" data-i18n="skills_ai_devops_meta">Mô hình Học sâu, Container hóa &amp; CI/CD Pipeline</p>
+            </div>
+          </div>
+          <div class="skill-grid skill-grid--compact">
+            <div class="skill-icon is-linked" data-skill-id="pytorch" tabindex="0" role="button" aria-label="PyTorch - 2 dự án" title="PyTorch • Ứng dụng trong 2 dự án">
+              <span class="skill-count-badge" data-count="2">2 DA</span>
+              <i class="devicon-pytorch-original colored"></i><span>PyTorch</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="tensorflow" tabindex="0" role="button" aria-label="TensorFlow - 1 dự án" title="TensorFlow • Ứng dụng trong 1 dự án">
+              <span class="skill-count-badge" data-count="1">1 DA</span>
+              <i class="devicon-tensorflow-original colored"></i><span>TensorFlow</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="docker" tabindex="0" role="button" aria-label="Docker - 1 dự án" title="Docker • Ứng dụng trong 1 dự án">
+              <span class="skill-count-badge" data-count="1">1 DA</span>
+              <i class="devicon-docker-plain colored"></i><span>Docker</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="compose" tabindex="0" role="button" aria-label="Docker Compose - 1 dự án" title="Docker Compose • Ứng dụng trong 1 dự án">
+              <span class="skill-count-badge" data-count="1">1 DA</span>
+              <i class="devicon-docker-plain colored"></i><span>Compose</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="nginx" tabindex="0" role="button" aria-label="Nginx - 1 dự án" title="Nginx • Ứng dụng trong 1 dự án">
+              <span class="skill-count-badge" data-count="1">1 DA</span>
+              <i class="devicon-nginx-original colored"></i><span>Nginx</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="git" tabindex="0" role="button" aria-label="Git - 7 dự án" title="Git • Quản lý phiên bản mã nguồn">
+              <span class="skill-count-badge" data-count="7">7 DA</span>
+              <i class="devicon-git-plain colored"></i><span>Git</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="github" tabindex="0" role="button" aria-label="GitHub - 7 dự án" title="GitHub • Lưu trữ &amp; CI/CD">
+              <span class="skill-count-badge" data-count="7">7 DA</span>
+              <i class="devicon-github-original colored"></i><span>GitHub</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="postman" tabindex="0" role="button" aria-label="Postman - 2 dự án" title="Postman • Kiểm thử API">
+              <span class="skill-count-badge" data-count="2">2 DA</span>
+              <i class="devicon-postman-plain colored"></i><span>Postman</span>
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>

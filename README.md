@@ -38,31 +38,40 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
 
 ## ✨ Highlights
 
-- Responsive UI (mobile-first)
-- Dark / Light mode (persisted in `localStorage`, falls back to OS preference)
-- VI / EN i18n via `data-i18n` (saved in `localStorage.lang`, includes page metadata)
-- Projects showcase with images and quick links
-- Skills & Certificates sections
-- **CV section with 2 PDF versions + “View / Download” buttons**
-- **Hero “Download CV” dropdown** to pick the CV version
-- GitHub section
-  - Contributions heatmap SVG auto-generated (Light/Dark) and auto-committed by GitHub Actions
-  - Activity Graph rendered via `github-readme-activity-graph`
-- Contact form via Formspree (no backend required)
-- Smooth scroll + section reveal animations + back-to-top button
-- SEO essentials: meta tags + OG image, plus `robots.txt`, `sitemap.xml`, and a custom `404.html`
+- **Modern Software Engineer Aesthetic**: Deep Obsidian dark theme (`#070b14`), glassmorphism with subtle borders, and ambient moving aurora mesh.
+- **Interactive Skill ↔ Project Linking (2-Way)**:
+  - **Skill ➔ Project**: Click any badged skill in the Skills section to smoothly scroll up, display the **Active Skill Filter Banner**, highlight applied projects with an electric glow ring, and automatically slide the Carousel to the matching project.
+  - **Project ➔ Skill**: Click any interactive tech tag on project cards or within the details modal to jump directly down to the Skills section with a focused pulsing highlight animation.
+- **Advanced Projects Showcase**:
+  - **Category Filter Tabs**: Filter across `All`, `Full-Stack`, `Backend`, and `AI`.
+  - **Bounded Carousel Slider**: Touch-swipe enabled with pagination indicators and boundary control.
+  - **Engineering Deep-Dive Modal**: Click any project to inspect system architecture, database design, and key engineering challenges & solutions.
+- **4 Technical Skill Pillars**: Categorized into *Core Languages*, *Backend Architecture & APIs*, *Databases & Optimization*, and *AI, DevOps & Tools*.
+- **Floating Action Bar (FAB) & Toast Notifications**: Quick 1-click email copy with instant toast alert, social links, and CV download.
+- Responsive UI (mobile-first) with smooth reveal animations.
+- Dark / Light mode (persisted in `localStorage`, falls back to OS preference).
+- VI / EN i18n via `data-i18n` (saved in `localStorage.lang`, includes page metadata).
+- **CV section with 2 targeted PDF versions + “View / Download” buttons**:
+  - *Fresher Backend Developer* (`assets/TranHoHoangVu_BE.pdf`)
+  - *AI Engineer Intern* (`assets/TranHoHoangVu_AI.pdf`)
+- **Hero “Download CV” dropdown** to pick the CV version directly.
+- **GitHub Activity Section**:
+  - Auto-generated contributions heatmap SVG (Light/Dark) committed daily via GitHub Actions.
+  - Dynamic Activity Graph rendered via `github-readme-activity-graph`.
+- Contact form via Formspree (no backend server needed).
+- SEO essentials: meta tags, OG image, `robots.txt`, `sitemap.xml`, and custom `404.html`.
 
 ---
 
 ## 🧰 Tech Stack
 
-| Tech | Usage |
-|---|---|
-| HTML5 | Page structure |
-| Tailwind CSS (CLI) & Vanilla CSS | Styling + responsive layout |
-| Vanilla JavaScript | Interactions, theme toggle, i18n |
-| GitHub Actions | GitHub Pages deploy + daily SVG updates |
-| Formspree | Contact form handling |
+| Category | Technologies / Tools | Usage |
+|---|---|---|
+| **Structure & Logic** | HTML5, Vanilla JavaScript (ES6+) | Core architecture, 2-way skill linking, carousel, modal, i18n |
+| **Styling & Theme** | Tailwind CSS (v4 CLI), Vanilla CSS | Deep Obsidian theme, glassmorphism, responsive grid |
+| **Icons & Typography** | Devicon, Heroicons SVG, Google Fonts | Tech icons, interface icons, Poppins & Inter typography |
+| **Automation & CI/CD** | GitHub Actions, Python (GraphQL script) | GitHub Pages deploy, daily contributions SVG auto-commits |
+| **Integrations** | Formspree | Contact form handling |
 
 ---
 
@@ -70,13 +79,13 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
 
 This portfolio includes **two PDF CV variants** (both in the CV section and the dropdown):
 
-1) **Backend Developer Intern (PDF)**  
+1) **Fresher Backend Developer (PDF)**  
    - File: `assets/TranHoHoangVu_BE.pdf`  
-   - Targeted for Backend Developer / Software Engineer Intern roles (REST APIs, databases, architecture)
+   - Targeted for Backend Developer / Software Engineer roles (Node.js, Express, Laravel, PostgreSQL raw SQL, RESTful APIs, JWT RBAC).
 
 2) **AI Engineer Intern (PDF)**  
    - File: `assets/TranHoHoangVu_AI.pdf`  
-   - Targeted for AI Engineer Intern roles (ML/DL, NLP/CV, AI pipelines)
+   - Targeted for AI / Data / Machine Learning roles (PyTorch, Deep Learning OCR, Transformers, NLP translation, time-series forecasting).
 
 ### i18n keys used (JS)
 
@@ -95,27 +104,36 @@ The CV section + dropdown text is controlled by `data-i18n` keys in `js/scripts.
 
 ```txt
 my-portfolio/
-├─ index.html
+├─ index.html                     # Main single-page application entry
 ├─ assets/
-│  ├─ projects/
-│  ├─ github-contrib-light.svg
-│  ├─ github-contrib-dark.svg
-│  ├─ profile1.jpg
-│  ├─ profile2.png
-│  ├─ TranHoHoangVu_BE.pdf
-│  ├─ TranHoHoangVu_AI.pdf
-│  ├─ og-image-v2.png
+│  ├─ projects/                   # Screenshots for 7 portfolio projects
+│  ├─ github-contrib-light.svg    # Auto-generated daily contribution map (light)
+│  ├─ github-contrib-dark.svg     # Auto-generated daily contribution map (dark)
+│  ├─ TranHoHoangVu_BE.pdf        # Backend Developer CV
+│  ├─ TranHoHoangVu_AI.pdf        # AI Engineer CV
+│  ├─ og-image-v2.png             # Open Graph preview image
 │  └─ favicon.*
 ├─ css/
-│  ├─ tailwind-input.css
-│  ├─ tailwind.css
-│  └─ styles.css
+│  ├─ tailwind-input.css          # Tailwind CLI input config
+│  ├─ tailwind.css                # Compiled Tailwind CSS
+│  └─ styles.css                  # Custom theme, animations, carousel, modal, skills
 ├─ js/
-│  ├─ scripts.js
-│  └─ build_github_contrib_svgs.py
+│  ├─ scripts.js                  # App controller, i18n, carousel, modal, 2-way skill linking
+│  └─ build_github_contrib_svgs.py # Python script for GitHub GraphQL contribution SVG
+├─ projects-docs/                 # Comprehensive documentation for 7 projects
+│  ├─ 01-coursehub-lms.md
+│  ├─ 02-ecommerce-platform.md
+│  ├─ 03-vietnamese-ocr.md
+│  ├─ 04-nlp-translation.md
+│  ├─ 05-stock-forecasting-ml.md
+│  ├─ 06-warehouse-ma.md
+│  └─ 07-pos-system.md
 ├─ .github/workflows/
-│  ├─ static.yml
-│  └─ update-github-contrib.yml
+│  ├─ static.yml                  # GitHub Pages automated deployment
+│  └─ update-github-contrib.yml   # Daily cron job for contribution SVG
+├─ UI_UX_ANALYSIS.md              # UI/UX improvement report and feature roadmap
+├─ README.md                      # English documentation
+├─ README_VI.md                   # Vietnamese documentation
 ├─ package.json
 └─ package-lock.json
 ```

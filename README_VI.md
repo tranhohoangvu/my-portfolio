@@ -38,31 +38,40 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
 
 ## ✨ Điểm nổi bật
 
-- Giao diện responsive (mobile-first)
-- Dark / Light mode (lưu trong `localStorage`, fallback theo OS)
-- i18n VI / EN qua `data-i18n` (lưu trong `localStorage.lang`, có cả metadata)
-- Showcase Projects (ảnh + link nhanh)
-- Skills & Certificates
-- **Section CV với 2 bản PDF + nút “View / Download”**
-- **Dropdown “Download CV” ở hero** để chọn đúng phiên bản CV
-- GitHub section
-  - SVG contributions heatmap auto-generate (Light/Dark) và auto-commit bằng GitHub Actions
-  - Activity Graph hiển thị bằng `github-readme-activity-graph`
-- Contact form qua Formspree (không cần backend)
-- Smooth scroll + reveal animation + back-to-top button
-- SEO cơ bản: meta tags + OG, kèm `robots.txt`, `sitemap.xml`, và `404.html`
+- **Thẩm mỹ Kỹ sư Phần mềm Hiện đại**: Nền tối Deep Obsidian sang trọng (`#070b14`), kính mờ glassmorphism với viền kim loại mảnh, và hiệu ứng quầng sáng aurora chuyển động sống động.
+- **Tương tác liên kết Kỹ năng ↔ Dự án 2 chiều (Interactive Skill Linking)**:
+  - **Kỹ năng ➔ Dự án**: Click vào bất kỳ kỹ năng nào có huy hiệu trong mục Kỹ năng sẽ tự động cuộn lên Dự án, hiển thị thanh **Active Skill Filter Banner**, làm sáng viền các dự án áp dụng công nghệ đó (`.is-skill-matched`) và tự động trượt Carousel đến đúng dự án.
+  - **Dự án ➔ Kỹ năng**: Click vào các tag công nghệ trên thẻ dự án hoặc trong modal chi tiết sẽ cuộn ngay xuống Kỹ năng và kích hoạt hiệu ứng nhấp nháy phát sáng (**Pulsing Focus Highlight**) để định vị tức thì.
+- **Khu vực Dự án Nâng cao**:
+  - **Bộ lọc danh mục đa dạng**: `Tất cả` | `Full-Stack` | `Backend` | `AI`.
+  - **Carousel có giới hạn (Bounded Slider)**: Vuốt chạm cảm ứng mượt mà trên mobile, thanh điều hướng và chỉ số trang đồng bộ.
+  - **Modal Chi tiết Kỹ thuật chuyên sâu**: Xem kiến trúc hệ thống (System Architecture), cấu trúc cơ sở dữ liệu và các bài toán kỹ thuật hóc búa đã giải quyết cho từng dự án.
+- **Tái cấu trúc Kỹ năng theo 4 Trụ cột Kỹ thuật**: *Ngôn ngữ cốt lõi*, *Kiến trúc Backend & API*, *Cơ sở dữ liệu & Tối ưu*, và *AI, DevOps & Công cụ*.
+- **Thanh tác vụ nổi (FAB) & Hệ thống Toast Notification**: Sao chép email 1-click kèm thông báo Toast tức thì, mở nhanh LinkedIn/GitHub và tải CV tiện lợi.
+- Giao diện responsive (mobile-first) với animation mềm mại khi cuộn trang.
+- Dark / Light mode (lưu trong `localStorage`, fallback theo hệ điều hành).
+- i18n VI / EN qua `data-i18n` (lưu trong `localStorage.lang`, cập nhật cả metadata và title).
+- **Section CV với 2 bản PDF chuyên biệt + nút “View / Download”**:
+  - *Fresher Backend Developer* (`assets/TranHoHoangVu_BE.pdf`)
+  - *AI Engineer Intern* (`assets/TranHoHoangVu_AI.pdf`)
+- **Dropdown “Download CV” ở Hero** để tải nhanh phiên bản CV mong muốn.
+- **GitHub section**:
+  - SVG contributions heatmap auto-generate (Light/Dark) và tự động commit hằng ngày qua GitHub Actions.
+  - Activity Graph hiển thị trực quan thông qua `github-readme-activity-graph`.
+- Contact form qua Formspree (không cần backend server).
+- Tối ưu SEO: meta tags, Open Graph, `robots.txt`, `sitemap.xml`, và trang `404.html` tùy biến.
 
 ---
 
 ## 🧰 Công nghệ
 
-| Công nghệ | Mục đích |
-|---|---|
-| HTML5 | Cấu trúc trang |
-| Tailwind CSS (CLI) & Vanilla CSS | Styling + responsive |
-| Vanilla JavaScript | Tương tác, theme toggle, i18n |
-| GitHub Actions | Deploy Pages + update SVG hằng ngày |
-| Formspree | Xử lý form liên hệ |
+| Phân loại | Công nghệ / Công cụ | Mục đích sử dụng |
+|---|---|---|
+| **Cấu trúc & Logic** | HTML5, Vanilla JavaScript (ES6+) | Kiến trúc lõi, liên kết 2 chiều Kỹ năng ↔ Dự án, carousel, modal, i18n |
+| **Giao diện & Thẩm mỹ** | Tailwind CSS (v4 CLI), Vanilla CSS | Theme Deep Obsidian, glassmorphism, hiệu ứng chuyển động, layout responsive |
+| **Icon & Typography** | Devicon, Heroicons SVG, Google Fonts | Icon công nghệ lập trình, icon giao diện, font chữ Poppins & Inter |
+| **Tự động hóa & CI/CD** | GitHub Actions, Python (GraphQL script) | Tự động deploy GitHub Pages, cron job commit SVG contribution hằng ngày |
+| **Tích hợp** | Formspree | Xử lý gửi biểu mẫu liên hệ |
 
 ---
 
@@ -70,13 +79,13 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
 
 Portfolio có **2 phiên bản CV dạng PDF** (hiển thị ở section CV và dropdown):
 
-1) **Backend Developer Intern (PDF)**  
+1) **Fresher Backend Developer (PDF)**  
    - File: `assets/TranHoHoangVu_BE.pdf`  
-   - Dùng khi ứng tuyển Backend Developer / Software Engineer Intern (REST APIs, databases, kiến trúc hệ thống)
+   - Dùng khi ứng tuyển Backend Developer / Software Engineer (Node.js, Express, Laravel, PostgreSQL raw SQL, RESTful APIs, JWT RBAC).
 
 2) **AI Engineer Intern (PDF)**  
    - File: `assets/TranHoHoangVu_AI.pdf`  
-   - Dùng khi ứng tuyển AI Engineer Intern (ML/DL, NLP/CV, AI pipelines)
+   - Dùng khi ứng tuyển AI / Data / Machine Learning (PyTorch, Deep Learning OCR, Transformers, dịch máy NLP, dự báo chuỗi thời gian).
 
 ### Key i18n đang dùng (JS)
 
@@ -95,27 +104,36 @@ Text của section CV + dropdown được điều khiển qua `data-i18n` trong 
 
 ```txt
 my-portfolio/
-├─ index.html
+├─ index.html                     # Trang chính giao diện Single-Page Application
 ├─ assets/
-│  ├─ projects/
-│  ├─ github-contrib-light.svg
-│  ├─ github-contrib-dark.svg
-│  ├─ profile1.jpg
-│  ├─ profile2.png
-│  ├─ TranHoHoangVu_BE.pdf
-│  ├─ TranHoHoangVu_AI.pdf
-│  ├─ og-image-v2.png
+│  ├─ projects/                   # Ảnh chụp màn hình 7 dự án portfolio
+│  ├─ github-contrib-light.svg    # Bản đồ đóng góp GitHub tự động (giao diện sáng)
+│  ├─ github-contrib-dark.svg     # Bản đồ đóng góp GitHub tự động (giao diện tối)
+│  ├─ TranHoHoangVu_BE.pdf        # File CV Fresher Backend Developer
+│  ├─ TranHoHoangVu_AI.pdf        # File CV AI Engineer Intern
+│  ├─ og-image-v2.png             # Ảnh xem trước Open Graph khi chia sẻ mạng xã hội
 │  └─ favicon.*
 ├─ css/
-│  ├─ tailwind-input.css
-│  ├─ tailwind.css
-│  └─ styles.css
+│  ├─ tailwind-input.css          # File cấu hình Tailwind CLI input
+│  ├─ tailwind.css                # File CSS Tailwind đã biên dịch
+│  └─ styles.css                  # Toàn bộ styles tùy biến, animation, carousel, modal, skills
 ├─ js/
-│  ├─ scripts.js
-│  └─ build_github_contrib_svgs.py
+│  ├─ scripts.js                  # Controller chính, i18n, carousel slider, modal, liên kết kỹ năng
+│  └─ build_github_contrib_svgs.py # Script Python tạo SVG heatmap từ GitHub GraphQL API
+├─ projects-docs/                 # Tài liệu kỹ thuật chi tiết cho 7 dự án
+│  ├─ 01-coursehub-lms.md
+│  ├─ 02-ecommerce-platform.md
+│  ├─ 03-vietnamese-ocr.md
+│  ├─ 04-nlp-translation.md
+│  ├─ 05-stock-forecasting-ml.md
+│  ├─ 06-warehouse-ma.md
+│  └─ 07-pos-system.md
 ├─ .github/workflows/
-│  ├─ static.yml
-│  └─ update-github-contrib.yml
+│  ├─ static.yml                  # Workflow GitHub Actions tự động deploy GitHub Pages
+│  └─ update-github-contrib.yml   # Workflow cron job tự động cập nhật SVG đóng góp hằng ngày
+├─ UI_UX_ANALYSIS.md              # Báo cáo phân tích UI/UX & lộ trình nâng cấp tính năng
+├─ README.md                      # Tài liệu tiếng Anh
+├─ README_VI.md                   # Tài liệu tiếng Việt
 ├─ package.json
 └─ package-lock.json
 ```
