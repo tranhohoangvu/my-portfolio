@@ -58,17 +58,18 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
   - *AI Engineer Intern* (`assets/cv/TranHoHoangVu_AI.pdf`)
 - **Section Chứng chỉ (Certificates)**:
   - Tiêu đề gradient + huy hiệu kicker + phụ đề hiện đại.
+  - **Bố cục lưới 3 cột linh hoạt (Responsive 3-Column Grid)**: Tối ưu hiển thị 3 chứng chỉ/hàng trên laptop/desktop màn hình rộng (`@media (min-width: 1024px)`), 2 cột trên tablet và 1 cột trên mobile.
   - **Bộ lọc danh mục (Category Filter Tabs)**: Lọc nhanh theo `Tất cả`, `AI & Deep Learning`, `Phân tích dữ liệu`, `Quy trình & Agile`, `Ngoại ngữ` kèm huy hiệu số lượng động.
   - **Nút Xem thêm / Thu gọn thông minh (Show More / Collapse)**: Hiển thị trước 3 chứng chỉ mới nhất, nút `Xem thêm (X chứng chỉ) ↓` giúp tiết kiệm không gian và mở rộng mượt mà.
-  - Bong bóng icon đơn vị cấp chứng chỉ (Microsoft • The Linux Foundation • Google • Google for Education • DeepLearning.AI • Techbase Agile • British Council).
+  - **Nhận diện thương hiệu & Đồng bộ màu sắc**: Toàn bộ các thẻ đều có vector logo chuẩn của đơn vị cấp và theme màu sắc riêng biệt (Techbase Đỏ, British Council Xanh Hoàng gia, Google Xanh, DeepLearning Đỏ-Cam, Gemini Tím, Linux Xanh Dương, Microsoft Xanh) kèm hiệu ứng hover phát sáng độc bản.
   - **Chứng chỉ Microsoft AI Product Manager** (Microsoft • Coursera): xem PDF trực tiếp + xác minh chứng chỉ gốc trực tuyến.
   - **Chứng chỉ Introduction to Linux LFS101** (The Linux Foundation): xem PDF trực tiếp + xác minh chứng chỉ gốc trực tuyến.
   - **Chứng chỉ Google Data Analytics Professional** (Google • Coursera): xem PDF trực tiếp + xác minh chứng chỉ gốc trực tuyến.
   - **Chứng chỉ Gemini Certified Educator** (Google for Education): xem PDF trực tiếp + xác minh chứng chỉ gốc trên Google Accredible.
   - **Chứng chỉ Gemini Certified Student** (Google for Education): xem PDF trực tiếp + xác minh chứng chỉ gốc trên Google Accredible.
   - **Chứng chỉ DeepLearning.AI TensorFlow Developer** (DeepLearning.AI • Coursera): xem PDF trực tiếp + xác minh chứng chỉ gốc trực tuyến.
-  - Chứng chỉ Techbase Agile có nút xem trực tiếp bản PDF chất lượng cao.
-  - Thanh tiến trình điểm số **Aptis ESOL** (135/200, kích hoạt animation mượt mà khi cuộn tới qua IntersectionObserver) • Trình độ CEFR: B1.
+  - **Chứng chỉ Agile & Scrum Framework 2024** (Techbase Viet Nam): logo 2 mũi tên vát chuẩn nhận diện + xem trực tiếp bản PDF chất lượng cao.
+  - **Chứng chỉ Quốc tế Aptis ESOL** (British Council): biểu tượng 4 chấm tròn đặc trưng, thanh tiến trình điểm số (135/200, kích hoạt animation mượt mà khi cuộn tới qua IntersectionObserver) • Trình độ CEFR: B1.
   - **Bảo mật PII**: bản xem trước online được che mờ thông tin cá nhân (CCCD, mã QR), tích hợp **Form Modal Formspree** để nhà tuyển dụng gửi yêu cầu nhận bản gốc đối chiếu.
   - Cụm nút thao tác thiết kế cân đối, gọn đẹp kèm hiệu ứng hover tương tác.
 - **Section Hoạt động GitHub** (được thiết kế lại):

@@ -59,17 +59,18 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
 - **Hero "Download CV" dropdown** to pick the CV version directly.
 - **Certificates Section**:
   - Gradient headline + kicker badge + subtitle header.
+  - **Responsive 3-Column Grid**: Optimized layout displaying 3 certificates per row on widescreen laptops/desktops (`@media (min-width: 1024px)`), 2 columns on tablets, and 1 column on mobile.
   - **Category Filter Tabs**: 1-click filtering across `All`, `AI & Deep Learning`, `Data Analytics`, `Software & Agile`, and `Language` with dynamic count badges.
   - **Smart Expand & Collapse ("Show More")**: Displays the top 3 newest certificates initially with a sleek `Show more (X certificates) ↓` toggle to keep page length compact.
-  - Issuer icon bubbles (Microsoft • The Linux Foundation • Google • Google for Education • DeepLearning.AI • Techbase Agile • British Council).
+  - **Authentic Brand Identity & Theme Sync**: Every card is custom-themed to match its issuer's official brand colors and vector logos (Techbase Crimson Red, British Council Blue, Google Blue, DeepLearning Red, Gemini Purple, Linux Sky Blue, Microsoft Blue) with dynamic brand hover glows.
   - **Microsoft AI Product Manager Professional Certificate** (Microsoft • Coursera): direct PDF preview + live credential verification.
   - **Introduction to Linux LFS101 Certificate** (The Linux Foundation): direct PDF preview + official credential verification.
   - **Google Data Analytics Professional Certificate** (Google • Coursera): direct PDF preview + live credential verification.
   - **Gemini Certified Educator** (Google for Education): direct PDF preview + live credential verification on Google Accredible.
   - **Gemini Certified Student (University)** (Google for Education): direct PDF preview + live credential verification on Google Accredible.
   - **DeepLearning.AI TensorFlow Developer Certificate** (DeepLearning.AI • Coursera): direct PDF preview + live credential verification.
-  - Techbase Agile certificate available via direct high-res PDF preview.
-  - Aptis ESOL **score progress bar** (135/200, animated on scroll via IntersectionObserver) • Overall CEFR level: B1.
+  - **Agile & Scrum Framework 2024** (Techbase Viet Nam): authentic double-chevron logo + high-res PDF preview.
+  - **Aptis ESOL International Certificate** (British Council): official 4-dot symbol, **score progress bar** (135/200, animated on scroll via IntersectionObserver) • Overall CEFR level: B1.
   - **Privacy protection**: online preview has sensitive PII (National ID, QR) redacted, with an interactive **Formspree Modal Request** for recruiters to request the original verified scan.
   - Balanced, sleek action buttons with micro-interaction hover feedback.
 - **GitHub Activity Section** (redesigned):
