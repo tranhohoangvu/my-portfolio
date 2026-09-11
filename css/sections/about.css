@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    AVATAR DYNAMIC AURA & FLOAT ANIMATIONS
    ========================================================================== */
 .avatar-wrapper {
@@ -427,6 +427,29 @@ html:not(.dark) .about-headline {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+/* Work mode chip highlight */
+.about-chip--workmode {
+  background: rgba(16, 185, 129, 0.1) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  color: #059669 !important;
+}
+
+.dark .about-chip--workmode {
+  background: rgba(16, 185, 129, 0.16) !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  color: #34d399 !important;
+}
+
+.about-chip--workmode:hover {
+  border-color: rgba(16, 185, 129, 0.6) !important;
+  box-shadow: 0 8px 20px -4px rgba(16, 185, 129, 0.35) !important;
+  color: #059669 !important;
+}
+
+.dark .about-chip--workmode:hover {
+  color: #6ee7b7 !important;
 }
 
 .about-chip {

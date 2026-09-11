@@ -210,6 +210,7 @@ const I18N = {
     cv_menu_ai_title: "AI Engineer Intern (PDF)",
     cv_menu_ai_meta: "TranHoHoangVu_AI.pdf",
 
+    about_top_kicker: "👤 VỀ BẢN THÂN • PROFILE",
     about_title: "Giới thiệu",
     about_description:
       "Mình là Trần Hồ Hoàng Vũ, tốt nghiệp ngành Khoa học Máy tính tại Đại học Tôn Đức Thắng với kinh nghiệm thực tế về phát triển backend qua kỳ thực tập Kỹ sư phần mềm và các dự án học thuật. Mình thích xây dựng các giải pháp thực tế, từ thiết kế RESTful APIs, làm việc với cơ sở dữ liệu đến phát triển các quy trình tự động hóa và xử lý dữ liệu. Mình đã từng làm việc với Node.js, Express.js, Laravel và nhiều công nghệ cơ sở dữ liệu khác nhau. Định hướng sắp tới, mình muốn củng cố kỹ năng kỹ thuật phần mềm, tích lũy thêm kinh nghiệm thực tế và xây dựng phần mềm đáng tin cậy, dễ bảo trì, đồng thời không ngừng học hỏi và cải thiện bản thân.",
@@ -218,10 +219,14 @@ const I18N = {
     about_chip_1: "Backend APIs",
     about_chip_2: "Cơ sở dữ liệu",
     about_chip_3: "AI ứng dụng • NLP/CV",
+    about_chip_workmode: "💼 On-site • Hybrid • Remote",
     about_stat_1: "Dự án AI/ML",
     about_stat_2: "Dự án Backend",
     about_stat_3: "Fresher & Sẵn sàng làm việc",
 
+    projects_kicker: "🚀 SẢN PHẨM & DỰ ÁN • SHOWCASE",
+    projects_headline: "Dự án & Giải pháp Kỹ thuật",
+    projects_subtitle: "Từ thiết kế hệ thống Backend RESTful API đến xây dựng và triển khai các mô hình AI thực tế.",
     projects_title: "Dự án",
     projects_tab_all: "Tất cả",
     projects_tab_fullstack: "Full-Stack",
@@ -288,8 +293,10 @@ const I18N = {
     p3_title: "An Khang Store POS",
     p3_tag4: "DOMPDF",
 
+    skills_kicker: "⚡ NĂNG LỰC CỐT LÕI • TECH STACK",
+    skills_headline: "Kỹ năng & Chuyên môn Kỹ thuật",
     skills_title: "Kỹ năng",
-    skills_subtitle: "Nhấp vào kỹ năng có huy hiệu để xem các dự án thực tế đã ứng dụng công nghệ tương ứng.",
+    skills_subtitle: "Nhấp vào kỹ năng có huy hiệu để lọc và xem các dự án thực tế đã ứng dụng công nghệ tương ứng.",
     skills_core_lang: "Ngôn ngữ cốt lõi",
     skills_core_lang_meta: "Nền tảng lập trình & tư duy thuật toán",
     skills_backend_arch: "Kiến trúc Backend & API",
@@ -475,6 +482,7 @@ const I18N = {
     cv_menu_ai_title: "AI Engineer Intern (PDF)",
     cv_menu_ai_meta: "TranHoHoangVu_AI.pdf",
 
+    about_top_kicker: "👤 ABOUT ME • PROFILE",
     about_title: "About",
     about_description:
       "My name is Tran Ho Hoang Vu. I’m a Computer Science graduate from Ton Duc Thang University with hands-on experience in backend development through a software engineering internship and academic projects. I enjoy building practical solutions, from designing RESTful APIs and working with databases to developing automation workflows and processing data. I have worked with Node.js, Express.js, Laravel, and various database technologies. Going forward, I want to strengthen my software engineering skills, gain more real-world experience, and build reliable, maintainable software while continuing to learn and improve.",
@@ -483,10 +491,14 @@ const I18N = {
     about_chip_1: "Backend APIs",
     about_chip_2: "Databases",
     about_chip_3: "Applied AI • NLP/CV",
+    about_chip_workmode: "💼 On-site • Hybrid • Remote",
     about_stat_1: "AI/ML Projects",
     about_stat_2: "Backend Projects",
     about_stat_3: "Fresher & Intern Ready",
 
+    projects_kicker: "🚀 FEATURED WORK • SHOWCASE",
+    projects_headline: "Engineered Projects & Solutions",
+    projects_subtitle: "From scalable backend RESTful APIs to practical deployed AI & Machine Learning pipelines.",
     projects_title: "Projects",
     projects_tab_all: "All",
     projects_tab_fullstack: "Full-Stack",
@@ -553,8 +565,10 @@ const I18N = {
     p3_title: "An Khang Store POS",
     p3_tag4: "DOMPDF",
 
+    skills_kicker: "⚡ CORE EXPERTISE • TECH STACK",
+    skills_headline: "Technical Skills & Competencies",
     skills_title: "Skills",
-    skills_subtitle: "Click on any badged skill to highlight the real-world projects applying that technology.",
+    skills_subtitle: "Click on any badged skill to filter and highlight real-world projects applying that technology.",
     skills_core_lang: "Core Languages",
     skills_core_lang_meta: "Programming foundations & algorithmic problem solving",
     skills_backend_arch: "Backend Architecture & APIs",

@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    DESIGN TOKENS & SEMANTIC COLOR SYSTEM
    Theme: Modern Software Engineer (Deep Slate + Obsidian + Neon Indigo/Cyan)
    ========================================================================== */
@@ -199,4 +199,67 @@ body {
     height: 2.75rem;
   }
 }
+
+/* ==========================================================================
+   UNIFIED SECTION HEADERS (Design System)
+   ========================================================================== */
+.section-header-wrap {
+  text-align: center;
+  margin-bottom: 2.75rem;
+}
+
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.95rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.28);
+  color: #6366f1;
+  margin-bottom: 0.85rem;
+  user-select: none;
+}
+
+.dark .section-kicker {
+  background: rgba(99, 102, 241, 0.16);
+  border-color: rgba(99, 102, 241, 0.38);
+  color: #a5b4fc;
+}
+
+.section-headline-gradient {
+  font-size: clamp(1.85rem, 4.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, #1e293b 0%, #4f46e5 50%, #0891b2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.75rem;
+}
+
+.dark .section-headline-gradient {
+  background: linear-gradient(135deg, #f8fafc 0%, #c7d2fe 45%, #67e8f9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle-text {
+  font-size: 0.98rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.dark .section-subtitle-text {
+  color: #94a3b8;
+}
+
 
