@@ -58,11 +58,12 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
   - *AI Engineer Intern* (`assets/cv/TranHoHoangVu_AI.pdf`)
 - **Section Chứng chỉ (Certificates)**:
   - Tiêu đề gradient + huy hiệu kicker + phụ đề hiện đại.
-  - Bong bóng icon đơn vị cấp chứng chỉ (Techbase Agile • British Council • Google).
+  - Bong bóng icon đơn vị cấp chứng chỉ (Google • DeepLearning.AI • Techbase Agile • British Council).
+  - **Chứng chỉ Google Data Analytics Professional** (Google • Coursera): xem PDF trực tiếp + xác minh chứng chỉ gốc trực tuyến.
+  - **Chứng chỉ DeepLearning.AI TensorFlow Developer** (DeepLearning.AI • Coursera): xem PDF trực tiếp + xác minh chứng chỉ gốc trực tuyến.
+  - Chứng chỉ Techbase Agile có nút xem trực tiếp bản PDF chất lượng cao.
   - Thanh tiến trình điểm số **Aptis ESOL** (135/200, kích hoạt animation mượt mà khi cuộn tới qua IntersectionObserver) • Trình độ CEFR: B1.
   - **Bảo mật PII**: bản xem trước online được che mờ thông tin cá nhân (CCCD, mã QR), tích hợp **Form Modal Formspree** để nhà tuyển dụng gửi yêu cầu nhận bản gốc đối chiếu.
-  - Chứng chỉ Techbase Agile có nút xem trực tiếp bản PDF chất lượng cao.
-  - **Chứng chỉ Google Data Analytics Professional** (Google • Coursera) với 2 nút thao tác: xem PDF trực tiếp + xác minh chứng chỉ gốc trực tuyến.
   - Cụm nút thao tác thiết kế cân đối, gọn đẹp kèm hiệu ứng hover tương tác.
 - **Section Hoạt động GitHub** (được thiết kế lại):
   - Thanh thống kê nhanh (Quick Stats Bar): **16 repos · 22 stars** · Các ngôn ngữ hàng đầu (Python, TypeScript, JavaScript, Java) — số liệu trực tiếp từ GitHub API.
@@ -132,7 +133,7 @@ my-portfolio/
 ├─ assets/
 │  ├─ projects/                   # Ảnh chụp màn hình 7 dự án portfolio
 │  ├─ cv/                         # Hồ sơ ứng tuyển (CV Fresher Backend & AI Engineer PDF)
-│  ├─ certificates/               # Chứng chỉ chuyên môn (Aptis PDF, Techbase Agile PDF & Google Data Analytics PDF)
+│  ├─ certificates/               # Chứng chỉ chuyên môn (Google Data Analytics, DeepLearning.AI TensorFlow, Techbase Agile & Aptis PDFs)
 │  ├─ profile/                    # Ảnh đại diện cá nhân (profile1.jpg, profile2.png)
 │  ├─ icons/                      # Biểu tượng favicon (SVG, PNG) & App icon PWA
 │  ├─ github/                     # Bản đồ đóng góp & đồ thị hoạt động GitHub tự động (SVG)

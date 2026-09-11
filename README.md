@@ -59,11 +59,12 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
 - **Hero "Download CV" dropdown** to pick the CV version directly.
 - **Certificates Section**:
   - Gradient headline + kicker badge + subtitle header.
-  - Issuer icon bubbles (Techbase Agile • British Council • Google).
+  - Issuer icon bubbles (Google • DeepLearning.AI • Techbase Agile • British Council).
+  - **Google Data Analytics Professional Certificate** (Google • Coursera): direct PDF preview + live credential verification.
+  - **DeepLearning.AI TensorFlow Developer Certificate** (DeepLearning.AI • Coursera): direct PDF preview + live credential verification.
+  - Techbase Agile certificate available via direct high-res PDF preview.
   - Aptis ESOL **score progress bar** (135/200, animated on scroll via IntersectionObserver) • Overall CEFR level: B1.
   - **Privacy protection**: online preview has sensitive PII (National ID, QR) redacted, with an interactive **Formspree Modal Request** for recruiters to request the original verified scan.
-  - Techbase Agile certificate available via direct high-res PDF preview.
-  - **Google Data Analytics Professional Certificate** (Google • Coursera) with dual actions: direct PDF preview + live credential verification.
   - Balanced, sleek action buttons with micro-interaction hover feedback.
 - **GitHub Activity Section** (redesigned):
   - Quick Stats Bar: **16 repos · 22 stars** · Top languages (Python, TypeScript, JavaScript, Java) — fetched from GitHub API.
@@ -133,7 +134,7 @@ my-portfolio/
 ├─ assets/
 │  ├─ projects/                   # Screenshots for 7 portfolio projects
 │  ├─ cv/                         # Career CVs (Backend Developer & AI Engineer PDFs)
-│  ├─ certificates/               # Verified certificates (Aptis PDF, Techbase Agile PDF & Google Data Analytics PDF)
+│  ├─ certificates/               # Verified certificates (Google Data Analytics, DeepLearning.AI TensorFlow, Techbase Agile & Aptis PDFs)
 │  ├─ profile/                    # Personal avatar & profile photos
 │  ├─ icons/                      # Favicons (SVG, PNG) & PWA app icons
 │  ├─ github/                     # Auto-generated daily contribution & activity graph SVGs

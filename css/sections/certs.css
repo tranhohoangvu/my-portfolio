@@ -61,19 +61,19 @@
   color: #94a3b8;
 }
 
-/* --- Cert Grid --- */
+/* --- Cert Grid (2x2 layout on desktop/tablet) --- */
 .cert-grid-v2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
-  max-width: 1200px;
+  max-width: 1060px;
   margin: 0 auto;
   align-items: start;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .cert-grid-v2 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -184,6 +184,18 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
+.cert-issuer-icon--deeplearning {
+  background: #ffffff;
+  border: 1px solid rgba(238, 76, 44, 0.28);
+  box-shadow: 0 2px 8px rgba(238, 76, 44, 0.12);
+}
+
+.dark .cert-issuer-icon--deeplearning {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
 .cert-card-v2__meta {
   flex: 1;
   min-width: 0;
@@ -258,6 +270,18 @@
   background: rgba(66, 133, 244, 0.15);
   color: #8ab4f8;
   border-color: rgba(66, 133, 244, 0.35);
+}
+
+.cert-card-v2__tag--deeplearning {
+  background: rgba(238, 76, 44, 0.1);
+  color: #d9381e;
+  border-color: rgba(238, 76, 44, 0.25);
+}
+
+.dark .cert-card-v2__tag--deeplearning {
+  background: rgba(238, 76, 44, 0.15);
+  color: #ff7a60;
+  border-color: rgba(238, 76, 44, 0.35);
 }
 
 /* --- Cert Description --- */
@@ -489,6 +513,18 @@
   border-color: rgba(99, 102, 241, 0.3);
 }
 
+.cert-skill-chip--deeplearning {
+  background: rgba(238, 76, 44, 0.08);
+  color: #d9381e;
+  border-color: rgba(238, 76, 44, 0.2);
+}
+
+.dark .cert-skill-chip--deeplearning {
+  background: rgba(238, 76, 44, 0.12);
+  color: #ff8a73;
+  border-color: rgba(238, 76, 44, 0.3);
+}
+
 /* --- Cert footer row --- */
 .cert-card-v2__footer {
   margin-top: 1.25rem;
@@ -649,6 +685,35 @@
   border-color: rgba(66, 133, 244, 0.5);
   transform: translateY(-1.5px);
   box-shadow: 0 4px 16px rgba(66, 133, 244, 0.35);
+}
+
+.cert-view-btn--deeplearning {
+  background: rgba(238, 76, 44, 0.08);
+  color: #d9381e;
+  border-color: rgba(238, 76, 44, 0.25);
+  box-shadow: 0 1px 2px rgba(238, 76, 44, 0.06);
+}
+
+.cert-view-btn--deeplearning:hover {
+  background: rgba(238, 76, 44, 0.16);
+  color: #c02d15;
+  border-color: rgba(238, 76, 44, 0.45);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 14px rgba(238, 76, 44, 0.22);
+}
+
+.dark .cert-view-btn--deeplearning {
+  background: rgba(238, 76, 44, 0.12);
+  color: #ff7a60;
+  border-color: rgba(238, 76, 44, 0.28);
+}
+
+.dark .cert-view-btn--deeplearning:hover {
+  background: rgba(238, 76, 44, 0.22);
+  color: #ffffff;
+  border-color: rgba(238, 76, 44, 0.5);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 16px rgba(238, 76, 44, 0.35);
 }
 
 .cert-verify-btn {
