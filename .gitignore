@@ -54,8 +54,9 @@ __pycache__/
 venv/
 
 # =========================
-# Optional: local build outputs (nếu sau này có)
+# Sensitive Unredacted Certificates (Protect PII)
 # =========================
-dist/
-build/
-out/
+assets/certificates/APTIS.pdf
+assets/certificates/*_original*
+assets/certificates/*_raw*
+

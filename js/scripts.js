@@ -223,6 +223,7 @@ const I18N = {
     about_chip_workmode: "💼 On-site • Hybrid • Remote",
     about_status_badge: "Sẵn sàng nhận việc",
     about_pillar_edu_title: "Học vấn & Nền tảng",
+    
     about_pillar_edu_desc: "Tốt nghiệp Khoa học Máy tính — Đại học Tôn Đức Thắng (TDTU). Nền tảng vững về Cấu trúc dữ liệu & Giải thuật.",
     about_pillar_exp_title: "Kinh nghiệm Thực chiến",
     about_pillar_exp_desc: "Thực tập Kỹ sư Phần mềm: thiết kế RESTful APIs, tối ưu Raw SQL PostgreSQL và tự động hóa quy trình Jira/OpenClaw.",
@@ -333,7 +334,7 @@ const I18N = {
     certs_subtitle: "Các chứng chỉ xác nhận năng lực phương pháp phát triển phần mềm và trình độ tiếng Anh học thuật.",
     certs_view: "Xem chứng chỉ →",
     cert_score_label: "Điểm",
-    cert_level_label: "Tương đương B2",
+    cert_level_label: "Overall CEFR level: B1",
     cert_id_label: "Mã chứng chỉ",
     cert_issued_label: "Cấp tháng",
     cert_tag_language: "English",
@@ -342,6 +343,25 @@ const I18N = {
     cert_agile_desc: "Cấp bởi Techbase Viet Nam tại Đại học Tôn Đức Thắng. Bao gồm Scrum roles, Sprints, Backlog refinement và Agile ceremonies.",
     cert_aptis_title: "Aptis ESOL",
     cert_aptis_desc: "Bài thi tiếng Anh quốc tế của British Council, đánh giá 4 kỹ năng: Nghe, Nói, Đọc, Viết theo thang CEFR.",
+    cert_privacy_note: "Bản online đã che thông tin nhạy cảm (CCCD, QR). Bản gốc đối chiếu gửi qua email.",
+    certs_view_redacted: "Xem bản PDF (Đã che PII) →",
+    certs_request_original: "Yêu cầu bản gốc",
+    certs_request_agile: "Yêu cầu qua email",
+    cert_modal_title: "Yêu cầu bản gốc chứng chỉ",
+    cert_modal_desc: "Nhập thông tin người nhận để Hoàng Vũ gửi bản scan gốc đối chiếu phục vụ xác thực hồ sơ tuyển dụng.",
+    cert_modal_name: "Họ và tên của bạn",
+    cert_modal_name_ph: "Nguyễn Văn A / HR Recruiter",
+    cert_modal_email: "Email nhận bản gốc",
+    cert_modal_email_ph: "recruiter@company.com",
+    cert_modal_company: "Đơn vị / Công ty tuyển dụng",
+    cert_modal_company_ph: "Công ty ABC / Tập đoàn XYZ",
+    cert_modal_note: "Ghi chú / Mục đích đối chiếu",
+    cert_modal_note_ph: "Đối chiếu hồ sơ ứng tuyển vị trí Backend / AI...",
+    cert_modal_submit: "Gửi yêu cầu bản gốc",
+    cert_modal_submitting: "Đang gửi yêu cầu...",
+    cert_modal_privacy: "Thông tin của bạn được bảo mật và chỉ dùng để gửi tài liệu đối chiếu chứng chỉ.",
+    cert_modal_success: "Đã gửi yêu cầu thành công! Hoàng Vũ sẽ gửi bản scan gốc đến email của bạn sớm nhất.",
+    cert_modal_error: "Không thể gửi yêu cầu lúc này. Vui lòng thử lại hoặc gửi trực tiếp tới hoangvu2k4cmg@gmail.com.",
 
     github_title: "Hoạt động GitHub",
     github_kicker: "📊 GitHub • Cập nhật tự động",
@@ -619,7 +639,7 @@ const I18N = {
     certs_subtitle: "Credentials validating proficiency in software development methodology and academic English.",
     certs_view: "View certificate →",
     cert_score_label: "Score",
-    cert_level_label: "B2 Level Equivalent",
+    cert_level_label: "Overall CEFR level: B1",
     cert_id_label: "Certificate ID",
     cert_issued_label: "Issued",
     cert_tag_language: "English",
@@ -628,6 +648,25 @@ const I18N = {
     cert_agile_desc: "Issued by Techbase Viet Nam at Ton Duc Thang University. Covers Scrum roles, Sprints, Backlog refinement and Agile ceremonies.",
     cert_aptis_title: "Aptis ESOL",
     cert_aptis_desc: "International English proficiency test by British Council assessing all 4 skills: Listening, Speaking, Reading, Writing on the CEFR scale.",
+    cert_privacy_note: "Online preview has sensitive data (National ID, QR) redacted. Full copy available via email.",
+    certs_view_redacted: "View PDF (Redacted PII) →",
+    certs_request_original: "Request Original",
+    certs_request_agile: "Request via Email",
+    cert_modal_title: "Request Original Certificate",
+    cert_modal_desc: "Enter your contact details so Hoang Vu can send the original verified scan for recruitment verification.",
+    cert_modal_name: "Your Full Name",
+    cert_modal_name_ph: "John Doe / Technical Recruiter",
+    cert_modal_email: "Recipient Email",
+    cert_modal_email_ph: "recruiter@company.com",
+    cert_modal_company: "Company / Organization",
+    cert_modal_company_ph: "Company ABC / Tech Corp",
+    cert_modal_note: "Notes / Verification Purpose",
+    cert_modal_note_ph: "Verification for Backend / AI engineering candidate...",
+    cert_modal_submit: "Send Original Request",
+    cert_modal_submitting: "Sending Request...",
+    cert_modal_privacy: "Your information is kept confidential and only used to send requested certificate credentials.",
+    cert_modal_success: "Request sent successfully! Hoang Vu will email you the original certificate scan shortly.",
+    cert_modal_error: "Failed to send request. Please try again or email hoangvu2k4cmg@gmail.com directly.",
 
     github_title: "GitHub Activity",
     github_kicker: "📊 GitHub • Auto-updated",
@@ -1525,6 +1564,132 @@ function initCertScoreAnimation() {
   observer.observe(bar.closest(".cert-score-block") || bar);
 }
 
+// =======================
+// Certificate Request Modal & Submission (Formspree)
+// =======================
+function initCertRequestModal() {
+  const modal = document.getElementById("cert-request-modal");
+  const form = document.getElementById("cert-request-form");
+  const modalSubtitle = document.getElementById("cert-modal-subtitle");
+  const hiddenSubject = document.getElementById("cert-req-subject");
+  const hiddenCertName = document.getElementById("cert-req-cert-name");
+  const submitBtn = document.getElementById("cert-req-submit-btn");
+
+  if (!modal || !form) return;
+
+  function openModal(certTitle, certId) {
+    if (modalSubtitle) {
+      modalSubtitle.textContent = certId ? `${certTitle} • ID: ${certId}` : certTitle;
+    }
+    if (hiddenSubject) {
+      hiddenSubject.value = `[Tuyển dụng] Yêu cầu bản gốc chứng chỉ ${certTitle}${certId ? ` - ${certId}` : ""}`;
+    }
+    if (hiddenCertName) {
+      hiddenCertName.value = certTitle;
+    }
+
+    modal.classList.remove("hidden");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+
+    const firstInput = form.querySelector("input[type='text']");
+    if (firstInput) setTimeout(() => firstInput.focus(), 100);
+  }
+
+  function closeModal() {
+    modal.classList.add("hidden");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  // Close triggers (Overlay and Cancel/Close buttons)
+  modal.querySelectorAll("[data-close-cert-modal]").forEach((el) => {
+    el.addEventListener("click", closeModal);
+  });
+
+  // Close on ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+      closeModal();
+    }
+  });
+
+  // Attach button triggers
+  const aptisReqBtn = document.getElementById("btn-request-aptis-original");
+  if (aptisReqBtn) {
+    aptisReqBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openModal("Aptis ESOL (British Council)", "ESOL 0155613");
+    });
+  }
+
+  const agileReqBtn = document.getElementById("btn-request-agile-cert");
+  if (agileReqBtn) {
+    agileReqBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openModal("Agile & Scrum Framework 2024 (Techbase Viet Nam)", "");
+    });
+  }
+
+  // Form Submission via Formspree AJAX
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const originalBtnHtml = submitBtn ? submitBtn.innerHTML : "";
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <svg class="w-4 h-4 animate-spin shrink-0" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span>${t("cert_modal_submitting") || "Đang gửi yêu cầu..."}</span>
+      `;
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method || "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        closeModal();
+        form.reset();
+        if (typeof showToast === "function") {
+          showToast({
+            message: t("cert_modal_success") || "✓ Đã gửi yêu cầu thành công! Hoàng Vũ sẽ gửi bản scan gốc đến email của bạn sớm nhất.",
+            type: "success",
+            duration: 5000,
+          });
+        }
+      } else {
+        if (typeof showToast === "function") {
+          showToast({
+            message: t("cert_modal_error") || "Không thể gửi yêu cầu lúc này. Vui lòng thử lại hoặc gửi trực tiếp tới hoangvu2k4cmg@gmail.com.",
+            type: "error",
+            duration: 4000,
+          });
+        }
+      }
+    } catch (err) {
+      if (typeof showToast === "function") {
+        showToast({
+          message: t("cert_modal_error") || "Lỗi kết nối. Vui lòng thử lại sau.",
+          type: "error",
+          duration: 4000,
+        });
+      }
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
+    }
+  });
+}
+
 // ==========================================================================
 // 1-Click Copy Email to Clipboard Feature
 // Enables instant copy when clicking on Email in Contact section, About section,
@@ -1819,6 +1984,7 @@ function initAppModules() {
   initProfileFlip?.();
   initCvDownloadCounter?.();
   initCertScoreAnimation?.();
+  initCertRequestModal?.();
 }
 
 if (document.readyState === "loading") {
