@@ -227,3 +227,4 @@
   window.renderCertCards = renderCertCards;
 
 })();
+

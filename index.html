@@ -78,10 +78,13 @@
 
       <!-- Brand -->
       <a href="#home" id="brand-home"
-        class="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-slate-100 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors duration-300"
+        class="group flex items-center gap-2.5 text-2xl font-bold text-slate-900 dark:text-slate-100 transition-colors duration-300"
         aria-label="Về đầu trang">
-        <img src="assets/icons/favicon-32.png" alt="Logo" class="w-7 h-7" />
-        <span>Portfolio</span>
+        <!-- Logo for Light Mode (Dark Tile on Light Navbar) -->
+        <img src="assets/icons/favicon-32.png" alt="HoangVu Logo" class="w-8 h-8 rounded-lg shadow-sm transition-transform duration-300 group-hover:scale-105 block dark:hidden" />
+        <!-- Logo for Dark Mode (White Tile on Dark Navbar) -->
+        <img src="assets/icons/logo-white-tile.png" alt="HoangVu Logo" class="w-8 h-8 rounded-lg shadow-md ring-1 ring-white/15 transition-transform duration-300 group-hover:scale-105 hidden dark:block" />
+        <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">HoangVu<span class="text-cyan-500">.</span><span class="text-indigo-500 dark:text-indigo-400 font-semibold">dev</span></span>
       </a>
 
       <!-- Desktop links -->

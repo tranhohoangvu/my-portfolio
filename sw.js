@@ -1,5 +1,5 @@
 /* SW: precache only .css .js .jpg .png .svg .webp */
-const VERSION = "v14";
+const VERSION = "v15";
 const CACHE_NAME = `portfolio-${VERSION}`;
 
 const PRECACHE = [
@@ -64,6 +64,7 @@ const PRECACHE = [
   "./assets/icons/favicon.svg",
   "./assets/icons/favicon-16.png",
   "./assets/icons/favicon-32.png",
+  "./assets/icons/logo-white-tile.png",
   "./assets/icons/pwa-192.png",
   "./assets/icons/pwa-512.png",
 

@@ -57,10 +57,32 @@
     if (moonIcon) moonIcon.classList.toggle("hidden", isDark);
   }
 
+  function updateFavicon(isDark) {
+    const iconUrl = isDark ? "assets/icons/logo-white-tile.png" : "assets/icons/favicon-32.png";
+    document.querySelectorAll('link[rel*="icon"]').forEach((el) => {
+      if (el.rel !== "apple-touch-icon") el.remove();
+    });
+    const link = document.createElement("link");
+    link.rel = "icon";
+    link.type = "image/png";
+    link.sizes = "32x32";
+    link.href = iconUrl;
+    document.head.appendChild(link);
+  }
+
+  function updateThemeColor(isDark) {
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) {
+      meta.setAttribute("content", isDark ? "#070b14" : "#ffffff");
+    }
+  }
+
   function applyTheme(theme, persist = true) {
     const isDark = theme === "dark";
     html.classList.toggle("dark", isDark);
     setThemeIcons(isDark);
+    updateFavicon(isDark);
+    updateThemeColor(isDark);
 
     // update dependent UI
     window.setGitHubActivityImages?.();
