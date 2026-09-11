@@ -1445,50 +1445,120 @@
   </section>
 
   <!-- Certificates Section (xen kẽ: WHITE / OBSIDIAN ELEVATED) -->
-  <section id="certificates" class="py-24 bg-white dark:bg-[#0b101d] relative overflow-hidden">
+  <section id="certificates" class="py-24 relative overflow-hidden">
     <!-- Ambient Moving Aurora Mesh Orbs -->
     <div class="section-aurora-orb section-aurora-orb--1 section-aurora-orb--cyan" aria-hidden="true"></div>
     <div class="section-aurora-orb section-aurora-orb--2 section-aurora-orb--violet" aria-hidden="true"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden relative z-10">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in"
-        data-i18n="certs_title">Chứng chỉ</h2>
 
-      <div class="cert-grid flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
-        <!-- Agile Development & Scrum Framework -->
-        <article
-          class="cert-card w-full md:w-[calc(50%-12px)] p-6 rounded-2xl bg-white dark:bg-[#0f172a]/75 border border-slate-200/80 dark:border-white/10 shadow-lg">
-          <div class="flex items-start justify-between gap-4">
-            <div>
-              <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100" data-i18n="cert_agile_title">Khóa học Agile
-                & Scrum Framework 2024</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-300">Techbase Viet Nam • 2024</p>
-            </div>
-            <span class="text-xs tag-pill" data-i18n="cert_tag_software">Agile / Scrum</span>
-          </div>
-
-          <p class="mt-4 text-gray-700 dark:text-gray-300 text-sm" data-i18n="cert_agile_desc">
-            Cấp bởi Techbase Viet Nam tại Đại học Tôn Đức Thắng (10/2024).
-          </p>
-        </article>
-
-        <!-- Aptis ESOL -->
-        <article
-          class="cert-card w-full md:w-[calc(50%-12px)] p-6 rounded-2xl bg-white dark:bg-[#0f172a]/75 border border-slate-200/80 dark:border-white/10 shadow-lg">
-          <div class="flex items-start justify-between gap-4">
-            <div>
-              <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">Aptis ESOL</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-300">British Council • 2024</p>
-            </div>
-            <span class="text-xs tag-pill" data-i18n="cert_tag_language">English</span>
-          </div>
-
-          <p class="mt-4 text-gray-700 dark:text-gray-300 text-sm">
-            <span data-i18n="cert_score_label">Điểm</span>: <span class="font-semibold">135/200</span> • ID: <span
-              class="font-mono text-xs">ESOL 0155613</span>
-          </p>
-        </article>
+      <!-- Section Header (A: kicker + headline + subtitle) -->
+      <div class="certs-section-header">
+        <div class="certs-kicker" data-i18n="certs_kicker">🏅 2 Chứng chỉ • 2024</div>
+        <h2 class="certs-headline" data-i18n="certs_headline">Được chứng nhận. Đã xác minh. Sẵn sàng.</h2>
+        <p class="certs-subtitle" data-i18n="certs_subtitle">Các chứng chỉ xác nhận năng lực phương pháp phát triển phần mềm và trình độ tiếng Anh học thuật.</p>
       </div>
+
+      <!-- Cert Grid -->
+      <div class="cert-grid-v2">
+
+        <!-- Card 1: Agile & Scrum -->
+        <article class="cert-card-v2" id="cert-agile">
+          <div class="cert-card-v2__toprow">
+            <!-- B: Issuer Icon Bubble -->
+            <div class="cert-issuer-icon cert-issuer-icon--agile" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="cert-card-v2__meta">
+              <h3 class="cert-card-v2__title" data-i18n="cert_agile_title">Agile &amp; Scrum Framework 2024</h3>
+              <p class="cert-card-v2__issuer">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Techbase Viet Nam
+              </p>
+            </div>
+            <span class="cert-card-v2__tag" data-i18n="cert_tag_software">Agile / Scrum</span>
+          </div>
+
+          <!-- G: Date chip -->
+          <div class="cert-date-chip">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span data-i18n="cert_issued_label">Cấp tháng</span>&nbsp;10/2024
+          </div>
+
+          <!-- Description -->
+          <p class="cert-card-v2__desc" data-i18n="cert_agile_desc">Cấp bởi Techbase Viet Nam tại Đại học Tôn Đức Thắng. Bao gồm Scrum roles, Sprints, Backlog refinement và Agile ceremonies.</p>
+
+          <!-- Footer -->
+          <div class="cert-card-v2__footer">
+            <span class="cert-view-btn" style="opacity:.55;cursor:default">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="certs_view">Xem chứng chỉ →</span>
+            </span>
+          </div>
+        </article>
+
+        <!-- Card 2: Aptis ESOL -->
+        <article class="cert-card-v2" id="cert-aptis">
+          <div class="cert-card-v2__toprow">
+            <!-- B: Issuer Icon Bubble -->
+            <div class="cert-issuer-icon cert-issuer-icon--language" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+              </svg>
+            </div>
+            <div class="cert-card-v2__meta">
+              <h3 class="cert-card-v2__title" data-i18n="cert_aptis_title">Aptis ESOL</h3>
+              <p class="cert-card-v2__issuer">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                British Council
+              </p>
+            </div>
+            <span class="cert-card-v2__tag cert-card-v2__tag--language" data-i18n="cert_tag_language">English</span>
+          </div>
+
+          <!-- G: Date chip -->
+          <div class="cert-date-chip">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span data-i18n="cert_issued_label">Cấp tháng</span>&nbsp;2024
+          </div>
+
+          <!-- Description -->
+          <p class="cert-card-v2__desc" data-i18n="cert_aptis_desc">Bài thi tiếng Anh quốc tế của British Council, đánh giá 4 kỹ năng: Nghe, Nói, Đọc, Viết theo thang CEFR.</p>
+
+          <!-- C: Score Progress Bar -->
+          <div class="cert-score-block" role="img" aria-label="Điểm Aptis ESOL: 135 trên 200">
+            <div class="cert-score-block__header">
+              <span class="cert-score-block__label" data-i18n="cert_score_label">Điểm</span>
+              <span class="cert-score-block__value">135 <span style="font-size:.75rem;font-weight:500;opacity:.65">/ 200</span></span>
+            </div>
+            <div class="cert-score-track">
+              <div class="cert-score-fill" id="aptis-score-bar"></div>
+            </div>
+            <span class="cert-score-block__sub" data-i18n="cert_level_label">Tương đương B2</span>
+          </div>
+
+          <!-- D: Certificate ID badge -->
+          <div class="cert-id-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+            <span class="cert-id-badge__label" data-i18n="cert_id_label">Mã chứng chỉ</span>:&nbsp;<span class="cert-id-badge__value">ESOL&nbsp;0155613</span>
+          </div>
+
+          <!-- Footer -->
+          <div class="cert-card-v2__footer">
+            <span class="cert-view-btn cert-view-btn--language" style="opacity:.55;cursor:default">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="certs_view">Xem chứng chỉ →</span>
+            </span>
+          </div>
+        </article>
+
+      </div><!-- /cert-grid-v2 -->
     </div>
   </section>
 

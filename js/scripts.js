@@ -307,12 +307,20 @@ const I18N = {
 
     nav_certs: "Chứng chỉ",
     certs_title: "Chứng chỉ",
+    certs_kicker: "🏅 2 Chứng chỉ • 2024",
+    certs_headline: "Được chứng nhận. Đã xác minh. Sẵn sàng.",
+    certs_subtitle: "Các chứng chỉ xác nhận năng lực phương pháp phát triển phần mềm và trình độ tiếng Anh học thuật.",
     certs_view: "Xem chứng chỉ →",
     cert_score_label: "Điểm",
+    cert_level_label: "Tương đương B2",
+    cert_id_label: "Mã chứng chỉ",
+    cert_issued_label: "Cấp tháng",
     cert_tag_language: "English",
     cert_tag_software: "Agile / Scrum",
-    cert_agile_title: "Khóa học Agile & Scrum Framework 2024",
-    cert_agile_desc: "Cấp bởi Techbase Viet Nam tại Đại học Tôn Đức Thắng (10/2024).",
+    cert_agile_title: "Agile & Scrum Framework 2024",
+    cert_agile_desc: "Cấp bởi Techbase Viet Nam tại Đại học Tôn Đức Thắng. Bao gồm Scrum roles, Sprints, Backlog refinement và Agile ceremonies.",
+    cert_aptis_title: "Aptis ESOL",
+    cert_aptis_desc: "Bài thi tiếng Anh quốc tế của British Council, đánh giá 4 kỹ năng: Nghe, Nói, Đọc, Viết theo thang CEFR.",
 
     github_title: "Hoạt động GitHub",
     github_contrib: "Tổng quan đóng góp",
@@ -537,12 +545,20 @@ const I18N = {
 
     nav_certs: "Certificates",
     certs_title: "Certificates",
+    certs_kicker: "🏅 2 Certificates • 2024",
+    certs_headline: "Certified. Verified. Ready.",
+    certs_subtitle: "Credentials validating proficiency in software development methodology and academic English.",
     certs_view: "View certificate →",
     cert_score_label: "Score",
+    cert_level_label: "B2 Level Equivalent",
+    cert_id_label: "Certificate ID",
+    cert_issued_label: "Issued",
     cert_tag_language: "English",
     cert_tag_software: "Agile / Scrum",
-    cert_agile_title: "Agile Development & Scrum Framework Course 2024",
-    cert_agile_desc: "Issued by Techbase Viet Nam at Ton Duc Thang University (Oct 2024).",
+    cert_agile_title: "Agile & Scrum Framework 2024",
+    cert_agile_desc: "Issued by Techbase Viet Nam at Ton Duc Thang University. Covers Scrum roles, Sprints, Backlog refinement and Agile ceremonies.",
+    cert_aptis_title: "Aptis ESOL",
+    cert_aptis_desc: "International English proficiency test by British Council assessing all 4 skills: Listening, Speaking, Reading, Writing on the CEFR scale.",
 
     github_title: "GitHub Activity",
     github_contrib: "Contributions",
@@ -881,7 +897,12 @@ document.addEventListener("DOMContentLoaded", () => {
     links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === hash));
   };
 
-  const getOffset = () => (navbarEl ? navbarEl.offsetHeight + 16 : 80);
+  // Cache navbarHeight và chỉ cập nhật khi resize (tránh forced reflow mỗi scroll)
+  let cachedNavOffset = navbarEl ? navbarEl.offsetHeight + 16 : 80;
+  window.addEventListener("resize", () => {
+    cachedNavOffset = navbarEl ? navbarEl.offsetHeight + 16 : 80;
+  }, { passive: true });
+  const getOffset = () => cachedNavOffset;
 
   let ticking = false;
   const onScroll = () => {
@@ -944,11 +965,19 @@ if (sections.length) {
 }
 
 // =======================
-// Navbar Scroll Effect
+// Navbar Scroll Effect (throttled via rAF)
 // =======================
-window.addEventListener("scroll", () => {
-  updateNavbarBackground();
-});
+(function () {
+  let _navTicking = false;
+  window.addEventListener("scroll", () => {
+    if (_navTicking) return;
+    _navTicking = true;
+    requestAnimationFrame(() => {
+      updateNavbarBackground();
+      _navTicking = false;
+    });
+  }, { passive: true });
+})();
 
 // =======================
 // Back to Top Button (hide on load + show after scroll)
@@ -964,7 +993,16 @@ if (backToTop) {
   // Set đúng trạng thái ngay khi load (không cần đợi scroll)
   toggleBackToTop();
 
-  window.addEventListener("scroll", toggleBackToTop, { passive: true });
+  // Throttle bằng rAF để không chặn scroll
+  let _btTicking = false;
+  window.addEventListener("scroll", () => {
+    if (_btTicking) return;
+    _btTicking = true;
+    requestAnimationFrame(() => {
+      toggleBackToTop();
+      _btTicking = false;
+    });
+  }, { passive: true });
 
   backToTop.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1187,15 +1225,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const progress = document.getElementById("scroll-progress");
   if (!progress) return;
 
+  const d = document.documentElement;
+  // Cache scrollHeight - chỉ đọc lại khi resize (tránh reflow mỗi scroll)
+  let _maxScroll = d.scrollHeight - d.clientHeight;
+  window.addEventListener("resize", () => {
+    _maxScroll = d.scrollHeight - d.clientHeight;
+  }, { passive: true });
+
+  let _progTicking = false;
   const update = () => {
-    const d = document.documentElement;
-    const max = d.scrollHeight - d.clientHeight;
-    const p = max > 0 ? d.scrollTop / max : 0;
-    progress.style.transform = `scaleX(${p})`;
+    if (_progTicking) return;
+    _progTicking = true;
+    requestAnimationFrame(() => {
+      const p = _maxScroll > 0 ? d.scrollTop / _maxScroll : 0;
+      progress.style.transform = `scaleX(${p})`;
+      _progTicking = false;
+    });
   };
 
   window.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update, { passive: true });
   update();
 });
 
@@ -1276,6 +1324,35 @@ function initCounterAnimations() {
   );
 
   counters.forEach((counter) => observer.observe(counter));
+}
+
+// =======================
+// Cert Score Bar Animation (Aptis ESOL progress fill)
+// =======================
+function initCertScoreAnimation() {
+  const bar = document.getElementById("aptis-score-bar");
+  if (!bar) return;
+
+  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+  if (reduceMotion) {
+    bar.style.width = "67.5%";
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Small delay for visual polish
+          setTimeout(() => { bar.style.width = "67.5%"; }, 150);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  observer.observe(bar.closest(".cert-score-block") || bar);
 }
 
 // ==========================================================================
@@ -1570,6 +1647,7 @@ function initAppModules() {
   initHeroInteractions?.();
   initCounterAnimations?.();
   initCvDownloadCounter?.();
+  initCertScoreAnimation?.();
 }
 
 if (document.readyState === "loading") {

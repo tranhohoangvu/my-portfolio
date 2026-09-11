@@ -1,4 +1,4 @@
-﻿/* =========================
+/* =========================
    HERO HOME (Modern Software Engineer Aesthetic)
    ========================= */
 /* =========================
@@ -33,6 +33,9 @@
   z-index: 0;
   opacity: 0.6;
   will-change: transform;
+  /* Tách lấy GPU layer riêng, tránh repaint lan toàn trang */
+  contain: layout style paint;
+  transform: translateZ(0);
 }
 
 .hero-aurora-orb--1 {
@@ -382,3 +385,15 @@
   transition: width .8s ease;
 }
 
+/* =========================
+   REDUCED MOTION: tắt animations để giảm lag cho máy yếu / accessibility
+   ========================= */
+@media (prefers-reduced-motion: reduce) {
+  .hero-aurora-orb,
+  .hero-status-badge,
+  .hero-status-badge::after,
+  .btn-primary::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

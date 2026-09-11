@@ -173,6 +173,10 @@ textarea:focus~.ripple::after {
   z-index: 1;
   opacity: 0.55;
   will-change: transform;
+  /* Giới hạn repaint trong bản thân phần tử, tránh repaint lan ra toàn trang */
+  contain: layout style paint;
+  /* Tạo GPU layer rõ ràng để browser composite thay vì paint */
+  transform: translateZ(0);
 }
 
 .section-aurora-orb--1 {
@@ -246,3 +250,22 @@ textarea:focus~.ripple::after {
   }
 }
 
+/* =========================
+   REDUCED MOTION: tắt aurora animations để giảm tải GPU khi cuộn
+   ========================= */
+@media (prefers-reduced-motion: reduce) {
+  .section-aurora-orb,
+  .section-aurora-orb--1,
+  .section-aurora-orb--2 {
+    animation: none !important;
+    will-change: auto !important;
+  }
+
+  .sparkle::before {
+    animation: none !important;
+  }
+
+  .animate-pulse {
+    animation: none !important;
+  }
+}
