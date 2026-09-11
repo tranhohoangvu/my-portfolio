@@ -19,6 +19,7 @@
 @import './sections/cv.css';
 @import './sections/about.css';
 @import './sections/certs.css';
+@import './sections/github.css';
 
 /* ── Components ── */
 @import './components/toast.css';
