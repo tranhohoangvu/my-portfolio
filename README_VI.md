@@ -63,6 +63,7 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
   - Bong bóng icon đơn vị cấp chứng chỉ (Microsoft • Google • Google for Education • DeepLearning.AI • Techbase Agile • British Council).
   - **Chứng chỉ Microsoft AI Product Manager** (Microsoft • Coursera): xem PDF trực tiếp + xác minh chứng chỉ gốc trực tuyến.
   - **Chứng chỉ Google Data Analytics Professional** (Google • Coursera): xem PDF trực tiếp + xác minh chứng chỉ gốc trực tuyến.
+  - **Chứng chỉ Gemini Certified Educator** (Google for Education): xem PDF trực tiếp + xác minh chứng chỉ gốc trên Google Accredible.
   - **Chứng chỉ Gemini Certified Student** (Google for Education): xem PDF trực tiếp + xác minh chứng chỉ gốc trên Google Accredible.
   - **Chứng chỉ DeepLearning.AI TensorFlow Developer** (DeepLearning.AI • Coursera): xem PDF trực tiếp + xác minh chứng chỉ gốc trực tuyến.
   - Chứng chỉ Techbase Agile có nút xem trực tiếp bản PDF chất lượng cao.

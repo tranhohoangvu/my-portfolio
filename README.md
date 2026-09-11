@@ -64,6 +64,7 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
   - Issuer icon bubbles (Microsoft • Google • Google for Education • DeepLearning.AI • Techbase Agile • British Council).
   - **Microsoft AI Product Manager Professional Certificate** (Microsoft • Coursera): direct PDF preview + live credential verification.
   - **Google Data Analytics Professional Certificate** (Google • Coursera): direct PDF preview + live credential verification.
+  - **Gemini Certified Educator** (Google for Education): direct PDF preview + live credential verification on Google Accredible.
   - **Gemini Certified Student (University)** (Google for Education): direct PDF preview + live credential verification on Google Accredible.
   - **DeepLearning.AI TensorFlow Developer Certificate** (DeepLearning.AI • Coursera): direct PDF preview + live credential verification.
   - Techbase Agile certificate available via direct high-res PDF preview.
