@@ -61,7 +61,8 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
   - Gradient headline + kicker badge + subtitle header.
   - **Category Filter Tabs**: 1-click filtering across `All`, `AI & Deep Learning`, `Data Analytics`, `Software & Agile`, and `Language` with dynamic count badges.
   - **Smart Expand & Collapse ("Show More")**: Displays the top 3 newest certificates initially with a sleek `Show more (X certificates) ↓` toggle to keep page length compact.
-  - Issuer icon bubbles (Google • DeepLearning.AI • Techbase Agile • British Council).
+  - Issuer icon bubbles (Microsoft • Google • DeepLearning.AI • Techbase Agile • British Council).
+  - **Microsoft AI Product Manager Professional Certificate** (Microsoft • Coursera): direct PDF preview + live credential verification.
   - **Google Data Analytics Professional Certificate** (Google • Coursera): direct PDF preview + live credential verification.
   - **DeepLearning.AI TensorFlow Developer Certificate** (DeepLearning.AI • Coursera): direct PDF preview + live credential verification.
   - Techbase Agile certificate available via direct high-res PDF preview.
@@ -136,7 +137,7 @@ my-portfolio/
 ├─ assets/
 │  ├─ projects/                   # Screenshots for 7 portfolio projects
 │  ├─ cv/                         # Career CVs (Backend Developer & AI Engineer PDFs)
-│  ├─ certificates/               # Verified certificates (Google Data Analytics, DeepLearning.AI TensorFlow, Techbase Agile & Aptis PDFs)
+│  ├─ certificates/               # Verified certificates (Microsoft AI, Google Data Analytics, DeepLearning.AI TensorFlow, Techbase Agile & Aptis PDFs)
 │  ├─ profile/                    # Personal avatar & profile photos
 │  ├─ icons/                      # Favicons (SVG, PNG) & PWA app icons
 │  ├─ github/                     # Auto-generated daily contribution & activity graph SVGs

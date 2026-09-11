@@ -355,6 +355,18 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
+.cert-issuer-icon--microsoft {
+  background: #ffffff;
+  border: 1px solid rgba(0, 164, 239, 0.28);
+  box-shadow: 0 2px 8px rgba(0, 164, 239, 0.12);
+}
+
+.dark .cert-issuer-icon--microsoft {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
 .cert-card-v2__meta {
   flex: 1;
   min-width: 0;
@@ -441,6 +453,18 @@
   background: rgba(238, 76, 44, 0.15);
   color: #ff7a60;
   border-color: rgba(238, 76, 44, 0.35);
+}
+
+.cert-card-v2__tag--microsoft {
+  background: rgba(0, 164, 239, 0.1);
+  color: #0284c7;
+  border-color: rgba(0, 164, 239, 0.25);
+}
+
+.dark .cert-card-v2__tag--microsoft {
+  background: rgba(0, 164, 239, 0.15);
+  color: #38bdf8;
+  border-color: rgba(0, 164, 239, 0.35);
 }
 
 /* --- Cert Description --- */
@@ -684,6 +708,18 @@
   border-color: rgba(238, 76, 44, 0.3);
 }
 
+.cert-skill-chip--microsoft {
+  background: rgba(0, 164, 239, 0.08);
+  color: #0284c7;
+  border-color: rgba(0, 164, 239, 0.2);
+}
+
+.dark .cert-skill-chip--microsoft {
+  background: rgba(0, 164, 239, 0.12);
+  color: #7dd3fc;
+  border-color: rgba(0, 164, 239, 0.3);
+}
+
 /* --- Cert footer row --- */
 .cert-card-v2__footer {
   margin-top: 1.25rem;
@@ -873,6 +909,35 @@
   border-color: rgba(238, 76, 44, 0.5);
   transform: translateY(-1.5px);
   box-shadow: 0 4px 16px rgba(238, 76, 44, 0.35);
+}
+
+.cert-view-btn--microsoft {
+  background: rgba(0, 164, 239, 0.08);
+  color: #0284c7;
+  border-color: rgba(0, 164, 239, 0.25);
+  box-shadow: 0 1px 2px rgba(0, 164, 239, 0.06);
+}
+
+.cert-view-btn--microsoft:hover {
+  background: rgba(0, 164, 239, 0.16);
+  color: #0369a1;
+  border-color: rgba(0, 164, 239, 0.45);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 14px rgba(0, 164, 239, 0.22);
+}
+
+.dark .cert-view-btn--microsoft {
+  background: rgba(0, 164, 239, 0.12);
+  color: #38bdf8;
+  border-color: rgba(0, 164, 239, 0.28);
+}
+
+.dark .cert-view-btn--microsoft:hover {
+  background: rgba(0, 164, 239, 0.22);
+  color: #ffffff;
+  border-color: rgba(0, 164, 239, 0.5);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 16px rgba(0, 164, 239, 0.35);
 }
 
 .cert-verify-btn {
