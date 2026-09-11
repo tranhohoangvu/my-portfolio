@@ -82,7 +82,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 1.75rem;
+  padding: 1.5rem 1.35rem;
   border-radius: 1.25rem;
   background: #ffffff;
   border: 1px solid rgba(148, 163, 184, 0.25);
@@ -278,15 +278,16 @@
   align-items: center;
   align-self: flex-start;
   width: fit-content;
-  gap: 0.3rem;
-  padding: 0.22rem 0.6rem;
+  gap: 0.25rem;
+  padding: 0.2rem 0.45rem;
   border-radius: 6px;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 500;
   background: rgba(100, 116, 139, 0.08);
   color: #64748b;
   border: 1px solid rgba(100, 116, 139, 0.15);
   margin-bottom: 1rem;
+  white-space: nowrap;
 }
 
 .dark .cert-date-chip {
@@ -371,18 +372,24 @@
   color: #67e8f9;
 }
 
-/* --- Cert Badges Row (Date + ID side-by-side) --- */
+/* --- Cert Badges Row (Date + ID side-by-side on 1 row) --- */
 .cert-badges-row {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  flex-wrap: nowrap;
+  gap: 0.35rem;
   margin-bottom: 0.85rem;
+  width: 100%;
 }
 
 .cert-badges-row .cert-date-chip,
 .cert-badges-row .cert-id-badge {
   margin-bottom: 0;
+  white-space: nowrap;
+  font-size: 0.68rem;
+  padding: 0.2rem 0.45rem;
+  gap: 0.25rem;
+  flex-shrink: 1;
 }
 
 /* --- Cert ID badge --- */
@@ -391,14 +398,15 @@
   align-items: center;
   align-self: flex-start;
   width: fit-content;
-  gap: 0.35rem;
-  padding: 0.25rem 0.65rem;
-  border-radius: 7px;
+  gap: 0.25rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 6px;
   background: rgba(100, 116, 139, 0.06);
   border: 1px solid rgba(100, 116, 139, 0.15);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: #475569;
   margin-bottom: 1rem;
+  white-space: nowrap;
 }
 
 .dark .cert-id-badge {
