@@ -173,28 +173,27 @@
       }
     };
 
-    // Click listeners for details buttons
-    document.querySelectorAll(".btn-project-details").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
+    // Delegated click listeners for project details buttons and triggers
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest(".btn-project-details");
+      if (btn) {
         e.stopPropagation();
         const projectId = btn.getAttribute("data-project-id");
         const projectsData = getProjectsData();
         if (projectId && projectsData[projectId]) {
           openModal(projectId);
         }
-      });
-    });
-
-    // Click listeners for triggers (title, thumbnail)
-    document.querySelectorAll("[data-project-trigger]").forEach((trigger) => {
-      trigger.addEventListener("click", (e) => {
+        return;
+      }
+      const trigger = e.target.closest("[data-project-trigger]");
+      if (trigger) {
         e.stopPropagation();
         const projectId = trigger.getAttribute("data-project-trigger");
         const projectsData = getProjectsData();
         if (projectId && projectsData[projectId]) {
           openModal(projectId);
         }
-      });
+      }
     });
 
     // Close listeners

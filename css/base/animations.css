@@ -168,15 +168,17 @@ textarea:focus~.ripple::after {
 .section-aurora-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(85px);
+  filter: blur(60px);
   pointer-events: none;
   z-index: 1;
   opacity: 0.55;
   will-change: transform;
-  /* Giới hạn repaint trong bản thân phần tử, tránh repaint lan ra toàn trang */
-  contain: layout style paint;
-  /* Tạo GPU layer rõ ràng để browser composite thay vì paint */
+  /* Tách stacking context và giới hạn repaint hoàn toàn trong orb */
+  contain: strict;
+  isolation: isolate;
+  /* Tạo GPU composite layer chuyên biệt */
   transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .section-aurora-orb--1 {

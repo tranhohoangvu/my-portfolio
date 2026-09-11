@@ -1,5 +1,5 @@
-/* SW: precache only .css .js .jpg .png .svg */
-const VERSION = "v13";
+/* SW: precache only .css .js .jpg .png .svg .webp */
+const VERSION = "v14";
 const CACHE_NAME = `portfolio-${VERSION}`;
 
 const PRECACHE = [
@@ -7,24 +7,53 @@ const PRECACHE = [
   "./",
   "./index.html",
 
-  // CSS (all .css you currently have)
+  // CSS modules
   "./css/tailwind.css",
   "./css/styles.css",
   "./css/styles.welcome.css",
   "./css/tailwind-input.css",
+  "./css/base/tokens.css",
+  "./css/base/animations.css",
+  "./css/base/performance.css",
+  "./css/layout/navbar.css",
+  "./css/sections/hero.css",
+  "./css/sections/projects.css",
+  "./css/sections/skills.css",
+  "./css/components/shared-cards.css",
+  "./css/sections/contact.css",
+  "./css/sections/cv.css",
+  "./css/sections/about.css",
+  "./css/sections/certs.css",
+  "./css/sections/github.css",
+  "./css/components/toast.css",
+  "./css/components/fab.css",
+  "./css/sections/terminal.css",
+  "./css/layout/nav-rail.css",
 
-  // JS (data modules, feature modules & coordinator)
+  // JS Data Modules
+  "./js/data/i18n.data.js",
   "./js/data/projects.data.js",
   "./js/data/skills.data.js",
+  "./js/data/certs.data.js",
+
+  // JS Feature Modules
+  "./js/modules/i18n.js",
+  "./js/modules/theme.js",
   "./js/modules/carousel.js",
   "./js/modules/modal.js",
   "./js/modules/skill-linking.js",
   "./js/modules/terminal.js",
   "./js/modules/fab.js",
   "./js/modules/section-nav.js",
+  "./js/modules/cert-modal.js",
+  "./js/modules/cert-filter.js",
+  "./js/modules/email-copy.js",
+  "./js/modules/contact-form.js",
+  "./js/modules/github-stats.js",
+  "./js/modules/ui-interactions.js",
   "./js/scripts.js",
 
-  // JSON Data (Mục 10: Tách dữ liệu độc lập)
+  // JSON Data
   "./data/projects.json",
   "./data/skills.json",
 
@@ -42,22 +71,24 @@ const PRECACHE = [
   "./assets/github/github-activity-light.svg",
 
   // Profile & Social Media
-  "./assets/profile/profile1.jpg",
-  "./assets/profile/profile2.png",
+  "./assets/profile/profile1.webp",
+  "./assets/profile/profile2.webp",
   "./assets/og-image-v2.png",
 
-  // CV PDFs
+  // CV PDFs & Previews
   "./assets/cv/TranHoHoangVu_BE.pdf",
   "./assets/cv/TranHoHoangVu_AI.pdf",
+  "./assets/cv/TranHoHoangVu_BE_preview.webp",
+  "./assets/cv/TranHoHoangVu_AI_preview.webp",
 
-  // Project images
-  "./assets/projects/coursehub.png",
-  "./assets/projects/ecommerce.png",
-  "./assets/projects/vietnamese-ocr.png",
-  "./assets/projects/nlp-translation.png",
-  "./assets/projects/stock-ml.png",
-  "./assets/projects/warehouse.png",
-  "./assets/projects/pos.png",
+  // Project images (WebP)
+  "./assets/projects/coursehub.webp",
+  "./assets/projects/ecommerce.webp",
+  "./assets/projects/vietnamese-ocr.webp",
+  "./assets/projects/nlp-translation.webp",
+  "./assets/projects/stock-ml.webp",
+  "./assets/projects/warehouse.webp",
+  "./assets/projects/pos.webp",
 ];
 
 self.addEventListener("install", (event) => {

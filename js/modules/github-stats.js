@@ -10,7 +10,8 @@
     if (!contribImg || !activityImg) return;
 
     const isDark = document.documentElement.classList.contains("dark");
-    const v = Date.now(); // bust cache
+    // Cache version: hourly timestamp to allow browser caching across theme toggles
+    const v = (window._ghSvgVersion ??= Math.floor(Date.now() / 3600000));
 
     // Contributions: local svg do GitHub Actions sinh ra
     contribImg.src = isDark

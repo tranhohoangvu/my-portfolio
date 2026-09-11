@@ -6,6 +6,7 @@
 /* ── Base ── */
 @import './base/tokens.css';
 @import './base/animations.css';
+@import './base/performance.css';
 
 /* ── Layout ── */
 @import './layout/navbar.css';

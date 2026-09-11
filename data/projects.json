@@ -5,7 +5,7 @@
       "num": "#01",
       "isLatest": true,
       "categories": ["backend", "fullstack"],
-      "image": "assets/projects/coursehub.png",
+      "image": "assets/projects/coursehub.webp",
       "tags": [
         "React 18",
         "Vite",
@@ -82,7 +82,7 @@
       "num": "#02",
       "isLatest": false,
       "categories": ["backend", "fullstack"],
-      "image": "assets/projects/ecommerce.png",
+      "image": "assets/projects/ecommerce.webp",
       "tags": [
         "React 18",
         "Node.js",
@@ -154,7 +154,7 @@
       "num": "#03",
       "isLatest": false,
       "categories": ["ai"],
-      "image": "assets/projects/vietnamese-ocr.png",
+      "image": "assets/projects/vietnamese-ocr.webp",
       "tags": [
         "Python",
         "PyTorch",
@@ -224,7 +224,7 @@
       "num": "#04",
       "isLatest": false,
       "categories": ["ai"],
-      "image": "assets/projects/nlp-translation.png",
+      "image": "assets/projects/nlp-translation.webp",
       "tags": [
         "Python",
         "PyTorch",
@@ -294,7 +294,7 @@
       "num": "#05",
       "isLatest": false,
       "categories": ["ai"],
-      "image": "assets/projects/stock-ml.png",
+      "image": "assets/projects/stock-ml.webp",
       "tags": [
         "Python",
         "TensorFlow / Keras",
@@ -364,7 +364,7 @@
       "num": "#06",
       "isLatest": false,
       "categories": ["backend"],
-      "image": "assets/projects/warehouse.png",
+      "image": "assets/projects/warehouse.webp",
       "tags": [
         "C#",
         ".NET WinForms",
@@ -434,7 +434,7 @@
       "num": "#07",
       "isLatest": false,
       "categories": ["backend"],
-      "image": "assets/projects/pos.png",
+      "image": "assets/projects/pos.webp",
       "tags": [
         "Laravel 10",
         "Livewire",

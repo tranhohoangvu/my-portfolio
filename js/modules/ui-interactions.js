@@ -225,23 +225,31 @@
     });
   }
 
-  // 6. Scroll Progress Bar
+  // 6. Scroll Progress Bar (Hardware accelerated & ResizeObserver synced)
   function initScrollProgressBar() {
     const progress = document.getElementById("scroll-progress");
     if (!progress) return;
 
     const d = document.documentElement;
-    let maxScroll = d.scrollHeight - d.clientHeight;
-    window.addEventListener("resize", () => {
-      maxScroll = d.scrollHeight - d.clientHeight;
-    }, { passive: true });
+    let maxScroll = Math.max(1, d.scrollHeight - d.clientHeight);
+
+    function recalc() {
+      maxScroll = Math.max(1, d.scrollHeight - d.clientHeight);
+    }
+
+    if (typeof ResizeObserver !== "undefined" && document.body) {
+      const ro = new ResizeObserver(() => recalc());
+      ro.observe(document.body);
+    } else {
+      window.addEventListener("resize", recalc, { passive: true });
+    }
 
     let progTicking = false;
     const update = () => {
       if (progTicking) return;
       progTicking = true;
       requestAnimationFrame(() => {
-        const p = maxScroll > 0 ? d.scrollTop / maxScroll : 0;
+        const p = Math.min(1, Math.max(0, d.scrollTop / maxScroll));
         progress.style.transform = `scaleX(${p})`;
         progTicking = false;
       });

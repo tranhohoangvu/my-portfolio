@@ -10,10 +10,13 @@
   const rawProjects = [
     {
       id: "coursehub",
+      alt: "Ảnh dự án CourseHub LMS",
+      i18nKeys: {"meta": "p4_meta", "title": "p4_title", "desc": "p4_desc"},
+      cardTechs: [{"skill": "react", "label": "React", "title": "Xem kỹ năng React"}, {"skill": "nodejs", "label": "Node.js", "title": "Xem kỹ năng Node.js"}, {"skill": "postgresql", "label": "PostgreSQL", "title": "Xem kỹ năng PostgreSQL"}],
       num: "#01",
       isLatest: true,
       categories: ["backend", "fullstack"],
-      image: "assets/projects/coursehub.png",
+      image: "assets/projects/coursehub.webp",
       tags: [
         "React 18",
         "Vite",
@@ -87,10 +90,13 @@
     },
     {
       id: "ecommerce",
+      alt: "Ảnh dự án E-commerce Platform",
+      i18nKeys: {"meta": "p1_meta", "title": "p1_title", "desc": "p1_desc"},
+      cardTechs: [{"skill": "react", "label": "React", "title": "Xem kỹ năng React"}, {"skill": "nodejs", "label": "Node.js", "title": "Xem kỹ năng Node.js"}, {"skill": "mongodb", "label": "MongoDB", "title": "Xem kỹ năng MongoDB"}],
       num: "#02",
       isLatest: false,
       categories: ["backend", "fullstack"],
-      image: "assets/projects/ecommerce.png",
+      image: "assets/projects/ecommerce.webp",
       tags: [
         "React 18",
         "Node.js",
@@ -159,10 +165,13 @@
     },
     {
       id: "vietnamese-ocr",
+      alt: "Ảnh dự án Vietnamese OCR",
+      i18nKeys: {"meta": "p_ocr_meta", "title": "p_ocr_title", "desc": "p_ocr_desc"},
+      cardTechs: [{"skill": "python", "label": "Python", "title": "Xem kỹ năng Python"}, {"skill": "pytorch", "label": "PyTorch", "title": "Xem kỹ năng PyTorch"}, {"skill": "pytorch", "label": "CNN-Transformer", "title": "CNN-Transformer Attention"}],
       num: "#03",
       isLatest: false,
       categories: ["ai"],
-      image: "assets/projects/vietnamese-ocr.png",
+      image: "assets/projects/vietnamese-ocr.webp",
       tags: [
         "Python",
         "PyTorch",
@@ -229,10 +238,13 @@
     },
     {
       id: "nlp-translation",
+      alt: "Ảnh dự án EN-VI Machine Translation",
+      i18nKeys: {"meta": "p_mt_meta", "title": "p_mt_title", "desc": "p_mt_desc"},
+      cardTechs: [{"skill": "python", "label": "Python", "title": "Xem kỹ năng Python"}, {"skill": "pytorch", "label": "PyTorch", "title": "Xem kỹ năng PyTorch"}, {"skill": "pytorch", "label": "Transformer", "title": "Transformer Attention"}],
       num: "#04",
       isLatest: false,
       categories: ["ai"],
-      image: "assets/projects/nlp-translation.png",
+      image: "assets/projects/nlp-translation.webp",
       tags: [
         "Python",
         "PyTorch",
@@ -299,10 +311,13 @@
     },
     {
       id: "stock-ml",
+      alt: "Ảnh dự án Stock Forecasting & Benchmark",
+      i18nKeys: {"meta": "p_stock_meta", "title": "p_stock_title", "desc": "p_stock_desc"},
+      cardTechs: [{"skill": "python", "label": "Python", "title": "Xem kỹ năng Python"}, {"skill": "tensorflow", "label": "TensorFlow", "title": "Xem kỹ năng TensorFlow"}, {"skill": "python", "label": "LSTM / Time-Series", "title": "LSTM / Time-Series"}],
       num: "#05",
       isLatest: false,
       categories: ["ai"],
-      image: "assets/projects/stock-ml.png",
+      image: "assets/projects/stock-ml.webp",
       tags: [
         "Python",
         "TensorFlow / Keras",
@@ -369,10 +384,13 @@
     },
     {
       id: "warehouse",
+      alt: "Ảnh dự án WarehouseMA",
+      i18nKeys: {"meta": "p2_meta", "title": "p2_title", "desc": "p2_desc"},
+      cardTechs: [{"skill": "csharp", "label": "C#", "title": "Xem kỹ năng C#"}, {"skill": "dotnet", "label": ".NET WinForms", "title": "Xem kỹ năng .NET"}, {"skill": "mysql", "label": "MySQL", "title": "Xem kỹ năng MySQL"}],
       num: "#06",
       isLatest: false,
       categories: ["backend"],
-      image: "assets/projects/warehouse.png",
+      image: "assets/projects/warehouse.webp",
       tags: [
         "C#",
         ".NET WinForms",
@@ -439,10 +457,13 @@
     },
     {
       id: "pos",
+      alt: "Ảnh dự án An Khang Store POS",
+      i18nKeys: {"meta": "p3_meta", "title": "p3_title", "desc": "p3_desc"},
+      cardTechs: [{"skill": "laravel", "label": "Laravel 10", "title": "Xem kỹ năng Laravel"}, {"skill": "php", "label": "Livewire", "title": "Xem kỹ năng PHP / Livewire"}, {"skill": "mysql", "label": "MySQL", "title": "Xem kỹ năng MySQL"}],
       num: "#07",
       isLatest: false,
       categories: ["backend"],
-      image: "assets/projects/pos.png",
+      image: "assets/projects/pos.webp",
       tags: [
         "Laravel 10",
         "Livewire",
@@ -562,5 +583,85 @@
   });
 
   // Export to global scope
+  
+  // ==========================================================================
+  // Dynamic Project Cards Render Engine
+  // ==========================================================================
+  function buildProjectCard(p) {
+    const isEn = (typeof window.getCurrentLang === "function" ? window.getCurrentLang() : "vi") === "en";
+    const loc = p[isEn ? "en" : "vi"] || p.vi;
+
+    const latestBadge = p.isLatest ? [
+      '<span class="project-badge-latest">',
+      '  <span class="badge-dot animate-pulse"></span>',
+      '  <span data-i18n="p_badge_latest">Mới nhất</span>',
+      '</span>'
+    ].join("") : "";
+
+    const pills = (p.cardTechs || []).map(function (t) {
+      return '<span class="text-xs tag-pill tag-pill--interactive" data-tech-skill="' + t.skill + '" title="' + t.title + '">' + t.label + '</span>';
+    }).join("");
+
+    const links = (p.links || []).map(function (l) {
+      const isPrimary = l.type === "primary";
+      const colorCls = isPrimary ? "text-indigo-600 dark:text-indigo-400" : "text-cyan-600 dark:text-cyan-400";
+      const label = (l.url.indexOf("youtu") !== -1 || l.type === "accent") ? "Demo →" : "GitHub →";
+      return '<a href="' + l.url + '" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 ' + colorCls + ' hover:underline font-medium text-xs sm:text-sm"><span>' + label + '</span></a>';
+    }).join("");
+
+    const metaKey = p.i18nKeys ? p.i18nKeys.meta : "";
+    const titleKey = p.i18nKeys ? p.i18nKeys.title : "";
+    const descKey = p.i18nKeys ? p.i18nKeys.desc : "";
+
+    return [
+      '<article class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1" data-category="' + p.categories.join(" ") + '" data-project-id="' + p.id + '">',
+      '  <div>',
+      '    <div class="project-card-header">',
+      '      <span class="project-num">' + p.num + '</span>',
+      latestBadge,
+      '    </div>',
+      '    <div class="text-center mb-4">',
+      '      <p class="text-gray-500 dark:text-gray-400 text-sm font-medium" data-i18n="' + metaKey + '">' + loc.meta + '</p>',
+      '      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1 cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors" data-i18n="' + titleKey + '" data-project-trigger="' + p.id + '">' + loc.title + '</h3>',
+      '    </div>',
+      '    <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="' + p.id + '" title="Xem chi tiết">',
+      '      <img src="' + p.image + '" alt="' + (p.alt || loc.title) + '" loading="lazy" decoding="async">',
+      '      <div class="project-thumb-overlay">',
+      '        <span class="project-thumb-hint">',
+      '          <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">',
+      '            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />',
+      '            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />',
+      '          </svg>',
+      '          <span data-i18n="p_btn_details">Chi tiết</span>',
+      '        </span>',
+      '      </div>',
+      '    </div>',
+      '    <p class="text-gray-600 dark:text-gray-300 mb-4" data-i18n="' + descKey + '">' + (loc.desc || loc.summary) + '</p>',
+      '    <div class="flex flex-wrap gap-2 mb-6 project-tech-list">' + pills + '</div>',
+      '  </div>',
+      '  <div class="project-actions-row flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-white/5">',
+      '    <button type="button" class="btn-project-details" data-project-id="' + p.id + '">',
+      '      <span data-i18n="p_btn_details">Chi tiết</span>',
+      '      <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">',
+      '        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />',
+      '      </svg>',
+      '    </button>',
+      '    <div class="flex items-center gap-3">' + links + '</div>',
+      '  </div>',
+      '</article>'
+    ].join("");
+  }
+
+  function renderProjectCards() {
+    const track = document.getElementById("projects-track");
+    if (!track) return;
+    track.innerHTML = rawProjects.map(buildProjectCard).join("");
+    if (typeof window.applyI18n === "function") {
+      window.applyI18n(track);
+    }
+  }
+
+  global.renderProjectCards = renderProjectCards;
+
   global.PROJECTS_DATA = PROJECTS_DATA;
 })(typeof window !== "undefined" ? window : this);

@@ -217,6 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Wires together all independent feature modules.
 // ==========================================================================
 function initAppModules() {
+  window.renderProjectCards?.();    // render project cards from data module
   window.renderCertCards?.();       // render cert cards from data module
   window.initProjectsCarousel?.();
   window.initProjectsFilter?.();

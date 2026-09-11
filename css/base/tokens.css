@@ -52,7 +52,6 @@
 
 body {
   font-family: 'Inter', 'Poppins', sans-serif;
-  scroll-behavior: smooth;
   overflow-x: hidden;
   background-color: var(--bg-app);
   color: var(--text-primary);

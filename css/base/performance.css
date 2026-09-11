@@ -1,0 +1,51 @@
+/* ==========================================================================
+   PERFORMANCE & RENDERING OPTIMIZATIONS
+   Rules: content-visibility, layout containment, GPU hints, reduced-motion
+   ========================================================================== */
+
+/* 1. Content Visibility for Off-screen Sections (Skip rendering until scrolled near) */
+section:not(#home) {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 650px;
+}
+
+/* 2. Isolated Hardware Acceleration Layers */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* 3. Fast tap response on touch devices (Removes 300ms click delay) */
+a, button, [role="button"] {
+  touch-action: manipulation;
+}
+
+/* 4. Enhanced Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .section-aurora-orb {
+    animation: none !important;
+    display: none !important;
+  }
+}
+
+/* 5. Print Styles Optimization */
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  #navbar, #fab, #nav-rail, #particles-js, .section-aurora-orb {
+    display: none !important;
+  }
+}
