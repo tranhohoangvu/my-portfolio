@@ -58,6 +58,8 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
   - *AI Engineer Intern* (`assets/cv/TranHoHoangVu_AI.pdf`)
 - **Section Chứng chỉ (Certificates)**:
   - Tiêu đề gradient + huy hiệu kicker + phụ đề hiện đại.
+  - **Bộ lọc danh mục (Category Filter Tabs)**: Lọc nhanh theo `Tất cả`, `AI & Deep Learning`, `Phân tích dữ liệu`, `Quy trình & Agile`, `Ngoại ngữ` kèm huy hiệu số lượng động.
+  - **Nút Xem thêm / Thu gọn thông minh (Show More / Collapse)**: Hiển thị trước 3 chứng chỉ mới nhất, nút `Xem thêm (X chứng chỉ) ↓` giúp tiết kiệm không gian và mở rộng mượt mà.
   - Bong bóng icon đơn vị cấp chứng chỉ (Google • DeepLearning.AI • Techbase Agile • British Council).
   - **Chứng chỉ Google Data Analytics Professional** (Google • Coursera): xem PDF trực tiếp + xác minh chứng chỉ gốc trực tuyến.
   - **Chứng chỉ DeepLearning.AI TensorFlow Developer** (DeepLearning.AI • Coursera): xem PDF trực tiếp + xác minh chứng chỉ gốc trực tuyến.
@@ -179,6 +181,7 @@ my-portfolio/
 │  │  ├─ fab.js                   # Floating Action Bar (FAB) & hệ thống Toast
 │  │  ├─ section-nav.js           # Thanh điều hướng section nổi trên desktop
 │  │  ├─ cert-modal.js            # Animation thanh điểm Aptis & Modal Formspree chứng chỉ
+│  │  ├─ cert-filter.js           # Bộ lọc danh mục chứng chỉ & tính năng Xem thêm / Thu gọn
 │  │  ├─ email-copy.js            # Cơ chế 1-click copy email clipboard kèm toast thông báo
 │  │  ├─ contact-form.js          # Topic chips, bộ đếm ký tự & Formspree AJAX
 │  │  ├─ github-stats.js          # Đồ thị đóng góp SVG & dynamic theming

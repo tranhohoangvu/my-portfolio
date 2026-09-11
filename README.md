@@ -59,6 +59,8 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
 - **Hero "Download CV" dropdown** to pick the CV version directly.
 - **Certificates Section**:
   - Gradient headline + kicker badge + subtitle header.
+  - **Category Filter Tabs**: 1-click filtering across `All`, `AI & Deep Learning`, `Data Analytics`, `Software & Agile`, and `Language` with dynamic count badges.
+  - **Smart Expand & Collapse ("Show More")**: Displays the top 3 newest certificates initially with a sleek `Show more (X certificates) ↓` toggle to keep page length compact.
   - Issuer icon bubbles (Google • DeepLearning.AI • Techbase Agile • British Council).
   - **Google Data Analytics Professional Certificate** (Google • Coursera): direct PDF preview + live credential verification.
   - **DeepLearning.AI TensorFlow Developer Certificate** (DeepLearning.AI • Coursera): direct PDF preview + live credential verification.
@@ -180,6 +182,7 @@ my-portfolio/
 │  │  ├─ fab.js                   # Floating Action Bar (FAB) & Toast notifications
 │  │  ├─ section-nav.js           # Desktop floating section navigation rail
 │  │  ├─ cert-modal.js            # Aptis score animation & Formspree cert request modal
+│  │  ├─ cert-filter.js           # Category filter tabs & Show More / Collapse pagination
 │  │  ├─ email-copy.js            # 1-Click email clipboard copy with toast feedback
 │  │  ├─ contact-form.js          # Topic chips, character counter & Formspree AJAX
 │  │  ├─ github-stats.js          # GitHub activity graph SVGs & dynamic theming

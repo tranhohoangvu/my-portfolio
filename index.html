@@ -1535,11 +1535,37 @@
         <p class="certs-subtitle" data-i18n="certs_subtitle">Các chứng chỉ xác nhận năng lực Trí tuệ nhân tạo (AI), Phân tích dữ liệu, Agile &amp; Scrum và tiếng Anh.</p>
       </div>
 
+      <!-- Category Filter Tabs (All / AI / Data / Software & Agile / Language) -->
+      <div class="certs-filter-wrapper mb-8 flex justify-center">
+        <div class="certs-filter-bar" role="tablist" aria-label="Bộ lọc danh mục chứng chỉ">
+          <button type="button" role="tab" aria-selected="true" class="certs-filter-tab is-active" data-cert-filter="all">
+            <span data-i18n="certs_tab_all">Tất cả</span>
+            <span class="certs-tab-count">4</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" class="certs-filter-tab" data-cert-filter="ai">
+            <span data-i18n="certs_tab_ai">AI &amp; Deep Learning</span>
+            <span class="certs-tab-count">1</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" class="certs-filter-tab" data-cert-filter="data">
+            <span data-i18n="certs_tab_data">Phân tích dữ liệu</span>
+            <span class="certs-tab-count">1</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" class="certs-filter-tab" data-cert-filter="software">
+            <span data-i18n="certs_tab_software">Quy trình &amp; Agile</span>
+            <span class="certs-tab-count">1</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" class="certs-filter-tab" data-cert-filter="language">
+            <span data-i18n="certs_tab_language">Ngoại ngữ</span>
+            <span class="certs-tab-count">1</span>
+          </button>
+        </div>
+      </div>
+
       <!-- Cert Grid (Sắp xếp mới nhất bên trái -> cũ dần về bên phải) -->
       <div class="cert-grid-v2">
 
         <!-- Card 1: Google Data Analytics (01/2026 - Mới nhất) -->
-        <article class="cert-card-v2" id="cert-google">
+        <article class="cert-card-v2" id="cert-google" data-cert-category="data">
           <div class="cert-card-v2__toprow">
             <!-- Issuer Icon Bubble -->
             <div class="cert-issuer-icon cert-issuer-icon--google" aria-hidden="true">
@@ -1599,7 +1625,7 @@
         </article>
 
         <!-- Card 2: DeepLearning.AI TensorFlow Developer (01/2026) -->
-        <article class="cert-card-v2" id="cert-tensorflow">
+        <article class="cert-card-v2" id="cert-tensorflow" data-cert-category="ai">
           <div class="cert-card-v2__toprow">
             <!-- Issuer Icon Bubble -->
             <div class="cert-issuer-icon cert-issuer-icon--deeplearning" aria-hidden="true">
@@ -1658,7 +1684,7 @@
         </article>
 
         <!-- Card 3: Agile & Scrum (10/2024) -->
-        <article class="cert-card-v2" id="cert-agile">
+        <article class="cert-card-v2" id="cert-agile" data-cert-category="software">
           <div class="cert-card-v2__toprow">
             <!-- B: Issuer Icon Bubble -->
             <div class="cert-issuer-icon cert-issuer-icon--agile" aria-hidden="true">
@@ -1707,7 +1733,7 @@
         </article>
 
         <!-- Card 4: Aptis ESOL (04/2024) -->
-        <article class="cert-card-v2" id="cert-aptis">
+        <article class="cert-card-v2" id="cert-aptis" data-cert-category="language">
           <div class="cert-card-v2__toprow">
             <!-- B: Issuer Icon Bubble -->
             <div class="cert-issuer-icon cert-issuer-icon--language" aria-hidden="true">
@@ -1778,6 +1804,16 @@
         </article>
 
       </div><!-- /cert-grid-v2 -->
+
+      <!-- Load More / Collapse Button -->
+      <div id="certs-load-more-wrap" class="certs-load-more-wrap mt-10 flex justify-center">
+        <button type="button" id="certs-load-more-btn" class="certs-load-more-btn" aria-expanded="false">
+          <span id="certs-load-more-text">Xem thêm (1 chứng chỉ)</span>
+          <svg id="certs-load-more-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 transition-transform duration-300">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -2803,6 +2839,7 @@
   <script src="js/modules/fab.js"></script>
   <script src="js/modules/section-nav.js"></script>
   <script src="js/modules/cert-modal.js"></script>
+  <script src="js/modules/cert-filter.js"></script>
   <script src="js/modules/email-copy.js"></script>
   <script src="js/modules/contact-form.js"></script>
   <script src="js/modules/github-stats.js"></script>

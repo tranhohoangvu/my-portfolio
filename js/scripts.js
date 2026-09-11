@@ -225,6 +225,7 @@ function initAppModules() {
   window.initCvDownloadCounter?.();
   window.initCertScoreAnimation?.();
   window.initCertRequestModal?.();
+  window.initCertFilter?.();
 }
 
 if (document.readyState === "loading") {

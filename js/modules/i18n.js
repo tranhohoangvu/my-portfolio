@@ -152,6 +152,7 @@
     window.refreshActiveSkillBanner?.();
     window.refreshTerminalLang?.();
     window.refreshSectionNavLang?.();
+    window.refreshCertsFilterContent?.();
   }
 
   function toggleLanguage() {
