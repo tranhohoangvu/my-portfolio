@@ -56,12 +56,13 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
 - **Section CV với 2 bản PDF chuyên biệt + nút “View / Download”**:
   - *Fresher Backend Developer* (`assets/cv/TranHoHoangVu_BE.pdf`)
   - *AI Engineer Intern* (`assets/cv/TranHoHoangVu_AI.pdf`)
-- **Dropdown “Download CV” ở Hero** để tải nhanh phiên bản CV mong muốn.
-- **Section Chứng chỉ (Certificates)** (được thiết kế lại):
+- **Section Chứng chỉ (Certificates)**:
   - Tiêu đề gradient + huy hiệu kicker + phụ đề hiện đại.
   - Bong bóng icon đơn vị cấp chứng chỉ (Agile/Scrum • British Council).
-  - Thanh tiến trình điểm số **Aptis ESOL** (135/200, kích hoạt animation mượt mà khi cuộn tới qua IntersectionObserver).
-  - Huy hiệu Certificate ID, chip ngày tháng, mô tả song ngữ đầy đủ.
+  - Thanh tiến trình điểm số **Aptis ESOL** (135/200, kích hoạt animation mượt mà khi cuộn tới qua IntersectionObserver) • Trình độ CEFR: B1.
+  - **Bảo mật PII**: bản xem trước online được che mờ thông tin cá nhân (CCCD, mã QR), tích hợp **Form Modal Formspree** để nhà tuyển dụng gửi yêu cầu nhận bản gốc đối chiếu.
+  - Chứng chỉ Techbase Agile có nút xem trực tiếp bản PDF chất lượng cao.
+  - Cụm nút thao tác thiết kế cân đối, gọn đẹp kèm hiệu ứng hover tương tác.
 - **Section Hoạt động GitHub** (được thiết kế lại):
   - Thanh thống kê nhanh (Quick Stats Bar): **16 repos · 22 stars** · Các ngôn ngữ hàng đầu (Python, TypeScript, JavaScript, Java) — số liệu trực tiếp từ GitHub API.
   - Bản đồ đóng góp (SVG heatmap) tự động tạo (Light/Dark) và commit hằng ngày qua GitHub Actions.
@@ -108,7 +109,7 @@ Portfolio có **2 phiên bản CV dạng PDF** (hiển thị ở section CV và 
 
 ### Key i18n đang dùng (JS)
 
-Text của section CV + dropdown được điều khiển qua `data-i18n` trong `js/scripts.js`:
+Text của section CV + dropdown được điều khiển qua `data-i18n` trong `js/data/i18n.data.js`:
 
 - Title/desc của card:  
   `cv_be_title`, `cv_be_desc`  
@@ -130,6 +131,7 @@ my-portfolio/
 ├─ assets/
 │  ├─ projects/                   # Ảnh chụp màn hình 7 dự án portfolio
 │  ├─ cv/                         # Hồ sơ ứng tuyển (CV Fresher Backend & AI Engineer PDF)
+│  ├─ certificates/               # Chứng chỉ chuyên môn (Aptis PDF đã che PII & Techbase Agile PDF)
 │  ├─ profile/                    # Ảnh đại diện cá nhân (profile1.jpg, profile2.png)
 │  ├─ icons/                      # Biểu tượng favicon (SVG, PNG) & App icon PWA
 │  ├─ github/                     # Bản đồ đóng góp & đồ thị hoạt động GitHub tự động (SVG)
@@ -161,16 +163,25 @@ my-portfolio/
 ├─ scripts/                       # Thư mục chứa automation & build scripts
 │  └─ build_github_contrib_svgs.py # Script Python tạo SVG heatmap từ GitHub GraphQL API
 ├─ js/
-│  ├─ data/                       # Module dữ liệu phía client chạy độc lập
+│  ├─ data/                       # Module dữ liệu phía client (Single Source of Truth)
+│  │  ├─ i18n.data.js             # Từ điển song ngữ VI / EN độc lập
 │  │  ├─ projects.data.js         # Kho dữ liệu window.PROJECTS_DATA & hàm tra cứu/lọc
 │  │  └─ skills.data.js           # Kho dữ liệu window.SKILLS_DATA & hàm liên kết 2 chiều
 │  ├─ modules/                    # Các module tính năng giao diện độc lập
+│  │  ├─ i18n.js                  # Logic chuyển đổi ngôn ngữ & cập nhật DOM i18n
+│  │  ├─ theme.js                 # Quản lý Dark/Light mode & nền navbar khi cuộn
 │  │  ├─ carousel.js              # Projects carousel slider & bộ lọc danh mục
 │  │  ├─ modal.js                 # Project deep-dive details modal & các tab kiến trúc
 │  │  ├─ skill-linking.js         # Liên kết tương tác 2 chiều Kỹ năng ↔ Dự án
 │  │  ├─ terminal.js              # Widget Interactive Terminal CLI & REST API Console
-│  │  └─ fab.js                   # Floating Action Bar (FAB) & hệ thống Toast
-│  └─ scripts.js                  # Điều phối ứng dụng (i18n, theme, navbar, hero, certs, github)
+│  │  ├─ fab.js                   # Floating Action Bar (FAB) & hệ thống Toast
+│  │  ├─ section-nav.js           # Thanh điều hướng section nổi trên desktop
+│  │  ├─ cert-modal.js            # Animation thanh điểm Aptis & Modal Formspree chứng chỉ
+│  │  ├─ email-copy.js            # Cơ chế 1-click copy email clipboard kèm toast thông báo
+│  │  ├─ contact-form.js          # Topic chips, bộ đếm ký tự & Formspree AJAX
+│  │  ├─ github-stats.js          # Đồ thị đóng góp SVG & dynamic theming
+│  │  └─ ui-interactions.js       # Bộ đếm Counter, lật 3D profile card, CV counter, typewriter
+│  └─ scripts.js                  # Điều phối ứng dụng chính (Master Application Orchestrator)
 ├─ projects-docs/                 # Tài liệu kỹ thuật chi tiết cho 7 dự án
 │  ├─ 01-coursehub-lms.md
 │  ├─ 02-ecommerce-platform.md
@@ -212,28 +223,31 @@ Truy cập: `http://localhost:5500`
 ## ⚙️ Tùy biến nhanh
 
 ### 1) GitHub username
-Sửa trong `js/scripts.js`:
+Sửa trong `js/modules/github-stats.js`:
 ```js
 const GITHUB_USERNAME = "tranhohoangvu";
 ```
 
-### 2) Chip thống kê GitHub (Stats chips)
+### 2) Dịch thuật song ngữ / i18n
+Chỉnh sửa từ điển ngôn ngữ trong `js/data/i18n.data.js` (`window.I18N_DATA`).
+
+### 3) Chip thống kê GitHub (Stats chips)
 Các giá trị trong thanh thống kê (repos, stars) của section GitHub được đặt trực tiếp trong `index.html`.
 Bạn có thể cập nhật thủ công hoặc tự động hóa qua GitHub Actions đọc từ API.
 
-### 3) Contact form (Formspree)
+### 4) Contact form (Formspree)
 Sửa trong `index.html`:
 ```html
 <form action="https://formspree.io/f/xxxxxxx" method="POST">
 ```
 
-### 4) CV / nhãn hiển thị
+### 5) CV / nhãn hiển thị
 - Thay PDF trong `assets/cv/`
 - Cập nhật link dropdown trong `index.html` (CV menu)
-- Cập nhật bản dịch trong `js/scripts.js` (object `I18N`)
+- Cập nhật bản dịch trong `js/data/i18n.data.js` (object `I18N_DATA`)
 
-### 5) Social links / nội dung khác
-Sửa trực tiếp trong `index.html` và phần dịch trong `js/scripts.js`.
+### 6) Social links / nội dung khác
+Sửa trực tiếp trong `index.html` và phần dịch trong `js/data/i18n.data.js`.
 
 ---
 

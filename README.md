@@ -57,11 +57,13 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
   - *Fresher Backend Developer* (`assets/cv/TranHoHoangVu_BE.pdf`)
   - *AI Engineer Intern* (`assets/cv/TranHoHoangVu_AI.pdf`)
 - **Hero "Download CV" dropdown** to pick the CV version directly.
-- **Certificates Section** (redesigned):
+- **Certificates Section**:
   - Gradient headline + kicker badge + subtitle header.
   - Issuer icon bubbles (Agile/Scrum • British Council).
-  - Aptis ESOL **score progress bar** (135/200, animated on scroll via IntersectionObserver).
-  - Certificate ID badge, date chips, bilingual descriptions.
+  - Aptis ESOL **score progress bar** (135/200, animated on scroll via IntersectionObserver) • Overall CEFR level: B1.
+  - **Privacy protection**: online preview has sensitive PII (National ID, QR) redacted, with an interactive **Formspree Modal Request** for recruiters to request the original verified scan.
+  - Techbase Agile certificate available via direct high-res PDF preview.
+  - Balanced, sleek action buttons with micro-interaction hover feedback.
 - **GitHub Activity Section** (redesigned):
   - Quick Stats Bar: **16 repos · 22 stars** · Top languages (Python, TypeScript, JavaScript, Java) — fetched from GitHub API.
   - Auto-generated contributions heatmap SVG (Light/Dark) committed daily via GitHub Actions.
@@ -108,7 +110,7 @@ This portfolio includes **two PDF CV variants** (both in the CV section and the 
 
 ### i18n keys used (JS)
 
-The CV section + dropdown text is controlled by `data-i18n` keys in `js/scripts.js`:
+The CV section + dropdown text is controlled by `data-i18n` keys in `js/data/i18n.data.js`:
 
 - Card titles/descriptions:  
   `cv_be_title`, `cv_be_desc`  
@@ -130,6 +132,7 @@ my-portfolio/
 ├─ assets/
 │  ├─ projects/                   # Screenshots for 7 portfolio projects
 │  ├─ cv/                         # Career CVs (Backend Developer & AI Engineer PDFs)
+│  ├─ certificates/               # Verified certificates (Redacted Aptis PDF & Techbase Agile PDF)
 │  ├─ profile/                    # Personal avatar & profile photos
 │  ├─ icons/                      # Favicons (SVG, PNG) & PWA app icons
 │  ├─ github/                     # Auto-generated daily contribution & activity graph SVGs
@@ -161,16 +164,25 @@ my-portfolio/
 ├─ scripts/                       # Automation & build scripts
 │  └─ build_github_contrib_svgs.py # Python script for GitHub GraphQL contribution SVG
 ├─ js/
-│  ├─ data/                       # Independent client data modules
+│  ├─ data/                       # Independent client data modules (Single Source of Truth)
+│  │  ├─ i18n.data.js             # Bilingual VI/EN dictionary dataset
 │  │  ├─ projects.data.js         # Window.PROJECTS_DATA store & filter helpers
 │  │  └─ skills.data.js           # Window.SKILLS_DATA store & 2-way linking helpers
 │  ├─ modules/                    # Modular feature controllers
+│  │  ├─ i18n.js                  # Language switching & DOM translation logic
+│  │  ├─ theme.js                 # Dark/Light mode & navbar scroll background
 │  │  ├─ carousel.js              # Projects carousel slider & category filter
 │  │  ├─ modal.js                 # Project deep-dive details modal & architecture tabs
 │  │  ├─ skill-linking.js         # 2-way interactive Skill ↔ Project linking
 │  │  ├─ terminal.js              # Interactive Terminal CLI & REST API Console
-│  │  └─ fab.js                   # Floating Action Bar (FAB) & Toast notifications
-│  └─ scripts.js                  # Lean app coordinator (i18n, theme, navbar, hero, certs, github)
+│  │  ├─ fab.js                   # Floating Action Bar (FAB) & Toast notifications
+│  │  ├─ section-nav.js           # Desktop floating section navigation rail
+│  │  ├─ cert-modal.js            # Aptis score animation & Formspree cert request modal
+│  │  ├─ email-copy.js            # 1-Click email clipboard copy with toast feedback
+│  │  ├─ contact-form.js          # Topic chips, character counter & Formspree AJAX
+│  │  ├─ github-stats.js          # GitHub activity graph SVGs & dynamic theming
+│  │  └─ ui-interactions.js       # Stats counter ticker, 3D profile flip, CV counter, typewriter
+│  └─ scripts.js                  # Master Application Orchestrator & core coordinator
 ├─ projects-docs/                 # Comprehensive documentation for 7 projects
 │  ├─ 01-coursehub-lms.md
 │  ├─ 02-ecommerce-platform.md
@@ -212,10 +224,13 @@ Visit: `http://localhost:5500`
 ## ⚙️ Quick Customize
 
 ### 1) GitHub username
-Edit in `js/scripts.js`:
+Edit in `js/modules/github-stats.js`:
 ```js
 const GITHUB_USERNAME = "tranhohoangvu";
 ```
+
+### 2) Translations / i18n
+Edit the language dictionary in `js/data/i18n.data.js` (`window.I18N_DATA`).
 
 ### 2) GitHub Stats chips
 The stats bar values (repos, stars) in the GitHub section are set directly in `index.html`.
