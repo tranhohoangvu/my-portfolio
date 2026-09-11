@@ -1,19 +1,17 @@
 # 🌐 Portfolio cá nhân — Trần Hồ Hoàng Vũ
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-M%E1%BB%9F-success)](https://tranhohoangvu.github.io/my-portfolio/)
+[![GitHub](https://img.shields.io/badge/GitHub-tranhohoangvu-181717?logo=github)](https://github.com/tranhohoangvu)
 
 > 🎓 Sinh viên năm cuối ngành Computer Science tại Đại học Tôn Đức Thắng (TDTU)  
-> 💼 Portfolio giới thiệu dự án, kỹ năng, chứng chỉ, GitHub activity — và các phiên bản CV.
+> 💼 Portfolio giới thiệu dự án, kỹ năng, chứng chỉ, hoạt động GitHub — và các phiên bản CV.
 
-Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + Vanilla JS**, có **Dark/Light mode** và chuyển ngôn ngữ **VI/EN**.
+Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + Vanilla JS**, hỗ trợ chế độ **Dark/Light mode** và chuyển đổi song ngữ **VI/EN**.
 
-- 🔗 **Website:** https://tranhohoangvu.github.io/my-portfolio/
-- 📄 **CV (PDF) trong repo:** `assets/`
-  - `assets/cv/TranHoHoangVu_BE.pdf`
-  - `assets/cv/TranHoHoangVu_AI.pdf`
-- 📄 **Link trực tiếp (sau khi deploy):**
-  - `.../assets/cv/TranHoHoangVu_BE.pdf`
-  - `.../assets/cv/TranHoHoangVu_AI.pdf`
+- 🔗 **Website trực tiếp:** https://tranhohoangvu.github.io/my-portfolio/
+- 📄 **CV (PDF) trong repo:** `assets/cv/`
+  - `assets/cv/TranHoHoangVu_BE.pdf` — Fresher Backend Developer
+  - `assets/cv/TranHoHoangVu_AI.pdf` — AI Engineer Intern
 
 > English version: `README.md`
 
@@ -41,7 +39,7 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
 - **Thẩm mỹ Kỹ sư Phần mềm Hiện đại**: Nền tối Deep Obsidian sang trọng (`#070b14`), kính mờ glassmorphism với viền kim loại mảnh, và hiệu ứng quầng sáng aurora chuyển động sống động.
 - **Interactive Terminal & REST API Console Widget (Signature Feature)**:
   - **CLI Terminal (`vu-cli v2.4`)**: Shell dòng lệnh phong cách Linux/macOS hỗ trợ tự động hoàn thành (<kbd>Tab</kbd>), duyệt lịch sử lệnh (<kbd>↑</kbd>/<kbd>↓</kbd>), và cụm chip lệnh nhanh 1-click tiện lợi cho người dùng mobile. Hỗ trợ đầy đủ các lệnh: `vu --help`, `vu --bio`, `vu --skills [--json]`, `vu --fetch-projects [--cat=X] [--id=Y]`, `vu --contact`, `vu --cv`, `curl <endpoint>`, `theme`, `lang`, `clear`, `history`, `date`, `matrix`, `sudo`.
-  - **REST API Explorer**: Trình khám phá và kiểm thử endpoint trực quan phong cách Postman/Swagger (`GET /api/v1/profile`, `/skills`, `/projects`, `/health`, `POST /contact`), hiển thị HTTP status `200 OK`, thời gian phản hồi (latency), kích thước payload và JSON syntax highlighting kèm nút sao chép JSON.
+  - **REST API Explorer**: Trình khám phá và kiểm thử endpoint trực quan phong cách Postman/Swagger (`GET /api/v1/profile`, `/skills`, `/projects`, `/health`, `POST /contact`), hiển thị HTTP status `200 OK`, thời gian phản hồi (latency), kích thước payload và JSON syntax highlighting kèm nút sao chép JSON 1-click.
   - **Điều khiển cửa sổ macOS**: Thu nhỏ, xóa màn hình, phóng to toàn màn hình (Fullscreen) và sao chép toàn bộ output.
 - **Tương tác liên kết Kỹ năng ↔ Dự án 2 chiều (Interactive Skill Linking)**:
   - **Kỹ năng ➔ Dự án**: Click vào bất kỳ kỹ năng nào có huy hiệu trong mục Kỹ năng sẽ tự động cuộn lên Dự án, hiển thị thanh **Active Skill Filter Banner**, làm sáng viền các dự án áp dụng công nghệ đó (`.is-skill-matched`) và tự động trượt Carousel đến đúng dự án.
@@ -54,14 +52,26 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
 - **Thanh tác vụ nổi (FAB) & Hệ thống Toast Notification**: Sao chép email 1-click kèm thông báo Toast tức thì, mở nhanh LinkedIn/GitHub và tải CV tiện lợi.
 - Giao diện responsive (mobile-first) với animation mềm mại khi cuộn trang.
 - Dark / Light mode (lưu trong `localStorage`, fallback theo hệ điều hành).
-- i18n VI / EN qua `data-i18n` (lưu trong `localStorage.lang`, cập nhật cả metadata và title).
+- i18n VI / EN qua `data-i18n` (lưu trong `localStorage.lang`, cập nhật cả metadata và title trang).
 - **Section CV với 2 bản PDF chuyên biệt + nút “View / Download”**:
   - *Fresher Backend Developer* (`assets/cv/TranHoHoangVu_BE.pdf`)
   - *AI Engineer Intern* (`assets/cv/TranHoHoangVu_AI.pdf`)
 - **Dropdown “Download CV” ở Hero** để tải nhanh phiên bản CV mong muốn.
-- **GitHub section**:
-  - SVG contributions heatmap auto-generate (Light/Dark) và tự động commit hằng ngày qua GitHub Actions.
-  - Activity Graph hiển thị trực quan thông qua `github-readme-activity-graph`.
+- **Section Chứng chỉ (Certificates)** (được thiết kế lại):
+  - Tiêu đề gradient + huy hiệu kicker + phụ đề hiện đại.
+  - Bong bóng icon đơn vị cấp chứng chỉ (Agile/Scrum • British Council).
+  - Thanh tiến trình điểm số **Aptis ESOL** (135/200, kích hoạt animation mượt mà khi cuộn tới qua IntersectionObserver).
+  - Huy hiệu Certificate ID, chip ngày tháng, mô tả song ngữ đầy đủ.
+- **Section Hoạt động GitHub** (được thiết kế lại):
+  - Thanh thống kê nhanh (Quick Stats Bar): **16 repos · 22 stars** · Các ngôn ngữ hàng đầu (Python, TypeScript, JavaScript, Java) — số liệu trực tiếp từ GitHub API.
+  - Bản đồ đóng góp (SVG heatmap) tự động tạo (Light/Dark) và commit hằng ngày qua GitHub Actions.
+  - Biểu đồ hoạt động động (Dynamic Activity Graph) với trạng thái tải **skeleton shimmer** & hiệu ứng mờ dần (fade-in) khi tải xong.
+  - Nút CTA GitHub bo tròn phong cách dark-mode kèm biểu tượng Octocat.
+- **Tối ưu hóa hiệu năng cuộn trang (Scroll Performance)**:
+  - Toàn bộ trình lắng nghe sự kiện cuộn (scroll listeners) được điều tiết qua `requestAnimationFrame`.
+  - Các chỉ số kích thước layout được lưu bộ đệm (cache) khi `resize`, ngăn ngừa hiện tượng cưỡng bức reflow (layout thrashing).
+  - Sử dụng CSS `contain: layout style paint` + `transform: translateZ(0)` cho các quầng sáng aurora orbs để GPU render trực tiếp.
+  - Hỗ trợ `prefers-reduced-motion` tự động tắt hiệu ứng chuyển động nặng đối với thiết bị ưu tiên giảm chuyển động.
 - Contact form qua Formspree (không cần backend server).
 - Tối ưu SEO: meta tags, Open Graph, `robots.txt`, `sitemap.xml`, và trang `404.html` tùy biến.
 
@@ -125,17 +135,19 @@ my-portfolio/
 │  ├─ styles.css                  # Entry point — chỉ chứa @import (không có styles)
 │  ├─ base/
 │  │  ├─ tokens.css               # Design tokens, CSS variables, body, back-to-top
-│  │  └─ animations.css           # Các class animation & keyframes toàn cục
+│  │  └─ animations.css           # Các class animation toàn cục, keyframes & aurora orbs
 │  ├─ layout/
 │  │  ├─ navbar.css               # Navbar, mobile menu, responsive breakpoints
 │  │  └─ nav-rail.css             # Thanh điều hướng section nổi (desktop)
 │  ├─ sections/
 │  │  ├─ hero.css                 # Hero section, aurora orbs, buttons, CV dropdown
 │  │  ├─ projects.css             # Filter tabs, carousel, cards, modal, skill linking
-│  │  ├─ skills.css               # Skills cards, dark mode, lang toggle, certificates
+│  │  ├─ skills.css               # Skills cards, dark mode, lang toggle
 │  │  ├─ contact.css              # Contact cards, email copy badge, footer
 │  │  ├─ cv.css                   # CV section cards & actions
 │  │  ├─ about.css                # Avatar aura, about content, social buttons
+│  │  ├─ certs.css                # Section chứng chỉ: cards v2, thanh điểm số, icon đơn vị cấp
+│  │  ├─ github.css               # Section GitHub: thanh thống kê, panels, skeleton, nút CTA
 │  │  └─ terminal.css             # Interactive terminal & REST API console widget
 │  └─ components/
 │     ├─ shared-cards.css         # Hiệu ứng hover thống nhất (projects, skills, github)
@@ -153,7 +165,7 @@ my-portfolio/
 │  │  ├─ skill-linking.js         # Liên kết tương tác 2 chiều Kỹ năng ↔ Dự án
 │  │  ├─ terminal.js              # Widget Interactive Terminal CLI & REST API Console
 │  │  └─ fab.js                   # Floating Action Bar (FAB) & hệ thống Toast
-│  └─ scripts.js                  # Điều phối ứng dụng (i18n, theme, navbar, hero)
+│  └─ scripts.js                  # Điều phối ứng dụng (i18n, theme, navbar, hero, certs, github)
 ├─ projects-docs/                 # Tài liệu kỹ thuật chi tiết cho 7 dự án
 │  ├─ 01-coursehub-lms.md
 │  ├─ 02-ecommerce-platform.md
@@ -167,7 +179,7 @@ my-portfolio/
 │  └─ update-github-contrib.yml   # Workflow cron job tự động cập nhật SVG đóng góp hằng ngày
 ├─ UI_UX_ANALYSIS.md              # Báo cáo phân tích UI/UX & lộ trình nâng cấp tính năng
 ├─ README.md                      # Tài liệu tiếng Anh
-├─ README_VI.md                   # Tài liệu tiếng Việt
+├─ README_VI.md                   # Tài liệu tiếng Việt (file này)
 ├─ site.webmanifest               # Cấu hình PWA
 ├─ sitemap.xml                    # Sơ đồ trang web SEO
 ├─ sw.js                          # Trình quản lý bộ nhớ đệm offline Service Worker
@@ -200,18 +212,22 @@ Sửa trong `js/scripts.js`:
 const GITHUB_USERNAME = "tranhohoangvu";
 ```
 
-### 2) Contact form (Formspree)
+### 2) Chip thống kê GitHub (Stats chips)
+Các giá trị trong thanh thống kê (repos, stars) của section GitHub được đặt trực tiếp trong `index.html`.
+Bạn có thể cập nhật thủ công hoặc tự động hóa qua GitHub Actions đọc từ API.
+
+### 3) Contact form (Formspree)
 Sửa trong `index.html`:
 ```html
 <form action="https://formspree.io/f/xxxxxxx" method="POST">
 ```
 
-### 3) CV / nhãn hiển thị
-- Thay PDF trong `assets/` (giữ tên file để khỏi phải sửa HTML)
-- Update link dropdown trong `index.html` (CV menu)
-- Update i18n trong `js/scripts.js` (object I18N)
+### 4) CV / nhãn hiển thị
+- Thay PDF trong `assets/cv/`
+- Cập nhật link dropdown trong `index.html` (CV menu)
+- Cập nhật bản dịch trong `js/scripts.js` (object `I18N`)
 
-### 4) Social links / nội dung khác
+### 5) Social links / nội dung khác
 Sửa trực tiếp trong `index.html` và phần dịch trong `js/scripts.js`.
 
 ---
@@ -242,7 +258,9 @@ Workflow: `.github/workflows/update-github-contrib.yml`
 - Cập nhật:
   - `assets/github/github-contrib-light.svg`
   - `assets/github/github-contrib-dark.svg`
-- Auto commit lại vào repo
+  - `assets/github/github-activity-light.svg`
+  - `assets/github/github-activity-dark.svg`
+- Tự động commit lại vào repo
 
 Nếu bạn fork/clone, nhớ bật Actions và cấp quyền workflow ghi vào repo.
 
@@ -255,20 +273,24 @@ Deploy bằng `.github/workflows/static.yml` (workflow chính thức của GitHu
 1. Push lên nhánh `main`
 2. Vào **Settings → Pages**
 3. Chọn deploy bằng **GitHub Actions**
-4. Sau khi workflow chạy xong, site sẽ ở:
+4. Sau khi workflow chạy xong, website sẽ trực tuyến tại:
    - `https://<username>.github.io/<repo>/`
 
-✅ Site: https://tranhohoangvu.github.io/my-portfolio/
+✅ Live: https://tranhohoangvu.github.io/my-portfolio/
 
 ---
 
 ## 🧠 Gợi ý hiệu năng & SEO
 
-- Nén ảnh (Squoosh/TinyPNG) và ưu tiên định dạng hiện đại nếu có
-- Ảnh hero nên < ~300–500KB
-- Đảm bảo có `og-image-v2.png` và meta tags trỏ đúng
-- Dùng Lighthouse để check performance/SEO/accessibility
-- (Tùy chọn) thêm analytics nếu muốn theo dõi traffic
+- Toàn bộ trình lắng nghe cuộn (scroll listeners) được điều tiết qua `requestAnimationFrame` — loại bỏ giật lag do layout thrashing.
+- Các chỉ số kích thước layout (chiều cao cuộn, offsets) được cache và chỉ tính toán lại khi `resize`.
+- Các quầng sáng aurora dùng CSS `contain: layout style paint` + `transform: translateZ(0)` để GPU trực tiếp xử lý và tăng tốc phần cứng.
+- Tự động tôn trọng `prefers-reduced-motion` để vô hiệu hóa animation phức tạp trên thiết bị yếu.
+- Nén ảnh (Squoosh/TinyPNG) và ưu tiên định dạng hiện đại.
+- Ảnh hero nên < ~300–500KB.
+- Đảm bảo có `og-image-v2.png` và meta tags trỏ đúng.
+- Dùng Lighthouse để kiểm tra hiệu năng, SEO và khả năng tiếp cận (accessibility).
+- (Tùy chọn) Thêm công cụ analytics nếu muốn theo dõi lưu lượng truy cập.
 
 ---
 
@@ -281,7 +303,7 @@ Deploy bằng `.github/workflows/static.yml` (workflow chính thức của GitHu
 5. Commit & push:
 ```bash
 git add .
-git commit -m "feat(cv): update to 2 CVs (Backend and AI)"
+git commit -m "feat: mô tả thay đổi của bạn"
 git push origin main
 ```
 
@@ -294,4 +316,4 @@ git push origin main
 
 ---
 
-> Cập nhật: 2026
+> Cập nhật: Tháng 9 năm 2026
