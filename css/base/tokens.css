@@ -51,7 +51,7 @@
 }
 
 body {
-  font-family: 'Inter', 'Poppins', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   background-color: var(--bg-app);
   background-image:

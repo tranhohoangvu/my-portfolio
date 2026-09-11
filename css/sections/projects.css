@@ -173,7 +173,7 @@ html:not(.dark) .projects-filter-tab:hover {
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.05em;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
   color: #4338ca;
   background: #e0e7ff;
   border: 1px solid #c7d2fe;

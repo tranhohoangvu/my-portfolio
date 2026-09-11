@@ -9,7 +9,7 @@
   place-items: center;
   padding: 28px;
   overflow: hidden;
-  font-family: Inter, Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: rgba(255,255,255,0.92);
   background:
     radial-gradient(900px circle at 50% 35%, rgba(99,102,241,.22), transparent 55%),

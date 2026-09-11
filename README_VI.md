@@ -99,7 +99,7 @@
 | **Giao diện** | Tailwind CSS v4 CLI, Vanilla CSS | Design tokens, glassmorphism, lưới responsive, nhịp sọc zebra |
 | **Logic & Trạng thái** | Vanilla JavaScript (ES6+) | 19 modular controller, Carousel, Skill-linking, Terminal CLI, Modal |
 | **Đóng gói Bundle** | Node.js Script + esbuild | Nối chuỗi dependency và nén file JS production (`bundle.min.js`) |
-| **Typography & Icon** | Devicon, Heroicons, Google Fonts | Font Inter & Poppins, JetBrains Mono cho terminal, icon SVG chính hãng |
+| **Typography & Icon** | Devicon, Heroicons, Google Fonts | Font Inter (UI) & JetBrains Mono (Terminal/Code), icon SVG chính hãng |
 | **Tự động hóa & CI/CD**| GitHub Actions, Python GraphQL | Tự động deploy GitHub Pages, cron job cập nhật heatmap SVG hằng ngày |
 | **Biểu mẫu** | Formspree | Xử lý gửi biểu mẫu liên hệ và yêu cầu xem chứng chỉ gốc không cần backend server |
 

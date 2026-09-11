@@ -99,7 +99,7 @@ A modern, high-performance **static web application** crafted with **HTML5, Tail
 | **Styling** | Tailwind CSS v4 CLI, Vanilla CSS | Design tokens, glassmorphism, responsive grid, zebra striping |
 | **Logic & State** | Vanilla JavaScript (ES6+) | 19 modular controllers, Carousel, Skill-linking, Terminal CLI, Modal |
 | **Bundling** | Node.js Script + esbuild | Dependency concatenation and production JS minification (`bundle.min.js`) |
-| **Typography & Icons**| Devicon, Heroicons, Google Fonts | Inter & Poppins typography, JetBrains Mono for terminal, brand SVGs |
+| **Typography & Icons**| Devicon, Heroicons, Google Fonts | Inter (UI) & JetBrains Mono (Terminal/Code), brand SVGs |
 | **Automation & CI/CD**| GitHub Actions, Python GraphQL | Automated deployment to GitHub Pages, daily contribution SVG update |
 | **Forms** | Formspree | Serverless contact form handling and certificate access requests |
 
