@@ -19,6 +19,7 @@
   // Shared SVG icons for card sub-elements
   var SVG = {
     home: '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+    building: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="22.01"/><line x1="15" y1="22" x2="15" y2="22.01"/><line x1="8" y1="6" x2="8.01" y2="6"/><line x1="16" y1="6" x2="16.01" y2="6"/><line x1="8" y1="10" x2="8.01" y2="10"/><line x1="16" y1="10" x2="16.01" y2="10"/><line x1="8" y1="14" x2="8.01" y2="14"/><line x1="16" y1="14" x2="16.01" y2="14"/><line x1="8" y1="18" x2="8.01" y2="18"/><line x1="16" y1="18" x2="16.01" y2="18"/></svg>',
     calendar: '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
     badge: '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>',
     pdf: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>',
@@ -134,7 +135,6 @@
       pdfFile: "assets/certificates/TranHoHoangVu_Techbase_Agile.pdf",
       pdfLabelI18n: "certs_view_agile", viewBtnClass: "agile",
       verifyUrl: null,
-      requestOriginalBtnId: "btn-request-agile-cert",
     },
     {
       id: "cert-aptis", category: "language", issuerKey: "language",
@@ -192,11 +192,11 @@
     return '<article class="cert-card-v2" id="' + cert.id + '" data-cert-category="' + cert.category + '">' +
       '<div class="cert-card-v2__toprow">' +
         '<div class="cert-issuer-icon cert-issuer-icon--' + cert.issuerKey + '" aria-hidden="true">' + icon + "</div>" +
-        '<div class="cert-card-v2__meta">' +
-          '<h3 class="cert-card-v2__title" data-i18n="' + cert.titleI18n + '">Loading\u2026</h3>' +
-          '<p class="cert-card-v2__issuer">' + SVG.home + " " + cert.issuerLabel + "</p>" +
-        "</div>" +
         '<span class="cert-card-v2__tag cert-card-v2__tag--' + cert.tagClass + '" data-i18n="' + cert.tagI18n + '">Tag</span>' +
+      "</div>" +
+      '<div class="cert-card-v2__heading">' +
+        '<h3 class="cert-card-v2__title" data-i18n="' + cert.titleI18n + '">Loading\u2026</h3>' +
+        '<p class="cert-card-v2__issuer">' + SVG.building + " " + cert.issuerLabel + "</p>" +
       "</div>" +
       '<p class="cert-card-v2__desc" data-i18n="' + cert.descI18n + '">Loading\u2026</p>' +
       (cert.skills.length ? '<div class="cert-skills-chips">' + skills + "</div>" : "") +
