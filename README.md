@@ -67,6 +67,11 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
   - Auto-generated contributions heatmap SVG (Light/Dark) committed daily via GitHub Actions.
   - Dynamic Activity Graph with **skeleton shimmer** loading state & fade-in on load.
   - Dark-mode GitHub CTA pill button with Octocat icon.
+- **Contact Section** (redesigned):
+  - Kicker badge + multi-gradient headline + bilingual subtitle.
+  - **Availability & Work Info Card**: live pulsing status (`Available for Hire`), location (`HCMC, Vietnam UTC+7`), work mode (`On-site • Hybrid • Remote`), and 24h response time indicator.
+  - **Connect Cards**: "Fastest / Preferred" badge on Email & LinkedIn + hover slide-arrow micro-interaction.
+  - **Smart Contact Form**: 1-click Quick Topic Chips (Backend, AI Intern, Project, Other) mapping to Formspree subject, icon-adorned input fields, real-time message character counter (500 max), and send button with animated paper plane and loading spinner.
 - **Scroll Performance Optimized**:
   - All scroll listeners throttled via `requestAnimationFrame`.
   - Layout metrics cached on `resize` to prevent forced reflow on scroll.

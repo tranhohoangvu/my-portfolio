@@ -1880,57 +1880,86 @@
     <div class="section-aurora-orb section-aurora-orb--2" aria-hidden="true"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 section-hidden relative z-10">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100 animate-slide-in"
-        data-i18n="contact_title">Liên hệ</h2>
 
-      <div class="flex flex-col md:flex-row gap-12">
+      <!-- Section Header -->
+      <div class="contact-section-header">
+        <div class="contact-kicker" data-i18n="contact_kicker">💬 LIÊN HỆ • KẾT NỐI NGAY</div>
+        <h2 class="contact-headline" data-i18n="contact_headline">Cùng xây dựng điều tuyệt vời.</h2>
+        <p class="contact-subtitle" data-i18n="contact_subtitle">Sẵn sàng đón nhận cơ hội việc làm Fresher Backend Developer, AI Engineer Intern hoặc dự án cộng tác mới.</p>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-10 lg:gap-12">
         <div class="md:w-1/2">
-          <!-- <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6 animate-slide-in" data-i18n="contact_intro">
-            Hãy liên hệ với tôi qua email hoặc các nền tảng sau:
-          </p> -->
 
-          <div
-            class="connect-panel p-5 rounded-2xl bg-white dark:bg-[#0f172a]/75 border border-slate-200/80 dark:border-white/10">
-            <h3 class="text-lg font-extrabold text-gray-900 dark:text-gray-100 flex items-center gap-2">
-              <span
-                class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-indigo-600/10 dark:bg-white/10 border border-indigo-600/20 dark:border-white/15">
-                <!-- icon -->
-                <svg class="w-5 h-5 text-indigo-600 dark:text-gray-100" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M21 8a2 2 0 0 0-2-2H7l-4 4v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8z" />
+          <div class="connect-panel p-5 sm:p-6 rounded-2xl bg-white dark:bg-[#0f172a]/75 border border-slate-200/80 dark:border-white/10">
+
+            <!-- Availability & Work Info Card -->
+            <div class="contact-avail-card">
+              <div class="contact-avail-top">
+                <div class="contact-avail-badge-wrap">
+                  <span class="contact-avail-dot" aria-hidden="true"></span>
+                  <span data-i18n="contact_avail_badge">Sẵn sàng nhận việc ngay</span>
+                </div>
+                <span class="contact-avail-roles-chip" data-i18n="contact_avail_roles">Fresher Backend • AI Engineer Intern</span>
+              </div>
+              <div class="contact-avail-meta-grid">
+                <div class="contact-avail-meta-item">
+                  <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                  <span data-i18n="contact_location">TP. Hồ Chí Minh, Việt Nam (UTC+7)</span>
+                </div>
+                <div class="contact-avail-meta-item">
+                  <svg class="w-4 h-4 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                  <span data-i18n="contact_work_mode">On-site • Hybrid • Remote</span>
+                </div>
+                <div class="contact-avail-meta-item sm:col-span-2">
+                  <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  </svg>
+                  <span data-i18n="contact_response_time">Phản hồi nhanh trong vòng 24h</span>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-base font-extrabold text-gray-900 dark:text-gray-100 flex items-center gap-2 mb-4">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-indigo-600/10 dark:bg-white/10 border border-indigo-600/20 dark:border-white/15">
+                <svg class="w-4 h-4 text-indigo-600 dark:text-gray-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8a2 2 0 0 0-2-2H7l-4 4v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8z" />
                   <path stroke-linecap="round" stroke-linejoin="round" d="M7 6V4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" />
                 </svg>
               </span>
-              <span data-i18n="connect_title">Let’s connect!</span>
+              <span data-i18n="connect_title">Kết nối với tôi nhé!</span>
             </h3>
 
-            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <!-- Email (full width, click to copy) -->
-              <a href="mailto:hoangvu2k4cmg@gmail.com" class="contact-link-card sm:col-span-2" id="contact-email-link"
+              <a href="mailto:hoangvu2k4cmg@gmail.com" class="contact-link-card sm:col-span-2 group" id="contact-email-link"
                 role="button" tabindex="0" data-email="hoangvu2k4cmg@gmail.com" data-i18n-tooltip="contact_email_tip"
                 title="Nhấp để sao chép email (hoangvu2k4cmg@gmail.com)"
                 aria-label="Sao chép email hoangvu2k4cmg@gmail.com">
                 <span class="contact-link-icon">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 0 1-2 2H4c-1.1 0-2-.9-2-2V6a2 2 0 0 1 2-2Zm8 7 8-5H4l8 5Zm0 2.5-8-5V18h16v-9.5l-8 5Z" />
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 0 1-2 2H4c-1.1 0-2-.9-2-2V6a2 2 0 0 1 2-2Zm8 7 8-5H4l8 5Zm0 2.5-8-5V18h16v-9.5l-8 5Z" />
                   </svg>
                 </span>
                 <span class="contact-link-text">
-                  <span class="contact-link-title">Email</span>
+                  <span class="contact-link-title flex items-center gap-2">
+                    Email
+                    <span class="contact-link-badge contact-link-badge--fastest !px-2 !py-0.5 !text-[10px]" data-i18n="contact_badge_fastest">Nhanh nhất</span>
+                  </span>
                   <span class="contact-link-sub">hoangvu2k4cmg@gmail.com</span>
                 </span>
-                <span
-                  class="contact-link-badge ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold select-none">
+                <span class="contact-link-badge ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold select-none">
                   <span class="contact-link-badge-icon flex items-center">
-                    <svg class="w-3.5 h-3.5 contact-copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                      stroke-width="2" aria-hidden="true">
+                    <svg class="w-3.5 h-3.5 contact-copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
                       <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                       <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                     </svg>
-                    <svg class="w-3.5 h-3.5 contact-check-icon hidden" fill="none" stroke="currentColor"
-                      viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true">
+                    <svg class="w-3.5 h-3.5 contact-check-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
                     </svg>
                   </span>
@@ -1940,78 +1969,90 @@
 
               <!-- GitHub -->
               <a href="https://github.com/tranhohoangvu" target="_blank" rel="noopener noreferrer"
-                class="contact-link-card" aria-label="GitHub của Trần Hồ Hoàng Vũ">
+                class="contact-link-card group" aria-label="GitHub của Trần Hồ Hoàng Vũ">
                 <span class="contact-link-icon">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M12 2C6.48 2 2 6.64 2 12.29c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.63-3.37-1.4-3.37-1.4-.45-1.18-1.1-1.49-1.1-1.49-.9-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.58 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.37-2.22-.26-4.56-1.16-4.56-5.17 0-1.14.39-2.08 1.03-2.82-.1-.25-.45-1.29.1-2.7 0 0 .84-.28 2.75 1.07a9.21 9.21 0 0 1 5 0c1.91-1.35 2.75-1.07 2.75-1.07.55 1.41.2 2.45.1 2.7.64.74 1.03 1.68 1.03 2.82 0 4.02-2.34 4.9-4.57 5.15.36.32.68.95.68 1.91 0 1.38-.01 2.5-.01 2.84 0 .27.18.59.69.48A10.29 10.29 0 0 0 22 12.29C22 6.64 17.52 2 12 2Z" />
+                    <path d="M12 2C6.48 2 2 6.64 2 12.29c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.63-3.37-1.4-3.37-1.4-.45-1.18-1.1-1.49-1.1-1.49-.9-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.58 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.37-2.22-.26-4.56-1.16-4.56-5.17 0-1.14.39-2.08 1.03-2.82-.1-.25-.45-1.29.1-2.7 0 0 .84-.28 2.75 1.07a9.21 9.21 0 0 1 5 0c1.91-1.35 2.75-1.07 2.75-1.07.55 1.41.2 2.45.1 2.7.64.74 1.03 1.68 1.03 2.82 0 4.02-2.34 4.9-4.57 5.15.36.32.68.95.68 1.91 0 1.38-.01 2.5-.01 2.84 0 .27.18.59.69.48A10.29 10.29 0 0 0 22 12.29C22 6.64 17.52 2 12 2Z" />
                   </svg>
                 </span>
                 <span class="contact-link-text">
                   <span class="contact-link-title">GitHub</span>
                   <span class="contact-link-sub">@tranhohoangvu</span>
                 </span>
+                <svg class="w-4 h-4 contact-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
               </a>
 
               <!-- LinkedIn -->
               <a href="https://linkedin.com/in/tranhohoangvu/" target="_blank" rel="noopener noreferrer"
-                class="contact-link-card" aria-label="LinkedIn của Trần Hồ Hoàng Vũ">
+                class="contact-link-card group" aria-label="LinkedIn của Trần Hồ Hoàng Vũ">
                 <span class="contact-link-icon">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5S.02 4.88.02 3.5C.02 2.12 1.13 1 2.5 1s2.48 1.12 2.48 2.5ZM0 8h5v16H0V8Zm7.5 0H12v2.2h.07c.62-1.17 2.14-2.4 4.41-2.4 4.72 0 5.59 3.11 5.59 7.15V24h-5v-7.99c0-1.9-.03-4.34-2.65-4.34-2.65 0-3.06 2.07-3.06 4.2V24h-5V8Z" />
+                    <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5S.02 4.88.02 3.5C.02 2.12 1.13 1 2.5 1s2.48 1.12 2.48 2.5ZM0 8h5v16H0V8Zm7.5 0H12v2.2h.07c.62-1.17 2.14-2.4 4.41-2.4 4.72 0 5.59 3.11 5.59 7.15V24h-5v-7.99c0-1.9-.03-4.34-2.65-4.34-2.65 0-3.06 2.07-3.06 4.2V24h-5V8Z" />
                   </svg>
                 </span>
                 <span class="contact-link-text">
-                  <span class="contact-link-title">LinkedIn</span>
+                  <span class="contact-link-title flex items-center gap-2">
+                    LinkedIn
+                    <span class="contact-link-badge contact-link-badge--fastest !px-2 !py-0.5 !text-[10px]" data-i18n="contact_badge_primary">Ưu tiên</span>
+                  </span>
                   <span class="contact-link-sub">/in/tranhohoangvu</span>
                 </span>
+                <svg class="w-4 h-4 contact-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
               </a>
 
               <!-- Facebook -->
               <a href="https://www.facebook.com/TranHoHoangVu" target="_blank" rel="noopener noreferrer"
-                class="contact-link-card" aria-label="Facebook của Trần Hồ Hoàng Vũ">
+                class="contact-link-card group" aria-label="Facebook của Trần Hồ Hoàng Vũ">
                 <span class="contact-link-icon">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M22 12.07C22 6.58 17.52 2 12 2S2 6.58 2 12.07C2 17.08 5.66 21.2 10.44 21.95v-6.28h-3.14v-2.7h3.14v-2.05c0-3.1 1.84-4.81 4.65-4.81 1.35 0 2.75.24 2.75.24v3.01h-1.55c-1.53 0-2.01.95-2.01 1.92v2.22h3.41l-.55 2.7h-2.86V22C18.34 21.2 22 17.08 22 12.07z" />
+                    <path d="M22 12.07C22 6.58 17.52 2 12 2S2 6.58 2 12.07C2 17.08 5.66 21.2 10.44 21.95v-6.28h-3.14v-2.7h3.14v-2.05c0-3.1 1.84-4.81 4.65-4.81 1.35 0 2.75.24 2.75.24v3.01h-1.55c-1.53 0-2.01.95-2.01 1.92v2.22h3.41l-.55 2.7h-2.86V22C18.34 21.2 22 17.08 22 12.07z" />
                   </svg>
                 </span>
                 <span class="contact-link-text">
                   <span class="contact-link-title">Facebook</span>
-                  <!-- <span class="contact-link-sub">Let’s connect</span> -->
                   <span class="contact-link-sub">/TranHoHoangVu</span>
                 </span>
+                <svg class="w-4 h-4 contact-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
               </a>
 
               <!-- YouTube -->
               <a href="https://www.youtube.com/@tranhohoangvu" target="_blank" rel="noopener noreferrer"
-                class="contact-link-card" aria-label="YouTube của Trần Hồ Hoàng Vũ">
+                class="contact-link-card group" aria-label="YouTube của Trần Hồ Hoàng Vũ">
                 <span class="contact-link-icon">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M23.5 6.2a3.04 3.04 0 0 0-2.14-2.16C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.36.54A3.04 3.04 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3.04 3.04 0 0 0 2.14 2.16C4.5 20.5 12 20.5 12 20.5s7.5 0 9.36-.54a3.04 3.04 0 0 0 2.14-2.16A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8ZM9.75 15.5v-7l6.25 3.5-6.25 3.5Z" />
+                    <path d="M23.5 6.2a3.04 3.04 0 0 0-2.14-2.16C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.36.54A3.04 3.04 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3.04 3.04 0 0 0 2.14 2.16C4.5 20.5 12 20.5 12 20.5s7.5 0 9.36-.54a3.04 3.04 0 0 0 2.14-2.16A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8ZM9.75 15.5v-7l6.25 3.5-6.25 3.5Z" />
                   </svg>
                 </span>
                 <span class="contact-link-text">
                   <span class="contact-link-title">YouTube</span>
                   <span class="contact-link-sub">@tranhohoangvu</span>
                 </span>
+                <svg class="w-4 h-4 contact-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
               </a>
 
               <!-- Instagram -->
               <a href="https://www.instagram.com/_hoawq.vuz_/" target="_blank" rel="noopener noreferrer"
-                class="contact-link-card" aria-label="Instagram của Trần Hồ Hoàng Vũ">
+                class="contact-link-card group" aria-label="Instagram của Trần Hồ Hoàng Vũ">
                 <span class="contact-link-icon">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5Zm4.38-.63a1.13 1.13 0 1 1 0 2.25 1.13 1.13 0 0 1 0-2.25Z" />
+                    <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5Zm4.38-.63a1.13 1.13 0 1 1 0 2.25 1.13 1.13 0 0 1 0-2.25Z" />
                   </svg>
                 </span>
                 <span class="contact-link-text">
                   <span class="contact-link-title">Instagram</span>
                   <span class="contact-link-sub">_hoawq.vuz_</span>
                 </span>
+                <svg class="w-4 h-4 contact-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
               </a>
             </div>
           </div>
@@ -2019,48 +2060,95 @@
 
         <div class="md:w-1/2">
           <!-- Card wrapper để form nổi trên nền SLATE / OBSIDIAN -->
-          <div
-            class="contact-form-panel p-6 rounded-2xl bg-white dark:bg-[#0f172a]/75 border border-slate-200/80 dark:border-white/10 shadow-lg">
-            <form action="https://formspree.io/f/mrbnrrgd" method="POST" class="space-y-6" id="contact-form">
+          <div class="contact-form-panel p-6 rounded-2xl bg-white dark:bg-[#0f172a]/75 border border-slate-200/80 dark:border-white/10 shadow-lg">
+            <form action="https://formspree.io/f/mrbnrrgd" method="POST" class="space-y-5" id="contact-form">
+              <input type="hidden" name="subject" id="contact-subject" value="Tuyển dụng Backend">
 
-              <div class="relative">
-                <label for="name" class="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
-                  data-i18n="form_name">
+              <!-- Quick Topic Chips -->
+              <div class="contact-topic-group">
+                <label class="contact-topic-label" data-i18n="form_topic_label">Bạn quan tâm đến chủ đề gì?</label>
+                <div class="contact-topic-chips" role="radiogroup" aria-label="Chủ đề liên hệ">
+                  <button type="button" class="contact-topic-chip is-active" role="radio" aria-checked="true" data-topic-val="Tuyển dụng Backend">
+                    <span data-i18n="topic_be">💼 Tuyển dụng Backend</span>
+                  </button>
+                  <button type="button" class="contact-topic-chip" role="radio" aria-checked="false" data-topic-val="Tuyển dụng AI Intern">
+                    <span data-i18n="topic_ai">🤖 Tuyển dụng AI Intern</span>
+                  </button>
+                  <button type="button" class="contact-topic-chip" role="radio" aria-checked="false" data-topic-val="Hợp tác dự án">
+                    <span data-i18n="topic_collab">🤝 Hợp tác dự án</span>
+                  </button>
+                  <button type="button" class="contact-topic-chip" role="radio" aria-checked="false" data-topic-val="Giao lưu / Khác">
+                    <span data-i18n="topic_other">☕ Giao lưu / Khác</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Name Field -->
+              <div class="form-field-group">
+                <label for="name" class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="form_name">
                   Họ tên: *
                 </label>
-                <input type="text" id="name" name="name"
-                  class="form-input w-full p-4 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white border-slate-200 dark:bg-[#070b14] dark:border-white/10 dark:text-slate-100 transition-all duration-300"
-                  required>
-                <div class="absolute inset-0 pointer-events-none rounded-lg ripple"></div>
+                <div class="relative">
+                  <span class="form-field-icon" aria-hidden="true">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                  </span>
+                  <input type="text" id="name" name="name"
+                    class="form-input form-input-with-icon w-full py-3.5 pr-4 border rounded-xl bg-white border-slate-200 dark:bg-[#070b14] dark:border-white/10 text-slate-800 dark:text-slate-100 placeholder:text-slate-500 dark:placeholder:text-slate-400 transition-all duration-300"
+                    placeholder="Nguyễn Văn A"
+                    data-i18n-placeholder="form_name_placeholder"
+                    required>
+                </div>
               </div>
 
-              <div class="relative">
-                <label for="email" class="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
-                  data-i18n="form_email">
+              <!-- Email Field -->
+              <div class="form-field-group">
+                <label for="email" class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="form_email">
                   Email: *
                 </label>
-                <input type="email" id="email" name="email"
-                  class="form-input w-full p-4 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white border-slate-200 dark:bg-[#070b14] dark:border-white/10 dark:text-slate-100 transition-all duration-300"
-                  required>
-                <div class="absolute inset-0 pointer-events-none rounded-lg ripple"></div>
+                <div class="relative">
+                  <span class="form-field-icon" aria-hidden="true">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                  </span>
+                  <input type="email" id="email" name="email"
+                    class="form-input form-input-with-icon w-full py-3.5 pr-4 border rounded-xl bg-white border-slate-200 dark:bg-[#070b14] dark:border-white/10 text-slate-800 dark:text-slate-100 placeholder:text-slate-500 dark:placeholder:text-slate-400 transition-all duration-300"
+                    placeholder="name@company.com"
+                    data-i18n-placeholder="form_email_placeholder"
+                    required>
+                </div>
               </div>
 
-              <div class="relative">
-                <label for="message" class="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
-                  data-i18n="form_message">
+              <!-- Message Field -->
+              <div class="form-field-group">
+                <label for="message" class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="form_message">
                   Tin nhắn: *
                 </label>
-                <textarea id="message" name="message" rows="5"
-                  class="form-input w-full p-4 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white border-slate-200 dark:bg-[#070b14] dark:border-white/10 dark:text-slate-100 transition-all duration-300"
-                  required></textarea>
-                <div class="absolute inset-0 pointer-events-none rounded-lg ripple"></div>
+                <div class="relative">
+                  <span class="form-field-icon !top-3.5" aria-hidden="true">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
+                  </span>
+                  <textarea id="message" name="message" rows="4" maxlength="1000"
+                    class="form-input form-input-with-icon w-full py-3.5 pr-4 border rounded-xl bg-white border-slate-200 dark:bg-[#070b14] dark:border-white/10 text-slate-800 dark:text-slate-100 placeholder:text-slate-500 dark:placeholder:text-slate-400 transition-all duration-300"
+                    placeholder="Hãy chia sẻ thông tin về cơ hội việc làm, dự án hoặc lời chào..."
+                    data-i18n-placeholder="form_message_placeholder"
+                    required></textarea>
+                </div>
+                <div class="form-char-counter-wrapper">
+                  <span><span id="message-char-count">0</span> / 500 <span data-i18n="form_char_counter">ký tự</span></span>
+                </div>
               </div>
 
-              <button type="submit"
-                class="relative bg-gradient-to-r from-indigo-600 to-cyan-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-indigo-500 hover:to-cyan-500 transition transform hover:scale-105 shadow-lg shadow-indigo-500/25 overflow-hidden group">
+              <button type="submit" class="contact-submit-btn w-full sm:w-auto">
+                <svg class="w-5 h-5 relative z-10 btn-send-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                </svg>
                 <span class="relative z-10" data-i18n="form_send_btn">Gửi tin nhắn</span>
-                <span
-                  class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                <span class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </button>
 
               <p id="form-message" class="text-sm text-gray-600 dark:text-gray-300 hidden animate-pop-up"></p>

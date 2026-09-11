@@ -67,6 +67,11 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
   - Bản đồ đóng góp (SVG heatmap) tự động tạo (Light/Dark) và commit hằng ngày qua GitHub Actions.
   - Biểu đồ hoạt động động (Dynamic Activity Graph) với trạng thái tải **skeleton shimmer** & hiệu ứng mờ dần (fade-in) khi tải xong.
   - Nút CTA GitHub bo tròn phong cách dark-mode kèm biểu tượng Octocat.
+- **Section Liên hệ (Contact)** (được thiết kế lại):
+  - Tiêu đề gradient đa sắc + huy hiệu kicker + phụ đề song ngữ định vị tìm kiếm việc làm.
+  - **Thẻ trạng thái sẵn sàng làm việc (Availability & Work Info)**: Chấm xanh neon nhấp nháy (`Sẵn sàng nhận việc ngay`), vị trí (`TP.HCM, UTC+7`), hình thức (`On-site • Hybrid • Remote`), và cam kết phản hồi trong 24h.
+  - **Thẻ kết nối**: Badge `Nhanh nhất / Ưu tiên` cho Email & LinkedIn + hiệu ứng mũi tên trượt `→` khi hover.
+  - **Smart Contact Form**: Cụm chip chọn nhanh chủ đề liên hệ (`Tuyển dụng Backend`, `Tuyển dụng AI Intern`, `Hợp tác dự án`, `Khác`) tự động truyền vào subject Formspree, input fields có icon đại diện, bộ đếm ký tự tin nhắn thời gian thực (tối đa 500 ký tự), và nút gửi máy bay giấy kèm loading spinner xoay mượt mà.
 - **Tối ưu hóa hiệu năng cuộn trang (Scroll Performance)**:
   - Toàn bộ trình lắng nghe sự kiện cuộn (scroll listeners) được điều tiết qua `requestAnimationFrame`.
   - Các chỉ số kích thước layout được lưu bộ đệm (cache) khi `resize`, ngăn ngừa hiện tượng cưỡng bức reflow (layout thrashing).

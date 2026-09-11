@@ -337,12 +337,31 @@ const I18N = {
     github_profile_link: "Xem GitHub profile",
     github_profile_handle: "@tranhohoangvu",
 
+    contact_kicker: "💬 LIÊN HỆ • KẾT NỐI NGAY",
+    contact_headline: "Cùng xây dựng điều tuyệt vời.",
+    contact_subtitle: "Sẵn sàng đón nhận cơ hội việc làm Fresher Backend Developer, AI Engineer Intern hoặc dự án cộng tác mới.",
+    contact_avail_badge: "Sẵn sàng nhận việc ngay",
+    contact_avail_roles: "Fresher Backend • AI Engineer Intern",
+    contact_location: "TP. Hồ Chí Minh, Việt Nam (UTC+7)",
+    contact_work_mode: "On-site • Hybrid • Remote",
+    contact_response_time: "Phản hồi nhanh trong vòng 24h",
+    contact_badge_fastest: "Nhanh nhất",
+    contact_badge_primary: "Ưu tiên",
     contact_title: "Liên hệ",
     contact_intro: "Hãy liên hệ với tôi qua email hoặc các nền tảng sau:",
     connect_title: "Kết nối với tôi nhé!",
+    form_topic_label: "Bạn quan tâm đến chủ đề gì?",
+    topic_be: "💼 Tuyển dụng Backend",
+    topic_ai: "🤖 Tuyển dụng AI Intern",
+    topic_collab: "🤝 Hợp tác dự án",
+    topic_other: "☕ Giao lưu / Khác",
     form_name: "Họ tên: *",
     form_email: "Email: *",
     form_message: "Tin nhắn: *",
+    form_name_placeholder: "Nguyễn Văn A",
+    form_email_placeholder: "name@company.com",
+    form_message_placeholder: "Hãy chia sẻ thông tin về cơ hội việc làm, dự án hoặc lời chào...",
+    form_char_counter: "ký tự",
     form_send_btn: "Gửi tin nhắn",
 
     form_sending: "Đang gửi tin nhắn...",
@@ -583,12 +602,31 @@ const I18N = {
     github_profile_link: "View GitHub profile",
     github_profile_handle: "@tranhohoangvu",
 
+    contact_kicker: "💬 GET IN TOUCH • CONNECT NOW",
+    contact_headline: "Let's build something remarkable.",
+    contact_subtitle: "Open to Fresher Backend Developer and AI Engineer Intern opportunities, freelance projects, or tech chats.",
+    contact_avail_badge: "Available for Hire",
+    contact_avail_roles: "Fresher Backend • AI Engineer Intern",
+    contact_location: "Ho Chi Minh City, Vietnam (UTC+7)",
+    contact_work_mode: "On-site • Hybrid • Remote",
+    contact_response_time: "Fast response within 24 hours",
+    contact_badge_fastest: "Fastest",
+    contact_badge_primary: "Preferred",
     contact_title: "Contact",
     contact_intro: "Feel free to reach out via email or these platforms:",
     connect_title: "Let’s connect!",
+    form_topic_label: "What is your primary interest?",
+    topic_be: "💼 Backend Hiring",
+    topic_ai: "🤖 AI Intern Hiring",
+    topic_collab: "🤝 Project Collaboration",
+    topic_other: "☕ Quick Chat / Other",
     form_name: "Full name: *",
     form_email: "Email: *",
     form_message: "Message: *",
+    form_name_placeholder: "John Doe",
+    form_email_placeholder: "name@company.com",
+    form_message_placeholder: "Tell me about your job opportunity, project, or just say hello...",
+    form_char_counter: "chars",
     form_send_btn: "Send message",
 
     form_sending: "Sending message...",
@@ -1026,11 +1064,46 @@ if (backToTop) {
 }
 
 // =======================
-// Form Submission Feedback (localized)
+// Form Submission & Interactive Contact (localized)
 // =======================
 const contactForm = document.getElementById("contact-form");
 const formMessage = document.getElementById("form-message");
+const contactSubject = document.getElementById("contact-subject");
+const topicChips = document.querySelectorAll(".contact-topic-chip");
+const messageTextarea = document.getElementById("message");
+const charCountSpan = document.getElementById("message-char-count");
 
+// 1. Topic Chips Selection
+if (topicChips.length > 0 && contactSubject) {
+  topicChips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      topicChips.forEach((c) => {
+        c.classList.remove("is-active");
+        c.setAttribute("aria-checked", "false");
+      });
+      chip.classList.add("is-active");
+      chip.setAttribute("aria-checked", "true");
+      const val = chip.getAttribute("data-topic-val") || chip.textContent.trim();
+      contactSubject.value = val;
+    });
+  });
+}
+
+// 2. Character Counter
+if (messageTextarea && charCountSpan) {
+  const updateCharCount = () => {
+    const len = messageTextarea.value.length;
+    charCountSpan.textContent = len;
+    if (len > 500) {
+      charCountSpan.classList.add("text-rose-500", "font-bold");
+    } else {
+      charCountSpan.classList.remove("text-rose-500", "font-bold");
+    }
+  };
+  messageTextarea.addEventListener("input", updateCharCount);
+}
+
+// 3. Form Submit with Loading Spinner & Plane Animation
 if (contactForm && formMessage) {
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -1044,8 +1117,12 @@ if (contactForm && formMessage) {
     if (submitButton) {
       submitButton.disabled = true;
       submitButton.innerHTML =
-        `<span class="relative z-10">${t("form_btn_sending")}</span>
-         <span class="absolute inset-0 bg-linear-to-r from-indigo-600 to-purple-600 opacity-30 animate-pulse"></span>`;
+        `<svg class="w-5 h-5 animate-spin relative z-10" fill="none" viewBox="0 0 24 24">
+           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+         </svg>
+         <span class="relative z-10">${t("form_btn_sending")}</span>
+         <span class="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-30 animate-pulse"></span>`;
     }
 
     try {
@@ -1059,6 +1136,20 @@ if (contactForm && formMessage) {
         formMessage.textContent = t("form_success");
         showToast({ message: t("form_success"), type: "success" });
         contactForm.reset();
+        if (charCountSpan) charCountSpan.textContent = "0";
+        // Reset topic chip to default
+        if (topicChips.length > 0 && contactSubject) {
+          topicChips.forEach((c, idx) => {
+            if (idx === 0) {
+              c.classList.add("is-active");
+              c.setAttribute("aria-checked", "true");
+              contactSubject.value = c.getAttribute("data-topic-val") || c.textContent.trim();
+            } else {
+              c.classList.remove("is-active");
+              c.setAttribute("aria-checked", "false");
+            }
+          });
+        }
         setTimeout(() => formMessage.classList.add("hidden"), 3000);
       } else {
         formMessage.classList.remove("text-green-600", "dark:text-green-400");
@@ -1075,8 +1166,11 @@ if (contactForm && formMessage) {
       if (submitButton) {
         submitButton.disabled = false;
         submitButton.innerHTML =
-          `<span class="relative z-10">${t("form_send_btn")}</span>
-           <span class="absolute inset-0 bg-linear-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></span>`;
+          `<svg class="w-5 h-5 relative z-10 btn-send-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+             <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+           </svg>
+           <span class="relative z-10" data-i18n="form_send_btn">${t("form_send_btn")}</span>
+           <span class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>`;
       }
     }
   });
