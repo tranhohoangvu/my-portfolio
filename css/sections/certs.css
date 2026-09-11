@@ -148,19 +148,26 @@
   color: #ffffff;
 }
 
-/* --- Cert Grid (2x2 layout on desktop/tablet) --- */
+/* --- Cert Grid (Responsive: 1 col mobile -> 2 cols tablet -> 3 cols laptop) --- */
 .cert-grid-v2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.5rem;
-  max-width: 1060px;
+  max-width: 1240px;
   margin: 0 auto;
-  align-items: start;
+  align-items: stretch;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .cert-grid-v2 {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cert-grid-v2 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.35rem;
   }
 }
 
@@ -794,7 +801,7 @@
 
 /* --- Cert footer row --- */
 .cert-card-v2__footer {
-  margin-top: 1.25rem;
+  margin-top: auto;
   display: flex;
   align-items: center;
   gap: 0.625rem;
