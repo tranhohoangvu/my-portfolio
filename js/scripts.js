@@ -220,6 +220,19 @@ const I18N = {
     about_chip_2: "Cơ sở dữ liệu",
     about_chip_3: "AI ứng dụng • NLP/CV",
     about_chip_workmode: "💼 On-site • Hybrid • Remote",
+    about_status_badge: "Sẵn sàng nhận việc",
+    about_pillar_edu_title: "Học vấn & Nền tảng",
+    about_pillar_edu_desc: "Tốt nghiệp Khoa học Máy tính — Đại học Tôn Đức Thắng (TDTU). Nền tảng vững về Cấu trúc dữ liệu & Giải thuật.",
+    about_pillar_exp_title: "Kinh nghiệm Thực chiến",
+    about_pillar_exp_desc: "Thực tập Kỹ sư Phần mềm: thiết kế RESTful APIs, tối ưu Raw SQL PostgreSQL và tự động hóa quy trình Jira/OpenClaw.",
+    about_pillar_goal_title: "Vị trí Ứng tuyển",
+    about_pillar_goal_desc: "Fresher Backend Developer (Node.js, Express, Laravel) & AI Engineer Intern (PyTorch, Transformers, Computer Vision).",
+    about_stat_projects: "Dự án hoàn chỉnh",
+    about_stat_repos: "GitHub Repositories",
+    about_stat_certs: "Chứng chỉ quốc tế",
+    about_stat_ready: "Sẵn sàng làm việc",
+    about_cta_cv: "Xem hồ sơ CV",
+    about_cta_contact: "Liên hệ ngay",
     about_stat_1: "Dự án AI/ML",
     about_stat_2: "Dự án Backend",
     about_stat_3: "Fresher & Sẵn sàng làm việc",
@@ -492,6 +505,19 @@ const I18N = {
     about_chip_2: "Databases",
     about_chip_3: "Applied AI • NLP/CV",
     about_chip_workmode: "💼 On-site • Hybrid • Remote",
+    about_status_badge: "Available for Hire",
+    about_pillar_edu_title: "Education & Foundation",
+    about_pillar_edu_desc: "Computer Science Graduate — Ton Duc Thang University (TDTU). Strong foundation in Data Structures & Algorithms.",
+    about_pillar_exp_title: "Hands-on Experience",
+    about_pillar_exp_desc: "Software Engineer Intern: designed RESTful APIs, optimized raw PostgreSQL SQL, and automated Jira/OpenClaw workflows.",
+    about_pillar_goal_title: "Target Roles",
+    about_pillar_goal_desc: "Fresher Backend Developer (Node.js, Express, Laravel) & AI Engineer Intern (PyTorch, Transformers, Computer Vision).",
+    about_stat_projects: "Engineered Projects",
+    about_stat_repos: "GitHub Repositories",
+    about_stat_certs: "Verified Certificates",
+    about_stat_ready: "Work Readiness",
+    about_cta_cv: "View Resume CV",
+    about_cta_contact: "Get in Touch",
     about_stat_1: "AI/ML Projects",
     about_stat_2: "Backend Projects",
     about_stat_3: "Fresher & Intern Ready",
@@ -1451,6 +1477,24 @@ function initCounterAnimations() {
 }
 
 // =======================
+// Profile Avatar Click-to-Flip (Mobile & Desktop)
+// =======================
+function initProfileFlip() {
+  const profileFlip = document.querySelector(".profile-flip");
+  if (!profileFlip) return;
+
+  profileFlip.addEventListener("click", () => {
+    profileFlip.classList.toggle("is-flipped");
+  });
+  profileFlip.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      profileFlip.classList.toggle("is-flipped");
+    }
+  });
+}
+
+// =======================
 // Cert Score Bar Animation (Aptis ESOL progress fill)
 // =======================
 function initCertScoreAnimation() {
@@ -1770,6 +1814,7 @@ function initAppModules() {
   initEmailCopyActions?.();
   initHeroInteractions?.();
   initCounterAnimations?.();
+  initProfileFlip?.();
   initCvDownloadCounter?.();
   initCertScoreAnimation?.();
 }
