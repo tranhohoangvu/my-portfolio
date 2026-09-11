@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 
 <head>
@@ -39,6 +39,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="dns-prefetch" href="https://avatars.githubusercontent.com" />
+
+  <!-- Preload critical above-the-fold assets -->
+  <link rel="preload" as="image" href="assets/profile/profile1.jpg" fetchpriority="high" />
+  <link rel="preload" href="css/styles.css?v=13" as="style" />
 
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
@@ -275,7 +280,8 @@
       <div class="section-header-wrap">
         <div class="section-kicker" data-i18n="about_top_kicker">👤 VỀ BẢN THÂN • PROFILE</div>
         <h2 class="section-headline-gradient" data-i18n="about_title">Hành trình Kỹ thuật &amp; Định hướng</h2>
-        <p class="section-subtitle-text" data-i18n="about_subtitle">Khám phá nền tảng học vấn, kinh nghiệm kỹ thuật thực chiến và định hướng phát triển phần mềm &amp; AI.</p>
+        <p class="section-subtitle-text" data-i18n="about_subtitle">Khám phá nền tảng học vấn, kinh nghiệm kỹ thuật thực
+          chiến và định hướng phát triển phần mềm &amp; AI.</p>
       </div>
 
       <div class="flex flex-col md:flex-row items-center justify-center gap-12 max-w-6xl mx-auto">
@@ -286,14 +292,17 @@
           <!-- Levitating Avatar Container -->
           <div class="avatar-float">
             <!-- Flip container -->
-            <div class="profile-flip group w-64 h-64 cursor-pointer" tabindex="0" role="button" aria-label="Lật ảnh đại diện / Flip avatar">
+            <div class="profile-flip group w-64 h-64 cursor-pointer" tabindex="0" role="button"
+              aria-label="Lật ảnh đại diện / Flip avatar">
               <div class="profile-flip__inner">
-                <!-- Front -->
-                <img src="assets/profile/profile1.jpg" alt="Ảnh cá nhân của Trần Hồ Hoàng Vũ"
+                <!-- Front (hero image — eager load, high priority) -->
+                <img src="assets/profile/profile1.jpg" alt="Ảnh cá nhân của Trần Hồ Hoàng Vũ" fetchpriority="high"
+                  decoding="async"
                   class="profile-flip__face w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-indigo-200 dark:border-indigo-500/40" />
 
-                <!-- Back -->
-                <img src="assets/profile/profile2.png" alt="Ảnh profile khác của Trần Hồ Hoàng Vũ"
+                <!-- Back (lazy load — not visible until flipped) -->
+                <img src="assets/profile/profile2.png" alt="Ảnh profile khác của Trần Hồ Hoàng Vũ" loading="lazy"
+                  decoding="async"
                   class="profile-flip__face profile-flip__back w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-indigo-200 dark:border-indigo-500/40" />
               </div>
 
@@ -323,7 +332,8 @@
             <span class="about-chip" data-i18n="about_chip_1">Backend APIs</span>
             <span class="about-chip" data-i18n="about_chip_2">Databases</span>
             <span class="about-chip" data-i18n="about_chip_3">ML/DL • NLP/CV</span>
-            <span class="about-chip about-chip--workmode" data-i18n="about_chip_workmode">💼 On-site • Hybrid • Remote</span>
+            <span class="about-chip about-chip--workmode" data-i18n="about_chip_workmode">💼 On-site • Hybrid •
+              Remote</span>
           </div>
 
           <p class="about-desc" data-i18n="about_description">
@@ -340,76 +350,92 @@
             <!-- Pillar 1: Education -->
             <div class="about-pillar-card">
               <div class="about-pillar-icon about-pillar-icon--edu">
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
                 </svg>
               </div>
               <h4 class="about-pillar-title" data-i18n="about_pillar_edu_title">Học vấn & Nền tảng</h4>
-              <p class="about-pillar-desc" data-i18n="about_pillar_edu_desc">Tốt nghiệp Khoa học Máy tính — Đại học Tôn Đức Thắng (TDTU). Nền tảng vững về Cấu trúc dữ liệu & Giải thuật.</p>
+              <p class="about-pillar-desc" data-i18n="about_pillar_edu_desc">Tốt nghiệp Khoa học Máy tính — Đại học Tôn
+                Đức Thắng (TDTU). Nền tảng vững về Cấu trúc dữ liệu & Giải thuật.</p>
             </div>
 
             <!-- Pillar 2: Experience -->
             <div class="about-pillar-card">
               <div class="about-pillar-icon about-pillar-icon--exp">
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                 </svg>
               </div>
               <h4 class="about-pillar-title" data-i18n="about_pillar_exp_title">Kinh nghiệm Thực chiến</h4>
-              <p class="about-pillar-desc" data-i18n="about_pillar_exp_desc">Thực tập Kỹ sư Phần mềm: thiết kế RESTful APIs, tối ưu Raw SQL PostgreSQL và tự động hóa quy trình Jira/OpenClaw.</p>
+              <p class="about-pillar-desc" data-i18n="about_pillar_exp_desc">Thực tập Kỹ sư Phần mềm: thiết kế RESTful
+                APIs, tối ưu Raw SQL PostgreSQL và tự động hóa quy trình Jira/OpenClaw.</p>
             </div>
 
             <!-- Pillar 3: Target Roles -->
             <div class="about-pillar-card">
               <div class="about-pillar-icon about-pillar-icon--goal">
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
                 </svg>
               </div>
               <h4 class="about-pillar-title" data-i18n="about_pillar_goal_title">Vị trí Ứng tuyển</h4>
-              <p class="about-pillar-desc" data-i18n="about_pillar_goal_desc">Fresher Backend Developer (Node.js, Express, Laravel) & AI Engineer Intern (PyTorch, Transformers, Computer Vision).</p>
+              <p class="about-pillar-desc" data-i18n="about_pillar_goal_desc">Fresher Backend Developer (Node.js,
+                Express, Laravel) & AI Engineer Intern (PyTorch, Transformers, Computer Vision).</p>
             </div>
           </div>
 
           <!-- Upgraded 4 Stats Cards -->
           <div class="about-stats-grid">
             <div class="about-stat-card">
-              <div class="about-stat__num font-extrabold text-2xl sm:text-3xl text-indigo-600 dark:text-indigo-400" data-counter-target="7" data-counter-suffix="+">0+</div>
-              <div class="about-stat__label text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1" data-i18n="about_stat_projects">Dự án hoàn chỉnh</div>
+              <div class="about-stat__num font-extrabold text-2xl sm:text-3xl text-indigo-600 dark:text-indigo-400"
+                data-counter-target="7" data-counter-suffix="+">0+</div>
+              <div class="about-stat__label text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1"
+                data-i18n="about_stat_projects">Dự án hoàn chỉnh</div>
             </div>
             <div class="about-stat-card">
-              <div class="about-stat__num font-extrabold text-2xl sm:text-3xl text-cyan-600 dark:text-cyan-400" data-counter-target="16" data-counter-suffix="+">0+</div>
-              <div class="about-stat__label text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1" data-i18n="about_stat_repos">GitHub Repositories</div>
+              <div class="about-stat__num font-extrabold text-2xl sm:text-3xl text-cyan-600 dark:text-cyan-400"
+                data-counter-target="16" data-counter-suffix="+">0+</div>
+              <div class="about-stat__label text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1"
+                data-i18n="about_stat_repos">GitHub Repositories</div>
             </div>
             <div class="about-stat-card">
-              <div class="about-stat__num font-extrabold text-2xl sm:text-3xl text-emerald-600 dark:text-emerald-400" data-counter-target="8" data-counter-suffix="">0</div>
-              <div class="about-stat__label text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1" data-i18n="about_stat_certs">Chứng chỉ quốc tế</div>
+              <div class="about-stat__num font-extrabold text-2xl sm:text-3xl text-emerald-600 dark:text-emerald-400"
+                data-counter-target="8" data-counter-suffix="">0</div>
+              <div class="about-stat__label text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1"
+                data-i18n="about_stat_certs">Chứng chỉ quốc tế</div>
             </div>
             <div class="about-stat-card">
-              <div class="about-stat__num font-extrabold text-2xl sm:text-3xl text-amber-500 dark:text-amber-400" data-counter-target="100" data-counter-suffix="%">0%</div>
-              <div class="about-stat__label text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1" data-i18n="about_stat_ready">Sẵn sàng làm việc</div>
+              <div class="about-stat__num font-extrabold text-2xl sm:text-3xl text-amber-500 dark:text-amber-400"
+                data-counter-target="100" data-counter-suffix="%">0%</div>
+              <div class="about-stat__label text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1"
+                data-i18n="about_stat_ready">Sẵn sàng làm việc</div>
             </div>
           </div>
 
           <!-- Integrated Action Dock -->
           <div class="about-actions-dock">
             <a href="#cv" class="about-btn-cta about-btn-cta--primary">
-              <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-                <line x1="16" y1="13" x2="8" y2="13"/>
-                <line x1="16" y1="17" x2="8" y2="17"/>
-                <polyline points="10 9 9 9 8 9"/>
+              <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
               </svg>
               <span data-i18n="about_cta_cv">Xem hồ sơ CV</span>
             </a>
 
             <a href="#contact" class="about-btn-cta about-btn-cta--secondary">
-              <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
               </svg>
               <span data-i18n="about_cta_contact">Liên hệ ngay</span>
             </a>
@@ -419,7 +445,8 @@
               <!-- Mail -->
               <a class="social-btn is-mail" href="mailto:hoangvu2k4cmg@gmail.com" id="about-email-btn" role="button"
                 tabindex="0" data-email="hoangvu2k4cmg@gmail.com" data-i18n-tooltip="contact_email_tip"
-                title="Nhấp để sao chép email (hoangvu2k4cmg@gmail.com)" aria-label="Sao chép email hoangvu2k4cmg@gmail.com">
+                title="Nhấp để sao chép email (hoangvu2k4cmg@gmail.com)"
+                aria-label="Sao chép email hoangvu2k4cmg@gmail.com">
                 <svg class="mail-default-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path
                     d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 0 1-2 2H4c-1.1 0-2-.9-2-2V6a2 2 0 0 1 2-2Zm8 7 8-5H4l8 5Zm0 2.5-8-5V18h16v-9.5l-8 5Z" />
@@ -431,8 +458,8 @@
               </a>
 
               <!-- GitHub -->
-              <a class="social-btn is-gh" href="https://github.com/tranhohoangvu" target="_blank" rel="noopener noreferrer"
-                aria-label="GitHub">
+              <a class="social-btn is-gh" href="https://github.com/tranhohoangvu" target="_blank"
+                rel="noopener noreferrer" aria-label="GitHub">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path
                     d="M12 2C6.48 2 2 6.64 2 12.29c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.63-3.37-1.4-3.37-1.4-.45-1.18-1.1-1.49-1.1-1.49-.9-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.58 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.37-2.22-.26-4.56-1.16-4.56-5.17 0-1.14.39-2.08 1.03-2.82-.1-.25-.45-1.29.1-2.7 0 0 .84-.28 2.75 1.07a9.21 9.21 0 0 1 5 0c1.91-1.35 2.75-1.07 2.75-1.07.55 1.41.2 2.45.1 2.7.64.74 1.03 1.68 1.03 2.82 0 4.02-2.34 4.9-4.57 5.15.36.32.68.95.68 1.91 0 1.38-.01 2.5-.01 2.84 0 .27.18.59.69.48A10.29 10.29 0 0 0 22 12.29C22 6.64 17.52 2 12 2Z" />
@@ -515,7 +542,9 @@
         <article class="cv-card cv-card--backend cv-card--featured">
           <div class="cv-featured-flag">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
             </svg>
             <span data-i18n="cv_badge_primary">Định hướng chính</span>
           </div>
@@ -533,7 +562,8 @@
             <div class="cv-badge-group">
               <span class="cv-pill">PDF</span>
               <span class="cv-updated-badge">
-                <svg width="12" height="12" class="text-emerald-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="12" height="12" class="text-emerald-500 shrink-0" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
                 <span data-i18n="cv_updated_be">Cập nhật T8/2026</span>
@@ -556,11 +586,14 @@
 
           <!-- CV Preview Thumbnail (Task E) -->
           <div class="cv-preview-wrap">
-            <a href="assets/cv/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer" class="cv-preview-link" title="Xem trước CV">
-              <img src="assets/cv/TranHoHoangVu_BE_preview.png" alt="Xem trước CV Fresher Backend Developer" loading="lazy" class="cv-preview-img" />
+            <a href="assets/cv/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer" class="cv-preview-link"
+              title="Xem trước CV">
+              <img src="assets/cv/TranHoHoangVu_BE_preview.png" alt="Xem trước CV Fresher Backend Developer"
+                loading="lazy" class="cv-preview-img" />
               <div class="cv-preview-overlay">
                 <span class="cv-preview-badge">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                     <circle cx="12" cy="12" r="3"></circle>
                   </svg>
@@ -575,17 +608,20 @@
               class="cv-action cv-action--primary cv-view-btn" data-cv-type="be" title="Xem CV Backend">
               <span data-i18n="cv_btn_view">View</span>
               <span class="cv-view-count">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
                 <span class="cv-view-number" id="cv-view-count-be">128</span>
               </span>
             </a>
-            <a href="assets/cv/TranHoHoangVu_BE.pdf" download class="cv-action cv-action--ghost cv-download-btn" data-cv-type="be" title="Tải CV Backend">
+            <a href="assets/cv/TranHoHoangVu_BE.pdf" download class="cv-action cv-action--ghost cv-download-btn"
+              data-cv-type="be" title="Tải CV Backend">
               <span data-i18n="cv_btn_download">Download</span>
               <span class="cv-dl-count">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                   <polyline points="7 10 12 15 17 10"></polyline>
                   <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -617,7 +653,8 @@
             <div class="cv-badge-group">
               <span class="cv-pill">PDF</span>
               <span class="cv-updated-badge">
-                <svg width="12" height="12" class="text-emerald-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="12" height="12" class="text-emerald-500 shrink-0" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
                 <span data-i18n="cv_updated_ai">Cập nhật T3/2026</span>
@@ -640,11 +677,14 @@
 
           <!-- CV Preview Thumbnail (Task E) -->
           <div class="cv-preview-wrap">
-            <a href="assets/cv/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer" class="cv-preview-link" title="Xem trước CV">
-              <img src="assets/cv/TranHoHoangVu_AI_preview.png" alt="Xem trước CV AI Engineer Intern" loading="lazy" class="cv-preview-img" />
+            <a href="assets/cv/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer" class="cv-preview-link"
+              title="Xem trước CV">
+              <img src="assets/cv/TranHoHoangVu_AI_preview.png" alt="Xem trước CV AI Engineer Intern" loading="lazy"
+                class="cv-preview-img" />
               <div class="cv-preview-overlay">
                 <span class="cv-preview-badge">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                     <circle cx="12" cy="12" r="3"></circle>
                   </svg>
@@ -659,17 +699,20 @@
               class="cv-action cv-action--primary cv-view-btn" data-cv-type="ai" title="Xem CV AI">
               <span data-i18n="cv_btn_view">View</span>
               <span class="cv-view-count">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
                 <span class="cv-view-number" id="cv-view-count-ai">95</span>
               </span>
             </a>
-            <a href="assets/cv/TranHoHoangVu_AI.pdf" download class="cv-action cv-action--ghost cv-download-btn" data-cv-type="ai" title="Tải CV AI">
+            <a href="assets/cv/TranHoHoangVu_AI.pdf" download class="cv-action cv-action--ghost cv-download-btn"
+              data-cv-type="ai" title="Tải CV AI">
               <span data-i18n="cv_btn_download">Download</span>
               <span class="cv-dl-count">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                   <polyline points="7 10 12 15 17 10"></polyline>
                   <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -684,7 +727,8 @@
       <!-- Highlights / Stats Row (Task F) -->
       <div class="cv-stats-row">
         <div class="cv-stat-item">
-          <svg class="cv-stat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="cv-stat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
             <polyline points="14 2 14 8 20 8"></polyline>
             <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -697,7 +741,8 @@
         <div class="cv-stat-divider" aria-hidden="true">•</div>
 
         <div class="cv-stat-item">
-          <svg class="cv-stat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="cv-stat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
             <circle cx="12" cy="12" r="6"></circle>
             <circle cx="12" cy="12" r="2"></circle>
@@ -708,7 +753,8 @@
         <div class="cv-stat-divider" aria-hidden="true">•</div>
 
         <div class="cv-stat-item">
-          <svg class="cv-stat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="cv-stat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
           </svg>
           <span data-i18n="cv_stat_updated">Cập nhật mới 2026</span>
@@ -727,7 +773,8 @@
       <div class="section-header-wrap">
         <div class="section-kicker" data-i18n="projects_kicker">🚀 SẢN PHẨM & DỰ ÁN • SHOWCASE</div>
         <h2 class="section-headline-gradient" data-i18n="projects_headline">Dự án & Giải pháp Kỹ thuật</h2>
-        <p class="section-subtitle-text" data-i18n="projects_subtitle">Từ thiết kế hệ thống Backend RESTful API đến xây dựng và triển khai các mô hình AI thực tế.</p>
+        <p class="section-subtitle-text" data-i18n="projects_subtitle">Từ thiết kế hệ thống Backend RESTful API đến xây
+          dựng và triển khai các mô hình AI thực tế.</p>
       </div>
 
       <!-- Category Filter Tabs (All / Backend / AI / Full-Stack) -->
@@ -815,7 +862,8 @@
 
                 <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="coursehub"
                   title="Xem chi tiết">
-                  <img src="assets/projects/coursehub.png" alt="Ảnh dự án CourseHub LMS" loading="lazy">
+                  <img src="assets/projects/coursehub.png" alt="Ảnh dự án CourseHub LMS" loading="lazy"
+                    decoding="async">
                   <div class="project-thumb-overlay">
                     <span class="project-thumb-hint">
                       <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -885,7 +933,8 @@
 
                 <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="ecommerce"
                   title="Xem chi tiết">
-                  <img src="assets/projects/ecommerce.png" alt="Ảnh dự án E-commerce Platform" loading="lazy">
+                  <img src="assets/projects/ecommerce.png" alt="Ảnh dự án E-commerce Platform" loading="lazy"
+                    decoding="async">
                   <div class="project-thumb-overlay">
                     <span class="project-thumb-hint">
                       <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -949,7 +998,8 @@
 
                 <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="vietnamese-ocr"
                   title="Xem chi tiết">
-                  <img src="assets/projects/vietnamese-ocr.png" alt="Ảnh dự án Vietnamese OCR" loading="lazy">
+                  <img src="assets/projects/vietnamese-ocr.png" alt="Ảnh dự án Vietnamese OCR" loading="lazy"
+                    decoding="async">
                   <div class="project-thumb-overlay">
                     <span class="project-thumb-hint">
                       <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1014,7 +1064,7 @@
                 <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="nlp-translation"
                   title="Xem chi tiết">
                   <img src="assets/projects/nlp-translation.png" alt="Ảnh dự án EN-VI Machine Translation"
-                    loading="lazy">
+                    loading="lazy" decoding="async">
                   <div class="project-thumb-overlay">
                     <span class="project-thumb-hint">
                       <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1080,7 +1130,8 @@
 
                 <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="stock-ml"
                   title="Xem chi tiết">
-                  <img src="assets/projects/stock-ml.png" alt="Ảnh dự án Stock Forecasting & Benchmark" loading="lazy">
+                  <img src="assets/projects/stock-ml.png" alt="Ảnh dự án Stock Forecasting &amp; Benchmark"
+                    loading="lazy" decoding="async">
                   <div class="project-thumb-overlay">
                     <span class="project-thumb-hint">
                       <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1144,7 +1195,7 @@
 
                 <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="warehouse"
                   title="Xem chi tiết">
-                  <img src="assets/projects/warehouse.png" alt="Ảnh dự án WarehouseMA" loading="lazy">
+                  <img src="assets/projects/warehouse.png" alt="Ảnh dự án WarehouseMA" loading="lazy" decoding="async">
                   <div class="project-thumb-overlay">
                     <span class="project-thumb-hint">
                       <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1206,7 +1257,7 @@
                 </div>
 
                 <div class="project-thumb mb-4 cursor-pointer group" data-project-trigger="pos" title="Xem chi tiết">
-                  <img src="assets/projects/pos.png" alt="Ảnh dự án An Khang Store POS" loading="lazy">
+                  <img src="assets/projects/pos.png" alt="Ảnh dự án An Khang Store POS" loading="lazy" decoding="async">
                   <div class="project-thumb-overlay">
                     <span class="project-thumb-hint">
                       <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1532,13 +1583,15 @@
       <div class="certs-section-header">
         <div class="certs-kicker" data-i18n="certs_kicker">🏅 8 Chứng chỉ • 2024 - 2026</div>
         <h2 class="certs-headline" data-i18n="certs_headline">Được chứng nhận. Đã xác minh. Sẵn sàng.</h2>
-        <p class="certs-subtitle" data-i18n="certs_subtitle">Các chứng chỉ xác nhận năng lực Trí tuệ nhân tạo (AI), Phân tích dữ liệu, Quản trị sản phẩm, Hệ thống Linux, Agile &amp; Scrum và tiếng Anh.</p>
+        <p class="certs-subtitle" data-i18n="certs_subtitle">Các chứng chỉ xác nhận năng lực Trí tuệ nhân tạo (AI), Phân
+          tích dữ liệu, Quản trị sản phẩm, Hệ thống Linux, Agile &amp; Scrum và tiếng Anh.</p>
       </div>
 
       <!-- Category Filter Tabs (All / AI / Data / Software & Agile / Language) -->
       <div class="certs-filter-wrapper mb-8 flex justify-center">
         <div class="certs-filter-bar" role="tablist" aria-label="Bộ lọc danh mục chứng chỉ">
-          <button type="button" role="tab" aria-selected="true" class="certs-filter-tab is-active" data-cert-filter="all">
+          <button type="button" role="tab" aria-selected="true" class="certs-filter-tab is-active"
+            data-cert-filter="all">
             <span data-i18n="certs_tab_all">Tất cả</span>
             <span class="certs-tab-count">8</span>
           </button>
@@ -1561,503 +1614,18 @@
         </div>
       </div>
 
-      <!-- Cert Grid (Sắp xếp mới nhất bên trái -> cũ dần về bên phải) -->
-      <div class="cert-grid-v2">
-
-        <!-- Card 1: Microsoft AI Product Manager (19/01/2026 - Mới nhất) -->
-        <article class="cert-card-v2" id="cert-microsoft" data-cert-category="ai">
-          <div class="cert-card-v2__toprow">
-            <!-- Issuer Icon Bubble -->
-            <div class="cert-issuer-icon cert-issuer-icon--microsoft" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <rect x="1" y="1" width="10" height="10" fill="#F25022"/>
-                <rect x="13" y="1" width="10" height="10" fill="#7FBA00"/>
-                <rect x="1" y="13" width="10" height="10" fill="#00A4EF"/>
-                <rect x="13" y="13" width="10" height="10" fill="#FFB900"/>
-              </svg>
-            </div>
-            <div class="cert-card-v2__meta">
-              <h3 class="cert-card-v2__title" data-i18n="cert_ms_title">Microsoft AI Product Manager</h3>
-              <p class="cert-card-v2__issuer">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                Microsoft • Coursera
-              </p>
-            </div>
-            <span class="cert-card-v2__tag cert-card-v2__tag--microsoft" data-i18n="cert_tag_ms_ai">AI / Product</span>
-          </div>
-
-          <!-- Description -->
-          <p class="cert-card-v2__desc" data-i18n="cert_ms_desc">Chuyên môn gồm 5 khóa học do Microsoft đào tạo. Phát triển sản phẩm AI cho doanh nghiệp với Copilot, Azure, Power BI, nghiên cứu thị trường, chiến lược đám mây và thiết kế UX/UI.</p>
-
-          <!-- Badges / Highlights -->
-          <div class="cert-skills-chips">
-            <span class="cert-skill-chip cert-skill-chip--microsoft">Copilot</span>
-            <span class="cert-skill-chip cert-skill-chip--microsoft">Azure AI</span>
-            <span class="cert-skill-chip cert-skill-chip--microsoft">Power BI</span>
-            <span class="cert-skill-chip cert-skill-chip--microsoft">Product Strategy</span>
-            <span class="cert-skill-chip cert-skill-chip--microsoft">UX/UI Design</span>
-          </div>
-
-          <!-- Badges Row -->
-          <div class="cert-badges-row">
-            <div class="cert-date-chip">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span data-i18n="cert_issued_label">Cấp tháng</span>&nbsp;01/2026
-            </div>
-            <div class="cert-id-badge">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
-              <span class="cert-id-badge__label" data-i18n="cert_id_label">Mã chứng chỉ</span>:&nbsp;<span class="cert-id-badge__value">Y1B76ZTZXTCN</span>
-            </div>
-          </div>
-
-          <!-- Footer -->
-          <div class="cert-card-v2__footer">
-            <a href="assets/certificates/TranHoHoangVu_Microsoft_AI_Product_Manager.pdf" target="_blank" rel="noopener noreferrer" class="cert-view-btn cert-view-btn--microsoft" title="Xem chứng chỉ Microsoft AI Product Manager (PDF)">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              <span data-i18n="certs_view_pdf">Xem bản PDF →</span>
-            </a>
-
-            <a href="https://coursera.org/verify/professional-cert/Y1B76ZTZXTCN" target="_blank" rel="noopener noreferrer" class="cert-verify-btn" title="Xác minh chứng chỉ trên Coursera">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              <span data-i18n="certs_show_credential">Xem chứng chỉ gốc ↗</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Card 2: Introduction to Linux LFS101 (15/01/2026) -->
-        <article class="cert-card-v2" id="cert-linux" data-cert-category="software">
-          <div class="cert-card-v2__toprow">
-            <!-- Issuer Icon Bubble -->
-            <div class="cert-issuer-icon cert-issuer-icon--linux" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M3 3H21V15H16V8H3V3Z" fill="currentColor" class="text-slate-800 dark:text-white"/>
-                <path d="M3 9H8V16H16V21H3V9Z" fill="#0099E5"/>
-              </svg>
-            </div>
-            <div class="cert-card-v2__meta">
-              <h3 class="cert-card-v2__title" data-i18n="cert_linux_title">Introduction to Linux (LFS101)</h3>
-              <p class="cert-card-v2__issuer">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                The Linux Foundation
-              </p>
-            </div>
-            <span class="cert-card-v2__tag cert-card-v2__tag--linux" data-i18n="cert_tag_linux">Linux / OS</span>
-          </div>
-
-          <!-- Description -->
-          <p class="cert-card-v2__desc" data-i18n="cert_linux_desc">Chứng nhận do The Linux Foundation cấp. Nắm vững kiến thức nền tảng về hệ điều hành Linux, thao tác dòng lệnh (CLI), quản trị hệ thống, kiến trúc mạng, bash shell và bảo mật mã nguồn mở.</p>
-
-          <!-- Badges / Highlights -->
-          <div class="cert-skills-chips">
-            <span class="cert-skill-chip cert-skill-chip--linux">Linux CLI</span>
-            <span class="cert-skill-chip cert-skill-chip--linux">Bash Scripting</span>
-            <span class="cert-skill-chip cert-skill-chip--linux">System Administration</span>
-            <span class="cert-skill-chip cert-skill-chip--linux">File Systems</span>
-            <span class="cert-skill-chip cert-skill-chip--linux">Open Source</span>
-          </div>
-
-          <!-- Badges Row -->
-          <div class="cert-badges-row">
-            <div class="cert-date-chip">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span data-i18n="cert_issued_label">Cấp tháng</span>&nbsp;01/2026
-            </div>
-            <div class="cert-id-badge">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
-              <span class="cert-id-badge__label" data-i18n="cert_id_label">Mã chứng chỉ</span>:&nbsp;<span class="cert-id-badge__value">LF-0korv3z00s</span>
-            </div>
-          </div>
-
-          <!-- Footer -->
-          <div class="cert-card-v2__footer">
-            <a href="assets/certificates/TranHoHoangVu_Linux_Foundation_LFS101.pdf" target="_blank" rel="noopener noreferrer" class="cert-view-btn cert-view-btn--linux" title="Xem chứng chỉ Linux Foundation LFS101 (PDF)">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              <span data-i18n="certs_view_pdf">Xem bản PDF →</span>
-            </a>
-
-            <a href="https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/dc762e77-b6cb-4eee-aa23-b50aa5972e53-vu-tran-ho-hoang-b4bad79c-ac9f-4eac-83b5-405ef7710018-certificate.pdf" target="_blank" rel="noopener noreferrer" class="cert-verify-btn" title="Xác minh chứng chỉ trên The Linux Foundation">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              <span data-i18n="certs_show_credential">Xem chứng chỉ gốc ↗</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Card 3: Google Data Analytics (14/01/2026) -->
-        <article class="cert-card-v2" id="cert-google" data-cert-category="data">
-          <div class="cert-card-v2__toprow">
-            <!-- Issuer Icon Bubble -->
-            <div class="cert-issuer-icon cert-issuer-icon--google" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24">
-                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
-                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
-                <path fill="#FBBC05" d="M5.28 14.27A7.18 7.18 0 014.9 12c0-.79.14-1.57.38-2.27V6.58H1.25A11.96 11.96 0 000 12c0 1.92.45 3.74 1.25 5.42l4.03-3.15z"/>
-                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
-              </svg>
-            </div>
-            <div class="cert-card-v2__meta">
-              <h3 class="cert-card-v2__title" data-i18n="cert_google_title">Google Data Analytics</h3>
-              <p class="cert-card-v2__issuer">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                Google • Coursera
-              </p>
-            </div>
-            <span class="cert-card-v2__tag cert-card-v2__tag--google" data-i18n="cert_tag_data">Data Analytics</span>
-          </div>
-
-          <!-- Description -->
-          <p class="cert-card-v2__desc" data-i18n="cert_google_desc">Chuyên môn gồm 8 khóa học và dự án Capstone do Google đào tạo. Năng lực xử lý dữ liệu thực tế, làm sạch, phân tích và trực quan hóa với Spreadsheets, SQL, Tableau và R.</p>
-
-          <!-- Badges / Highlights -->
-          <div class="cert-skills-chips">
-            <span class="cert-skill-chip">SQL</span>
-            <span class="cert-skill-chip">R Programming</span>
-            <span class="cert-skill-chip">Tableau</span>
-            <span class="cert-skill-chip">Spreadsheets</span>
-            <span class="cert-skill-chip">Data Cleaning</span>
-          </div>
-
-          <!-- Badges Row -->
-          <div class="cert-badges-row">
-            <div class="cert-date-chip">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span data-i18n="cert_issued_label">Cấp tháng</span>&nbsp;01/2026
-            </div>
-            <div class="cert-id-badge">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
-              <span class="cert-id-badge__label" data-i18n="cert_id_label">Mã chứng chỉ</span>:&nbsp;<span class="cert-id-badge__value">2256GOEWHB2O</span>
-            </div>
-          </div>
-
-          <!-- Footer -->
-          <div class="cert-card-v2__footer">
-            <a href="assets/certificates/TranHoHoangVu_Google_Data_Analytics.pdf" target="_blank" rel="noopener noreferrer" class="cert-view-btn cert-view-btn--google" title="Xem chứng chỉ Google Data Analytics (PDF)">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              <span data-i18n="certs_view_pdf">Xem bản PDF →</span>
-            </a>
-
-            <a href="https://coursera.org/verify/professional-cert/2256GOEWHB2O" target="_blank" rel="noopener noreferrer" class="cert-verify-btn" title="Xác minh chứng chỉ trên Coursera">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              <span data-i18n="certs_show_credential">Xem chứng chỉ gốc ↗</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Card 3: Gemini Certified Educator (11/01/2026) -->
-        <article class="cert-card-v2" id="cert-gemini-educator" data-cert-category="ai">
-          <div class="cert-card-v2__toprow">
-            <!-- Issuer Icon Bubble -->
-            <div class="cert-issuer-icon cert-issuer-icon--gemini" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 24C12 17.3726 6.62742 12 0 12C6.62742 12 12 6.62742 12 0C12 6.62742 17.3726 12 24 12C17.3726 12 12 17.3726 12 24Z" fill="url(#geminiGradEdu)"/>
-                <defs>
-                  <linearGradient id="geminiGradEdu" x1="0" y1="12" x2="24" y2="12" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#1BA1E3"/>
-                    <stop offset="0.34" stop-color="#548BF4"/>
-                    <stop offset="0.68" stop-color="#9B72CB"/>
-                    <stop offset="1" stop-color="#D96570"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-            <div class="cert-card-v2__meta">
-              <h3 class="cert-card-v2__title" data-i18n="cert_gemini_educator_title">Gemini Certified Educator</h3>
-              <p class="cert-card-v2__issuer">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                Google for Education
-              </p>
-            </div>
-            <span class="cert-card-v2__tag cert-card-v2__tag--gemini" data-i18n="cert_tag_gemini">Google AI</span>
-          </div>
-
-          <!-- Description -->
-          <p class="cert-card-v2__desc" data-i18n="cert_gemini_educator_desc">Chứng nhận cấp Chuyên gia giáo dục bởi Google for Education. Xác nhận năng lực ứng dụng nâng cao các mô hình Google AI và Gemini nhằm tối ưu hóa giảng dạy, soạn thảo học liệu và chuyển đổi số giáo dục.</p>
-
-          <!-- Badges / Highlights -->
-          <div class="cert-skills-chips">
-            <span class="cert-skill-chip cert-skill-chip--gemini">Gemini AI</span>
-            <span class="cert-skill-chip cert-skill-chip--gemini">Google AI</span>
-            <span class="cert-skill-chip cert-skill-chip--gemini">AI in Education</span>
-            <span class="cert-skill-chip cert-skill-chip--gemini">Prompt Engineering</span>
-            <span class="cert-skill-chip cert-skill-chip--gemini">Instructional AI</span>
-          </div>
-
-          <!-- Badges Row -->
-          <div class="cert-badges-row">
-            <div class="cert-date-chip">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span data-i18n="cert_issued_label">Cấp tháng</span>&nbsp;01/2026
-            </div>
-            <div class="cert-id-badge">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
-              <span class="cert-id-badge__label" data-i18n="cert_id_label">Mã chứng chỉ</span>:&nbsp;<span class="cert-id-badge__value">QwBRzFdp</span>
-            </div>
-          </div>
-
-          <!-- Footer -->
-          <div class="cert-card-v2__footer">
-            <a href="assets/certificates/TranHoHoangVu_Google_Gemini_Certified_Educator.pdf" target="_blank" rel="noopener noreferrer" class="cert-view-btn cert-view-btn--gemini" title="Xem chứng chỉ Gemini Certified Educator (PDF)">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              <span data-i18n="certs_view_pdf">Xem bản PDF →</span>
-            </a>
-
-            <a href="https://edu.google.accredible.com/6a00f1fb-442c-423c-ac04-556950bbe4d0#acc.QwBRzFdp" target="_blank" rel="noopener noreferrer" class="cert-verify-btn" title="Xác minh chứng chỉ trên Google Accredible">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              <span data-i18n="certs_show_credential">Xem chứng chỉ gốc ↗</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Card 4: Gemini Certified Student (11/01/2026) -->
-        <article class="cert-card-v2" id="cert-gemini-student" data-cert-category="ai">
-          <div class="cert-card-v2__toprow">
-            <!-- Issuer Icon Bubble -->
-            <div class="cert-issuer-icon cert-issuer-icon--gemini" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 24C12 17.3726 6.62742 12 0 12C6.62742 12 12 6.62742 12 0C12 6.62742 17.3726 12 24 12C17.3726 12 12 17.3726 12 24Z" fill="url(#geminiGrad)"/>
-                <defs>
-                  <linearGradient id="geminiGrad" x1="0" y1="12" x2="24" y2="12" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#1BA1E3"/>
-                    <stop offset="0.34" stop-color="#548BF4"/>
-                    <stop offset="0.68" stop-color="#9B72CB"/>
-                    <stop offset="1" stop-color="#D96570"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-            <div class="cert-card-v2__meta">
-              <h3 class="cert-card-v2__title" data-i18n="cert_gemini_title">Gemini Certified Student</h3>
-              <p class="cert-card-v2__issuer">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                Google for Education
-              </p>
-            </div>
-            <span class="cert-card-v2__tag cert-card-v2__tag--gemini" data-i18n="cert_tag_gemini">Google AI</span>
-          </div>
-
-          <!-- Description -->
-          <p class="cert-card-v2__desc" data-i18n="cert_gemini_desc">Chứng nhận cấp Đại học bởi Google for Education. Đánh giá kiến thức chuyên môn, kỹ năng thực hành và ứng dụng các mô hình Gemini AI trong học tập và công việc.</p>
-
-          <!-- Badges / Highlights -->
-          <div class="cert-skills-chips">
-            <span class="cert-skill-chip cert-skill-chip--gemini">Gemini AI</span>
-            <span class="cert-skill-chip cert-skill-chip--gemini">Google AI</span>
-            <span class="cert-skill-chip cert-skill-chip--gemini">Prompt Engineering</span>
-            <span class="cert-skill-chip cert-skill-chip--gemini">Generative AI</span>
-            <span class="cert-skill-chip cert-skill-chip--gemini">LLMs</span>
-          </div>
-
-          <!-- Badges Row -->
-          <div class="cert-badges-row">
-            <div class="cert-date-chip">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span data-i18n="cert_issued_label">Cấp tháng</span>&nbsp;01/2026
-            </div>
-            <div class="cert-id-badge">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
-              <span class="cert-id-badge__label" data-i18n="cert_id_label">Mã chứng chỉ</span>:&nbsp;<span class="cert-id-badge__value">DwFyn4bH</span>
-            </div>
-          </div>
-
-          <!-- Footer -->
-          <div class="cert-card-v2__footer">
-            <a href="assets/certificates/TranHoHoangVu_Google_Gemini_Certified_Student.pdf" target="_blank" rel="noopener noreferrer" class="cert-view-btn cert-view-btn--gemini" title="Xem chứng chỉ Gemini Certified Student (PDF)">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              <span data-i18n="certs_view_pdf">Xem bản PDF →</span>
-            </a>
-
-            <a href="https://edu.google.accredible.com/3d729d76-cba3-4376-8e5f-2bd6e53fd276#acc.DwFyn4bH" target="_blank" rel="noopener noreferrer" class="cert-verify-btn" title="Xác minh chứng chỉ trên Google Accredible">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              <span data-i18n="certs_show_credential">Xem chứng chỉ gốc ↗</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Card 4: DeepLearning.AI TensorFlow Developer (11/01/2026) -->
-        <article class="cert-card-v2" id="cert-tensorflow" data-cert-category="ai">
-          <div class="cert-card-v2__toprow">
-            <!-- Issuer Icon Bubble -->
-            <div class="cert-issuer-icon cert-issuer-icon--deeplearning" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="10" stroke="#EE4C2C" stroke-width="2.2"/>
-                <circle cx="12" cy="12" r="6.2" stroke="#EE4C2C" stroke-width="2.2"/>
-                <circle cx="12" cy="12" r="2.5" fill="#EE4C2C"/>
-              </svg>
-            </div>
-            <div class="cert-card-v2__meta">
-              <h3 class="cert-card-v2__title" data-i18n="cert_tf_title">DeepLearning.AI TensorFlow Developer</h3>
-              <p class="cert-card-v2__issuer">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                DeepLearning.AI • Coursera
-              </p>
-            </div>
-            <span class="cert-card-v2__tag cert-card-v2__tag--deeplearning" data-i18n="cert_tag_ai">AI / Deep Learning</span>
-          </div>
-
-          <!-- Description -->
-          <p class="cert-card-v2__desc" data-i18n="cert_tf_desc">Chuyên môn gồm 4 khóa học do DeepLearning.AI đào tạo. Xây dựng và huấn luyện mạng nơ-ron sâu với TensorFlow, xử lý ảnh thị giác máy tính (CNN), xử lý ngôn ngữ tự nhiên (NLP) và dự báo chuỗi thời gian.</p>
-
-          <!-- Badges / Highlights -->
-          <div class="cert-skills-chips">
-            <span class="cert-skill-chip cert-skill-chip--deeplearning">TensorFlow</span>
-            <span class="cert-skill-chip cert-skill-chip--deeplearning">Deep Learning</span>
-            <span class="cert-skill-chip cert-skill-chip--deeplearning">CNN</span>
-            <span class="cert-skill-chip cert-skill-chip--deeplearning">NLP</span>
-            <span class="cert-skill-chip cert-skill-chip--deeplearning">Time Series</span>
-          </div>
-
-          <!-- Badges Row -->
-          <div class="cert-badges-row">
-            <div class="cert-date-chip">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span data-i18n="cert_issued_label">Cấp tháng</span>&nbsp;01/2026
-            </div>
-            <div class="cert-id-badge">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
-              <span class="cert-id-badge__label" data-i18n="cert_id_label">Mã chứng chỉ</span>:&nbsp;<span class="cert-id-badge__value">7VU0Y6P2472Z</span>
-            </div>
-          </div>
-
-          <!-- Footer -->
-          <div class="cert-card-v2__footer">
-            <a href="assets/certificates/TranHoHoangVu_DeepLearning_TensorFlow.pdf" target="_blank" rel="noopener noreferrer" class="cert-view-btn cert-view-btn--deeplearning" title="Xem chứng chỉ DeepLearning.AI TensorFlow Developer (PDF)">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              <span data-i18n="certs_view_pdf">Xem bản PDF →</span>
-            </a>
-
-            <a href="https://coursera.org/verify/professional-cert/7VU0Y6P2472Z" target="_blank" rel="noopener noreferrer" class="cert-verify-btn" title="Xác minh chứng chỉ trên Coursera">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              <span data-i18n="certs_show_credential">Xem chứng chỉ gốc ↗</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Card 4: Agile & Scrum (10/2024) -->
-        <article class="cert-card-v2" id="cert-agile" data-cert-category="software">
-          <div class="cert-card-v2__toprow">
-            <!-- B: Issuer Icon Bubble -->
-            <div class="cert-issuer-icon cert-issuer-icon--agile" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2.5L20.5 9.5V14.5L12 7.5L3.5 14.5V9.5L12 2.5Z" fill="#E52E25"/>
-                <path d="M12 10L20.5 17V22L12 15L3.5 22V17L12 10Z" fill="#E52E25"/>
-              </svg>
-            </div>
-            <div class="cert-card-v2__meta">
-              <h3 class="cert-card-v2__title" data-i18n="cert_agile_title">Agile &amp; Scrum Framework 2024</h3>
-              <p class="cert-card-v2__issuer">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                Techbase Viet Nam
-              </p>
-            </div>
-            <span class="cert-card-v2__tag cert-card-v2__tag--agile" data-i18n="cert_tag_software">Agile / Scrum</span>
-          </div>
-
-          <!-- Description -->
-          <p class="cert-card-v2__desc" data-i18n="cert_agile_desc">Cấp bởi Techbase Viet Nam tại Đại học Tôn Đức Thắng. Bao gồm Scrum roles, Sprints, Backlog refinement và Agile ceremonies.</p>
-
-          <!-- Badges / Highlights -->
-          <div class="cert-skills-chips">
-            <span class="cert-skill-chip cert-skill-chip--agile">Scrum Roles</span>
-            <span class="cert-skill-chip cert-skill-chip--agile">Sprints</span>
-            <span class="cert-skill-chip cert-skill-chip--agile">Backlog Refinement</span>
-            <span class="cert-skill-chip cert-skill-chip--agile">Agile Ceremonies</span>
-          </div>
-
-          <!-- Badges Row -->
-          <div class="cert-badges-row">
-            <div class="cert-date-chip">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span data-i18n="cert_issued_label">Cấp tháng</span>&nbsp;10/2024
-            </div>
-          </div>
-
-          <!-- Footer -->
-          <div class="cert-card-v2__footer">
-            <a href="assets/certificates/TranHoHoangVu_Techbase_Agile.pdf" target="_blank" rel="noopener noreferrer" class="cert-view-btn cert-view-btn--agile" title="Xem chứng chỉ Techbase Agile (PDF)">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              <span data-i18n="certs_view_agile">Xem chứng chỉ (PDF) →</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Card 5: Aptis ESOL (04/2024) -->
-        <article class="cert-card-v2" id="cert-aptis" data-cert-category="language">
-          <div class="cert-card-v2__toprow">
-            <!-- B: Issuer Icon Bubble -->
-            <div class="cert-issuer-icon cert-issuer-icon--language" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="6.5" cy="6.5" r="4.2"/>
-                <circle cx="17.5" cy="6.5" r="4.2"/>
-                <circle cx="6.5" cy="17.5" r="4.2"/>
-                <circle cx="17.5" cy="17.5" r="4.2"/>
-              </svg>
-            </div>
-            <div class="cert-card-v2__meta">
-              <h3 class="cert-card-v2__title" data-i18n="cert_aptis_title">Aptis ESOL</h3>
-              <p class="cert-card-v2__issuer">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                British Council
-              </p>
-            </div>
-            <span class="cert-card-v2__tag cert-card-v2__tag--language" data-i18n="cert_tag_language">English</span>
-          </div>
-
-          <!-- Description -->
-          <p class="cert-card-v2__desc" data-i18n="cert_aptis_desc">Bài thi tiếng Anh quốc tế của British Council, đánh giá 4 kỹ năng: Nghe, Nói, Đọc, Viết theo thang CEFR.</p>
-
-          <!-- C: Score Progress Bar -->
-          <div class="cert-score-block" role="img" aria-label="Điểm Aptis ESOL: 135 trên 200">
-            <div class="cert-score-block__header">
-              <span class="cert-score-block__label" data-i18n="cert_score_label">Điểm</span>
-              <span class="cert-score-block__value">135 <span style="font-size:.75rem;font-weight:500;opacity:.65">/ 200</span></span>
-            </div>
-            <div class="cert-score-track">
-              <div class="cert-score-fill" id="aptis-score-bar"></div>
-            </div>
-            <span class="cert-score-block__sub" data-i18n="cert_level_label">Overall CEFR level: B1</span>
-          </div>
-
-          <!-- D: Metadata Badges Row: Date + Certificate ID -->
-          <div class="cert-badges-row">
-            <div class="cert-date-chip">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span data-i18n="cert_issued_label">Cấp tháng</span>&nbsp;04/2024
-            </div>
-            <div class="cert-id-badge">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
-              <span class="cert-id-badge__label" data-i18n="cert_id_label">Mã chứng chỉ</span>:&nbsp;<span class="cert-id-badge__value">ESOL&nbsp;0155613</span>
-            </div>
-          </div>
-
-          <!-- Privacy Note -->
-          <div class="cert-privacy-note">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-cyan-500">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
-            <span data-i18n="cert_privacy_note">Bản online đã che thông tin nhạy cảm (CCCD, QR). Nhấn "Yêu cầu bản gốc" để nhận bản đầy đủ.</span>
-          </div>
-
-          <!-- Footer -->
-          <div class="cert-card-v2__footer">
-            <a href="assets/certificates/TranHoHoangVu_Aptis_ESOL_Redacted.pdf" target="_blank" rel="noopener noreferrer" class="cert-view-btn cert-view-btn--language" title="Xem bản sao chứng chỉ đã che mờ thông tin cá nhân">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="shrink-0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              <span data-i18n="certs_view_redacted">Xem bản PDF →</span>
-            </a>
-
-            <button type="button" class="cert-request-btn" id="btn-request-aptis-original" title="Gửi yêu cầu bản gốc đối chiếu">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 0 1-2 2H4c-1.1 0-2-.9-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <span data-i18n="certs_request_original">Yêu cầu bản gốc</span>
-            </button>
-          </div>
-        </article>
-
+      <!-- Cert cards rendered by certs.data.js to reduce HTML payload -->
+      <div class="cert-grid-v2" id="cert-grid-v2-mount">
+        <!-- Cards injected by window.renderCertCards() on DOMContentLoaded -->
       </div><!-- /cert-grid-v2 -->
 
       <!-- Load More / Collapse Button -->
       <div id="certs-load-more-wrap" class="certs-load-more-wrap mt-10 flex justify-center">
         <button type="button" id="certs-load-more-btn" class="certs-load-more-btn" aria-expanded="false">
           <span id="certs-load-more-text">Xem thêm (5 chứng chỉ)</span>
-          <svg id="certs-load-more-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 transition-transform duration-300">
+          <svg id="certs-load-more-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+            class="shrink-0 transition-transform duration-300">
             <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
         </button>
@@ -2077,7 +1645,8 @@
       <div class="github-section-header">
         <div class="github-kicker" data-i18n="github_kicker">📊 GitHub • Cập nhật tự động</div>
         <h2 class="github-headline" data-i18n="github_headline">Code mỗi ngày. Học liên tục.</h2>
-        <p class="github-subtitle" data-i18n="github_subtitle">Hoạt động GitHub phản ánh quá trình học hỏi và xây dựng project thực tế liên tục.</p>
+        <p class="github-subtitle" data-i18n="github_subtitle">Hoạt động GitHub phản ánh quá trình học hỏi và xây dựng
+          project thực tế liên tục.</p>
       </div>
 
       <!-- Quick Stats Bar (data fetched from GitHub API via GitHub Actions) -->
@@ -2126,15 +1695,29 @@
         <!-- Contributions Heatmap -->
         <div class="github-panel">
           <div class="github-panel__header">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#10b981;flex-shrink:0"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="color:#10b981;flex-shrink:0">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
             <h3 class="github-panel__title" data-i18n="github_contrib">Tổng quan đóng góp</h3>
             <div class="relative group inline-flex items-center ml-auto">
               <button type="button" class="github-panel__info-btn" aria-label="Thông tin contributions">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="9"/><path d="M12 10v7"/><path d="M12 7h.01"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 10v7" />
+                  <path d="M12 7h.01" />
+                </svg>
               </button>
-              <div class="pointer-events-none absolute left-1/2 top-8 -translate-x-1/2 w-72 rounded-xl border border-white/10 bg-gray-950/90 px-3 py-2 text-xs text-gray-200 shadow-lg opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 z-10" data-i18n="github_contrib_tip">
+              <div
+                class="pointer-events-none absolute left-1/2 top-8 -translate-x-1/2 w-72 rounded-xl border border-white/10 bg-gray-950/90 px-3 py-2 text-xs text-gray-200 shadow-lg opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 z-10"
+                data-i18n="github_contrib_tip">
                 Dữ liệu đóng góp được tạo tự động từ dữ liệu GitHub GraphQL (Actions) và được cập nhật định kỳ.
-                <div class="absolute left-1/2 -top-1 h-2 w-2 -translate-x-1/2 rotate-45 bg-gray-950/90 border-l border-t border-white/10"></div>
+                <div
+                  class="absolute left-1/2 -top-1 h-2 w-2 -translate-x-1/2 rotate-45 bg-gray-950/90 border-l border-t border-white/10">
+                </div>
               </div>
             </div>
           </div>
@@ -2148,15 +1731,26 @@
         <!-- Activity Graph -->
         <div class="github-panel">
           <div class="github-panel__header">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#6366f1;flex-shrink:0"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="color:#6366f1;flex-shrink:0">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
             <h3 class="github-panel__title" data-i18n="github_activity">Biểu đồ hoạt động</h3>
             <div class="relative group inline-flex items-center ml-auto">
               <button type="button" class="github-panel__info-btn" aria-label="Thông tin activity graph">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="9"/><path d="M12 10v7"/><path d="M12 7h.01"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 10v7" />
+                  <path d="M12 7h.01" />
+                </svg>
               </button>
-              <div class="pointer-events-none absolute left-1/2 top-8 -translate-x-1/2 w-72 rounded-xl border border-white/10 bg-gray-950/90 px-3 py-2 text-xs text-gray-200 shadow-lg opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 z-10" data-i18n="github_activity_tip">
+              <div
+                class="pointer-events-none absolute left-1/2 top-8 -translate-x-1/2 w-72 rounded-xl border border-white/10 bg-gray-950/90 px-3 py-2 text-xs text-gray-200 shadow-lg opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 z-10"
+                data-i18n="github_activity_tip">
                 Biểu đồ số lượng commit theo thời gian (tổng hợp từ dữ liệu GitHub).
-                <div class="absolute left-1/2 -top-1 h-2 w-2 -translate-x-1/2 rotate-45 bg-gray-950/90 border-l border-t border-white/10"></div>
+                <div
+                  class="absolute left-1/2 -top-1 h-2 w-2 -translate-x-1/2 rotate-45 bg-gray-950/90 border-l border-t border-white/10">
+                </div>
               </div>
             </div>
           </div>
@@ -2171,15 +1765,19 @@
 
       <!-- CTA Button -->
       <div class="github-cta-wrap">
-        <a href="https://github.com/tranhohoangvu" target="_blank" rel="noopener noreferrer"
-          class="github-cta-btn" id="github-profile-cta">
+        <a href="https://github.com/tranhohoangvu" target="_blank" rel="noopener noreferrer" class="github-cta-btn"
+          id="github-profile-cta">
           <!-- GitHub Octocat icon -->
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
           </svg>
           <span data-i18n="github_profile_link">Xem GitHub profile</span>
           <span class="github-cta-btn__handle" data-i18n="github_profile_handle">@tranhohoangvu</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            aria-hidden="true">
+            <path d="M7 17L17 7M17 7H7M17 7v10" />
+          </svg>
         </a>
       </div>
 
@@ -2388,13 +1986,15 @@
       <div class="contact-section-header">
         <div class="contact-kicker" data-i18n="contact_kicker">💬 LIÊN HỆ • KẾT NỐI NGAY</div>
         <h2 class="contact-headline" data-i18n="contact_headline">Cùng xây dựng điều tuyệt vời.</h2>
-        <p class="contact-subtitle" data-i18n="contact_subtitle">Sẵn sàng đón nhận cơ hội việc làm Fresher Backend Developer, AI Engineer Intern hoặc dự án cộng tác mới.</p>
+        <p class="contact-subtitle" data-i18n="contact_subtitle">Sẵn sàng đón nhận cơ hội việc làm Fresher Backend
+          Developer, AI Engineer Intern hoặc dự án cộng tác mới.</p>
       </div>
 
       <div class="flex flex-col md:flex-row gap-10 lg:gap-12">
         <div class="md:w-1/2">
 
-          <div class="connect-panel p-5 sm:p-6 rounded-2xl bg-white dark:bg-[#0f172a]/75 border border-slate-200/80 dark:border-white/10">
+          <div
+            class="connect-panel p-5 sm:p-6 rounded-2xl bg-white dark:bg-[#0f172a]/75 border border-slate-200/80 dark:border-white/10">
 
             <!-- Availability & Work Info Card -->
             <div class="contact-avail-card">
@@ -2403,25 +2003,31 @@
                   <span class="contact-avail-dot" aria-hidden="true"></span>
                   <span data-i18n="contact_avail_badge">Sẵn sàng nhận việc ngay</span>
                 </div>
-                <span class="contact-avail-roles-chip" data-i18n="contact_avail_roles">Fresher Backend • AI Engineer Intern</span>
+                <span class="contact-avail-roles-chip" data-i18n="contact_avail_roles">Fresher Backend • AI Engineer
+                  Intern</span>
               </div>
               <div class="contact-avail-meta-grid">
                 <div class="contact-avail-meta-item">
-                  <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                   <span data-i18n="contact_location">TP. Hồ Chí Minh, Việt Nam (UTC+7)</span>
                 </div>
                 <div class="contact-avail-meta-item">
-                  <svg class="w-4 h-4 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  <svg class="w-4 h-4 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   <span data-i18n="contact_work_mode">On-site • Hybrid • Remote</span>
                 </div>
                 <div class="contact-avail-meta-item sm:col-span-2">
-                  <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                   <span data-i18n="contact_response_time">Phản hồi nhanh trong vòng 24h</span>
                 </div>
@@ -2429,9 +2035,12 @@
             </div>
 
             <h3 class="text-base font-extrabold text-gray-900 dark:text-gray-100 flex items-center gap-2 mb-4">
-              <span class="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-indigo-600/10 dark:bg-white/10 border border-indigo-600/20 dark:border-white/15">
-                <svg class="w-4 h-4 text-indigo-600 dark:text-gray-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8a2 2 0 0 0-2-2H7l-4 4v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8z" />
+              <span
+                class="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-indigo-600/10 dark:bg-white/10 border border-indigo-600/20 dark:border-white/15">
+                <svg class="w-4 h-4 text-indigo-600 dark:text-gray-100" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21 8a2 2 0 0 0-2-2H7l-4 4v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8z" />
                   <path stroke-linecap="round" stroke-linejoin="round" d="M7 6V4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" />
                 </svg>
               </span>
@@ -2440,29 +2049,34 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <!-- Email (full width, click to copy) -->
-              <a href="mailto:hoangvu2k4cmg@gmail.com" class="contact-link-card sm:col-span-2 group" id="contact-email-link"
-                role="button" tabindex="0" data-email="hoangvu2k4cmg@gmail.com" data-i18n-tooltip="contact_email_tip"
-                title="Nhấp để sao chép email (hoangvu2k4cmg@gmail.com)"
+              <a href="mailto:hoangvu2k4cmg@gmail.com" class="contact-link-card sm:col-span-2 group"
+                id="contact-email-link" role="button" tabindex="0" data-email="hoangvu2k4cmg@gmail.com"
+                data-i18n-tooltip="contact_email_tip" title="Nhấp để sao chép email (hoangvu2k4cmg@gmail.com)"
                 aria-label="Sao chép email hoangvu2k4cmg@gmail.com">
                 <span class="contact-link-icon">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 0 1-2 2H4c-1.1 0-2-.9-2-2V6a2 2 0 0 1 2-2Zm8 7 8-5H4l8 5Zm0 2.5-8-5V18h16v-9.5l-8 5Z" />
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 0 1-2 2H4c-1.1 0-2-.9-2-2V6a2 2 0 0 1 2-2Zm8 7 8-5H4l8 5Zm0 2.5-8-5V18h16v-9.5l-8 5Z" />
                   </svg>
                 </span>
                 <span class="contact-link-text">
                   <span class="contact-link-title flex items-center gap-2">
                     Email
-                    <span class="contact-link-badge contact-link-badge--fastest !px-2 !py-0.5 !text-[10px]" data-i18n="contact_badge_fastest">Nhanh nhất</span>
+                    <span class="contact-link-badge contact-link-badge--fastest !px-2 !py-0.5 !text-[10px]"
+                      data-i18n="contact_badge_fastest">Nhanh nhất</span>
                   </span>
                   <span class="contact-link-sub">hoangvu2k4cmg@gmail.com</span>
                 </span>
-                <span class="contact-link-badge ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold select-none">
+                <span
+                  class="contact-link-badge ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold select-none">
                   <span class="contact-link-badge-icon flex items-center">
-                    <svg class="w-3.5 h-3.5 contact-copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+                    <svg class="w-3.5 h-3.5 contact-copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                      stroke-width="2" aria-hidden="true">
                       <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                       <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                     </svg>
-                    <svg class="w-3.5 h-3.5 contact-check-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true">
+                    <svg class="w-3.5 h-3.5 contact-check-icon hidden" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
                     </svg>
                   </span>
@@ -2475,15 +2089,17 @@
                 class="contact-link-card group" aria-label="GitHub của Trần Hồ Hoàng Vũ">
                 <span class="contact-link-icon">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 2C6.48 2 2 6.64 2 12.29c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.63-3.37-1.4-3.37-1.4-.45-1.18-1.1-1.49-1.1-1.49-.9-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.58 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.37-2.22-.26-4.56-1.16-4.56-5.17 0-1.14.39-2.08 1.03-2.82-.1-.25-.45-1.29.1-2.7 0 0 .84-.28 2.75 1.07a9.21 9.21 0 0 1 5 0c1.91-1.35 2.75-1.07 2.75-1.07.55 1.41.2 2.45.1 2.7.64.74 1.03 1.68 1.03 2.82 0 4.02-2.34 4.9-4.57 5.15.36.32.68.95.68 1.91 0 1.38-.01 2.5-.01 2.84 0 .27.18.59.69.48A10.29 10.29 0 0 0 22 12.29C22 6.64 17.52 2 12 2Z" />
+                    <path
+                      d="M12 2C6.48 2 2 6.64 2 12.29c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.63-3.37-1.4-3.37-1.4-.45-1.18-1.1-1.49-1.1-1.49-.9-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.58 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.37-2.22-.26-4.56-1.16-4.56-5.17 0-1.14.39-2.08 1.03-2.82-.1-.25-.45-1.29.1-2.7 0 0 .84-.28 2.75 1.07a9.21 9.21 0 0 1 5 0c1.91-1.35 2.75-1.07 2.75-1.07.55 1.41.2 2.45.1 2.7.64.74 1.03 1.68 1.03 2.82 0 4.02-2.34 4.9-4.57 5.15.36.32.68.95.68 1.91 0 1.38-.01 2.5-.01 2.84 0 .27.18.59.69.48A10.29 10.29 0 0 0 22 12.29C22 6.64 17.52 2 12 2Z" />
                   </svg>
                 </span>
                 <span class="contact-link-text">
                   <span class="contact-link-title">GitHub</span>
                   <span class="contact-link-sub">@tranhohoangvu</span>
                 </span>
-                <svg class="w-4 h-4 contact-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                <svg class="w-4 h-4 contact-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  stroke-width="2.2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </a>
 
@@ -2492,18 +2108,21 @@
                 class="contact-link-card group" aria-label="LinkedIn của Trần Hồ Hoàng Vũ">
                 <span class="contact-link-icon">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5S.02 4.88.02 3.5C.02 2.12 1.13 1 2.5 1s2.48 1.12 2.48 2.5ZM0 8h5v16H0V8Zm7.5 0H12v2.2h.07c.62-1.17 2.14-2.4 4.41-2.4 4.72 0 5.59 3.11 5.59 7.15V24h-5v-7.99c0-1.9-.03-4.34-2.65-4.34-2.65 0-3.06 2.07-3.06 4.2V24h-5V8Z" />
+                    <path
+                      d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5S.02 4.88.02 3.5C.02 2.12 1.13 1 2.5 1s2.48 1.12 2.48 2.5ZM0 8h5v16H0V8Zm7.5 0H12v2.2h.07c.62-1.17 2.14-2.4 4.41-2.4 4.72 0 5.59 3.11 5.59 7.15V24h-5v-7.99c0-1.9-.03-4.34-2.65-4.34-2.65 0-3.06 2.07-3.06 4.2V24h-5V8Z" />
                   </svg>
                 </span>
                 <span class="contact-link-text">
                   <span class="contact-link-title flex items-center gap-2">
                     LinkedIn
-                    <span class="contact-link-badge contact-link-badge--fastest !px-2 !py-0.5 !text-[10px]" data-i18n="contact_badge_primary">Ưu tiên</span>
+                    <span class="contact-link-badge contact-link-badge--fastest !px-2 !py-0.5 !text-[10px]"
+                      data-i18n="contact_badge_primary">Ưu tiên</span>
                   </span>
                   <span class="contact-link-sub">/in/tranhohoangvu</span>
                 </span>
-                <svg class="w-4 h-4 contact-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                <svg class="w-4 h-4 contact-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  stroke-width="2.2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </a>
 
@@ -2512,15 +2131,17 @@
                 class="contact-link-card group" aria-label="Facebook của Trần Hồ Hoàng Vũ">
                 <span class="contact-link-icon">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M22 12.07C22 6.58 17.52 2 12 2S2 6.58 2 12.07C2 17.08 5.66 21.2 10.44 21.95v-6.28h-3.14v-2.7h3.14v-2.05c0-3.1 1.84-4.81 4.65-4.81 1.35 0 2.75.24 2.75.24v3.01h-1.55c-1.53 0-2.01.95-2.01 1.92v2.22h3.41l-.55 2.7h-2.86V22C18.34 21.2 22 17.08 22 12.07z" />
+                    <path
+                      d="M22 12.07C22 6.58 17.52 2 12 2S2 6.58 2 12.07C2 17.08 5.66 21.2 10.44 21.95v-6.28h-3.14v-2.7h3.14v-2.05c0-3.1 1.84-4.81 4.65-4.81 1.35 0 2.75.24 2.75.24v3.01h-1.55c-1.53 0-2.01.95-2.01 1.92v2.22h3.41l-.55 2.7h-2.86V22C18.34 21.2 22 17.08 22 12.07z" />
                   </svg>
                 </span>
                 <span class="contact-link-text">
                   <span class="contact-link-title">Facebook</span>
                   <span class="contact-link-sub">/TranHoHoangVu</span>
                 </span>
-                <svg class="w-4 h-4 contact-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                <svg class="w-4 h-4 contact-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  stroke-width="2.2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </a>
 
@@ -2529,15 +2150,17 @@
                 class="contact-link-card group" aria-label="YouTube của Trần Hồ Hoàng Vũ">
                 <span class="contact-link-icon">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M23.5 6.2a3.04 3.04 0 0 0-2.14-2.16C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.36.54A3.04 3.04 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3.04 3.04 0 0 0 2.14 2.16C4.5 20.5 12 20.5 12 20.5s7.5 0 9.36-.54a3.04 3.04 0 0 0 2.14-2.16A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8ZM9.75 15.5v-7l6.25 3.5-6.25 3.5Z" />
+                    <path
+                      d="M23.5 6.2a3.04 3.04 0 0 0-2.14-2.16C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.36.54A3.04 3.04 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3.04 3.04 0 0 0 2.14 2.16C4.5 20.5 12 20.5 12 20.5s7.5 0 9.36-.54a3.04 3.04 0 0 0 2.14-2.16A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8ZM9.75 15.5v-7l6.25 3.5-6.25 3.5Z" />
                   </svg>
                 </span>
                 <span class="contact-link-text">
                   <span class="contact-link-title">YouTube</span>
                   <span class="contact-link-sub">@tranhohoangvu</span>
                 </span>
-                <svg class="w-4 h-4 contact-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                <svg class="w-4 h-4 contact-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  stroke-width="2.2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </a>
 
@@ -2546,15 +2169,17 @@
                 class="contact-link-card group" aria-label="Instagram của Trần Hồ Hoàng Vũ">
                 <span class="contact-link-icon">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5Zm4.38-.63a1.13 1.13 0 1 1 0 2.25 1.13 1.13 0 0 1 0-2.25Z" />
+                    <path
+                      d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5Zm4.38-.63a1.13 1.13 0 1 1 0 2.25 1.13 1.13 0 0 1 0-2.25Z" />
                   </svg>
                 </span>
                 <span class="contact-link-text">
                   <span class="contact-link-title">Instagram</span>
                   <span class="contact-link-sub">_hoawq.vuz_</span>
                 </span>
-                <svg class="w-4 h-4 contact-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                <svg class="w-4 h-4 contact-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  stroke-width="2.2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </a>
             </div>
@@ -2563,7 +2188,8 @@
 
         <div class="md:w-1/2">
           <!-- Card wrapper để form nổi trên nền SLATE / OBSIDIAN -->
-          <div class="contact-form-panel p-6 rounded-2xl bg-white dark:bg-[#0f172a]/75 border border-slate-200/80 dark:border-white/10 shadow-lg">
+          <div
+            class="contact-form-panel p-6 rounded-2xl bg-white dark:bg-[#0f172a]/75 border border-slate-200/80 dark:border-white/10 shadow-lg">
             <form action="https://formspree.io/f/mrbnrrgd" method="POST" class="space-y-5" id="contact-form">
               <input type="hidden" name="subject" id="contact-subject" value="Tuyển dụng Backend">
 
@@ -2571,16 +2197,20 @@
               <div class="contact-topic-group">
                 <label class="contact-topic-label" data-i18n="form_topic_label">Bạn quan tâm đến chủ đề gì?</label>
                 <div class="contact-topic-chips" role="radiogroup" aria-label="Chủ đề liên hệ">
-                  <button type="button" class="contact-topic-chip is-active" role="radio" aria-checked="true" data-topic-val="Tuyển dụng Backend">
+                  <button type="button" class="contact-topic-chip is-active" role="radio" aria-checked="true"
+                    data-topic-val="Tuyển dụng Backend">
                     <span data-i18n="topic_be">💼 Tuyển dụng Backend</span>
                   </button>
-                  <button type="button" class="contact-topic-chip" role="radio" aria-checked="false" data-topic-val="Tuyển dụng AI Intern">
+                  <button type="button" class="contact-topic-chip" role="radio" aria-checked="false"
+                    data-topic-val="Tuyển dụng AI Intern">
                     <span data-i18n="topic_ai">🤖 Tuyển dụng AI Intern</span>
                   </button>
-                  <button type="button" class="contact-topic-chip" role="radio" aria-checked="false" data-topic-val="Hợp tác dự án">
+                  <button type="button" class="contact-topic-chip" role="radio" aria-checked="false"
+                    data-topic-val="Hợp tác dự án">
                     <span data-i18n="topic_collab">🤝 Hợp tác dự án</span>
                   </button>
-                  <button type="button" class="contact-topic-chip" role="radio" aria-checked="false" data-topic-val="Giao lưu / Khác">
+                  <button type="button" class="contact-topic-chip" role="radio" aria-checked="false"
+                    data-topic-val="Giao lưu / Khác">
                     <span data-i18n="topic_other">☕ Giao lưu / Khác</span>
                   </button>
                 </div>
@@ -2588,70 +2218,74 @@
 
               <!-- Name Field -->
               <div class="form-field-group">
-                <label for="name" class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="form_name">
+                <label for="name" class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300"
+                  data-i18n="form_name">
                   Họ tên: *
                 </label>
                 <div class="relative">
                   <span class="form-field-icon" aria-hidden="true">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                   </span>
                   <input type="text" id="name" name="name"
                     class="form-input form-input-with-icon w-full py-3.5 pr-4 border rounded-xl bg-white border-slate-200 dark:bg-[#070b14] dark:border-white/10 text-slate-800 dark:text-slate-100 placeholder:text-slate-500 dark:placeholder:text-slate-400 transition-all duration-300"
-                    placeholder="Nguyễn Văn A"
-                    data-i18n-placeholder="form_name_placeholder"
-                    required>
+                    placeholder="Nguyễn Văn A" data-i18n-placeholder="form_name_placeholder" required>
                 </div>
               </div>
 
               <!-- Email Field -->
               <div class="form-field-group">
-                <label for="email" class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="form_email">
+                <label for="email" class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300"
+                  data-i18n="form_email">
                   Email: *
                 </label>
                 <div class="relative">
                   <span class="form-field-icon" aria-hidden="true">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </span>
                   <input type="email" id="email" name="email"
                     class="form-input form-input-with-icon w-full py-3.5 pr-4 border rounded-xl bg-white border-slate-200 dark:bg-[#070b14] dark:border-white/10 text-slate-800 dark:text-slate-100 placeholder:text-slate-500 dark:placeholder:text-slate-400 transition-all duration-300"
-                    placeholder="name@company.com"
-                    data-i18n-placeholder="form_email_placeholder"
-                    required>
+                    placeholder="name@company.com" data-i18n-placeholder="form_email_placeholder" required>
                 </div>
               </div>
 
               <!-- Message Field -->
               <div class="form-field-group">
-                <label for="message" class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="form_message">
+                <label for="message" class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300"
+                  data-i18n="form_message">
                   Tin nhắn: *
                 </label>
                 <div class="relative">
                   <span class="form-field-icon !top-3.5" aria-hidden="true">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
                   </span>
                   <textarea id="message" name="message" rows="4" maxlength="1000"
                     class="form-input form-input-with-icon w-full py-3.5 pr-4 border rounded-xl bg-white border-slate-200 dark:bg-[#070b14] dark:border-white/10 text-slate-800 dark:text-slate-100 placeholder:text-slate-500 dark:placeholder:text-slate-400 transition-all duration-300"
                     placeholder="Hãy chia sẻ thông tin về cơ hội việc làm, dự án hoặc lời chào..."
-                    data-i18n-placeholder="form_message_placeholder"
-                    required></textarea>
+                    data-i18n-placeholder="form_message_placeholder" required></textarea>
                 </div>
                 <div class="form-char-counter-wrapper">
-                  <span><span id="message-char-count">0</span> / 500 <span data-i18n="form_char_counter">ký tự</span></span>
+                  <span><span id="message-char-count">0</span> / 500 <span data-i18n="form_char_counter">ký
+                      tự</span></span>
                 </div>
               </div>
 
               <button type="submit" class="contact-submit-btn w-full sm:w-auto">
-                <svg class="w-5 h-5 relative z-10 btn-send-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                <svg class="w-5 h-5 relative z-10 btn-send-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                 </svg>
                 <span class="relative z-10" data-i18n="form_send_btn">Gửi tin nhắn</span>
-                <span class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                <span
+                  class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </button>
 
               <p id="form-message" class="text-sm text-gray-600 dark:text-gray-300 hidden animate-pop-up"></p>
@@ -2792,11 +2426,13 @@
         <div class="flex items-center gap-3">
           <div class="cert-modal-icon-bubble">
             <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
           </div>
           <div>
-            <h3 id="cert-modal-title" class="cert-modal-title" data-i18n="cert_modal_title">Yêu cầu bản gốc chứng chỉ</h3>
+            <h3 id="cert-modal-title" class="cert-modal-title" data-i18n="cert_modal_title">Yêu cầu bản gốc chứng chỉ
+            </h3>
             <p id="cert-modal-subtitle" class="cert-modal-subtitle">Aptis ESOL (British Council) • ID: ESOL 0155613</p>
           </div>
         </div>
@@ -2809,7 +2445,8 @@
 
       <!-- Modal Body Form -->
       <form id="cert-request-form" action="https://formspree.io/f/mrbnrrgd" method="POST" class="cert-modal-form">
-        <input type="hidden" name="_subject" id="cert-req-subject" value="[Tuyển dụng] Yêu cầu bản gốc chứng chỉ Aptis ESOL">
+        <input type="hidden" name="_subject" id="cert-req-subject"
+          value="[Tuyển dụng] Yêu cầu bản gốc chứng chỉ Aptis ESOL">
         <input type="hidden" name="certificate_requested" id="cert-req-cert-name" value="Aptis ESOL (British Council)">
 
         <p class="cert-modal-desc text-xs text-slate-500 dark:text-slate-400 mb-4" data-i18n="cert_modal_desc">
@@ -2823,15 +2460,15 @@
           </label>
           <div class="relative">
             <span class="form-field-icon !top-2.5" aria-hidden="true">
-              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
             </span>
             <input type="text" id="cert-req-name-input" name="recruiter_name"
               class="form-input form-input-with-icon w-full py-2.5 pr-3 text-sm border rounded-xl bg-white border-slate-200 dark:bg-[#070b14] dark:border-white/10 text-slate-800 dark:text-slate-100 placeholder:text-slate-400 transition-all duration-200"
-              placeholder="Nguyễn Văn A / HR Recruiter"
-              data-i18n-placeholder="cert_modal_name_ph"
-              required>
+              placeholder="Nguyễn Văn A / HR Recruiter" data-i18n-placeholder="cert_modal_name_ph" required>
           </div>
         </div>
 
@@ -2842,34 +2479,35 @@
           </label>
           <div class="relative">
             <span class="form-field-icon !top-2.5" aria-hidden="true">
-              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </span>
             <input type="email" id="cert-req-email-input" name="recruiter_email"
               class="form-input form-input-with-icon w-full py-2.5 pr-3 text-sm border rounded-xl bg-white border-slate-200 dark:bg-[#070b14] dark:border-white/10 text-slate-800 dark:text-slate-100 placeholder:text-slate-400 transition-all duration-200"
-              placeholder="recruiter@company.com"
-              data-i18n-placeholder="cert_modal_email_ph"
-              required>
+              placeholder="recruiter@company.com" data-i18n-placeholder="cert_modal_email_ph" required>
           </div>
         </div>
 
         <!-- Company Field -->
         <div class="form-field-group mb-3.5">
-          <label for="cert-req-company-input" class="mb-1 block text-xs font-semibold text-slate-700 dark:text-slate-300">
+          <label for="cert-req-company-input"
+            class="mb-1 block text-xs font-semibold text-slate-700 dark:text-slate-300">
             <span data-i18n="cert_modal_company">Đơn vị / Công ty tuyển dụng</span> *
           </label>
           <div class="relative">
             <span class="form-field-icon !top-2.5" aria-hidden="true">
-              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
             </span>
             <input type="text" id="cert-req-company-input" name="company"
               class="form-input form-input-with-icon w-full py-2.5 pr-3 text-sm border rounded-xl bg-white border-slate-200 dark:bg-[#070b14] dark:border-white/10 text-slate-800 dark:text-slate-100 placeholder:text-slate-400 transition-all duration-200"
-              placeholder="Công ty ABC / Tập đoàn XYZ"
-              data-i18n-placeholder="cert_modal_company_ph"
-              required>
+              placeholder="Công ty ABC / Tập đoàn XYZ" data-i18n-placeholder="cert_modal_company_ph" required>
           </div>
         </div>
 
@@ -2886,20 +2524,26 @@
 
         <!-- Privacy Assurance -->
         <div class="flex items-center gap-2 text-[0.72rem] text-slate-400 dark:text-slate-500 mb-4">
-          <svg class="w-3.5 h-3.5 shrink-0 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          <svg class="w-3.5 h-3.5 shrink-0 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
           </svg>
-          <span data-i18n="cert_modal_privacy">Thông tin của bạn được bảo mật và chỉ dùng để gửi tài liệu đối chiếu chứng chỉ.</span>
+          <span data-i18n="cert_modal_privacy">Thông tin của bạn được bảo mật và chỉ dùng để gửi tài liệu đối chiếu
+            chứng chỉ.</span>
         </div>
 
         <!-- Submit Button -->
         <div class="flex items-center justify-end gap-3 pt-2 border-t border-slate-100 dark:border-white/5">
-          <button type="button" class="px-4 py-2 text-xs font-semibold rounded-xl text-slate-500 hover:text-slate-700 dark:hover:text-slate-200 transition-colors" data-close-cert-modal>
+          <button type="button"
+            class="px-4 py-2 text-xs font-semibold rounded-xl text-slate-500 hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
+            data-close-cert-modal>
             Hủy
           </button>
           <button type="submit" id="cert-req-submit-btn" class="cert-modal-submit-btn">
-            <svg class="w-4 h-4 btn-send-icon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+            <svg class="w-4 h-4 btn-send-icon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
             </svg>
             <span data-i18n="cert_modal_submit">Gửi yêu cầu bản gốc</span>
           </button>
@@ -3067,34 +2711,44 @@
     </button>
   </aside>
 
-  <!-- Scripts (đúng thứ tự phụ thuộc) -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- Scripts (defer — thứ tự DOM được tôn trọng, không block render) -->
 
   <!-- 1. Independent Data Modules (Single Source of Truth) -->
-  <script src="js/data/i18n.data.js"></script>
-  <script src="js/data/projects.data.js"></script>
-  <script src="js/data/skills.data.js"></script>
+  <script src="js/data/i18n.data.js" defer></script>
+  <script src="js/data/projects.data.js" defer></script>
+  <script src="js/data/skills.data.js" defer></script>
+  <script src="js/data/certs.data.js" defer></script>
 
   <!-- 2. Core UI & Language Modules -->
-  <script src="js/modules/i18n.js"></script>
-  <script src="js/modules/theme.js"></script>
+  <script src="js/modules/i18n.js" defer></script>
+  <script src="js/modules/theme.js" defer></script>
 
   <!-- 3. Independent Feature Modules -->
-  <script src="js/modules/carousel.js"></script>
-  <script src="js/modules/modal.js"></script>
-  <script src="js/modules/skill-linking.js"></script>
-  <script src="js/modules/terminal.js"></script>
-  <script src="js/modules/fab.js"></script>
-  <script src="js/modules/section-nav.js"></script>
-  <script src="js/modules/cert-modal.js"></script>
-  <script src="js/modules/cert-filter.js"></script>
-  <script src="js/modules/email-copy.js"></script>
-  <script src="js/modules/contact-form.js"></script>
-  <script src="js/modules/github-stats.js"></script>
-  <script src="js/modules/ui-interactions.js"></script>
+  <script src="js/modules/carousel.js" defer></script>
+  <script src="js/modules/modal.js" defer></script>
+  <script src="js/modules/skill-linking.js" defer></script>
+  <script src="js/modules/terminal.js" defer></script>
+  <script src="js/modules/fab.js" defer></script>
+  <script src="js/modules/section-nav.js" defer></script>
+  <script src="js/modules/cert-modal.js" defer></script>
+  <script src="js/modules/cert-filter.js" defer></script>
+  <script src="js/modules/email-copy.js" defer></script>
+  <script src="js/modules/contact-form.js" defer></script>
+  <script src="js/modules/github-stats.js" defer></script>
+  <script src="js/modules/ui-interactions.js" defer></script>
 
   <!-- 4. Main Application Coordinator & Orchestrator -->
-  <script src="js/scripts.js?v=18"></script>
+  <script src="js/scripts.js?v=19" defer></script>
+
+  <!-- 5. Particles.js — lazy load sau khi trang idle để không block render -->
+  <script>
+    window.addEventListener('load', function () {
+      var s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js';
+      s.onload = function () { window._initParticles && window._initParticles(); };
+      document.body.appendChild(s);
+    });
+  </script>
 </body>
 
 </html>

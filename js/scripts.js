@@ -12,7 +12,9 @@ if ("serviceWorker" in navigator) {
 }
 
 // 2. Particle.js Background Canvas Initialization
-if (typeof particlesJS !== "undefined") {
+// Exposed as window._initParticles so it can be called lazily after script loads
+window._initParticles = function initParticles() {
+  if (typeof particlesJS === "undefined") return;
   particlesJS("particles-js", {
     particles: {
       number: { value: 80, density: { enable: true, value_area: 800 } },
@@ -33,7 +35,7 @@ if (typeof particlesJS !== "undefined") {
     },
     retina_detect: true,
   });
-}
+};
 
 // 3. Mobile Menu Drawer Navigation
 const mobileMenuToggle = document.getElementById("nav-toggle");
@@ -112,9 +114,15 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   let cachedNavOffset = navbarEl ? navbarEl.offsetHeight + 16 : 80;
-  window.addEventListener("resize", () => {
+
+  // Cache section offsets to avoid layout thrashing on every scroll event
+  let sectionOffsets = [];
+  function recalcOffsets() {
     cachedNavOffset = navbarEl ? navbarEl.offsetHeight + 16 : 80;
-  }, { passive: true });
+    sectionOffsets = sections.map(s => s.offsetTop);
+  }
+  recalcOffsets(); // initial
+  window.addEventListener("resize", recalcOffsets, { passive: true });
 
   let ticking = false;
   const onScroll = () => {
@@ -123,18 +131,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     requestAnimationFrame(() => {
       const y = window.scrollY + cachedNavOffset;
-      let current = sections[0];
-      for (const s of sections) {
-        if (s.offsetTop <= y) current = s;
+      let currentIdx = 0;
+      for (let i = 0; i < sectionOffsets.length; i++) {
+        if (sectionOffsets[i] <= y) currentIdx = i;
       }
 
-      if (current?.id) setActive(`#${current.id}`);
+      if (sections[currentIdx]?.id) setActive(`#${sections[currentIdx].id}`);
       ticking = false;
     });
   };
 
   window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll, { passive: true });
   window.addEventListener("hashchange", () => setActive(location.hash), { passive: true });
 
   setActive(location.hash || links[0]?.getAttribute("href"));
@@ -210,6 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Wires together all independent feature modules.
 // ==========================================================================
 function initAppModules() {
+  window.renderCertCards?.();       // render cert cards from data module
   window.initProjectsCarousel?.();
   window.initProjectsFilter?.();
   window.initProjectDetailsModal?.();

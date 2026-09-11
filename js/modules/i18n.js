@@ -84,21 +84,17 @@
     return pack[key] ?? key;
   }
 
-  function applyLanguage(lang, persist = true) {
-    currentLang = (lang === "vi") ? "vi" : "en";
-
-    // update html lang
-    document.documentElement.setAttribute("lang", currentLang);
-
-    // update texts
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
-      const key = el.getAttribute("data-i18n");
-      const value = t(key);
+  // Apply i18n translations to a given DOM root (defaults to document)
+  function applyI18n(root) {
+    var scope = root || document;
+    scope.querySelectorAll("[data-i18n]").forEach(function(el) {
+      var key = el.getAttribute("data-i18n");
+      var value = t(key);
       if (value == null) return;
       el.textContent = value;
 
       // restart typing animation for hero name (optional)
-      const heroNameEl = document.querySelector('[data-i18n="hero_name"]');
+      var heroNameEl = document.querySelector('[data-i18n="hero_name"]');
       if (heroNameEl) {
         heroNameEl.classList.remove("animate-type");
         // force reflow
@@ -106,6 +102,16 @@
         heroNameEl.classList.add("animate-type");
       }
     });
+  }
+
+  function applyLanguage(lang, persist = true) {
+    currentLang = (lang === "vi") ? "vi" : "en";
+
+    // update html lang
+    document.documentElement.setAttribute("lang", currentLang);
+
+    // update texts
+    applyI18n(document);
 
     // update tooltips
     document.querySelectorAll("[data-i18n-tooltip]").forEach((el) => {
@@ -153,6 +159,8 @@
     window.refreshTerminalLang?.();
     window.refreshSectionNavLang?.();
     window.refreshCertsFilterContent?.();
+    // Re-render cert cards so data-i18n strings update in the newly injected DOM
+    window.renderCertCards?.();
   }
 
   function toggleLanguage() {
@@ -161,6 +169,7 @@
 
   window.applyLanguage = applyLanguage;
   window.toggleLanguage = toggleLanguage;
+  window.applyI18n = applyI18n;
   window.t = t;
   window.getCurrentLang = () => currentLang;
   try {
