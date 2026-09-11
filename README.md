@@ -1,6 +1,7 @@
 # 🌐 My Portfolio — Trần Hồ Hoàng Vũ
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Open-success)](https://tranhohoangvu.github.io/my-portfolio/)
+[![GitHub](https://img.shields.io/badge/GitHub-tranhohoangvu-181717?logo=github)](https://github.com/tranhohoangvu)
 
 > 🎓 Final-year Computer Science student at Ton Duc Thang University (TDTU)  
 > 💼 Personal portfolio showcasing projects, skills, certificates, GitHub activity — and CVs.
@@ -8,12 +9,9 @@
 A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, featuring **Dark/Light mode** and **VI/EN** language toggle.
 
 - 🔗 **Live site:** https://tranhohoangvu.github.io/my-portfolio/
-- 📄 **CVs (PDF) in repo:** `assets/`
-  - `assets/cv/TranHoHoangVu_BE.pdf`
-  - `assets/cv/TranHoHoangVu_AI.pdf`
-- 📄 **CVs (direct links):**
-  - `.../assets/cv/TranHoHoangVu_BE.pdf`
-  - `.../assets/cv/TranHoHoangVu_AI.pdf`
+- 📄 **CVs (PDF) in repo:** `assets/cv/`
+  - `assets/cv/TranHoHoangVu_BE.pdf` — Fresher Backend Developer
+  - `assets/cv/TranHoHoangVu_AI.pdf` — AI Engineer Intern
 
 > Vietnamese version: `README_VI.md`
 
@@ -55,13 +53,25 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
 - Responsive UI (mobile-first) with smooth reveal animations.
 - Dark / Light mode (persisted in `localStorage`, falls back to OS preference).
 - VI / EN i18n via `data-i18n` (saved in `localStorage.lang`, includes page metadata).
-- **CV section with 2 targeted PDF versions + “View / Download” buttons**:
+- **CV section with 2 targeted PDF versions + "View / Download" buttons**:
   - *Fresher Backend Developer* (`assets/cv/TranHoHoangVu_BE.pdf`)
   - *AI Engineer Intern* (`assets/cv/TranHoHoangVu_AI.pdf`)
-- **Hero “Download CV” dropdown** to pick the CV version directly.
-- **GitHub Activity Section**:
+- **Hero "Download CV" dropdown** to pick the CV version directly.
+- **Certificates Section** (redesigned):
+  - Gradient headline + kicker badge + subtitle header.
+  - Issuer icon bubbles (Agile/Scrum • British Council).
+  - Aptis ESOL **score progress bar** (135/200, animated on scroll via IntersectionObserver).
+  - Certificate ID badge, date chips, bilingual descriptions.
+- **GitHub Activity Section** (redesigned):
+  - Quick Stats Bar: **16 repos · 22 stars** · Top languages (Python, TypeScript, JavaScript, Java) — fetched from GitHub API.
   - Auto-generated contributions heatmap SVG (Light/Dark) committed daily via GitHub Actions.
-  - Dynamic Activity Graph rendered via `github-readme-activity-graph`.
+  - Dynamic Activity Graph with **skeleton shimmer** loading state & fade-in on load.
+  - Dark-mode GitHub CTA pill button with Octocat icon.
+- **Scroll Performance Optimized**:
+  - All scroll listeners throttled via `requestAnimationFrame`.
+  - Layout metrics cached on `resize` to prevent forced reflow on scroll.
+  - CSS `contain: layout style paint` + `transform: translateZ(0)` on aurora orbs for GPU compositing.
+  - `prefers-reduced-motion` support for all heavy animations.
 - Contact form via Formspree (no backend server needed).
 - SEO essentials: meta tags, OG image, `robots.txt`, `sitemap.xml`, and custom `404.html`.
 
@@ -125,17 +135,19 @@ my-portfolio/
 │  ├─ styles.css                  # Entry point — @import only (no styles here)
 │  ├─ base/
 │  │  ├─ tokens.css               # Design tokens, CSS variables, body, back-to-top
-│  │  └─ animations.css           # Global animation classes & keyframes
+│  │  └─ animations.css           # Global animation classes, keyframes & aurora orbs
 │  ├─ layout/
 │  │  ├─ navbar.css               # Navbar, mobile menu, responsive breakpoints
 │  │  └─ nav-rail.css             # Floating section navigation rail (desktop)
 │  ├─ sections/
 │  │  ├─ hero.css                 # Hero section, aurora orbs, buttons, CV dropdown
 │  │  ├─ projects.css             # Filter tabs, carousel, cards, modal, skill linking
-│  │  ├─ skills.css               # Skills cards, dark mode, lang toggle, certificates
+│  │  ├─ skills.css               # Skills cards, dark mode, lang toggle
 │  │  ├─ contact.css              # Contact cards, email copy badge, footer
 │  │  ├─ cv.css                   # CV section cards & actions
 │  │  ├─ about.css                # Avatar aura, about content, social buttons
+│  │  ├─ certs.css                # Certificates section: cards v2, score bar, issuer icons
+│  │  ├─ github.css               # GitHub section: stats bar, panels, skeleton, CTA button
 │  │  └─ terminal.css             # Interactive terminal & REST API console widget
 │  └─ components/
 │     ├─ shared-cards.css         # Unified hover effect (projects, skills, github cards)
@@ -153,7 +165,7 @@ my-portfolio/
 │  │  ├─ skill-linking.js         # 2-way interactive Skill ↔ Project linking
 │  │  ├─ terminal.js              # Interactive Terminal CLI & REST API Console
 │  │  └─ fab.js                   # Floating Action Bar (FAB) & Toast notifications
-│  └─ scripts.js                  # Lean app coordinator (i18n, theme, navbar, hero)
+│  └─ scripts.js                  # Lean app coordinator (i18n, theme, navbar, hero, certs, github)
 ├─ projects-docs/                 # Comprehensive documentation for 7 projects
 │  ├─ 01-coursehub-lms.md
 │  ├─ 02-ecommerce-platform.md
@@ -166,7 +178,7 @@ my-portfolio/
 │  ├─ static.yml                  # GitHub Pages automated deployment
 │  └─ update-github-contrib.yml   # Daily cron job for contribution SVG
 ├─ UI_UX_ANALYSIS.md              # UI/UX improvement report and feature roadmap
-├─ README.md                      # English documentation
+├─ README.md                      # English documentation (this file)
 ├─ README_VI.md                   # Vietnamese documentation
 ├─ site.webmanifest               # PWA configuration
 ├─ sitemap.xml                    # SEO sitemap
@@ -200,18 +212,22 @@ Edit in `js/scripts.js`:
 const GITHUB_USERNAME = "tranhohoangvu";
 ```
 
-### 2) Contact form (Formspree)
+### 2) GitHub Stats chips
+The stats bar values (repos, stars) in the GitHub section are set directly in `index.html`.
+Update them manually or automate via GitHub Actions reading from the API.
+
+### 3) Contact form (Formspree)
 Edit in `index.html`:
 ```html
 <form action="https://formspree.io/f/xxxxxxx" method="POST">
 ```
 
-### 3) CV / displayed labels
-- Replace PDFs under `assets/`
+### 4) CV / displayed labels
+- Replace PDFs under `assets/cv/`
 - Update dropdown links in `index.html` (CV menu)
 - Update i18n in `js/scripts.js` (I18N object)
 
-### 4) Social links / other content
+### 5) Social links / other content
 Edit directly in `index.html` and translations in `js/scripts.js`.
 
 ---
@@ -242,6 +258,8 @@ Workflow: `.github/workflows/update-github-contrib.yml`
 - Updates:
   - `assets/github/github-contrib-light.svg`
   - `assets/github/github-contrib-dark.svg`
+  - `assets/github/github-activity-light.svg`
+  - `assets/github/github-activity-dark.svg`
 - Automatically commits back to repository
 
 If you fork/clone, enable Actions and grant workflow write permissions.
@@ -264,11 +282,15 @@ Deploy via `.github/workflows/static.yml` (official GitHub Pages workflow).
 
 ## 🧠 Performance & SEO Tips
 
-- Compress images (Squoosh/TinyPNG) and prefer modern formats
-- Keep hero images under ~300–500KB
-- Verify `og-image-v2.png` and meta tag links
-- Run Lighthouse to audit performance, SEO, accessibility
-- (Optional) Add analytics for traffic tracking
+- All scroll listeners are throttled via `requestAnimationFrame` — no layout thrashing.
+- Layout metrics (scroll height, offsets) are cached and only re-read on `resize`.
+- Aurora orbs use CSS `contain: layout style paint` + `transform: translateZ(0)` for GPU promotion.
+- `prefers-reduced-motion` disables heavy animations on low-end devices.
+- Compress images (Squoosh/TinyPNG) and prefer modern formats.
+- Keep hero images under ~300–500KB.
+- Verify `og-image-v2.png` and meta tag links.
+- Run Lighthouse to audit performance, SEO, accessibility.
+- (Optional) Add analytics for traffic tracking.
 
 ---
 
@@ -281,7 +303,7 @@ Deploy via `.github/workflows/static.yml` (official GitHub Pages workflow).
 5. Commit & push:
 ```bash
 git add .
-git commit -m "feat(cv): update to 2 CVs (Backend and AI)"
+git commit -m "feat: describe your change"
 git push origin main
 ```
 
@@ -294,4 +316,4 @@ git push origin main
 
 ---
 
-> Updated: 2026
+> Updated: September 2026
