@@ -211,7 +211,8 @@ const I18N = {
     cv_menu_ai_meta: "TranHoHoangVu_AI.pdf",
 
     about_top_kicker: "👤 VỀ BẢN THÂN • PROFILE",
-    about_title: "Giới thiệu",
+    about_title: "Hành trình Kỹ thuật & Định hướng",
+    about_subtitle: "Khám phá nền tảng học vấn, kinh nghiệm kỹ thuật thực chiến và định hướng phát triển phần mềm & AI.",
     about_description:
       "Mình là Trần Hồ Hoàng Vũ, tốt nghiệp ngành Khoa học Máy tính tại Đại học Tôn Đức Thắng với kinh nghiệm thực tế về phát triển backend qua kỳ thực tập Kỹ sư phần mềm và các dự án học thuật. Mình thích xây dựng các giải pháp thực tế, từ thiết kế RESTful APIs, làm việc với cơ sở dữ liệu đến phát triển các quy trình tự động hóa và xử lý dữ liệu. Mình đã từng làm việc với Node.js, Express.js, Laravel và nhiều công nghệ cơ sở dữ liệu khác nhau. Định hướng sắp tới, mình muốn củng cố kỹ năng kỹ thuật phần mềm, tích lũy thêm kinh nghiệm thực tế và xây dựng phần mềm đáng tin cậy, dễ bảo trì, đồng thời không ngừng học hỏi và cải thiện bản thân.",
     about_kicker: "Thiên về Backend • Software & AI",
@@ -496,7 +497,8 @@ const I18N = {
     cv_menu_ai_meta: "TranHoHoangVu_AI.pdf",
 
     about_top_kicker: "👤 ABOUT ME • PROFILE",
-    about_title: "About",
+    about_title: "Engineering Journey & Technical Vision",
+    about_subtitle: "A glimpse into my computer science foundation, hands-on engineering experience, and technical focus.",
     about_description:
       "My name is Tran Ho Hoang Vu. I’m a Computer Science graduate from Ton Duc Thang University with hands-on experience in backend development through a software engineering internship and academic projects. I enjoy building practical solutions, from designing RESTful APIs and working with databases to developing automation workflows and processing data. I have worked with Node.js, Express.js, Laravel, and various database technologies. Going forward, I want to strengthen my software engineering skills, gain more real-world experience, and build reliable, maintainable software while continuing to learn and improve.",
     about_kicker: "Backend-focused • Software & AI",
