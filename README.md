@@ -61,8 +61,9 @@ A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, 
   - Gradient headline + kicker badge + subtitle header.
   - **Category Filter Tabs**: 1-click filtering across `All`, `AI & Deep Learning`, `Data Analytics`, `Software & Agile`, and `Language` with dynamic count badges.
   - **Smart Expand & Collapse ("Show More")**: Displays the top 3 newest certificates initially with a sleek `Show more (X certificates) ↓` toggle to keep page length compact.
-  - Issuer icon bubbles (Microsoft • Google • Google for Education • DeepLearning.AI • Techbase Agile • British Council).
+  - Issuer icon bubbles (Microsoft • The Linux Foundation • Google • Google for Education • DeepLearning.AI • Techbase Agile • British Council).
   - **Microsoft AI Product Manager Professional Certificate** (Microsoft • Coursera): direct PDF preview + live credential verification.
+  - **Introduction to Linux LFS101 Certificate** (The Linux Foundation): direct PDF preview + official credential verification.
   - **Google Data Analytics Professional Certificate** (Google • Coursera): direct PDF preview + live credential verification.
   - **Gemini Certified Educator** (Google for Education): direct PDF preview + live credential verification on Google Accredible.
   - **Gemini Certified Student (University)** (Google for Education): direct PDF preview + live credential verification on Google Accredible.
@@ -139,7 +140,7 @@ my-portfolio/
 ├─ assets/
 │  ├─ projects/                   # Screenshots for 7 portfolio projects
 │  ├─ cv/                         # Career CVs (Backend Developer & AI Engineer PDFs)
-│  ├─ certificates/               # Verified certificates (Microsoft AI, Google Data Analytics, Google Gemini, DeepLearning.AI TensorFlow, Techbase Agile & Aptis PDFs)
+│  ├─ certificates/               # Verified certificates (Microsoft AI, Linux Foundation, Google Data Analytics, Google Gemini, DeepLearning.AI TensorFlow, Techbase Agile & Aptis PDFs)
 │  ├─ profile/                    # Personal avatar & profile photos
 │  ├─ icons/                      # Favicons (SVG, PNG) & PWA app icons
 │  ├─ github/                     # Auto-generated daily contribution & activity graph SVGs
