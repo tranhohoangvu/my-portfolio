@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    Projects Category Filter Tabs (Obsidian Glassmorphism + Neon Indigo Accent)
    ========================================================================== */
 .projects-filter-wrapper {
@@ -27,9 +27,9 @@
 }
 
 html:not(.dark) .projects-filter-bar {
-  background: rgba(241, 245, 249, 0.85);
-  border-color: rgba(203, 213, 225, 0.8);
-  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
 }
 
 .projects-filter-tab {
@@ -174,9 +174,9 @@ html:not(.dark) .projects-filter-tab:hover {
   font-weight: 800;
   letter-spacing: 0.05em;
   font-family: 'Poppins', sans-serif;
-  color: #4f46e5;
-  background: rgba(99, 102, 241, 0.1);
-  border: 1px solid rgba(99, 102, 241, 0.25);
+  color: #4338ca;
+  background: #e0e7ff;
+  border: 1px solid #c7d2fe;
   padding: 2px 9px;
   border-radius: 8px;
 }
@@ -359,13 +359,15 @@ html:not(.dark) .projects-filter-tab:hover {
   height: 190px;
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
 }
 
 .dark .project-thumb {
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.06);
+  box-shadow: none;
 }
 
 .project-thumb img {
@@ -378,18 +380,18 @@ html:not(.dark) .projects-filter-tab:hover {
 .tag-pill {
   display: inline-flex;
   align-items: center;
-  padding: .22rem .6rem;
+  padding: .25rem .65rem;
   border-radius: 999px;
-  font-size: 12px;
+  font-size: 11.5px;
+  font-weight: 600;
   line-height: 1.2;
   white-space: nowrap;
 
   /* LIGHT mode (mặc định) */
-  color: rgba(17, 24, 39, 0.85);
-  /* text-gray-900 */
-  background: rgba(99, 102, 241, 0.10);
-  /* indigo nhẹ */
-  border: 1px solid rgba(99, 102, 241, 0.25);
+  color: #3730a3;
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  transition: all 0.2s ease;
 }
 
 /* DARK mode */
@@ -420,6 +422,19 @@ html:not(.dark) .projects-filter-tab:hover {
               border-color 0.3s ease,
               box-shadow 0.3s ease,
               background-color 0.3s ease;
+}
+
+/* Light mode distinct card contrast */
+html:not(.dark) .project-card {
+  background: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+}
+
+html:not(.dark) .project-card:hover {
+  background: #ffffff !important;
+  border-color: rgba(99, 102, 241, 0.65) !important;
+  box-shadow: 0 16px 36px -4px rgba(99, 102, 241, 0.16), 0 4px 12px -2px rgba(15, 23, 42, 0.08);
 }
 
 .dark .project-card,
@@ -526,9 +541,9 @@ html:not(.dark) .projects-filter-tab:hover {
   font-weight: 600;
   border-radius: 8px;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  background: rgba(99, 102, 241, 0.1);
-  color: #4f46e5;
-  border: 1px solid rgba(99, 102, 241, 0.25);
+  background: #e0e7ff;
+  color: #4338ca;
+  border: 1px solid #c7d2fe;
   cursor: pointer;
 }
 

@@ -319,9 +319,10 @@ html:not(.dark) .tw-caret {
 
 
 html:not(.dark) .about-kicker {
-  background: rgba(15, 23, 42, .05);
-  border: 1px solid rgba(15, 23, 42, .10);
-  color: rgba(17, 24, 39, .88);
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
 }
 
 /* About kicker hover (premium) */
@@ -527,15 +528,17 @@ html:not(.dark) .about-headline {
 }
 
 html:not(.dark) .about-chip {
-  color: rgba(17, 24, 39, .88);
-  background: rgba(15, 23, 42, .05);
-  border: 1px solid rgba(15, 23, 42, .10);
+  color: #1e293b;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 2px 5px rgba(15, 23, 42, 0.04);
 }
 
 html:not(.dark) .about-chip:hover {
-  background: rgba(99, 102, 241, 0.1);
-  border-color: rgba(99, 102, 241, 0.4);
+  background: #f8faff;
+  border-color: rgba(99, 102, 241, 0.45);
   color: #4f46e5;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.12);
 }
 
 .about-desc {
@@ -572,9 +575,15 @@ html:not(.dark) .about-desc {
 }
 
 html:not(.dark) .about-stat {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.08);
+}
+
+html:not(.dark) .about-stat:hover {
   background: #ffffff !important;
-  border: 1px solid rgba(226, 232, 240, 0.9) !important;
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
+  border-color: rgba(99, 102, 241, 0.5) !important;
+  box-shadow: 0 12px 28px -4px rgba(99, 102, 241, 0.16);
 }
 
 .about-stat:hover {
@@ -671,14 +680,17 @@ html:not(.dark) .about-stat__label {
 
 /* Light mode */
 html:not(.dark) #about .about-desc {
-  background: rgba(15, 23, 42, .03);
-  border: 1px solid rgba(15, 23, 42, .10);
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-left: 4px solid #6366f1;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+  color: #334155;
 }
 
 html:not(.dark) #about .about-desc:hover {
-  background: rgba(15, 23, 42, .04);
-  border-color: rgba(99, 102, 241, .28);
-  box-shadow: 0 18px 55px rgba(0, 0, 0, .10);
+  background: #ffffff;
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
 }
 
 /* Chips hover: pop + gradient border */
@@ -699,29 +711,60 @@ html:not(.dark) #about .about-chip:hover {
 }
 
 /* --- About 3 Key Pillars --- */
-.about-pillars-grid {
+.about-pillars-grid,
+.about-pillar-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;
+  gap: 14px;
   margin-top: 18px;
   margin-bottom: 22px;
 }
 
 @media (min-width: 640px) {
-  .about-pillars-grid {
+  .about-pillars-grid,
+  .about-pillar-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 .about-pillar-card {
   position: relative;
-  padding: 14px 16px;
+  padding: 16px 18px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.22s ease, border-color 0.22s ease;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
   overflow: hidden;
+}
+
+html:not(.dark) .about-pillar-card:hover {
+  background: #ffffff;
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 10px 24px rgba(99, 102, 241, 0.12);
+}
+
+/* Pillar top accent bars in light mode */
+.about-pillar-card:nth-child(1)::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #818cf8);
+}
+.about-pillar-card:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0284c7, #38bdf8);
+}
+.about-pillar-card:nth-child(3)::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #059669, #34d399);
 }
 
 .dark .about-pillar-card {
@@ -820,13 +863,18 @@ html:not(.dark) #about .about-chip:hover {
 }
 
 .about-stat-card {
-  padding: 14px 12px;
-  border-radius: 14px;
+  padding: 16px 14px;
+  border-radius: 16px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
   transition: all 0.22s ease;
+}
+
+html:not(.dark) .about-stat-card .about-stat__label {
+  color: #475569;
+  font-weight: 600;
 }
 
 .dark .about-stat-card {

@@ -13,11 +13,11 @@
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: 0.025em;
-  background: rgba(99, 102, 241, 0.08);
-  border: 1px solid rgba(99, 102, 241, 0.25);
-  color: #4f46e5;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #4338ca;
   margin-bottom: 0.85rem;
-  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
   text-align: center;
   user-select: none;
   transition: all 0.22s ease;
@@ -98,9 +98,10 @@
   border-radius: 9999px;
   white-space: nowrap;
   flex-shrink: 0;
-  background: rgba(99, 102, 241, 0.08);
-  border: 1px solid rgba(99, 102, 241, 0.25);
-  color: #4f46e5;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   cursor: pointer;
   user-select: none;
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
@@ -110,14 +111,15 @@
   background: rgba(15, 23, 42, 0.78);
   border-color: rgba(129, 140, 248, 0.3);
   color: #c7d2fe;
+  box-shadow: none;
 }
 
 .terminal-chip:hover {
-  background: rgba(99, 102, 241, 0.18);
-  border-color: rgba(99, 102, 241, 0.5);
-  color: #3730a3;
+  background: #ffffff;
+  border-color: rgba(99, 102, 241, 0.55);
+  color: #4338ca;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
 }
 
 .dark .terminal-chip:hover {
@@ -128,22 +130,24 @@
 }
 
 .terminal-chip--clear {
-  background: rgba(239, 68, 68, 0.08);
-  border-color: rgba(239, 68, 68, 0.25);
+  background: #fef2f2;
+  border-color: #fca5a5;
   color: #dc2626;
+  box-shadow: 0 1px 3px rgba(239, 68, 68, 0.08);
 }
 
 .dark .terminal-chip--clear {
   background: rgba(239, 68, 68, 0.12);
   border-color: rgba(239, 68, 68, 0.3);
   color: #fca5a5;
+  box-shadow: none;
 }
 
 .terminal-chip--clear:hover {
-  background: rgba(239, 68, 68, 0.2);
-  border-color: rgba(239, 68, 68, 0.6);
-  color: #991b1b;
-  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.25);
+  background: #fef2f2;
+  border-color: #ef4444;
+  color: #b91c1c;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.15);
 }
 
 .dark .terminal-chip--clear:hover {

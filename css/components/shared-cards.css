@@ -1,4 +1,4 @@
-﻿/* =========================
+/* =========================
    Unified hover like Certificates
    Apply to: Projects cards, Skills cards, GitHub cards
    ========================= */
@@ -14,7 +14,8 @@
 .project-card,
 .skills-card--dark,
 #github .p-5.rounded-2xl {
-  border-color: rgba(15, 23, 42, 0.12) !important;
+  border-color: rgba(203, 213, 225, 0.85) !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
 }
 
 /* default border in dark */
