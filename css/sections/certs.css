@@ -367,6 +367,18 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
+.cert-issuer-icon--gemini {
+  background: #ffffff;
+  border: 1px solid rgba(139, 92, 246, 0.28);
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.14);
+}
+
+.dark .cert-issuer-icon--gemini {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(139, 92, 246, 0.32);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
 .cert-card-v2__meta {
   flex: 1;
   min-width: 0;
@@ -465,6 +477,18 @@
   background: rgba(0, 164, 239, 0.15);
   color: #38bdf8;
   border-color: rgba(0, 164, 239, 0.35);
+}
+
+.cert-card-v2__tag--gemini {
+  background: rgba(139, 92, 246, 0.1);
+  color: #7c3aed;
+  border-color: rgba(139, 92, 246, 0.25);
+}
+
+.dark .cert-card-v2__tag--gemini {
+  background: rgba(139, 92, 246, 0.18);
+  color: #c4b5fd;
+  border-color: rgba(139, 92, 246, 0.4);
 }
 
 /* --- Cert Description --- */
@@ -720,6 +744,18 @@
   border-color: rgba(0, 164, 239, 0.3);
 }
 
+.cert-skill-chip--gemini {
+  background: rgba(139, 92, 246, 0.08);
+  color: #7c3aed;
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.dark .cert-skill-chip--gemini {
+  background: rgba(139, 92, 246, 0.14);
+  color: #c4b5fd;
+  border-color: rgba(139, 92, 246, 0.32);
+}
+
 /* --- Cert footer row --- */
 .cert-card-v2__footer {
   margin-top: 1.25rem;
@@ -938,6 +974,35 @@
   border-color: rgba(0, 164, 239, 0.5);
   transform: translateY(-1.5px);
   box-shadow: 0 4px 16px rgba(0, 164, 239, 0.35);
+}
+
+.cert-view-btn--gemini {
+  background: rgba(139, 92, 246, 0.08);
+  color: #7c3aed;
+  border-color: rgba(139, 92, 246, 0.25);
+  box-shadow: 0 1px 2px rgba(139, 92, 246, 0.06);
+}
+
+.cert-view-btn--gemini:hover {
+  background: rgba(139, 92, 246, 0.16);
+  color: #6d28d9;
+  border-color: rgba(139, 92, 246, 0.45);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.22);
+}
+
+.dark .cert-view-btn--gemini {
+  background: rgba(139, 92, 246, 0.12);
+  color: #c4b5fd;
+  border-color: rgba(139, 92, 246, 0.28);
+}
+
+.dark .cert-view-btn--gemini:hover {
+  background: rgba(139, 92, 246, 0.22);
+  color: #ffffff;
+  border-color: rgba(139, 92, 246, 0.5);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.35);
 }
 
 .cert-verify-btn {

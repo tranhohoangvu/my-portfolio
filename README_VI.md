@@ -60,9 +60,10 @@ Website portfolio **tĩnh (static)** xây dựng bằng **HTML + Tailwind CSS + 
   - Tiêu đề gradient + huy hiệu kicker + phụ đề hiện đại.
   - **Bộ lọc danh mục (Category Filter Tabs)**: Lọc nhanh theo `Tất cả`, `AI & Deep Learning`, `Phân tích dữ liệu`, `Quy trình & Agile`, `Ngoại ngữ` kèm huy hiệu số lượng động.
   - **Nút Xem thêm / Thu gọn thông minh (Show More / Collapse)**: Hiển thị trước 3 chứng chỉ mới nhất, nút `Xem thêm (X chứng chỉ) ↓` giúp tiết kiệm không gian và mở rộng mượt mà.
-  - Bong bóng icon đơn vị cấp chứng chỉ (Microsoft • Google • DeepLearning.AI • Techbase Agile • British Council).
+  - Bong bóng icon đơn vị cấp chứng chỉ (Microsoft • Google • Google for Education • DeepLearning.AI • Techbase Agile • British Council).
   - **Chứng chỉ Microsoft AI Product Manager** (Microsoft • Coursera): xem PDF trực tiếp + xác minh chứng chỉ gốc trực tuyến.
   - **Chứng chỉ Google Data Analytics Professional** (Google • Coursera): xem PDF trực tiếp + xác minh chứng chỉ gốc trực tuyến.
+  - **Chứng chỉ Gemini Certified Student** (Google for Education): xem PDF trực tiếp + xác minh chứng chỉ gốc trên Google Accredible.
   - **Chứng chỉ DeepLearning.AI TensorFlow Developer** (DeepLearning.AI • Coursera): xem PDF trực tiếp + xác minh chứng chỉ gốc trực tuyến.
   - Chứng chỉ Techbase Agile có nút xem trực tiếp bản PDF chất lượng cao.
   - Thanh tiến trình điểm số **Aptis ESOL** (135/200, kích hoạt animation mượt mà khi cuộn tới qua IntersectionObserver) • Trình độ CEFR: B1.
@@ -136,7 +137,7 @@ my-portfolio/
 ├─ assets/
 │  ├─ projects/                   # Ảnh chụp màn hình 7 dự án portfolio
 │  ├─ cv/                         # Hồ sơ ứng tuyển (CV Fresher Backend & AI Engineer PDF)
-│  ├─ certificates/               # Chứng chỉ chuyên môn (Microsoft AI, Google Data Analytics, DeepLearning.AI TensorFlow, Techbase Agile & Aptis PDFs)
+│  ├─ certificates/               # Chứng chỉ chuyên môn (Microsoft AI, Google Data Analytics, Google Gemini, DeepLearning.AI TensorFlow, Techbase Agile & Aptis PDFs)
 │  ├─ profile/                    # Ảnh đại diện cá nhân (profile1.jpg, profile2.png)
 │  ├─ icons/                      # Biểu tượng favicon (SVG, PNG) & App icon PWA
 │  ├─ github/                     # Bản đồ đóng góp & đồ thị hoạt động GitHub tự động (SVG)
