@@ -297,6 +297,67 @@
   border-color: rgba(99, 102, 241, 0.4);
 }
 
+/* Card-specific brand hover border & glow */
+#cert-agile:hover {
+  border-color: rgba(229, 46, 37, 0.35);
+}
+.dark #cert-agile:hover {
+  border-color: rgba(229, 46, 37, 0.45);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 4px 14px rgba(229, 46, 37, 0.2);
+}
+
+#cert-aptis:hover {
+  border-color: rgba(0, 69, 124, 0.35);
+}
+.dark #cert-aptis:hover {
+  border-color: rgba(30, 174, 229, 0.45);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 4px 14px rgba(30, 174, 229, 0.2);
+}
+
+#cert-tensorflow:hover {
+  border-color: rgba(238, 76, 44, 0.35);
+}
+.dark #cert-tensorflow:hover {
+  border-color: rgba(238, 76, 44, 0.45);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 4px 14px rgba(238, 76, 44, 0.2);
+}
+
+#cert-google:hover {
+  border-color: rgba(66, 133, 244, 0.35);
+}
+.dark #cert-google:hover {
+  border-color: rgba(66, 133, 244, 0.45);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 4px 14px rgba(66, 133, 244, 0.2);
+}
+
+#cert-gemini:hover,
+#cert-gemini-educator:hover,
+#cert-gemini-student:hover {
+  border-color: rgba(139, 92, 246, 0.35);
+}
+.dark #cert-gemini:hover,
+.dark #cert-gemini-educator:hover,
+.dark #cert-gemini-student:hover {
+  border-color: rgba(139, 92, 246, 0.45);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 4px 14px rgba(139, 92, 246, 0.2);
+}
+
+#cert-linux:hover {
+  border-color: rgba(0, 153, 229, 0.35);
+}
+.dark #cert-linux:hover {
+  border-color: rgba(0, 153, 229, 0.45);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 4px 14px rgba(0, 153, 229, 0.2);
+}
+
+#cert-microsoft:hover {
+  border-color: rgba(0, 164, 239, 0.35);
+}
+.dark #cert-microsoft:hover {
+  border-color: rgba(0, 164, 239, 0.45);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 4px 14px rgba(0, 164, 239, 0.2);
+}
+
 /* --- Cert Card Top Row --- */
 .cert-card-v2__toprow {
   display: flex;
@@ -456,16 +517,28 @@
   border-color: rgba(99, 102, 241, 0.35);
 }
 
+.cert-card-v2__tag--agile {
+  background: rgba(229, 46, 37, 0.08);
+  color: #dc2626;
+  border-color: rgba(229, 46, 37, 0.25);
+}
+
+.dark .cert-card-v2__tag--agile {
+  background: rgba(229, 46, 37, 0.15);
+  color: #f87171;
+  border-color: rgba(229, 46, 37, 0.35);
+}
+
 .cert-card-v2__tag--language {
-  background: rgba(6, 182, 212, 0.1);
-  color: #0e7490;
-  border-color: rgba(6, 182, 212, 0.25);
+  background: rgba(0, 69, 124, 0.08);
+  color: #00457c;
+  border-color: rgba(0, 69, 124, 0.25);
 }
 
 .dark .cert-card-v2__tag--language {
-  background: rgba(6, 182, 212, 0.15);
-  color: #67e8f9;
-  border-color: rgba(6, 182, 212, 0.35);
+  background: rgba(30, 174, 229, 0.15);
+  color: #38bdf8;
+  border-color: rgba(30, 174, 229, 0.35);
 }
 
 .cert-card-v2__tag--google {
@@ -566,16 +639,16 @@
 
 /* --- Score Progress Bar (Aptis) --- */
 .cert-score-block {
-  background: rgba(6, 182, 212, 0.05);
-  border: 1px solid rgba(6, 182, 212, 0.15);
+  background: rgba(0, 69, 124, 0.04);
+  border: 1px solid rgba(0, 69, 124, 0.16);
   border-radius: 0.75rem;
   padding: 0.85rem 1rem;
   margin-bottom: 1rem;
 }
 
 .dark .cert-score-block {
-  background: rgba(6, 182, 212, 0.07);
-  border-color: rgba(6, 182, 212, 0.2);
+  background: rgba(30, 174, 229, 0.07);
+  border-color: rgba(30, 174, 229, 0.22);
 }
 
 .cert-score-block__header {
@@ -588,13 +661,13 @@
 .cert-score-block__label {
   font-size: 0.72rem;
   font-weight: 600;
-  color: #0891b2;
+  color: #00457c;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .dark .cert-score-block__label {
-  color: #67e8f9;
+  color: #38bdf8;
 }
 
 .cert-score-block__value {
@@ -611,18 +684,27 @@
   height: 6px;
   width: 100%;
   border-radius: 999px;
-  background: rgba(6, 182, 212, 0.12);
+  background: rgba(0, 69, 124, 0.1);
   overflow: hidden;
   margin-bottom: 0.4rem;
+}
+
+.dark .cert-score-track {
+  background: rgba(30, 174, 229, 0.15);
 }
 
 .cert-score-fill {
   height: 100%;
   width: 0;
   border-radius: 999px;
-  background: linear-gradient(90deg, #06b6d4, #0891b2);
-  box-shadow: 0 0 8px rgba(6, 182, 212, 0.4);
+  background: linear-gradient(90deg, #1EAEE5, #00457C);
+  box-shadow: 0 0 8px rgba(30, 174, 229, 0.4);
   transition: width 1.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dark .cert-score-fill {
+  background: linear-gradient(90deg, #0284c7, #38bdf8);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
 }
 
 /* Animate score bar when IntersectionObserver fires */
@@ -632,12 +714,12 @@
 
 .cert-score-block__sub {
   font-size: 0.72rem;
-  color: #0891b2;
+  color: #00457c;
   font-weight: 500;
 }
 
 .dark .cert-score-block__sub {
-  color: #67e8f9;
+  color: #38bdf8;
 }
 
 /* --- Cert Badges Row (Date + ID side-by-side on 1 row) --- */
@@ -707,15 +789,15 @@
   border-radius: 10px;
   font-size: 0.72rem;
   line-height: 1.45;
-  color: #0e7490;
-  background: rgba(6, 182, 212, 0.08);
-  border: 1px solid rgba(6, 182, 212, 0.22);
+  color: #00457c;
+  background: rgba(0, 69, 124, 0.06);
+  border: 1px solid rgba(0, 69, 124, 0.18);
 }
 
 .dark .cert-privacy-note {
-  color: #67e8f9;
-  background: rgba(6, 182, 212, 0.12);
-  border-color: rgba(6, 182, 212, 0.28);
+  color: #7dd3fc;
+  background: rgba(30, 174, 229, 0.1);
+  border-color: rgba(30, 174, 229, 0.25);
 }
 
 /* --- Cert Skill Chips --- */
@@ -746,15 +828,15 @@
 }
 
 .cert-skill-chip--agile {
-  background: rgba(99, 102, 241, 0.08);
-  color: #4f46e5;
-  border-color: rgba(99, 102, 241, 0.2);
+  background: rgba(229, 46, 37, 0.08);
+  color: #dc2626;
+  border-color: rgba(229, 46, 37, 0.2);
 }
 
 .dark .cert-skill-chip--agile {
-  background: rgba(99, 102, 241, 0.12);
-  color: #a5b4fc;
-  border-color: rgba(99, 102, 241, 0.3);
+  background: rgba(229, 46, 37, 0.12);
+  color: #fca5a5;
+  border-color: rgba(229, 46, 37, 0.3);
 }
 
 .cert-skill-chip--deeplearning {
@@ -877,7 +959,7 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
-/* 2. Agile View Button (Indigo theme) */
+/* 2. Base View Button */
 .cert-view-btn {
   background: rgba(99, 102, 241, 0.08);
   color: #4f46e5;
@@ -907,34 +989,64 @@
   box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
 }
 
-/* 3. Language View Button (Cyan theme) */
+/* 2b. Agile View Button (Techbase Red) */
+.cert-view-btn--agile {
+  background: rgba(229, 46, 37, 0.08);
+  color: #dc2626;
+  border-color: rgba(229, 46, 37, 0.25);
+  box-shadow: 0 1px 2px rgba(229, 46, 37, 0.06);
+}
+
+.cert-view-btn--agile:hover {
+  background: rgba(229, 46, 37, 0.16);
+  color: #b91c1c;
+  border-color: rgba(229, 46, 37, 0.45);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 14px rgba(229, 46, 37, 0.22);
+}
+
+.dark .cert-view-btn--agile {
+  background: rgba(229, 46, 37, 0.12);
+  color: #f87171;
+  border-color: rgba(229, 46, 37, 0.28);
+}
+
+.dark .cert-view-btn--agile:hover {
+  background: rgba(229, 46, 37, 0.22);
+  color: #ffffff;
+  border-color: rgba(229, 46, 37, 0.5);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 16px rgba(229, 46, 37, 0.35);
+}
+
+/* 3. Language View Button (British Council Blue) */
 .cert-view-btn--language {
-  background: rgba(6, 182, 212, 0.08);
-  color: #0891b2;
-  border-color: rgba(6, 182, 212, 0.25);
-  box-shadow: 0 1px 2px rgba(6, 182, 212, 0.06);
+  background: rgba(0, 69, 124, 0.08);
+  color: #00457c;
+  border-color: rgba(0, 69, 124, 0.25);
+  box-shadow: 0 1px 2px rgba(0, 69, 124, 0.06);
 }
 
 .cert-view-btn--language:hover {
-  background: rgba(6, 182, 212, 0.16);
-  color: #0e7490;
-  border-color: rgba(6, 182, 212, 0.42);
+  background: rgba(0, 69, 124, 0.16);
+  color: #002f6c;
+  border-color: rgba(0, 69, 124, 0.45);
   transform: translateY(-1.5px);
-  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.22);
+  box-shadow: 0 4px 14px rgba(0, 69, 124, 0.22);
 }
 
 .dark .cert-view-btn--language {
-  background: rgba(6, 182, 212, 0.1);
-  color: #67e8f9;
-  border-color: rgba(6, 182, 212, 0.26);
+  background: rgba(30, 174, 229, 0.12);
+  color: #38bdf8;
+  border-color: rgba(30, 174, 229, 0.28);
 }
 
 .dark .cert-view-btn--language:hover {
-  background: rgba(6, 182, 212, 0.2);
+  background: rgba(30, 174, 229, 0.22);
   color: #ffffff;
-  border-color: rgba(6, 182, 212, 0.5);
+  border-color: rgba(30, 174, 229, 0.5);
   transform: translateY(-1.5px);
-  box-shadow: 0 4px 16px rgba(6, 182, 212, 0.35);
+  box-shadow: 0 4px 16px rgba(30, 174, 229, 0.35);
 }
 
 /* 4. Google Card Buttons & Verify Button */
