@@ -2240,34 +2240,8 @@
     </button>
   </aside>
 
-  <!-- Scripts (defer — thứ tự DOM được tôn trọng, không block render) -->
-
-  <!-- 1. Independent Data Modules (Single Source of Truth) -->
-  <script src="js/data/i18n.data.js" defer></script>
-  <script src="js/data/projects.data.js" defer></script>
-  <script src="js/data/skills.data.js" defer></script>
-  <script src="js/data/certs.data.js" defer></script>
-
-  <!-- 2. Core UI & Language Modules -->
-  <script src="js/modules/i18n.js" defer></script>
-  <script src="js/modules/theme.js" defer></script>
-
-  <!-- 3. Independent Feature Modules -->
-  <script src="js/modules/carousel.js" defer></script>
-  <script src="js/modules/modal.js" defer></script>
-  <script src="js/modules/skill-linking.js" defer></script>
-  <script src="js/modules/terminal.js" defer></script>
-  <script src="js/modules/fab.js" defer></script>
-  <script src="js/modules/section-nav.js" defer></script>
-  <script src="js/modules/cert-modal.js" defer></script>
-  <script src="js/modules/cert-filter.js" defer></script>
-  <script src="js/modules/email-copy.js" defer></script>
-  <script src="js/modules/contact-form.js" defer></script>
-  <script src="js/modules/github-stats.js" defer></script>
-  <script src="js/modules/ui-interactions.js" defer></script>
-
-  <!-- 4. Main Application Coordinator & Orchestrator -->
-  <script src="js/scripts.js?v=19" defer></script>
+  <!-- Production JS Bundle (All Data & Feature Modules — Minified, Non-blocking) -->
+  <script src="js/bundle.min.js?v=20" defer></script>
 
   <!-- 5. Particles.js — lazy load sau khi trang idle để không block render -->
   <script>

@@ -49,3 +49,15 @@ a, button, [role="button"] {
     display: none !important;
   }
 }
+
+/* 6. Mobile GPU Relief: Cap heavy backdrop-filter blur on smaller screens */
+@media (max-width: 768px) {
+  .backdrop-blur-md,
+  .terminal-window,
+  .contact-form-glass,
+  .skills-card {
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+  }
+}
+

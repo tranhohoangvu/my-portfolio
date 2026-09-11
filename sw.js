@@ -30,6 +30,9 @@ const PRECACHE = [
   "./css/sections/terminal.css",
   "./css/layout/nav-rail.css",
 
+  // Production Bundle
+  "./js/bundle.min.js",
+
   // JS Data Modules
   "./js/data/i18n.data.js",
   "./js/data/projects.data.js",

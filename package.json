@@ -4,7 +4,9 @@
   "description": "> 🎓 *Sinh viên ngành Computer Science tại Đại học Tôn Đức Thắng (TDTU)*  \r > 💼 *Portfolio cá nhân showcase các dự án, kỹ năng lập trình và bài viết kỹ thuật.*",
   "main": "index.js",
   "scripts": {
-    "build:css": "tailwindcss -i css/tailwind-input.css -o css/tailwind.css",
+    "build:css": "tailwindcss -i css/tailwind-input.css -o css/tailwind.css --minify",
+    "build:js": "node scripts/build-js.js",
+    "build": "npm run build:css && npm run build:js",
     "watch:css": "tailwindcss -i css/tailwind-input.css -o css/tailwind.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
