@@ -2,131 +2,106 @@
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Open-success)](https://tranhohoangvu.github.io/my-portfolio/)
 [![GitHub](https://img.shields.io/badge/GitHub-tranhohoangvu-181717?logo=github)](https://github.com/tranhohoangvu)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-> 🎓 Final-year Computer Science student at Ton Duc Thang University (TDTU)  
-> 💼 Personal portfolio showcasing projects, skills, certificates, GitHub activity — and CVs.
+> 🎓 Computer Science Graduate at Ton Duc Thang University (TDTU)  
+> 💼 Personal portfolio showcasing backend architectures, machine learning pipelines, technical skills, verified certifications, and career CVs.
 
-A **static** portfolio website built with **HTML + Tailwind CSS + Vanilla JS**, featuring **Dark/Light mode** and **VI/EN** language toggle.
+A modern, high-performance **static web application** crafted with **HTML5, Tailwind CSS (v4 CLI), and Vanilla JavaScript (ES6+)**, featuring seamless **Dark / Light dual themes** and **Bilingual (VI / EN)** localization.
 
-- 🔗 **Live site:** https://tranhohoangvu.github.io/my-portfolio/
-- 📄 **CVs (PDF) in repo:** `assets/cv/`
+- 🔗 **Live Production Site:** https://tranhohoangvu.github.io/my-portfolio/
+- 📄 **Targeted Career CVs (PDF):**
   - `assets/cv/TranHoHoangVu_BE.pdf` — Fresher Backend Developer
   - `assets/cv/TranHoHoangVu_AI.pdf` — AI Engineer Intern
 
-> Vietnamese version: `README_VI.md`
+> 🇻🇳 Phiên bản Tiếng Việt: [`README_VI.md`](./README_VI.md)
 
 ---
 
 ## 📌 Table of Contents
 
-- [✨ Highlights](#-highlights)
-- [🧰 Tech Stack](#-tech-stack)
-- [📄 CV Versions](#-cv-versions)
+- [✨ Core Highlights](#-core-highlights)
+- [🧰 Tech Stack & Architecture](#-tech-stack--architecture)
 - [📁 Project Structure](#-project-structure)
-- [🚀 Run Locally](#-run-locally)
-- [⚙️ Quick Customize](#️-quick-customize)
-- [🎨 Tailwind Build](#-tailwind-build-optional)
-- [🤖 GitHub Contributions SVG](#-github-contributions-svg-auto-update)
-- [🌍 Deploy to GitHub Pages](#-deploy-to-github-pages)
-- [🧠 Performance & SEO Tips](#-performance--seo-tips)
-- [🛠️ Updating Content](#️-updating-content)
-- [📫 Contact](#-contact)
+- [📄 Career CV Variants](#-career-cv-variants)
+- [🚀 Local Development & Build Pipeline](#-local-development--build-pipeline)
+- [⚙️ Configuration & Customization](#️-configuration--customization)
+- [🤖 Automated Workflows & CI/CD](#-automated-workflows--cicd)
+- [🌍 Deployment Guide](#-deployment-guide)
+- [🧠 Performance & SEO Architecture](#-performance--seo-architecture)
+- [📫 Contact & Socials](#-contact--socials)
 
 ---
 
-## ✨ Highlights
+## ✨ Core Highlights
 
-- **Modern Software Engineer Aesthetic**: Deep Obsidian dark theme (`#070b14`), glassmorphism with subtle borders, and ambient moving aurora mesh.
-- **Interactive Terminal & REST API Console Widget (Signature Feature)**:
-  - **CLI Terminal (`vu-cli v2.4`)**: Linux/macOS shell supporting <kbd>Tab</kbd> auto-completion, command history (<kbd>↑</kbd>/<kbd>↓</kbd>), and 1-click quick command chips for mobile users. Full command set: `vu --help`, `vu --bio`, `vu --skills [--json]`, `vu --fetch-projects [--cat=X] [--id=Y]`, `vu --contact`, `vu --cv`, `curl <endpoint>`, `theme`, `lang`, `clear`, `history`, `date`, `matrix`, `sudo`.
-  - **REST API Explorer**: Visual Swagger/Postman-style endpoint tester (`GET /api/v1/profile`, `/skills`, `/projects`, `/health`, `POST /contact`) displaying simulated `200 OK` status, latency timer, payload byte size, and syntax-highlighted JSON with 1-click copy.
-  - **macOS Window Controls**: Minimize, clear, fullscreen/maximize overlay, and complete output copy.
-- **Interactive Skill ↔ Project Linking (2-Way)**:
-  - **Skill ➔ Project**: Click any badged skill in the Skills section to smoothly scroll up, display the **Active Skill Filter Banner**, highlight applied projects with an electric glow ring, and automatically slide the Carousel to the matching project.
-  - **Project ➔ Skill**: Click any interactive tech tag on project cards or within the details modal to jump directly down to the Skills section with a focused pulsing highlight animation.
-- **Advanced Projects Showcase**:
-  - **Category Filter Tabs**: Filter across `All`, `Full-Stack`, `Backend`, and `AI`.
-  - **Bounded Carousel Slider**: Touch-swipe enabled with pagination indicators and boundary control.
-  - **Engineering Deep-Dive Modal**: Click any project to inspect system architecture, database design, and key engineering challenges & solutions.
-- **4 Technical Skill Pillars**: Categorized into *Core Languages*, *Backend Architecture & APIs*, *Databases & Optimization*, and *AI, DevOps & Tools*.
-- **Floating Action Bar (FAB) & Toast Notifications**: Quick 1-click email copy with instant toast alert, social links, and CV download.
-- Responsive UI (mobile-first) with smooth reveal animations.
-- Dark / Light mode (persisted in `localStorage`, falls back to OS preference).
-- VI / EN i18n via `data-i18n` (saved in `localStorage.lang`, includes page metadata).
-- **CV section with 2 targeted PDF versions + "View / Download" buttons**:
-  - *Fresher Backend Developer* (`assets/cv/TranHoHoangVu_BE.pdf`)
-  - *AI Engineer Intern* (`assets/cv/TranHoHoangVu_AI.pdf`)
-- **Hero "Download CV" dropdown** to pick the CV version directly.
-- **Certificates Section**:
-  - Gradient headline + kicker badge + subtitle header.
-  - **Responsive 3-Column Grid**: Optimized layout displaying 3 certificates per row on widescreen laptops/desktops (`@media (min-width: 1024px)`), 2 columns on tablets, and 1 column on mobile.
-  - **Category Filter Tabs**: 1-click filtering across `All`, `AI & Deep Learning`, `Data Analytics`, `Software & Agile`, and `Language` with dynamic count badges.
-  - **Smart Expand & Collapse ("Show More")**: Displays the top 3 newest certificates initially with a sleek `Show more (X certificates) ↓` toggle to keep page length compact.
-  - **Authentic Brand Identity & Theme Sync**: Every card is custom-themed to match its issuer's official brand colors and vector logos (Techbase Crimson Red, British Council Blue, Google Blue, DeepLearning Red, Gemini Purple, Linux Sky Blue, Microsoft Blue) with dynamic brand hover glows.
-  - **Microsoft AI Product Manager Professional Certificate** (Microsoft • Coursera): direct PDF preview + live credential verification.
-  - **Introduction to Linux LFS101 Certificate** (The Linux Foundation): direct PDF preview + official credential verification.
-  - **Google Data Analytics Professional Certificate** (Google • Coursera): direct PDF preview + live credential verification.
-  - **Gemini Certified Educator** (Google for Education): direct PDF preview + live credential verification on Google Accredible.
-  - **Gemini Certified Student (University)** (Google for Education): direct PDF preview + live credential verification on Google Accredible.
-  - **DeepLearning.AI TensorFlow Developer Certificate** (DeepLearning.AI • Coursera): direct PDF preview + live credential verification.
-  - **Agile & Scrum Framework 2024** (Techbase Viet Nam): authentic double-chevron logo + high-res PDF preview.
-  - **Aptis ESOL International Certificate** (British Council): official 4-dot symbol, **score progress bar** (135/200, animated on scroll via IntersectionObserver) • Overall CEFR level: B1.
-  - **Privacy protection**: online preview has sensitive PII (National ID, QR) redacted, with an interactive **Formspree Modal Request** for recruiters to request the original verified scan.
-  - Balanced, sleek action buttons with micro-interaction hover feedback.
-- **GitHub Activity Section** (redesigned):
-  - Quick Stats Bar: **16 repos · 22 stars** · Top languages (Python, TypeScript, JavaScript, Java) — fetched from GitHub API.
-  - Auto-generated contributions heatmap SVG (Light/Dark) committed daily via GitHub Actions.
-  - Dynamic Activity Graph with **skeleton shimmer** loading state & fade-in on load.
-  - Dark-mode GitHub CTA pill button with Octocat icon.
-- **Contact Section** (redesigned):
-  - Kicker badge + multi-gradient headline + bilingual subtitle.
-  - **Availability & Work Info Card**: live pulsing status (`Available for Hire`), location (`HCMC, Vietnam UTC+7`), work mode (`On-site • Hybrid • Remote`), and 24h response time indicator.
-  - **Connect Cards**: "Fastest / Preferred" badge on Email & LinkedIn + hover slide-arrow micro-interaction.
-  - **Smart Contact Form**: 1-click Quick Topic Chips (Backend, AI Intern, Project, Other) mapping to Formspree subject, icon-adorned input fields, real-time message character counter (500 max), and send button with animated paper plane and loading spinner.
-- **Scroll Performance Optimized**:
-  - All scroll listeners throttled via `requestAnimationFrame`.
-  - Layout metrics cached on `resize` to prevent forced reflow on scroll.
-  - CSS `contain: layout style paint` + `transform: translateZ(0)` on aurora orbs for GPU compositing.
-  - `prefers-reduced-motion` support for all heavy animations.
-- Contact form via Formspree (no backend server needed).
-- SEO essentials: meta tags, OG image, `robots.txt`, `sitemap.xml`, and custom `404.html`.
+### 1. Dual-Theme Design System (Deep Obsidian & Light Zebra)
+- **Dark Mode (Deep Obsidian)**: Built upon an ultra-dark obsidian foundation (`#070b14` and `#0b101d`) layered with glassmorphic cards, crisp borders (`rgba(255,255,255,0.1)`), and ambient moving mesh aurora orbs (Neon Indigo `#6366f1`, Cyan `#06b6d4`, Emerald `#10b981`).
+- **Light Mode (Zebra Striping & Cool Slate)**: Employs an alternating zebra band rhythm across sections (`bg-white` vs `bg-slate-100` / `#f1f5f9`), enriched with cool-slate card fills (`#f8fafc` / `#f1f5f9`), crisp slate borders (`#cbd5e1`), and multi-layer drop shadows to eliminate washed-out white-on-white fatigue and ensure high legibility.
+- **Theme Persistence**: Theme state is saved in `localStorage.theme` and synchronizes with system preference (`prefers-color-scheme`).
+
+### 2. Interactive Terminal CLI & REST API Console (`vu-cli v2.4`)
+- **Unix-style CLI Terminal**:
+  - Command auto-completion via <kbd>Tab</kbd> key.
+  - Command history navigation via <kbd>↑</kbd> and <kbd>↓</kbd> arrow keys.
+  - Mobile-friendly 1-click quick command chips bar (`vu --bio`, `vu --skills`, `vu --fetch-projects`, `vu --contact`, `vu --cv`, `matrix`, `clear`).
+  - Native window controls: Minimize, clear, fullscreen/maximize overlay, and complete terminal output copy.
+- **REST API Explorer (Swagger / Postman Style)**:
+  - Interactive endpoint tester supporting `GET /api/v1/profile`, `/skills`, `/projects`, `/health`, and `POST /contact`.
+  - Visual response metrics: simulated HTTP `200 OK`, latency timer (ms), payload byte size, and syntax-highlighted JSON with 1-click clipboard copy.
+
+### 3. Two-Way Interactive Skill ↔ Project Linking
+- **Skill ➔ Project**: Clicking any badged skill in the Skills section smoothly scrolls up to the Projects section, activates the **Active Skill Filter Banner**, highlights matching projects with an electric pulse ring (`.is-skill-matched`), and slides the Carousel to that specific card.
+- **Project ➔ Skill**: Clicking any interactive tech pill on project cards or inside the Project Details Modal jumps directly down to the Skills section with a focused pulsing highlight animation (`@keyframes skillPulseFocus`).
+
+### 4. Advanced Projects Showcase
+- **Category Filter Tabs**: 1-click filtering across `All`, `Full-Stack`, `Backend`, and `AI` with dynamic count badges.
+- **Bounded Carousel Slider**: Touch-swipe enabled for mobile, keyboard accessible, with boundary controls (auto-disables arrows at ends) and pagination indicator dots.
+- **Engineering Deep-Dive Modal**: Inspect full system architecture, database design, and key engineering challenges with their concrete solutions for 7 projects.
+
+### 5. Technical Skills Categorized by 4 Pillars
+- **Core Languages**: C, C#, Java, Python, JavaScript, PHP.
+- **Backend Architecture & APIs**: Node.js, Express.js, Laravel, RESTful API, .NET, React.
+- **Databases & Storage**: PostgreSQL, MySQL, MongoDB, SQL Server, Raw SQL Optimization.
+- **AI, DevOps & Tools**: PyTorch, TensorFlow, Docker, Docker Compose, Nginx, Git, CI/CD.
+
+### 6. Verified Certificates Showcase (8 Professional Credentials)
+- **Responsive 3-Column Grid**: 3 cards per row on desktop/laptop, 2 on tablets, and 1 on mobile.
+- **Dynamic Category Filter**: `All`, `AI & Deep Learning`, `Data Analytics`, `Software & Agile`, `Language`.
+- **Smart Expand & Collapse ("Show More")**: Shows the top 3 newest certificates initially with a compact toggle button.
+- **Authentic Brand Theme & Icons**: Issuer vector badges and hover glows for Microsoft, The Linux Foundation, Google, DeepLearning.AI, Google for Education, Techbase, and British Council.
+- **Interactive Score Bar**: Aptis ESOL score progress bar (135/200, CEFR B1) animated via `IntersectionObserver`.
+- **PII Privacy Protection**: Online preview redacts sensitive personal IDs, providing an AJAX modal form for verified scan requests.
+
+### 7. About Me & Personal Brand
+- **3 Key Pillars**: Education & Foundation (TDTU Computer Science), Hands-on Experience (Software Engineer Intern), Target Roles (Fresher Backend Developer & AI Engineer Intern).
+- **4 Dynamic Counter Stats**: 7+ Projects, 16+ GitHub Repositories, 8 Verified Certificates, 100% Work Readiness.
+- **3D Interactive Profile Flip**: Smooth 3D flip card revealing secondary portrait photo on hover / tap.
+- **Integrated Action Dock**: Quick email copy badge with instant toast alert, CV jump, Contact jump, and verified social links.
+
+### 8. GitHub Activity & Live Stats
+- **Quick Stats Bar**: 16 repos, 22 stars, and top languages fetched from GitHub API.
+- **Daily Automated Heatmap**: SVG heatmaps (Light & Dark) automatically generated and committed daily via GitHub Actions GraphQL workflow.
+- **Dynamic Activity Graph**: Includes skeleton shimmer loading state and fade-in transitions.
+
+### 9. Smart Contact Form & Availability Status
+- **Availability Card**: Live pulsating status (`Available for Hire`), location (`HCMC, Vietnam UTC+7`), work mode (`On-site • Hybrid • Remote`), and 24h response time indicator.
+- **1-Click Topic Chips**: Topic selector (`Backend Developer`, `AI Intern`, `Project Collaboration`, `Other`) pre-filling the Formspree subject.
+- **Real-Time Validation**: 500-character counter, icon-adorned inputs, loading spinner, and success/error feedback.
 
 ---
 
-## 🧰 Tech Stack
+## 🧰 Tech Stack & Architecture
 
-| Category | Technologies / Tools | Usage |
+| Layer | Technologies | Purpose |
 |---|---|---|
-| **Structure & Logic** | HTML5, Vanilla JavaScript (ES6+) | Core architecture, 2-way skill linking, carousel, modal, i18n |
-| **Styling & Theme** | Tailwind CSS (v4 CLI), Vanilla CSS | Deep Obsidian theme, glassmorphism, responsive grid |
-| **Icons & Typography** | Devicon, Heroicons SVG, Google Fonts | Tech icons, interface icons, Poppins & Inter typography |
-| **Automation & CI/CD** | GitHub Actions, Python (GraphQL script) | GitHub Pages deploy, daily contributions SVG auto-commits |
-| **Integrations** | Formspree | Contact form handling |
-
----
-
-## 📄 CV Versions
-
-This portfolio includes **two PDF CV variants** (both in the CV section and the dropdown):
-
-1) **Fresher Backend Developer (PDF)**  
-   - File: `assets/cv/TranHoHoangVu_BE.pdf`  
-   - Targeted for Backend Developer / Software Engineer roles (Node.js, Express, Laravel, PostgreSQL raw SQL, RESTful APIs, JWT RBAC).
-
-2) **AI Engineer Intern (PDF)**  
-   - File: `assets/cv/TranHoHoangVu_AI.pdf`  
-   - Targeted for AI / Data / Machine Learning roles (PyTorch, Deep Learning OCR, Transformers, NLP translation, time-series forecasting).
-
-### i18n keys used (JS)
-
-The CV section + dropdown text is controlled by `data-i18n` keys in `js/data/i18n.data.js`:
-
-- Card titles/descriptions:  
-  `cv_be_title`, `cv_be_desc`  
-  `cv_ai_title`, `cv_ai_desc`  
-- Dropdown labels:  
-  `cv_menu_be_title`, `cv_menu_be_meta`  
-  `cv_menu_ai_title`, `cv_menu_ai_meta`  
+| **Structure** | HTML5 (Semantic, SEO-ready) | Accessible landmark structure, Open Graph metadata, JSON-LD |
+| **Styling** | Tailwind CSS v4 CLI, Vanilla CSS | Design tokens, glassmorphism, responsive grid, zebra striping |
+| **Logic & State** | Vanilla JavaScript (ES6+) | 19 modular controllers, Carousel, Skill-linking, Terminal CLI, Modal |
+| **Bundling** | Node.js Script + esbuild | Dependency concatenation and production JS minification (`bundle.min.js`) |
+| **Typography & Icons**| Devicon, Heroicons, Google Fonts | Inter & Poppins typography, JetBrains Mono for terminal, brand SVGs |
+| **Automation & CI/CD**| GitHub Actions, Python GraphQL | Automated deployment to GitHub Pages, daily contribution SVG update |
+| **Forms** | Formspree | Serverless contact form handling and certificate access requests |
 
 ---
 
@@ -134,216 +109,198 @@ The CV section + dropdown text is controlled by `data-i18n` keys in `js/data/i18
 
 ```txt
 my-portfolio/
-├─ index.html                     # Main single-page application entry
-├─ data/                          # Machine-readable JSON data stores
-│  ├─ projects.json               # Projects dataset (bilingual VI/EN, architecture, challenges)
-│  └─ skills.json                 # Technical skills & project mapping dataset
+├─ index.html                     # Main single-page application entry point
+├─ 404.html                       # Custom 404 error page
+├─ site.webmanifest               # Progressive Web App (PWA) manifest
+├─ sitemap.xml                    # Search Engine Sitemap
+├─ robots.txt                     # Search engine crawler instructions
+├─ sw.js                          # Service Worker for offline asset caching
+├─ package.json                   # Project scripts and developer dependencies
 ├─ assets/
-│  ├─ projects/                   # Screenshots for 7 portfolio projects
-│  ├─ cv/                         # Career CVs (Backend Developer & AI Engineer PDFs)
-│  ├─ certificates/               # Verified certificates (Microsoft AI, Linux Foundation, Google Data Analytics, Google Gemini, DeepLearning.AI TensorFlow, Techbase Agile & Aptis PDFs)
-│  ├─ profile/                    # Personal avatar & profile photos
-│  ├─ icons/                      # Favicons (SVG, PNG) & PWA app icons
-│  ├─ github/                     # Auto-generated daily contribution & activity graph SVGs
-│  └─ og-image-v2.png             # Open Graph social preview banner
+│  ├─ cv/                         # Career CVs (BE Developer & AI Intern PDFs)
+│  ├─ certificates/               # Verified certificate PDFs
+│  ├─ projects/                   # High-resolution screenshots for 7 showcase projects
+│  ├─ profile/                    # Personal portraits (profile.jpg, profile2.jpg)
+│  ├─ icons/                      # Favicon suite (SVG, PNG) and PWA app icons
+│  ├─ github/                     # Automated contribution heatmaps (light/dark SVGs)
+│  └─ og-image-v2.png             # Open Graph preview card for social sharing
 ├─ css/
-│  ├─ tailwind-input.css          # Tailwind CLI input config
-│  ├─ tailwind.css                # Compiled Tailwind CSS
-│  ├─ styles.css                  # Entry point — @import only (no styles here)
+│  ├─ tailwind-input.css          # Tailwind CSS v4 entry file with theme tokens
+│  ├─ tailwind.css                # Compiled and minified Tailwind utilities
+│  ├─ styles.css                  # Master CSS index importing modular styles
 │  ├─ base/
-│  │  ├─ tokens.css               # Design tokens, CSS variables, body, back-to-top
-│  │  └─ animations.css           # Global animation classes, keyframes & aurora orbs
+│  │  ├─ tokens.css               # Design tokens, CSS variables, body, scrollbars
+│  │  └─ animations.css           # Keyframe animations, aurora mesh, hover effects
 │  ├─ layout/
-│  │  ├─ navbar.css               # Navbar, mobile menu, responsive breakpoints
-│  │  └─ nav-rail.css             # Floating section navigation rail (desktop)
+│  │  ├─ navbar.css               # Navigation header, glassmorphism, mobile menu
+│  │  └─ nav-rail.css             # Floating section navigation rail for desktop
 │  ├─ sections/
-│  │  ├─ hero.css                 # Hero section, aurora orbs, buttons, CV dropdown
-│  │  ├─ projects.css             # Filter tabs, carousel, cards, modal, skill linking
-│  │  ├─ skills.css               # Skills cards, dark mode, lang toggle
-│  │  ├─ contact.css              # Contact cards, email copy badge, footer
-│  │  ├─ cv.css                   # CV section cards & actions
-│  │  ├─ about.css                # Avatar aura, about content, social buttons
-│  │  ├─ certs.css                # Certificates section: cards v2, score bar, issuer icons
-│  │  ├─ github.css               # GitHub section: stats bar, panels, skeleton, CTA button
-│  │  └─ terminal.css             # Interactive terminal & REST API console widget
+│  │  ├─ hero.css                 # Hero typography, aurora orbs, CV dropdown
+│  │  ├─ about.css                # 3 Key pillars, 4 counter stats, 3D profile flip
+│  │  ├─ cv.css                   # CV showcase cards, badges, and action buttons
+│  │  ├─ projects.css             # Filter tabs, carousel, project cards, details modal
+│  │  ├─ skills.css               # 4 Pillar technical skills cards, skill icon tiles
+│  │  ├─ certs.css                # Certificate cards v2, score progress bar, filter tabs
+│  │  ├─ github.css               # GitHub stats bar, panels, activity graphs
+│  │  ├─ terminal.css             # Terminal CLI window and REST API explorer widget
+│  │  └─ contact.css              # Availability card, contact cards, and topic form
 │  └─ components/
-│     ├─ shared-cards.css         # Unified hover effect (projects, skills, github cards)
-│     ├─ toast.css                # Glassmorphic toast notification system
-│     └─ fab.css                  # Floating Action Bar & quick contact cluster
-├─ scripts/                       # Automation & build scripts
-│  └─ build_github_contrib_svgs.py # Python script for GitHub GraphQL contribution SVG
+│     ├─ shared-cards.css         # Unified card hover and lighting effects
+│     ├─ toast.css                # Glassmorphic toast alert system
+│     └─ fab.css                  # Floating Action Bar (FAB) & speed dial
 ├─ js/
-│  ├─ data/                       # Independent client data modules (Single Source of Truth)
-│  │  ├─ i18n.data.js             # Bilingual VI/EN dictionary dataset
-│  │  ├─ projects.data.js         # Window.PROJECTS_DATA store & filter helpers
-│  │  └─ skills.data.js           # Window.SKILLS_DATA store & 2-way linking helpers
-│  ├─ modules/                    # Modular feature controllers
-│  │  ├─ i18n.js                  # Language switching & DOM translation logic
-│  │  ├─ theme.js                 # Dark/Light mode & navbar scroll background
-│  │  ├─ carousel.js              # Projects carousel slider & category filter
-│  │  ├─ modal.js                 # Project deep-dive details modal & architecture tabs
-│  │  ├─ skill-linking.js         # 2-way interactive Skill ↔ Project linking
-│  │  ├─ terminal.js              # Interactive Terminal CLI & REST API Console
-│  │  ├─ fab.js                   # Floating Action Bar (FAB) & Toast notifications
-│  │  ├─ section-nav.js           # Desktop floating section navigation rail
-│  │  ├─ cert-modal.js            # Aptis score animation & Formspree cert request modal
-│  │  ├─ cert-filter.js           # Category filter tabs & Show More / Collapse pagination
-│  │  ├─ email-copy.js            # 1-Click email clipboard copy with toast feedback
-│  │  ├─ contact-form.js          # Topic chips, character counter & Formspree AJAX
-│  │  ├─ github-stats.js          # GitHub activity graph SVGs & dynamic theming
-│  │  └─ ui-interactions.js       # Stats counter ticker, 3D profile flip, CV counter, typewriter
-│  └─ scripts.js                  # Master Application Orchestrator & core coordinator
-├─ projects-docs/                 # Comprehensive documentation for 7 projects
-│  ├─ 01-coursehub-lms.md
-│  ├─ 02-ecommerce-platform.md
-│  ├─ 03-vietnamese-ocr.md
-│  ├─ 04-nlp-translation.md
-│  ├─ 05-stock-forecasting-ml.md
-│  ├─ 06-warehouse-ma.md
-│  └─ 07-pos-system.md
-├─ .github/workflows/
-│  ├─ static.yml                  # GitHub Pages automated deployment
-│  └─ update-github-contrib.yml   # Daily cron job for contribution SVG
-├─ UI_UX_ANALYSIS.md              # UI/UX improvement report and feature roadmap
-├─ README.md                      # English documentation (this file)
-├─ README_VI.md                   # Vietnamese documentation
-├─ site.webmanifest               # PWA configuration
-├─ sitemap.xml                    # SEO sitemap
-├─ sw.js                          # Offline Service Worker cache controller
-├─ package.json
-└─ package-lock.json
+│  ├─ bundle.min.js               # Production bundled and minified script (175 KB)
+│  ├─ scripts.js                  # Master application orchestrator
+│  ├─ data/                       # Structured single source of truth datasets
+│  │  ├─ i18n.data.js             # Bilingual dictionary (VI / EN)
+│  │  ├─ projects.data.js         # Complete dataset for 7 showcase projects
+│  │  ├─ skills.data.js           # Skills catalog & bidirectional project mappings
+│  │  └─ certs.data.js            # 8 Verified certificate definitions and credentials
+│  └─ modules/                    # Feature controllers
+│     ├─ i18n.js                  # Internationalization engine
+│     ├─ theme.js                 # Dark / Light theme switcher
+│     ├─ carousel.js              # Projects carousel slider & swipe mechanics
+│     ├─ modal.js                 # Project deep-dive details modal
+│     ├─ skill-linking.js         # Interactive 2-way skill ↔ project linker
+│     ├─ terminal.js              # vu-cli shell & REST API console emulator
+│     ├─ fab.js                   # Floating Action Bar controller
+│     ├─ section-nav.js           # Desktop floating rail active spy
+│     ├─ cert-modal.js            # Certificate request modal & score animation
+│     ├─ cert-filter.js           # Certificates filter tabs & show more toggle
+│     ├─ email-copy.js            # 1-click email copy with toast alert
+│     ├─ contact-form.js          # Topic chips, character counter & AJAX submission
+│     ├─ github-stats.js          # Dynamic GitHub stats fetching & SVG theming
+│     └─ ui-interactions.js       # Number counters, 3D profile flip, typewriter
+├─ scripts/
+│  ├─ build-js.js                 # Concatenates 19 modules and minifies with esbuild
+│  └─ build_github_contrib_svgs.py# Python GraphQL script for GitHub contribution SVG
+├─ projects-docs/                 # Comprehensive engineering docs for all 7 projects
+└─ .github/workflows/
+   ├─ static.yml                  # GitHub Pages automated build & deploy pipeline
+   └─ update-github-contrib.yml   # Scheduled cron workflow for daily GitHub SVGs
 ```
 
 ---
 
-## 🚀 Run Locally
+## 📄 Career CV Variants
 
-### Option 1: Open directly
-Open `index.html` in your browser.
+The repository maintains two targeted PDF resumes in `assets/cv/`:
 
-### Option 2: Local server (recommended)
+1. **Fresher Backend Developer** (`assets/cv/TranHoHoangVu_BE.pdf`)
+   - **Focus**: Node.js, Express.js, Laravel, RESTful API architecture, PostgreSQL (Raw SQL & Query Optimization), NoSQL MongoDB, Redis caching, JWT RBAC, Docker, and CI/CD pipelines.
+2. **AI Engineer Intern** (`assets/cv/TranHoHoangVu_AI.pdf`)
+   - **Focus**: PyTorch, Deep Learning, Transformer architectures, OCR pipelines (ResNet + Spatial Attention), Vietnamese NLP translation, and ML stock forecasting.
+
+---
+
+## 🚀 Local Development & Build Pipeline
+
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- Python 3 (optional, for local HTTP server)
+
+### 1. Clone Repository
 ```bash
-python -m http.server 5500
-```
-Visit: `http://localhost:5500`
-
-> Tip: VS Code **Live Server** extension works great too.
-
----
-
-## ⚙️ Quick Customize
-
-### 1) GitHub username
-Edit in `js/modules/github-stats.js`:
-```js
-const GITHUB_USERNAME = "tranhohoangvu";
+git clone https://github.com/tranhohoangvu/my-portfolio.git
+cd my-portfolio
 ```
 
-### 2) Translations / i18n
-Edit the language dictionary in `js/data/i18n.data.js` (`window.I18N_DATA`).
-
-### 2) GitHub Stats chips
-The stats bar values (repos, stars) in the GitHub section are set directly in `index.html`.
-Update them manually or automate via GitHub Actions reading from the API.
-
-### 3) Contact form (Formspree)
-Edit in `index.html`:
-```html
-<form action="https://formspree.io/f/xxxxxxx" method="POST">
-```
-
-### 4) CV / displayed labels
-- Replace PDFs under `assets/cv/`
-- Update dropdown links in `index.html` (CV menu)
-- Update i18n in `js/scripts.js` (I18N object)
-
-### 5) Social links / other content
-Edit directly in `index.html` and translations in `js/scripts.js`.
-
----
-
-## 🎨 Tailwind Build (Optional)
-
-CSS is pre-built at `css/tailwind.css`.
-
-To rebuild:
+### 2. Install Dependencies
 ```bash
 npm install
-npx @tailwindcss/cli -i ./css/tailwind-input.css -o ./css/tailwind.css --minify
 ```
 
-Watch mode:
+### 3. Build Production Assets
+To compile both Tailwind CSS and the bundled JavaScript:
 ```bash
-npx @tailwindcss/cli -i ./css/tailwind-input.css -o ./css/tailwind.css --watch
+npm run build
 ```
 
----
+Individual sub-tasks:
+- **Build CSS**: `npm run build:css` (compiles `css/tailwind-input.css` to `css/tailwind.css`)
+- **Watch CSS**: `npm run watch:css` (rebuilds Tailwind utilities on file save)
+- **Build JS**: `npm run build:js` (concatenates 19 JS modules and minifies with esbuild to `js/bundle.min.js`)
 
-## 🤖 GitHub Contributions SVG (Auto-update)
-
-Workflow: `.github/workflows/update-github-contrib.yml`
-
-- Runs daily (00:00 UTC)
-- Uses GitHub GraphQL API in `scripts/build_github_contrib_svgs.py`
-- Updates:
-  - `assets/github/github-contrib-light.svg`
-  - `assets/github/github-contrib-dark.svg`
-  - `assets/github/github-activity-light.svg`
-  - `assets/github/github-activity-dark.svg`
-- Automatically commits back to repository
-
-If you fork/clone, enable Actions and grant workflow write permissions.
-
----
-
-## 🌍 Deploy to GitHub Pages
-
-Deploy via `.github/workflows/static.yml` (official GitHub Pages workflow).
-
-1. Push to `main` branch
-2. Go to **Settings → Pages**
-3. Select build and deployment source: **GitHub Actions**
-4. Once workflow completes, site is live at:
-   - `https://<username>.github.io/<repo>/`
-
-✅ Live: https://tranhohoangvu.github.io/my-portfolio/
-
----
-
-## 🧠 Performance & SEO Tips
-
-- All scroll listeners are throttled via `requestAnimationFrame` — no layout thrashing.
-- Layout metrics (scroll height, offsets) are cached and only re-read on `resize`.
-- Aurora orbs use CSS `contain: layout style paint` + `transform: translateZ(0)` for GPU promotion.
-- `prefers-reduced-motion` disables heavy animations on low-end devices.
-- Compress images (Squoosh/TinyPNG) and prefer modern formats.
-- Keep hero images under ~300–500KB.
-- Verify `og-image-v2.png` and meta tag links.
-- Run Lighthouse to audit performance, SEO, accessibility.
-- (Optional) Add analytics for traffic tracking.
-
----
-
-## 🛠️ Updating Content
-
-1. Edit `index.html` (text/sections/projects)
-2. Update translations in `js/scripts.js` (I18N + `data-i18n`)
-3. Update assets/CVs in `assets/`
-4. (Optional) Rebuild Tailwind
-5. Commit & push:
+### 4. Run Locally
 ```bash
-git add .
-git commit -m "feat: describe your change"
-git push origin main
+# Using Python
+python -m http.server 5500
+
+# Or using Node.js npx serve
+npx serve . -l 5500
 ```
+Open your browser at: `http://localhost:5500`
 
 ---
 
-## 📫 Contact
+## ⚙️ Configuration & Customization
 
-- 🐙 GitHub: https://github.com/tranhohoangvu
-- 🌐 Website: https://tranhohoangvu.github.io/my-portfolio/
+1. **Personal Info & Bio**: Update text content in `index.html` and matching translation keys in `js/data/i18n.data.js`.
+2. **Projects Data**: Modify or append project definitions in `js/data/projects.data.js`.
+3. **Skills Catalog**: Update skill items and project relations in `js/data/skills.data.js`.
+4. **Certificates**: Configure credentials, preview PDFs, and verify URLs in `js/data/certs.data.js`.
+5. **Contact Form Target**: Replace the Formspree endpoint in `index.html`:
+   ```html
+   <form action="https://formspree.io/f/your-form-id" method="POST">
+   ```
+6. **GitHub Username**: Update the constant in `js/modules/github-stats.js`:
+   ```javascript
+   const GITHUB_USERNAME = "tranhohoangvu";
+   ```
 
 ---
 
-> Updated: September 2026
+## 🤖 Automated Workflows & CI/CD
+
+- **GitHub Pages Deployment (`.github/workflows/static.yml`)**:
+  - Automatically triggers on every push to the `main` branch.
+  - Deploys static assets directly to GitHub Pages.
+- **Daily Contribution SVG Sync (`.github/workflows/update-github-contrib.yml`)**:
+  - Runs daily via cron schedule (`00:00 UTC`).
+  - Executes `scripts/build_github_contrib_svgs.py` using GitHub GraphQL API.
+  - Commits updated light and dark contribution graphs directly into `assets/github/`.
+
+---
+
+## 🌍 Deployment Guide
+
+The portfolio is hosted on **GitHub Pages**:
+
+1. Push all changes to branch `main`.
+2. In your repository, navigate to **Settings ➔ Pages**.
+3. Under **Build and deployment ➔ Source**, select **GitHub Actions**.
+4. The deployment pipeline will trigger and deploy the live site to:
+   `https://<username>.github.io/<repo>/`
+
+---
+
+## 🧠 Performance & SEO Architecture
+
+- **Rendering Performance**:
+  - Scroll listeners are throttled using `requestAnimationFrame` to avoid layout thrashing.
+  - Layout metrics are cached and only recalculated on viewport `resize`.
+  - Ambient aurora mesh orbs utilize `contain: layout style paint` and `transform: translateZ(0)` for hardware GPU promotion.
+  - Heavy animations automatically respect `prefers-reduced-motion: reduce`.
+- **Bundle Optimization**:
+  - All 19 JS modules are concatenated in dependency order and minified into a single non-blocking bundle (`js/bundle.min.js`, ~175 KB).
+  - External non-critical scripts (e.g. `particles.js`) are deferred until browser idle.
+- **Search Engine Optimization (SEO)**:
+  - Canonical URL tags, descriptive meta descriptions, and rich Open Graph (`og:*`) / Twitter card tags.
+  - Structured XML sitemap (`sitemap.xml`) and crawler configuration (`robots.txt`).
+  - Custom branded `404.html` maintaining full navbar, theme, and return links.
+
+---
+
+## 📫 Contact & Socials
+
+- **Full Name**: Trần Hồ Hoàng Vũ
+- **Email**: [hoangvu2k4cmg@gmail.com](mailto:hoangvu2k4cmg@gmail.com)
+- **LinkedIn**: [linkedin.com/in/tranhohoangvu](https://linkedin.com/in/tranhohoangvu/)
+- **GitHub**: [github.com/tranhohoangvu](https://github.com/tranhohoangvu)
+- **Portfolio**: [tranhohoangvu.github.io/my-portfolio](https://tranhohoangvu.github.io/my-portfolio/)
+
+---
+
+<p align="center">
+  <b>Designed & Developed with Passion by Trần Hồ Hoàng Vũ © 2026</b>
+</p>
