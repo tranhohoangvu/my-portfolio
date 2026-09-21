@@ -12,7 +12,7 @@ A modern, high-performance **static web application** crafted with **HTML5, Tail
 - 🔗 **Live Production Site:** https://tranhohoangvu.github.io/my-portfolio/
 - 📄 **Targeted Career CVs (PDF):**
   - `assets/cv/TranHoHoangVu_BE.pdf` — Fresher Backend Developer
-  - `assets/cv/TranHoHoangVu_AI.pdf` — AI Engineer Intern
+  - `assets/cv/TranHoHoangVu_AI.pdf` — AI Engineer Fresher
 
 > 🇻🇳 Phiên bản Tiếng Việt: [`README_VI.md`](./README_VI.md)
 
@@ -74,8 +74,8 @@ A modern, high-performance **static web application** crafted with **HTML5, Tail
 - **PII Privacy Protection**: Online preview redacts sensitive personal IDs, providing an AJAX modal form for verified scan requests.
 
 ### 7. About Me & Personal Brand
-- **3 Key Pillars**: Education & Foundation (TDTU Computer Science), Hands-on Experience (Software Engineer Intern), Target Roles (Fresher Backend Developer & AI Engineer Intern).
-- **4 Dynamic Counter Stats**: 7+ Projects, 16+ GitHub Repositories, 8 Verified Certificates, 100% Work Readiness.
+- **3 Key Pillars**: Education & Foundation (TDTU Computer Science), Hands-on Experience (Software Engineer Intern), Target Roles (Fresher Backend Developer & AI Engineer Fresher).
+- **4 Dynamic Counter Stats**: 9+ Projects, 16+ GitHub Repositories, 8 Verified Certificates, 100% Work Readiness.
 - **3D Interactive Profile Flip**: Smooth 3D flip card revealing secondary portrait photo on hover / tap.
 - **Integrated Action Dock**: Quick email copy badge with instant toast alert, CV jump, Contact jump, and verified social links.
 
@@ -188,8 +188,8 @@ The repository maintains two targeted PDF resumes in `assets/cv/`:
 
 1. **Fresher Backend Developer** (`assets/cv/TranHoHoangVu_BE.pdf`)
    - **Focus**: Node.js, Express.js, Laravel, RESTful API architecture, PostgreSQL (Raw SQL & Query Optimization), NoSQL MongoDB, Redis caching, JWT RBAC, Docker, and CI/CD pipelines.
-2. **AI Engineer Intern** (`assets/cv/TranHoHoangVu_AI.pdf`)
-   - **Focus**: PyTorch, Deep Learning, Transformer architectures, OCR pipelines (ResNet + Spatial Attention), Vietnamese NLP translation, and ML stock forecasting.
+2. **AI Engineer Fresher** (`assets/cv/TranHoHoangVu_AI.pdf`)
+   - **Focus**: PyTorch, Deep Learning, Transformer architectures, OCR pipelines (PaddleOCR, Gemini Vision, ResNet + Spatial Attention), Vietnamese NLP translation, and ML engineering.
 
 ---
 

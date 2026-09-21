@@ -1,5 +1,5 @@
 /* SW: precache only .css .js .jpg .png .svg .webp */
-const VERSION = "v15";
+const VERSION = "v16";
 const CACHE_NAME = `portfolio-${VERSION}`;
 
 const PRECACHE = [
@@ -86,6 +86,8 @@ const PRECACHE = [
   "./assets/cv/TranHoHoangVu_AI_preview.webp",
 
   // Project images (WebP)
+  "./assets/projects/bookingcare.webp",
+  "./assets/projects/pdf-vision-ocr.webp",
   "./assets/projects/coursehub.webp",
   "./assets/projects/ecommerce.webp",
   "./assets/projects/vietnamese-ocr.webp",

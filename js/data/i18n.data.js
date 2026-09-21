@@ -28,13 +28,13 @@ window.I18N_DATA = {
     cv_headline: "Hai hướng. Một mục tiêu.",
     cv_title: "CV",
     cv_subtitle: "Chọn phiên bản CV phù hợp với vị trí bạn quan tâm.",
-    cv_updated_be: "Cập nhật T8/2026",
-    cv_updated_ai: "Cập nhật T3/2026",
+    cv_updated_be: "Cập nhật T9/2026",
+    cv_updated_ai: "Cập nhật T9/2026",
 
     cv_be_title: "Fresher Backend Developer (PDF)",
     cv_be_desc: "Định hướng Backend: RESTful APIs, database, tự động hóa quy trình (Jira API/OpenClaw) & clean code.",
 
-    cv_ai_title: "AI Engineer Intern (PDF)",
+    cv_ai_title: "AI Engineer Fresher (PDF)",
     cv_ai_desc: "Định hướng AI: ML/DL, NLP (Transformer MT), Computer Vision (Vietnamese OCR) & deployment pipelines.",
 
     cv_btn_view: "Xem",
@@ -50,7 +50,7 @@ window.I18N_DATA = {
 
     cv_menu_be_title: "Fresher Backend Developer (PDF)",
     cv_menu_be_meta: "TranHoHoangVu_BE.pdf",
-    cv_menu_ai_title: "AI Engineer Intern (PDF)",
+    cv_menu_ai_title: "AI Engineer Fresher (PDF)",
     cv_menu_ai_meta: "TranHoHoangVu_AI.pdf",
 
     about_top_kicker: "👤 VỀ BẢN THÂN • PROFILE",
@@ -71,7 +71,7 @@ window.I18N_DATA = {
     about_pillar_exp_title: "Kinh nghiệm Thực chiến",
     about_pillar_exp_desc: "Thực tập Kỹ sư Phần mềm: thiết kế RESTful APIs, tối ưu Raw SQL PostgreSQL và tự động hóa quy trình Jira/OpenClaw.",
     about_pillar_goal_title: "Vị trí Ứng tuyển",
-    about_pillar_goal_desc: "Fresher Backend Developer (Node.js, Express, Laravel) & AI Engineer Intern (PyTorch, Transformers, Computer Vision).",
+    about_pillar_goal_desc: "Fresher Backend Developer (Node.js, Express, Laravel) & AI Engineer Fresher (PyTorch, Transformers, Computer Vision).",
     about_stat_projects: "Dự án hoàn chỉnh",
     about_stat_repos: "GitHub Repositories",
     about_stat_certs: "Chứng chỉ quốc tế",
@@ -111,7 +111,17 @@ window.I18N_DATA = {
     modal_tab_challenges: "Thách thức Kỹ thuật & Giải pháp cốt lõi",
     modal_tab_techstack: "Công nghệ & Công cụ",
 
-    p4_meta: "Tháng 2, 2026 – Tháng 3, 2026 • Dự án Full-Stack",
+    p_bc_meta: "Tháng 9, 2026 – Hiện tại • Nền tảng Y tế Full-Stack",
+    p_bc_desc:
+      "Nền tảng đặt lịch khám bệnh trực tuyến full-stack Next.js 15 & Supabase: phân quyền RBAC 3 cấp, chống đặt trùng lịch bằng atomic PostgreSQL update, Bulk Schedule Generator và mã QR check-in.",
+    p_bc_title: "BookingCare",
+
+    p_pdf_meta: "Tháng 8, 2026 – Hiện tại • Hệ thống Trích xuất & OCR Thông minh",
+    p_pdf_desc:
+      "Hệ thống trích xuất và nhận diện ký tự quang học (OCR) thông minh cho PDF tiếng Việt: tiền xử lý OpenCV (Deskew, khử bóng, CLAHE), hybrid Gemini Vision AI fallback, xuất Word/Excel/PDF/Markdown và giao diện kép Streamlit + FastAPI.",
+    p_pdf_title: "PDF Vision OCR",
+
+    p4_meta: "Tháng 4, 2026 – Tháng 6, 2026 • Dự án Full-Stack",
     p4_desc:
       "Hệ thống Quản lý Học tập (LMS) full-stack: giao diện Udemy split-screen, phân quyền RBAC, tối ưu Raw SQL PostgreSQL (không dùng ORM), giỏ hàng lưu DB và bảng phân tích doanh thu.",
     p4_title: "CourseHub LMS",
@@ -251,9 +261,9 @@ window.I18N_DATA = {
 
     contact_kicker: "💬 LIÊN HỆ • KẾT NỐI NGAY",
     contact_headline: "Cùng xây dựng điều tuyệt vời.",
-    contact_subtitle: "Sẵn sàng đón nhận cơ hội việc làm Fresher Backend Developer, AI Engineer Intern hoặc dự án cộng tác mới.",
+    contact_subtitle: "Sẵn sàng đón nhận cơ hội việc làm Fresher Backend Developer, AI Engineer Fresher hoặc dự án cộng tác mới.",
     contact_avail_badge: "Sẵn sàng nhận việc ngay",
-    contact_avail_roles: "Fresher Backend • AI Engineer Intern",
+    contact_avail_roles: "Fresher Backend • AI Engineer Fresher",
     contact_location: "TP. Hồ Chí Minh, Việt Nam (UTC+7)",
     contact_work_mode: "On-site • Hybrid • Remote",
     contact_response_time: "Phản hồi nhanh trong vòng 24h",
@@ -264,7 +274,7 @@ window.I18N_DATA = {
     connect_title: "Kết nối với tôi nhé!",
     form_topic_label: "Bạn quan tâm đến chủ đề gì?",
     topic_be: "💼 Tuyển dụng Backend",
-    topic_ai: "🤖 Tuyển dụng AI Intern",
+    topic_ai: "🤖 Tuyển dụng AI Fresher",
     topic_collab: "🤝 Hợp tác dự án",
     topic_other: "☕ Giao lưu / Khác",
     form_name: "Họ tên: *",
@@ -362,14 +372,14 @@ window.I18N_DATA = {
     cv_headline: "Two CVs. One mission.",
     cv_title: "CV",
     cv_subtitle: "Pick the CV version that fits the role you're applying for.",
-    cv_updated_be: "Updated Aug 2026",
-    cv_updated_ai: "Updated Mar 2026",
+    cv_updated_be: "Updated Sep 2026",
+    cv_updated_ai: "Updated Sep 2026",
 
     cv_be_title: "Fresher Backend Developer (PDF)",
     cv_be_desc: "Targeted for Backend Developer roles: REST APIs, databases, workflow automation (Jira API/OpenClaw) & clean code.",
 
-    cv_ai_title: "AI Engineer Intern (PDF)",
-    cv_ai_desc: "Targeted for AI Engineer Intern roles: ML/DL, NLP (Transformer MT), Computer Vision (OCR) & deployment pipelines.",
+    cv_ai_title: "AI Engineer Fresher (PDF)",
+    cv_ai_desc: "Targeted for AI Engineer Fresher roles: ML/DL, NLP (Transformer MT), Computer Vision (OCR) & deployment pipelines.",
 
     cv_btn_view: "View",
     cv_btn_download: "Download",
@@ -384,7 +394,7 @@ window.I18N_DATA = {
 
     cv_menu_be_title: "Fresher Backend Developer (PDF)",
     cv_menu_be_meta: "TranHoHoangVu_BE.pdf",
-    cv_menu_ai_title: "AI Engineer Intern (PDF)",
+    cv_menu_ai_title: "AI Engineer Fresher (PDF)",
     cv_menu_ai_meta: "TranHoHoangVu_AI.pdf",
 
     about_top_kicker: "👤 ABOUT ME • PROFILE",
@@ -404,7 +414,7 @@ window.I18N_DATA = {
     about_pillar_exp_title: "Hands-on Experience",
     about_pillar_exp_desc: "Software Engineer Intern: designed RESTful APIs, optimized raw PostgreSQL SQL, and automated Jira/OpenClaw workflows.",
     about_pillar_goal_title: "Target Roles",
-    about_pillar_goal_desc: "Fresher Backend Developer (Node.js, Express, Laravel) & AI Engineer Intern (PyTorch, Transformers, Computer Vision).",
+    about_pillar_goal_desc: "Fresher Backend Developer (Node.js, Express, Laravel) & AI Engineer Fresher (PyTorch, Transformers, Computer Vision).",
     about_stat_projects: "Engineered Projects",
     about_stat_repos: "GitHub Repositories",
     about_stat_certs: "Verified Certificates",
@@ -413,7 +423,7 @@ window.I18N_DATA = {
     about_cta_contact: "Get in Touch",
     about_stat_1: "AI/ML Projects",
     about_stat_2: "Backend Projects",
-    about_stat_3: "Fresher & Intern Ready",
+    about_stat_3: "Fresher & Work Ready",
 
     projects_kicker: "🚀 FEATURED WORK • SHOWCASE",
     projects_headline: "Engineered Projects & Solutions",
@@ -444,7 +454,17 @@ window.I18N_DATA = {
     modal_tab_challenges: "Key Challenges & Technical Solutions",
     modal_tab_techstack: "Technologies & Tools",
 
-    p4_meta: "Feb 2026 – Mar 2026 • Full-Stack LMS",
+    p_bc_meta: "Sep 2026 – Present • Full-Stack Healthcare Platform",
+    p_bc_desc:
+      "Full-stack digital healthcare appointment booking platform with Next.js 15 & Supabase: 3-tier RBAC, anti-race condition booking via atomic PostgreSQL updates, bulk schedule generator, and QR check-in.",
+    p_bc_title: "BookingCare",
+
+    p_pdf_meta: "Aug 2026 – Present • Intelligent Document Processing & OCR",
+    p_pdf_desc:
+      "Intelligent Vietnamese PDF OCR pipeline: adaptive OpenCV preprocessing (Auto-Deskew, shadow removal, CLAHE), hybrid Gemini Vision AI fallback, multi-format export (DOCX/XLSX/PDF/Markdown), and dual Streamlit + FastAPI interface.",
+    p_pdf_title: "PDF Vision OCR",
+
+    p4_meta: "Apr 2026 – Jun 2026 • Full-Stack LMS",
     p4_desc:
       "Full-stack Learning Management System (LMS): Udemy-style split workspace, JWT RBAC authorization, optimized raw PostgreSQL SQL (no ORM), persistent cart, and revenue analytics.",
     p4_title: "CourseHub LMS",
@@ -584,9 +604,9 @@ window.I18N_DATA = {
 
     contact_kicker: "💬 GET IN TOUCH • CONNECT NOW",
     contact_headline: "Let's build something remarkable.",
-    contact_subtitle: "Open to Fresher Backend Developer and AI Engineer Intern opportunities, freelance projects, or tech chats.",
+    contact_subtitle: "Open to Fresher Backend Developer and AI Engineer Fresher opportunities, freelance projects, or tech chats.",
     contact_avail_badge: "Available for Hire",
-    contact_avail_roles: "Fresher Backend • AI Engineer Intern",
+    contact_avail_roles: "Fresher Backend • AI Engineer Fresher",
     contact_location: "Ho Chi Minh City, Vietnam (UTC+7)",
     contact_work_mode: "On-site • Hybrid • Remote",
     contact_response_time: "Fast response within 24 hours",
@@ -597,7 +617,7 @@ window.I18N_DATA = {
     connect_title: "Let’s connect!",
     form_topic_label: "What is your primary interest?",
     topic_be: "💼 Backend Hiring",
-    topic_ai: "🤖 AI Intern Hiring",
+    topic_ai: "🤖 AI Fresher Hiring",
     topic_collab: "🤝 Project Collaboration",
     topic_other: "☕ Quick Chat / Other",
     form_name: "Full name: *",

@@ -22,8 +22,8 @@
         { id: "c", name: "C", devicon: "devicon-c-plain colored", level: "Academic Core", projectIds: [] },
         { id: "csharp", name: "C#", devicon: "devicon-csharp-plain colored", framework: ".NET WinForms", projectIds: ["warehouse"] },
         { id: "java", name: "Java", devicon: "devicon-java-plain colored", level: "OOP Foundation", projectIds: [] },
-        { id: "python", name: "Python", devicon: "devicon-python-plain colored", frameworks: ["PyTorch", "TensorFlow", "scikit-learn", "Hugging Face"], projectIds: ["vietnamese-ocr", "nlp-translation", "stock-ml"] },
-        { id: "javascript", name: "JavaScript", devicon: "devicon-javascript-plain colored", frameworks: ["Node.js", "Express.js", "React"], projectIds: ["coursehub", "ecommerce"] },
+        { id: "python", name: "Python", devicon: "devicon-python-plain colored", frameworks: ["PaddleOCR", "PyTorch", "TensorFlow", "FastAPI"], projectIds: ["pdf-vision-ocr", "vietnamese-ocr", "nlp-translation", "stock-ml"] },
+        { id: "javascript", name: "JavaScript", devicon: "devicon-javascript-plain colored", frameworks: ["Next.js", "TypeScript", "Node.js", "React"], projectIds: ["bookingcare", "coursehub", "ecommerce"] },
         { id: "php", name: "PHP", devicon: "devicon-php-plain colored", framework: "Laravel", projectIds: ["pos"] }
       ]
     },
@@ -41,9 +41,9 @@
         { id: "nodejs", name: "Node.js", devicon: "devicon-nodejs-plain colored", projectIds: ["coursehub", "ecommerce"] },
         { id: "express", name: "Express.js", devicon: "devicon-express-original colored", projectIds: ["coursehub", "ecommerce"] },
         { id: "laravel", name: "Laravel", devicon: "devicon-laravel-plain colored", projectIds: ["pos"] },
-        { id: "restapi", name: "RESTful API", devicon: "devicon-postman-plain colored", projectIds: ["coursehub", "ecommerce"] },
+        { id: "restapi", name: "RESTful API", devicon: "devicon-postman-plain colored", projectIds: ["bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce"] },
         { id: "dotnet", name: ".NET WinForms", devicon: "devicon-dot-net-plain colored", projectIds: ["warehouse"] },
-        { id: "react", name: "React", devicon: "devicon-react-original colored", projectIds: ["coursehub", "ecommerce"] }
+        { id: "react", name: "React", devicon: "devicon-react-original colored", projectIds: ["bookingcare", "coursehub", "ecommerce"] }
       ]
     },
     {
@@ -57,7 +57,7 @@
         meta: "Raw SQL, Indexing, Transactions & Schema Design"
       },
       skills: [
-        { id: "postgresql", name: "PostgreSQL", devicon: "devicon-postgresql-plain colored", projectIds: ["coursehub"] },
+        { id: "postgresql", name: "PostgreSQL", devicon: "devicon-postgresql-plain colored", projectIds: ["bookingcare", "coursehub"] },
         { id: "mysql", name: "MySQL", devicon: "devicon-mysql-plain colored", projectIds: ["warehouse", "pos"] },
         { id: "mongodb", name: "MongoDB", devicon: "devicon-mongodb-plain colored", projectIds: ["ecommerce"] },
         { id: "sqlserver", name: "SQL Server", devicon: "devicon-microsoftsqlserver-plain colored", projectIds: ["warehouse"] },
@@ -77,11 +77,11 @@
       skills: [
         { id: "pytorch", name: "PyTorch", devicon: "devicon-pytorch-original colored", projectIds: ["vietnamese-ocr", "nlp-translation"] },
         { id: "tensorflow", name: "TensorFlow", devicon: "devicon-tensorflow-original colored", projectIds: ["stock-ml"] },
-        { id: "docker", name: "Docker", devicon: "devicon-docker-plain colored", projectIds: ["ecommerce"] },
+        { id: "docker", name: "Docker", devicon: "devicon-docker-plain colored", projectIds: ["pdf-vision-ocr", "ecommerce"] },
         { id: "compose", name: "Docker Compose", devicon: "devicon-docker-plain colored", projectIds: ["ecommerce"] },
         { id: "nginx", name: "Nginx", devicon: "devicon-nginx-original colored", projectIds: ["ecommerce"] },
-        { id: "git", name: "Git", devicon: "devicon-git-plain colored", projectIds: ["coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos"] },
-        { id: "github", name: "GitHub", devicon: "devicon-github-original colored", projectIds: ["coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos"] },
+        { id: "git", name: "Git", devicon: "devicon-git-plain colored", projectIds: ["bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos"] },
+        { id: "github", name: "GitHub", devicon: "devicon-github-original colored", projectIds: ["bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos"] },
         { id: "postman", name: "Postman", devicon: "devicon-postman-plain colored", projectIds: ["coursehub", "ecommerce"] },
         { id: "linux", name: "Linux", devicon: "devicon-linux-plain colored", projectIds: [] }
       ]
@@ -94,20 +94,20 @@
     c: { name: "C", projects: [] },
     csharp: { name: "C#", projects: ["warehouse"] },
     java: { name: "Java", projects: [] },
-    python: { name: "Python", projects: ["vietnamese-ocr", "nlp-translation", "stock-ml"] },
-    javascript: { name: "JavaScript", projects: ["coursehub", "ecommerce"] },
+    python: { name: "Python", projects: ["pdf-vision-ocr", "vietnamese-ocr", "nlp-translation", "stock-ml"] },
+    javascript: { name: "JavaScript", projects: ["bookingcare", "coursehub", "ecommerce"] },
     php: { name: "PHP", projects: ["pos"] },
 
     // Backend Architecture & Frameworks
     nodejs: { name: "Node.js", projects: ["coursehub", "ecommerce"] },
     express: { name: "Express.js", projects: ["coursehub", "ecommerce"] },
     laravel: { name: "Laravel", projects: ["pos"] },
-    restapi: { name: "RESTful API", projects: ["coursehub", "ecommerce"] },
+    restapi: { name: "RESTful API", projects: ["bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce"] },
     dotnet: { name: ".NET WinForms", projects: ["warehouse"] },
-    react: { name: "React", projects: ["coursehub", "ecommerce"] },
+    react: { name: "React", projects: ["bookingcare", "coursehub", "ecommerce"] },
 
     // Databases & Storage
-    postgresql: { name: "PostgreSQL", projects: ["coursehub"] },
+    postgresql: { name: "PostgreSQL", projects: ["bookingcare", "coursehub"] },
     mysql: { name: "MySQL", projects: ["warehouse", "pos"] },
     mongodb: { name: "MongoDB", projects: ["ecommerce"] },
     sqlserver: { name: "SQL Server", projects: ["warehouse"] },
@@ -116,11 +116,11 @@
     // AI, DevOps & Tools
     pytorch: { name: "PyTorch", projects: ["vietnamese-ocr", "nlp-translation"] },
     tensorflow: { name: "TensorFlow", projects: ["stock-ml"] },
-    docker: { name: "Docker", projects: ["ecommerce"] },
+    docker: { name: "Docker", projects: ["pdf-vision-ocr", "ecommerce"] },
     compose: { name: "Docker Compose", projects: ["ecommerce"] },
     nginx: { name: "Nginx", projects: ["ecommerce"] },
-    git: { name: "Git", projects: ["coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos"] },
-    github: { name: "GitHub", projects: ["coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos"] },
+    git: { name: "Git", projects: ["bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos"] },
+    github: { name: "GitHub", projects: ["bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos"] },
     postman: { name: "Postman", projects: ["coursehub", "ecommerce"] },
     linux: { name: "Linux", projects: [] }
   };

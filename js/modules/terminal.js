@@ -527,8 +527,8 @@ ${cardsHtml}
     </div>
     <div class="flex items-center justify-between p-2 rounded bg-white/5 border border-white/10">
       <div>
-        <div class="font-bold text-slate-200">2. AI Engineer Intern (PDF)</div>
-        <div class="text-xs term-dim">PyTorch, Transformer Decoder OCR, RLHF PPO, Time-Series ML</div>
+        <div class="font-bold text-slate-200">2. AI Engineer Fresher (PDF)</div>
+        <div class="text-xs text-slate-400">Targeted for AI roles: PyTorch, Transformers, Computer Vision, OCR.</div>
       </div>
       <a href="assets/cv/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer" class="term-link font-semibold text-xs py-1 px-3 rounded bg-cyan-500/20 border border-cyan-500/30">
         ${isEn ? "View / Download →" : "Xem / Tải file →"}

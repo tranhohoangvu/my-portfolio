@@ -12,7 +12,7 @@
 - 🔗 **Website trực tiếp:** https://tranhohoangvu.github.io/my-portfolio/
 - 📄 **Hồ sơ năng lực chuyên biệt (PDF):**
   - `assets/cv/TranHoHoangVu_BE.pdf` — Fresher Backend Developer
-  - `assets/cv/TranHoHoangVu_AI.pdf` — AI Engineer Intern
+  - `assets/cv/TranHoHoangVu_AI.pdf` — AI Engineer Fresher
 
 > 🇬🇧 English version: [`README.md`](./README.md)
 
@@ -74,8 +74,8 @@
 - **Bảo vệ dữ liệu cá nhân (PII)**: Bản xem trước online che mờ thông tin nhạy cảm, tích hợp form AJAX modal để nhà tuyển dụng gửi yêu cầu nhận bản gốc đối chiếu.
 
 ### 7. Giới thiệu Bản thân & Thương hiệu Cá nhân
-- **3 Trụ cột cốt lõi**: Học vấn & Nền tảng (Tốt nghiệp CS - TDTU), Kinh nghiệm Thực chiến (Software Engineer Intern), Vị trí Ứng tuyển (Fresher Backend Developer & AI Engineer Intern).
-- **4 Thẻ số liệu đếm động**: 7+ Dự án hoàn chỉnh, 16+ GitHub Repositories, 8 Chứng chỉ quốc tế, 100% Sẵn sàng làm việc.
+- **3 Trụ cột cốt lõi**: Học vấn & Nền tảng (Tốt nghiệp CS - TDTU), Kinh nghiệm Thực chiến (Software Engineer Intern), Vị trí Ứng tuyển (Fresher Backend Developer & AI Engineer Fresher).
+- **4 Thẻ số liệu đếm động**: 9+ Dự án hoàn chỉnh, 16+ GitHub Repositories, 8 Chứng chỉ quốc tế, 100% Sẵn sàng làm việc.
 - **Ảnh thẻ 3D lật 2 mặt tương tác**: Hiệu ứng 3D Profile Flip hiển thị chân dung thứ hai khi hover/chạm, bao quanh bởi radar xanh neon phát xung liên tục (`Available for Hire`).
 - **Action Dock tích hợp**: Nút sao chép email 1-click kèm thông báo Toast, chuyển nhanh đến CV, Liên hệ và mạng xã hội cá nhân.
 
@@ -188,8 +188,8 @@ Kho mã nguồn duy trì 2 bản CV chuyên nghiệp định dạng PDF trong `a
 
 1. **Fresher Backend Developer** (`assets/cv/TranHoHoangVu_BE.pdf`)
    - **Trọng tâm**: Node.js, Express.js, Laravel, Kiến trúc RESTful API, PostgreSQL (Raw SQL & Tối ưu hóa truy vấn), NoSQL MongoDB, Redis cache, JWT RBAC, Docker, và luồng tự động hóa CI/CD.
-2. **AI Engineer Intern** (`assets/cv/TranHoHoangVu_AI.pdf`)
-   - **Trọng tâm**: PyTorch, Deep Learning, Kiến trúc Transformers, Pipeline OCR (ResNet + Spatial Attention), Dịch máy ngôn ngữ tự nhiên Tiếng Việt (NLP), và Mô hình Machine Learning dự báo tài chính.
+2. **AI Engineer Fresher** (`assets/cv/TranHoHoangVu_AI.pdf`)
+   - **Trọng tâm**: PyTorch, Deep Learning, Kiến trúc Transformers, Pipeline OCR (PaddleOCR, Gemini Vision, ResNet + Spatial Attention), Dịch máy ngôn ngữ tự nhiên Tiếng Việt (NLP), và Mô hình Machine Learning ứng dụng.
 
 ---
 

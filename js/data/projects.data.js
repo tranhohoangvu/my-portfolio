@@ -9,12 +9,171 @@
 
   const rawProjects = [
     {
+      id: "bookingcare",
+      alt: "Ảnh dự án BookingCare Healthcare Platform",
+      i18nKeys: {"meta": "p_bc_meta", "title": "p_bc_title", "desc": "p_bc_desc"},
+      cardTechs: [
+        {"skill": "react", "label": "Next.js 15", "title": "Next.js 15 App Router"},
+        {"skill": "javascript", "label": "TypeScript", "title": "TypeScript"},
+        {"skill": "postgresql", "label": "Supabase / PostgreSQL", "title": "PostgreSQL & RLS"}
+      ],
+      num: "#01",
+      isLatest: true,
+      categories: ["backend", "fullstack"],
+      image: "assets/projects/bookingcare.webp",
+      tags: [
+        "Next.js 15",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS v4",
+        "Supabase",
+        "PostgreSQL",
+        "Row Level Security (RLS)",
+        "Database Triggers",
+        "Atomic Updates",
+        "RBAC"
+      ],
+      links: [
+        {
+          labelVi: "Xem trên GitHub →",
+          labelEn: "View on GitHub →",
+          url: "https://github.com/tranhohoangvu/booking-care",
+          type: "primary"
+        }
+      ],
+      vi: {
+        title: "BookingCare",
+        meta: "Tháng 9, 2026 – Hiện tại • Nền tảng Y tế Full-Stack",
+        summary: "Nền tảng đặt lịch khám bệnh trực tuyến full-stack Next.js 15 & Supabase: phân quyền RBAC 3 cấp, chống đặt trùng lịch bằng atomic PostgreSQL update, Bulk Schedule Generator và mã QR check-in.",
+        subtitle: "Tháng 9, 2026 – Hiện tại • Nền tảng Đặt lịch Khám bệnh Trực tuyến (Next.js 15 & Supabase)",
+        desc: "BookingCare là nền tảng y tế số hóa đặt lịch khám bệnh trực tuyến hiện đại kết nối bệnh nhân, bác sĩ chuyên khoa và ban quản trị. Hệ thống triển khai kiến trúc Server Components & Actions trong Next.js 15, phân quyền RBAC 3 vai trò (Patient, Doctor, Admin), tích hợp thuật toán sinh lịch khám hàng loạt (Bulk Schedule Generator), bộ giả lập Offline Mock Engine và xuất biên nhận điện tử kèm mã QR check-in.",
+        arch: "Next.js 15 App Router phân tầng module hóa với Service Layer chuyên biệt (`src/lib/services/`). Route Guarding bảo mật đa cấp thông qua Supabase SSR Session Middleware tại Edge và Row Level Security (RLS) ở mức cơ sở dữ liệu.",
+        data: "Cơ sở dữ liệu PostgreSQL (Supabase Cloud) chuẩn hóa quan hệ giữa bệnh nhân, bác sĩ, lịch khám, hồ sơ bệnh án và đánh giá. Sử dụng Database Triggers đồng bộ `auth.users`, partial unique constraints và truy vấn cập nhật nguyên tử ngăn ngừa race conditions.",
+        challenges: [
+          {
+            title: "1. Chống đặt trùng lịch đồng thời (Anti-Race Condition Concurrency Booking):",
+            solution: "Triển khai truy vấn cập nhật nguyên tử (Atomic UPDATE WHERE status = 'AVAILABLE') kết hợp partial unique constraints; bảo đảm chỉ một giao dịch chiếm giữ slot thành công dưới tải truy cập đồng thời cao."
+          },
+          {
+            title: "2. Quản lý lịch khám quy mô lớn với Bulk Schedule Generator:",
+            solution: "Thiết kế thuật toán sinh slot theo mảng ngày và ca làm việc (Sáng/Chiều) với batch upsert an toàn vào PostgreSQL, tự động bảo lưu trạng thái các slot đã có người đặt trước (BOOKED)."
+          },
+          {
+            title: "3. Phân quyền đa cấp bảo mật sâu kết hợp SSR Session & RLS:",
+            solution: "Kết hợp Next.js Middleware kiểm tra session cookies với các chính sách Row Level Security (RLS) trên PostgreSQL, đảm bảo bệnh nhân chỉ xem hồ sơ của mình và bác sĩ chỉ thao tác trên ca được phân công."
+          }
+        ]
+      },
+      en: {
+        title: "BookingCare",
+        meta: "Sep 2026 – Present • Full-Stack Healthcare Platform",
+        summary: "Full-stack digital healthcare appointment booking platform with Next.js 15 & Supabase: 3-tier RBAC, anti-race condition booking via atomic PostgreSQL updates, bulk schedule generator, and QR check-in.",
+        subtitle: "Sep 2026 – Present • Digital Healthcare Appointment Booking Platform (Next.js 15)",
+        desc: "BookingCare is a production-grade digital healthcare appointment platform connecting patients, medical specialists, and administrators. Built on Next.js 15 Server Components & Actions, featuring 3-tier RBAC (Patient, Doctor, Admin), bulk doctor availability generator, offline mock fallback engine, and electronic booking receipts with QR check-in codes.",
+        arch: "Layered Next.js 15 App Router architecture with dedicated service layer (`src/lib/services/`). Enforces defense-in-depth authorization through Supabase SSR session middleware at the Edge and database-level Row Level Security (RLS).",
+        data: "PostgreSQL (Supabase Cloud) relational schema normalizing patients, doctors, schedules, medical records, and verified reviews. Features automated database triggers syncing `auth.users`, partial unique constraints, and atomic conditional updates.",
+        challenges: [
+          {
+            title: "1. Anti-Race Condition Concurrency Booking Protection:",
+            solution: "Implemented atomic conditional PostgreSQL updates (UPDATE WHERE status = 'AVAILABLE') paired with partial unique constraints, preventing double booking during high concurrent patient traffic."
+          },
+          {
+            title: "2. Doctor Schedule Management & Bulk Slot Generator:",
+            solution: "Engineered a batch upsert slot generator supporting multi-day date ranges and morning/afternoon shifts, safely preserving pre-existing booked appointments."
+          },
+          {
+            title: "3. Multi-Tier Security with SSR Session Guard & PostgreSQL RLS:",
+            solution: "Coupled Next.js edge route guards with fine-grained PostgreSQL Row Level Security policies, preventing unauthorized clinical record access across doctor and patient accounts."
+          }
+        ]
+      }
+    },
+    {
+      id: "pdf-vision-ocr",
+      alt: "Ảnh dự án PDF Vision OCR",
+      i18nKeys: {"meta": "p_pdf_meta", "title": "p_pdf_title", "desc": "p_pdf_desc"},
+      cardTechs: [
+        {"skill": "python", "label": "Python", "title": "Xem kỹ năng Python"},
+        {"skill": "python", "label": "PaddleOCR", "title": "PaddleOCR Tiếng Việt"},
+        {"skill": "python", "label": "Gemini Vision AI", "title": "Google Gemini Vision AI"}
+      ],
+      num: "#02",
+      isLatest: true,
+      categories: ["ai"],
+      image: "assets/projects/pdf-vision-ocr.webp",
+      tags: [
+        "Python",
+        "PaddleOCR",
+        "Gemini Vision AI",
+        "PyMuPDF",
+        "OpenCV",
+        "FastAPI",
+        "Streamlit",
+        "Docker",
+        "Document Processing"
+      ],
+      links: [
+        {
+          labelVi: "Xem trên GitHub →",
+          labelEn: "View on GitHub →",
+          url: "https://github.com/tranhohoangvu/pdf-vision-ocr",
+          type: "primary"
+        }
+      ],
+      vi: {
+        title: "PDF Vision OCR",
+        meta: "Tháng 8, 2026 – Hiện tại • Hệ thống Trích xuất & OCR Thông minh",
+        summary: "Hệ thống trích xuất và nhận diện ký tự quang học (OCR) thông minh cho PDF tiếng Việt: tiền xử lý OpenCV (Deskew, khử bóng, CLAHE), hybrid Gemini Vision AI fallback, xuất Word/Excel/PDF/Markdown và giao diện kép Streamlit + FastAPI.",
+        subtitle: "Tháng 8, 2026 – Hiện tại • Hệ Thống Trích Xuất & Nhận Dạng Tài Liệu Thông Minh",
+        desc: "PDF Vision OCR là ứng dụng nhận diện ký tự quang học thông minh chuyên xử lý tài liệu PDF tiếng Việt (PDF scan, chụp nghiêng từ điện thoại và tài liệu số hóa). Hệ thống bảo toàn 100% tiếng Việt có dấu và cấu trúc bảng biểu, xuất đa định dạng (DOCX, XLSX, Searchable PDF, Markdown, Master ZIP) cùng hai giao diện song hành: Streamlit Web UI và FastAPI RESTful API.",
+        arch: "Kiến trúc module hóa tách bạch giữa Image Preprocessor, OCR Engine Orchestrator, Exporters và Dual Interface. Render trực tiếp PDF sang ảnh trong bộ nhớ RAM qua PyMuPDF (`fitz`), loại bỏ hoàn toàn phụ thuộc vào Poppler ngoài và tối ưu hóa container Docker nhẹ.",
+        data: "Pipeline tiền xử lý ảnh OpenCV: Auto-Deskew nắn thẳng góc nghiêng (Hough Lines / minAreaRect), khử bóng râm chiếu sáng qua hình thái học ảnh và tăng cường tương phản nét chữ CLAHE cục bộ.",
+        challenges: [
+          {
+            title: "1. Bảo toàn toàn vẹn dấu tiếng Việt và cấu trúc bảng biểu phức tạp:",
+            solution: "Tự động phát hiện Digital PDF để trích xuất text layer gốc; với tài liệu scan, kết hợp PaddleOCR tiếng Việt với thuật toán nhóm bounding box theo tọa độ để tái tạo bảng trên Word và Excel."
+          },
+          {
+            title: "2. Nhận diện chữ viết tay mờ và tài liệu scan chất lượng kém:",
+            solution: "Tích hợp mô hình Google Gemini 2.5 Flash Vision API với structured prompt trích xuất văn bản; thiết lập cơ chế tự động fallback về PaddleOCR khi gặp sự cố mạng hoặc quota."
+          },
+          {
+            title: "3. Kiến trúc Dual-Interface & Container hóa Docker đa chế độ:",
+            solution: "Xây dựng Dockerfile đa mục đích kết hợp entrypoint script điều phối linh hoạt qua biến môi trường APP_MODE (web, api, full) và Docker Compose profiles."
+          }
+        ]
+      },
+      en: {
+        title: "PDF Vision OCR",
+        meta: "Aug 2026 – Present • Intelligent Document Processing & OCR",
+        summary: "Intelligent Vietnamese PDF OCR pipeline: adaptive OpenCV preprocessing (Auto-Deskew, shadow removal, CLAHE), hybrid Gemini Vision AI fallback, multi-format export (DOCX/XLSX/PDF/Markdown), and dual Streamlit + FastAPI interface.",
+        subtitle: "Aug 2026 – Present • Intelligent Document Processing & OCR Pipeline",
+        desc: "PDF Vision OCR is an intelligent optical character recognition system engineered for Vietnamese documents across scanned PDFs, mobile photo captures, and digital files. Preserves 100% Vietnamese diacritics and complex tabular layouts, offering multi-format export (DOCX, XLSX, Searchable PDF, Markdown, Master ZIP) with dual Streamlit Web UI and enterprise FastAPI REST API.",
+        arch: "Modular architecture separating Image Preprocessing, OCR Engine Orchestration, Exporters, and Dual Delivery. Leverages in-memory PyMuPDF rendering eliminating external Poppler dependencies for lightweight Docker deployments.",
+        data: "OpenCV image processing pipeline: Auto-Deskew alignment via Hough Lines / minAreaRect, morphological shadow removal, and CLAHE adaptive local contrast enhancement.",
+        challenges: [
+          {
+            title: "1. Preserving Vietnamese Diacritics & Tabular Structural Integrity:",
+            solution: "Auto-detects native text layers in digital PDFs; for scanned documents, combines Vietnamese-trained PaddleOCR with bounding box coordinate clustering to reconstruct table layouts in DOCX and XLSX."
+          },
+          {
+            title: "2. Low-Quality Scans & Handwritten Document Extraction:",
+            solution: "Integrated Google Gemini 2.5 Flash Vision API via structured prompting with automatic graceful fallback to local PaddleOCR during offline or quota events."
+          },
+          {
+            title: "3. Dual-Interface Deployment & Multi-Mode Containerization:",
+            solution: "Designed a multi-purpose Docker container dynamically managed by APP_MODE environment variables (web, api, full) and Docker Compose profiles."
+          }
+        ]
+      }
+    },
+    {
       id: "coursehub",
       alt: "Ảnh dự án CourseHub LMS",
       i18nKeys: {"meta": "p4_meta", "title": "p4_title", "desc": "p4_desc"},
       cardTechs: [{"skill": "react", "label": "React", "title": "Xem kỹ năng React"}, {"skill": "nodejs", "label": "Node.js", "title": "Xem kỹ năng Node.js"}, {"skill": "postgresql", "label": "PostgreSQL", "title": "Xem kỹ năng PostgreSQL"}],
-      num: "#01",
-      isLatest: true,
+      num: "#03",
+      isLatest: false,
       categories: ["backend", "fullstack"],
       image: "assets/projects/coursehub.webp",
       tags: [
@@ -43,9 +202,9 @@
       ],
       vi: {
         title: "CourseHub LMS",
-        meta: "Tháng 2, 2026 – Tháng 3, 2026 • Dự án Full-Stack",
+        meta: "Tháng 4, 2026 – Tháng 6, 2026 • Dự án Full-Stack",
         summary: "Hệ thống Quản lý Học tập (LMS) full-stack: giao diện Udemy split-screen, phân quyền RBAC, tối ưu Raw SQL PostgreSQL (không dùng ORM), giỏ hàng lưu DB và bảng phân tích doanh thu.",
-        subtitle: "Tháng 2, 2026 – Tháng 3, 2026 • Nền tảng Học tập Trực tuyến Full-Stack",
+        subtitle: "Tháng 4, 2026 – Tháng 6, 2026 • Nền tảng Học tập Trực tuyến Full-Stack",
         desc: "CourseHub là hệ thống LMS full-stack thiết kế theo kiến trúc module hóa phục vụ vị trí Backend Developer. Hệ thống triển khai giao diện phòng học chuẩn phong cách Udemy (split-screen: giáo trình thu gọn bên phải, phát video YouTube bài giảng bên trái), đồng bộ URL query params để điều hướng mượt mà, giỏ hàng lưu database và bảng điều khiển phân tích doanh thu chi tiết.",
         arch: "Mô hình MVC phân tầng nghiêm ngặt (Controller - Service - Model / Data Access). Middleware xác thực stateless JWT, phân quyền RBAC 3 cấp độ (Admin, Instructor, Student) và lớp xử lý lỗi tập trung. Triết lý thiết kế: Loại bỏ hoàn toàn Docker và ORM cồng kềnh (như Prisma) nhằm tối ưu cold-start tức thì.",
         data: "Cơ sở dữ liệu PostgreSQL (Supabase) chuẩn hóa quan hệ 3NF với hơn 15 bảng. Toàn bộ thao tác truy vấn được viết bằng Raw SQL tối ưu thông qua native 'pg' client kết hợp connection pool; sử dụng SQL Transactions (BEGIN...COMMIT/ROLLBACK) khi thanh toán và ghi danh khóa học.",
@@ -66,9 +225,9 @@
       },
       en: {
         title: "CourseHub LMS",
-        meta: "Feb 2026 – Mar 2026 • Full-Stack LMS",
+        meta: "Apr 2026 – Jun 2026 • Full-Stack LMS",
         summary: "Full-stack Learning Management System (LMS): Udemy-style split workspace, JWT RBAC authorization, optimized raw PostgreSQL SQL (no ORM), persistent cart, and revenue analytics.",
-        subtitle: "Feb 2026 – Mar 2026 • Full-Stack Learning Management System (LMS)",
+        subtitle: "Apr 2026 – Jun 2026 • Full-Stack Learning Management System (LMS)",
         desc: "CourseHub is a clean, high-performance Full-Stack LMS engineered as a Backend Developer showcase. Features a Udemy-style split-screen classroom workspace (collapsible syllabus sidebar on the right, active video/resource area on the left), URL query-synced navigation, persistent database cart & checkout, and comprehensive admin revenue analytics.",
         arch: "Strict layered MVC architecture in Node.js/Express. Enforces 3-tier Role-Based Access Control (Admin, Instructor, Student) via stateless JWT verification middleware and centralized error handling. Intentionally eliminates heavy ORMs (Prisma) and Docker to ensure rapid cold starts and raw database control.",
         data: "PostgreSQL (Supabase) relational schema normalized to 3NF across 15+ tables. All database interactions utilize handwritten, high-performance Raw SQL executed via native 'pg' driver with connection pooling, maintaining precise control over database transaction boundaries.",
@@ -93,7 +252,7 @@
       alt: "Ảnh dự án E-commerce Platform",
       i18nKeys: {"meta": "p1_meta", "title": "p1_title", "desc": "p1_desc"},
       cardTechs: [{"skill": "react", "label": "React", "title": "Xem kỹ năng React"}, {"skill": "nodejs", "label": "Node.js", "title": "Xem kỹ năng Node.js"}, {"skill": "mongodb", "label": "MongoDB", "title": "Xem kỹ năng MongoDB"}],
-      num: "#02",
+      num: "#04",
       isLatest: false,
       categories: ["backend", "fullstack"],
       image: "assets/projects/ecommerce.webp",
@@ -168,7 +327,7 @@
       alt: "Ảnh dự án Vietnamese OCR",
       i18nKeys: {"meta": "p_ocr_meta", "title": "p_ocr_title", "desc": "p_ocr_desc"},
       cardTechs: [{"skill": "python", "label": "Python", "title": "Xem kỹ năng Python"}, {"skill": "pytorch", "label": "PyTorch", "title": "Xem kỹ năng PyTorch"}, {"skill": "pytorch", "label": "CNN-Transformer", "title": "CNN-Transformer Attention"}],
-      num: "#03",
+      num: "#05",
       isLatest: false,
       categories: ["ai"],
       image: "assets/projects/vietnamese-ocr.webp",
@@ -241,7 +400,7 @@
       alt: "Ảnh dự án EN-VI Machine Translation",
       i18nKeys: {"meta": "p_mt_meta", "title": "p_mt_title", "desc": "p_mt_desc"},
       cardTechs: [{"skill": "python", "label": "Python", "title": "Xem kỹ năng Python"}, {"skill": "pytorch", "label": "PyTorch", "title": "Xem kỹ năng PyTorch"}, {"skill": "pytorch", "label": "Transformer", "title": "Transformer Attention"}],
-      num: "#04",
+      num: "#06",
       isLatest: false,
       categories: ["ai"],
       image: "assets/projects/nlp-translation.webp",
@@ -314,7 +473,7 @@
       alt: "Ảnh dự án Stock Forecasting & Benchmark",
       i18nKeys: {"meta": "p_stock_meta", "title": "p_stock_title", "desc": "p_stock_desc"},
       cardTechs: [{"skill": "python", "label": "Python", "title": "Xem kỹ năng Python"}, {"skill": "tensorflow", "label": "TensorFlow", "title": "Xem kỹ năng TensorFlow"}, {"skill": "python", "label": "LSTM / Time-Series", "title": "LSTM / Time-Series"}],
-      num: "#05",
+      num: "#07",
       isLatest: false,
       categories: ["ai"],
       image: "assets/projects/stock-ml.webp",
@@ -387,7 +546,7 @@
       alt: "Ảnh dự án WarehouseMA",
       i18nKeys: {"meta": "p2_meta", "title": "p2_title", "desc": "p2_desc"},
       cardTechs: [{"skill": "csharp", "label": "C#", "title": "Xem kỹ năng C#"}, {"skill": "dotnet", "label": ".NET WinForms", "title": "Xem kỹ năng .NET"}, {"skill": "mysql", "label": "MySQL", "title": "Xem kỹ năng MySQL"}],
-      num: "#06",
+      num: "#08",
       isLatest: false,
       categories: ["backend"],
       image: "assets/projects/warehouse.webp",
@@ -460,7 +619,7 @@
       alt: "Ảnh dự án An Khang Store POS",
       i18nKeys: {"meta": "p3_meta", "title": "p3_title", "desc": "p3_desc"},
       cardTechs: [{"skill": "laravel", "label": "Laravel 10", "title": "Xem kỹ năng Laravel"}, {"skill": "php", "label": "Livewire", "title": "Xem kỹ năng PHP / Livewire"}, {"skill": "mysql", "label": "MySQL", "title": "Xem kỹ năng MySQL"}],
-      num: "#07",
+      num: "#09",
       isLatest: false,
       categories: ["backend"],
       image: "assets/projects/pos.webp",
