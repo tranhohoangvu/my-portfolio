@@ -1,4 +1,4 @@
-﻿#navbar {
+#navbar {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
@@ -122,5 +122,51 @@
     flex: 0 0 80%;
     scroll-snap-align: center;
   }
+}
+
+/* ==========================================================================
+   GitHub Repo Pill Button (Desktop & Mobile Navbar)
+   ========================================================================== */
+.nav-gh-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 9999px;
+  background: #18181b;
+  background: linear-gradient(180deg, #27272a 0%, #121215 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  text-decoration: none;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.nav-gh-btn:hover {
+  transform: translateY(-1.5px) scale(1.04);
+  background: linear-gradient(180deg, #3f3f46 0%, #18181b 100%);
+  border-color: rgba(255, 255, 255, 0.38);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 14px rgba(99, 102, 241, 0.3);
+  color: #ffffff;
+}
+
+.nav-gh-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.nav-gh-btn svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+  display: block;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-gh-btn:hover svg {
+  transform: rotate(6deg) scale(1.1);
 }
 
