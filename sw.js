@@ -1,5 +1,5 @@
 /* SW: precache only .css .js .jpg .png .svg .webp */
-const VERSION = "v20";
+const VERSION = "v21";
 const CACHE_NAME = `portfolio-${VERSION}`;
 
 const PRECACHE = [
