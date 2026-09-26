@@ -87,7 +87,7 @@ A modern, high-performance **static web application** crafted with **HTML5, Tail
 
 ### 9. Smart Contact Form & Availability Status
 - **Availability Card**: Live pulsating status (`Available for Hire`), location (`HCMC, Vietnam UTC+7`), work mode (`On-site • Hybrid • Remote`), and 24h response time indicator.
-- **1-Click Topic Chips**: Topic selector (`Backend Developer`, `AI Intern`, `Project Collaboration`, `Other`) pre-filling the Formspree subject.
+- **1-Click Topic Chips**: Topic selector (`Backend Developer`, `Frontend Developer`, `AI Intern`, `Project Collaboration`, `Other`) pre-filling the Formspree subject.
 - **Real-Time Validation**: 500-character counter, icon-adorned inputs, loading spinner, and success/error feedback.
 
 ---

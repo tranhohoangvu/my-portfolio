@@ -87,7 +87,7 @@
 
 ### 9. Biểu mẫu Liên hệ Thông minh & Trạng thái Sẵn sàng
 - **Thẻ trạng thái công việc**: Chấm xanh neon nhấp nháy (`Sẵn sàng nhận việc ngay`), vị trí (`TP.HCM, UTC+7`), hình thức (`On-site • Hybrid • Remote`), và cam kết phản hồi trong 24h.
-- **Chip chọn nhanh chủ đề**: Nút chọn chủ đề 1-click (`Tuyển dụng Backend`, `Tuyển dụng AI Intern`, `Hợp tác dự án`, `Khác`) tự động điền tiêu đề form Formspree.
+- **Chip chọn nhanh chủ đề**: Nút chọn chủ đề 1-click (`Tuyển dụng Backend`, `Tuyển dụng Frontend`, `Tuyển dụng AI Intern`, `Hợp tác dự án`, `Khác`) tự động điền tiêu đề form Formspree.
 - **Xác thực thời gian thực**: Bộ đếm 500 ký tự tin nhắn, ô nhập có icon đại diện, spinner loading và thông báo trạng thái gửi thành công/thất bại tức thì.
 
 ---
