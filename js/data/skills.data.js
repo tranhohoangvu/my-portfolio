@@ -95,23 +95,23 @@
     csharp: { name: "C#", projects: ["warehouse"] },
     java: { name: "Java", projects: [] },
     python: { name: "Python", projects: ["pdf-vision-ocr", "vietnamese-ocr", "nlp-translation", "stock-ml"] },
-    javascript: { name: "JavaScript", projects: ["bookingcare", "coursehub", "ecommerce"] },
+    javascript: { name: "JavaScript", projects: ["schoolops", "bookingcare", "coursehub", "ecommerce"] },
     php: { name: "PHP", projects: ["pos"] },
 
     // Backend Architecture & Frameworks
-    nodejs: { name: "Node.js", projects: ["coursehub", "ecommerce"] },
-    express: { name: "Express.js", projects: ["coursehub", "ecommerce"] },
+    nodejs: { name: "Node.js", projects: ["schoolops", "coursehub", "ecommerce"] },
+    express: { name: "Express.js", projects: ["schoolops", "coursehub", "ecommerce"] },
     laravel: { name: "Laravel", projects: ["pos"] },
-    restapi: { name: "RESTful API", projects: ["bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce"] },
+    restapi: { name: "RESTful API", projects: ["schoolops", "bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce"] },
     dotnet: { name: ".NET WinForms", projects: ["warehouse"] },
-    react: { name: "React", projects: ["bookingcare", "coursehub", "ecommerce"] },
+    react: { name: "React", projects: ["schoolops", "bookingcare", "coursehub", "ecommerce"] },
 
     // Databases & Storage
-    postgresql: { name: "PostgreSQL", projects: ["bookingcare", "coursehub"] },
+    postgresql: { name: "PostgreSQL", projects: ["schoolops", "bookingcare", "coursehub"] },
     mysql: { name: "MySQL", projects: ["warehouse", "pos"] },
     mongodb: { name: "MongoDB", projects: ["ecommerce"] },
     sqlserver: { name: "SQL Server", projects: ["warehouse"] },
-    rawsql: { name: "Raw SQL", projects: ["coursehub"] },
+    rawsql: { name: "Raw SQL", projects: ["schoolops", "coursehub"] },
 
     // AI, DevOps & Tools
     pytorch: { name: "PyTorch", projects: ["vietnamese-ocr", "nlp-translation"] },
@@ -119,9 +119,9 @@
     docker: { name: "Docker", projects: ["pdf-vision-ocr", "ecommerce"] },
     compose: { name: "Docker Compose", projects: ["ecommerce"] },
     nginx: { name: "Nginx", projects: ["ecommerce"] },
-    git: { name: "Git", projects: ["bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos"] },
-    github: { name: "GitHub", projects: ["bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos"] },
-    postman: { name: "Postman", projects: ["coursehub", "ecommerce"] },
+    git: { name: "Git", projects: ["schoolops", "bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos"] },
+    github: { name: "GitHub", projects: ["schoolops", "bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos"] },
+    postman: { name: "Postman", projects: ["schoolops", "coursehub", "ecommerce"] },
     linux: { name: "Linux", projects: [] }
   };
 

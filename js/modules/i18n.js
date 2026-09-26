@@ -16,6 +16,7 @@
   function syncPortfolioI18n() {
     if (!window.PROJECTS_DATA || !window.PROJECTS_DATA.list) return;
     const projectKeyMapping = {
+      schoolops: "p_so",
       bookingcare: "p_bc",
       "pdf-vision-ocr": "p_pdf",
       coursehub: "p4",
