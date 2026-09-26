@@ -211,6 +211,21 @@
   box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
 }
 
+/* Frontend (FE) flag ribbon */
+#cv .cv-featured-flag--fe {
+  color: #0369a1;
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+  border-color: rgba(14, 165, 233, 0.35);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
+}
+
+.dark #cv .cv-featured-flag--fe {
+  color: #e0f2fe;
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  border-color: rgba(125, 211, 252, 0.4);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+}
+
 #cv .cv-top {
   display: flex;
   align-items: center;
@@ -366,6 +381,13 @@
   border-color: rgba(99, 102, 241, 0.2);
 }
 
+/* Frontend card chip accent */
+#cv .cv-card--frontend .cv-skill-chip {
+  color: #0284c7;
+  background: rgba(14, 165, 233, 0.08);
+  border-color: rgba(14, 165, 233, 0.2);
+}
+
 /* Backend card chip accent */
 #cv .cv-card--backend .cv-skill-chip {
   color: #059669;
@@ -496,20 +518,26 @@
 #cv .cv-actions {
   margin-top: auto;
   display: flex;
-  gap: 12px;
+  gap: 8px;
 }
 
 #cv .cv-action {
   flex: 1;
+  min-width: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 14px;
+  padding: 9px 8px;
   border-radius: 999px;
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
   text-decoration: none;
   transition: transform .18s ease, background .18s ease, border-color .18s ease, opacity .18s ease;
+}
+
+#cv .cv-action span {
+  white-space: nowrap;
 }
 
 #cv .cv-action:hover {
@@ -550,12 +578,14 @@
 #cv .cv-view-count {
   display: inline-flex;
   align-items: center;
-  gap: 3px;
-  font-size: 11px;
+  gap: 2.5px;
+  font-size: 10.5px;
   font-weight: 600;
-  margin-left: 6px;
-  padding: 2px 7px;
+  margin-left: 5px;
+  padding: 2px 6px;
   border-radius: 999px;
+  flex-shrink: 0;
+  white-space: nowrap;
   transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
 }
 
@@ -614,6 +644,11 @@
 #cv .cv-card--ai .cv-icon {
   background: rgba(99, 102, 241, .14);
   color: rgba(99, 102, 241, 1);
+}
+
+#cv .cv-card--frontend .cv-icon {
+  background: rgba(14, 165, 233, .14);
+  color: rgba(14, 165, 233, 1);
 }
 
 #cv .cv-card--general .cv-icon {

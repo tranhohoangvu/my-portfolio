@@ -95,8 +95,8 @@
 
   // 4. CV Download & View Counter with LocalStorage
   function initCvDownloadCounter() {
-    const BASE_DOWNLOADS = { be: 52, ai: 38 };
-    const BASE_VIEWS = { be: 128, ai: 95 };
+    const BASE_DOWNLOADS = { be: 52, ai: 38, fe: 28 };
+    const BASE_VIEWS = { be: 128, ai: 95, fe: 76 };
 
     let storedDownloads = null;
     try {
@@ -105,12 +105,10 @@
     } catch (e) {
       storedDownloads = null;
     }
-    if (!storedDownloads || typeof storedDownloads !== "object") {
-      storedDownloads = { ...BASE_DOWNLOADS };
-      try {
-        localStorage.setItem("cv_download_counts", JSON.stringify(storedDownloads));
-      } catch (e) {}
-    }
+    storedDownloads = Object.assign({}, BASE_DOWNLOADS, storedDownloads || {});
+    try {
+      localStorage.setItem("cv_download_counts", JSON.stringify(storedDownloads));
+    } catch (e) {}
 
     let storedViews = null;
     try {
@@ -119,23 +117,25 @@
     } catch (e) {
       storedViews = null;
     }
-    if (!storedViews || typeof storedViews !== "object") {
-      storedViews = { ...BASE_VIEWS };
-      try {
-        localStorage.setItem("cv_view_counts", JSON.stringify(storedViews));
-      } catch (e) {}
-    }
+    storedViews = Object.assign({}, BASE_VIEWS, storedViews || {});
+    try {
+      localStorage.setItem("cv_view_counts", JSON.stringify(storedViews));
+    } catch (e) {}
 
     function updateDisplays() {
       const beDlEl = document.getElementById("cv-dl-count-be");
       const aiDlEl = document.getElementById("cv-dl-count-ai");
+      const feDlEl = document.getElementById("cv-dl-count-fe");
       if (beDlEl && storedDownloads.be != null) beDlEl.textContent = storedDownloads.be;
       if (aiDlEl && storedDownloads.ai != null) aiDlEl.textContent = storedDownloads.ai;
+      if (feDlEl && storedDownloads.fe != null) feDlEl.textContent = storedDownloads.fe;
 
       const beViewEl = document.getElementById("cv-view-count-be");
       const aiViewEl = document.getElementById("cv-view-count-ai");
+      const feViewEl = document.getElementById("cv-view-count-fe");
       if (beViewEl && storedViews.be != null) beViewEl.textContent = storedViews.be;
       if (aiViewEl && storedViews.ai != null) aiViewEl.textContent = storedViews.ai;
+      if (feViewEl && storedViews.fe != null) feViewEl.textContent = storedViews.fe;
     }
 
     updateDisplays();
@@ -151,7 +151,7 @@
           updateDisplays();
 
           if (typeof window.showToast === "function") {
-            const roleName = type === "be" ? "Fresher Backend" : "AI Engineer";
+            const roleName = type === "be" ? "Backend Developer Fresher" : type === "fe" ? "Frontend Developer Fresher" : "AI Engineer Fresher";
             window.showToast({
               message: `Đang tải CV ${roleName}...`,
               type: "success",
@@ -168,6 +168,7 @@
         if (!type) {
           const href = btn.getAttribute("href") || "";
           if (href.includes("BE")) type = "be";
+          else if (href.includes("FE")) type = "fe";
           else if (href.includes("AI")) type = "ai";
         }
         if (type && storedViews[type] != null) {

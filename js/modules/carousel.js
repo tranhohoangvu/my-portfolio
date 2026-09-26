@@ -216,6 +216,23 @@
 
     const allCards = Array.from(track.querySelectorAll(".project-card"));
 
+    // Dynamically update category count badges from rendered cards
+    filterTabs.forEach((tab) => {
+      const filter = tab.getAttribute("data-filter") || "all";
+      const countEl = tab.querySelector(".projects-tab-count");
+      if (countEl) {
+        if (filter === "all") {
+          countEl.textContent = allCards.length;
+        } else {
+          const count = allCards.filter((c) => {
+            const cats = (c.getAttribute("data-category") || "").toLowerCase().split(/\s+/);
+            return cats.includes(filter.toLowerCase());
+          }).length;
+          countEl.textContent = count;
+        }
+      }
+    });
+
     function applyFilter(category) {
       let matchCount = 0;
 

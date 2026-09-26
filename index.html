@@ -43,7 +43,7 @@
 
   <!-- Preload critical above-the-fold assets -->
   <link rel="preload" as="image" href="assets/profile/profile1.webp" type="image/webp" fetchpriority="high" />
-  <link rel="preload" href="css/styles.css?v=14" as="style" />
+  <link rel="preload" href="css/styles.css?v=16" as="style" />
 
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
@@ -53,7 +53,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/tailwind.css" />
-  <link rel="stylesheet" href="css/styles.css?v=14" />
+  <link rel="stylesheet" href="css/styles.css?v=16" />
 
   <!-- Favicon (prefer SVG) -->
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
@@ -286,8 +286,14 @@
           <div id="cvDropdownMenu" class="cv-menu" role="menu" aria-labelledby="cvDropdownBtn">
             <a href="assets/cv/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer" class="cv-item"
               role="menuitem">
-              <span class="cv-item__title" data-i18n="cv_menu_be_title">Fresher Backend Developer (PDF)</span>
+              <span class="cv-item__title" data-i18n="cv_menu_be_title">Backend Developer Fresher (PDF)</span>
               <span class="cv-item__meta" data-i18n="cv_menu_be_meta">TranHoHoangVu_BE.pdf</span>
+            </a>
+
+            <a href="assets/cv/TranHoHoangVu_FE.pdf" target="_blank" rel="noopener noreferrer" class="cv-item"
+              role="menuitem">
+              <span class="cv-item__title" data-i18n="cv_menu_fe_title">Frontend Developer Fresher (PDF)</span>
+              <span class="cv-item__meta" data-i18n="cv_menu_fe_meta">TranHoHoangVu_FE.pdf</span>
             </a>
 
             <a href="assets/cv/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer" class="cv-item"
@@ -425,7 +431,7 @@
           <div class="about-stats-grid">
             <div class="about-stat-card">
               <div class="about-stat__num font-extrabold text-2xl sm:text-3xl text-indigo-600 dark:text-indigo-400"
-                data-counter-target="9" data-counter-suffix="+">0+</div>
+                data-counter-target="10" data-counter-suffix="+">0+</div>
               <div class="about-stat__label text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1"
                 data-i18n="about_stat_projects">Dự án hoàn chỉnh</div>
             </div>
@@ -561,14 +567,14 @@
 
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 tracking-tight mt-4"
           data-i18n="cv_headline">
-          Two CVs. One mission.
+          Three CVs. One mission.
         </h2>
         <p class="mt-4 mb-4 text-base md:text-lg text-gray-600 dark:text-gray-300" data-i18n="cv_subtitle">
           Pick the CV version that fits the role you're applying for.
         </p>
       </div>
 
-      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto cv-cards-grid">
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto cv-cards-grid">
         <!-- Backend Developer Intern (PDF) - Featured Card -->
         <article class="cv-card cv-card--backend cv-card--featured">
           <div class="cv-featured-flag">
@@ -602,7 +608,7 @@
             </div>
           </div>
 
-          <h3 class="cv-title" data-i18n="cv_be_title">Fresher Backend Developer (PDF)</h3>
+          <h3 class="cv-title" data-i18n="cv_be_title">Backend Developer Fresher (PDF)</h3>
           <p class="cv-desc" data-i18n="cv_be_desc">Định hướng Backend: RESTful APIs, database, tự động hóa quy trình
             (Jira API/OpenClaw) & clean code.</p>
 
@@ -619,7 +625,7 @@
           <div class="cv-preview-wrap">
             <a href="assets/cv/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer" class="cv-preview-link"
               title="Xem trước CV">
-              <img src="assets/cv/TranHoHoangVu_BE_preview.webp" alt="Xem trước CV Fresher Backend Developer"
+              <img src="assets/cv/TranHoHoangVu_BE_preview.webp" alt="Xem trước CV Backend Developer Fresher"
                 loading="lazy" class="cv-preview-img" />
               <div class="cv-preview-overlay">
                 <span class="cv-preview-badge">
@@ -753,6 +759,96 @@
             </a>
           </div>
         </article>
+
+        <!-- Frontend Developer Fresher (PDF) -->
+        <article class="cv-card cv-card--frontend">
+          <div class="cv-featured-flag cv-featured-flag--fe">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+            <span data-i18n="cv_badge_frontend">Frontend Developer Fresher</span>
+          </div>
+
+          <div class="cv-top">
+            <div class="cv-icon" aria-hidden="true">
+              <svg class="cv-icon__svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <div class="cv-badge-group">
+              <span class="cv-pill">PDF</span>
+              <span class="cv-updated-badge">
+                <svg width="12" height="12" class="text-emerald-500 shrink-0" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span data-i18n="cv_updated_fe">Cập nhật T9/2026</span>
+              </span>
+            </div>
+          </div>
+
+          <h3 class="cv-title" data-i18n="cv_fe_title">Frontend Developer Fresher (PDF)</h3>
+          <p class="cv-desc" data-i18n="cv_fe_desc">Định hướng Frontend: Next.js, React, TypeScript, TailwindCSS & UI component-driven development.</p>
+
+          <!-- Tech Stack Chips -->
+          <div class="cv-skills">
+            <span class="cv-skill-chip">Next.js</span>
+            <span class="cv-skill-chip">React</span>
+            <span class="cv-skill-chip">TypeScript</span>
+            <span class="cv-skill-chip">TailwindCSS</span>
+            <span class="cv-skill-chip">Supabase</span>
+          </div>
+
+          <!-- CV Preview Thumbnail -->
+          <div class="cv-preview-wrap">
+            <a href="assets/cv/TranHoHoangVu_FE.pdf" target="_blank" rel="noopener noreferrer" class="cv-preview-link"
+              title="Xem trước CV" data-cv-type="fe">
+              <img src="assets/cv/TranHoHoangVu_FE_preview.webp" alt="Xem trước CV Frontend Developer Fresher"
+                loading="lazy" class="cv-preview-img" />
+              <div class="cv-preview-overlay">
+                <span class="cv-preview-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <span data-i18n="cv_preview_hover">Xem trước</span>
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="cv-actions">
+            <a href="assets/cv/TranHoHoangVu_FE.pdf" target="_blank" rel="noopener noreferrer"
+              class="cv-action cv-action--primary cv-view-btn" data-cv-type="fe" title="Xem CV Frontend">
+              <span data-i18n="cv_btn_view">View</span>
+              <span class="cv-view-count">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span class="cv-view-number" id="cv-view-count-fe">76</span>
+              </span>
+            </a>
+            <a href="assets/cv/TranHoHoangVu_FE.pdf" download class="cv-action cv-action--ghost cv-download-btn"
+              data-cv-type="fe" title="Tải CV Frontend">
+              <span data-i18n="cv_btn_download">Download</span>
+              <span class="cv-dl-count">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span class="cv-dl-number" id="cv-dl-count-fe">28</span>
+              </span>
+            </a>
+          </div>
+        </article>
       </div>
 
       <!-- Highlights / Stats Row (Task F) -->
@@ -766,7 +862,7 @@
             <line x1="16" y1="17" x2="8" y2="17"></line>
             <polyline points="10 9 9 9 8 9"></polyline>
           </svg>
-          <span data-i18n="cv_stat_versions">2 Định dạng chuyên sâu</span>
+          <span data-i18n="cv_stat_versions">3 Định dạng chuyên sâu</span>
         </div>
 
         <div class="cv-stat-divider" aria-hidden="true">•</div>
@@ -813,19 +909,19 @@
         <div class="projects-filter-bar" role="tablist" aria-label="Bộ lọc danh mục dự án">
           <button type="button" role="tab" aria-selected="true" class="projects-filter-tab is-active" data-filter="all">
             <span data-i18n="projects_tab_all">Tất cả</span>
-            <span class="projects-tab-count">9</span>
+            <span class="projects-tab-count">10</span>
           </button>
           <button type="button" role="tab" aria-selected="false" class="projects-filter-tab" data-filter="fullstack">
             <span data-i18n="projects_tab_fullstack">Full-Stack</span>
-            <span class="projects-tab-count">3</span>
+            <span class="projects-tab-count">4</span>
           </button>
           <button type="button" role="tab" aria-selected="false" class="projects-filter-tab" data-filter="frontend">
             <span data-i18n="projects_tab_frontend">Frontend</span>
-            <span class="projects-tab-count">0</span>
+            <span class="projects-tab-count">1</span>
           </button>
           <button type="button" role="tab" aria-selected="false" class="projects-filter-tab" data-filter="backend">
             <span data-i18n="projects_tab_backend">Backend</span>
-            <span class="projects-tab-count">5</span>
+            <span class="projects-tab-count">6</span>
           </button>
           <button type="button" role="tab" aria-selected="false" class="projects-filter-tab" data-filter="ai">
             <span data-i18n="projects_tab_ai">AI</span>
@@ -2199,7 +2295,7 @@
             role="menuitem">
             <span class="fab-cv-badge">BE</span>
             <div class="fab-cv-info">
-              <span class="fab-cv-title" data-i18n="cv_menu_be_title">Fresher Backend (PDF)</span>
+              <span class="fab-cv-title" data-i18n="cv_menu_be_title">Backend Developer Fresher (PDF)</span>
               <span class="fab-cv-hint">Mở file</span>
             </div>
           </a>
@@ -2208,6 +2304,14 @@
             <span class="fab-cv-badge fab-cv-badge--ai">AI</span>
             <div class="fab-cv-info">
               <span class="fab-cv-title" data-i18n="cv_menu_ai_title">AI Engineer (PDF)</span>
+              <span class="fab-cv-hint">Mở file</span>
+            </div>
+          </a>
+          <a href="assets/cv/TranHoHoangVu_FE.pdf" target="_blank" rel="noopener noreferrer" class="fab-cv-link"
+            role="menuitem">
+            <span class="fab-cv-badge fab-cv-badge--fe">FE</span>
+            <div class="fab-cv-info">
+              <span class="fab-cv-title" data-i18n="cv_menu_fe_title">Frontend Developer Fresher (PDF)</span>
               <span class="fab-cv-hint">Mở file</span>
             </div>
           </a>
@@ -2272,7 +2376,7 @@
   </aside>
 
   <!-- Production JS Bundle (All Data & Feature Modules — Minified, Non-blocking) -->
-  <script src="js/bundle.min.js?v=21" defer></script>
+  <script src="js/bundle.min.js?v=26" defer></script>
 
   <!-- 5. Particles.js — lazy load sau khi trang idle để không block render -->
   <script>
