@@ -10,15 +10,16 @@ Tất cả các file đều được chuẩn hóa theo **Cấu trúc khung tài 
 
 | STT | File Tài Liệu | Tên Dự Án | Thời Gian | Tech Stack Chính | Trạng Thái Modal |
 | :---: | :--- | :--- | :---: | :--- | :---: |
-| **01** | [`01-coursehub-lms.md`](./01-coursehub-lms.md) | **CourseHub LMS** | 04/2026 – 06/2026 | React, Vite, Node.js, Express, PostgreSQL (Native `pg` Raw SQL), JWT RBAC | ✅ Đã đồng bộ |
-| **02** | [`02-ecommerce-platform.md`](./02-ecommerce-platform.md) | **E-commerce Platform** | 09/2025 – 12/2025 | React 18, Node.js, Express, MongoDB, Socket.IO, Gemini AI, Docker, VNPAY | ✅ Đã đồng bộ |
-| **03** | [`03-vietnamese-ocr.md`](./03-vietnamese-ocr.md) | **Vietnamese OCR (Deep Learning)** | 01/2025 – 05/2025 | Python, PyTorch, ResNet34, Spatial Attention, Transformer Decoder, MCOCR | ✅ Đã đồng bộ |
-| **04** | [`04-nlp-translation.md`](./04-nlp-translation.md) | **EN–VI Machine Translation (NLP)** | 01/2025 – 05/2025 | Python, PyTorch, Hugging Face TRL (PPO/RLHF), Transformer, MarianMT, SentencePiece | ✅ Đã đồng bộ |
-| **05** | [`05-stock-forecasting-ml.md`](./05-stock-forecasting-ml.md) | **Stock Forecasting & Benchmark (ML)** | 09/2024 – 12/2024 | Python, TensorFlow/Keras, scikit-learn, LSTM, FFNN, CNN, 7 Optimizers | ✅ Đã đồng bộ |
-| **06** | [`06-warehouse-ma.md`](./06-warehouse-ma.md) | **WarehouseMA** | 09/2024 – 12/2024 | C#, .NET WinForms, MySQL/SQL Server, 3-Tier, Google Forms API, QR Code, SRS/BRD | ✅ Đã đồng bộ |
-| **07** | [`07-pos-system.md`](./07-pos-system.md) | **An Khang Store POS** | 01/2024 – 05/2024 | Laravel 10, Livewire, MySQL, DOMPDF, Bootstrap 5, Vite, Toastr | ✅ Đã đồng bộ |
-| **08** | [`08-booking-care.md`](./08-booking-care.md) | **BookingCare** | 09/2026 – Hiện tại | Next.js 15, TypeScript, Tailwind CSS v4, Supabase (PostgreSQL, Auth SSR, RLS) | ✅ Đã đồng bộ |
-| **09** | [`09-pdf-vision-ocr.md`](./09-pdf-vision-ocr.md) | **PDF Vision OCR** | 08/2026 – Hiện tại | Python, PaddleOCR, Gemini Vision, PyMuPDF, OpenCV, FastAPI, Streamlit | ✅ Đã đồng bộ |
+| **01** | [`01-school-ops.md`](./01-school-ops.md) | **SchoolOps** | 09/2026 – Hiện tại | Next.js 16, React 19, TypeScript, TailwindCSS v4, Node.js, Express, PostgreSQL 16, Vitest | ✅ Đã đồng bộ |
+| **02** | [`02-booking-care.md`](./02-booking-care.md) | **BookingCare** | 09/2026 – Hiện tại | Next.js 15, TypeScript, Tailwind CSS v4, Supabase (PostgreSQL, Auth SSR, RLS) | ✅ Đã đồng bộ |
+| **03** | [`03-pdf-vision-ocr.md`](./03-pdf-vision-ocr.md) | **PDF Vision OCR** | 08/2026 – Hiện tại | Python, PaddleOCR, Gemini Vision, PyMuPDF, OpenCV, FastAPI, Streamlit | ✅ Đã đồng bộ |
+| **04** | [`04-coursehub-lms.md`](./04-coursehub-lms.md) | **CourseHub LMS** | 04/2026 – 06/2026 | React, Vite, Node.js, Express, PostgreSQL (Native `pg` Raw SQL), JWT RBAC | ✅ Đã đồng bộ |
+| **05** | [`05-ecommerce-platform.md`](./05-ecommerce-platform.md) | **E-commerce Platform** | 09/2025 – 12/2025 | React 18, Node.js, Express, MongoDB, Socket.IO, Gemini AI, Docker, VNPAY | ✅ Đã đồng bộ |
+| **06** | [`06-vietnamese-ocr.md`](./06-vietnamese-ocr.md) | **Vietnamese OCR (Deep Learning)** | 01/2025 – 05/2025 | Python, PyTorch, ResNet34, Spatial Attention, Transformer Decoder, MCOCR | ✅ Đã đồng bộ |
+| **07** | [`07-nlp-translation.md`](./07-nlp-translation.md) | **EN–VI Machine Translation (NLP)** | 01/2025 – 05/2025 | Python, PyTorch, Hugging Face TRL (PPO/RLHF), Transformer, MarianMT, SentencePiece | ✅ Đã đồng bộ |
+| **08** | [`08-stock-forecasting-ml.md`](./08-stock-forecasting-ml.md) | **Stock Forecasting & Benchmark (ML)** | 09/2024 – 12/2024 | Python, TensorFlow/Keras, scikit-learn, LSTM, FFNN, CNN, 7 Optimizers | ✅ Đã đồng bộ |
+| **09** | [`09-warehouse-ma.md`](./09-warehouse-ma.md) | **WarehouseMA** | 09/2024 – 12/2024 | C#, .NET WinForms, MySQL/SQL Server, 3-Tier, Google Forms API, QR Code, SRS/BRD | ✅ Đã đồng bộ |
+| **10** | [`10-pos-system.md`](./10-pos-system.md) | **An Khang Store POS** | 01/2024 – 05/2024 | Laravel 10, Livewire, MySQL, DOMPDF, Bootstrap 5, Vite, Toastr | ✅ Đã đồng bộ |
 
 ---
 

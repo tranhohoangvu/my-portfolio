@@ -9,6 +9,86 @@
 
   const rawProjects = [
     {
+      id: "schoolops",
+      alt: "Ảnh dự án SchoolOps — Nền tảng Quản lý Vận hành Trường học (Next.js 16 + Express)",
+      i18nKeys: { meta: "p_so_meta", title: "p_so_title", desc: "p_so_desc" },
+      cardTechs: [
+        { skill: "react", label: "Next.js 16", title: "Next.js 16 App Router" },
+        { skill: "javascript", label: "TypeScript", title: "TypeScript 5.8" },
+        { skill: "postgresql", label: "PostgreSQL 16", title: "PostgreSQL 16 (Native pg, No ORM)" }
+      ],
+      num: "#01",
+      isLatest: true,
+      categories: ["frontend", "backend", "fullstack"],
+      image: "assets/projects/schoolops.webp",
+      tags: [
+        "Next.js 16",
+        "React 19",
+        "TypeScript",
+        "TailwindCSS v4",
+        "Node.js",
+        "Express.js",
+        "PostgreSQL 16",
+        "Native pg (No ORM)",
+        "JWT RBAC",
+        "Vitest"
+      ],
+      links: [
+        {
+          labelVi: "Xem trên GitHub →",
+          labelEn: "View on GitHub →",
+          url: "https://github.com/tranhohoangvu/school-ops",
+          type: "primary"
+        }
+      ],
+      vi: {
+        title: "SchoolOps",
+        meta: "Tháng 9, 2026 – Hiện tại • Nền tảng Quản lý Vận hành Trường học",
+        summary: "Nền tảng quản lý vận hành trường THCS enterprise-grade Monorepo Next.js 16 & Express: ma trận RBAC động theo từng lớp, sơ đồ chỗ ngồi thông minh Fisher-Yates, thời khóa biểu 2 ca chống xung đột giáo viên và 110 unit tests.",
+        subtitle: "Tháng 9, 2026 – Hiện tại • Hệ thống Quản lý Vận hành Trường THCS (Next.js 16 + Express)",
+        desc: "SchoolOps là nền tảng quản lý vận hành trường học cấp doanh nghiệp dành cho trường THCS (mô hình chuẩn THCS Nguyễn Tất Thành 2026–2027) với kiến trúc Monorepo Next.js 16 (Frontend) + Express/TypeScript (Backend). Quản lý 16 lớp học, 480 học sinh, 24 giáo viên với phân quyền RBAC động theo lớp, sơ đồ 20 bàn/40 chỗ ngồi tương tác dual-perspective, điểm danh thời gian thực và tự động phát hiện xung đột lịch dạy.",
+        arch: "Monorepo chuẩn hóa với kiến trúc phân tầng: Controller → Service → Repository (Backend Express) và Page/Component → Service Layer → API Client (Frontend Next.js 16). Pipeline 7 SQL migrations tuần tự (Schema → Constraints → Indexes → Stored Procedures → Triggers → Seed → Timetable Rules). API Proxy Rewrite loại bỏ CORS friction.",
+        data: "PostgreSQL 16 chuẩn hóa 12 bảng quan hệ với native pg connection pool (không ORM). Composite indexes tối ưu truy vấn thời khóa biểu và điểm danh, stored procedures kiểm tra xung đột lịch dạy, triggers tự động cập nhật timestamp và deterministic seed data cho 480 học sinh.",
+        challenges: [
+          {
+            title: "1. Ma trận Dynamic Per-Class RBAC — Phân quyền động theo ngữ cảnh từng lớp:",
+            solution: "Thiết kế ClassContext ở Frontend làm dynamic role resolver tra cứu teacher_assignments mỗi khi chuyển lớp; Backend rbac.middleware.ts (requireClassAccess) độc lập xác minh lại quyền tại mỗi endpoint, hoàn toàn không phụ thuộc client-side state."
+          },
+          {
+            title: "2. Thời khóa biểu 2 ca & Phát hiện xung đột giáo viên school-wide:",
+            solution: "Migration 007_timetable_rules.sql tạo partial index xung đột (teacher_id, period, day_of_week) trên PostgreSQL; stored procedure kiểm tra xung đột trước khi INSERT; TimetableService wrap logic trong database transaction đảm bảo tính nguyên tử tuyệt đối."
+          },
+          {
+            title: "3. Sơ đồ chỗ ngồi 20 bàn/40 chỗ — Dual-perspective & Live Attendance Overlay:",
+            solution: "Encode tọa độ theo chỉ số tuyệt đối desk index 0–19; component SeatingGrid đảo ngược thứ tự render bằng CSS transform + reverse mapping khi đổi góc nhìn giữa cuối lớp và bục giảng; attendance overlay render độc lập bằng badge layer không làm re-render toàn bộ grid."
+          }
+        ]
+      },
+      en: {
+        title: "SchoolOps",
+        meta: "Sep 2026 – Present • Secondary School Operations Platform",
+        summary: "Enterprise-grade secondary school operations platform with Monorepo Next.js 16 & Express: dynamic per-class RBAC matrix, Fisher-Yates intelligent seating grid, 2-shift timetable with automatic teacher conflict detection, and 110 unit tests.",
+        subtitle: "Sep 2026 – Present • Secondary School Operations Management System (Next.js 16 + Express)",
+        desc: "SchoolOps is an enterprise-grade school management platform for Nguyen Tat Thanh Secondary School (2026–2027), structured as a Monorepo with Next.js 16 (Frontend) and Node.js/Express/TypeScript (Backend). Manages 16 classes, 480 students, 24 teachers with dynamic per-class RBAC, dual-perspective seating grid, real-time period attendance, and automatic timetable conflict detection.",
+        arch: "Layered Monorepo architecture: Controller → Service → Repository (Express Backend) and Page/Component → Service Layer → API Client (Next.js 16 Frontend). Automated 7-step SQL migration pipeline (Schema → Constraints → Indexes → Stored Procedures → Triggers → Seed → Timetable Rules). Next.js API proxy rewrites eliminate CORS friction.",
+        data: "PostgreSQL 16 relational schema across 12 normalized tables with native node-postgres connection pooling (no ORM). Composite indexes accelerate attendance lookups, stored procedures enforce timetable conflict prevention, triggers automate updated_at timestamps, and deterministic seed data for 480 students.",
+        challenges: [
+          {
+            title: "1. Dynamic Per-Class RBAC Matrix — Contextual permissions per classroom:",
+            solution: "Implemented ClassContext as a dynamic role resolver looking up teacher_assignments on every class switch; Backend rbac.middleware.ts independently enforces requireClassAccess at every API route, ensuring zero trust in client state."
+          },
+          {
+            title: "2. 2-Shift Timetable & School-Wide Teacher Conflict Detection:",
+            solution: "Created partial conflict indexes (teacher_id, period, day_of_week) via migration 007; enforced pre-insert stored procedure conflict validation; wrapped schedule persistence inside atomic PostgreSQL transactions."
+          },
+          {
+            title: "3. 20-Desk / 40-Seat Grid — Dual-Perspective Rendering & Live Attendance Overlay:",
+            solution: "Encoded coordinates via absolute desk index 0–19; SeatingGrid component flips perspectives via CSS transform and reverse mapping without modifying state; decoupled live attendance indicators into a distinct badge overlay layer."
+          }
+        ]
+      }
+    },
+    {
       id: "bookingcare",
       alt: "Ảnh dự án BookingCare Healthcare Platform",
       i18nKeys: {"meta": "p_bc_meta", "title": "p_bc_title", "desc": "p_bc_desc"},
@@ -17,7 +97,7 @@
         {"skill": "javascript", "label": "TypeScript", "title": "TypeScript"},
         {"skill": "postgresql", "label": "Supabase / PostgreSQL", "title": "PostgreSQL & RLS"}
       ],
-      num: "#01",
+      num: "#02",
       isLatest: true,
       categories: ["backend", "fullstack"],
       image: "assets/projects/bookingcare.webp",
@@ -97,7 +177,7 @@
         {"skill": "python", "label": "PaddleOCR", "title": "PaddleOCR Tiếng Việt"},
         {"skill": "python", "label": "Gemini Vision AI", "title": "Google Gemini Vision AI"}
       ],
-      num: "#02",
+      num: "#03",
       isLatest: true,
       categories: ["ai"],
       image: "assets/projects/pdf-vision-ocr.webp",
@@ -172,7 +252,7 @@
       alt: "Ảnh dự án CourseHub LMS",
       i18nKeys: {"meta": "p4_meta", "title": "p4_title", "desc": "p4_desc"},
       cardTechs: [{"skill": "react", "label": "React", "title": "Xem kỹ năng React"}, {"skill": "nodejs", "label": "Node.js", "title": "Xem kỹ năng Node.js"}, {"skill": "postgresql", "label": "PostgreSQL", "title": "Xem kỹ năng PostgreSQL"}],
-      num: "#03",
+      num: "#04",
       isLatest: false,
       categories: ["backend", "fullstack"],
       image: "assets/projects/coursehub.webp",
@@ -252,7 +332,7 @@
       alt: "Ảnh dự án E-commerce Platform",
       i18nKeys: {"meta": "p1_meta", "title": "p1_title", "desc": "p1_desc"},
       cardTechs: [{"skill": "react", "label": "React", "title": "Xem kỹ năng React"}, {"skill": "nodejs", "label": "Node.js", "title": "Xem kỹ năng Node.js"}, {"skill": "mongodb", "label": "MongoDB", "title": "Xem kỹ năng MongoDB"}],
-      num: "#04",
+      num: "#05",
       isLatest: false,
       categories: ["backend", "fullstack"],
       image: "assets/projects/ecommerce.webp",
@@ -327,7 +407,7 @@
       alt: "Ảnh dự án Vietnamese OCR",
       i18nKeys: {"meta": "p_ocr_meta", "title": "p_ocr_title", "desc": "p_ocr_desc"},
       cardTechs: [{"skill": "python", "label": "Python", "title": "Xem kỹ năng Python"}, {"skill": "pytorch", "label": "PyTorch", "title": "Xem kỹ năng PyTorch"}, {"skill": "pytorch", "label": "CNN-Transformer", "title": "CNN-Transformer Attention"}],
-      num: "#05",
+      num: "#06",
       isLatest: false,
       categories: ["ai"],
       image: "assets/projects/vietnamese-ocr.webp",
@@ -400,7 +480,7 @@
       alt: "Ảnh dự án EN-VI Machine Translation",
       i18nKeys: {"meta": "p_mt_meta", "title": "p_mt_title", "desc": "p_mt_desc"},
       cardTechs: [{"skill": "python", "label": "Python", "title": "Xem kỹ năng Python"}, {"skill": "pytorch", "label": "PyTorch", "title": "Xem kỹ năng PyTorch"}, {"skill": "pytorch", "label": "Transformer", "title": "Transformer Attention"}],
-      num: "#06",
+      num: "#07",
       isLatest: false,
       categories: ["ai"],
       image: "assets/projects/nlp-translation.webp",
@@ -473,7 +553,7 @@
       alt: "Ảnh dự án Stock Forecasting & Benchmark",
       i18nKeys: {"meta": "p_stock_meta", "title": "p_stock_title", "desc": "p_stock_desc"},
       cardTechs: [{"skill": "python", "label": "Python", "title": "Xem kỹ năng Python"}, {"skill": "tensorflow", "label": "TensorFlow", "title": "Xem kỹ năng TensorFlow"}, {"skill": "python", "label": "LSTM / Time-Series", "title": "LSTM / Time-Series"}],
-      num: "#07",
+      num: "#08",
       isLatest: false,
       categories: ["ai"],
       image: "assets/projects/stock-ml.webp",
@@ -546,7 +626,7 @@
       alt: "Ảnh dự án WarehouseMA",
       i18nKeys: {"meta": "p2_meta", "title": "p2_title", "desc": "p2_desc"},
       cardTechs: [{"skill": "csharp", "label": "C#", "title": "Xem kỹ năng C#"}, {"skill": "dotnet", "label": ".NET WinForms", "title": "Xem kỹ năng .NET"}, {"skill": "mysql", "label": "MySQL", "title": "Xem kỹ năng MySQL"}],
-      num: "#08",
+      num: "#09",
       isLatest: false,
       categories: ["backend"],
       image: "assets/projects/warehouse.webp",
@@ -619,7 +699,7 @@
       alt: "Ảnh dự án An Khang Store POS",
       i18nKeys: {"meta": "p3_meta", "title": "p3_title", "desc": "p3_desc"},
       cardTechs: [{"skill": "laravel", "label": "Laravel 10", "title": "Xem kỹ năng Laravel"}, {"skill": "php", "label": "Livewire", "title": "Xem kỹ năng PHP / Livewire"}, {"skill": "mysql", "label": "MySQL", "title": "Xem kỹ năng MySQL"}],
-      num: "#09",
+      num: "#10",
       isLatest: false,
       categories: ["backend"],
       image: "assets/projects/pos.webp",
