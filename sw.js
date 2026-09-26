@@ -1,5 +1,5 @@
 /* SW: precache only .css .js .jpg .png .svg .webp */
-const VERSION = "v16";
+const VERSION = "v20";
 const CACHE_NAME = `portfolio-${VERSION}`;
 
 const PRECACHE = [
@@ -82,8 +82,10 @@ const PRECACHE = [
   // CV PDFs & Previews
   "./assets/cv/TranHoHoangVu_BE.pdf",
   "./assets/cv/TranHoHoangVu_AI.pdf",
+  "./assets/cv/TranHoHoangVu_FE.pdf",
   "./assets/cv/TranHoHoangVu_BE_preview.webp",
   "./assets/cv/TranHoHoangVu_AI_preview.webp",
+  "./assets/cv/TranHoHoangVu_FE_preview.webp",
 
   // Project images (WebP)
   "./assets/projects/bookingcare.webp",
@@ -95,6 +97,7 @@ const PRECACHE = [
   "./assets/projects/stock-ml.webp",
   "./assets/projects/warehouse.webp",
   "./assets/projects/pos.webp",
+  "./assets/projects/schoolops.webp",
 ];
 
 self.addEventListener("install", (event) => {

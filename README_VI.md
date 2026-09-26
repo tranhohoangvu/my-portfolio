@@ -11,7 +11,8 @@
 
 - 🔗 **Website trực tiếp:** https://tranhohoangvu.github.io/my-portfolio/
 - 📄 **Hồ sơ năng lực chuyên biệt (PDF):**
-  - `assets/cv/TranHoHoangVu_BE.pdf` — Fresher Backend Developer
+  - `assets/cv/TranHoHoangVu_BE.pdf` — Backend Developer Fresher
+  - `assets/cv/TranHoHoangVu_FE.pdf` — Frontend Developer Fresher
   - `assets/cv/TranHoHoangVu_AI.pdf` — AI Engineer Fresher
 
 > 🇬🇧 English version: [`README.md`](./README.md)
@@ -55,9 +56,9 @@
 - **Dự án ➔ Kỹ năng**: Nhấp vào các tag công nghệ trên thẻ dự án hoặc trong modal chi tiết sẽ cuộn ngay xuống mục Kỹ năng và kích hoạt hiệu ứng nhấp nháy phát sáng (**Pulsing Focus Highlight**) để định vị tức thì.
 
 ### 4. Showcase Dự án Chuyên sâu
-- **Bộ lọc danh mục**: Lọc nhanh 1-click theo `Tất cả`, `Full-Stack`, `Backend`, và `AI` kèm huy hiệu đếm số lượng dự án động.
+- **Bộ lọc danh mục**: Lọc nhanh 1-click theo `Tất cả`, `Full-Stack`, `Frontend`, `Backend`, và `AI` kèm huy hiệu đếm số lượng dự án động.
 - **Carousel trượt có giới hạn (Bounded Slider)**: Hỗ trợ vuốt chạm cảm ứng mượt mà trên mobile, bàn phím máy tính, tự vô hiệu hóa nút chuyển khi chạm mép và hệ thống chấm tròn chỉ số trang.
-- **Modal Kiến trúc Kỹ thuật sâu**: Khám phá sơ đồ kiến trúc hệ thống, thiết kế cơ sở dữ liệu và các thách thức kỹ thuật hóc búa kèm giải pháp xử lý thực tế cho 7 dự án.
+- **Modal Kiến trúc Kỹ thuật sâu**: Khám phá sơ đồ kiến trúc hệ thống, thiết kế cơ sở dữ liệu và các thách thức kỹ thuật hóc búa kèm giải pháp xử lý thực tế cho 10 dự án.
 
 ### 5. Kỹ năng Công nghệ phân loại theo 4 Trụ cột
 - **Ngôn ngữ cốt lõi**: C, C#, Java, Python, JavaScript, PHP.
@@ -74,8 +75,8 @@
 - **Bảo vệ dữ liệu cá nhân (PII)**: Bản xem trước online che mờ thông tin nhạy cảm, tích hợp form AJAX modal để nhà tuyển dụng gửi yêu cầu nhận bản gốc đối chiếu.
 
 ### 7. Giới thiệu Bản thân & Thương hiệu Cá nhân
-- **3 Trụ cột cốt lõi**: Học vấn & Nền tảng (Tốt nghiệp CS - TDTU), Kinh nghiệm Thực chiến (Software Engineer Intern), Vị trí Ứng tuyển (Fresher Backend Developer & AI Engineer Fresher).
-- **4 Thẻ số liệu đếm động**: 9+ Dự án hoàn chỉnh, 16+ GitHub Repositories, 8 Chứng chỉ quốc tế, 100% Sẵn sàng làm việc.
+- **3 Trụ cột cốt lõi**: Học vấn & Nền tảng (Tốt nghiệp CS - TDTU), Kinh nghiệm Thực chiến (Software Engineer Intern), Vị trí Ứng tuyển (Backend Developer Fresher, Frontend Developer Fresher & AI Engineer Fresher).
+- **4 Thẻ số liệu đếm động**: 10+ Dự án hoàn chỉnh, 16+ GitHub Repositories, 8 Chứng chỉ quốc tế, 100% Sẵn sàng làm việc.
 - **Ảnh thẻ 3D lật 2 mặt tương tác**: Hiệu ứng 3D Profile Flip hiển thị chân dung thứ hai khi hover/chạm, bao quanh bởi radar xanh neon phát xung liên tục (`Available for Hire`).
 - **Action Dock tích hợp**: Nút sao chép email 1-click kèm thông báo Toast, chuyển nhanh đến CV, Liên hệ và mạng xã hội cá nhân.
 
@@ -184,11 +185,13 @@ my-portfolio/
 
 ## 📄 Các phiên bản CV chuyên biệt
 
-Kho mã nguồn duy trì 2 bản CV chuyên nghiệp định dạng PDF trong `assets/cv/`:
+Kho mã nguồn duy trì **3 bản CV chuyên nghiệp** định dạng PDF trong `assets/cv/`, mỗi bản được điều chỉnh cho từng vai trò kỹ thuật:
 
-1. **Fresher Backend Developer** (`assets/cv/TranHoHoangVu_BE.pdf`)
+1. **Backend Developer Fresher** (`assets/cv/TranHoHoangVu_BE.pdf`)
    - **Trọng tâm**: Node.js, Express.js, Laravel, Kiến trúc RESTful API, PostgreSQL (Raw SQL & Tối ưu hóa truy vấn), NoSQL MongoDB, Redis cache, JWT RBAC, Docker, và luồng tự động hóa CI/CD.
-2. **AI Engineer Fresher** (`assets/cv/TranHoHoangVu_AI.pdf`)
+2. **Frontend Developer Fresher** (`assets/cv/TranHoHoangVu_FE.pdf`)
+   - **Trọng tâm**: Next.js 15, React 19, TypeScript, TailwindCSS v4, Kiến trúc UI hướng component, Vitest unit testing, thiết kế responsive và hiệu năng web hiện đại.
+3. **AI Engineer Fresher** (`assets/cv/TranHoHoangVu_AI.pdf`)
    - **Trọng tâm**: PyTorch, Deep Learning, Kiến trúc Transformers, Pipeline OCR (PaddleOCR, Gemini Vision, ResNet + Spatial Attention), Dịch máy ngôn ngữ tự nhiên Tiếng Việt (NLP), và Mô hình Machine Learning ứng dụng.
 
 ---

@@ -111,7 +111,7 @@
         return {
           developer: {
             name: "Trần Hồ Hoàng Vũ",
-            role: "Fresher Backend Developer & AI Engineer",
+            role: isEn ? "Backend Developer, Frontend Developer & AI Engineer Fresher" : "Kỹ sư Backend, Frontend & Kỹ sư AI Fresher",
             education: {
               degree: isEn ? "Bachelor of Computer Science" : "Cử nhân Khoa học Máy tính",
               institution: "Ton Duc Thang University (TDTU)",
@@ -126,6 +126,7 @@
             },
             focus_areas: [
               "High-Throughput RESTful APIs & Modular MVC Architecture",
+              "Component-Driven Frontend (Next.js 15, React 19, TypeScript, TailwindCSS v4)",
               "Relational Database Optimization & Raw SQL (PostgreSQL, MySQL)",
               "Deep Learning & NLP (RLHF PPO, Transformer Decoder OCR, Sequence Modeling)",
               "Containerization & CI/CD Pipelines (Docker Compose, Nginx, GitHub Actions)"
@@ -223,15 +224,48 @@
           received_payload: {
             name: "Tech Lead / Recruiter",
             email: "lead@company.com",
-            message: "Interested in Fresher Backend & AI Engineer position"
+            message: "Interested in Backend Developer, Frontend Developer or AI Engineer position"
           },
           timestamp: new Date().toISOString()
         };
       }
 
+      if (cleanUrl === "/api/v1/cv" || cleanUrl === "/api/v1/resumes") {
+        return {
+          status: "success",
+          count: 3,
+          resumes: [
+            {
+              role: "Backend Developer Fresher",
+              format: "PDF",
+              file: "TranHoHoangVu_BE.pdf",
+              path: "assets/cv/TranHoHoangVu_BE.pdf",
+              updated: "09/2026",
+              focus: ["Node.js", "Express", "PostgreSQL", "Native pg (No ORM)", "Docker", "RESTful API"]
+            },
+            {
+              role: "Frontend Developer Fresher",
+              format: "PDF",
+              file: "TranHoHoangVu_FE.pdf",
+              path: "assets/cv/TranHoHoangVu_FE.pdf",
+              updated: "09/2026",
+              focus: ["Next.js 16", "React 19", "TypeScript", "TailwindCSS v4", "Component-Driven UI", "Vitest"]
+            },
+            {
+              role: "AI Engineer Fresher",
+              format: "PDF",
+              file: "TranHoHoangVu_AI.pdf",
+              path: "assets/cv/TranHoHoangVu_AI.pdf",
+              updated: "09/2026",
+              focus: ["PyTorch", "Transformers", "Computer Vision", "Vietnamese OCR", "FastAPI"]
+            }
+          ]
+        };
+      }
+
       return {
         error: "404 Not Found",
-        message: `Unknown endpoint: ${cleanUrl}. Supported endpoints: /api/v1/profile, /api/v1/skills, /api/v1/projects, /api/v1/health, /api/v1/contact`
+        message: `Unknown endpoint: ${cleanUrl}. Supported endpoints: /api/v1/profile, /api/v1/skills, /api/v1/projects, /api/v1/health, /api/v1/cv, /api/v1/contact`
       };
     }
 
@@ -333,7 +367,7 @@
   </tr>
   <tr>
     <td class="term-table-cmd">vu --cv</td>
-    <td class="term-table-desc">${isEn ? "Download / view Fresher Backend & AI Engineer CVs" : "Xem và tải 2 bản CV chuyên biệt (Backend & AI)"}</td>
+    <td class="term-table-desc">${isEn ? "Download / view 3 specialized CVs (Backend, Frontend & AI)" : "Xem và tải 3 bản CV chuyên biệt (Backend, Frontend & AI)"}</td>
   </tr>
   <tr>
     <td class="term-table-cmd">curl &lt;endpoint&gt;</td>
@@ -370,7 +404,7 @@
         responseEl.innerHTML = `
 <div class="term-card">
   <div class="term-accent font-bold text-base mb-1">TRẦN HỒ HOÀNG VŨ</div>
-  <div class="term-success font-semibold mb-2">${isEn ? "Fresher Backend Developer & AI Engineer" : "Kỹ sư Phần mềm Backend & Kỹ sư AI Fresher"}</div>
+  <div class="term-success font-semibold mb-2">${isEn ? "Backend Developer, Frontend Developer & AI Engineer Fresher" : "Kỹ sư Backend, Frontend & Kỹ sư AI Fresher"}</div>
   <p class="mb-2 leading-relaxed text-slate-300">${
     isEn
       ? "Graduated in Computer Science from Ton Duc Thang University (TDTU). Passionate about high-throughput RESTful architecture, relational database indexing, and operationalizing Machine Learning/NLP pipelines."
@@ -518,7 +552,7 @@ ${cardsHtml}
   <div class="space-y-2">
     <div class="flex items-center justify-between p-2 rounded bg-white/5 border border-white/10">
       <div>
-        <div class="font-bold text-slate-200">1. Fresher Backend Developer (PDF)</div>
+        <div class="font-bold text-slate-200">1. Backend Developer Fresher (PDF)</div>
         <div class="text-xs term-dim">RESTful APIs, PostgreSQL raw SQL, Node.js, Express, Docker</div>
       </div>
       <a href="assets/cv/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer" class="term-link font-semibold text-xs py-1 px-3 rounded bg-indigo-500/20 border border-indigo-500/30">
@@ -527,7 +561,16 @@ ${cardsHtml}
     </div>
     <div class="flex items-center justify-between p-2 rounded bg-white/5 border border-white/10">
       <div>
-        <div class="font-bold text-slate-200">2. AI Engineer Fresher (PDF)</div>
+        <div class="font-bold text-slate-200">2. Frontend Developer Fresher (PDF)</div>
+        <div class="text-xs term-dim">Next.js 16, React 19, TypeScript, TailwindCSS v4, Component-driven</div>
+      </div>
+      <a href="assets/cv/TranHoHoangVu_FE.pdf" target="_blank" rel="noopener noreferrer" class="term-link font-semibold text-xs py-1 px-3 rounded bg-sky-500/20 border border-sky-500/30">
+        ${isEn ? "View / Download →" : "Xem / Tải file →"}
+      </a>
+    </div>
+    <div class="flex items-center justify-between p-2 rounded bg-white/5 border border-white/10">
+      <div>
+        <div class="font-bold text-slate-200">3. AI Engineer Fresher (PDF)</div>
         <div class="text-xs text-slate-400">Targeted for AI roles: PyTorch, Transformers, Computer Vision, OCR.</div>
       </div>
       <a href="assets/cv/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer" class="term-link font-semibold text-xs py-1 px-3 rounded bg-cyan-500/20 border border-cyan-500/30">
