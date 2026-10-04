@@ -132,19 +132,31 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
     e.preventDefault();
 
-    const navbarEl = document.getElementById("navbar");
-    const offset = navbarEl ? navbarEl.offsetHeight + 16 : 80;
-    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+    // Close mobile menu FIRST so layout is stable before computing scroll position.
+    // This prevents getBoundingClientRect returning an incorrect top when the
+    // open menu shifts page layout on small screens.
+    const wasMenuOpen = mobileMenu && mobileMenu.classList.contains("active");
+    if (wasMenuOpen) toggleMobileMenu(false);
 
-    window.scrollTo({ top, behavior: "smooth" });
+    // rAF ensures the DOM has settled after menu close before we measure
+    const doScroll = () => {
+      const navbarEl = document.getElementById("navbar");
+      const offset = navbarEl ? navbarEl.offsetHeight + 16 : 80;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    };
+
+    if (wasMenuOpen) {
+      requestAnimationFrame(doScroll);
+    } else {
+      doScroll();
+    }
 
     document
       .querySelectorAll('#nav-links a[href^="#"], #mobile-menu a[href^="#"]')
       .forEach((a) => a.classList.toggle("active", a.getAttribute("href") === href));
 
     try { history.replaceState(null, "", window.location.pathname + window.location.search); } catch { }
-
-    toggleMobileMenu(false);
   });
 });
 

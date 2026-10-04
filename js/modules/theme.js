@@ -34,6 +34,11 @@
     const moonIcon = document.getElementById("moon-icon");
     if (sunIcon) sunIcon.classList.toggle("hidden", !isDark);
     if (moonIcon) moonIcon.classList.toggle("hidden", isDark);
+
+    const sunMobile = document.querySelector(".sun-icon-mobile");
+    const moonMobile = document.querySelector(".moon-icon-mobile");
+    if (sunMobile) sunMobile.classList.toggle("hidden", !isDark);
+    if (moonMobile) moonMobile.classList.toggle("hidden", isDark);
   }
 
   function updateFavicon(isDark) {

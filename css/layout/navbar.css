@@ -72,25 +72,62 @@ html:not(.dark) #navbar.scrolled {
   display: block !important;
 }
 
-#mobile-menu a {
+/* Mobile nav links — use .mobile-nav-link for proper dark/light text contrast */
+.mobile-nav-link {
   display: block;
   width: 100%;
   text-align: center;
-  padding: 10px 16px;
+  padding: 11px 16px;
   font-weight: 600;
   font-size: 15px;
   border-radius: 12px;
+  color: #16161a;
+  text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-#mobile-menu a:hover,
-#mobile-menu a.active {
+.dark .mobile-nav-link {
+  color: #e2e8f0;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
   background-color: rgba(99, 102, 241, 0.1);
   color: #6366f1;
 }
 
-.dark #mobile-menu a:hover,
-.dark #mobile-menu a.active {
+.dark .mobile-nav-link:hover,
+.dark .mobile-nav-link.active {
+  background-color: rgba(99, 102, 241, 0.18);
+  color: #818cf8;
+}
+
+/* Legacy fallback for any bare <a> inside mobile-menu */
+#mobile-menu a:not(.mobile-nav-link) {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 11px 16px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 12px;
+  color: #16161a;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dark #mobile-menu a:not(.mobile-nav-link) {
+  color: #e2e8f0;
+}
+
+#mobile-menu a:not(.mobile-nav-link):hover,
+#mobile-menu a:not(.mobile-nav-link).active {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+}
+
+.dark #mobile-menu a:not(.mobile-nav-link):hover,
+.dark #mobile-menu a:not(.mobile-nav-link).active {
   background-color: rgba(99, 102, 241, 0.18);
   color: #818cf8;
 }
