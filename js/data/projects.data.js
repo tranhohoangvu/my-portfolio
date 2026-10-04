@@ -9,6 +9,91 @@
 
   const rawProjects = [
     {
+      id: "graduation-invitation",
+      alt: "Ảnh dự án Graduation Invitation & Milestone Portfolio",
+      i18nKeys: { meta: "p_gi_meta", title: "p_gi_title", desc: "p_gi_desc" },
+      cardTechs: [
+        { skill: "react", label: "Next.js 16", title: "Next.js 16 App Router & React 19" },
+        { skill: "javascript", label: "TypeScript", title: "TypeScript 5 & Tailwind CSS v4" },
+        { skill: "react", label: "Framer Motion", title: "motion/react GPU Transformations" }
+      ],
+      num: "#01",
+      isLatest: true,
+      categories: ["frontend"],
+      image: "assets/projects/graduation-invitation.webp",
+      tags: [
+        "Next.js 16",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS v4",
+        "Framer Motion",
+        "Serverless Route Handlers",
+        "Google Sheets Webhook",
+        "WebP Pipeline",
+        "SVG Vector"
+      ],
+      links: [
+        {
+          labelVi: "Xem Live Demo →",
+          labelEn: "Live Demo →",
+          url: "https://hoangvu-graduation-invitation.vercel.app",
+          type: "accent"
+        },
+        {
+          labelVi: "Xem trên GitHub →",
+          labelEn: "View on GitHub →",
+          url: "https://github.com/tranhohoangvu/hoangvu-graduation-invitation",
+          type: "primary"
+        }
+      ],
+      vi: {
+        title: "Graduation Invitation",
+        meta: "Tháng 9, 2026 – Hiện tại • Nền tảng Thiệp mời Tốt nghiệp & Portfolio Cá nhân hóa",
+        summary: "Nền tảng thiệp mời tốt nghiệp cá nhân hóa & portfolio cột mốc Next.js 16 & React 19: phong cách Royal Academic Letterpress, tự động trích xuất danh xưng qua URL, cẩm nang 4 phương tiện, VR 360°, RSVP thời gian thực và thư viện 136 ảnh WebP.",
+        subtitle: "Tháng 9, 2026 – Hiện tại • Thiệp mời Tốt nghiệp & Portfolio Cột mốc (Next.js 16 + React 19)",
+        desc: "Graduation Invitation & Milestone Portfolio là nền tảng web thiệp mời tốt nghiệp cá nhân hóa kết hợp nhật ký hành trình 4 năm đại học (2022 – 2026) của thủ khoa / tân cử nhân Trần Hồ Hoàng Vũ (Khoa học Máy tính - K26, Đại học Tôn Đức Thắng). Dự án mang phong cách hoàng gia trang nhã (Royal Academic Letterpress), tự động cá nhân hóa danh xưng người nhận qua URL query parameters không cần backend, cẩm nang di chuyển 4 phương tiện và tour VR 360°, hệ thống RSVP ghi nhận thời gian thực về Google Sheets và thư viện 136 ảnh kỷ niệm chuẩn nén WebP.",
+        arch: "Kiến trúc Server-Driven Jamstack & Component-Driven trên nền Next.js 16 (App Router, Turbopack, React 19) phân tầng: Presentation Layer 9 section độc lập, State Layer với custom hooks (useInvitee chống hydration mismatch, scroll spy tối ưu requestAnimationFrame), Data Layer SSOT định kiểu chặt chẽ trong graduation.ts, và API Layer serverless route handler /api/rsvp chuyển tiếp webhook bảo mật.",
+        data: "Mô hình lưu trữ Serverless Database với Google Sheets qua Google Apps Script Webhook API (append-only) kết hợp client-side localStorage lưu vết chống gửi lặp. Typed In-Memory Data Schema (SSOT) bằng TypeScript as const. Pipeline nén 136 ảnh kỷ niệm sang WebP chất lượng 85% giảm 70% dung lượng, và Date Derivation Engine tính toán ngày giờ tự động chuẩn ISO 8601.",
+        challenges: [
+          {
+            title: "1. Khắc phục nghẽn compositor & rớt FPS trên iOS WebKit (Double Backdrop Blur & Layout Thrashing):",
+            solution: "Loại bỏ hoàn toàn backdrop-filter đa tầng tại Mobile Menu Drawer và cụm nút nổi; thay bằng màu nền giấy đục bg-paper/98 viền mạ vàng. Chuyển toàn bộ hoạt ảnh sang CSS GPU transforms thuần túy (translateY, rotate) với độ trễ 0ms, gỡ bỏ smooth-scroll tĩnh xung đột gia tốc quán tính iOS và kiểm soát scroll listener bằng requestAnimationFrame."
+          },
+          {
+            title: "2. Triệt tiêu hoàn toàn lỗi Hydration Mismatch & giật xô lệch bố cục (CLS):",
+            solution: "Xây dựng hook useInvitee với cơ chế Client-Mounting Guard (chỉ đọc query param và localStorage sau khi mount, render fallback 'Bạn' trang nhã trên server). Kỹ thuật Zero Layout Shift trên Navbar dùng thẻ span ẩn cố định sẵn chiều rộng tối đa, tiền tính toán hằng số lượng giác SVG và thời gian ở module-level."
+          },
+          {
+            title: "3. Tối ưu tải thư viện 136 ảnh kỷ niệm & đồ họa Vector phức tạp giữ bundle siêu nhẹ:",
+            solution: "Lập trình RoyalCurtain bằng 100% mã SVG vector với 2 path nửa vòm và cánh rèm đối xứng dùng gradient đa điểm (0 lượt request HTTP). Kiến trúc hiển thị ảnh 2 cấp (Two-tier Gallery) hiển thị mặc định 6 ảnh/album với cơ chế toggle 1 chạm, chuẩn nén WebP với lazy loading và tách modal nặng qua next/dynamic (ssr: false)."
+          }
+        ]
+      },
+      en: {
+        title: "Graduation Invitation",
+        meta: "Sep 2026 – Present • Personalized Graduation Invitation & Milestone Portfolio",
+        summary: "Personalized graduation invitation platform & milestone portfolio built with Next.js 16 & React 19: Royal Academic Letterpress aesthetics, dynamic URL query recipient personalization, 4-vehicle campus navigation, VR 360° tour, real-time Google Sheets RSVP, and 136 WebP memories gallery.",
+        subtitle: "Sep 2026 – Present • Graduation Invitation & Milestone Portfolio (Next.js 16 + React 19)",
+        desc: "Graduation Invitation & Milestone Portfolio is a personalized graduation web platform and 4-year university milestone journal (2022 – 2026) for valedictorian / graduate Tran Ho Hoang Vu (Computer Science - K26, Ton Duc Thang University). Features Royal Academic Letterpress visual styling, zero-backend dynamic URL query recipient personalization, 4-vehicle campus navigation guide with VR 360° tour, real-time RSVP capture via Google Sheets Webhook, and an optimized 136-photo WebP memories showcase.",
+        arch: "Server-Driven Jamstack & Component-Driven Architecture on Next.js 16 (App Router, Turbopack, React 19): 9 modular sections, state management via custom hooks (useInvitee with hydration guard, requestAnimationFrame scroll spy), strictly typed SSOT data layer in graduation.ts, and secure Next.js serverless route handler /api/rsvp webhook proxy.",
+        data: "Serverless persistence via Google Sheets (Google Apps Script Webhook API, append-only) paired with client-side localStorage anti-spam state caching. Typed In-Memory Data Schema (SSOT) via TypeScript strict types. Automated WebP image compression pipeline for 136 photos achieving >70% size reduction, and RFC 3986 standard URL generation for Google Calendar.",
+        challenges: [
+          {
+            title: "1. Resolving iOS WebKit Compositor Bottlenecks & Frame Drops (Double Backdrop Filter Thrashing):",
+            solution: "Eliminated multi-layered backdrop-blur-lg from Mobile Drawer and floating action buttons; replaced with refined opaque paper bg-paper/98 and hairline gold borders. Replaced Framer Motion staggering with GPU-accelerated CSS transforms (translateY, rotate) with 0ms latency, resolved iOS touch inertial conflicts, and throttled scroll listeners via requestAnimationFrame."
+          },
+          {
+            title: "2. Zero Hydration Mismatch & Cumulative Layout Shift (CLS) Elimination:",
+            solution: "Built custom hook useInvitee with Client-Mounting Guard (deferring search params and localStorage reads until post-hydration with graceful 'Bạn' fallback). Implemented Zero Layout Shift on Navbar using invisible static width-reservation spans, and precomputed SVG trigonometric constants at module initialization."
+          },
+          {
+            title: "3. High-Performance 136-Image Showcase & Complex Vector Assets with Ultralight Bundle:",
+            solution: "Authored RoyalCurtain in 100% pure SVG code with multi-stop gradients (zero raster HTTP requests). Engineered a Two-Tier Gallery display showing 6 initial photos per album with 1-tap expansion and smart auto-scroll, coupled with 85% WebP compression, native lazy loading, and next/dynamic code splitting for heavy interactive modals."
+          }
+        ]
+      }
+    },
+    {
       id: "schoolops",
       alt: "Ảnh dự án SchoolOps — Nền tảng Quản lý Vận hành Trường học (Next.js 16 + Express)",
       i18nKeys: { meta: "p_so_meta", title: "p_so_title", desc: "p_so_desc" },
@@ -824,16 +909,111 @@
   // Export to global scope
   
   // ==========================================================================
+  // Domain Tracks Metadata for Executive Overview Dashboard
+  // ==========================================================================
+  const TRACKS_METADATA = [
+    {
+      id: "fullstack",
+      icon: "🚀",
+      badgeClass: "badge-fullstack",
+      count: 4,
+      vi: {
+        title: "Full-Stack Development",
+        tagline: "Kiến trúc Monorepo & Web Platforms",
+        summary: "Thiết kế và triển khai các hệ thống web enterprise hoàn chỉnh: phân tầng Controller/Service/Repository, dynamic RBAC, đồng bộ thời gian thực, SSR/SSG tối ưu và kết nối CSDL tin cậy.",
+        highlights: ["Next.js 16/15", "React 19", "Express.js", "PostgreSQL 16", "Supabase", "JWT RBAC"],
+        featured: "SchoolOps, BookingCare",
+        cta: "Khám phá 4 dự án Full-Stack"
+      },
+      en: {
+        title: "Full-Stack Development",
+        tagline: "Monorepo & Web Platforms",
+        summary: "Designing and shipping robust enterprise web platforms: layered Controller/Service/Repository architecture, dynamic RBAC, real-time sync, optimized SSR/SSG, and rock-solid database integrations.",
+        highlights: ["Next.js 16/15", "React 19", "Express.js", "PostgreSQL 16", "Supabase", "JWT RBAC"],
+        featured: "SchoolOps, BookingCare",
+        cta: "Explore 4 Full-Stack Projects"
+      }
+    },
+    {
+      id: "frontend",
+      icon: "🎨",
+      badgeClass: "badge-frontend",
+      count: 2,
+      vi: {
+        title: "Frontend & UI/UX Engineering",
+        tagline: "Royal UI & Hiệu năng 120Hz",
+        summary: "Chuyên sâu kỹ thuật giao diện hiện đại: chuyển động tăng tốc phần cứng GPU (0ms latency), triệt tiêu Layout Thrashing trên iOS Safari, kiến trúc vector thuần SVG và chuẩn nén WebP siêu nhẹ.",
+        highlights: ["Next.js 16", "Tailwind CSS v4", "motion/react", "Zero CLS", "Custom Cursor", "SVG Vector"],
+        featured: "Graduation Invitation, SchoolOps",
+        cta: "Khám phá 2 dự án Frontend"
+      },
+      en: {
+        title: "Frontend & UI/UX Engineering",
+        tagline: "Royal Aesthetics & Zero CLS",
+        summary: "Deep modern UI engineering: GPU-accelerated motion (0ms latency), compositor thrashing elimination on iOS Safari, pure code-based SVG vector graphics, and high-performance WebP media pipelines.",
+        highlights: ["Next.js 16", "Tailwind CSS v4", "motion/react", "Zero CLS", "Custom Cursor", "SVG Vector"],
+        featured: "Graduation Invitation, SchoolOps",
+        cta: "Explore 2 Frontend Projects"
+      }
+    },
+    {
+      id: "backend",
+      icon: "⚙️",
+      badgeClass: "badge-backend",
+      count: 6,
+      vi: {
+        title: "Backend & Systems Architecture",
+        tagline: "High-Throughput APIs & SQL",
+        summary: "Xây dựng hạ tầng dịch vụ và CSDL chịu tải cao: Native pg connection pooling (không ORM), stored procedures chống xung đột lịch, atomic updates chống race condition và container hóa Docker.",
+        highlights: ["Node.js", "Express", "PostgreSQL 16 (Native pg)", "MySQL", "Laravel 10", "Docker"],
+        featured: "SchoolOps, BookingCare, POS",
+        cta: "Khám phá 6 dự án Backend"
+      },
+      en: {
+        title: "Backend & Systems Architecture",
+        tagline: "High-Throughput APIs & SQL",
+        summary: "Building robust service infrastructure and relational databases: native node-postgres connection pooling (no ORM), timetable conflict stored procedures, atomic updates, and Docker containerization.",
+        highlights: ["Node.js", "Express", "PostgreSQL 16 (Native pg)", "MySQL", "Laravel 10", "Docker"],
+        featured: "SchoolOps, BookingCare, POS",
+        cta: "Explore 6 Backend Projects"
+      }
+    },
+    {
+      id: "ai",
+      icon: "🧠",
+      badgeClass: "badge-ai",
+      count: 4,
+      vi: {
+        title: "AI & Machine Learning",
+        tagline: "Computer Vision & NLP Models",
+        summary: "Nghiên cứu và triển khai mô hình học sâu thực nghiệm: Spatial Attention OCR, Transformer Decoder, Reinforcement Learning (PPO/RLHF) cho máy dịch và LSTM dự báo chuỗi thời gian.",
+        highlights: ["Python", "PyTorch", "PaddleOCR", "Hugging Face TRL", "TensorFlow", "FastAPI"],
+        featured: "PDF Vision OCR, Vietnamese OCR",
+        cta: "Khám phá 4 dự án AI & ML"
+      },
+      en: {
+        title: "AI & Machine Learning",
+        tagline: "Computer Vision & NLP Models",
+        summary: "Researching and deploying experimental deep learning architectures: Spatial Attention OCR, Transformer Decoder, Reinforcement Learning (PPO/RLHF) for machine translation, and LSTM forecasting.",
+        highlights: ["Python", "PyTorch", "PaddleOCR", "Hugging Face TRL", "TensorFlow", "FastAPI"],
+        featured: "PDF Vision OCR, Vietnamese OCR",
+        cta: "Explore 4 AI & ML Projects"
+      }
+    }
+  ];
+
+  // ==========================================================================
   // Dynamic Project Cards Render Engine
   // ==========================================================================
-  function buildProjectCard(p) {
+  function buildProjectCard(p, dynamicNum) {
     const isEn = (typeof window.getCurrentLang === "function" ? window.getCurrentLang() : "vi") === "en";
     const loc = p[isEn ? "en" : "vi"] || p.vi;
+    const cardNum = dynamicNum || p.num || "#01";
 
     const latestBadge = p.isLatest ? [
       '<span class="project-badge-latest">',
       '  <span class="badge-dot animate-pulse"></span>',
-      '  <span data-i18n="p_badge_latest">Mới nhất</span>',
+      '  <span data-i18n="p_badge_latest">Đang phát triển</span>',
       '</span>'
     ].join("") : "";
 
@@ -856,7 +1036,7 @@
       '<article class="project-card bg-white dark:bg-[#0f172a]/75 rounded-2xl shadow-lg border border-slate-200/80 dark:border-white/10 p-6 flex flex-col justify-between transition-transform duration-500 hover:-translate-y-1" data-category="' + p.categories.join(" ") + '" data-project-id="' + p.id + '">',
       '  <div>',
       '    <div class="project-card-header">',
-      '      <span class="project-num">' + p.num + '</span>',
+      '      <span class="project-num">' + cardNum + '</span>',
       latestBadge,
       '    </div>',
       '    <div class="text-center mb-4">',
@@ -894,13 +1074,142 @@
   function renderProjectCards() {
     const track = document.getElementById("projects-track");
     if (!track) return;
-    track.innerHTML = rawProjects.map(buildProjectCard).join("");
+    track.innerHTML = rawProjects.map(function (p, idx) {
+      const numStr = (idx + 1 < 10 ? "#0" : "#") + (idx + 1);
+      return buildProjectCard(p, numStr);
+    }).join("");
     if (typeof window.applyI18n === "function") {
       window.applyI18n(track);
     }
   }
 
+  // ==========================================================================
+  // Executive Overview Dashboard Render Engine
+  // ==========================================================================
+  function buildOverviewGrid() {
+    const isEn = (typeof window.getCurrentLang === "function" ? window.getCurrentLang() : "vi") === "en";
+
+    // Chart columns configuration
+    const trackFillClasses = {
+      fullstack: "chart-fill-fullstack",
+      frontend: "chart-fill-frontend",
+      backend: "chart-fill-backend",
+      ai: "chart-fill-ai"
+    };
+
+    const maxCount = 6;
+
+    const chartColsHtml = TRACKS_METADATA.map(function (track) {
+      const loc = track[isEn ? "en" : "vi"];
+      const count = rawProjects.filter(function (p) {
+        return p.categories && p.categories.includes(track.id);
+      }).length;
+      const percent = Math.round((count / maxCount) * 100);
+      const fillCls = trackFillClasses[track.id] || "chart-fill-fullstack";
+      const shortTitle = track.id === "fullstack" ? "Full-Stack" : (track.id === "frontend" ? "Frontend" : (track.id === "backend" ? "Backend" : "AI & ML"));
+
+      return [
+        '<button type="button" class="chart-col-btn group" data-track-target="' + track.id + '" title="' + loc.title + '">',
+        '  <div class="chart-col-val">',
+        '    <span>' + count + '</span>',
+        '    <span class="chart-col-unit">' + (isEn ? 'prjs' : 'dự án') + '</span>',
+        '  </div>',
+        '  <div class="chart-bar-pillar">',
+        '    <div class="chart-bar-fill ' + fillCls + '" style="height: ' + percent + '%;"></div>',
+        '  </div>',
+        '  <div class="mt-2.5 flex items-center justify-center gap-1">',
+        '    <span class="text-sm">' + track.icon + '</span>',
+        '    <span class="text-xs sm:text-sm font-bold text-gray-800 dark:text-gray-200 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors whitespace-nowrap">' + shortTitle + '</span>',
+        '  </div>',
+        '  <span class="mt-0.5 text-[10px] sm:text-[11px] font-semibold text-indigo-500 dark:text-indigo-400 opacity-75 group-hover:opacity-100 group-hover:underline inline-flex items-center gap-0.5 whitespace-nowrap">',
+        '    <span>' + (isEn ? 'Explore →' : 'Khám phá →') + '</span>',
+        '  </span>',
+        '</button>'
+      ].join("");
+    }).join("");
+
+    const cardsHtml = TRACKS_METADATA.map(function (track) {
+      const loc = track[isEn ? "en" : "vi"];
+      const count = rawProjects.filter(function (p) {
+        return p.categories && p.categories.includes(track.id);
+      }).length;
+
+      // Keep only top 4 pills for compact minimalism
+      const topPills = (loc.highlights || []).slice(0, 4).map(function (h) {
+        return '<span class="track-pill">' + h + '</span>';
+      }).join("");
+
+      return [
+        '<div class="track-bento-card group cursor-pointer" data-track-id="' + track.id + '" role="button" tabindex="0" aria-label="' + loc.title + '">',
+        '  <div class="track-card-top flex items-center justify-between gap-3 mb-2.5">',
+        '    <div class="flex items-center gap-3 min-w-0 flex-1">',
+        '      <span class="track-icon-badge text-xl p-2 rounded-xl ' + track.badgeClass + ' flex-shrink-0">' + track.icon + '</span>',
+        '      <div class="min-w-0">',
+        '        <h4 class="track-title text-base sm:text-lg font-bold text-gray-900 dark:text-white group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors truncate">' + loc.title + '</h4>',
+        '        <p class="track-tagline text-[11px] font-semibold uppercase tracking-wider text-indigo-500 dark:text-indigo-400 whitespace-nowrap">' + loc.tagline + '</p>',
+        '      </div>',
+        '    </div>',
+        '    <span class="track-count-badge flex-shrink-0 whitespace-nowrap">' + count + ' ' + (isEn ? 'Projects' : 'Dự án') + '</span>',
+        '  </div>',
+        '  <div class="track-highlights flex flex-wrap gap-1.5 mb-3">' + topPills + '</div>',
+        '  <div class="track-footer flex items-center justify-between pt-2.5 border-t border-slate-100 dark:border-white/5">',
+        '    <span class="track-featured text-xs text-gray-500 dark:text-gray-400 truncate max-w-[62%]"><span class="font-medium text-gray-700 dark:text-gray-300">' + (isEn ? 'Featured: ' : 'Tiêu biểu: ') + '</span>' + loc.featured + '</span>',
+        '    <button type="button" class="track-cta-btn inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400 group-hover:translate-x-1 transition-transform flex-shrink-0 whitespace-nowrap" data-track-target="' + track.id + '">',
+        '      <span>' + (isEn ? 'Explore track' : 'Khám phá') + '</span>',
+        '      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>',
+        '    </button>',
+        '  </div>',
+        '</div>'
+      ].join("");
+    }).join("");
+
+    return [
+      '<div class="projects-overview-grid max-w-5xl mx-auto">',
+      '  <div class="overview-chart-card mb-6">',
+      '    <div class="flex flex-wrap items-center justify-between gap-3 mb-2 pb-3 border-b border-slate-200/60 dark:border-white/5">',
+      '      <div>',
+      '        <h3 class="text-base sm:text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2">',
+      '          <span>📊</span><span>' + (isEn ? 'Engineering Tracks Distribution' : 'Phân bổ Dự án theo Chuyên môn') + '</span>',
+      '        </h3>',
+      '        <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">' + (isEn ? '11 Production & Research Projects across 4 Domains' : 'Tổng hợp 11 dự án thực tế & nghiên cứu trên 4 trục kỹ thuật cốt lõi') + '</p>',
+      '      </div>',
+      '      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold text-indigo-600 dark:text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 whitespace-nowrap">',
+      '        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>',
+      '        <span>' + (isEn ? '11 Live / Clean Source Projects' : '11 Dự án Thực tế & Nghiên cứu') + '</span>',
+      '      </span>',
+      '    </div>',
+      '    <div class="overview-chart-grid">' + chartColsHtml + '</div>',
+      '  </div>',
+      '  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">' + cardsHtml + '</div>',
+      '</div>'
+    ].join("");
+  }
+
+  function renderProjectsOverview() {
+    const container = document.getElementById("projects-overview-container");
+    if (!container) return;
+    container.innerHTML = buildOverviewGrid();
+
+    // Wire clicks to switch tab
+    container.querySelectorAll("[data-track-target], [data-track-id]").forEach(function (el) {
+      el.addEventListener("click", function (e) {
+        e.stopPropagation();
+        const trackId = el.getAttribute("data-track-target") || el.getAttribute("data-track-id");
+        if (trackId && typeof window.switchProjectsCategory === "function") {
+          window.switchProjectsCategory(trackId);
+        }
+      });
+    });
+
+    if (typeof window.applyI18n === "function") {
+      window.applyI18n(container);
+    }
+  }
+
+  global.buildProjectCard = buildProjectCard;
   global.renderProjectCards = renderProjectCards;
+  global.renderProjectsOverview = renderProjectsOverview;
+  global.TRACKS_METADATA = TRACKS_METADATA;
 
   global.PROJECTS_DATA = PROJECTS_DATA;
 })(typeof window !== "undefined" ? window : this);

@@ -972,3 +972,276 @@ body.modal-open {
   color: #c7d2fe !important;
 }
 
+/* ==========================================================================
+   Executive Overview Bento Dashboard Styles
+   ========================================================================== */
+.projects-overview-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.overview-executive-banner {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px -4px rgba(99, 102, 241, 0.12);
+  transition: all 0.3s ease;
+}
+
+.track-bento-card {
+  position: relative;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+html:not(.dark) .track-bento-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+}
+
+.track-bento-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 16px 36px -4px rgba(99, 102, 241, 0.22),
+              0 0 20px -2px rgba(6, 182, 212, 0.15);
+}
+
+html:not(.dark) .track-bento-card:hover {
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 12px 30px -4px rgba(99, 102, 241, 0.15);
+}
+
+.track-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+}
+
+.badge-fullstack {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.badge-frontend {
+  background: rgba(236, 72, 153, 0.15);
+  border-color: rgba(236, 72, 153, 0.3);
+}
+
+.badge-backend {
+  background: rgba(14, 165, 233, 0.15);
+  border-color: rgba(14, 165, 233, 0.3);
+}
+
+.badge-ai {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.track-count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #818cf8;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  line-height: 1;
+}
+
+html:not(.dark) .track-count-badge {
+  color: #4f46e5;
+  background: #eef2ff;
+  border-color: #c7d2fe;
+}
+
+.track-pill {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+}
+
+html:not(.dark) .track-pill {
+  color: #475569;
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+/* ==========================================================================
+   Executive Overview: Interactive Column Chart & Distribution Grid
+   ========================================================================== */
+.overview-chart-card {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1.5rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+html:not(.dark) .overview-chart-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+}
+
+.overview-chart-card:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.15);
+}
+
+.overview-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  align-items: end;
+  padding-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  .overview-chart-grid {
+    gap: 0.35rem;
+  }
+}
+
+.chart-col-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0.25rem;
+  border-radius: 1rem;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
+  width: 100%;
+}
+
+.chart-col-btn:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+html:not(.dark) .chart-col-btn:hover {
+  background: rgba(99, 102, 241, 0.04);
+}
+
+.chart-bar-pillar {
+  width: 100%;
+  max-width: 4.5rem;
+  height: 9.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.85rem;
+  padding: 0.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (max-width: 640px) {
+  .chart-bar-pillar {
+    height: 7.5rem;
+    padding: 0.25rem;
+    border-radius: 0.65rem;
+  }
+}
+
+html:not(.dark) .chart-bar-pillar {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.chart-col-btn:hover .chart-bar-pillar {
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.25);
+}
+
+.chart-bar-fill {
+  width: 100%;
+  border-radius: 0.55rem;
+  position: relative;
+  transition: height 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+}
+
+.chart-col-btn:hover .chart-bar-fill {
+  filter: brightness(1.18);
+}
+
+.chart-fill-backend {
+  background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.35);
+}
+
+.chart-fill-fullstack {
+  background: linear-gradient(180deg, #818cf8 0%, #4f46e5 100%);
+  box-shadow: 0 0 14px rgba(129, 140, 248, 0.35);
+}
+
+.chart-fill-ai {
+  background: linear-gradient(180deg, #c084fc 0%, #9333ea 100%);
+  box-shadow: 0 0 14px rgba(192, 132, 252, 0.35);
+}
+
+.chart-fill-frontend {
+  background: linear-gradient(180deg, #f472b6 0%, #db2777 100%);
+  box-shadow: 0 0 14px rgba(244, 114, 182, 0.35);
+}
+
+.chart-col-val {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 800;
+  font-size: 1.15rem;
+  line-height: 1;
+  color: #0f172a;
+  margin-bottom: 0.4rem;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  white-space: nowrap;
+}
+
+.dark .chart-col-val {
+  color: #f8fafc;
+}
+
+.chart-col-unit {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: lowercase;
+}
+
+
