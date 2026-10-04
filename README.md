@@ -56,9 +56,9 @@ A modern, high-performance **static web application** crafted with **HTML5, Tail
 - **Project ➔ Skill**: Clicking any interactive tech pill on project cards or inside the Project Details Modal jumps directly down to the Skills section with a focused pulsing highlight animation (`@keyframes skillPulseFocus`).
 
 ### 4. Advanced Projects Showcase
-- **Category Filter Tabs**: 1-click filtering across `All`, `Full-Stack`, `Frontend`, `Backend`, and `AI` with dynamic count badges.
+- **Overview Dashboard & Engineering Tracks**: Defaults to the **Overview Dashboard** with an interactive column chart visualizing project distribution across 4 core domains, alongside 4 dedicated tracks: `Full-Stack`, `Frontend`, `Backend`, and `AI` with dynamic indexing (`#01, #02...`).
 - **Bounded Carousel Slider**: Touch-swipe enabled for mobile, keyboard accessible, with boundary controls (auto-disables arrows at ends) and pagination indicator dots.
-- **Engineering Deep-Dive Modal**: Inspect full system architecture, database design, and key engineering challenges with their concrete solutions for 10 projects.
+- **Engineering Deep-Dive Modal**: Inspect full system architecture, database design, and key engineering challenges with their concrete solutions for 11 projects.
 
 ### 5. Technical Skills Categorized by 4 Pillars
 - **Core Languages**: C, C#, Java, Python, JavaScript, PHP.

@@ -20,6 +20,20 @@ Tất cả các file đều được chuẩn hóa theo **Cấu trúc khung tài 
 | **08** | [`08-stock-forecasting-ml.md`](./08-stock-forecasting-ml.md) | **Stock Forecasting & Benchmark (ML)** | 09/2024 – 12/2024 | Python, TensorFlow/Keras, scikit-learn, LSTM, FFNN, CNN, 7 Optimizers | ✅ Đã đồng bộ |
 | **09** | [`09-warehouse-ma.md`](./09-warehouse-ma.md) | **WarehouseMA** | 09/2024 – 12/2024 | C#, .NET WinForms, MySQL/SQL Server, 3-Tier, Google Forms API, QR Code, SRS/BRD | ✅ Đã đồng bộ |
 | **10** | [`10-pos-system.md`](./10-pos-system.md) | **An Khang Store POS** | 01/2024 – 05/2024 | Laravel 10, Livewire, MySQL, DOMPDF, Bootstrap 5, Vite, Toastr | ✅ Đã đồng bộ |
+| **11** | [`11-graduation-invitation.md`](./11-graduation-invitation.md) | **Graduation Invitation & Milestone Portfolio** | 09/2026 – Hiện tại | Next.js 16, React 19, TypeScript, Tailwind CSS v4, Motion, WebP, Serverless Route Handlers | ✅ Đã đồng bộ |
+
+---
+
+## 🎯 Cấu Trúc 4 Trục Chuyên Môn & Đánh Số Tự Động (Dynamic Indexing)
+
+Trên giao diện web Portfolio, tab mặc định là **"Tổng quan (Overview)"** (Bento Dashboard) tổng hợp toàn lực. Khi chuyển sang từng tab chuyên môn, số thứ tự sẽ được **đánh động (`#01, #02...`) từ mới nhất đến cũ nhất**:
+
+| Chuyên Môn (Track) | Số Lượng | Thứ Tự Hiển Thị Động (Mới nhất ➔ Cũ nhất) |
+| :--- | :---: | :--- |
+| **🚀 Full-Stack Development** | 4 | **#01** SchoolOps (09/2026)<br>**#02** BookingCare (09/2026)<br>**#03** CourseHub LMS (04/2026)<br>**#04** E-commerce Platform (09/2025) |
+| **🎨 Frontend & UI/UX** | 2 | **#01** Graduation Invitation & Milestone (09/2026)<br>**#02** SchoolOps (09/2026) |
+| **⚙️ Backend & Architecture** | 6 | **#01** SchoolOps (09/2026)<br>**#02** BookingCare (09/2026)<br>**#03** CourseHub LMS (04/2026)<br>**#04** E-commerce Platform (09/2025)<br>**#05** WarehouseMA (09/2024)<br>**#06** An Khang Store POS (01/2024) |
+| **🧠 AI & Machine Learning** | 4 | **#01** PDF Vision OCR (08/2026)<br>**#02** Vietnamese OCR (01/2025)<br>**#03** EN–VI Machine Translation (01/2025)<br>**#04** Stock Forecasting ML (09/2024) |
 
 ---
 
