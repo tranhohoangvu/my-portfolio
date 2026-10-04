@@ -81,10 +81,14 @@
         class="group flex items-center gap-2.5 text-2xl font-bold text-slate-900 dark:text-slate-100 transition-colors duration-300"
         aria-label="Về đầu trang">
         <!-- Logo for Light Mode (Dark Tile on Light Navbar) -->
-        <img src="assets/icons/favicon-32.png" alt="HoangVu Logo" class="w-8 h-8 rounded-lg shadow-sm transition-transform duration-300 group-hover:scale-105 block dark:hidden" />
+        <img src="assets/icons/favicon-32.png" alt="HoangVu Logo"
+          class="w-8 h-8 rounded-lg shadow-sm transition-transform duration-300 group-hover:scale-105 block dark:hidden" />
         <!-- Logo for Dark Mode (White Tile on Dark Navbar) -->
-        <img src="assets/icons/logo-white-tile.png" alt="HoangVu Logo" class="w-8 h-8 rounded-lg shadow-md ring-1 ring-white/15 transition-transform duration-300 group-hover:scale-105 hidden dark:block" />
-        <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">HoangVu<span class="text-cyan-500">.</span><span class="text-indigo-500 dark:text-indigo-400 font-semibold">dev</span></span>
+        <img src="assets/icons/logo-white-tile.png" alt="HoangVu Logo"
+          class="w-8 h-8 rounded-lg shadow-md ring-1 ring-white/15 transition-transform duration-300 group-hover:scale-105 hidden dark:block" />
+        <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">HoangVu<span
+            class="text-cyan-500">.</span><span
+            class="text-indigo-500 dark:text-indigo-400 font-semibold">dev</span></span>
       </a>
 
       <!-- Desktop links -->
@@ -423,7 +427,8 @@
               </div>
               <h4 class="about-pillar-title" data-i18n="about_pillar_goal_title">Vị trí Ứng tuyển</h4>
               <p class="about-pillar-desc" data-i18n="about_pillar_goal_desc">Backend Developer Fresher (Node.js,
-                Express, Laravel), Frontend Developer Fresher (Next.js, React, TypeScript) & AI Engineer Fresher (PyTorch, Transformers, Computer Vision).</p>
+                Express, Laravel), Frontend Developer Fresher (Next.js, React, TypeScript) & AI Engineer Fresher
+                (PyTorch, Transformers, Computer Vision).</p>
             </div>
           </div>
 
@@ -791,7 +796,8 @@
           </div>
 
           <h3 class="cv-title" data-i18n="cv_fe_title">Frontend Developer Fresher (PDF)</h3>
-          <p class="cv-desc" data-i18n="cv_fe_desc">Định hướng Frontend: Next.js, React, TypeScript, TailwindCSS & UI component-driven development.</p>
+          <p class="cv-desc" data-i18n="cv_fe_desc">Định hướng Frontend: Next.js, React, TypeScript, TailwindCSS & UI
+            component-driven development.</p>
 
           <!-- Tech Stack Chips -->
           <div class="cv-skills">
@@ -907,9 +913,10 @@
       <!-- Category Filter Tabs (All / Backend / AI / Full-Stack) -->
       <div class="projects-filter-wrapper mb-10 flex justify-center">
         <div class="projects-filter-bar" role="tablist" aria-label="Bộ lọc danh mục dự án">
-          <button type="button" role="tab" aria-selected="true" class="projects-filter-tab is-active" data-filter="all">
-            <span data-i18n="projects_tab_all">Tất cả</span>
-            <span class="projects-tab-count">10</span>
+          <button type="button" role="tab" aria-selected="true" class="projects-filter-tab is-active"
+            data-filter="overview">
+            <span class="tab-icon mr-1" aria-hidden="true">📊</span>
+            <span data-i18n="projects_tab_overview">Overview</span>
           </button>
           <button type="button" role="tab" aria-selected="false" class="projects-filter-tab" data-filter="fullstack">
             <span data-i18n="projects_tab_fullstack">Full-Stack</span>
@@ -917,7 +924,7 @@
           </button>
           <button type="button" role="tab" aria-selected="false" class="projects-filter-tab" data-filter="frontend">
             <span data-i18n="projects_tab_frontend">Frontend</span>
-            <span class="projects-tab-count">1</span>
+            <span class="projects-tab-count">2</span>
           </button>
           <button type="button" role="tab" aria-selected="false" class="projects-filter-tab" data-filter="backend">
             <span data-i18n="projects_tab_backend">Backend</span>
@@ -951,8 +958,11 @@
         </button>
       </div>
 
-      <!-- Projects Carousel Wrapper -->
-      <div class="projects-carousel-wrapper relative">
+      <!-- Projects Overview Container (Executive Bento Dashboard for "overview" tab) -->
+      <div id="projects-overview-container" class="projects-overview-container mb-6"></div>
+
+      <!-- Projects Carousel Wrapper (Hidden on overview tab, active on category tabs) -->
+      <div id="projects-carousel-wrapper" class="projects-carousel-wrapper relative hidden">
         <!-- Left Navigation Arrow -->
         <button id="projects-prev-btn" class="projects-nav-btn projects-nav-btn--prev" aria-label="Dự án trước"
           title="Dự án trước" type="button">
@@ -1052,8 +1062,8 @@
               <i class="devicon-python-plain colored"></i><span>Python</span>
             </div>
             <div class="skill-icon is-linked" data-skill-id="javascript" tabindex="0" role="button"
-              aria-label="JavaScript - 4 dự án" title="JavaScript • Ứng dụng trong 4 dự án">
-              <span class="skill-count-badge" data-count="4">4 DA</span>
+              aria-label="JavaScript - 5 dự án" title="JavaScript • Ứng dụng trong 5 dự án">
+              <span class="skill-count-badge" data-count="5">5 DA</span>
               <i class="devicon-javascript-plain colored"></i><span>JavaScript</span>
             </div>
             <div class="skill-icon is-linked" data-skill-id="php" tabindex="0" role="button" aria-label="PHP - 1 dự án"
@@ -1106,8 +1116,8 @@
               <i class="devicon-dot-net-plain colored"></i><span>.NET</span>
             </div>
             <div class="skill-icon is-linked" data-skill-id="react" tabindex="0" role="button"
-              aria-label="React - 4 dự án" title="React • Ứng dụng trong 4 dự án">
-              <span class="skill-count-badge" data-count="4">4 DA</span>
+              aria-label="React - 5 dự án" title="React • Ứng dụng trong 5 dự án">
+              <span class="skill-count-badge" data-count="5">5 DA</span>
               <i class="devicon-react-original colored"></i><span>React</span>
             </div>
           </div>
@@ -1204,14 +1214,14 @@
               <span class="skill-count-badge" data-count="1">1 DA</span>
               <i class="devicon-nginx-original colored"></i><span>Nginx</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="git" tabindex="0" role="button" aria-label="Git - 10 dự án"
+            <div class="skill-icon is-linked" data-skill-id="git" tabindex="0" role="button" aria-label="Git - 11 dự án"
               title="Git • Quản lý phiên bản mã nguồn">
-              <span class="skill-count-badge" data-count="10">10 DA</span>
+              <span class="skill-count-badge" data-count="11">11 DA</span>
               <i class="devicon-git-plain colored"></i><span>Git</span>
             </div>
             <div class="skill-icon is-linked" data-skill-id="github" tabindex="0" role="button"
-              aria-label="GitHub - 10 dự án" title="GitHub • Lưu trữ &amp; CI/CD">
-              <span class="skill-count-badge" data-count="10">10 DA</span>
+              aria-label="GitHub - 11 dự án" title="GitHub • Lưu trữ &amp; CI/CD">
+              <span class="skill-count-badge" data-count="11">11 DA</span>
               <i class="devicon-github-original colored"></i><span>GitHub</span>
             </div>
             <div class="skill-icon is-linked" data-skill-id="postman" tabindex="0" role="button"

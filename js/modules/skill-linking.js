@@ -80,6 +80,12 @@
         bannerCount.textContent = `(${count} ${suffix})`;
       }
 
+      // Ensure carousel is visible and overview is hidden while viewing filtered skills
+      const overviewContainer = document.getElementById("projects-overview-container");
+      const carouselWrapper = document.getElementById("projects-carousel-wrapper") || (track ? track.closest(".projects-carousel-wrapper") : null);
+      if (overviewContainer) overviewContainer.classList.add("hidden");
+      if (carouselWrapper) carouselWrapper.classList.remove("hidden");
+
       // 3. Highlight matching cards and dim non-matching cards
       let firstMatchedIndex = -1;
       let matchedCount = 0;
@@ -157,22 +163,26 @@
 
       if (reapplyCategory) {
         const activeTab = document.querySelector(".projects-filter-tab.is-active");
-        const cat = activeTab ? activeTab.getAttribute("data-filter") || "all" : "all";
-        let matchCount = 0;
-        allCards.forEach((card) => {
-          const cardCategories = (card.getAttribute("data-category") || "").toLowerCase().split(/\s+/);
-          const isMatch = cat === "all" || cardCategories.includes(cat.toLowerCase());
-          card.classList.toggle("is-filtered-out", !isMatch);
-          if (isMatch) matchCount++;
-        });
-        const emptyState = document.getElementById("projects-empty-state");
-        if (emptyState && track) {
-          if (matchCount === 0) {
-            emptyState.classList.remove("hidden");
-            track.style.display = "none";
-          } else {
-            emptyState.classList.add("hidden");
-            track.style.display = "flex";
+        const cat = activeTab ? activeTab.getAttribute("data-filter") || "overview" : "overview";
+        if (typeof window.applyProjectsFilter === "function") {
+          window.applyProjectsFilter(cat);
+        } else {
+          let matchCount = 0;
+          allCards.forEach((card) => {
+            const cardCategories = (card.getAttribute("data-category") || "").toLowerCase().split(/\s+/);
+            const isMatch = cat === "overview" || cardCategories.includes(cat.toLowerCase());
+            card.classList.toggle("is-filtered-out", !isMatch);
+            if (isMatch) matchCount++;
+          });
+          const emptyState = document.getElementById("projects-empty-state");
+          if (emptyState && track) {
+            if (matchCount === 0) {
+              emptyState.classList.remove("hidden");
+              track.style.display = "none";
+            } else {
+              emptyState.classList.add("hidden");
+              track.style.display = "flex";
+            }
           }
         }
       }

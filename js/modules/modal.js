@@ -83,7 +83,12 @@
       const localized = data[lang] || data.vi;
       const skillMapping = getSkillsMapping();
 
-      if (numEl) numEl.textContent = data.num;
+      if (numEl) {
+        const activeCard = document.querySelector(`.project-card[data-project-id="${projectId}"]:not(.is-filtered-out)`) 
+                        || document.querySelector(`.project-card[data-project-id="${projectId}"]`);
+        const dynamicNum = activeCard?.querySelector(".project-num")?.textContent;
+        numEl.textContent = dynamicNum || data.num || "#01";
+      }
       if (titleEl) titleEl.textContent = data.title;
       if (subtitleEl) subtitleEl.textContent = localized.subtitle;
       if (imgEl) {

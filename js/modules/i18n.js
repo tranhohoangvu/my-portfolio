@@ -25,7 +25,8 @@
       "nlp-translation": "p_mt",
       "stock-ml": "p_stock",
       warehouse: "p2",
-      pos: "p3"
+      pos: "p3",
+      "graduation-invitation": "p_gi"
     };
     window.PROJECTS_DATA.list.forEach((p) => {
       const prefix = projectKeyMapping[p.id];
@@ -157,6 +158,7 @@
 
     window.restartHeroTypewriter?.();
     window.refreshProjectsContent?.(currentLang);
+    window.renderProjectsOverview?.();
     window.refreshProjectModalIfOpen?.();
     window.refreshActiveSkillBanner?.();
     window.refreshTerminalLang?.();

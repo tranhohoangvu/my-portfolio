@@ -16,13 +16,8 @@
 
     if (!track || !prevBtn || !nextBtn) return;
 
-    // Guarantee original DOM order (#01 -> #07) so #07 and #01 never clash
+    // Guarantee chronological DOM order from projects.data.js (newest to oldest)
     const allCards = Array.from(track.querySelectorAll(".project-card"));
-    allCards.sort((a, b) => {
-      const numA = parseInt(a.querySelector(".project-num")?.textContent.replace(/\D/g, "") || "0", 10);
-      const numB = parseInt(b.querySelector(".project-num")?.textContent.replace(/\D/g, "") || "0", 10);
-      return numA - numB;
-    });
     allCards.forEach((card) => track.appendChild(card));
 
     let currentIndex = 0;
@@ -211,6 +206,8 @@
     const filterTabs = document.querySelectorAll(".projects-filter-tab");
     const track = document.getElementById("projects-track");
     const emptyState = document.getElementById("projects-empty-state");
+    const carouselWrapper = document.getElementById("projects-carousel-wrapper") || (track ? track.closest(".projects-carousel-wrapper") : null);
+    const overviewContainer = document.getElementById("projects-overview-container");
 
     if (!filterTabs.length || !track) return;
 
@@ -218,10 +215,10 @@
 
     // Dynamically update category count badges from rendered cards
     filterTabs.forEach((tab) => {
-      const filter = tab.getAttribute("data-filter") || "all";
+      const filter = tab.getAttribute("data-filter") || "overview";
       const countEl = tab.querySelector(".projects-tab-count");
       if (countEl) {
-        if (filter === "all") {
+        if (filter === "overview") {
           countEl.textContent = allCards.length;
         } else {
           const count = allCards.filter((c) => {
@@ -234,6 +231,30 @@
     });
 
     function applyFilter(category) {
+      if (category === "overview") {
+        if (overviewContainer) {
+          overviewContainer.classList.remove("hidden");
+          if (typeof window.renderProjectsOverview === "function") {
+            window.renderProjectsOverview();
+          }
+        }
+        if (carouselWrapper) {
+          carouselWrapper.classList.add("hidden");
+        }
+        if (emptyState) {
+          emptyState.classList.add("hidden");
+        }
+        return;
+      }
+
+      // Hide overview, show carousel
+      if (overviewContainer) {
+        overviewContainer.classList.add("hidden");
+      }
+      if (carouselWrapper) {
+        carouselWrapper.classList.remove("hidden");
+      }
+
       let matchCount = 0;
 
       allCards.forEach((card) => {
@@ -242,14 +263,20 @@
         card.classList.remove("is-skill-dimmed");
 
         const cardCategories = (card.getAttribute("data-category") || "").toLowerCase().split(/\s+/);
-        const isMatch = category === "all" || cardCategories.includes(category.toLowerCase());
+        const isMatch = cardCategories.includes(category.toLowerCase());
 
         if (isMatch) {
+          matchCount++;
           card.classList.remove("is-filtered-out");
           card.classList.remove("is-fade-in");
           void card.offsetWidth; // force reflow for smooth animation
           card.classList.add("is-fade-in");
-          matchCount++;
+
+          // Dynamic Numbering per category: #01, #02, #03...
+          const numEl = card.querySelector(".project-num");
+          if (numEl) {
+            numEl.textContent = (matchCount < 10 ? "#0" : "#") + matchCount;
+          }
         } else {
           card.classList.add("is-filtered-out");
           card.classList.remove("is-fade-in");
@@ -286,14 +313,29 @@
         tab.classList.add("is-active");
         tab.setAttribute("aria-selected", "true");
 
-        const filter = tab.getAttribute("data-filter") || "all";
+        const filter = tab.getAttribute("data-filter") || "overview";
         applyFilter(filter);
       });
     });
 
-    // Initial check
+    window.applyProjectsFilter = applyFilter;
+
+    // Helper: switch to category tab from Overview Cards
+    window.switchProjectsCategory = function (targetCategory) {
+      const targetTab = document.querySelector(`.projects-filter-tab[data-filter="${targetCategory}"]`);
+      if (targetTab) {
+        targetTab.click();
+        const header = document.querySelector(".projects-filter-wrapper");
+        if (header) {
+          const top = header.getBoundingClientRect().top + window.pageYOffset - 90;
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+      }
+    };
+
+    // Initial check (default: overview)
     const activeTab = document.querySelector(".projects-filter-tab.is-active");
-    const initialFilter = activeTab ? activeTab.getAttribute("data-filter") : "all";
+    const initialFilter = activeTab ? activeTab.getAttribute("data-filter") : "overview";
     applyFilter(initialFilter);
   }
 
