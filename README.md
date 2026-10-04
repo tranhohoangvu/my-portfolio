@@ -36,9 +36,9 @@ A modern, high-performance **static web application** crafted with **HTML5, Tail
 
 ## ✨ Core Highlights
 
-### 1. Dual-Theme Design System (Deep Obsidian & Light Zebra)
-- **Dark Mode (Deep Obsidian)**: Built upon an ultra-dark obsidian foundation (`#070b14` and `#0b101d`) layered with glassmorphic cards, crisp borders (`rgba(255,255,255,0.1)`), and ambient moving mesh aurora orbs (Neon Indigo `#6366f1`, Cyan `#06b6d4`, Emerald `#10b981`).
-- **Light Mode (Zebra Striping & Cool Slate)**: Employs an alternating zebra band rhythm across sections (`bg-white` vs `bg-slate-100` / `#f1f5f9`), enriched with cool-slate card fills (`#f8fafc` / `#f1f5f9`), crisp slate borders (`#cbd5e1`), and multi-layer drop shadows to eliminate washed-out white-on-white fatigue and ensure high legibility.
+### 1. Dual-Theme Design System (Deep Obsidian & Warm Ivory)
+- **Dark Mode (Deep Obsidian)**: Built upon an ultra-dark obsidian foundation (`#070b14` and `#0b101d`) layered with glassmorphic cards, crisp borders (`rgba(255,255,255,0.1)`), ambient moving mesh aurora orbs, and celestial starlight particles.
+- **Light Mode (Warm Ivory & Editorial Linen)**: Employs a sophisticated warm ivory aesthetic (`#faf8f5` canvas, `#f0ece1` alternating sections, `#eae5d8` warm navbar & footer) bounded by crisp `#d5cebf` divider borders, macOS paper terminal shell, and dynamic high-contrast floating particles (Indigo `#4f46e5`, Cyan `#0284c7`, Violet `#6366f1`) with zero-flicker in-place color morphing.
 - **Theme Persistence**: Theme state is saved in `localStorage.theme` and synchronizes with system preference (`prefers-color-scheme`).
 
 ### 2. Interactive Terminal CLI & REST API Console (`vu-cli v2.4`)
@@ -298,6 +298,7 @@ The portfolio is hosted on **GitHub Pages**:
 
 - **Full Name**: Trần Hồ Hoàng Vũ
 - **Email**: [hoangvu2k4cmg@gmail.com](mailto:hoangvu2k4cmg@gmail.com)
+- **Microsoft Teams**: [hoangvu2k4cmg@gmail.com](mailto:hoangvu2k4cmg@gmail.com)
 - **LinkedIn**: [linkedin.com/in/tranhohoangvu](https://linkedin.com/in/tranhohoangvu/)
 - **GitHub**: [github.com/tranhohoangvu](https://github.com/tranhohoangvu)
 - **Portfolio**: [tranhohoangvu.github.io/my-portfolio](https://tranhohoangvu.github.io/my-portfolio/)

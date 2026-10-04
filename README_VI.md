@@ -36,9 +36,9 @@
 
 ## ✨ Điểm nổi bật cốt lõi
 
-### 1. Hệ thống thiết kế Dual-Theme (Deep Obsidian & Light Zebra)
-- **Dark Mode (Deep Obsidian)**: Nền tối Deep Obsidian sang trọng (`#070b14` và `#0b101d`), kính mờ glassmorphism với viền kim loại mảnh phản quang (`rgba(255,255,255,0.1)`), và quầng sáng aurora mesh chuyển động mượt mà (Neon Indigo `#6366f1`, Cyan `#06b6d4`, Emerald `#10b981`).
-- **Light Mode (Zebra Striping & Cool Slate)**: Cấu trúc luân phiên nền sọc ngựa vằn giữa các section (`bg-white` xen kẽ `bg-slate-100` / `#f1f5f9`). Thẻ card và thành phần con mang màu xám Slate vững chãi (`#f8fafc` / `#f1f5f9`), viền xám `#cbd5e1` cùng đổ bóng đa lớp, triệt tiêu hoàn toàn hiện tượng chói mắt "trắng lẫn vào trắng" và nâng cao độ tương phản thông tin.
+### 1. Hệ thống thiết kế Dual-Theme (Deep Obsidian & Warm Ivory)
+- **Dark Mode (Deep Obsidian)**: Nền tối Deep Obsidian sang trọng (`#070b14` và `#0b101d`), kính mờ glassmorphism với viền kim loại mảnh phản quang (`rgba(255,255,255,0.1)`), quầng sáng aurora mesh chuyển động mượt mà và các hạt bụi sao starlight.
+- **Light Mode (Warm Ivory & Editorial Linen)**: Bố cục màu ngà ấm áp cao cấp (`#faf8f5` canvas, `#f0ece1` xen kẽ giữa các section, `#eae5d8` đồng điệu giữa Navbar và Footer) phân tách bằng đường viền `#d5cebf`, vỏ terminal giấy macOS trang nhã cùng hiệu ứng hạt chấm tròn nổi bật (Indigo `#4f46e5`, Cyan `#0284c7`, Violet `#6366f1`) với cơ chế chuyển màu trực tiếp In-place Theme Morphing không giật lag.
 - **Lưu trữ trạng thái**: Tự động lưu theme tại `localStorage.theme` và đồng bộ với cài đặt hệ điều hành (`prefers-color-scheme`).
 
 ### 2. Interactive Terminal CLI & REST API Console (`vu-cli v2.4`)
@@ -298,6 +298,7 @@ Dự án được cấu hình triển khai sẵn trên **GitHub Pages**:
 
 - **Họ và tên**: Trần Hồ Hoàng Vũ
 - **Email**: [hoangvu2k4cmg@gmail.com](mailto:hoangvu2k4cmg@gmail.com)
+- **Microsoft Teams**: [hoangvu2k4cmg@gmail.com](mailto:hoangvu2k4cmg@gmail.com)
 - **LinkedIn**: [linkedin.com/in/tranhohoangvu](https://linkedin.com/in/tranhohoangvu/)
 - **GitHub**: [github.com/tranhohoangvu](https://github.com/tranhohoangvu)
 - **Website Portfolio**: [tranhohoangvu.github.io/my-portfolio](https://tranhohoangvu.github.io/my-portfolio/)
