@@ -1,5 +1,5 @@
 /* SW: precache only .css .js .jpg .png .svg .webp */
-const VERSION = "v24";
+const VERSION = "v25";
 const CACHE_NAME = `portfolio-${VERSION}`;
 
 const PRECACHE = [
@@ -99,6 +99,7 @@ const PRECACHE = [
   "./assets/projects/pos.webp",
   "./assets/projects/schoolops.webp",
   "./assets/projects/graduation-invitation.webp",
+  "./assets/projects/math-portal.webp",
 ];
 
 self.addEventListener("install", (event) => {
