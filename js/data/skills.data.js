@@ -23,7 +23,7 @@
         { id: "csharp", name: "C#", devicon: "devicon-csharp-plain colored", framework: ".NET WinForms", projectIds: ["warehouse"] },
         { id: "java", name: "Java", devicon: "devicon-java-plain colored", level: "OOP Foundation", projectIds: [] },
         { id: "python", name: "Python", devicon: "devicon-python-plain colored", frameworks: ["PaddleOCR", "PyTorch", "TensorFlow", "FastAPI"], projectIds: ["pdf-vision-ocr", "vietnamese-ocr", "nlp-translation", "stock-ml"] },
-        { id: "javascript", name: "JavaScript", devicon: "devicon-javascript-plain colored", frameworks: ["Next.js", "TypeScript", "Node.js", "React"], projectIds: ["schoolops", "bookingcare", "coursehub", "ecommerce", "graduation-invitation"] },
+        { id: "javascript", name: "JavaScript", devicon: "devicon-javascript-plain colored", frameworks: ["Next.js", "TypeScript", "Node.js", "React"], projectIds: ["schoolops", "bookingcare", "coursehub", "ecommerce", "graduation-invitation", "math-portal"] },
         { id: "php", name: "PHP", devicon: "devicon-php-plain colored", framework: "Laravel", projectIds: ["pos"] }
       ]
     },
@@ -43,7 +43,7 @@
         { id: "laravel", name: "Laravel", devicon: "devicon-laravel-plain colored", projectIds: ["pos"] },
         { id: "restapi", name: "RESTful API", devicon: "devicon-postman-plain colored", projectIds: ["schoolops", "bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce"] },
         { id: "dotnet", name: ".NET WinForms", devicon: "devicon-dot-net-plain colored", projectIds: ["warehouse"] },
-        { id: "react", name: "React", devicon: "devicon-react-original colored", projectIds: ["schoolops", "bookingcare", "coursehub", "ecommerce", "graduation-invitation"] }
+        { id: "react", name: "React", devicon: "devicon-react-original colored", projectIds: ["schoolops", "bookingcare", "coursehub", "ecommerce", "graduation-invitation", "math-portal"] }
       ]
     },
     {
@@ -80,8 +80,8 @@
         { id: "docker", name: "Docker", devicon: "devicon-docker-plain colored", projectIds: ["pdf-vision-ocr", "ecommerce"] },
         { id: "compose", name: "Docker Compose", devicon: "devicon-docker-plain colored", projectIds: ["ecommerce"] },
         { id: "nginx", name: "Nginx", devicon: "devicon-nginx-original colored", projectIds: ["ecommerce"] },
-        { id: "git", name: "Git", devicon: "devicon-git-plain colored", projectIds: ["schoolops", "bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos", "graduation-invitation"] },
-        { id: "github", name: "GitHub", devicon: "devicon-github-original colored", projectIds: ["schoolops", "bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos", "graduation-invitation"] },
+        { id: "git", name: "Git", devicon: "devicon-git-plain colored", projectIds: ["schoolops", "bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos", "graduation-invitation", "math-portal"] },
+        { id: "github", name: "GitHub", devicon: "devicon-github-original colored", projectIds: ["schoolops", "bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos", "graduation-invitation", "math-portal"] },
         { id: "postman", name: "Postman", devicon: "devicon-postman-plain colored", projectIds: ["schoolops", "coursehub", "ecommerce"] },
         { id: "linux", name: "Linux", devicon: "devicon-linux-plain colored", projectIds: [] }
       ]
@@ -95,7 +95,7 @@
     csharp: { name: "C#", projects: ["warehouse"] },
     java: { name: "Java", projects: [] },
     python: { name: "Python", projects: ["pdf-vision-ocr", "vietnamese-ocr", "nlp-translation", "stock-ml"] },
-    javascript: { name: "JavaScript", projects: ["schoolops", "bookingcare", "coursehub", "ecommerce", "graduation-invitation"] },
+    javascript: { name: "JavaScript", projects: ["schoolops", "bookingcare", "coursehub", "ecommerce", "graduation-invitation", "math-portal"] },
     php: { name: "PHP", projects: ["pos"] },
 
     // Backend Architecture & Frameworks
@@ -104,7 +104,7 @@
     laravel: { name: "Laravel", projects: ["pos"] },
     restapi: { name: "RESTful API", projects: ["schoolops", "bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce"] },
     dotnet: { name: ".NET WinForms", projects: ["warehouse"] },
-    react: { name: "React", projects: ["schoolops", "bookingcare", "coursehub", "ecommerce", "graduation-invitation"] },
+    react: { name: "React", projects: ["schoolops", "bookingcare", "coursehub", "ecommerce", "graduation-invitation", "math-portal"] },
 
     // Databases & Storage
     postgresql: { name: "PostgreSQL", projects: ["schoolops", "bookingcare", "coursehub"] },
@@ -119,8 +119,8 @@
     docker: { name: "Docker", projects: ["pdf-vision-ocr", "ecommerce"] },
     compose: { name: "Docker Compose", projects: ["ecommerce"] },
     nginx: { name: "Nginx", projects: ["ecommerce"] },
-    git: { name: "Git", projects: ["schoolops", "bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos", "graduation-invitation"] },
-    github: { name: "GitHub", projects: ["schoolops", "bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos", "graduation-invitation"] },
+    git: { name: "Git", projects: ["schoolops", "bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos", "graduation-invitation", "math-portal"] },
+    github: { name: "GitHub", projects: ["schoolops", "bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos", "graduation-invitation", "math-portal"] },
     postman: { name: "Postman", projects: ["schoolops", "coursehub", "ecommerce"] },
     linux: { name: "Linux", projects: [] }
   };

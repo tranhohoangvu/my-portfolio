@@ -74,7 +74,7 @@ window.I18N_DATA = {
     about_chip_workmode: "💼 On-site • Hybrid • Remote",
     about_status_badge: "Sẵn sàng nhận việc",
     about_pillar_edu_title: "Học vấn & Nền tảng",
-    
+
     about_pillar_edu_desc: "Tốt nghiệp Khoa học Máy tính — Đại học Tôn Đức Thắng (TDTU). Nền tảng vững về Cấu trúc dữ liệu & Giải thuật.",
     about_pillar_exp_title: "Kinh nghiệm Thực chiến",
     about_pillar_exp_desc: "Thực tập Kỹ sư Phần mềm: thiết kế RESTful APIs, tối ưu Raw SQL PostgreSQL và tự động hóa quy trình Jira/OpenClaw.",
@@ -120,42 +120,42 @@ window.I18N_DATA = {
     modal_tab_challenges: "Thách thức Kỹ thuật & Giải pháp cốt lõi",
     modal_tab_techstack: "Công nghệ & Công cụ",
 
-    p_bc_meta: "Tháng 9, 2026 – Hiện tại • Nền tảng Y tế Full-Stack",
+    p_bc_meta: "Tháng 9, 2026 - Hiện tại • Nền tảng Y tế Full-Stack",
     p_bc_desc:
       "Nền tảng đặt lịch khám bệnh trực tuyến full-stack Next.js 15 & Supabase: phân quyền RBAC 3 cấp, chống đặt trùng lịch bằng atomic PostgreSQL update, Bulk Schedule Generator và mã QR check-in.",
     p_bc_title: "BookingCare",
 
-    p_pdf_meta: "Tháng 8, 2026 – Hiện tại • Hệ thống Trích xuất & OCR Thông minh",
+    p_pdf_meta: "Tháng 8, 2026 - Hiện tại • Hệ thống Trích xuất & OCR Thông minh",
     p_pdf_desc:
       "Hệ thống trích xuất và nhận diện ký tự quang học (OCR) thông minh cho PDF tiếng Việt: tiền xử lý OpenCV (Deskew, khử bóng, CLAHE), hybrid Gemini Vision AI fallback, xuất Word/Excel/PDF/Markdown và giao diện kép Streamlit + FastAPI.",
     p_pdf_title: "PDF Vision OCR",
 
-    p4_meta: "Tháng 4, 2026 – Tháng 6, 2026 • Dự án Full-Stack",
+    p4_meta: "Tháng 4, 2026 - Tháng 6, 2026 • Dự án Full-Stack",
     p4_desc:
       "Hệ thống Quản lý Học tập (LMS) full-stack: giao diện Udemy split-screen, phân quyền RBAC, tối ưu Raw SQL PostgreSQL (không dùng ORM), giỏ hàng lưu DB và bảng phân tích doanh thu.",
     p4_title: "CourseHub LMS",
 
-    p1_meta: "Tháng 9, 2025 – Tháng 12, 2025 • Đồ án Web Full-Stack",
+    p1_meta: "Tháng 9, 2025 - Tháng 12, 2025 • Đồ án Web Full-Stack",
     p1_desc:
       "Nền tảng thương mại điện tử full-stack tích hợp trợ lý ảo Gemini AI: giỏ hàng Zustand, cổng thanh toán VNPAY, cập nhật Socket.IO thời gian thực và triển khai Docker Compose CI/CD.",
     p1_title: "Nền tảng E-commerce",
 
-    p_ocr_meta: "Tháng 1, 2025 – Tháng 5, 2025 • Đồ án Deep Learning",
+    p_ocr_meta: "Tháng 1, 2025 - Tháng 5, 2025 • Đồ án Deep Learning",
     p_ocr_desc:
       "Khảo sát các cơ chế Attention (Self/Flash/Linear/Sparse) và xây dựng mô hình OCR nhận diện chữ tiếng Việt từ ảnh MCOCR bằng backbone ResNet34 + Spatial Attention + Transformer Decoder.",
     p_ocr_title: "Vietnamese OCR (Deep Learning)",
 
-    p_mt_meta: "Tháng 1, 2025 – Tháng 5, 2025 • Đồ án NLP",
+    p_mt_meta: "Tháng 1, 2025 - Tháng 5, 2025 • Đồ án NLP",
     p_mt_desc:
       "Khảo sát căn chỉnh RLHF/PPO với Hugging Face TRL và thực nghiệm dịch máy Anh - Việt so sánh mô hình tự huấn luyện (Transformer/GPT + SentencePiece) và Pretrained (GPT-2, MarianMT).",
-    p_mt_title: "EN–VI Machine Translation (NLP)",
+    p_mt_title: "EN-VI Machine Translation (NLP)",
 
-    p_stock_meta: "Tháng 9, 2024 – Tháng 12, 2024 • Đồ án Machine Learning",
+    p_stock_meta: "Tháng 9, 2024 - Tháng 12, 2024 • Đồ án Machine Learning",
     p_stock_desc:
       "Khảo sát tốc độ hội tụ 7 thuật toán Gradient Descent (GD, Momentum, Adam...); dự báo giá mở cửa cổ phiếu bằng cửa sổ trượt 60 ngày (LSTM/FFNN); và phân loại chữ số MNIST bằng CNN.",
     p_stock_title: "Stock Forecasting & Benchmark (ML)",
 
-    p2_meta: "Tháng 9, 2024 – Tháng 12, 2024 • Đồ án Công nghệ Phần mềm",
+    p2_meta: "Tháng 9, 2024 - Tháng 12, 2024 • Đồ án Công nghệ Phần mềm",
     p2_desc:
       "Phần mềm quản lý kho tòa nhà WinForms C# kiến trúc 3 lớp: tích hợp Google Forms API tiếp nhận yêu cầu, quét mã QR kiểm kê, tính phí tự động và bộ hồ sơ tài liệu SRS/BRD/UML chuẩn mực.",
     p2_title: "WarehouseMA",
@@ -164,19 +164,22 @@ window.I18N_DATA = {
     p2_tag3: "3-Tier",
     p2_tag4: "QR Code",
 
-    p3_meta: "Tháng 1, 2024 – Tháng 5, 2024 • Đồ án Lập trình Web",
+    p3_meta: "Tháng 1, 2024 - Tháng 5, 2024 • Đồ án Lập trình Web",
     p3_desc:
       "Hệ thống POS bán lẻ nội bộ cho cửa hàng điện thoại bằng Laravel 10 & Livewire: tìm kiếm mã vạch, tra cứu tự tạo khách hàng theo SĐT, email kích hoạt 1 phút và xuất hóa đơn PDF.",
     p3_title: "An Khang Store POS",
     p3_tag4: "DOMPDF",
 
-    p_so_meta: "Tháng 9, 2026 – Hiện tại • Dự án Full-Stack Cá nhân",
+    p_so_meta: "Tháng 9, 2026 - Hiện tại • Dự án Full-Stack Cá nhân",
     p_so_title: "SchoolOps",
     p_so_desc: "Nền tảng quản lý vận hành trường THCS enterprise-grade: ma trận RBAC động theo từng lớp, sơ đồ chỗ ngồi Fisher-Yates với overlay điểm danh, thời khóa biểu 2 ca và phát hiện xung đột giáo viên tự động.",
 
-    p_gi_meta: "Tháng 9, 2026 – Hiện tại • Nền tảng Thiệp mời Tốt nghiệp & Portfolio Cá nhân hóa",
+    p_gi_meta: "Tháng 9, 2026 - Hiện tại • Nền tảng Thiệp mời Tốt nghiệp & Portfolio Cá nhân hóa",
     p_gi_title: "Graduation Invitation",
     p_gi_desc: "Nền tảng thiệp mời tốt nghiệp cá nhân hóa & portfolio cột mốc Next.js 16 & React 19: phong cách Royal Academic Letterpress, tự động trích xuất danh xưng qua URL, cẩm nang 4 phương tiện, VR 360°, RSVP thời gian thực và thư viện 136 ảnh WebP.",
+    p_mp_meta: "Tháng 8, 2026 - Tháng 9, 2026 • Cổng Thông Tin Học Thuật & Tuyển Sinh Toán THCS",
+    p_mp_title: "Hoang Vu Math Portal",
+    p_mp_desc: "Cổng thông tin học thuật và tuyển sinh trực tuyến Toán THCS kiến trúc Jamstack / Edge-Rendered SPA: TanStack Router type-safe 100%, bộ soạn tin nhắn Zalo thông minh, widget giải toán tương tác và chuẩn tiếp cận WAI-ARIA.",
 
     skills_kicker: "⚡ NĂNG LỰC CỐT LÕI • TECH STACK",
     skills_headline: "Kỹ năng & Chuyên môn Kỹ thuật",
@@ -481,42 +484,42 @@ window.I18N_DATA = {
     modal_tab_challenges: "Key Challenges & Technical Solutions",
     modal_tab_techstack: "Technologies & Tools",
 
-    p_bc_meta: "Sep 2026 – Present • Full-Stack Healthcare Platform",
+    p_bc_meta: "Sep 2026 - Present • Full-Stack Healthcare Platform",
     p_bc_desc:
       "Full-stack digital healthcare appointment booking platform with Next.js 15 & Supabase: 3-tier RBAC, anti-race condition booking via atomic PostgreSQL updates, bulk schedule generator, and QR check-in.",
     p_bc_title: "BookingCare",
 
-    p_pdf_meta: "Aug 2026 – Present • Intelligent Document Processing & OCR",
+    p_pdf_meta: "Aug 2026 - Present • Intelligent Document Processing & OCR",
     p_pdf_desc:
       "Intelligent Vietnamese PDF OCR pipeline: adaptive OpenCV preprocessing (Auto-Deskew, shadow removal, CLAHE), hybrid Gemini Vision AI fallback, multi-format export (DOCX/XLSX/PDF/Markdown), and dual Streamlit + FastAPI interface.",
     p_pdf_title: "PDF Vision OCR",
 
-    p4_meta: "Apr 2026 – Jun 2026 • Full-Stack LMS",
+    p4_meta: "Apr 2026 - Jun 2026 • Full-Stack LMS",
     p4_desc:
       "Full-stack Learning Management System (LMS): Udemy-style split workspace, JWT RBAC authorization, optimized raw PostgreSQL SQL (no ORM), persistent cart, and revenue analytics.",
     p4_title: "CourseHub LMS",
 
-    p1_meta: "Sep 2025 – Dec 2025 • Full-Stack Web Project",
+    p1_meta: "Sep 2025 - Dec 2025 • Full-Stack Web Project",
     p1_desc:
       "Full-stack e-commerce platform with integrated Gemini AI shopping assistant: Zustand cart, VNPAY sandbox payment, Socket.IO real-time events, and Docker Compose CI/CD.",
     p1_title: "E-commerce Platform",
 
-    p_ocr_meta: "Jan 2025 – May 2025 • Deep Learning Project",
+    p_ocr_meta: "Jan 2025 - May 2025 • Deep Learning Project",
     p_ocr_desc:
       "Simulated Attention mechanisms (Self/Flash/Linear/Sparse) and built a Vietnamese scene text OCR model on MCOCR using ResNet34 CNN backbone, Spatial Attention, and Transformer Decoder.",
     p_ocr_title: "Vietnamese OCR (Deep Learning)",
 
-    p_mt_meta: "Jan 2025 – May 2025 • NLP Project",
+    p_mt_meta: "Jan 2025 - May 2025 • NLP Project",
     p_mt_desc:
       "Explored RLHF/PPO alignment with Hugging Face TRL and benchmarked EN-VI Machine Translation comparing scratch models (Transformer/GPT + SentencePiece) against pretrained GPT-2 and MarianMT.",
-    p_mt_title: "EN–VI Machine Translation (NLP)",
+    p_mt_title: "EN-VI Machine Translation (NLP)",
 
-    p_stock_meta: "Sep 2024 – Dec 2024 • Machine Learning Project",
+    p_stock_meta: "Sep 2024 - Dec 2024 • Machine Learning Project",
     p_stock_desc:
       "Benchmarked 7 gradient optimizers (GD, Momentum, Adam...); engineered 60-day sliding window stock open price forecasting (LSTM/FFNN); and classified MNIST digits with CNN.",
     p_stock_title: "Stock Forecasting & Benchmark (ML)",
 
-    p2_meta: "Sep 2024 – Dec 2024 • Software Engineering Project",
+    p2_meta: "Sep 2024 - Dec 2024 • Software Engineering Project",
     p2_desc:
       "Building warehouse desktop management in C# WinForms (3-tier): Google Forms API for inbound requests, QR inventory audits, automated fee calculations, and full SRS/BRD/UML documentation.",
     p2_title: "WarehouseMA",
@@ -525,19 +528,22 @@ window.I18N_DATA = {
     p2_tag3: "3-Tier",
     p2_tag4: "QR Code",
 
-    p3_meta: "Jan 2024 – May 2024 • Web Programming Project",
+    p3_meta: "Jan 2024 - May 2024 • Web Programming Project",
     p3_desc:
       "Internal retail POS for electronics stores built with Laravel 10 & Livewire: barcode search, customer phone lookup & auto-creation, 1-minute email activation, and DOMPDF invoice generation.",
     p3_title: "An Khang Store POS",
     p3_tag4: "DOMPDF",
 
-    p_so_meta: "Sep 2026 – Present • Personal Full-Stack Project",
+    p_so_meta: "Sep 2026 - Present • Personal Full-Stack Project",
     p_so_title: "SchoolOps",
     p_so_desc: "Enterprise-grade secondary school operations platform: dynamic per-class RBAC matrix, Fisher-Yates seating grid with live attendance overlay, 2-shift timetable with automatic conflict detection, 110 Vitest unit tests.",
 
-    p_gi_meta: "Sep 2026 – Present • Personalized Graduation Invitation & Milestone Portfolio",
+    p_gi_meta: "Sep 2026 - Present • Personalized Graduation Invitation & Milestone Portfolio",
     p_gi_title: "Graduation Invitation",
     p_gi_desc: "Personalized graduation invitation platform & milestone portfolio built with Next.js 16 & React 19: Royal Academic Letterpress aesthetics, dynamic URL query recipient personalization, 4-vehicle campus navigation, VR 360° tour, real-time Google Sheets RSVP, and 136 WebP memories gallery.",
+    p_mp_meta: "Aug 2026 - Sep 2026 • Academic & Enrollment Portal for Secondary Math",
+    p_mp_title: "Hoang Vu Math Portal",
+    p_mp_desc: "Academic enrollment and secondary math education portal on Jamstack / Edge-Rendered SPA: 100% type-safe TanStack Router, client-side smart Zalo enrollment engine, interactive math quiz widget, and WAI-ARIA accessibility.",
 
     skills_kicker: "⚡ CORE EXPERTISE • TECH STACK",
     skills_headline: "Technical Skills & Competencies",
@@ -724,4 +730,4 @@ window.I18N_DATA = {
     toast_json_copied: "Copied JSON response to clipboard!",
     toast_terminal_copied: "Copied terminal output to clipboard!",
   },
-};
+};
