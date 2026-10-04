@@ -1,10 +1,10 @@
 /* ===== SKILLS CARDS: Modern Software Engineer Aesthetic ===== */
 .skills-card--dark {
   background: #ffffff;
-  border: 1px solid rgba(203, 213, 225, 0.85);
+  border: 1px solid #e5e0d5;
   border-radius: 20px;
   padding: 24px;
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 4px 20px -2px rgba(22, 22, 26, 0.05), 0 2px 6px -1px rgba(22, 22, 26, 0.03);
   position: relative;
   overflow: hidden;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
@@ -51,7 +51,7 @@
   gap: 14px;
   margin-bottom: 20px;
   padding-bottom: 14px;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+  border-bottom: 1px solid #e5e0d5;
 }
 
 .skills-card-icon-wrap {
@@ -306,32 +306,35 @@
   justify-content: center;
   padding: 6px 12px;
   border-radius: 9999px;
-  border: 1px solid rgba(209, 213, 219, 0.9);
-  /* gray-300 */
-  background: transparent;
-  color: rgb(55, 65, 81);
-  /* gray-700 */
+  border: 1px solid #e5e0d5;
+  background: #ffffff;
+  color: #16161a;
   font-size: 12px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: 0.08em;
   cursor: pointer;
-  transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+  box-shadow: 0 1px 3px rgba(22, 22, 26, 0.04);
+  transition: background-color .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
 }
 
 .lang-pill:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: #f4f1ea;
+  border-color: #2f4bd8;
+  color: #2f4bd8;
 }
 
 .dark .lang-pill {
-  border-color: rgba(75, 85, 99, 0.9);
-  /* gray-600 */
-  color: rgb(229, 231, 235);
-  /* gray-200 */
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #f1f5f9;
+  box-shadow: none;
 }
 
 .dark .lang-pill:hover {
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(129, 140, 248, 0.6);
+  color: #ffffff;
 }
 
 .lang-pill:focus-visible {

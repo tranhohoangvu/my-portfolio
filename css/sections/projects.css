@@ -27,9 +27,9 @@
 }
 
 html:not(.dark) .projects-filter-bar {
-  background: #f1f5f9;
-  border-color: #cbd5e1;
-  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+  background: #f4f1ea;
+  border-color: #e5e0d5;
+  box-shadow: 0 4px 18px rgba(22, 22, 26, 0.05);
 }
 
 .projects-filter-tab {
@@ -55,12 +55,12 @@ html:not(.dark) .projects-filter-bar {
 }
 
 html:not(.dark) .projects-filter-tab {
-  color: #64748b;
+  color: #3f3f47;
 }
 
 html:not(.dark) .projects-filter-tab:hover {
-  color: #0f172a;
-  background: rgba(15, 23, 42, 0.05);
+  color: #16161a;
+  background: rgba(22, 22, 26, 0.05);
 }
 
 .projects-filter-tab.is-active {
@@ -424,17 +424,17 @@ html:not(.dark) .projects-filter-tab:hover {
               background-color 0.3s ease;
 }
 
-/* Light mode distinct card contrast */
+/* Light mode distinct card contrast (Tactile Crisp White Card on Editorial Paper Canvas) */
 html:not(.dark) .project-card {
-  background: #f8fafc !important;
-  border: 1px solid #cbd5e1 !important;
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  background: #ffffff !important;
+  border: 1px solid #e5e0d5 !important;
+  box-shadow: 0 4px 20px -2px rgba(22, 22, 26, 0.05), 0 2px 6px -1px rgba(22, 22, 26, 0.03);
 }
 
 html:not(.dark) .project-card:hover {
   background: #ffffff !important;
-  border-color: rgba(99, 102, 241, 0.65) !important;
-  box-shadow: 0 16px 36px -4px rgba(99, 102, 241, 0.16), 0 4px 12px -2px rgba(15, 23, 42, 0.08);
+  border-color: rgba(47, 75, 216, 0.65) !important;
+  box-shadow: 0 16px 36px -4px rgba(47, 75, 216, 0.16), 0 4px 12px -2px rgba(22, 22, 26, 0.06);
 }
 
 .dark .project-card,
@@ -1007,8 +1007,8 @@ body.modal-open {
 
 html:not(.dark) .track-bento-card {
   background: #ffffff;
-  border-color: #e2e8f0;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+  border-color: #e5e0d5;
+  box-shadow: 0 4px 20px rgba(22, 22, 26, 0.04);
 }
 
 .track-bento-card:hover {
@@ -1019,8 +1019,8 @@ html:not(.dark) .track-bento-card {
 }
 
 html:not(.dark) .track-bento-card:hover {
-  border-color: rgba(99, 102, 241, 0.5);
-  box-shadow: 0 12px 30px -4px rgba(99, 102, 241, 0.15);
+  border-color: rgba(47, 75, 216, 0.5);
+  box-shadow: 0 12px 30px -4px rgba(47, 75, 216, 0.15);
 }
 
 .track-icon-badge {
@@ -1069,7 +1069,7 @@ html:not(.dark) .track-bento-card:hover {
 }
 
 html:not(.dark) .track-count-badge {
-  color: #4f46e5;
+  color: #2f4bd8;
   background: #eef2ff;
   border-color: #c7d2fe;
 }
@@ -1087,9 +1087,9 @@ html:not(.dark) .track-count-badge {
 }
 
 html:not(.dark) .track-pill {
-  color: #475569;
-  background: #f8fafc;
-  border-color: #e2e8f0;
+  color: #3f3f47;
+  background: #f4f1ea;
+  border-color: #e5e0d5;
 }
 
 /* ==========================================================================
@@ -1107,8 +1107,8 @@ html:not(.dark) .track-pill {
 
 html:not(.dark) .overview-chart-card {
   background: #ffffff;
-  border-color: #e2e8f0;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  border-color: #e5e0d5;
+  box-shadow: 0 4px 20px rgba(22, 22, 26, 0.04);
 }
 
 .overview-chart-card:hover {
@@ -1179,9 +1179,9 @@ html:not(.dark) .chart-col-btn:hover {
 }
 
 html:not(.dark) .chart-bar-pillar {
-  background: #f1f5f9;
-  border-color: #e2e8f0;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+  background: #f4f1ea;
+  border-color: #e5e0d5;
+  box-shadow: inset 0 2px 4px rgba(22, 22, 26, 0.04);
 }
 
 .chart-col-btn:hover .chart-bar-pillar {

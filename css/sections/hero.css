@@ -11,6 +11,19 @@
     radial-gradient(650px circle at 85% 45%, rgba(6, 182, 212, 0.14), transparent 55%),
     linear-gradient(180deg, #070b14 0%, #0b101d 45%, #070b14 100%);
   overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+html:not(.dark) .hero-home {
+  background-color: #faf8f5;
+  background-image:
+    radial-gradient(ellipse 950px 550px at 50% 18%, rgba(47, 75, 216, 0.20) 0%, transparent 68%),
+    radial-gradient(ellipse 750px 480px at 12% 45%, rgba(6, 182, 212, 0.16) 0%, transparent 62%),
+    radial-gradient(ellipse 700px 450px at 88% 55%, rgba(193, 154, 63, 0.14) 0%, transparent 62%),
+    radial-gradient(rgba(22, 22, 26, 0.075) 1.2px, transparent 1.2px),
+    linear-gradient(180deg, #faf8f5 0%, #f4f1ea 60%, #faf8f5 100%);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px, 100% 100%;
+  border-bottom: 1.5px solid #ded7c8;
 }
 
 /* Dynamic Interactive Mouse Spotlight Glow */
@@ -22,6 +35,10 @@
   pointer-events: none;
   z-index: 0;
   transition: opacity 0.3s ease;
+}
+
+html:not(.dark) .hero-home::before {
+  background: radial-gradient(650px circle at var(--mouse-x, 50%) var(--mouse-y, 40%), rgba(47, 75, 216, 0.16), transparent 45%);
 }
 
 /* Ambient Moving Aurora Mesh Orbs */
@@ -38,22 +55,35 @@
   transform: translateZ(0);
 }
 
+html:not(.dark) .hero-aurora-orb {
+  opacity: 0.9;
+  filter: blur(65px);
+}
+
 .hero-aurora-orb--1 {
-  width: 500px;
-  height: 500px;
+  width: 520px;
+  height: 520px;
   top: 10%;
   left: 15%;
   background: radial-gradient(circle, rgba(99, 102, 241, 0.38) 0%, transparent 70%);
   animation: heroAuroraDrift1 14s ease-in-out infinite alternate;
 }
 
+html:not(.dark) .hero-aurora-orb--1 {
+  background: radial-gradient(circle, rgba(47, 75, 216, 0.28) 0%, rgba(99, 102, 241, 0.15) 45%, transparent 70%);
+}
+
 .hero-aurora-orb--2 {
-  width: 440px;
-  height: 440px;
+  width: 480px;
+  height: 480px;
   bottom: 15%;
   right: 15%;
   background: radial-gradient(circle, rgba(6, 182, 212, 0.28) 0%, transparent 70%);
   animation: heroAuroraDrift2 11s ease-in-out infinite alternate;
+}
+
+html:not(.dark) .hero-aurora-orb--2 {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.26) 0%, rgba(56, 189, 248, 0.14) 45%, transparent 70%);
 }
 
 @keyframes heroAuroraDrift1 {
@@ -112,6 +142,13 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 16px rgba(16, 185, 129, 0.2);
   animation: heroBadgeFloat 3.8s ease-in-out infinite;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+html:not(.dark) .hero-status-badge {
+  background: #ffffff;
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  color: #16161a;
+  box-shadow: 0 4px 18px rgba(22, 22, 26, 0.05), 0 0 14px rgba(16, 185, 129, 0.12);
 }
 
 @keyframes heroBadgeFloat {
@@ -256,6 +293,22 @@
   box-shadow: 0 0 20px rgba(99, 102, 241, 0.25);
 }
 
+html:not(.dark) .btn-secondary {
+  background: #ffffff;
+  border: 1.5px solid #d5cebf;
+  color: #16161a;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(22, 22, 26, 0.06), 0 1px 3px rgba(22, 22, 26, 0.03);
+}
+
+html:not(.dark) .btn-secondary:hover {
+  background: #ffffff;
+  border-color: #2f4bd8;
+  color: #2f4bd8;
+  box-shadow: 0 8px 24px rgba(47, 75, 216, 0.18);
+  transform: translateY(-2px);
+}
+
 
 /* =========================
    CV DROPDOWN (match hero glass buttons)
@@ -309,6 +362,24 @@
   transform: translateY(-1px);
 }
 
+html:not(.dark) .cv-menu {
+  background: #ffffff;
+  border: 1px solid #e5e0d5;
+  box-shadow: 0 18px 45px rgba(22, 22, 26, 0.12);
+}
+
+html:not(.dark) .cv-item {
+  color: #16161a !important;
+}
+
+html:not(.dark) .cv-item:hover {
+  background: #f4f1ea;
+}
+
+html:not(.dark) .cv-item__meta {
+  color: #3f3f47;
+}
+
 .cv-item__title {
   font-weight: 650;
   font-size: 14px;
@@ -355,6 +426,15 @@
   animation: typing 2.2s steps(35, end) both, heroTitleShimmer 8s ease-in-out infinite alternate;
 }
 
+html:not(.dark) #home .animate-type {
+  background: linear-gradient(135deg, #090e1a 0%, #1e1b4b 28%, #2f4bd8 65%, #0891b2 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 20px rgba(47, 75, 216, 0.18));
+}
+
 @keyframes heroTitleShimmer {
   0% {
     background-position: 0% 50%;
@@ -382,7 +462,50 @@
   background: linear-gradient(90deg, #38bdf8, #6366f1);
   /* sky -> indigo */
   box-shadow: 0 0 18px rgba(56, 189, 248, .25);
-  transition: width .8s ease;
+/* =========================
+   HERO TECH CHIPS STRIP
+   ========================= */
+.hero-tech-strip {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-tech-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.38rem 0.95rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.22s ease, border-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.hero-tech-chip:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.45);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.25);
+}
+
+html:not(.dark) .hero-tech-chip {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #e2ded3;
+  color: #3f3f47;
+  box-shadow: 0 2px 10px rgba(22, 22, 26, 0.05);
+}
+
+html:not(.dark) .hero-tech-chip:hover {
+  background: #ffffff;
+  border-color: rgba(47, 75, 216, 0.45);
+  color: #2f4bd8;
+  box-shadow: 0 4px 18px rgba(47, 75, 216, 0.14);
 }
 
 /* =========================
