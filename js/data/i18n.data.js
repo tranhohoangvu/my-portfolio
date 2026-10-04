@@ -20,7 +20,7 @@ window.I18N_DATA = {
     nav_cv: "CV",
 
     hero_name: "Trần Hồ Hoàng Vũ",
-    hero_status_badge: "Sẵn sàng nhận việc • Backend / Frontend / AI Engineer Fresher",
+    hero_status_badge: "Sẵn sàng nhận việc",
     hero_subtitle: "Backend Developer, Frontend Developer & AI Engineer",
     hero_btn_projects: "Xem dự án",
     hero_btn_cv: "Tải CV",
@@ -317,8 +317,11 @@ window.I18N_DATA = {
     footer_rights: "© 2026 Bản quyền thuộc về Trần Hồ Hoàng Vũ.",
 
     toast_email_copied: "Đã sao chép email (hoangvu2k4cmg@gmail.com) vào clipboard!",
+    toast_teams_copied: "Đã sao chép tài khoản MS Teams (hoangvu2k4cmg@gmail.com) vào clipboard!",
     toast_email_copy_err: "Không thể sao chép email. Vui lòng copy thủ công!",
     contact_email_tip: "Nhấp để sao chép email (hoangvu2k4cmg@gmail.com)",
+    contact_teams_tip: "Nhấp để sao chép tài khoản MS Teams (hoangvu2k4cmg@gmail.com)",
+    about_teams_tip: "Nhấp để sao chép tài khoản MS Teams (hoangvu2k4cmg@gmail.com)",
     contact_copy_btn: "Sao chép",
     contact_copied_btn: "Đã sao chép!",
     sec_nav_home: "Trang chủ",
@@ -385,7 +388,7 @@ window.I18N_DATA = {
     nav_cv: "CV",
 
     hero_name: "Tran Ho Hoang Vu",
-    hero_status_badge: "Available for Hire • Backend / Frontend / AI Engineer Fresher",
+    hero_status_badge: "Available for Hire",
     hero_subtitle: "Backend Developer, Frontend Developer & AI Engineer",
     hero_btn_projects: "View projects",
     hero_btn_cv: "Download CV",
@@ -681,8 +684,11 @@ window.I18N_DATA = {
     footer_rights: "© 2026 Tran Ho Hoang Vu. All rights reserved.",
 
     toast_email_copied: "Email copied to clipboard (hoangvu2k4cmg@gmail.com)!",
+    toast_teams_copied: "MS Teams account copied to clipboard (hoangvu2k4cmg@gmail.com)!",
     toast_email_copy_err: "Failed to copy email. Please copy manually!",
     contact_email_tip: "Click to copy email (hoangvu2k4cmg@gmail.com)",
+    contact_teams_tip: "Click to copy MS Teams account (hoangvu2k4cmg@gmail.com)",
+    about_teams_tip: "Click to copy MS Teams account (hoangvu2k4cmg@gmail.com)",
     contact_copy_btn: "Copy",
     contact_copied_btn: "Copied!",
     sec_nav_home: "Home",

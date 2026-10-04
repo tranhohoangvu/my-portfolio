@@ -97,7 +97,7 @@
   position: relative;
   border-radius: 16px;
   padding: 16px 18px;
-  background: #f8fafc;
+  background: #ffffff;
   border: 1px solid rgba(16, 185, 129, 0.45);
   box-shadow: 0 4px 16px rgba(16, 185, 129, 0.08);
   margin-bottom: 1.25rem;
@@ -220,10 +220,10 @@
   text-decoration: none;
   color: inherit;
 
-  /* light mode cool gray card fill */
-  background: #f8fafc;
-  border: 1px solid #cbd5e1;
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+  /* light mode editorial paper card fill */
+  background: #ffffff;
+  border: 1px solid #e5e0d5;
+  box-shadow: 0 4px 16px rgba(22, 22, 26, 0.04);
 
   transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
   overflow: hidden;
@@ -405,6 +405,11 @@
 .contact-link-card[href*="instagram.com"] {
   --accent1: #ec4899;
   --accent2: #f97316;
+}
+
+.contact-link-card[href*="teams.microsoft.com"] {
+  --accent1: #505ac9;
+  --accent2: #7b83eb;
 }
 
 /* Copy Action Badge */
@@ -600,20 +605,20 @@
 /* --- Form Inputs Text & Placeholder Colors --- */
 html:not(.dark) .contact-form-panel input,
 html:not(.dark) .contact-form-panel textarea {
-  background-color: #f8fafc !important;
-  border: 1px solid #cbd5e1 !important;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) inset;
+  background-color: #faf8f5 !important;
+  border: 1px solid #e5e0d5 !important;
+  box-shadow: 0 1px 3px rgba(22, 22, 26, 0.04) inset;
 }
 
 html:not(.dark) .contact-form-panel input:focus,
 html:not(.dark) .contact-form-panel textarea:focus {
   background-color: #ffffff !important;
-  border-color: #6366f1 !important;
+  border-color: #2f4bd8 !important;
 }
 
 .contact-form-panel input,
 .contact-form-panel textarea {
-  color: #1e293b !important;
+  color: #16161a !important;
 }
 
 .dark .contact-form-panel input,

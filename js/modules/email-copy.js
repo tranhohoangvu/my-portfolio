@@ -155,7 +155,106 @@
       });
     }
 
-    // 3. Delegate click on any other mailto links (e.g. inside Terminal output)
+    // 3. Contact Section MS Teams Card (Click to copy)
+    const contactTeamsCard = document.getElementById("contact-teams-link");
+    let contactTeamsResetTimer = null;
+
+    if (contactTeamsCard) {
+      contactTeamsCard.addEventListener("click", async (e) => {
+        if (e.ctrlKey || e.metaKey) return;
+        e.preventDefault();
+        const emailToCopy = contactTeamsCard.getAttribute("data-email") || EMAIL_ADDRESS;
+        const copied = await copyText(emailToCopy);
+
+        if (copied) {
+          contactTeamsCard.classList.add("is-copied");
+          const badgeText = contactTeamsCard.querySelector(".contact-link-badge-text");
+          const copyIcon = contactTeamsCard.querySelector(".contact-copy-icon");
+          const checkIcon = contactTeamsCard.querySelector(".contact-check-icon");
+
+          if (badgeText) badgeText.textContent = t("contact_copied_btn");
+          if (copyIcon) copyIcon.classList.add("hidden");
+          if (checkIcon) checkIcon.classList.remove("hidden");
+
+          if (contactTeamsResetTimer) clearTimeout(contactTeamsResetTimer);
+          contactTeamsResetTimer = setTimeout(() => {
+            contactTeamsCard.classList.remove("is-copied");
+            if (badgeText) badgeText.textContent = t("contact_copy_btn");
+            if (copyIcon) copyIcon.classList.remove("hidden");
+            if (checkIcon) checkIcon.classList.add("hidden");
+          }, 2500);
+
+          triggerToast({
+            message: t("toast_teams_copied"),
+            type: "success",
+            duration: 3500,
+          });
+        } else {
+          triggerToast({
+            message: t("toast_email_copy_err"),
+            type: "error",
+            duration: 3500,
+          });
+        }
+      });
+
+      contactTeamsCard.addEventListener("keydown", (e) => {
+        if (e.key === " " || e.key === "Spacebar" || e.key === "Enter") {
+          e.preventDefault();
+          contactTeamsCard.click();
+        }
+      });
+    }
+
+    // 4. About Section MS Teams Button (Click to copy)
+    const aboutTeamsBtn = document.getElementById("about-teams-btn");
+    let aboutTeamsResetTimer = null;
+
+    if (aboutTeamsBtn) {
+      aboutTeamsBtn.addEventListener("click", async (e) => {
+        if (e.ctrlKey || e.metaKey) return;
+        e.preventDefault();
+        const emailToCopy = aboutTeamsBtn.getAttribute("data-email") || EMAIL_ADDRESS;
+        const copied = await copyText(emailToCopy);
+
+        if (copied) {
+          aboutTeamsBtn.classList.add("is-copied");
+          const defaultIcon = aboutTeamsBtn.querySelector(".teams-default-icon");
+          const checkIcon = aboutTeamsBtn.querySelector(".teams-check-icon");
+
+          if (defaultIcon) defaultIcon.classList.add("hidden");
+          if (checkIcon) checkIcon.classList.remove("hidden");
+
+          if (aboutTeamsResetTimer) clearTimeout(aboutTeamsResetTimer);
+          aboutTeamsResetTimer = setTimeout(() => {
+            aboutTeamsBtn.classList.remove("is-copied");
+            if (defaultIcon) defaultIcon.classList.remove("hidden");
+            if (checkIcon) checkIcon.classList.add("hidden");
+          }, 2500);
+
+          triggerToast({
+            message: t("toast_teams_copied"),
+            type: "success",
+            duration: 3500,
+          });
+        } else {
+          triggerToast({
+            message: t("toast_email_copy_err"),
+            type: "error",
+            duration: 3500,
+          });
+        }
+      });
+
+      aboutTeamsBtn.addEventListener("keydown", (e) => {
+        if (e.key === " " || e.key === "Spacebar" || e.key === "Enter") {
+          e.preventDefault();
+          aboutTeamsBtn.click();
+        }
+      });
+    }
+
+    // 5. Delegate click on any other mailto links (e.g. inside Terminal output)
     document.addEventListener("click", async (e) => {
       const mailLink = e.target.closest('a[href^="mailto:"]');
       if (!mailLink) return;
