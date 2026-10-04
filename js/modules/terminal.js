@@ -775,18 +775,32 @@ ${cardsHtml}
       });
     }
 
+    let fullscreenPlaceholder = null;
+
     function toggleTerminalFullscreen(forceState) {
       const isCurrentlyFullscreen = windowContainer.classList.contains("is-fullscreen");
       const nextState = typeof forceState === "boolean" ? forceState : !isCurrentlyFullscreen;
 
       if (nextState) {
+        if (!fullscreenPlaceholder) {
+          fullscreenPlaceholder = document.createComment("terminal-placeholder");
+          windowContainer.parentNode.insertBefore(fullscreenPlaceholder, windowContainer);
+        }
+        document.body.appendChild(windowContainer);
         windowContainer.classList.add("is-fullscreen");
         document.body.classList.add("terminal-fullscreen-active");
       } else {
         windowContainer.classList.remove("is-fullscreen");
         document.body.classList.remove("terminal-fullscreen-active");
+        if (fullscreenPlaceholder && fullscreenPlaceholder.parentNode) {
+          fullscreenPlaceholder.parentNode.insertBefore(windowContainer, fullscreenPlaceholder);
+          fullscreenPlaceholder.remove();
+          fullscreenPlaceholder = null;
+        }
       }
-      cliInput?.focus();
+      setTimeout(() => {
+        cliInput?.focus();
+      }, 50);
     }
 
     if (btnFullscreen) {
