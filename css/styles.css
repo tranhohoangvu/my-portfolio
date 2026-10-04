@@ -13,7 +13,7 @@
 
 /* ── Sections ── */
 @import './sections/hero.css';
-@import './sections/projects.css';
+@import './sections/projects.css?v=27';
 @import './sections/skills.css';
 @import './components/shared-cards.css';
 @import './sections/contact.css';

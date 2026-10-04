@@ -53,7 +53,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/tailwind.css" />
-  <link rel="stylesheet" href="css/styles.css?v=25" />
+  <link rel="stylesheet" href="css/styles.css?v=28" />
 
   <!-- Favicon (prefer SVG) -->
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
@@ -928,23 +928,28 @@
         <div class="projects-filter-bar" role="tablist" aria-label="Bộ lọc danh mục dự án">
           <button type="button" role="tab" aria-selected="true" class="projects-filter-tab is-active"
             data-filter="overview">
-            <span class="tab-icon mr-1" aria-hidden="true">📊</span>
-            <span data-i18n="projects_tab_overview">Overview</span>
+            <span class="tab-icon" aria-hidden="true">📊</span>
+            <span class="tab-label-full" data-i18n="projects_tab_overview">Overview</span>
+            <span class="tab-label-short">Overview</span>
           </button>
           <button type="button" role="tab" aria-selected="false" class="projects-filter-tab" data-filter="fullstack">
-            <span data-i18n="projects_tab_fullstack">Full-Stack</span>
+            <span class="tab-label-full" data-i18n="projects_tab_fullstack">Full-Stack</span>
+            <span class="tab-label-short">FS</span>
             <span class="projects-tab-count">4</span>
           </button>
           <button type="button" role="tab" aria-selected="false" class="projects-filter-tab" data-filter="frontend">
-            <span data-i18n="projects_tab_frontend">Frontend</span>
+            <span class="tab-label-full" data-i18n="projects_tab_frontend">Frontend</span>
+            <span class="tab-label-short">FE</span>
             <span class="projects-tab-count">3</span>
           </button>
           <button type="button" role="tab" aria-selected="false" class="projects-filter-tab" data-filter="backend">
-            <span data-i18n="projects_tab_backend">Backend</span>
+            <span class="tab-label-full" data-i18n="projects_tab_backend">Backend</span>
+            <span class="tab-label-short">BE</span>
             <span class="projects-tab-count">6</span>
           </button>
           <button type="button" role="tab" aria-selected="false" class="projects-filter-tab" data-filter="ai">
-            <span data-i18n="projects_tab_ai">AI</span>
+            <span class="tab-label-full" data-i18n="projects_tab_ai">AI</span>
+            <span class="tab-label-short">AI</span>
             <span class="projects-tab-count">4</span>
           </button>
         </div>
@@ -2436,8 +2441,106 @@
     </button>
   </aside>
 
+  <!-- Project Deep-Dive Technical Modal -->
+  <div id="project-detail-modal" class="project-modal-backdrop" role="dialog" aria-modal="true"
+    aria-labelledby="modal-project-title" aria-hidden="true">
+    <div class="project-modal-overlay" data-close-modal></div>
+    <div class="project-modal-container">
+      <!-- Modal Header -->
+      <div class="project-modal-header">
+        <div class="flex items-center gap-3">
+          <span id="modal-project-num"
+            class="text-xs font-mono px-2.5 py-1 rounded-md bg-indigo-500/10 dark:bg-indigo-400/15 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 font-bold">#01</span>
+          <div>
+            <h3 id="modal-project-title"
+              class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white leading-tight">Project Title</h3>
+            <p id="modal-project-subtitle"
+              class="text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-0.5 font-medium">Timeline • Category</p>
+          </div>
+        </div>
+        <button type="button" class="project-modal-close" data-close-modal aria-label="Đóng cửa sổ chi tiết">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="project-modal-body custom-scrollbar">
+        <!-- Showcase Image -->
+        <div class="project-modal-img-wrapper mb-6">
+          <img id="modal-project-img" src="" alt=""
+            class="w-full h-auto max-h-[340px] object-cover rounded-xl border border-slate-200/80 dark:border-white/10 shadow-sm"
+            loading="lazy">
+        </div>
+
+        <!-- Overview Description -->
+        <div class="mb-6">
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-2"
+            data-i18n="modal_tab_overview">Tổng quan dự án</h4>
+          <p id="modal-project-desc" class="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed"></p>
+        </div>
+
+        <!-- Technical Indicators & Architecture Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div class="modal-spec-card">
+            <div class="modal-spec-header">
+              <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+              <h4 class="font-semibold text-sm text-gray-900 dark:text-white" data-i18n="modal_tab_arch">Kiến trúc Hệ thống</h4>
+            </div>
+            <p id="modal-spec-arch" class="text-xs md:text-sm text-gray-600 dark:text-gray-300 leading-relaxed"></p>
+          </div>
+
+          <div class="modal-spec-card">
+            <div class="modal-spec-header">
+              <svg class="w-4 h-4 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+              </svg>
+              <h4 class="font-semibold text-sm text-gray-900 dark:text-white" data-i18n="modal_tab_data">Dữ liệu & Cơ sở dữ liệu</h4>
+            </div>
+            <p id="modal-spec-data" class="text-xs md:text-sm text-gray-600 dark:text-gray-300 leading-relaxed"></p>
+          </div>
+        </div>
+
+        <!-- Key Engineering Challenges & Solutions -->
+        <div class="modal-challenges-section mb-6">
+          <div class="flex items-center gap-2 mb-3">
+            <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            <h4 class="font-semibold text-sm text-gray-900 dark:text-white" data-i18n="modal_tab_challenges">Thách thức Kỹ thuật & Giải pháp cốt lõi</h4>
+          </div>
+          <div id="modal-spec-challenges" class="space-y-3">
+            <!-- Dynamically populated challenge cards -->
+          </div>
+        </div>
+
+        <!-- Tech Stack Tags -->
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2.5"
+            data-i18n="modal_tab_techstack">Công nghệ & Công cụ</h4>
+          <div id="modal-spec-tags" class="flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="project-modal-footer">
+        <div id="modal-actions" class="flex items-center gap-3 w-full justify-end">
+          <!-- Dynamically populated links -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
   <!-- Production JS Bundle (All Data & Feature Modules — Minified, Non-blocking) -->
-  <script src="js/bundle.min.js?v=33" defer></script>
+  <script src="js/bundle.min.js?v=38" defer></script>
 
   <!-- 5. Particles.js — lazy load sau khi trang idle để không block render -->
   <script>

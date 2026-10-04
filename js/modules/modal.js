@@ -6,7 +6,13 @@
   "use strict";
 
   function getProjectsData() {
-    return window.PROJECTS_DATA || {};
+    const raw = window.PROJECTS_DATA || window.rawProjects || [];
+    if (Array.isArray(raw)) {
+      const map = {};
+      raw.forEach(function (p) { if (p && p.id) map[p.id] = p; });
+      return map;
+    }
+    return raw;
   }
 
   function getSkillsMapping() {
