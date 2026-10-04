@@ -11,17 +11,63 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-// 2. Particle.js Background Canvas Initialization
-// Exposed as window._initParticles so it can be called lazily after script loads
+// 2. Particle.js Background Canvas Initialization & Smooth In-place Theme Morphing
+function _particlesHexToRgb(hex) {
+  var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+  hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+    return r + r + g + g + b + b;
+  });
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : { r: 255, g: 255, b: 255 };
+}
+
 window._initParticles = function initParticles() {
   if (typeof particlesJS === "undefined") return;
+  const container = document.getElementById("particles-js");
+  if (!container) return;
+
+  const isDark = document.documentElement.classList.contains("dark");
+
+  // In dark mode: crisp celestial white and soft star tints on dark cosmic background
+  // In light mode: vibrant tech indigo, sky cyan & violet dots clearly visible on light canvas
+  const particleColors = isDark
+    ? ["#ffffff", "#93c5fd", "#c7d2fe"]
+    : ["#4f46e5", "#0284c7", "#6366f1", "#0891b2"];
+  const particleOpacity = isDark ? 0.55 : 0.6;
+  const particleSize = isDark ? 3.2 : 3.8;
+
+  // Case 1: If particles.js is already running on the canvas, morph all particle colors in-place!
+  // No canvas destroying, no animation drops, no disappearing particles.
+  if (window.pJSDom && window.pJSDom.length && window.pJSDom[0].pJS) {
+    const pJS = window.pJSDom[0].pJS;
+    pJS.particles.color.value = particleColors;
+    pJS.particles.opacity.value = particleOpacity;
+    pJS.particles.size.value = particleSize;
+
+    if (pJS.particles.array && pJS.particles.array.length) {
+      for (let i = 0; i < pJS.particles.array.length; i++) {
+        const p = pJS.particles.array[i];
+        const hex = particleColors[Math.floor(Math.random() * particleColors.length)];
+        p.color.rgb = _particlesHexToRgb(hex);
+        p.opacity = (pJS.particles.opacity.random ? Math.random() : 1) * particleOpacity;
+        p.radius = (pJS.particles.size.random ? Math.random() : 1) * particleSize;
+      }
+    }
+    return;
+  }
+
+  // Case 2: Initial launch when particles.js first loads
   particlesJS("particles-js", {
     particles: {
-      number: { value: 80, density: { enable: true, value_area: 800 } },
-      color: { value: "#ffffff" },
+      number: { value: 85, density: { enable: true, value_area: 800 } },
+      color: { value: particleColors },
       shape: { type: "circle" },
-      opacity: { value: 0.5, random: true },
-      size: { value: 3, random: true },
+      opacity: { value: particleOpacity, random: true },
+      size: { value: particleSize, random: true },
       line_linked: { enable: false },
       move: { enable: true, speed: 2, direction: "none", random: true },
     },
@@ -36,6 +82,13 @@ window._initParticles = function initParticles() {
     retina_detect: true,
   });
 };
+
+// Also listen to theme changes dispatched by theme module
+window.addEventListener("portfolio:themechange", () => {
+  if (typeof window._initParticles === "function") {
+    window._initParticles();
+  }
+});
 
 // 3. Mobile Menu Drawer Navigation
 const mobileMenuToggle = document.getElementById("nav-toggle");

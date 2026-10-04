@@ -24,30 +24,9 @@
     const navEl = navbar || document.getElementById("navbar");
     if (!navEl) return;
 
-    const isDark = html.classList.contains("dark");
-    const isScrolled = window.scrollY > 50;
-
+    const isScrolled = window.scrollY > 30;
+    navEl.classList.toggle("scrolled", isScrolled);
     navEl.classList.remove(...NAV_RESET_CLASSES);
-
-    if (isScrolled) {
-      if (isDark) {
-        navEl.classList.add(
-          "bg-gray-900/80",
-          "backdrop-blur-md",
-          "border-b",
-          "border-gray-800/60"
-        );
-      } else {
-        navEl.classList.add(
-          "bg-white/80",
-          "backdrop-blur-md",
-          "border-b",
-          "border-gray-200/60"
-        );
-      }
-    } else {
-      navEl.classList.add(isDark ? "bg-gray-800" : "bg-white");
-    }
   }
 
   function setThemeIcons(isDark) {
@@ -73,7 +52,7 @@
   function updateThemeColor(isDark) {
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) {
-      meta.setAttribute("content", isDark ? "#070b14" : "#ffffff");
+      meta.setAttribute("content", isDark ? "#070b14" : "#faf8f5");
     }
   }
 
@@ -87,6 +66,7 @@
     // update dependent UI
     window.setGitHubActivityImages?.();
     updateNavbarBackground();
+    window._initParticles?.();
 
     if (persist) localStorage.setItem("theme", theme);
     window.dispatchEvent(new CustomEvent("portfolio:themechange", { detail: { theme, isDark } }));
