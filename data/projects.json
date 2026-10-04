@@ -747,6 +747,86 @@
           }
         ]
       }
+    },
+    {
+      "id": "graduation-invitation",
+      "num": "#11",
+      "isLatest": true,
+      "categories": [
+        "frontend"
+      ],
+      "image": "assets/projects/graduation-invitation.webp",
+      "tags": [
+        "Next.js 16",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS v4",
+        "Framer Motion",
+        "Serverless Route Handlers",
+        "Google Sheets Webhook",
+        "WebP Pipeline",
+        "SVG Vector"
+      ],
+      "links": [
+        {
+          "labelVi": "Xem Live Demo →",
+          "labelEn": "Live Demo →",
+          "url": "https://hoangvu-graduation-invitation.vercel.app",
+          "type": "accent"
+        },
+        {
+          "labelVi": "Xem trên GitHub →",
+          "labelEn": "View on GitHub →",
+          "url": "https://github.com/tranhohoangvu/hoangvu-graduation-invitation",
+          "type": "primary"
+        }
+      ],
+      "vi": {
+        "title": "Graduation Invitation",
+        "meta": "Tháng 9, 2026 – Hiện tại • Nền tảng Thiệp mời Tốt nghiệp & Portfolio Cá nhân hóa",
+        "summary": "Nền tảng thiệp mời tốt nghiệp cá nhân hóa & portfolio cột mốc Next.js 16 & React 19: phong cách Royal Academic Letterpress, tự động trích xuất danh xưng qua URL, cẩm nang 4 phương tiện, VR 360°, RSVP thời gian thực và thư viện 136 ảnh WebP.",
+        "subtitle": "Tháng 9, 2026 – Hiện tại • Thiệp mời Tốt nghiệp & Portfolio Cột mốc (Next.js 16 + React 19)",
+        "desc": "Graduation Invitation & Milestone Portfolio là nền tảng web thiệp mời tốt nghiệp cá nhân hóa kết hợp nhật ký hành trình 4 năm đại học (2022 – 2026) của thủ khoa / tân cử nhân Trần Hồ Hoàng Vũ (Khoa học Máy tính - K26, Đại học Tôn Đức Thắng). Dự án mang phong cách hoàng gia trang nhã (Royal Academic Letterpress), tự động cá nhân hóa danh xưng người nhận qua URL query parameters không cần backend, cẩm nang di chuyển 4 phương tiện và tour VR 360°, hệ thống RSVP ghi nhận thời gian thực về Google Sheets và thư viện 136 ảnh kỷ niệm chuẩn nén WebP.",
+        "arch": "Kiến trúc Server-Driven Jamstack & Component-Driven trên nền Next.js 16 (App Router, Turbopack, React 19) phân tầng: Presentation Layer 9 section độc lập, State Layer với custom hooks (useInvitee chống hydration mismatch, scroll spy tối ưu requestAnimationFrame), Data Layer SSOT định kiểu chặt chẽ trong graduation.ts, và API Layer serverless route handler /api/rsvp chuyển tiếp webhook bảo mật.",
+        "data": "Mô hình lưu trữ Serverless Database với Google Sheets qua Google Apps Script Webhook API (append-only) kết hợp client-side localStorage lưu vết chống gửi lặp. Typed In-Memory Data Schema (SSOT) bằng TypeScript as const. Pipeline nén 136 ảnh kỷ niệm sang WebP chất lượng 85% giảm 70% dung lượng, và Date Derivation Engine tính toán ngày giờ tự động chuẩn ISO 8601.",
+        "challenges": [
+          {
+            "title": "1. Khắc phục nghẽn compositor & rớt FPS trên iOS WebKit (Double Backdrop Blur & Layout Thrashing):",
+            "solution": "Loại bỏ hoàn toàn backdrop-filter đa tầng tại Mobile Menu Drawer và cụm nút nổi; thay bằng màu nền giấy đục bg-paper/98 viền mạ vàng. Chuyển toàn bộ hoạt ảnh sang CSS GPU transforms thuần túy (translateY, rotate) với độ trễ 0ms, gỡ bỏ smooth-scroll tĩnh xung đột gia tốc quán tính iOS và kiểm soát scroll listener bằng requestAnimationFrame."
+          },
+          {
+            "title": "2. Triệt tiêu hoàn toàn lỗi Hydration Mismatch & giật xô lệch bố cục (CLS):",
+            "solution": "Xây dựng hook useInvitee với cơ chế Client-Mounting Guard (chỉ đọc query param và localStorage sau khi mount, render fallback 'Bạn' trang nhã trên server). Kỹ thuật Zero Layout Shift trên Navbar dùng thẻ span ẩn cố định sẵn chiều rộng tối đa, tiền tính toán hằng số lượng giác SVG và thời gian ở module-level."
+          },
+          {
+            "title": "3. Tối ưu tải thư viện 136 ảnh kỷ niệm & đồ họa Vector phức tạp giữ bundle siêu nhẹ:",
+            "solution": "Lập trình RoyalCurtain bằng 100% mã SVG vector với 2 path nửa vòm và cánh rèm đối xứng dùng gradient đa điểm (0 lượt request HTTP). Kiến trúc hiển thị ảnh 2 cấp (Two-tier Gallery) hiển thị mặc định 6 ảnh/album với cơ chế toggle 1 chạm, chuẩn nén WebP với lazy loading và tách modal nặng qua next/dynamic (ssr: false)."
+          }
+        ]
+      },
+      "en": {
+        "title": "Graduation Invitation",
+        "meta": "Sep 2026 – Present • Personalized Graduation Invitation & Milestone Portfolio",
+        "summary": "Personalized graduation invitation platform & milestone portfolio built with Next.js 16 & React 19: Royal Academic Letterpress aesthetics, dynamic URL query recipient personalization, 4-vehicle campus navigation, VR 360° tour, real-time Google Sheets RSVP, and 136 WebP memories gallery.",
+        "subtitle": "Sep 2026 – Present • Graduation Invitation & Milestone Portfolio (Next.js 16 + React 19)",
+        "desc": "Graduation Invitation & Milestone Portfolio is a personalized graduation web platform and 4-year university milestone journal (2022 – 2026) for valedictorian / graduate Tran Ho Hoang Vu (Computer Science - K26, Ton Duc Thang University). Features Royal Academic Letterpress visual styling, zero-backend dynamic URL query recipient personalization, 4-vehicle campus navigation guide with VR 360° tour, real-time RSVP capture via Google Sheets Webhook, and an optimized 136-photo WebP memories showcase.",
+        "arch": "Server-Driven Jamstack & Component-Driven Architecture on Next.js 16 (App Router, Turbopack, React 19): 9 modular sections, state management via custom hooks (useInvitee with hydration guard, requestAnimationFrame scroll spy), strictly typed SSOT data layer in graduation.ts, and secure Next.js serverless route handler /api/rsvp webhook proxy.",
+        "data": "Serverless persistence via Google Sheets (Google Apps Script Webhook API, append-only) paired with client-side localStorage anti-spam state caching. Typed In-Memory Data Schema (SSOT) via TypeScript strict types. Automated WebP image compression pipeline for 136 photos achieving >70% size reduction, and RFC 3986 standard URL generation for Google Calendar.",
+        "challenges": [
+          {
+            "title": "1. Resolving iOS WebKit Compositor Bottlenecks & Frame Drops (Double Backdrop Filter Thrashing):",
+            "solution": "Eliminated multi-layered backdrop-blur-lg from Mobile Drawer and floating action buttons; replaced with refined opaque paper bg-paper/98 and hairline gold borders. Replaced Framer Motion staggering with GPU-accelerated CSS transforms (translateY, rotate) with 0ms latency, resolved iOS touch inertial conflicts, and throttled scroll listeners via requestAnimationFrame."
+          },
+          {
+            "title": "2. Zero Hydration Mismatch & Cumulative Layout Shift (CLS) Elimination:",
+            "solution": "Built custom hook useInvitee with Client-Mounting Guard (deferring search params and localStorage reads until post-hydration with graceful 'Bạn' fallback). Implemented Zero Layout Shift on Navbar using invisible static width-reservation spans, and precomputed SVG trigonometric constants at module initialization."
+          },
+          {
+            "title": "3. High-Performance 136-Image Showcase & Complex Vector Assets with Ultralight Bundle:",
+            "solution": "Authored RoyalCurtain in 100% pure SVG code with multi-stop gradients (zero raster HTTP requests). Engineered a Two-Tier Gallery display showing 6 initial photos per album with 1-tap expansion and smart auto-scroll, coupled with 85% WebP compression, native lazy loading, and next/dynamic code splitting for heavy interactive modals."
+          }
+        ]
+      }
     }
   ]
 }
