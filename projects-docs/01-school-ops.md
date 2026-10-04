@@ -1,19 +1,19 @@
 # 🏫 SchoolOps — School Operations Management System
 
-> **Thời gian thực hiện:** Tháng 9, 2026 – Hiện tại  
+> **Thời gian thực hiện:** Tháng 9, 2026 - Hiện tại  
 > **Vai trò:** Full-Stack Developer (Frontend & Backend)  
 > **Demo / Repository:** *(Private — available upon request)*
 
 ---
 
 ## 1. Tổng quan & Nghiệp vụ cốt lõi
-- **Mục tiêu:** Xây dựng nền tảng quản lý vận hành trường học cấp độ doanh nghiệp (enterprise-grade) dành riêng cho các trường THCS Việt Nam, lấy mô hình vận hành của Trường THCS Nguyễn Tất Thành (Năm học 2026 – 2027) làm tập dữ liệu tham chiếu và kiểm thử thực tế.
-- **Quy mô tập dữ liệu chuẩn:** 4 khối lớp, 16 lớp học (6A1–9A4), 480 học sinh (30 HS/lớp), 24 giáo viên với sự phân tách rõ ràng giữa GVCN và GVBM, 10 môn học cốt lõi.
+- **Mục tiêu:** Xây dựng nền tảng quản lý vận hành trường học cấp độ doanh nghiệp (enterprise-grade) dành riêng cho các trường THCS Việt Nam, lấy mô hình vận hành của Trường THCS Nguyễn Tất Thành (Năm học 2026 - 2027) làm tập dữ liệu tham chiếu và kiểm thử thực tế.
+- **Quy mô tập dữ liệu chuẩn:** 4 khối lớp, 16 lớp học (6A1-9A4), 480 học sinh (30 HS/lớp), 24 giáo viên với sự phân tách rõ ràng giữa GVCN và GVBM, 10 môn học cốt lõi.
 - **Nghiệp vụ cốt lõi:**
   - **Ma trận RBAC động theo từng lớp:** Quyền hạn tự động thích ứng dựa trên phân công thực tế của giáo viên trong từng lớp cụ thể — GVCN có toàn quyền CRUD, GVBM chỉ đọc và điểm danh môn phụ trách, Admin quản trị toàn trường.
   - **Sơ đồ chỗ ngồi thông minh (20 bàn / 40 chỗ):** Bố cục lớp học chuẩn 4 cột × 5 hàng, hỗ trợ chuyển đổi góc nhìn (từ cuối lớp / từ bục giảng), xáo trộn ngẫu nhiên Fisher-Yates, overlay điểm danh trực quan và in sơ đồ A4 ngang cho cửa lớp.
   - **Điểm danh theo tiết / môn học:** Hệ thống tự động phát hiện tiết học đang diễn ra theo đồng hồ thực tế, tổng hợp báo cáo vắng buổi sáng/chiều 1-click định dạng sẵn để gửi qua Zalo/SMS.
-  - **Thời khóa biểu 2 ca:** Hỗ trợ lịch học ca sáng (Khối 6, 9: Tiết 1–5) và ca chiều (Khối 7, 8: Tiết 6–10), tự động phát hiện và ngăn ngừa xung đột giáo viên dạy 2 lớp cùng giờ.
+  - **Thời khóa biểu 2 ca:** Hỗ trợ lịch học ca sáng (Khối 6, 9: Tiết 1-5) và ca chiều (Khối 7, 8: Tiết 6-10), tự động phát hiện và ngăn ngừa xung đột giáo viên dạy 2 lớp cùng giờ.
   - **Quản lý học sinh & Nhập liệu Excel:** CRUD hồ sơ học sinh đầy đủ, import hàng loạt từ file Excel chuẩn trường, thẻ liên lạc phụ huynh 1-chạm.
   - **Thông báo & Ghi chú lớp học:** Bảng thông báo với tính năng ghim tin, ghi chú nhận xét học sinh dành cho GVCN.
 
@@ -53,7 +53,7 @@
 
 - **Bài toán 3: Sơ đồ chỗ ngồi — Dual-perspective rendering & Live Attendance Overlay**  
   *Thách thức:* Hiển thị cùng một sơ đồ 4×5 từ hai góc nhìn đối nghịch (từ cuối lớp / từ bục giảng) trong khi vẫn overlay trạng thái điểm danh theo thời gian thực mà không gây re-render toàn bộ grid.  
-  *Giải pháp:* Encode tọa độ bàn theo chỉ số tuyệt đối (desk index 0–19); khi chuyển perspective, component `SeatingGrid` đảo ngược thứ tự render bằng CSS transform + reverse mapping — không thay đổi data model; attendance overlay được truyền qua prop riêng biệt và render độc lập bằng badge layer, không làm dirty seating state.
+  *Giải pháp:* Encode tọa độ bàn theo chỉ số tuyệt đối (desk index 0-19); khi chuyển perspective, component `SeatingGrid` đảo ngược thứ tự render bằng CSS transform + reverse mapping — không thay đổi data model; attendance overlay được truyền qua prop riêng biệt và render độc lập bằng badge layer, không làm dirty seating state.
 
 ---
 

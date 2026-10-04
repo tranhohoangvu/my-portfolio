@@ -1,6 +1,6 @@
 # 🎓 Graduation Invitation & Milestone Portfolio
 
-> **Thời gian thực hiện:** Tháng 9, 2026 – Hiện tại  
+> **Thời gian thực hiện:** Tháng 9, 2026 - Hiện tại  
 > **Vai trò:** Fullstack Developer (Architecture, UI/UX Engineering, Performance Optimization & Cloud Integration)  
 > **Demo / Repository:** [Live Demo](https://hoangvu-graduation-invitation.vercel.app) | [GitHub Repository](https://github.com/tranhohoangvu/hoangvu-graduation-invitation)
 
@@ -8,7 +8,7 @@
 
 ## 1. Tổng quan & Nghiệp vụ cốt lõi
 - **Mục tiêu dự án:**
-  - Xây dựng nền tảng web thiệp mời tốt nghiệp cá nhân hóa kết hợp nhật ký hành trình 4 năm đại học (2022 – 2026) của thủ khoa / tân cử nhân **Trần Hồ Hoàng Vũ** (Ngành Khoa học Máy tính - Khóa K26, Đại học Tôn Đức Thắng - TDTU).
+  - Xây dựng nền tảng web thiệp mời tốt nghiệp cá nhân hóa kết hợp nhật ký hành trình 4 năm đại học (2022 - 2026) của thủ khoa / tân cử nhân **Trần Hồ Hoàng Vũ** (Ngành Khoa học Máy tính - Khóa K26, Đại học Tôn Đức Thắng - TDTU).
   - Giải quyết bài toán chuyển đổi số thiệp mời truyền thống: Mang đến trải nghiệm thị giác hoàng gia trang nhã (*Royal Academic Letterpress*), hỗ trợ tự động cá nhân hóa danh xưng người nhận qua URL query parameters mà không cần backend phức tạp, cung cấp cẩm nang di chuyển 4 phương tiện và tour thực tế ảo VR 360°, đồng thời thu thập danh sách xác nhận tham dự (RSVP) kèm lời chúc thời gian thực về Google Sheets.
 - **Nghiệp vụ cốt lõi & Luồng người dùng:**
   - **Màn hình chào Mascot Preloader (2022 — 2026):** Trải nghiệm tải trang 1.5 giây với hình tượng Linh vật Cử nhân TDTU chạy dọc thanh tiến trình 4 năm đại học, tạo điểm nhấn thương hiệu cá nhân và cảm xúc trang trọng ngay từ giây đầu tiên.
@@ -31,7 +31,7 @@
   - **Tĩnh hóa tối đa (SSG / Pre-rendering First):** Tận dụng tối đa khả năng build tĩnh của Next.js App Router để đạt tốc độ phản hồi tức thì (TTFB < 50ms) trên Vercel Edge Network.
   - **Bảo toàn Hydration (Zero Hydration Mismatch):** Toàn bộ thao tác truy cập môi trường trình duyệt (`window`, `localStorage`, `document.location`) được cô lập nghiêm ngặt trong `useEffect` sau khi component đã mount.
   - **Thiết kế đồ họa Vector liền khối (Unified Vector Assets):** Rèm nhung hoàng gia (`RoyalCurtain.tsx`) và dải ruy băng cử nhân (`GraduationSash.tsx`) được lập trình 100% bằng SVG vector với gradient đa điểm, loại bỏ việc tải ảnh raster nặng nề, sắc nét tuyệt đối trên mọi độ phân giải màn hình.
-  - **Chuyển động phần cứng tối ưu (Hardware-Accelerated 60–120 FPS):** Tận dụng `motion/react` và CSS transitions thuần GPU (`transform`, `opacity`), tránh hoàn toàn các thuộc tính gây Layout Thrashing trên CPU (`top`, `margin`, `height`).
+  - **Chuyển động phần cứng tối ưu (Hardware-Accelerated 60-120 FPS):** Tận dụng `motion/react` và CSS transitions thuần GPU (`transform`, `opacity`), tránh hoàn toàn các thuộc tính gây Layout Thrashing trên CPU (`top`, `margin`, `height`).
 
 ---
 
@@ -53,7 +53,7 @@
   *Thách thức:* Khi người dùng lướt trang hoặc nhấn mở menu điều hướng tròn trên iPhone, trình duyệt WebKit bị nghẽn compositor do các lớp `backdrop-filter: blur(...)` lồng nhau đa tầng giữa Header và Drawer, kết hợp animation thay đổi vị trí CPU (`top`) và các scroll listener liên tục gọi `getBoundingClientRect`, làm tốc độ khung hình tụt xuống dưới 30 FPS.  
   *Giải pháp:*  
   1. Loại bỏ hoàn toàn `backdrop-blur-lg` tại Menu Mobile Drawer và cụm nút nổi chân trang; thay thế bằng màu nền giấy đục tinh chỉnh `bg-paper/98` với viền mạ vàng mỏng, giải phóng GPU khỏi việc tái lấy mẫu pixel liên tục trên từng frame.  
-  2. Chuyển đổi toàn bộ hoạt ảnh của nút Hamburger và Drawer sang các phép biến đổi hình học GPU thuần túy (`transform: translateY(...) rotate(...)`) với CSS transition 150–250ms, triệt tiêu 9 bộ đếm thời gian JavaScript `staggerChildren` của Framer Motion khi vừa chạm, đưa độ trễ phản hồi về mức 0ms.  
+  2. Chuyển đổi toàn bộ hoạt ảnh của nút Hamburger và Drawer sang các phép biến đổi hình học GPU thuần túy (`transform: translateY(...) rotate(...)`) với CSS transition 150-250ms, triệt tiêu 9 bộ đếm thời gian JavaScript `staggerChildren` của Framer Motion khi vừa chạm, đưa độ trễ phản hồi về mức 0ms.  
   3. Thao tác cuộn mượt mà không khựng: Gỡ bỏ khai báo `scroll-behavior: smooth` tĩnh trên `:root` HTML (nguyên nhân gây xung đột với cơ chế gia tốc quán tính ngón tay trên iOS), kích hoạt `-webkit-overflow-scrolling: touch;`, và kiểm soát nhịp các scroll listener bằng `requestAnimationFrame`.  
   4. Xây dựng tiện ích `scrollToSection` tính toán bù trừ chính xác chiều cao thanh Header cố định kết hợp sự kiện `scrollend` để khóa tạm thời Scroll Spy, ngăn ngừa thanh chỉ mục nhấp nháy qua các mục trung gian.
 

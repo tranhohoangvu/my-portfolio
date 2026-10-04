@@ -1,7 +1,7 @@
-# 🏢 WarehouseMA – Phần mềm Quản lý Kho Hàng Tòa nhà (.NET WinForms)
+# 🏢 WarehouseMA - Phần mềm Quản lý Kho Hàng Tòa nhà (.NET WinForms)
 
-> **Thời gian thực hiện:** Tháng 9, 2024 – Tháng 12, 2024  
-> **Khóa học / Đơn vị:** Đồ án môn Công nghệ Phần mềm – Đại học Tôn Đức Thắng (TDTU)  
+> **Thời gian thực hiện:** Tháng 9, 2024 - Tháng 12, 2024  
+> **Khóa học / Đơn vị:** Đồ án môn Công nghệ Phần mềm - Đại học Tôn Đức Thắng (TDTU)  
 > **Vai trò:** Business Analyst (BA), Designer, Tester & Main Developer  
 > **Nhóm thực hiện:** Trần Hồ Hoàng Vũ (52200214) & Cộng sự  
 > **GitHub Repository:** [https://github.com/tranhohoangvu/WarehouseMA](https://github.com/tranhohoangvu/WarehouseMA)

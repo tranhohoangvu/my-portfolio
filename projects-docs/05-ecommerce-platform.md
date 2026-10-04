@@ -1,6 +1,6 @@
 # 🛍️ E-Commerce Platform & Gemini AI Shopping Assistant
 
-> **Thời gian thực hiện:** Tháng 9, 2025 – Tháng 12, 2025  
+> **Thời gian thực hiện:** Tháng 9, 2025 - Tháng 12, 2025  
 > **Vai trò:** Full-Stack & Backend Developer  
 > **GitHub Repository:** [https://github.com/tranhohoangvu/E-Commerce-Website](https://github.com/tranhohoangvu/E-Commerce-Website)
 

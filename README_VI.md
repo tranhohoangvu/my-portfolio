@@ -58,7 +58,7 @@
 ### 4. Showcase Dự án Chuyên sâu
 - **Tab Tổng quan & Bộ lọc Chuyên môn**: Tab mặc định là **Tổng quan (Overview Dashboard)** với biểu đồ cột tương tác phân bổ dự án theo 4 trục kỹ thuật, kết hợp 4 tab chuyên sâu: `Full-Stack`, `Frontend`, `Backend`, và `AI` kèm số thứ tự đánh động (`#01, #02...`).
 - **Carousel trượt có giới hạn (Bounded Slider)**: Hỗ trợ vuốt chạm cảm ứng mượt mà trên mobile, bàn phím máy tính, tự vô hiệu hóa nút chuyển khi chạm mép và hệ thống chấm tròn chỉ số trang.
-- **Modal Kiến trúc Kỹ thuật sâu**: Khám phá sơ đồ kiến trúc hệ thống, thiết kế cơ sở dữ liệu và các thách thức kỹ thuật hóc búa kèm giải pháp xử lý thực tế cho 11 dự án.
+- **Modal Kiến trúc Kỹ thuật sâu**: Khám phá sơ đồ kiến trúc hệ thống, thiết kế cơ sở dữ liệu và các thách thức kỹ thuật hóc búa kèm giải pháp xử lý thực tế cho 12 dự án.
 
 ### 5. Kỹ năng Công nghệ phân loại theo 4 Trụ cột
 - **Ngôn ngữ cốt lõi**: C, C#, Java, Python, JavaScript, PHP.

@@ -1,6 +1,6 @@
 # ⚡ PDF Vision OCR — Hệ Thống Trích Xuất & Nhận Dạng Tài Liệu Thông Minh
 
-> **Thời gian thực hiện:** Tháng 8, 2026 – Hiện tại  
+> **Thời gian thực hiện:** Tháng 8, 2026 - Hiện tại  
 > **Vai trò:** AI Engineer & Full-Stack Developer  
 > **Công nghệ chính:** Python, PaddleOCR, Google Gemini Vision, PyMuPDF, OpenCV, FastAPI, Streamlit, Docker  
 > **GitHub Repository:** [https://github.com/tranhohoangvu/pdf-vision-ocr](https://github.com/tranhohoangvu/pdf-vision-ocr)

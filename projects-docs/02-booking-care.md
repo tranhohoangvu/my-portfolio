@@ -1,6 +1,6 @@
 # 🏥 BookingCare — Nền Tảng Đặt Lịch Khám Bệnh Trực Tuyến
 
-> **Thời gian thực hiện:** Tháng 9, 2026 – Hiện tại  
+> **Thời gian thực hiện:** Tháng 9, 2026 - Hiện tại  
 > **Vai trò:** Full-Stack Developer  
 > **Công nghệ chính:** Next.js 15 (App Router), TypeScript, Tailwind CSS v4, Supabase (PostgreSQL, Auth SSR, RLS)  
 > **GitHub Repository:** [https://github.com/tranhohoangvu/booking-care](https://github.com/tranhohoangvu/booking-care)

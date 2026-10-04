@@ -1,6 +1,6 @@
-# 🌐 Natural Language Processing – RLHF (PPO) & EN–VI Machine Translation (Transformers / GPT)
+# 🌐 Natural Language Processing - RLHF (PPO) & EN-VI Machine Translation (Transformers / GPT)
 
-> **Thời gian thực hiện:** Tháng 1, 2025 – Tháng 5, 2025  
+> **Thời gian thực hiện:** Tháng 1, 2025 - Tháng 5, 2025  
 > **Khóa học / Lĩnh vực:** Đồ án môn Xử lý Ngôn ngữ Tự nhiên (NLP)  
 > **Nhóm thực hiện:** Trần Hồ Hoàng Vũ (52200214) & Cộng sự  
 > **GitHub Repository:** [https://github.com/tranhohoangvu/Natural-Language-Processing](https://github.com/tranhohoangvu/Natural-Language-Processing)
@@ -10,8 +10,8 @@
 ## 1. Tổng quan & Nghiệp vụ cốt lõi
 - **Mục tiêu:** Nghiên cứu và thực nghiệm hai bài toán trọng tâm trong NLP hiện đại: (1) Căn chỉnh mô hình ngôn ngữ bằng Học tăng cường từ phản hồi con người (RLHF) với thuật toán PPO; (2) So sánh toàn diện hiệu năng dịch máy thần kinh Anh - Việt (EN↔VI) giữa phương pháp tự huấn luyện từ đầu (From-Scratch) và tinh chỉnh mô hình Pretrained.
 - **Nghiệp vụ cốt lõi:**
-  - **Phần 1 – Căn chỉnh RLHF / PPO:** Lập trình PPO trên môi trường CartPole-v1 để nắm vững cơ chế Value/Policy network; sau đó ứng dụng PPO tinh chỉnh mô hình sinh ngôn ngữ nhân quả (Causal LM) với thư viện Hugging Face TRL.
-  - **Phần 2 – Dịch máy Anh - Việt (Machine Translation):** Huấn luyện và đánh giá đối chiếu 4 cấu hình mô hình dịch thuật trên tập ngữ liệu song ngữ:
+  - **Phần 1 - Căn chỉnh RLHF / PPO:** Lập trình PPO trên môi trường CartPole-v1 để nắm vững cơ chế Value/Policy network; sau đó ứng dụng PPO tinh chỉnh mô hình sinh ngôn ngữ nhân quả (Causal LM) với thư viện Hugging Face TRL.
+  - **Phần 2 - Dịch máy Anh - Việt (Machine Translation):** Huấn luyện và đánh giá đối chiếu 4 cấu hình mô hình dịch thuật trên tập ngữ liệu song ngữ:
     1. Mô hình GPT tự xây dựng (no-pretrain) + SentencePiece tokenizer.
     2. Mô hình GPT-2 pretrained (fine-tuning kèm special tokens `[EN]`, `[VI]`).
     3. Mô hình Transformer Seq2Seq (Encoder-Decoder) tự xây dựng từ đầu.
@@ -29,7 +29,7 @@
 ---
 
 ## 3. Cơ sở dữ liệu & Xử lý dữ liệu (Database & Storage)
-- **Tập dữ liệu:** Ngữ liệu song ngữ tiếng Anh – tiếng Việt (IWSLT'15 EN–VI và các tập dữ liệu song ngữ chuẩn).
+- **Tập dữ liệu:** Ngữ liệu song ngữ tiếng Anh - tiếng Việt (IWSLT'15 EN-VI và các tập dữ liệu song ngữ chuẩn).
 - **Quy trình tiền xử lý văn bản:**
   - Làm sạch ký tự đặc biệt, chuẩn hóa mã hóa Unicode tiếng Việt (NFC).
   - Lọc bỏ các câu có độ dài bất thường hoặc câu rỗng; phân chia tập Train / Validation / Test chặt chẽ.

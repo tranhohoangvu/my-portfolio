@@ -37,7 +37,7 @@ Login page → Xác thực Firebase Auth
 
 | | |
 |---|---|
-| **Effort** | 3–5 ngày (refactor toàn bộ data layer) |
+| **Effort** | 3-5 ngày (refactor toàn bộ data layer) |
 | **Chi phí** | Free tier Firebase (giới hạn reads/writes) |
 | **Ưu** | Realtime, không cần self-host backend |
 | **Nhược** | SDK nặng (~100KB+), refactor lớn, overkill cho portfolio |
@@ -99,7 +99,7 @@ VSCode → Sửa data/*.json hoặc js/data/*.js → git push → Live
 
 1. **Tần suất update thấp** — Portfolio cập nhật < 5 lần/tháng → không đáng đầu tư cả auth system
 2. **Bạn là developer** — Mở VSCode sửa JSON nhanh hơn click UI admin
-3. **Risk/reward lệch** — Build đúng (Firebase + refactor) mất 3–5 ngày; benefit chỉ là "không cần mở editor"
+3. **Risk/reward lệch** — Build đúng (Firebase + refactor) mất 3-5 ngày; benefit chỉ là "không cần mở editor"
 
 ---
 
@@ -128,7 +128,7 @@ data/
 
 | Phương án | Effort | Phù hợp |
 |-----------|--------|---------|
-| Firebase Auth + Firestore | ❌ 3–5 ngày | Overkill |
+| Firebase Auth + Firestore | ❌ 3-5 ngày | Overkill |
 | Netlify CMS | ❌ Refactor lớn | Không phù hợp setup |
 | localStorage Admin | ⚠️ 1 ngày | Chỉ demo |
 | **Giữ nguyên + tách JSON** | ✅ Thấp | **Phù hợp nhất** |

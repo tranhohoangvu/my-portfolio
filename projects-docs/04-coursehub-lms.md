@@ -1,6 +1,6 @@
 # 🎓 CourseHub — Full-Stack Learning Management System (LMS)
 
-> **Thời gian thực hiện:** Tháng 2, 2026 – Tháng 3, 2026  
+> **Thời gian thực hiện:** Tháng 2, 2026 - Tháng 3, 2026  
 > **Vai trò:** Backend & Full-Stack Developer  
 > **Demo trực tiếp:** [https://coursehub-lms-eight.vercel.app](https://coursehub-lms-eight.vercel.app)  
 > **API Backend:** [https://coursehub-lms.onrender.com](https://coursehub-lms.onrender.com)  
@@ -22,7 +22,7 @@
 ---
 
 ## 2. Kiến trúc Hệ thống (System Architecture)
-- **Mô hình kiến trúc:** MVC phân tầng nghiêm ngặt (Controller – Service – Model / Data Access).
+- **Mô hình kiến trúc:** MVC phân tầng nghiêm ngặt (Controller - Service - Model / Data Access).
 - **Module & Middleware chính:**
   - `Authentication & RBAC Middleware`: Xác thực stateless JSON Web Token (JWT), kiểm tra quyền sở hữu tài nguyên và vai trò trước khi vào route handler.
   - `Centralized Error Handler`: Middleware bắt lỗi tập trung, trả về định dạng response JSON chuẩn mực và bảo vệ an toàn thông tin server.

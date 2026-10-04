@@ -1,7 +1,7 @@
-# 💻 An Khang Store – Hệ Thống Quản Lý Bán Hàng & Điểm Bán Lẻ (POS)
+# 💻 An Khang Store - Hệ Thống Quản Lý Bán Hàng & Điểm Bán Lẻ (POS)
 
-> **Thời gian thực hiện:** Tháng 1, 2024 – Tháng 5, 2024  
-> **Khóa học / Đơn vị:** Đồ án môn Lập trình Web và Ứng dụng – Đại học Tôn Đức Thắng (TDTU)  
+> **Thời gian thực hiện:** Tháng 1, 2024 - Tháng 5, 2024  
+> **Khóa học / Đơn vị:** Đồ án môn Lập trình Web và Ứng dụng - Đại học Tôn Đức Thắng (TDTU)  
 > **Vai trò:** Fullstack Developer  
 > **Nhóm thực hiện:** Trần Hồ Hoàng Vũ (52200214) & Cộng sự  
 > **Video Demo:** [https://youtu.be/XLwuIJpsN-M](https://youtu.be/XLwuIJpsN-M)  

@@ -1,6 +1,6 @@
-# 👁️ Deep Learning – Attention Mechanisms & Vietnamese OCR (CNN + Transformer)
+# 👁️ Deep Learning - Attention Mechanisms & Vietnamese OCR (CNN + Transformer)
 
-> **Thời gian thực hiện:** Tháng 1, 2025 – Tháng 5, 2025  
+> **Thời gian thực hiện:** Tháng 1, 2025 - Tháng 5, 2025  
 > **Khóa học / Lĩnh vực:** Đồ án môn Học sâu (Deep Learning)  
 > **Nhóm thực hiện:** Trần Hồ Hoàng Vũ (52200214) & Cộng sự  
 > **GitHub Repository:** [https://github.com/tranhohoangvu/Deep-Learning](https://github.com/tranhohoangvu/Deep-Learning)
@@ -10,8 +10,8 @@
 ## 1. Tổng quan & Nghiệp vụ cốt lõi
 - **Mục tiêu:** Nghiên cứu sâu về các cơ chế Attention hiện đại trong các mô hình ngôn ngữ lớn (LLMs) và áp dụng kiến trúc Hybrid CNN + Transformer Decoder để giải quyết bài toán Nhận diện chữ tiếng Việt trong ảnh thực tế (Scene Text Recognition).
 - **Nghiệp vụ cốt lõi:**
-  - **Phần 1 – Khảo sát cơ chế Attention trong LLMs:** Lập trình thực nghiệm và trực quan hóa ma trận Attention của 4 phương pháp: Standard Self-Attention, FlashAttention mô phỏng (tính toán theo khối block-wise giảm bộ nhớ), Linear Attention (xấp xỉ giảm độ phức tạp từ $O(n^2)$ xuống $O(n)$), và Sparse Attention.
-  - **Phần 2 – Pipeline nhận diện chữ tiếng Việt (OCR):** Nhận diện chính xác chuỗi ký tự từ ảnh văn bản thực tế dựa trên tập dữ liệu chuẩn MCOCR, xử lý được các biến thể dấu thanh điệu tiếng Việt và góc chụp nghiêng.
+  - **Phần 1 - Khảo sát cơ chế Attention trong LLMs:** Lập trình thực nghiệm và trực quan hóa ma trận Attention của 4 phương pháp: Standard Self-Attention, FlashAttention mô phỏng (tính toán theo khối block-wise giảm bộ nhớ), Linear Attention (xấp xỉ giảm độ phức tạp từ $O(n^2)$ xuống $O(n)$), và Sparse Attention.
+  - **Phần 2 - Pipeline nhận diện chữ tiếng Việt (OCR):** Nhận diện chính xác chuỗi ký tự từ ảnh văn bản thực tế dựa trên tập dữ liệu chuẩn MCOCR, xử lý được các biến thể dấu thanh điệu tiếng Việt và góc chụp nghiêng.
 
 ---
 
