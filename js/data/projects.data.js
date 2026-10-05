@@ -100,7 +100,7 @@
       cardTechs: [
         { skill: "react", label: "Next.js 16", title: "Next.js 16 App Router" },
         { skill: "javascript", label: "TypeScript", title: "TypeScript 5.8" },
-        { skill: "postgresql", label: "PostgreSQL 16", title: "PostgreSQL 16 (Native pg, No ORM)" }
+        { skill: "postgresql", label: "PostgreSQL 16", title: "PostgreSQL 16 (Neon Serverless & Native pg)" }
       ],
       num: "#01",
       isLatest: true,
@@ -114,11 +114,18 @@
         "Node.js",
         "Express.js",
         "PostgreSQL 16",
+        "Neon Serverless",
         "Native pg (No ORM)",
         "JWT RBAC",
         "Vitest"
       ],
       links: [
+        {
+          labelVi: "Xem Live Demo →",
+          labelEn: "Live Demo →",
+          url: "https://schoolops-platform.vercel.app/",
+          type: "accent"
+        },
         {
           labelVi: "Xem trên GitHub →",
           labelEn: "View on GitHub →",
@@ -132,8 +139,8 @@
         summary: "Nền tảng quản lý vận hành trường THCS enterprise-grade Monorepo Next.js 16 & Express: ma trận RBAC động theo từng lớp, sơ đồ chỗ ngồi thông minh Fisher-Yates, thời khóa biểu 2 ca chống xung đột giáo viên và 110 unit tests.",
         subtitle: "Tháng 9, 2026 - Hiện tại • Hệ thống Quản lý Vận hành Trường THCS (Next.js 16 + Express)",
         desc: "SchoolOps là nền tảng quản lý vận hành trường học cấp doanh nghiệp dành cho trường THCS (mô hình chuẩn THCS Nguyễn Tất Thành 2026-2027) với kiến trúc Monorepo Next.js 16 (Frontend) + Express/TypeScript (Backend). Quản lý 16 lớp học, 480 học sinh, 24 giáo viên với phân quyền RBAC động theo lớp, sơ đồ 20 bàn/40 chỗ ngồi tương tác dual-perspective, điểm danh thời gian thực và tự động phát hiện xung đột lịch dạy.",
-        arch: "Monorepo chuẩn hóa với kiến trúc phân tầng: Controller → Service → Repository (Backend Express) và Page/Component → Service Layer → API Client (Frontend Next.js 16). Pipeline 7 SQL migrations tuần tự (Schema → Constraints → Indexes → Stored Procedures → Triggers → Seed → Timetable Rules). API Proxy Rewrite loại bỏ CORS friction.",
-        data: "PostgreSQL 16 chuẩn hóa 12 bảng quan hệ với native pg connection pool (không ORM). Composite indexes tối ưu truy vấn thời khóa biểu và điểm danh, stored procedures kiểm tra xung đột lịch dạy, triggers tự động cập nhật timestamp và deterministic seed data cho 480 học sinh.",
+        arch: "Monorepo chuẩn hóa với kiến trúc phân tầng: Controller → Service → Repository (Backend Express Serverless) và Page/Component → Context/Service Layer → API Client (Frontend Next.js 16). Pipeline 7 SQL migrations tuần tự (001→007). API Proxy Rewrite loại bỏ CORS friction.",
+        data: "PostgreSQL 16 (Neon Serverless với PgBouncer connection pooling) chuẩn hóa 12 bảng quan hệ với native pg connection pool (không ORM). Composite indexes tối ưu truy vấn thời khóa biểu và điểm danh, stored procedures kiểm tra xung đột lịch dạy, triggers tự động cập nhật timestamp và deterministic seed data cho 480 học sinh.",
         challenges: [
           {
             title: "1. Ma trận Dynamic Per-Class RBAC — Phân quyền động theo ngữ cảnh từng lớp:",
@@ -146,6 +153,10 @@
           {
             title: "3. Sơ đồ chỗ ngồi 20 bàn/40 chỗ — Dual-perspective & Live Attendance Overlay:",
             solution: "Encode tọa độ theo chỉ số tuyệt đối desk index 0-19; component SeatingGrid đảo ngược thứ tự render bằng CSS transform + reverse mapping khi đổi góc nhìn giữa cuối lớp và bục giảng; attendance overlay render độc lập bằng badge layer không làm re-render toàn bộ grid."
+          },
+          {
+            title: "4. Chuyển đổi mô hình Serverless trên Vercel & Neon Cloud:",
+            solution: "Đóng gói backend Express chạy dạng Serverless Function qua backend/vercel.json và entrypoint api/index.js; kết nối Neon Postgres qua PgBouncer connection pooler; cấu hình frontend build dependencies đảm bảo tương thích 100% trên Vercel."
           }
         ]
       },
@@ -155,8 +166,8 @@
         summary: "Enterprise-grade secondary school operations platform with Monorepo Next.js 16 & Express: dynamic per-class RBAC matrix, Fisher-Yates intelligent seating grid, 2-shift timetable with automatic teacher conflict detection, and 110 unit tests.",
         subtitle: "Sep 2026 - Present • Secondary School Operations Management System (Next.js 16 + Express)",
         desc: "SchoolOps is an enterprise-grade school management platform for Nguyen Tat Thanh Secondary School (2026-2027), structured as a Monorepo with Next.js 16 (Frontend) and Node.js/Express/TypeScript (Backend). Manages 16 classes, 480 students, 24 teachers with dynamic per-class RBAC, dual-perspective seating grid, real-time period attendance, and automatic timetable conflict detection.",
-        arch: "Layered Monorepo architecture: Controller → Service → Repository (Express Backend) and Page/Component → Service Layer → API Client (Next.js 16 Frontend). Automated 7-step SQL migration pipeline (Schema → Constraints → Indexes → Stored Procedures → Triggers → Seed → Timetable Rules). Next.js API proxy rewrites eliminate CORS friction.",
-        data: "PostgreSQL 16 relational schema across 12 normalized tables with native node-postgres connection pooling (no ORM). Composite indexes accelerate attendance lookups, stored procedures enforce timetable conflict prevention, triggers automate updated_at timestamps, and deterministic seed data for 480 students.",
+        arch: "Layered Monorepo architecture: Controller → Service → Repository (Express Serverless Backend) and Page/Component → Context/Service Layer → API Client (Next.js 16 Frontend). Automated 7-step SQL migration pipeline (001→007). Next.js API proxy rewrites eliminate CORS friction.",
+        data: "PostgreSQL 16 relational schema across 12 normalized tables with native node-postgres connection pooling on Neon Serverless (no ORM). Composite indexes accelerate attendance lookups, stored procedures enforce timetable conflict prevention, triggers automate updated_at timestamps, and deterministic seed data for 480 students.",
         challenges: [
           {
             title: "1. Dynamic Per-Class RBAC Matrix — Contextual permissions per classroom:",
@@ -169,6 +180,10 @@
           {
             title: "3. 20-Desk / 40-Seat Grid — Dual-Perspective Rendering & Live Attendance Overlay:",
             solution: "Encoded coordinates via absolute desk index 0-19; SeatingGrid component flips perspectives via CSS transform and reverse mapping without modifying state; decoupled live attendance indicators into a distinct badge overlay layer."
+          },
+          {
+            title: "4. Serverless Transition with Vercel Functions & Neon Cloud:",
+            solution: "Packaged Express backend into Vercel Serverless Function via vercel.json and api/index.js entrypoint; pooled PostgreSQL connections using Neon PgBouncer pooler; resolved Linux binary dependencies for seamless Vercel deployment."
           }
         ]
       }
