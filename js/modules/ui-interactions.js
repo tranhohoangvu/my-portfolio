@@ -93,93 +93,22 @@
     });
   }
 
-  // 4. CV Download & View Counter with LocalStorage
-  function initCvDownloadCounter() {
-    const BASE_DOWNLOADS = { be: 52, ai: 38, fe: 28 };
-    const BASE_VIEWS = { be: 128, ai: 95, fe: 76 };
-
-    let storedDownloads = null;
-    try {
-      const raw = localStorage.getItem("cv_download_counts");
-      if (raw) storedDownloads = JSON.parse(raw);
-    } catch (e) {
-      storedDownloads = null;
-    }
-    storedDownloads = Object.assign({}, BASE_DOWNLOADS, storedDownloads || {});
-    try {
-      localStorage.setItem("cv_download_counts", JSON.stringify(storedDownloads));
-    } catch (e) {}
-
-    let storedViews = null;
-    try {
-      const rawViews = localStorage.getItem("cv_view_counts");
-      if (rawViews) storedViews = JSON.parse(rawViews);
-    } catch (e) {
-      storedViews = null;
-    }
-    storedViews = Object.assign({}, BASE_VIEWS, storedViews || {});
-    try {
-      localStorage.setItem("cv_view_counts", JSON.stringify(storedViews));
-    } catch (e) {}
-
-    function updateDisplays() {
-      const beDlEl = document.getElementById("cv-dl-count-be");
-      const aiDlEl = document.getElementById("cv-dl-count-ai");
-      const feDlEl = document.getElementById("cv-dl-count-fe");
-      if (beDlEl && storedDownloads.be != null) beDlEl.textContent = storedDownloads.be;
-      if (aiDlEl && storedDownloads.ai != null) aiDlEl.textContent = storedDownloads.ai;
-      if (feDlEl && storedDownloads.fe != null) feDlEl.textContent = storedDownloads.fe;
-
-      const beViewEl = document.getElementById("cv-view-count-be");
-      const aiViewEl = document.getElementById("cv-view-count-ai");
-      const feViewEl = document.getElementById("cv-view-count-fe");
-      if (beViewEl && storedViews.be != null) beViewEl.textContent = storedViews.be;
-      if (aiViewEl && storedViews.ai != null) aiViewEl.textContent = storedViews.ai;
-      if (feViewEl && storedViews.fe != null) feViewEl.textContent = storedViews.fe;
-    }
-
-    updateDisplays();
-
+  // 4. CV Download Toast (feedback only — no fake counters)
+  function initCvDownloadToast() {
     document.querySelectorAll(".cv-download-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
+        if (typeof window.showToast !== "function") return;
         const type = btn.getAttribute("data-cv-type");
-        if (type && storedDownloads[type] != null) {
-          storedDownloads[type] += 1;
-          try {
-            localStorage.setItem("cv_download_counts", JSON.stringify(storedDownloads));
-          } catch (e) {}
-          updateDisplays();
-
-          if (typeof window.showToast === "function") {
-            const roleName = type === "be" ? "Backend Developer Fresher" : type === "fe" ? "Frontend Developer Fresher" : "AI Engineer Fresher";
-            window.showToast({
-              message: `Đang tải CV ${roleName}...`,
-              type: "success",
-              duration: 2500,
-            });
-          }
-        }
+        const roleName = type === "be" ? "Backend Developer Fresher" : type === "fe" ? "Frontend Developer Fresher" : "AI Engineer Fresher";
+        window.showToast({ message: `Đang tải CV ${roleName}...`, type: "success", duration: 2500 });
       });
     });
 
-    document.querySelectorAll(".cv-view-btn, .cv-preview-link").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        let type = btn.getAttribute("data-cv-type");
-        if (!type) {
-          const href = btn.getAttribute("href") || "";
-          if (href.includes("BE")) type = "be";
-          else if (href.includes("FE")) type = "fe";
-          else if (href.includes("AI")) type = "ai";
-        }
-        if (type && storedViews[type] != null) {
-          storedViews[type] += 1;
-          try {
-            localStorage.setItem("cv_view_counts", JSON.stringify(storedViews));
-          } catch (e) {}
-          updateDisplays();
-        }
-      });
-    });
+    // Clean up values left by the old local counter
+    try {
+      localStorage.removeItem("cv_download_counts");
+      localStorage.removeItem("cv_view_counts");
+    } catch (e) {}
   }
 
   // 5. CV Dropdown Menu
@@ -323,7 +252,7 @@
   window.initHeroInteractions = initHeroInteractions;
   window.initCounterAnimations = initCounterAnimations;
   window.initProfileFlip = initProfileFlip;
-  window.initCvDownloadCounter = initCvDownloadCounter;
+  window.initCvDownloadToast = initCvDownloadToast;
   window.initCvDropdown = initCvDropdown;
   window.initScrollProgressBar = initScrollProgressBar;
   window.initHeroTypewriter = initHeroTypewriter;

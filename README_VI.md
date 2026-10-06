@@ -81,8 +81,8 @@
 - **Action Dock tích hợp**: Nút sao chép email 1-click kèm thông báo Toast, chuyển nhanh đến CV, Liên hệ và mạng xã hội cá nhân.
 
 ### 8. Hoạt động GitHub & Thống kê Thời gian thực
-- **Thanh thống kê nhanh**: 16 repos, 22 stars và các ngôn ngữ lập trình hàng đầu được truy xuất từ GitHub API.
-- **SVG Heatmap tự động hằng ngày**: Heatmap đóng góp (chế độ Sáng & Tối) được render và commit tự động hằng ngày thông qua GitHub Actions GraphQL workflow.
+- **Thanh thống kê nhanh**: Số repo public và tổng số star được sinh từ GitHub GraphQL API mỗi lần deploy (`assets/github/github-stats.json`), có giá trị dự phòng sẵn trong HTML.
+- **SVG Heatmap tự động hằng ngày**: Heatmap đóng góp (chế độ Sáng & Tối) được render lại mỗi lần deploy và mỗi ngày qua lịch chạy GitHub Actions, phục vụ trực tiếp mà không commit ngược vào repo.
 - **Biểu đồ hoạt động động**: Hiệu ứng khung tải trước skeleton shimmer và hiệu ứng mờ dần (fade-in) khi tải xong.
 
 ### 9. Biểu mẫu Liên hệ Thông minh & Trạng thái Sẵn sàng
@@ -101,7 +101,7 @@
 | **Logic & Trạng thái** | Vanilla JavaScript (ES6+) | 19 modular controller, Carousel, Skill-linking, Terminal CLI, Modal |
 | **Đóng gói Bundle** | Node.js Script + esbuild | Nối chuỗi dependency và nén file JS production (`bundle.min.js`) |
 | **Typography & Icon** | Devicon, Heroicons, Google Fonts | Font Inter (UI) & JetBrains Mono (Terminal/Code), icon SVG chính hãng |
-| **Tự động hóa & CI/CD**| GitHub Actions, Python GraphQL | Tự động deploy GitHub Pages, cron job cập nhật heatmap SVG hằng ngày |
+| **Tự động hóa & CI/CD**| GitHub Actions, Python GraphQL | Build, sinh số liệu GitHub và deploy lên GitHub Pages trong một pipeline duy nhất |
 | **Biểu mẫu** | Formspree | Xử lý gửi biểu mẫu liên hệ và yêu cầu xem chứng chỉ gốc không cần backend server |
 
 ---
@@ -118,12 +118,12 @@ my-portfolio/
 ├─ sw.js                          # Service Worker lưu bộ nhớ đệm (cache) offline
 ├─ package.json                   # Cấu hình scripts và dependencies
 ├─ assets/
-│  ├─ cv/                         # Các bản CV định dạng PDF (BE Developer & AI Intern)
+│  ├─ cv/                         # Các bản CV định dạng PDF (Backend, Frontend & AI Engineer)
 │  ├─ certificates/               # File PDF chứng chỉ đã xác thực
-│  ├─ projects/                   # Ảnh chụp giao diện độ phân giải cao cho 7 dự án
+│  ├─ projects/                   # Ảnh chụp giao diện cho 12 dự án
 │  ├─ profile/                    # Ảnh đại diện cá nhân (profile.jpg, profile2.jpg)
 │  ├─ icons/                      # Bộ favicon (SVG, PNG) và biểu tượng PWA
-│  ├─ github/                     # Heatmap đóng góp tự động hằng ngày (SVG sáng/tối)
+│  ├─ github/                     # Heatmap đóng góp & github-stats.json (sinh lúc deploy)
 │  └─ og-image-v2.png             # Ảnh xem trước Open Graph khi chia sẻ mạng xã hội
 ├─ css/
 │  ├─ tailwind-input.css          # File cấu hình Tailwind CSS v4 và design tokens
@@ -150,11 +150,11 @@ my-portfolio/
 │     ├─ toast.css                # Hệ thống thông báo toast nổi kính mờ
 │     └─ fab.css                  # Nút tác vụ nổi (FAB) và menu liên hệ nhanh
 ├─ js/
-│  ├─ bundle.min.js               # File script production đã gộp và nén (175 KB)
+│  ├─ bundle.min.js               # File script production đã gộp và nén (~230 KB)
 │  ├─ scripts.js                  # Bộ điều phối và khởi tạo toàn bộ ứng dụng
 │  ├─ data/                       # Dữ liệu độc lập đóng vai trò Single Source of Truth
 │  │  ├─ i18n.data.js             # Bộ từ điển song ngữ (VI / EN)
-│  │  ├─ projects.data.js         # Dữ liệu đầy đủ của 7 dự án tiêu biểu
+│  │  ├─ projects.data.js         # Dữ liệu đầy đủ của 12 dự án tiêu biểu
 │  │  ├─ skills.data.js           # Danh mục kỹ năng và liên kết 2 chiều với dự án
 │  │  └─ certs.data.js            # Dữ liệu của 8 chứng chỉ quốc tế đã xác thực
 │  └─ modules/                    # Các controller chức năng theo module
@@ -170,15 +170,14 @@ my-portfolio/
 │     ├─ cert-filter.js           # Bộ lọc chứng chỉ & nút Xem thêm / Thu gọn
 │     ├─ email-copy.js            # Sao chép email 1-click kèm thông báo toast
 │     ├─ contact-form.js          # Chip chủ đề, đếm ký tự & gửi form AJAX
-│     ├─ github-stats.js          # Lấy số liệu GitHub API & đổi màu SVG theo theme
+│     ├─ github-stats.js          # Đọc github-stats.json & đổi SVG theo theme
 │     └─ ui-interactions.js       # Đồng hồ số đếm tăng dần, lật thẻ 3D, hiệu ứng gõ chữ
 ├─ scripts/
 │  ├─ build-js.js                 # Script nối 19 file JS và nén bằng esbuild
 │  └─ build_github_contrib_svgs.py# Script Python GraphQL lấy SVG đóng góp GitHub
 ├─ projects-docs/                 # Tài liệu kỹ thuật chi tiết cho từng dự án
 └─ .github/workflows/
-   ├─ static.yml                  # Pipeline tự động build & deploy lên GitHub Pages
-   └─ update-github-contrib.yml   # Cron job tự động cập nhật SVG GitHub hằng ngày
+   └─ static.yml                  # Build → số liệu GitHub → deploy Pages (push + cron hằng ngày)
 ```
 
 ---
@@ -255,13 +254,10 @@ Mở trình duyệt tại địa chỉ: `http://localhost:5500`
 
 ## 🤖 Luồng tự động hóa & CI/CD
 
-- **Triển khai GitHub Pages (`.github/workflows/static.yml`)**:
-  - Tự động kích hoạt mỗi khi có commit mới được push lên nhánh `main`.
-  - Triển khai toàn bộ mã nguồn tĩnh trực tiếp lên môi trường GitHub Pages.
-- **Đồng bộ Heatmap GitHub hằng ngày (`.github/workflows/update-github-contrib.yml`)**:
-  - Chạy tự động mỗi ngày theo lịch trình cron (`00:00 UTC`).
-  - Chạy `scripts/build_github_contrib_svgs.py` kết nối GitHub GraphQL API.
-  - Commit trực tiếp biểu đồ SVG đóng góp mới nhất vào thư mục `assets/github/`.
+- **Build & Deploy (`.github/workflows/static.yml`)** — một pipeline duy nhất, chạy khi push lên `main`, hằng ngày lúc `00:00 UTC`, hoặc chạy tay:
+  1. Cài dependencies và chạy `npm run build` (Tailwind CSS + bundle esbuild), nên site deploy luôn khớp với mã nguồn.
+  2. Chạy `scripts/build_github_contrib_svgs.py` (GitHub GraphQL API) để sinh heatmap và `github-stats.json`. Nếu API lỗi, deploy vẫn tiếp tục với các SVG dự phòng đã commit.
+  3. Upload kết quả lên GitHub Pages. Không commit ngược vào repo, nên lịch sử commit chỉ chứa thay đổi thật.
 
 ---
 
@@ -285,7 +281,7 @@ Dự án được cấu hình triển khai sẵn trên **GitHub Pages**:
   - Quầng sáng aurora orbs dùng thuộc tính CSS `contain: layout style paint` kết hợp `transform: translateZ(0)` để GPU trực tiếp tăng tốc phần cứng.
   - Tự động tôn trọng cấu hình hệ thống `prefers-reduced-motion: reduce` để tắt bớt hiệu ứng chuyển động nặng.
 - **Tối ưu hóa Bundle**:
-  - Toàn bộ 19 file JS được nối chuỗi theo đúng thứ tự phụ thuộc và nén thành 1 bundle duy nhất (`js/bundle.min.js`, ~175 KB), không gây nghẽn render.
+  - Toàn bộ 19 file JS được nối chuỗi theo đúng thứ tự phụ thuộc và nén thành 1 bundle duy nhất (`js/bundle.min.js`, ~230 KB), không gây nghẽn render.
   - Các thư viện ngoài không thiết yếu (như `particles.js`) được trì hoãn tải (lazy load) khi trình duyệt rảnh rỗi.
 - **Chuẩn hóa SEO**:
   - Đầy đủ thẻ canonical URL, mô tả meta description rõ ràng, thẻ Open Graph (`og:*`) và Twitter Card.

@@ -7,6 +7,16 @@
 
   <title>Trần Hồ Hoàng Vũ - Portfolio</title>
 
+  <!-- Apply saved theme before first paint (prevents white flash in dark mode) -->
+  <script>
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "dark" || (t !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      }
+    } catch (e) {}
+  </script>
+
   <!-- Primary SEO -->
   <meta name="description"
     content="Portfolio cá nhân của Trần Hồ Hoàng Vũ, sinh viên ngành Computer Science, showcase các dự án và kỹ năng lập trình." />
@@ -43,7 +53,7 @@
 
   <!-- Preload critical above-the-fold assets -->
   <link rel="preload" as="image" href="assets/profile/profile1.webp" type="image/webp" fetchpriority="high" />
-  <link rel="preload" href="css/styles.css?v=16" as="style" />
+  <link rel="preload" href="css/styles.css?v=28" as="style" />
 
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
@@ -374,13 +384,8 @@
           </div>
 
           <p class="about-desc" data-i18n="about_description">
-            My name is Tran Ho Hoang Vũ. I’m a Computer Science graduate from Ton Duc Thang University with hands-on
-            experience in backend development through a software engineering internship and academic projects. I enjoy
-            building practical solutions, from designing RESTful APIs and working with databases to developing
-            automation workflows and processing data. I have worked with Node.js, Express.js, Laravel, and various
-            database technologies. Going forward, I want to strengthen my software engineering skills, gain more
-            real-world experience, and build reliable, maintainable software while continuing to learn and improve.
-          </p>
+                Mình là Trần Hồ Hoàng Vũ, tốt nghiệp ngành Khoa học Máy tính tại Đại học Tôn Đức Thắng với kinh nghiệm thực tế về phát triển phần mềm qua kỳ thực tập Kỹ sư phần mềm và các dự án học thuật, thực chiến. Mình thích xây dựng các giải pháp hoàn chỉnh, từ thiết kế hệ thống Backend RESTful APIs, tối ưu cơ sở dữ liệu, xây dựng giao diện Frontend hiện đại (Next.js, React, TypeScript) đến phát triển các quy trình tự động hóa và ứng dụng AI/ML thực tế. Mình đã làm việc thành thạo với Node.js, Express.js, Laravel, Next.js, React và nhiều công nghệ cơ sở dữ liệu khác nhau. Định hướng sắp tới, mình sẵn sàng đảm nhiệm các vị trí Backend Developer Fresher, Frontend Developer Fresher hoặc AI Engineer Fresher, không ngừng học hỏi và mang lại giá trị bền vững cho sản phẩm.
+              </p>
 
           <!-- 3 Key Pillars -->
           <div class="about-pillars-grid">
@@ -662,27 +667,10 @@
             <a href="assets/cv/TranHoHoangVu_BE.pdf" target="_blank" rel="noopener noreferrer"
               class="cv-action cv-action--primary cv-view-btn" data-cv-type="be" title="Xem CV Backend">
               <span data-i18n="cv_btn_view">View</span>
-              <span class="cv-view-count">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                  <circle cx="12" cy="12" r="3"></circle>
-                </svg>
-                <span class="cv-view-number" id="cv-view-count-be">128</span>
-              </span>
             </a>
             <a href="assets/cv/TranHoHoangVu_BE.pdf" download class="cv-action cv-action--ghost cv-download-btn"
               data-cv-type="be" title="Tải CV Backend">
               <span data-i18n="cv_btn_download">Download</span>
-              <span class="cv-dl-count">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                <span class="cv-dl-number" id="cv-dl-count-be">52</span>
-              </span>
             </a>
           </div>
         </article>
@@ -753,27 +741,10 @@
             <a href="assets/cv/TranHoHoangVu_AI.pdf" target="_blank" rel="noopener noreferrer"
               class="cv-action cv-action--primary cv-view-btn" data-cv-type="ai" title="Xem CV AI">
               <span data-i18n="cv_btn_view">View</span>
-              <span class="cv-view-count">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                  <circle cx="12" cy="12" r="3"></circle>
-                </svg>
-                <span class="cv-view-number" id="cv-view-count-ai">95</span>
-              </span>
             </a>
             <a href="assets/cv/TranHoHoangVu_AI.pdf" download class="cv-action cv-action--ghost cv-download-btn"
               data-cv-type="ai" title="Tải CV AI">
               <span data-i18n="cv_btn_download">Download</span>
-              <span class="cv-dl-count">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                <span class="cv-dl-number" id="cv-dl-count-ai">38</span>
-              </span>
             </a>
           </div>
         </article>
@@ -844,27 +815,10 @@
             <a href="assets/cv/TranHoHoangVu_FE.pdf" target="_blank" rel="noopener noreferrer"
               class="cv-action cv-action--primary cv-view-btn" data-cv-type="fe" title="Xem CV Frontend">
               <span data-i18n="cv_btn_view">View</span>
-              <span class="cv-view-count">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                  <circle cx="12" cy="12" r="3"></circle>
-                </svg>
-                <span class="cv-view-number" id="cv-view-count-fe">76</span>
-              </span>
             </a>
             <a href="assets/cv/TranHoHoangVu_FE.pdf" download class="cv-action cv-action--ghost cv-download-btn"
               data-cv-type="fe" title="Tải CV Frontend">
               <span data-i18n="cv_btn_download">Download</span>
-              <span class="cv-dl-count">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                <span class="cv-dl-number" id="cv-dl-count-fe">28</span>
-              </span>
             </a>
           </div>
         </article>
@@ -1080,9 +1034,14 @@
               <i class="devicon-python-plain colored"></i><span>Python</span>
             </div>
             <div class="skill-icon is-linked" data-skill-id="javascript" tabindex="0" role="button"
-              aria-label="JavaScript - 5 dự án" title="JavaScript • Ứng dụng trong 5 dự án">
-              <span class="skill-count-badge" data-count="5">5 DA</span>
+              aria-label="JavaScript - 6 dự án" title="JavaScript • Ứng dụng trong 6 dự án">
+              <span class="skill-count-badge" data-count="6">6 DA</span>
               <i class="devicon-javascript-plain colored"></i><span>JavaScript</span>
+            </div>
+            <div class="skill-icon is-linked" data-skill-id="typescript" tabindex="0" role="button"
+              aria-label="TypeScript - 3 dự án" title="TypeScript • Ứng dụng trong 3 dự án">
+              <span class="skill-count-badge" data-count="3">3 DA</span>
+              <i class="devicon-typescript-plain colored"></i><span>TypeScript</span>
             </div>
             <div class="skill-icon is-linked" data-skill-id="php" tabindex="0" role="button" aria-label="PHP - 1 dự án"
               title="PHP • Ứng dụng trong 1 dự án">
@@ -1134,8 +1093,8 @@
               <i class="devicon-dot-net-plain colored"></i><span>.NET</span>
             </div>
             <div class="skill-icon is-linked" data-skill-id="react" tabindex="0" role="button"
-              aria-label="React - 5 dự án" title="React • Ứng dụng trong 5 dự án">
-              <span class="skill-count-badge" data-count="5">5 DA</span>
+              aria-label="React - 6 dự án" title="React • Ứng dụng trong 6 dự án">
+              <span class="skill-count-badge" data-count="6">6 DA</span>
               <i class="devicon-react-original colored"></i><span>React</span>
             </div>
           </div>
@@ -1232,14 +1191,14 @@
               <span class="skill-count-badge" data-count="1">1 DA</span>
               <i class="devicon-nginx-original colored"></i><span>Nginx</span>
             </div>
-            <div class="skill-icon is-linked" data-skill-id="git" tabindex="0" role="button" aria-label="Git - 11 dự án"
+            <div class="skill-icon is-linked" data-skill-id="git" tabindex="0" role="button" aria-label="Git - 12 dự án"
               title="Git • Quản lý phiên bản mã nguồn">
-              <span class="skill-count-badge" data-count="11">11 DA</span>
+              <span class="skill-count-badge" data-count="12">12 DA</span>
               <i class="devicon-git-plain colored"></i><span>Git</span>
             </div>
             <div class="skill-icon is-linked" data-skill-id="github" tabindex="0" role="button"
-              aria-label="GitHub - 11 dự án" title="GitHub • Lưu trữ &amp; CI/CD">
-              <span class="skill-count-badge" data-count="11">11 DA</span>
+              aria-label="GitHub - 12 dự án" title="GitHub • Lưu trữ &amp; CI/CD">
+              <span class="skill-count-badge" data-count="12">12 DA</span>
               <i class="devicon-github-original colored"></i><span>GitHub</span>
             </div>
             <div class="skill-icon is-linked" data-skill-id="postman" tabindex="0" role="button"
@@ -1333,12 +1292,12 @@
           project thực tế liên tục.</p>
       </div>
 
-      <!-- Quick Stats Bar (data fetched from GitHub API via GitHub Actions) -->
+      <!-- Quick Stats Bar (fallback values; refreshed from assets/github/github-stats.json, generated by CI) -->
       <div class="github-stats-bar">
         <!-- Repos -->
         <div class="github-stat-chip">
           <span class="github-stat-chip__icon" aria-hidden="true">📦</span>
-          <span class="github-stat-chip__value">16</span>
+          <span class="github-stat-chip__value" id="gh-stat-repos">16</span>
           <span class="github-stat-chip__sep"></span>
           <span class="github-stat-chip__label" data-i18n="github_stat_repos">Repositories</span>
         </div>
@@ -1346,7 +1305,7 @@
         <!-- Stars -->
         <div class="github-stat-chip">
           <span class="github-stat-chip__icon" aria-hidden="true">⭐</span>
-          <span class="github-stat-chip__value">22</span>
+          <span class="github-stat-chip__value" id="gh-stat-stars">22</span>
           <span class="github-stat-chip__sep"></span>
           <span class="github-stat-chip__label" data-i18n="github_stat_stars">Stars</span>
         </div>
@@ -2540,7 +2499,7 @@
   <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
 
   <!-- Production JS Bundle (All Data & Feature Modules — Minified, Non-blocking) -->
-  <script src="js/bundle.min.js?v=38" defer></script>
+  <script src="js/bundle.min.js?v=40" defer></script>
 
   <!-- 5. Particles.js — lazy load sau khi trang idle để không block render -->
   <script>

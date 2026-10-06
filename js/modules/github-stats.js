@@ -35,10 +35,28 @@
 
   window.setGitHubActivityImages = setGitHubActivityImages;
 
+  // Quick stats: replace the HTML fallback numbers with CI-generated values
+  function loadGitHubStats() {
+    fetch("assets/github/github-stats.json", { cache: "no-cache" })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((stats) => {
+        if (!stats) return;
+        const reposEl = document.getElementById("gh-stat-repos");
+        const starsEl = document.getElementById("gh-stat-stars");
+        if (reposEl && Number.isFinite(stats.repos)) reposEl.textContent = stats.repos;
+        if (starsEl && Number.isFinite(stats.stars)) starsEl.textContent = stats.stars;
+      })
+      .catch(() => { /* keep fallback values */ });
+  }
+
   // Run on load
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setGitHubActivityImages);
+    document.addEventListener("DOMContentLoaded", () => {
+      setGitHubActivityImages();
+      loadGitHubStats();
+    });
   } else {
     setGitHubActivityImages();
+    loadGitHubStats();
   }
 })();

@@ -1,8 +1,14 @@
+/**
+ * Bundles the data + feature modules (in dependency order) into
+ * js/bundle.min.js using the locally installed esbuild (devDependency).
+ */
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const esbuild = require('esbuild');
 
-// 19 modules in strict dependency order
+const ROOT = path.resolve(__dirname, '..');
+
+// Order matters: data first, then modules, then the orchestrator.
 const files = [
   'js/data/i18n.data.js',
   'js/data/projects.data.js',
@@ -22,26 +28,24 @@ const files = [
   'js/modules/contact-form.js',
   'js/modules/github-stats.js',
   'js/modules/ui-interactions.js',
-  'js/scripts.js'
+  'js/scripts.js',
 ];
 
-console.log('Concatenating 19 modules...');
-const combined = files.map(f => {
-  if (!fs.existsSync(f)) {
-    throw new Error(`File not found: ${f}`);
-  }
-  return `/* === ${f} === */\n` + fs.readFileSync(f, 'utf8');
+const combined = files.map((f) => {
+  const abs = path.join(ROOT, f);
+  if (!fs.existsSync(abs)) throw new Error(`File not found: ${f}`);
+  return `/* === ${f} === */\n` + fs.readFileSync(abs, 'utf8');
 }).join('\n\n');
 
-const tempBundle = 'js/bundle.temp.js';
-fs.writeFileSync(tempBundle, combined, 'utf8');
+console.log(`Bundling ${files.length} files with esbuild...`);
+const result = esbuild.transformSync(combined, {
+  minify: true,
+  target: 'es2020',
+  legalComments: 'none',
+});
 
-console.log('Minifying with esbuild...');
-execSync(`npx esbuild ${tempBundle} --minify --outfile=js/bundle.min.js`);
+const outFile = path.join(ROOT, 'js/bundle.min.js');
+fs.writeFileSync(outFile, result.code, 'utf8');
 
-if (fs.existsSync(tempBundle)) {
-  fs.unlinkSync(tempBundle);
-}
-
-const outSize = fs.statSync('js/bundle.min.js').size;
-console.log(`Successfully generated js/bundle.min.js (${(outSize / 1024).toFixed(1)} KB)`);
+const kb = (fs.statSync(outFile).size / 1024).toFixed(1);
+console.log(`Generated js/bundle.min.js (${kb} KB)`);

@@ -24,6 +24,7 @@
         { id: "java", name: "Java", devicon: "devicon-java-plain colored", level: "OOP Foundation", projectIds: [] },
         { id: "python", name: "Python", devicon: "devicon-python-plain colored", frameworks: ["PaddleOCR", "PyTorch", "TensorFlow", "FastAPI"], projectIds: ["pdf-vision-ocr", "vietnamese-ocr", "nlp-translation", "stock-ml"] },
         { id: "javascript", name: "JavaScript", devicon: "devicon-javascript-plain colored", frameworks: ["Next.js", "TypeScript", "Node.js", "React"], projectIds: ["schoolops", "bookingcare", "coursehub", "ecommerce", "graduation-invitation", "math-portal"] },
+        { id: "typescript", name: "TypeScript", devicon: "devicon-typescript-plain colored", frameworks: ["Next.js", "React"], projectIds: ["schoolops", "graduation-invitation", "math-portal"] },
         { id: "php", name: "PHP", devicon: "devicon-php-plain colored", framework: "Laravel", projectIds: ["pos"] }
       ]
     },
@@ -88,42 +89,13 @@
     }
   ];
 
-  // Bidirectional mapping table (Item 8: Interactive Skill Linking)
-  const mapping = {
-    // Core Languages
-    c: { name: "C", projects: [] },
-    csharp: { name: "C#", projects: ["warehouse"] },
-    java: { name: "Java", projects: [] },
-    python: { name: "Python", projects: ["pdf-vision-ocr", "vietnamese-ocr", "nlp-translation", "stock-ml"] },
-    javascript: { name: "JavaScript", projects: ["schoolops", "bookingcare", "coursehub", "ecommerce", "graduation-invitation", "math-portal"] },
-    php: { name: "PHP", projects: ["pos"] },
-
-    // Backend Architecture & Frameworks
-    nodejs: { name: "Node.js", projects: ["schoolops", "coursehub", "ecommerce"] },
-    express: { name: "Express.js", projects: ["schoolops", "coursehub", "ecommerce"] },
-    laravel: { name: "Laravel", projects: ["pos"] },
-    restapi: { name: "RESTful API", projects: ["schoolops", "bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce"] },
-    dotnet: { name: ".NET WinForms", projects: ["warehouse"] },
-    react: { name: "React", projects: ["schoolops", "bookingcare", "coursehub", "ecommerce", "graduation-invitation", "math-portal"] },
-
-    // Databases & Storage
-    postgresql: { name: "PostgreSQL", projects: ["schoolops", "bookingcare", "coursehub"] },
-    mysql: { name: "MySQL", projects: ["warehouse", "pos"] },
-    mongodb: { name: "MongoDB", projects: ["ecommerce"] },
-    sqlserver: { name: "SQL Server", projects: ["warehouse"] },
-    rawsql: { name: "Raw SQL", projects: ["schoolops", "coursehub"] },
-
-    // AI, DevOps & Tools
-    pytorch: { name: "PyTorch", projects: ["vietnamese-ocr", "nlp-translation"] },
-    tensorflow: { name: "TensorFlow", projects: ["stock-ml"] },
-    docker: { name: "Docker", projects: ["pdf-vision-ocr", "ecommerce"] },
-    compose: { name: "Docker Compose", projects: ["ecommerce"] },
-    nginx: { name: "Nginx", projects: ["ecommerce"] },
-    git: { name: "Git", projects: ["schoolops", "bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos", "graduation-invitation", "math-portal"] },
-    github: { name: "GitHub", projects: ["schoolops", "bookingcare", "pdf-vision-ocr", "coursehub", "ecommerce", "vietnamese-ocr", "nlp-translation", "stock-ml", "warehouse", "pos", "graduation-invitation", "math-portal"] },
-    postman: { name: "Postman", projects: ["schoolops", "coursehub", "ecommerce"] },
-    linux: { name: "Linux", projects: [] }
-  };
+  // Bidirectional mapping table, derived from `categories` (single source of truth)
+  const mapping = {};
+  categories.forEach((cat) => {
+    cat.skills.forEach((sk) => {
+      mapping[sk.id] = { name: sk.name, projects: sk.projectIds || [] };
+    });
+  });
 
   /**
    * Helper: Normalize any tag string to its standard Skill ID
@@ -131,6 +103,7 @@
   function normalizeTagToSkillId(tagStr) {
     if (!tagStr) return null;
     const s = tagStr.toLowerCase().trim();
+    if (s.includes("typescript")) return "typescript";
     if (s.includes("postgres")) return "postgresql";
     if (s.includes("mongo")) return "mongodb";
     if (s.includes("mysql")) return "mysql";

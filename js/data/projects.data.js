@@ -14,7 +14,7 @@
       i18nKeys: { meta: "p_gi_meta", title: "p_gi_title", desc: "p_gi_desc" },
       cardTechs: [
         { skill: "react", label: "Next.js 16", title: "Next.js 16 App Router & React 19" },
-        { skill: "javascript", label: "TypeScript", title: "TypeScript 5 & Tailwind CSS v4" },
+        { skill: "typescript", label: "TypeScript", title: "TypeScript 5 & Tailwind CSS v4" },
         { skill: "react", label: "Framer Motion", title: "motion/react GPU Transformations" }
       ],
       num: "#01",
@@ -99,7 +99,7 @@
       i18nKeys: { meta: "p_so_meta", title: "p_so_title", desc: "p_so_desc" },
       cardTechs: [
         { skill: "react", label: "Next.js 16", title: "Next.js 16 App Router" },
-        { skill: "javascript", label: "TypeScript", title: "TypeScript 5.8" },
+        { skill: "typescript", label: "TypeScript", title: "TypeScript 5.8" },
         { skill: "postgresql", label: "PostgreSQL 16", title: "PostgreSQL 16 (Neon Serverless & Native pg)" }
       ],
       num: "#01",
@@ -274,7 +274,7 @@
       i18nKeys: { meta: "p_mp_meta", title: "p_mp_title", desc: "p_mp_desc" },
       cardTechs: [
         { skill: "react", label: "React 19", title: "React 19 Concurrent & Strict State" },
-        { skill: "javascript", label: "TypeScript", title: "TypeScript 5.7 Strict" },
+        { skill: "typescript", label: "TypeScript", title: "TypeScript 5.7 Strict" },
         { skill: "vite", label: "TanStack", title: "TanStack Router & Nitro Engine" },
         { skill: "tailwindcss", label: "Tailwind v4", title: "Tailwind CSS v4 @theme" }
       ],

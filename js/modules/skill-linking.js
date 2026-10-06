@@ -22,6 +22,7 @@
     }
     if (!tagStr) return null;
     const s = tagStr.toLowerCase().trim();
+    if (s.includes("typescript")) return "typescript";
     if (s.includes("postgres")) return "postgresql";
     if (s.includes("mongo")) return "mongodb";
     if (s.includes("mysql")) return "mysql";
@@ -274,14 +275,39 @@
       });
     });
 
+    // Keep skill tile badges/labels in sync with skills.data.js (no hardcoded counts)
+    function syncSkillBadges(lang) {
+      const mapping = getSkillsMapping();
+      document.querySelectorAll(".skill-icon[data-skill-id]").forEach((icon) => {
+        const item = mapping[icon.getAttribute("data-skill-id")];
+        if (!item) return;
+        const count = item.projects.length;
+        const badge = icon.querySelector(".skill-count-badge");
+        if (badge) {
+          badge.setAttribute("data-count", String(count));
+          badge.textContent = lang === "en" ? `${count} Prj` : `${count} DA`;
+        }
+        if (count > 0) {
+          const label = lang === "en"
+            ? `${item.name} - ${count} ${count > 1 ? "projects" : "project"}`
+            : `${item.name} - ${count} dự án`;
+          const title = lang === "en"
+            ? `${item.name} • Used in ${count} ${count > 1 ? "projects" : "project"}`
+            : `${item.name} • Ứng dụng trong ${count} dự án`;
+          icon.setAttribute("aria-label", label);
+          // Only overwrite generic count titles; keep custom ones (e.g. Git, GitHub)
+          const curTitle = icon.getAttribute("title") || "";
+          if (!curTitle || /(Ứng dụng trong|Used in) \d+/.test(curTitle)) icon.setAttribute("title", title);
+        }
+      });
+    }
+    syncSkillBadges(getCurrentLanguage());
+
     // Language update hook
     window.refreshActiveSkillBanner = () => {
       const lang = getCurrentLanguage();
       const mapping = getSkillsMapping();
-      document.querySelectorAll(".skill-count-badge[data-count]").forEach((b) => {
-        const c = b.getAttribute("data-count");
-        b.textContent = lang === "en" ? `${c} Prj` : `${c} DA`;
-      });
+      syncSkillBadges(lang);
       if (activeSkillId && mapping[activeSkillId]) {
         const skillData = mapping[activeSkillId];
         const count = skillData.projects.length;

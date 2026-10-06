@@ -81,8 +81,8 @@ A modern, high-performance **static web application** crafted with **HTML5, Tail
 - **Integrated Action Dock**: Quick email copy badge with instant toast alert, CV jump, Contact jump, and verified social links.
 
 ### 8. GitHub Activity & Live Stats
-- **Quick Stats Bar**: 16 repos, 22 stars, and top languages fetched from GitHub API.
-- **Daily Automated Heatmap**: SVG heatmaps (Light & Dark) automatically generated and committed daily via GitHub Actions GraphQL workflow.
+- **Quick Stats Bar**: Public repo and star counts generated from the GitHub GraphQL API at deploy time (`assets/github/github-stats.json`), with HTML fallback values.
+- **Daily Automated Heatmap**: SVG heatmaps (Light & Dark) regenerated on every deploy and daily via a scheduled GitHub Actions run — served directly, never committed back to the repo.
 - **Dynamic Activity Graph**: Includes skeleton shimmer loading state and fade-in transitions.
 
 ### 9. Smart Contact Form & Availability Status
@@ -101,7 +101,7 @@ A modern, high-performance **static web application** crafted with **HTML5, Tail
 | **Logic & State** | Vanilla JavaScript (ES6+) | 19 modular controllers, Carousel, Skill-linking, Terminal CLI, Modal |
 | **Bundling** | Node.js Script + esbuild | Dependency concatenation and production JS minification (`bundle.min.js`) |
 | **Typography & Icons**| Devicon, Heroicons, Google Fonts | Inter (UI) & JetBrains Mono (Terminal/Code), brand SVGs |
-| **Automation & CI/CD**| GitHub Actions, Python GraphQL | Automated deployment to GitHub Pages, daily contribution SVG update |
+| **Automation & CI/CD**| GitHub Actions, Python GraphQL | Build, stats generation and deployment to GitHub Pages in a single pipeline |
 | **Forms** | Formspree | Serverless contact form handling and certificate access requests |
 
 ---
@@ -118,9 +118,9 @@ my-portfolio/
 ├─ sw.js                          # Service Worker for offline asset caching
 ├─ package.json                   # Project scripts and developer dependencies
 ├─ assets/
-│  ├─ cv/                         # Career CVs (BE Developer & AI Intern PDFs)
+│  ├─ cv/                         # Career CVs (Backend, Frontend & AI Engineer PDFs)
 │  ├─ certificates/               # Verified certificate PDFs
-│  ├─ projects/                   # High-resolution screenshots for 7 showcase projects
+│  ├─ projects/                   # Screenshots for the 12 showcase projects
 │  ├─ profile/                    # Personal portraits (profile.jpg, profile2.jpg)
 │  ├─ icons/                      # Favicon suite (SVG, PNG) and PWA app icons
 │  ├─ github/                     # Automated contribution heatmaps (light/dark SVGs)
@@ -150,11 +150,11 @@ my-portfolio/
 │     ├─ toast.css                # Glassmorphic toast alert system
 │     └─ fab.css                  # Floating Action Bar (FAB) & speed dial
 ├─ js/
-│  ├─ bundle.min.js               # Production bundled and minified script (175 KB)
+│  ├─ bundle.min.js               # Production bundled and minified script (~230 KB)
 │  ├─ scripts.js                  # Master application orchestrator
 │  ├─ data/                       # Structured single source of truth datasets
 │  │  ├─ i18n.data.js             # Bilingual dictionary (VI / EN)
-│  │  ├─ projects.data.js         # Complete dataset for 7 showcase projects
+│  │  ├─ projects.data.js         # Complete dataset for the 12 showcase projects
 │  │  ├─ skills.data.js           # Skills catalog & bidirectional project mappings
 │  │  └─ certs.data.js            # 8 Verified certificate definitions and credentials
 │  └─ modules/                    # Feature controllers
@@ -177,8 +177,7 @@ my-portfolio/
 │  └─ build_github_contrib_svgs.py# Python GraphQL script for GitHub contribution SVG
 ├─ projects-docs/                 # Comprehensive engineering docs for all 7 projects
 └─ .github/workflows/
-   ├─ static.yml                  # GitHub Pages automated build & deploy pipeline
-   └─ update-github-contrib.yml   # Scheduled cron workflow for daily GitHub SVGs
+   └─ static.yml                  # Build → GitHub stats → deploy to Pages (push + daily cron)
 ```
 
 ---
@@ -255,13 +254,10 @@ Open your browser at: `http://localhost:5500`
 
 ## 🤖 Automated Workflows & CI/CD
 
-- **GitHub Pages Deployment (`.github/workflows/static.yml`)**:
-  - Automatically triggers on every push to the `main` branch.
-  - Deploys static assets directly to GitHub Pages.
-- **Daily Contribution SVG Sync (`.github/workflows/update-github-contrib.yml`)**:
-  - Runs daily via cron schedule (`00:00 UTC`).
-  - Executes `scripts/build_github_contrib_svgs.py` using GitHub GraphQL API.
-  - Commits updated light and dark contribution graphs directly into `assets/github/`.
+- **Build & Deploy (`.github/workflows/static.yml`)** — one pipeline, triggered on every push to `main`, daily at `00:00 UTC`, or manually:
+  1. Installs dependencies and runs `npm run build` (Tailwind CSS + esbuild bundle), so the deployed site always matches the source.
+  2. Runs `scripts/build_github_contrib_svgs.py` (GitHub GraphQL API) to generate the contribution heatmaps and `github-stats.json`. If the API fails, the deploy continues with the committed fallback SVGs.
+  3. Uploads the result to GitHub Pages. Nothing is committed back to the repository, so the commit history only contains real changes.
 
 ---
 
@@ -285,7 +281,7 @@ The portfolio is hosted on **GitHub Pages**:
   - Ambient aurora mesh orbs utilize `contain: layout style paint` and `transform: translateZ(0)` for hardware GPU promotion.
   - Heavy animations automatically respect `prefers-reduced-motion: reduce`.
 - **Bundle Optimization**:
-  - All 19 JS modules are concatenated in dependency order and minified into a single non-blocking bundle (`js/bundle.min.js`, ~175 KB).
+  - All 19 JS modules are concatenated in dependency order and minified into a single non-blocking bundle (`js/bundle.min.js`, ~230 KB).
   - External non-critical scripts (e.g. `particles.js`) are deferred until browser idle.
 - **Search Engine Optimization (SEO)**:
   - Canonical URL tags, descriptive meta descriptions, and rich Open Graph (`og:*`) / Twitter card tags.

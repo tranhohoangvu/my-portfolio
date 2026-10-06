@@ -1,22 +1,21 @@
 {
-  "name": "18.07",
+  "name": "my-portfolio",
   "version": "1.0.0",
-  "description": "> 🎓 *Sinh viên ngành Computer Science tại Đại học Tôn Đức Thắng (TDTU)*  \r > 💼 *Portfolio cá nhân showcase các dự án, kỹ năng lập trình và bài viết kỹ thuật.*",
-  "main": "index.js",
+  "description": "Personal portfolio of Tran Ho Hoang Vu — static site built with HTML, Tailwind CSS v4 and vanilla JavaScript.",
   "scripts": {
     "build:css": "tailwindcss -i css/tailwind-input.css -o css/tailwind.css --minify",
     "build:js": "node scripts/build-js.js",
     "build": "npm run build:css && npm run build:js",
     "watch:css": "tailwindcss -i css/tailwind-input.css -o css/tailwind.css --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No tests yet\" && exit 0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tranhohoangvu/my-portfolio.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Trần Hồ Hoàng Vũ",
+  "license": "MIT",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/tranhohoangvu/my-portfolio/issues"
@@ -24,6 +23,8 @@
   "homepage": "https://github.com/tranhohoangvu/my-portfolio#readme",
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.18",
+    "esbuild": "^0.28.2",
     "tailwindcss": "^4.1.18"
-  }
+  },
+  "private": true
 }

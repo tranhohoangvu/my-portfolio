@@ -1,5 +1,3 @@
-print("USING GRAPHQL VERSION")
-
 import json
 import os
 import sys
@@ -21,6 +19,10 @@ DARK_STROKE = "#30363d"   # viền ô trên GitHub dark
 QUERY = """
 query($login: String!, $from: DateTime!, $to: DateTime!) {
   user(login: $login) {
+    repositories(ownerAffiliations: OWNER, privacy: PUBLIC, isFork: false, first: 100) {
+      totalCount
+      nodes { stargazerCount }
+    }
     contributionsCollection(from: $from, to: $to) {
       contributionCalendar {
         weeks {
@@ -159,6 +161,16 @@ def main():
 
   print("Generated:", out_dir / "github-contrib-light.svg")
   print("Generated:", out_dir / "github-contrib-dark.svg")
+
+  # Quick stats (repos / stars) consumed by js/modules/github-stats.js
+  repos = data["user"]["repositories"]
+  stats = {
+    "repos": repos["totalCount"],
+    "stars": sum(n["stargazerCount"] for n in repos["nodes"]),
+    "updatedAt": now.isoformat(timespec="seconds"),
+  }
+  (out_dir / "github-stats.json").write_text(json.dumps(stats), encoding="utf-8")
+  print("Generated:", out_dir / "github-stats.json", stats)
 
   # Generate Activity Graph SVGs
   fetch_activity_graphs(username, out_dir)

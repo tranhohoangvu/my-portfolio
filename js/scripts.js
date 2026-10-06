@@ -297,7 +297,7 @@ function initAppModules() {
   window.initHeroInteractions?.();
   window.initCounterAnimations?.();
   window.initProfileFlip?.();
-  window.initCvDownloadCounter?.();
+  window.initCvDownloadToast?.();
   window.initCertScoreAnimation?.();
   window.initCertRequestModal?.();
   window.initCertFilter?.();
