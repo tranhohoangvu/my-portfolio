@@ -8,7 +8,7 @@
  *
  * Bump VERSION when the precache list or the strategy changes.
  */
-const VERSION = "v40";
+const VERSION = "v41";
 const CACHE_NAME = `portfolio-${VERSION}`;
 
 const PRECACHE = [
