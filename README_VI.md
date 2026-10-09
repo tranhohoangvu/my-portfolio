@@ -121,7 +121,7 @@ my-portfolio/
 │  ├─ cv/                         # Các bản CV định dạng PDF (Backend, Frontend & AI Engineer)
 │  ├─ certificates/               # File PDF chứng chỉ đã xác thực
 │  ├─ projects/                   # Ảnh chụp giao diện cho 12 dự án
-│  ├─ profile/                    # Ảnh đại diện cá nhân (profile.jpg, profile2.jpg)
+│  ├─ profile/                    # Ảnh đại diện cá nhân (profile1.webp, profile2.webp)
 │  ├─ icons/                      # Bộ favicon (SVG, PNG) và biểu tượng PWA
 │  ├─ github/                     # Heatmap đóng góp & github-stats.json (sinh lúc deploy)
 │  └─ og-image-v2.png             # Ảnh xem trước Open Graph khi chia sẻ mạng xã hội

@@ -121,7 +121,7 @@ my-portfolio/
 │  ├─ cv/                         # Career CVs (Backend, Frontend & AI Engineer PDFs)
 │  ├─ certificates/               # Verified certificate PDFs
 │  ├─ projects/                   # Screenshots for the 12 showcase projects
-│  ├─ profile/                    # Personal portraits (profile.jpg, profile2.jpg)
+│  ├─ profile/                    # Personal portraits (profile1.webp, profile2.webp)
 │  ├─ icons/                      # Favicon suite (SVG, PNG) and PWA app icons
 │  ├─ github/                     # Automated contribution heatmaps (light/dark SVGs)
 │  └─ og-image-v2.png             # Open Graph preview card for social sharing
