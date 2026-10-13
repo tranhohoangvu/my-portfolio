@@ -16,6 +16,7 @@ const files = [
   'js/data/certs.data.js',
   'js/modules/i18n.js',
   'js/modules/theme.js',
+  'js/modules/version-prompt.js',
   'js/modules/carousel.js',
   'js/modules/modal.js',
   'js/modules/skill-linking.js',

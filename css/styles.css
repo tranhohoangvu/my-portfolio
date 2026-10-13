@@ -25,6 +25,7 @@
 /* ── Components ── */
 @import './components/toast.css';
 @import './components/fab.css';
+@import './components/version-prompt.css';
 
 /* ── Terminal & Console ── */
 @import './sections/terminal.css';

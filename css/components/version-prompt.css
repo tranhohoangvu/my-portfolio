@@ -1,0 +1,655 @@
+/* ==========================================================================
+   Version Selector Modal & Notice Bar
+   Provides a high-end gateway screen asking visitors whether to proceed
+   to Portfolio v2 (tranhohoangvu.vercel.app) or stay on Portfolio v1.
+   ========================================================================== */
+
+/* ── Prevent background scroll when entrance modal is active ── */
+body.version-modal-open {
+  overflow: hidden !important;
+}
+
+/* ── Modal Backdrop ── */
+.version-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(7, 11, 20, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+  overflow-y: auto;
+}
+
+/* Instant hide via class (used before first paint if already chosen) */
+html.hide-version-modal .version-modal-backdrop,
+.version-modal-backdrop.is-hidden {
+  display: none !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.version-modal-backdrop.is-closing {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.25s ease;
+}
+
+.version-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* ── Modal Container Card ── */
+.version-modal-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 760px;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  border-radius: 24px;
+  padding: 2rem;
+  background: #ffffff;
+  color: #16161a;
+  border: 1px solid #e5e0d5;
+  box-shadow: 0 25px 60px -15px rgba(22, 22, 26, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  transform: scale(1) translateY(0);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  animation: versionCardEnter 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (max-width: 640px) {
+  .version-modal-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 20px;
+    max-height: calc(100dvh - 2rem);
+  }
+}
+
+.dark .version-modal-card {
+  background: linear-gradient(180deg, #0d1527 0%, #070b14 100%);
+  color: #f1f5f9;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.85), 0 0 60px -15px rgba(99, 102, 241, 0.3);
+}
+
+.version-modal-backdrop.is-closing .version-modal-card {
+  transform: scale(0.95) translateY(10px);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes versionCardEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ── Close Button ── */
+.version-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.05);
+  color: #64748b;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.dark .version-modal-close {
+  background: rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+}
+
+.version-modal-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #0f172a;
+  transform: scale(1.05);
+}
+
+.dark .version-modal-close:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* ── Badge Pill ── */
+.version-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: rgba(99, 102, 241, 0.1);
+  color: #4f46e5;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  margin-bottom: 0.85rem;
+}
+
+.dark .version-badge-pill {
+  background: rgba(99, 102, 241, 0.18);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.35);
+}
+
+.version-badge-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: #06b6d4;
+  box-shadow: 0 0 8px #06b6d4;
+  animation: versionPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes versionPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+}
+
+/* ── Options Grid ── */
+.version-options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 1.25rem 0;
+}
+
+@media (max-width: 640px) {
+  .version-options-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* ── Choice Card ── */
+.version-choice-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 18px;
+  padding: 1.4rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left;
+}
+
+/* New Version Card (Featured) */
+.version-choice-card--v2 {
+  background: linear-gradient(145deg, rgba(99, 102, 241, 0.06) 0%, rgba(6, 182, 212, 0.06) 100%), #ffffff;
+  border: 2px solid #6366f1;
+  box-shadow: 0 10px 30px -5px rgba(99, 102, 241, 0.18), 0 0 0 1px rgba(99, 102, 241, 0.1);
+}
+
+.dark .version-choice-card--v2 {
+  background: linear-gradient(145deg, rgba(99, 102, 241, 0.15) 0%, rgba(6, 182, 212, 0.1) 100%), rgba(15, 23, 42, 0.7);
+  border: 2px solid rgba(129, 140, 248, 0.7);
+  box-shadow: 0 12px 35px -5px rgba(99, 102, 241, 0.3), 0 0 25px rgba(6, 182, 212, 0.15);
+}
+
+.version-choice-card--v2:hover {
+  transform: translateY(-4px);
+  border-color: #4f46e5;
+  box-shadow: 0 18px 40px -5px rgba(99, 102, 241, 0.28), 0 0 30px rgba(6, 182, 212, 0.25);
+}
+
+.dark .version-choice-card--v2:hover {
+  border-color: #a5b4fc;
+  box-shadow: 0 18px 45px -5px rgba(99, 102, 241, 0.45), 0 0 35px rgba(6, 182, 212, 0.3);
+}
+
+/* Old Version Card (Classic/Archive) */
+.version-choice-card--v1 {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+}
+
+.dark .version-choice-card--v1 {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+}
+
+.version-choice-card--v1:hover {
+  transform: translateY(-3px);
+  border-color: #cbd5e1;
+  background: #f1f5f9;
+}
+
+.dark .version-choice-card--v1:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Tag Pill inside card */
+.version-card-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  width: fit-content;
+  margin-bottom: 0.75rem;
+}
+
+.version-card-tag--v2 {
+  background: linear-gradient(90deg, #6366f1, #06b6d4);
+  color: #ffffff;
+}
+
+.version-card-tag--v1 {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.dark .version-card-tag--v1 {
+  background: rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+}
+
+/* Card Button Primary */
+.version-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border-radius: 12px;
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #4f46e5 0%, #0891b2 100%);
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.35);
+  transition: all 0.25s ease;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  margin-top: 1.25rem;
+}
+
+.version-btn-primary:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #0e7490 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.45);
+  color: #ffffff;
+}
+
+.version-btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Card Button Secondary */
+.version-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border-radius: 12px;
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: #334155;
+  background: #e2e8f0;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+  margin-top: 1.25rem;
+}
+
+.dark .version-btn-secondary {
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.version-btn-secondary:hover {
+  background: #cbd5e1;
+  color: #0f172a;
+}
+
+.dark .version-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+/* Checklist items inside card */
+.version-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.815rem;
+  line-height: 1.45;
+}
+
+.version-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  color: #475569;
+}
+
+.dark .version-feature-item {
+  color: #94a3b8;
+}
+
+.version-feature-icon {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.1rem;
+}
+
+/* ==========================================================================
+   Bottom-Left Floating Version Widget (Non-dismissible, Collapsible)
+   Cannot be permanently closed, only toggled (expanded / collapsed).
+   ========================================================================== */
+.version-dock-widget {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: auto;
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 640px) {
+  .version-dock-widget {
+    bottom: 1rem;
+    left: 1rem;
+    max-width: calc(100vw - 2rem);
+  }
+}
+
+/* Hide dock widget when the entrance modal is active */
+body.version-modal-open .version-dock-widget {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* ── Minimized Trigger Pill (Shown when collapsed) ── */
+.version-dock-pill {
+  display: none;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.95rem;
+  border-radius: 9999px;
+  background: #ffffff;
+  color: #16161a;
+  border: 1.5px solid #6366f1;
+  font-size: 0.775rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -4px rgba(99, 102, 241, 0.25), 0 2px 6px -1px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.dark .version-dock-pill {
+  background: rgba(15, 23, 42, 0.92);
+  color: #f1f5f9;
+  border: 1.5px solid rgba(129, 140, 248, 0.6);
+  box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.6), 0 0 20px rgba(99, 102, 241, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.version-dock-pill:hover {
+  transform: translateY(-2px) scale(1.02);
+  border-color: #4f46e5;
+  box-shadow: 0 14px 30px -3px rgba(99, 102, 241, 0.4), 0 0 25px rgba(6, 182, 212, 0.3);
+}
+
+.dark .version-dock-pill:hover {
+  border-color: #a5b4fc;
+  box-shadow: 0 14px 35px -3px rgba(99, 102, 241, 0.5), 0 0 30px rgba(6, 182, 212, 0.4);
+}
+
+.version-dock-pill__indicator {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.65rem;
+  height: 0.65rem;
+}
+
+.version-dock-pill__ping {
+  position: absolute;
+  inset: -2px;
+  border-radius: 9999px;
+  background: #06b6d4;
+  opacity: 0.75;
+  animation: versionPing 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.version-dock-pill__dot {
+  position: relative;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: #06b6d4;
+}
+
+@keyframes versionPing {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.version-dock-pill__icon {
+  width: 0.9rem;
+  height: 0.9rem;
+  color: #6366f1;
+  transition: transform 0.2s ease;
+}
+
+.dark .version-dock-pill__icon {
+  color: #a5b4fc;
+}
+
+.version-dock-pill:hover .version-dock-pill__icon {
+  transform: translateY(-1px);
+}
+
+/* ── Expanded Card (Shown when expanded) ── */
+.version-dock-card {
+  display: block;
+  width: 320px;
+  max-width: calc(100vw - 2rem);
+  border-radius: 20px;
+  padding: 1.15rem;
+  background: #ffffff;
+  color: #16161a;
+  border: 1.5px solid #cbd5e1;
+  box-shadow: 0 20px 45px -10px rgba(22, 22, 26, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  animation: versionDockCardEnter 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dark .version-dock-card {
+  background: linear-gradient(160deg, #0d1527 0%, #070b14 100%);
+  color: #f1f5f9;
+  border: 1.5px solid rgba(129, 140, 248, 0.45);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85), 0 0 35px rgba(99, 102, 241, 0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+@keyframes versionDockCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Card Header ── */
+.version-dock-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+}
+
+.version-dock-card__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: linear-gradient(90deg, #6366f1, #06b6d4);
+  color: #ffffff;
+}
+
+.version-dock-card__btn-toggle {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.05);
+  color: #64748b;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dark .version-dock-card__btn-toggle {
+  background: rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+}
+
+.version-dock-card__btn-toggle:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #0f172a;
+  transform: scale(1.08);
+}
+
+.dark .version-dock-card__btn-toggle:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+/* ── Card Body ── */
+.version-dock-card__body {
+  margin-bottom: 0.9rem;
+}
+
+/* ── Card Footer Actions ── */
+.version-dock-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.version-dock-card__cta {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #4f46e5 0%, #0891b2 100%);
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.version-dock-card__cta:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #0e7490 100%);
+  transform: translateY(-1px);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.45);
+}
+
+.version-dock-card__sub-btn {
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #64748b;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dark .version-dock-card__sub-btn {
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.version-dock-card__sub-btn:hover {
+  color: #0f172a;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.dark .version-dock-card__sub-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Collapsed State Toggle ── */
+.version-dock-widget.is-collapsed .version-dock-card {
+  display: none !important;
+}
+
+.version-dock-widget.is-collapsed .version-dock-pill {
+  display: inline-flex !important;
+}
+
