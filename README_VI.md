@@ -9,7 +9,8 @@
 
 Ứng dụng web tĩnh hiện đại, hiệu năng cao được xây dựng bằng **HTML5, Tailwind CSS (v4 CLI), và Vanilla JavaScript (ES6+)**, hỗ trợ chuyển đổi linh hoạt **Dark / Light dual-theme** và hệ thống bản ngữ song ngữ **VI / EN**.
 
-- 🔗 **Website trực tiếp:** https://tranhohoangvu.github.io/my-portfolio/
+- 🔗 **Website lưu trữ trực tiếp (v1):** https://tranhohoangvu.github.io/my-portfolio/
+- 🚀 **Phiên bản Portfolio mới nhất (v2):** https://tranhohoangvu.vercel.app/en
 - 📄 **Hồ sơ năng lực chuyên biệt (PDF):**
   - `assets/cv/TranHoHoangVu_BE.pdf` — Backend Developer Fresher
   - `assets/cv/TranHoHoangVu_FE.pdf` — Frontend Developer Fresher
@@ -148,7 +149,8 @@ my-portfolio/
 │  └─ components/
 │     ├─ shared-cards.css         # Hiệu ứng hover và chiếu sáng viền dùng chung
 │     ├─ toast.css                # Hệ thống thông báo toast nổi kính mờ
-│     └─ fab.css                  # Nút tác vụ nổi (FAB) và menu liên hệ nhanh
+│     ├─ fab.css                  # Nút tác vụ nổi (FAB) và menu liên hệ nhanh
+│     └─ version-prompt.css       # Modal chuyển đổi phiên bản & popup nổi góc dưới trái
 ├─ js/
 │  ├─ bundle.min.js               # File script production đã gộp và nén (~230 KB)
 │  ├─ scripts.js                  # Bộ điều phối và khởi tạo toàn bộ ứng dụng
@@ -160,6 +162,7 @@ my-portfolio/
 │  └─ modules/                    # Các controller chức năng theo module
 │     ├─ i18n.js                  # Bộ máy chuyển đổi ngôn ngữ
 │     ├─ theme.js                 # Bộ chuyển đổi Dark / Light mode
+│     ├─ version-prompt.js        # Controller điều khiển modal gateway & popup ẩn/hiện
 │     ├─ carousel.js              # Slider carousel dự án và cử chỉ vuốt
 │     ├─ modal.js                 # Modal xem chi tiết kiến trúc dự án
 │     ├─ skill-linking.js         # Liên kết tương tác 2 chiều Kỹ năng ↔ Dự án

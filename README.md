@@ -9,7 +9,8 @@
 
 A modern, high-performance **static web application** crafted with **HTML5, Tailwind CSS (v4 CLI), and Vanilla JavaScript (ES6+)**, featuring seamless **Dark / Light dual themes** and **Bilingual (VI / EN)** localization.
 
-- 🔗 **Live Production Site:** https://tranhohoangvu.github.io/my-portfolio/
+- 🔗 **Archived Production Site (v1):** https://tranhohoangvu.github.io/my-portfolio/
+- 🚀 **Latest Portfolio Release (v2):** https://tranhohoangvu.vercel.app/en
 - 📄 **Targeted Career CVs (PDF):**
   - `assets/cv/TranHoHoangVu_BE.pdf` — Backend Developer Fresher
   - `assets/cv/TranHoHoangVu_FE.pdf` — Frontend Developer Fresher
@@ -148,7 +149,8 @@ my-portfolio/
 │  └─ components/
 │     ├─ shared-cards.css         # Unified card hover and lighting effects
 │     ├─ toast.css                # Glassmorphic toast alert system
-│     └─ fab.css                  # Floating Action Bar (FAB) & speed dial
+│     ├─ fab.css                  # Floating Action Bar (FAB) & speed dial
+│     └─ version-prompt.css       # Gateway modal & bottom-left collapsible dock styles
 ├─ js/
 │  ├─ bundle.min.js               # Production bundled and minified script (~230 KB)
 │  ├─ scripts.js                  # Master application orchestrator
@@ -160,6 +162,7 @@ my-portfolio/
 │  └─ modules/                    # Feature controllers
 │     ├─ i18n.js                  # Internationalization engine
 │     ├─ theme.js                 # Dark / Light theme switcher
+│     ├─ version-prompt.js        # Version selector modal & bottom-left dock controller
 │     ├─ carousel.js              # Projects carousel slider & swipe mechanics
 │     ├─ modal.js                 # Project deep-dive details modal
 │     ├─ skill-linking.js         # Interactive 2-way skill ↔ project linker
